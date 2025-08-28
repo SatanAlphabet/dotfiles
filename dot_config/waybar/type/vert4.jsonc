@@ -77,27 +77,27 @@
 	},
 	"custom/launcher": {
 		"format": "",
-		"on-click": "~/.config/niri/scripts/rofilaunch.sh",
+		"on-click": "~/.scripts/rofilaunch.sh",
 		"tooltip-format": "Application Launcher"
 	},
   "custom/powermenu": {
     "format": "",
-    "on-click": "~/.config/niri/scripts/logoutlaunch.sh",
+    "on-click": "~/.scripts/logoutlaunch.sh",
     "tooltip-format": "Power Menu"
   },
   "custom/clipboard": {
     "format": "",
-    "on-click": "~/.config/niri/scripts/cliphist-niri.sh -c",
+    "on-click": "~/.scripts/cliphist-niri.sh -c",
     "tooltip-format": "Manage clipboard"
   },
   "custom/glyph-picker": {
     "format": "󱔁",
-    "on-click": "~/.config/niri/scripts/glyph-picker.sh",
+    "on-click": "~/.scripts/glyph-picker.sh",
     "tooltip-format": "Glyph picker"
   },
   "custom/emoji-picker": {
     "format": "󰱱",
-    "on-click": "~/.config/niri/scripts/emoji-picker.sh",
+    "on-click": "~/.scripts/emoji-picker.sh",
     "tooltip-format": "Emoji picker"
   },
   "custom/wallpaper": {
@@ -234,8 +234,8 @@
 		"min-length": 1,
 		"tooltip": true,
 		"tooltip-format": "Backlight level: {icon} {percent}%",
-		"on-scroll-up": "~/.config/niri/scripts/brightnesscontrol.sh + 1",
-		"on-scroll-down": "~/.config/niri/scripts/brightnesscontrol.sh - 1"
+		"on-scroll-up": "~/.scripts/brightnesscontrol.sh + 1",
+		"on-scroll-down": "~/.scripts/brightnesscontrol.sh - 1"
 	},
 	"custom/sysupdate": {
 		"format": "{icon}",
@@ -246,7 +246,7 @@
 		},
 		"exec-if": "which waybar-module-pacman-updates",
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
-		"on-click": "~/.config/niri/scripts/update.sh"
+		"on-click": "~/.scripts/update.sh"
 	}, 
   "bluetooth": {
     "format": "",
