@@ -1,0 +1,45 @@
+{
+	"$schema": "/etc/xdg/swaync/configSchema.json",
+	"positionX": "left",
+	"positionY": "top",
+	"control-center-width": 400,
+	"fit-to-screen": true,
+	"control-center-height": 600,
+  "notification-window-width": 400,
+	"cssPriority": "user",
+	"widgets": ["title", "inhibitor", "dnd", "notifications", "buttons-grid"],
+	"widget-config": {
+		"volume": {
+			"label": " "
+		},
+		"buttons-grid": {
+			"buttons-per-row": 3,
+			"actions": [
+				{
+					"label": "⏻",
+					"command": "~/.config/niri/scripts/logoutlaunch.sh"
+				},
+				{
+					"label": "󰌧",
+					"command": "~/.config/niri/scripts/rofilaunch.sh"
+				},
+				{
+					"label": "",
+					"command": "~/.config/niri/scripts/cliphist-niri.sh"
+				},
+				{
+					"label": "󰱱",
+					"command": "~/.config/niri/scripts/emoji-picker.sh"
+				},
+				{
+					"label": "󱔁",
+					"command": "~/.config/niri/scripts/glyph-picker.sh"
+				},
+				{
+					"label": "󰸉",
+					"command": "waypaper"
+				}
+			]
+		}
+	}
+}

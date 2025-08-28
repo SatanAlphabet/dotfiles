@@ -1,0 +1,20 @@
+[Colors:View]
+BackgroundNormal=#103350FF
+
+[General]
+TerminalApplication=/usr/bin/kitty
+
+[Icons]
+Theme=Gruvbox-Plus-Dark
+
+[KDE]
+widgetStyle=qt6ct-style
+
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
+[UiSettings]
+ColorScheme=colors
+
+[Wallet]
+Enabled=false

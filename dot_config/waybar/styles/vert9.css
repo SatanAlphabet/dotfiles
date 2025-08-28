@@ -1,0 +1,183 @@
+#pulseaudio,
+#backlight,
+#custom-sysupdate,
+#custom-swaync,
+#custom-drawer-arrow-up,
+#mpris,
+#bluetooth,
+#battery {
+  font-size: 15px;
+}
+
+#custom-launcher,
+window#waybar #custom-drawer-arrow-up {
+  font-weight: bolder;
+  padding-top: 0.5em;
+}
+
+window#waybar #custom-seperator {
+  font-size: 13px;
+  margin: -0.2rem 0;
+  padding: 0;
+  opacity: 0.5;
+}
+
+window#waybar #custom-seperator.bottom {
+  margin-bottom: -0.6rem;
+}
+
+window#waybar #custom-seperator.top {
+  margin-top: -0.6rem;
+}
+
+/*
+#custom-swaync {
+  color: @act-bg;
+  transition: all 0.5s;
+}
+
+#custom-swaync.dnd-none,
+#custom-swaync.none {
+  color: @main-fg;
+  transition: all 0.5s;
+}
+*/
+
+#language {
+  font-size: 13px;
+}
+
+window#waybar {
+  box-shadow: none;
+  text-shadow: none;
+  background: @bar-bg;
+  color: @main-fg;
+  border-right: 1.0pt solid @border-col;
+}
+
+window#waybar label.module {
+  padding: 0.3em 0em;
+}
+
+window#waybar .modules-left {}
+
+window#waybar .modules-right {}
+
+window#waybar box.module {
+  padding: 0em;
+}
+
+window#waybar #custom-launcher {
+  font-size: 17px;
+  margin: 0.3em 0.4em;
+  margin-top: 0.8em;
+  padding: 0.2em 0.2em;
+  padding-left: 0.25em;
+  border-radius: 3pt;
+  background: @pill-bright-bg;
+  color: @main-fg-alt;
+}
+
+window#waybar #custom-glyph-picker,
+window#waybar #custom-emoji-picker,
+window#waybar #custom-browser,
+window#waybar #custom-wallpaper,
+window#waybar #custom-clipboard {
+  font-size: 13px;
+  margin: 0;
+  padding: 0.3em 0;
+}
+
+window#waybar #custom-picker,
+window#waybar #custom-powermenu {
+  font-size: 12px;
+  margin: 0;
+  padding: 0.3em 0;
+}
+
+window#waybar #battery {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+window#waybar #tray {
+  margin-bottom: 0.5em;
+}
+
+window#waybar #backlight {
+  margin-bottom: 0.1em;
+  margin-top: 0.1em;
+}
+
+window#waybar #workspaces {
+  padding: 0.0em 0;
+  margin: 0 0.8em;
+  border-radius: 10pt;
+  background: @pill-dark-bg;
+}
+
+#workspaces button {
+  text-shadow: none;
+  box-shadow: none;
+  min-width: 1px;
+  min-height: 1px;
+  color: @main-fg;
+  background: transparent;
+  border-radius: 15pt;
+  padding: 0px 0;
+  margin: 7px 4px;
+  transition: all 0.3s;
+  opacity: 0.6;
+}
+
+#workspaces button.empty {
+  background: transparent;
+}
+
+#workspaces button.active {
+  background: @main-fg-alt;
+  color: @main-bg;
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  color: @hvr-bg;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+window#waybar #clock {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0.4em 0.3em;
+  margin: 0.3em 0.4em;
+  margin-bottom: 0.8em;
+  border-radius: 4pt;
+  background: @pill-bright-bg;
+  color: @main-fg-alt;
+}
+
+window#waybar #pill {
+  background: @pill-dark-bg;
+  border-right: 1.0pt solid @border-col;
+  padding: 0 0.1em;
+  margin: 0;
+}
+
+tooltip {
+  /* all: unset; */
+  background: @main-bg;
+  color: @main-fg;
+  border-width: 0.3pt;
+  border-style: solid;
+  border-color: @main-fg;
+  border-radius: 4pt;
+}
+
+window#waybar #custom-triangle-bottom,
+window#waybar #custom-triangle-top {
+  font-size: 45pt;
+  margin: 0;
+  padding: 0;
+  color: @pill-dark-bg;
+}

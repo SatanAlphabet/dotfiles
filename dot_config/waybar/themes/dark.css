@@ -1,0 +1,15 @@
+@define-color bar-bg rgba(17, 17, 27, .95);
+@define-color pill-bg rgb(40, 41, 56);
+@define-color border-col rgba(95, 98, 124, 1);
+
+@define-color main-bg #11111b;
+@define-color main-fg #cdd6f4;
+
+@define-color inact-bg #585b70;
+@define-color inact-fg #cdd6f4;
+
+@define-color act-bg #b4befe;
+@define-color act-fg #313244;
+
+@define-color hvr-bg #f5c2e7;
+@define-color hvr-fg #313244;
