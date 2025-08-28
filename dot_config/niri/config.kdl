@@ -42,7 +42,7 @@ input {
         // off
         // natural-scroll
         // accel-speed 0.2
-         accel-profile "flat"
+        accel-profile "flat"
         // scroll-method "no-scroll"
     }
 
@@ -286,13 +286,23 @@ layout {
 // spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 spawn-at-startup "xwayland-satellite"
+// Prevents conflict with quickshell
 
-spawn-at-startup "qs" "-c" "dms"
+spawn-at-startup "qs"
 spawn-at-startup "niriusd"
 
 layer-rule {
-    match namespace="^wallpaper$"
+    match namespace="^swww-daemon$"
 
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^quickshell-wallpaper$"
+}
+
+layer-rule {
+    match namespace="^quickshell-overview$"
     place-within-backdrop true
 }
 
@@ -309,7 +319,7 @@ environment {
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     GDK_BACKEND "wayland,x11,*"
     GDK_SCALE "1"
-    QT_QPA_PLATFORMTHEME "qt5ct"
+    QT_QPA_PLATFORMTHEME "qt6ct"
     QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
     _JAVA_AWT_WM_NONREPARENTING "1"
@@ -353,27 +363,27 @@ animations {
       curve "linear"
       custom-shader r"
 
-    vec4 fall_and_rotate(vec3 coords_geo, vec3 size_geo) {
-    float progress = niri_clamped_progress * niri_clamped_progress;
-    vec2 coords = (coords_geo.xy - vec2(0.5, 1.0)) * size_geo.xy;
-    coords.y -= progress * 1440.0;
-    float random = (niri_random_seed - 0.5) / 2.0;
-    random = sign(random) - random;
-    float max_angle = 0.5 * random;
-    float angle = progress * max_angle;
-    mat2 rotate = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
-    coords = rotate * coords;
-    coords_geo = vec3(coords / size_geo.xy + vec2(0.5, 1.0), 1.0);
-    vec3 coords_tex = niri_geo_to_tex * coords_geo;
-    vec4 color = texture2D(niri_tex, coords_tex.st);
-
-    return color;
-  }
-
-    vec4 close_color(vec3 coords_geo, vec3 size_geo) {
-    return fall_and_rotate(coords_geo, size_geo);
-     }
-    "
+      vec4 fall_and_rotate(vec3 coords_geo, vec3 size_geo) {
+      float progress = niri_clamped_progress * niri_clamped_progress;
+      vec2 coords = (coords_geo.xy - vec2(0.5, 1.0)) * size_geo.xy;
+      coords.y -= progress * 1440.0;
+      float random = (niri_random_seed - 0.5) / 2.0;
+      random = sign(random) - random;
+      float max_angle = 0.5 * random;
+      float angle = progress * max_angle;
+      mat2 rotate = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
+      coords = rotate * coords;
+      coords_geo = vec3(coords / size_geo.xy + vec2(0.5, 1.0), 1.0);
+      vec3 coords_tex = niri_geo_to_tex * coords_geo;
+      vec4 color = texture2D(niri_tex, coords_tex.st);
+  
+      return color;
+    }
+  
+      vec4 close_color(vec3 coords_geo, vec3 size_geo) {
+      return fall_and_rotate(coords_geo, size_geo);
+       }
+      "
    }
     horizontal-view-movement {
         spring damping-ratio=1.0 stiffness=300 epsilon=0.0001
@@ -491,7 +501,7 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 20
     clip-to-geometry true
 }
 
@@ -512,14 +522,12 @@ binds {
 
     Mod+T repeat=false hotkey-overlay-title="Open a Terminal" { spawn "kitty" "-1"; }
     Mod+Shift+T repeat=false { spawn "kitty" "--class" "dropdown" "-1"; }
-    Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "qs" "-c" "dms" "ipc" "call" "spotlight" "toggle"; }
-    Mod+Alt+C repeat=false { spawn "qs" "-c" "dms" "ipc" "call" "clipboard" "toggle"; }
+    Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "qs" "ipc" "call" "appLauncher" "toggle"; }
     // Mod+B repeat=false { spawn "zen-browser"; }
     Mod+E repeat=false { spawn "dolphin"; } 
     Mod+Alt+L repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
-    Ctrl+Alt+Escape repeat=false { spawn "qs" "-c" "dms" "ipc" "call" "settings" "toggle"; }
-    Ctrl+Shift+Escape repeat=false { spawn "qs" "-c" "dms" "ipc" "call" "processlist" "toggle"; }
-    Mod+Alt+M repeat=false { spawn "qs" "-c" "dms" "ipc" "call" "theme" "toggle"; }
+    Ctrl+Shift+Escape repeat=false hotkey-overlay-title="Open Settings" { spawn "qs" "ipc" "call" "settings" "toggle"; }
+    Mod+Alt+C repeat=false { spawn "qs" "ipc" "call" "launcher" "clipboard"; }
     // Mod+Alt+W repeat=false { spawn "waypaper"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
@@ -779,7 +787,6 @@ binds {
 
     // New experimental binds for certain apps
     Mod+B repeat=false { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
-    Mod+Alt+W repeat=false { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
   }
 
   hotkey-overlay {
@@ -793,7 +800,7 @@ binds {
   overview {
     backdrop-color "#282828"
     workspace-shadow {
-       // off
+        off
     }
   }
 
