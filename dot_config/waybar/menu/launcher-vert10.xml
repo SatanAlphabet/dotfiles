@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="GtkMenu" id="menu">
+
+        <child>
+            <object class="GtkMenuItem" id="powermenu">
+                <property name="label">Power Menu</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="cliphist">
+                <property name="label">Clipboard Manager</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="emoji">
+                <property name="label">Emoji Picker</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="glyph">
+                <property name="label">Glyph Picker</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="wallpaper">
+                <property name="label">Change Wallpaper</property>
+            </object>
+        </child>
+    </object>
+</interface>

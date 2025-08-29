@@ -1,0 +1,170 @@
+#pulseaudio,
+#custom-sysupdate,
+#custom-swaync,
+#custom-drawer-arrow-up,
+#mpris,
+#bluetooth,
+#battery {
+  font-size: 16px;
+}
+
+window#waybar #custom-drawer-arrow-up {
+  font-weight: bolder;
+  padding-top: 0.5em;
+}
+
+window#waybar #custom-seperator {
+  font-size: 13px;
+  margin: -0.3em 0;
+  opacity: 0.3;
+}
+
+window#waybar #custom-seperator.bottom {
+}
+
+window#waybar #custom-seperator.top {
+}
+
+/*
+#custom-swaync {
+  color: @act-bg;
+  transition: all 0.5s;
+}
+
+#custom-swaync.dnd-none,
+#custom-swaync.none {
+  color: @main-fg;
+  transition: all 0.5s;
+}
+*/
+
+window#waybar #language {
+  font-size: 13px;
+  margin: 0 0.6em;
+  border-radius: 5pt;
+  font-weight: 500;
+  background: transparent;
+  margin-top: 0.4em;
+}
+
+window#waybar {
+  box-shadow: none;
+  text-shadow: none;
+  background: @bar-bg;
+  color: @main-fg;
+  border-right: 0.5pt solid @border-col;
+}
+
+window#waybar box.module,
+window#waybar label.module {
+  background: @pill-dark-bg;
+  margin: 0em 0.5em;
+  padding: 0.2em 0;
+  border-radius: 5pt;
+}
+
+window#waybar .modules-left {
+  margin-top: 1.5em;
+}
+
+window#waybar .modules-right {
+  margin-bottom: 1.5em;
+}
+
+window#waybar #custom-launcher {
+  font-size: 20px;
+  margin: 0 0.3em;
+  background: transparent;
+  color: @main-fg-alt;
+}
+
+window#waybar #custom-glyph-picker,
+window#waybar #custom-emoji-picker,
+window#waybar #custom-browser,
+window#waybar #custom-wallpaper,
+window#waybar #custom-clipboard {
+  font-size: 13px;
+}
+
+window#waybar #custom-picker,
+window#waybar #custom-powermenu {
+  font-size: 12px;
+}
+
+window#waybar #battery {
+}
+
+window#waybar #tray {
+  padding: 0.7em 0;
+  margin: 0em 0.8em;
+}
+
+window#waybar #backlight {
+  font-size: 16px;
+}
+
+window#waybar #workspaces {
+  padding: 0.0em 0;
+  margin: 0 0.8em;
+  border-radius: 5pt;
+}
+
+#workspaces button {
+  text-shadow: none;
+  box-shadow: none;
+  min-width: 1px;
+  min-height: 1px;
+  color: @main-fg;
+  background: transparent;
+  border-radius: 15pt;
+  padding: 1px 0;
+  margin: 6px 4px;
+  transition: all 0.3s;
+  opacity: 0.8;
+}
+
+#workspaces button.active {
+  background: @main-fg-alt;
+  color: @main-bg;
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  color: @hvr-bg;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+window#waybar #clock {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0em 0.5em;
+  padding: 0.4em 0;
+  border-radius: 5pt;
+  color: @main-fg-alt;
+}
+
+window#waybar #pill {
+  background: @pill-dark-bg;
+  border-right: 1.0pt solid @border-col;
+  padding: 0 0.1em;
+  margin: 0;
+}
+
+tooltip {
+  /* all: unset; */
+  background: @main-bg;
+  color: @main-fg;
+  border-width: 0.3pt;
+  border-style: solid;
+  border-color: @main-fg;
+  border-radius: 4pt;
+}
+
+window#waybar #custom-triangle-bottom,
+window#waybar #custom-triangle-top {
+  font-size: 45pt;
+  margin: 0;
+  padding: 0;
+  color: @pill-dark-bg;
+}

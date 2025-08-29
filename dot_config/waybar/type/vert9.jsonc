@@ -12,7 +12,7 @@
 	"modules-left": ["group/pill#top1", "custom/triangle-top"],
 	"group/pill#top1": {
 		"orientation": "inherit",
-		"modules": ["custom/launcher", "custom/seperator", "custom/powermenu", "custom/wallpaper", "custom/clipboard", "custom/browser" ]
+		"modules": ["custom/launcher", "custom/seperator", "custom/powermenu", "custom/wallpaper", "custom/browser", "custom/clipboard" ]
 	},
   "group/pill#top2": {
     "orientation": "inherit",

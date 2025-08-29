@@ -53,3 +53,5 @@ export BAT_THEME='ansi'
 
 unset -f command_not_found_handler # Uncomment to prevent searching for commands not found in package manager
 
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
