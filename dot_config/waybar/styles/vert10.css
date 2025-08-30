@@ -16,7 +16,7 @@ window#waybar #custom-drawer-arrow-up {
 window#waybar #custom-seperator {
   font-size: 13px;
   margin: -0.3em 0;
-  opacity: 0.3;
+  opacity: 0.35;
 }
 
 window#waybar #custom-seperator.bottom {
@@ -72,7 +72,7 @@ window#waybar .modules-right {
 }
 
 window#waybar #custom-launcher {
-  font-size: 20px;
+  font-size: 24px;
   margin: 0 0.3em;
   background: transparent;
   color: @main-fg-alt;
@@ -116,11 +116,11 @@ window#waybar #workspaces {
   min-height: 1px;
   color: @main-fg;
   background: transparent;
-  border-radius: 15pt;
+  border-radius: 13pt;
   padding: 1px 0;
   margin: 6px 4px;
   transition: all 0.3s;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 #workspaces button.active {

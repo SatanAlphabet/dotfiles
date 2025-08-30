@@ -53,7 +53,7 @@
 	"niri/workspaces": {
 		"format": "{}",
 		"format-icons": {
-			"active": "",
+			"default": "",
       // Named workspaces icon
       "browser": "",
       "chat": ""
