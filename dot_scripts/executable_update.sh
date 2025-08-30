@@ -2,8 +2,23 @@
 
 command="
         fastfetch --logo-type kitty
+        echo '''
+
+        Beginning system update...
+
+        '''
         paru -Syu
+        echo '''
+
+        Checking for flatpak updates...
+        
+        '''
         flatpak update
+        echo '''
+
+        Running post-installation checks...
+
+        '''
         sudo checkservices
         read -n 1 -p 'Press any key to exit...'
         "
