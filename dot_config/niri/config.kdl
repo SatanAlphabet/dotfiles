@@ -263,8 +263,8 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-         left 32
-         right 32
+         left 0
+         right 0
         // top 64
         // bottom 64
     }
@@ -313,6 +313,7 @@ environment {
     GDK_SCALE "1"
     QT_QPA_PLATFORMTHEME "qt6ct"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
+    _JAVA_AWT_WM_NONREPARENTING "1"
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.

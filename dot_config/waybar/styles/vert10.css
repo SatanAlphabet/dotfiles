@@ -16,7 +16,7 @@ window#waybar #custom-drawer-arrow-up {
 window#waybar #custom-seperator {
   font-size: 13px;
   margin: -0.3em 0;
-  opacity: 0.35;
+  opacity: 0.4;
 }
 
 window#waybar #custom-seperator.bottom {
@@ -39,10 +39,10 @@ window#waybar #custom-seperator.top {
 */
 
 window#waybar #language {
-  font-size: 13px;
+  font-size: 14px;
   margin: 0 0.6em;
   border-radius: 5pt;
-  font-weight: 500;
+  font-weight: 800;
   background: transparent;
   margin-top: 0.4em;
 }
