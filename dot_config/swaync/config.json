@@ -17,23 +17,23 @@
 			"actions": [
 				{
 					"label": "⏻",
-					"command": "~/.config/niri/scripts/logoutlaunch.sh"
+					"command": "~/.scripts/logoutlaunch.sh"
 				},
 				{
 					"label": "󰌧",
-					"command": "~/.config/niri/scripts/rofilaunch.sh"
+					"command": "~/.scripts/rofilaunch.sh"
 				},
 				{
 					"label": "",
-					"command": "~/.config/niri/scripts/cliphist-niri.sh"
+					"command": "~/.scripts/cliphist-niri.sh"
 				},
 				{
 					"label": "󰱱",
-					"command": "~/.config/niri/scripts/emoji-picker.sh"
+					"command": "~/.scripts/emoji-picker.sh"
 				},
 				{
 					"label": "󱔁",
-					"command": "~/.config/niri/scripts/glyph-picker.sh"
+					"command": "~/.scripts/glyph-picker.sh"
 				},
 				{
 					"label": "󰸉",

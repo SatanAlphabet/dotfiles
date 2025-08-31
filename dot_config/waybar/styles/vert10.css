@@ -72,7 +72,7 @@ window#waybar .modules-right {
 }
 
 window#waybar #custom-launcher {
-  font-size: 24px;
+  font-size: 20px;
   margin: 0 0.3em;
   background: transparent;
   color: @main-fg-alt;

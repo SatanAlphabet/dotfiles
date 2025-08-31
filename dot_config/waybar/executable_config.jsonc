@@ -1,50 +1,54 @@
 {
 	"layer": "top",
 	"output": ["*"],
-	"position": "top",
+	"position": "left",
 	"spacing": 2,
+  "width": 42,
 	// "mode": "dock",
 	"exclusive": true,
 	"passthrough": false,
 	"gtk-layer-shell": true,
 	"reload_style_on_change": true,
 
-	"modules-left": ["custom/launcher", "niri/window"],
-	"modules-center": ["custom/sysupdate", "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock", "custom/swaync", "mpris" ],
+	"modules-left": ["custom/launcher"],
+	"group/pill#top1": {
+		"orientation": "inherit",
+		"modules": ["custom/launcher", "custom/seperator", "custom/powermenu", "custom/wallpaper", "custom/clipboard", "custom/browser" ]
+	},
+  "group/pill#top2": {
+    "orientation": "inherit",
+    "modules": ["niri/workspaces", "custom/triangle-top"]
+  },
+	"modules-center": ["custom/sysupdate", "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock","mpris", "custom/swaync" ],
 	"modules-right": [
-    "privacy",
     "tray",
     "niri/language"
 	],
+  "group/tray-launcher": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-left-to-right": true,
+    },
+    "modules": ["custom/launcher", "custom/powermenu", "custom/wallpaper", "custom/clipboard"]
+  },
+	"custom/drawer-arrow-up": {
+		"format": "\ueab7",
+		"tooltip": false
+	},
   "wlr/taskbar": {
     "icon-size": 16
   },
-  "privacy": {
-    "rotate": 0,
-    "transition-duration": 250,
-    "icon-size": 13,
-    "icon-spacing": 8,
-    "modules": [
-      {
-        "type": "screenshare",
-        "tooltip": true
-      },
-      {
-        "type": "audio-in",
-        "tooltip": true
-      }
-    ],
-    "ignore": [
-		  {
-			  "type": "audio-in",
-			  "name": "cava"
-		  }
-    ]
+  "custom/picker": {
+    "format":"",
+    "on-click": "~/.scripts/colorpick.sh",
+    "tooltip-format": "Pick color"
   },
 	"niri/window": {
+		"rotate": 90,
     "max-length": 50,
+    "icon": true,
     "icon-size": 18,
-    "transition-duration": 100
+    "format": ""
 	},
 	"niri/workspaces": {
 		"format": "{}",
@@ -63,7 +67,27 @@
 		"on-click": "niri msg action switch-layout next"
 	},
   "custom/seperator": {
-    "format": "|",
+    "format": "",
+    "tooltip": false
+  },
+  "custom/triangle-bottom#bright": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/triangle-bottom": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/triangle-top": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/seperator#bottom": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/seperator#top": {
+    "format": "",
     "tooltip": false
   },
 	"custom/launcher": {
@@ -117,7 +141,6 @@
     "tooltip-format": "{player}: PLAYING [{position}/{length}]\n{title} - {artist}",
     "tooltip-format-paused": "{player}: PAUSED [{position}/{length}]\n{title} - {artist}",
     "tooltip-format-stopped": "{player}: STOPPED",
-    "max-length": 50,
 		"player-icons": {
 			"default": "",
 		},
@@ -136,8 +159,8 @@
 		"interval": 1
 	},
 	"clock": {
-		"format": "{:%R}",
-    "format-alt": "{:%b %d, %I:%M %p}",
+		"format": "{:%H\n%M}",
+    "format-alt": "{:%H\n%M\n\n%m\n%d}",
 		"rotate": 0,
 		"tooltip-format": "<span>{calendar}</span>",
 		"calendar": {

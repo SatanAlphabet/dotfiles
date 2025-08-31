@@ -286,6 +286,7 @@ layout {
 
 spawn-at-startup "systemctl" "--user" "start" "waybar-niri.service"
 spawn-at-startup "systemctl" "--user" "start" "swaync-niri.service"
+spawn-at-startup "systemctl" "--user" "start" "overview-blur.service"
 spawn-at-startup "waypaper" "--restore" "--backend" "swww"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "niriusd"
@@ -803,3 +804,8 @@ binds {
     // hide-after-inactive-ms 5000
     // hide-when-typing
   }
+
+  workspace "one"
+  workspace "two"
+  workspace "three"
+  workspace "four"

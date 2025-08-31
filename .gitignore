@@ -1,0 +1,2 @@
+dot_config/systemd/user/niri.service.wants/
+dot_config/systemd/user/default.target.wants/
