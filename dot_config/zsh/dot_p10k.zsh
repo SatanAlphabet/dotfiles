@@ -375,18 +375,18 @@
 
     if (( $1 )); then
       # Styling for up-to-date Git status.
-      local       meta='%f'   # default foreground
-      local      clean='%2F'  # green foreground
-      local   modified='%3F'  # yellow foreground
-      local  untracked='%4F'  # blue foreground
-      local conflicted='%1F'  # red foreground
+      local       meta='%0F'   # default foreground
+      local      clean='%0F'  # green foreground
+      local   modified='%0F'  # yellow foreground
+      local  untracked='%0F'  # blue foreground
+      local conflicted='%0F'  # red foreground
     else
       # Styling for incomplete and stale Git status.
-      local       meta='%f'  # default foreground
-      local      clean='%f'  # default foreground
-      local   modified='%f'  # default foreground
-      local  untracked='%f'  # default foreground
-      local conflicted='%f'  # default foreground
+      local       meta='%0F'  # default foreground
+      local      clean='%0F'  # default foreground
+      local   modified='%0F'  # default foreground
+      local  untracked='%0F'  # default foreground
+      local conflicted='%0F'  # default foreground
     fi
 
     local res
@@ -506,9 +506,9 @@
 
   # These settings are used for repositories other than Git or when gitstatusd fails and
   # Powerlevel10k has to fall back to using vcs_info.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=2
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=2
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=3
+  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=0
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=0
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=0
 
   ##########################[ status: exit code of the last command ]###########################
   # Enable OK_PIPE, ERROR_PIPE and ERROR_SIGNAL status states to allow us to enable, disable and
@@ -1637,7 +1637,7 @@
 
   ####################################[ time: current time ]####################################
   # Current time color.
-  typeset -g POWERLEVEL9K_TIME_FOREGROUND=6
+  typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'
   # If set to true, time will update when you hit enter. This way prompts for the past
