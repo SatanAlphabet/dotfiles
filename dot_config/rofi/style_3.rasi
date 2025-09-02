@@ -19,6 +19,8 @@ configuration {
 	window-format:              "{w}{t}";
 }
 
+@import                          "~/.config/rofi/colors.rasi"
+
 /*****----- Global Properties -----*****/
 @import                          "~/.config/rofi/colors.rasi"
 
@@ -69,16 +71,7 @@ window {
     border-radius:               0px;
     border-color:                @border-colour;
     cursor:                      "default";
-    /* Backgroud Colors */
-    background-color:            @background-colour;
-    /* Backgroud Image */
-    //background-image:          url("/path/to/image.png", none);
-    /* Simple Linear Gradient */
-    //background-image:          linear-gradient(red, orange, pink, purple);
-    /* Directional Linear Gradient */
-    //background-image:          linear-gradient(to bottom, pink, yellow, magenta);
-    /* Angle Linear Gradient */
-    //background-image:          linear-gradient(45, cyan, purple, indigo);
+    background-color:            @bg;
 }
 
 /*****----- Main Box -----*****/
@@ -117,8 +110,9 @@ textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    padding:                     0px 12px;
-    background-color:            inherit;
+    padding:                     12px 15px;
+    border-radius:               0px;
+    background-color:            @bg-alt;
     text-color:                  inherit;
 }
 entry {
