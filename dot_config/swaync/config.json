@@ -28,12 +28,12 @@
 					"command": "~/.scripts/cliphist-niri.sh"
 				},
 				{
-					"label": "󰱱",
-					"command": "~/.scripts/emoji-picker.sh"
+					"label": "",
+					"command": " kitty -1 nmtui"
 				},
 				{
-					"label": "󱔁",
-					"command": "~/.scripts/glyph-picker.sh"
+					"label": "",
+					"command": "blueman-manager"
 				},
 				{
 					"label": "󰸉",

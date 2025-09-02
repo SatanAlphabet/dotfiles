@@ -70,26 +70,6 @@
     "format": "",
     "tooltip": false
   },
-  "custom/triangle-bottom#bright": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/triangle-bottom": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/triangle-top": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/seperator#bottom": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/seperator#top": {
-    "format": "",
-    "tooltip": false
-  },
 	"custom/launcher": {
 		"format": "",
     "on-click": "~/.scripts/rofilaunch.sh",

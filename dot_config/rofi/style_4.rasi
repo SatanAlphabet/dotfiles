@@ -20,7 +20,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "~/.config/niri/rofi/colors.rasi"
+@import                          "~/.config/rofi/colors.rasi"
 
 * {
     font:                        "JetBrains Mono Nerd Font Propo 10";

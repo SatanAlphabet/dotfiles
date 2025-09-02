@@ -288,7 +288,6 @@ spawn-at-startup "systemctl" "--user" "start" "waybar-niri.service"
 spawn-at-startup "systemctl" "--user" "start" "swaync-niri.service"
 spawn-at-startup "systemctl" "--user" "start" "overview-blur.service"
 spawn-at-startup "waypaper" "--restore" "--backend" "swww"
-spawn-at-startup "xwayland-satellite"
 spawn-at-startup "niriusd"
 
 layer-rule {
@@ -304,7 +303,6 @@ layer-rule {
 }
 
 environment {
-    DISPLAY ":1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     QT_QPA_PLATFORM "wayland;xcb"
     MOZ_ENABLE_WAYLAND "1"
