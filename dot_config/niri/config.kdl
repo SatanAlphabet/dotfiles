@@ -285,7 +285,6 @@ layout {
 // spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 // spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
-spawn-at-startup "xwayland-satellite"
 
 spawn-at-startup "qs" "-c" "dms"
 spawn-at-startup "niriusd"
