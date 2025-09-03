@@ -15,13 +15,13 @@
 		"orientation": "inherit",
 		"modules": ["custom/launcher", "custom/seperator", "custom/powermenu", "custom/wallpaper", "custom/clipboard", "custom/browser" ]
 	},
-  "group/pill#top2": {
+  "group/pill#bottom": {
     "orientation": "inherit",
-    "modules": ["niri/workspaces", "custom/triangle-top"]
+    "modules": ["tray", "network", "bluetooth"]
   },
 	"modules-center": ["custom/sysupdate", "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock","mpris", "custom/swaync" ],
 	"modules-right": [
-    "tray",
+    "group/pill#bottom",
     "niri/language"
 	],
   "group/tray-launcher": {
@@ -42,6 +42,30 @@
     "format":"",
     "on-click": "~/.scripts/colorpick.sh",
     "tooltip-format": "Pick color"
+  },
+  "network": {
+    "tooltip": true,
+    "format-wifi": "󰤨",
+    "rotate": 0,
+    "on-click": "kitty -1 nmtui",
+    "format-ethernet": "\udb80\ude00",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "\udb80\ude00",
+    "format-disconnected": "󰤮",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 2
+  },
+  "bluetooth": {
+    "format": "󰂲",
+    "rotate": 0,
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-connected": "󰂯",
+    "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
+    "on-click": "blueman-manager"
   },
 	"niri/window": {
 		"rotate": 90,
@@ -256,18 +280,4 @@
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
 		"on-click": "~/.scripts/update.sh"
 	}, 
-  "bluetooth": {
-    "format": "",
-    "format-disabled": "",
-    "format-connected": "",
-    "format-connected-battery": "{icon}",
-    // "format-connected-battery": "{icon} {device_alias}-{device_battery_percentage}%",
-    "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
-    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device If this config option is not defined or none of the devices in the list are connected, it will fall back to showing the last connected device.
-    "tooltip-format": "{controller_alias}\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
-    "on-click": "blueman-manager"
-  }
 }
