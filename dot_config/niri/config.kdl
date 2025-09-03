@@ -309,7 +309,8 @@ environment {
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     GDK_BACKEND "wayland,x11,*"
     GDK_SCALE "1"
-    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORMTHEME "qt5ct"
+    QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
     _JAVA_AWT_WM_NONREPARENTING "1"
 }
@@ -339,9 +340,9 @@ animations {
     // Slow down all animations by this factor. Values below 2 speed them up instead.
     // slowdown 3.0
     workspace-switch {
-        spring damping-ratio=1.0 stiffness=300 epsilon=0.0001
-        // duration-ms 600
-        // curve "ease-out-expo"
+         spring damping-ratio=1.0 stiffness=300 epsilon=0.0001
+         // duration-ms 500
+         // curve "cubic-bezier" 0.05 0.9 0.1 1.0
     }
     window-open {
         duration-ms 500

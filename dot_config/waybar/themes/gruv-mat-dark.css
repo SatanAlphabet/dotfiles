@@ -1,4 +1,4 @@
-@define-color bar-bg rgba(20, 22, 24, 1.0);
+@define-color bar-bg rgba(20, 22, 24, 0.99);
 @define-color border-col #504945;
 
 @define-color main-bg #141617;

@@ -1,12 +1,17 @@
-@define-color bar-bg rgba(220, 224, 232, 1);
+@define-color bar-bg rgba(220, 224, 232, .99);
 @define-color pill-bg rgb(239, 241, 245);
 @define-color border-col rgb(156, 160, 176);
 
 @define-color main-bg #dce0e8;
 @define-color main-fg #4c4f69;
+@define-color main-fg-alt #4c4f69;
 
 @define-color act-bg #7287fd;
 @define-color act-fg #acb0be;
 
 @define-color hvr-bg #ea76cb;
 @define-color hvr-fg #ccd0da;
+
+@define-color pill-dark-bg rgb(239, 241, 245);
+@define-color pill-bg rgb(239, 241, 245);
+@define-color pill-bright-bg #4e4743;

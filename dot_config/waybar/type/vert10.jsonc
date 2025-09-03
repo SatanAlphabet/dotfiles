@@ -220,6 +220,8 @@
 		"rotate": 0,
 		"format-muted": "",
 		"tooltip-format": "{icon} {desc}: {volume}%",
+    "on-scroll-up": "~/.scripts/volumecontrol.sh + 1",
+    "on-scroll-down": "~/.scripts/volumecontrol.sh - 1",
 		"on-click": "pavucontrol -t 3",
 		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"scroll-step": 1,

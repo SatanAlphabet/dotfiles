@@ -18,9 +18,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
 #  Plugins 
 # manually add your oh-my-zsh plugins here
-plugins=(
-    "sudo"
-)
+plugins=(sudo)
 
 #   Overrides 
 # unset ZSH_NO_PLUGINS # Set to 1 to disable loading of oh-my-zsh plugins, useful if you want to use your zsh plugins system 
