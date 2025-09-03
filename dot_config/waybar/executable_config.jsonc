@@ -17,24 +17,13 @@
 	},
   "group/pill#bottom": {
     "orientation": "inherit",
-    "modules": ["tray", "network", "bluetooth"]
+    "modules": ["tray", "bluetooth", "network"]
   },
 	"modules-center": ["custom/sysupdate", "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock","mpris", "custom/swaync" ],
 	"modules-right": [
     "group/pill#bottom",
     "niri/language"
 	],
-  "group/tray-launcher": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-left-to-right": true,
-    },
-    "modules": ["custom/launcher", "custom/powermenu", "custom/wallpaper", "custom/clipboard"]
-  },
-	"custom/drawer-arrow-up": {
-		"format": "\ueab7",
-		"tooltip": false
-	},
   "wlr/taskbar": {
     "icon-size": 16
   },
