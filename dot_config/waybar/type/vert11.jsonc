@@ -1,0 +1,282 @@
+{
+	"layer": "top",
+	"output": ["*"],
+	"position": "left",
+	"spacing": 2,
+  "width": 42,
+	// "mode": "dock",
+	"exclusive": true,
+	"passthrough": false,
+	"gtk-layer-shell": true,
+	"reload_style_on_change": true,
+
+	"modules-left": ["custom/launcher"],
+	"group/pill#top1": {
+		"orientation": "inherit",
+		"modules": ["custom/launcher", "custom/seperator", "custom/powermenu", "custom/wallpaper", "custom/clipboard", "custom/browser" ]
+	},
+  "group/pill#bottom": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    },
+    "modules": ["custom/drawer-arrow-down", "clock", "mpris", "custom/swaync"]
+  },
+  "group/pill#top": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-left-to-right": true,
+      "click-to-reveal": true
+    },
+    "modules": ["custom/drawer-arrow-up", "custom/sysupdate", "battery", "backlight", "pulseaudio"]
+  },
+	"modules-center": ["group/pill#top" , "custom/seperator", "niri/workspaces", "custom/seperator",  "group/pill#bottom"],
+	"modules-right": [
+    "tray",
+    "niri/language"
+	],
+	"custom/drawer-arrow-up": {
+		"format": "\ueab7",
+		"tooltip": false
+	},
+	"custom/drawer-arrow-down": {
+		"format": "\ueab4",
+		"tooltip": false
+	},
+  "wlr/taskbar": {
+    "icon-size": 16
+  },
+  "custom/picker": {
+    "format":"",
+    "on-click": "~/.scripts/colorpick.sh",
+    "tooltip-format": "Pick color"
+  },
+	"niri/window": {
+		"rotate": 90,
+    "max-length": 50,
+    "icon": true,
+    "icon-size": 18,
+    "format": ""
+	},
+	"niri/workspaces": {
+		"format": "{}",
+		"format-icons": {
+			"default": "",
+      // Named workspaces icon
+      "browser": "",
+      "chat": ""
+		},
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down"
+	},
+	"niri/language": {
+		"format-en": "US",
+		"format-th": "TH",
+		"on-click": "niri msg action switch-layout next"
+	},
+  "custom/seperator": {
+    "format": "",
+    "tooltip": false
+  },
+	"custom/launcher": {
+		"format": "",
+    "on-click": "~/.scripts/rofilaunch.sh",
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu/launcher-vert10.xml",
+    "menu-actions": {
+      "powermenu": "~/.scripts/logoutlaunch.sh",
+      "cliphist": "~/.scripts/cliphist-niri.sh",
+      "emoji": "~/.scripts/emoji-picker.sh",
+      "glyph": "~/.scripts/glyph-picker.sh",
+      "wallpaper": "waypaper"
+    },
+		"tooltip-format": "Application Launcher\nRight click for more actions"
+	},
+  "custom/powermenu": {
+    "format": "",
+    "on-click": "~/.scripts/logoutlaunch.sh",
+    "tooltip-format": "Power Menu"
+  },
+  "custom/clipboard": {
+    "format": "",
+    "on-click": "~/.scripts/cliphist-niri.sh -c",
+    "tooltip-format": "Manage clipboard"
+  },
+  "custom/glyph-picker": {
+    "format": "󱔁",
+    "on-click": "~/.scripts/glyph-picker.sh",
+    "tooltip-format": "Glyph picker"
+  },
+  "custom/emoji-picker": {
+    "format": "󰱱",
+    "on-click": "~/.scripts/emoji-picker.sh",
+    "tooltip-format": "Emoji picker"
+  },
+  "custom/wallpaper": {
+    "format":"󰸉",
+    "on-click": "waypaper",
+    "tooltip-format": "Change wallpaper"
+  },
+  "custom/browser": {
+    "format": "",
+    "on-click": "zen-browser",
+    "tooltip-format": "Open web browser"
+  },
+	"mpris": {
+		"format": "{player_icon}",
+		"rotate": 0,
+		"format-paused": "{status_icon}",
+    "tooltip-format": "{player}: PLAYING [{position}/{length}]\n{title} - {artist}",
+    "tooltip-format-paused": "{player}: PAUSED [{position}/{length}]\n{title} - {artist}",
+    "tooltip-format-stopped": "{player}: STOPPED",
+		"player-icons": {
+			"default": "",
+		},
+		"status-icons": {
+			"paused": ""
+		},
+		"max-length": 60,
+		"dynamic-len": -1,
+		"dynamic-importance-order": [
+			"title",
+			"position",
+			"length",
+			"artist",
+			"album"
+		],
+		"interval": 1
+	},
+	"clock": {
+		"format": "{:%H\n%M}",
+    "format-alt": "{:%H\n%M\n\n%m\n%d}",
+		"rotate": 0,
+		"tooltip-format": "<span>{calendar}</span>",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#d8a657'><b>{}</b></span>",
+				"weekdays": "<span color='#e78a4e'><b>{}</b></span>",
+				"today": "<span color='#ea6962'><b>{}</b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
+	"custom/swaync": {
+		"format": "{icon}",
+		"tooltip": true,
+		"format-icons": {
+			"notification": "",
+			"none": "",
+			"dnd-notification": "",
+			"dnd-none": "",
+			"inhibited-notification": "",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "",
+			"dnd-inhibited-none": "",
+			"email-notification": "",
+			"chat-notification": "󱋊",
+			"warning-notification": "󱨪",
+			"error-notification": "󱨪",
+			"network-notification": "󱂇",
+			"battery-notification": "󰁺",
+			"update-notification": "󰚰",
+			"music-notification": "󰝚",
+			"volume-notification": "󰕿"
+		},
+		// "interval": "once",
+		"return-type": "json",
+		"exec-if": "which swaync-client", // This is to check if swaync daemon is running
+		"exec": "pgrep -x swaync && swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+		// "on-click-right": "menu",
+	},
+	"tray": {
+		"icon-size": 15,
+		"spacing": 10
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 20
+		},
+		"design-capacity": true,
+		"format": "{icon}",
+		"format-charging": "",
+		"format-plugged": "",
+		"format-warning": "<span foreground='#d8a657'>{icon}</span>",
+		"format-critical": "<span foreground='#ea6962'>{icon}</span>",
+		"format-charging-warning": "<span foreground='#d8a657'></span>",
+		"format-charging-critical": "<span foreground='#ea6962'></span>",
+		"format-plugged-warning": "<span foreground='#d8a657'></span>",
+		"format-plugged-critical": "<span foreground='#ea6962'></span>",
+		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "{capacity}% \n({timeTo})"
+	},
+	"pulseaudio": {
+		"format": "{icon}",
+		"rotate": 0,
+		"format-muted": "",
+		"tooltip-format": "{icon} {desc}: {volume}%",
+    "on-scroll-up": "~/.scripts/volumecontrol.sh + 1",
+    "on-scroll-down": "~/.scripts/volumecontrol.sh - 1",
+		"on-click": "pavucontrol -t 3",
+		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"scroll-step": 1,
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		}
+	},
+	"backlight": {
+		"rotate": 0,
+		"format": "{icon}",
+		"format-icons": ["", "", "", "", "", "", "", "", ""],
+		"min-length": 1,
+		"tooltip": true,
+		"tooltip-format": "Backlight level: {icon} {percent}%",
+		"on-scroll-up": "~/.scripts/brightnesscontrol.sh + 1",
+		"on-scroll-down": "~/.scripts/brightnesscontrol.sh - 1"
+	},
+	"custom/sysupdate": {
+		"format": "{icon}",
+		"return-type": "json",
+		"format-icons": {
+			"has-updates": "󱧘",
+			"updated": ""
+		},
+		"exec-if": "which waybar-module-pacman-updates",
+		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
+		"on-click": "~/.scripts/update.sh"
+	}, 
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "",
+    "format-connected": "",
+    "format-connected-battery": "{icon}",
+    // "format-connected-battery": "{icon} {device_alias}-{device_battery_percentage}%",
+    "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
+    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device If this config option is not defined or none of the devices in the list are connected, it will fall back to showing the last connected device.
+    "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
+    "on-click": "blueman-manager"
+  }
+}

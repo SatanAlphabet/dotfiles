@@ -1,16 +1,29 @@
 #pulseaudio,
 #custom-sysupdate,
 #custom-swaync,
-#custom-drawer-arrow-up,
 #mpris,
 #bluetooth,
 #battery {
   font-size: 16px;
 }
 
+window#waybar #custom-drawer-arrow-down,
 window#waybar #custom-drawer-arrow-up {
+  font-size: 20px;
   font-weight: bolder;
-  padding-top: 0.5em;
+  background: transparent;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+window#waybar #custom-drawer-arrow-up {
+  margin-bottom: -0.3em;
+}
+
+window#waybar #custom-drawer-arrow-down {
+  margin-top: -0.3em;
 }
 
 window#waybar #custom-seperator {
@@ -153,10 +166,7 @@ window#waybar #clock {
 }
 
 window#waybar #pill {
-  background: @pill-dark-bg;
-  border-right: 1.0pt solid @border-col;
-  padding: 0 0.1em;
-  margin: 0;
+  background: transparent;
 }
 
 tooltip {
