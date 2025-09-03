@@ -97,6 +97,7 @@ window#waybar #battery {
 window#waybar #tray {
   padding: 0.7em 0;
   margin: 0em 0.8em;
+  background: transparent;
 }
 
 window#waybar #backlight {
@@ -144,8 +145,8 @@ window#waybar #workspaces {
 }
 
 window#waybar #clock {
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 300;
   margin: 0em 0.5em;
   padding: 0.4em 0;
   border-radius: 5pt;
