@@ -147,10 +147,11 @@ window#waybar #clock {
   color: @main-fg-alt;
 }
 
-window#waybar #pill {
+window#waybar #pill.bottom {
   background: @pill-dark-bg;
   margin: 0 0.8em;
   padding: 0.3em 0;
+  padding-bottom: 0;
   border-radius: 5pt;
 }
 
