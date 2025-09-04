@@ -112,16 +112,19 @@ get_emoji_selection() {
           -display-column-separator " " \
           -theme-str "listview {columns: 8;}" \
           -theme-str "entry { placeholder: \" 🔎 Emoji\";}" \
+          -theme-str "configuration {show-icons: false;}" \
           -theme "style_3"
         ;;
       1 | list)
         echo "${unique_entries}" | rofi -dmenu -multi-select -i \
           -theme-str "entry { placeholder: \" 🔎 Emoji\";}" \
+          -theme-str "configuration {show-icons: false;}" \
           -theme "style_3"
         ;;
       *)
         echo "${unique_entries}" | rofi -dmenu -multi-select -i \
           -theme-str "entry { placeholder: \" 🔎 Emoji\";}" \
+          -theme-str "configuration {show-icons: false;}" \
           -theme "${style_type:-style_3}"
         ;;
       esac

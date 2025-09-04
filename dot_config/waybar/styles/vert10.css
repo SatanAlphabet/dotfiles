@@ -3,6 +3,7 @@
 #custom-swaync,
 #custom-drawer-arrow-up,
 #mpris,
+#backlight,
 #bluetooth,
 #network,
 #battery {
@@ -69,7 +70,7 @@ window#waybar .modules-left {
 }
 
 window#waybar .modules-right {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 window#waybar #custom-launcher {
@@ -92,16 +93,10 @@ window#waybar #custom-powermenu {
   font-size: 12px;
 }
 
-window#waybar #battery {
-}
-
+window#waybar #privacy,
 window#waybar #tray {
-  padding: 0.7em 0;
+  padding: 0.5em 0;
   margin: 0em 0em;
-}
-
-window#waybar #backlight {
-  font-size: 16px;
 }
 
 window#waybar #workspaces {
@@ -145,9 +140,9 @@ window#waybar #workspaces {
 }
 
 window#waybar #clock {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
-  margin: 0em 0.5em;
+  margin: 0em 0.55em;
   padding: 0.4em 0;
   color: @main-fg-alt;
 }

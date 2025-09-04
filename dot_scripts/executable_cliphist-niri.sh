@@ -98,7 +98,7 @@ run_rofi() {
   fi
 
   rofi -dmenu \
-    -theme-str "entry { placeholder: \"${placeholder}\";}" \
+    -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}" \
     -theme "${cliphist_style}" \
     "$@"
 }

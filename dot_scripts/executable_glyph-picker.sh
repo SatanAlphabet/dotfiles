@@ -72,7 +72,7 @@ get_glyph_selection() {
     pkill rofi
   else
     echo "${unique_entries}" | rofi -dmenu -multi-select -i \
-      -theme-str "entry { placeholder: \" 🔣 Glyph\";} ${rofi_position}" \
+      -theme-str "entry { placeholder: \" 🔣 Glyph\";} configuration { show-icons: false; }" \
       -theme "${ROFI_GLYPH_STYLE:-style_3}"
   fi
 }

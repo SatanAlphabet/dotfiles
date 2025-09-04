@@ -17,7 +17,7 @@
 	},
   "group/pill#bottom": {
     "orientation": "inherit",
-    "modules": ["tray", "bluetooth", "network"]
+    "modules": ["privacy", "tray", "bluetooth", "network"]
   },
 	"modules-center": ["custom/sysupdate", "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock","mpris", "custom/swaync" ],
 	"modules-right": [
@@ -205,6 +205,34 @@
 		"escape": true
 		// "on-click-right": "menu",
 	},
+  "privacy": {
+  	"icon-spacing": 10,
+  	"icon-size": 13,
+  	"transition-duration": 250,
+  	"modules": [
+  		{
+  			"type": "screenshare",
+  			"tooltip": true,
+  			"tooltip-icon-size": 24
+  		},
+  		{
+  			"type": "audio-in",
+  			"tooltip": true,
+  			"tooltip-icon-size": 24
+  		}
+  	],
+  	"ignore-monitor": true,
+  	"ignore": [
+  		{
+  			"type": "audio-in",
+  			"name": "cava"
+  		},
+  		{
+  			"type": "screenshare",
+  			"name": "obs"
+  		}
+  	]
+  },
 	"tray": {
 		"icon-size": 15,
 		"spacing": 10

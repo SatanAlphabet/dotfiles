@@ -60,7 +60,12 @@ dcol_mode="${dcol_mode:-dark}"
 # shellcheck disable=SC1091
 [ -f "${cacheDir}/wall.dcol" ] && source "${cacheDir}/wall.dcol"
 
-export BtnCol="white"
+current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
+if [ $current_theme = "'prefer-dark'" ]; then
+  export BtnCol="white"
+else
+  export BtnCol="black"
+fi
 #// eval hypr border radius
 
 hypr_border="${hypr_border:-10}"
