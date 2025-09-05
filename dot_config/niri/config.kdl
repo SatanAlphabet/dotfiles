@@ -290,7 +290,7 @@ spawn-at-startup "qs" "-c" "dms"
 spawn-at-startup "niriusd"
 
 layer-rule {
-    match namespace="^wallpaper$"
+    match namespace="^quickshell$"
 
     place-within-backdrop true
 }
@@ -341,7 +341,7 @@ animations {
     workspace-switch {
          spring damping-ratio=1.0 stiffness=300 epsilon=0.0001
          // duration-ms 500
-         // curve "cubic-bezier" 0.05 0.9 0.1 1.0
+         // curve "cubic-bezier" 0.05 0.9 0.1 1.05
     }
     window-open {
         duration-ms 500
@@ -792,7 +792,7 @@ binds {
   overview {
     backdrop-color "#282828"
     workspace-shadow {
-       // off
+       off
     }
   }
 
