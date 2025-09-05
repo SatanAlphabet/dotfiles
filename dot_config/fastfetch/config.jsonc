@@ -1,26 +1,21 @@
-/*
-HyDE provides xdg/share/fastfetch/presets/hyde/*.config.jsonc files for different layouts. 
-You can also create your own config.jsonc file in the same directory to create a custom theme. 
-
-To test HyDE's fastfetch theme, run:
-fastfetch --config hyde/*.jsonc
-
-*/
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "~/.config/fastfetch/__ootsuki_nagisa_and_komiyama_mashiro_anemone_wa_netsu_wo_obiru_drawn_by_sakuragi_ren__0f57204e411470d299bbf0e67f54d47b-removebg-preview.png",
+    "source": "~/.config/fastfetch/logo.png",
     "height": 20,
     "padding": {
       "top": 1,
-      "left": 1
+      "left": 2
     }
   },
   "display": {
     "separator": " : "
   },
   "modules": [
-
+  /*  {
+      "type": "custom",
+      "format": "  アネモネは熱を帯びる"
+    }, */
     {
       "type": "custom",
       "format": "┌──────────────────────────────────────────┐"
