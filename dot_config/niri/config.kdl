@@ -521,12 +521,13 @@ binds {
 
     Mod+T repeat=false hotkey-overlay-title="Open a Terminal" { spawn "kitty" "-1"; }
     Mod+Shift+T repeat=false { spawn "kitty" "--class" "dropdown" "-1"; }
-    Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "qs" "ipc" "call" "appLauncher" "toggle"; }
+    Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "qs" "ipc" "call" "launcher" "toggle"; }
     // Mod+B repeat=false { spawn "zen-browser"; }
     Mod+E repeat=false { spawn "dolphin"; } 
     Mod+Alt+L repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
     Ctrl+Shift+Escape repeat=false hotkey-overlay-title="Open Settings" { spawn "qs" "ipc" "call" "settings" "toggle"; }
     Mod+Alt+C repeat=false { spawn "qs" "ipc" "call" "launcher" "clipboard"; }
+    Mod+Alt+M repeat=false { spawn "qs" "ipc" "call" "darkMode" "toggle"; }
     // Mod+Alt+W repeat=false { spawn "waypaper"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
