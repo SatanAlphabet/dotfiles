@@ -17,11 +17,10 @@
 	},
   "group/pill#bottom": {
     "orientation": "inherit",
-    "modules": ["privacy", "tray", "bluetooth", "network"]
+    "modules": ["custom/sysupdate", "privacy", "tray", "bluetooth", "network"]
   },
 	"modules-center": [ "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock", "custom/swaync" ],
 	"modules-right": [
-    "custom/sysupdate",
     "group/pill#bottom",
     "niri/language"
 	],
