@@ -523,6 +523,7 @@ binds {
     Mod+Alt+B repeat=false hotkey-overlay-title="Toggle waybar visibility" { spawn "pkill" "-SIGUSR1" "waybar"; }
     Mod+Alt+P repeat=false hotkey-overlay-title="Pick color" { spawn "~/.scripts/colorpick.sh";}
     Mod+Alt+M repeat=false { spawn "~/.scripts/themechange.sh"; }
+    Mod+P repeat=false { spawn "~/.scripts/mediacontrol.sh" ; }
     // Mod+Alt+W repeat=false { spawn "waypaper"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.

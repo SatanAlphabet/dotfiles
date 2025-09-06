@@ -148,21 +148,17 @@ window#waybar #clock {
   color: @main-fg-alt;
 }
 
-window#waybar #pill.bottom {
+window#waybar #pill {
   background: @pill-dark-bg;
-  margin: 0 0.8em;
-  padding: 0.3em 0;
-  padding-bottom: 0;
   border-radius: 5pt;
 }
 
-window#waybar #network,
-window#waybar #bluetooth {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 0;
-  margin-right: 0;
+window#waybar #pill.bottom {
+  margin: 0 0.8em;
+  padding: 0.3em 0;
+  padding-bottom: 0;
 }
+
 
 #network.disabled,
 #network.disconnected,
@@ -189,14 +185,11 @@ tooltip {
   border-radius: 4pt;
 }
 
-window#waybar #custom-triangle-bottom,
-window#waybar #custom-triangle-top {
-  font-size: 45pt;
-  margin: 0;
-  padding: 0;
-  color: @pill-dark-bg;
-}
-
+/* Adjust margin & padding for modules in bottom pills */
 window#waybar .modules-right label.module {
   background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }

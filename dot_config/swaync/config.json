@@ -3,6 +3,7 @@
 	"positionX": "left",
 	"positionY": "top",
 	"control-center-width": 400,
+  "control-center-margin-right": 3000,
 	"fit-to-screen": true,
 	"control-center-height": 600,
   "notification-window-width": 400,

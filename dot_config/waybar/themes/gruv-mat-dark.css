@@ -8,10 +8,10 @@
 @define-color inact-bg #5e5551;
 @define-color inact-fg #d4be98;
 
-@define-color act-bg #7daea3;
+@define-color act-bg @blue;
 @define-color act-fg #282828;
 
-@define-color hvr-bg #89b482;
+@define-color hvr-bg @cyan;
 @define-color hvr-fg #282828;
 
 @define-color pill-dark-bg #242424;

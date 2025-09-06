@@ -8,7 +8,7 @@
 }
 
 :root {
-  --mpris-album-art-icon-size: 48;
+  --mpris-album-art-icon-size: 72px;
 }
 
 trough highlight {
@@ -321,15 +321,11 @@ slider {
   border: 1px solid @border-col;
 }
 
-.widget-mpris-player {
+.widget-mpris {
   background-color: @main-bg-alt;
-  border-radius: 7px;
-}
-
-.widget-mpris .widget-mpris-player {
-  background-color: @main-bg-alt;
-  padding: 10px;
-  margin: 0px 0px 0px 0px;
+  padding: 12px 0;
+  margin: 1.5rem 0;
+  border-radius: 7pt;
   border: 1px solid @border-col;
 }
 
@@ -346,11 +342,15 @@ slider {
 }
 
 .widget-mpris .widget-mpris-title {
-  font-size: 1.05rem;
+  font-size: 1.0rem;
 }
 
 .widget-mpris .widget-mpris-subtitle {
   font-size: 0.8rem;
+}
+
+.widget-mpris > box > button {
+  color: transparent;
 }
 
 .widget-menubar>box>.menu-button-bar>button>label {

@@ -4,19 +4,19 @@ command="
         fastfetch --logo-type kitty
         echo '''
 
-        Beginning system update...
+ ===>  Beginning system update...
 
         '''
         paru -Syu
         echo '''
 
-        Checking for flatpak updates...
+ ===>  Checking for flatpak updates...
         
         '''
         flatpak update
         echo '''
 
-        Running post-installation checks...
+ ===>  Running post-installation checks...
 
         '''
         sudo checkservices
