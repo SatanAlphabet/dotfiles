@@ -247,12 +247,6 @@
 		"format": "{icon}",
 		"format-charging": "",
 		"format-plugged": "",
-		"format-warning": "<span foreground='#d8a657'>{icon}</span>",
-		"format-critical": "<span foreground='#ea6962'>{icon}</span>",
-		"format-charging-warning": "<span foreground='#d8a657'></span>",
-		"format-charging-critical": "<span foreground='#ea6962'></span>",
-		"format-plugged-warning": "<span foreground='#d8a657'></span>",
-		"format-plugged-critical": "<span foreground='#ea6962'></span>",
 		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "tooltip-format": "{capacity}% \n({timeTo})"
 	},
