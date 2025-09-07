@@ -8,7 +8,7 @@
 	"control-center-height": 600,
   "notification-window-width": 400,
 	"cssPriority": "user",
-	"widgets": ["title", "inhibitor", "dnd", "notifications", "buttons-grid"],
+	"widgets": ["title", "inhibitor", "dnd", "notifications"],
 	"widget-config": {
 		"volume": {
 			"label": " "

@@ -17,9 +17,9 @@
 	},
   "group/pill#bottom": {
     "orientation": "inherit",
-    "modules": ["custom/sysupdate", "privacy", "tray", "bluetooth", "network"]
+    "modules": ["custom/sysupdate", "tray", "bluetooth", "network"]
   },
-	"modules-center": [ "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock", "custom/swaync" ],
+	"modules-center": [ "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock", "custom/swaync", "mpris" ],
 	"modules-right": [
     "group/pill#bottom",
     "niri/language"
@@ -134,6 +134,7 @@
     "tooltip-format": "{player}: PLAYING [{position}/{length}]\n{title} - {artist}",
     "tooltip-format-paused": "{player}: PAUSED [{position}/{length}]\n{title} - {artist}",
     "tooltip-format-stopped": "{player}: STOPPED",
+    "on-click": "~/.scripts/mediacontrol.sh",
 		"player-icons": {
 			"default": "",
 		},

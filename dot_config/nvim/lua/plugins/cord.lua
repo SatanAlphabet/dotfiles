@@ -4,7 +4,7 @@ return {
   opts = {
     display = {
       theme = "catppuccin",
-      flavor = "accent",
+      flavor = "light",
     },
   },
 }

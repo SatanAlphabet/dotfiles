@@ -6,6 +6,7 @@ if [ $current_theme = "'prefer-dark'" ]; then
 
   gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Light'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+  kvantummanager --set 'GruvboxBlue'
 
   sed -i 's/dark/light/' ~/.config/waybar/style.css
   sed -i 's/dark/light/' ~/.config/rofi/colors.rasi
@@ -23,6 +24,7 @@ elif [ $current_theme = "'prefer-light'" ]; then
 
   gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Dark'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+  kvantummanager --set 'GruvboxBlueDark'
 
   sed -i 's/light/dark/' ~/.config/waybar/style.css
   sed -i 's/light/dark/' ~/.config/rofi/colors.rasi
