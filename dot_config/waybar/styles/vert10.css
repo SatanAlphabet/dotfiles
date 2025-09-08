@@ -116,7 +116,7 @@ window#waybar #workspaces {
   border-radius: 13pt;
   padding: 1px 0;
   margin: 5px 4px;
-  transition: all 0.3s;
+  transition: all 0.2s;
   opacity: 0.5;
 }
 

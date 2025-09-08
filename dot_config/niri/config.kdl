@@ -16,7 +16,8 @@ input {
              layout "us,th"
              options "grp:menu_toggle"
         }
-
+        repeat-delay 300
+        repeat-rate 15
         // Enable numlock on startup, omitting this setting disables it.
         numlock
     }
