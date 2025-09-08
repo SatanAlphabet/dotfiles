@@ -4,7 +4,6 @@ current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
 
 if [ $current_theme = "'prefer-dark'" ]; then
 
-  gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Light'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
   kvantummanager --set 'GruvboxBlue'
 
@@ -22,7 +21,6 @@ if [ $current_theme = "'prefer-dark'" ]; then
 
 elif [ $current_theme = "'prefer-light'" ]; then
 
-  gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Dark'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   kvantummanager --set 'GruvboxBlueDark'
 

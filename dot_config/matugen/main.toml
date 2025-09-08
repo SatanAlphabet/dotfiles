@@ -36,3 +36,16 @@ output_path = '~/.config/vesktop/themes/midnight-matugen.css'
 [templates.color-scheme]
 input_path = '~/.config/matugen/templates/Matugen.colors'
 output_path = '~/.local/share/color-schemes/Matugen.colors'
+
+[templates.kitty-dark]
+input_path = './templates/kitty-dark.conf'
+output_path = '~/.config/kitty/dark-theme.auto.conf'
+
+[templates.kitty-light]
+input_path = './templates/kitty-light.conf'
+output_path = '~/.config/kitty/light-theme.auto.conf'
+post_hook = 'pkill -SIGUSR1 kitty'
+
+[templates.btop]
+input_path = './templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'

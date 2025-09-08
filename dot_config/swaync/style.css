@@ -1,4 +1,4 @@
-@import "./colors/gruv-mat-dark.css";
+@import "./colors/matugen-dark.css";
 
 * {
   all: unset;
@@ -60,7 +60,7 @@ slider {
   box-shadow: inset 0 0 0 1.5px @border-col;
   border-radius: 8px;
   margin: 8px;
-  background-color: @main-bg-alt;
+  background-color: @main-bg;
   color: @main-fg;
   padding: 0;
 }
