@@ -1,6 +1,6 @@
 [config.wallpaper]
 command = "notify-send"
-arguments = ["-t", "1000", "-e", "Matugen ran successfully..."]
+arguments = ["-t", "1000", "-e", "Running matugen..."]
 set = false
 
 [templates.waybar-light]
@@ -27,3 +27,11 @@ output_path = '~/.config/rofi/colors/matugen-dark.rasi'
 [templates.rofi-light]
 input_path = './templates/rofi-light.css'
 output_path = '~/.config/rofi/colors/matugen-light.rasi'
+
+[templates.midnight-discord]
+input_path = './templates/midnight-discord.css'
+output_path = '~/.config/vesktop/themes/midnight-matugen.css'
+
+[templates.color-scheme]
+input_path = '~/.config/matugen/templates/Matugen.colors'
+output_path = '~/.local/share/color-schemes/Matugen.colors'
