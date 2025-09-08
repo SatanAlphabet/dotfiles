@@ -23,10 +23,10 @@
 	/* top left corner text */
 	--corner-text: 'Midnight';
 	/* color of status indicators and window controls */
-    --online-indicator: {{colors.inverse_primary.dark.hex}};     /* change to #23a55a for default green */
-	--dnd-indicator: {{colors.error.dark.hex}};                  /* change to #f13f43 for default red */
-	--idle-indicator: {{colors.tertiary_container.dark.hex}};    /* change to #f0b232 for default yellow */
-	--streaming-indicator: {{colors.on_primary.dark.hex}};       /* change to #593695 for default purple */
+    --online: {{colors.inverse_primary.dark.hex}};     /* change to #23a55a for default green */
+	--dnd: {{colors.error.dark.hex}};                  /* change to #f13f43 for default red */
+	--idle: {{colors.tertiary_container.dark.hex}};    /* change to #f0b232 for default yellow */
+	--streaming: {{colors.on_primary.dark.hex}};       /* change to #593695 for default purple */
 
 	/* accent colors */
     --accent-1: {{colors.tertiary.dark.hex}};            /* links */
@@ -34,6 +34,7 @@
 	--accent-3: {{colors.primary.dark.hex}};             /* accent buttons */
 	--accent-4: {{colors.surface_bright.dark.hex}};      /* accent buttons when hovered */
 	--accent-5: {{colors.primary_fixed_dim.dark.hex}};   /* accent buttons when clicked */
+	--accent-new: {{colors.error.dark.hex}};
 	--mention:  {{colors.surface.dark.hex}};             /* mentions & mention messages */
 	--mention-hover: {{colors.surface_bright.dark.hex}}; /* mentions & mention messages when hovered */
 
@@ -106,10 +107,10 @@
 	/* top left corner text */
 	--corner-text: 'Midnight';
 	/* color of status indicators and window controls */
-    --online-indicator: {{colors.inverse_primary.light.hex}};     /* change to #23a55a for default green */
-	--dnd-indicator: {{colors.error.light.hex}};                  /* change to #f13f43 for default red */
-	--idle-indicator: {{colors.tertiary_container.light.hex}};    /* change to #f0b232 for default yellow */
-	--streaming-indicator: {{colors.on_primary.light.hex}};       /* change to #593695 for default purple */
+    --online: {{colors.inverse_primary.light.hex}};     /* change to #23a55a for default green */
+	--dnd: {{colors.error.light.hex}};                  /* change to #f13f43 for default red */
+	--idle: {{colors.tertiary_container.light.hex}};    /* change to #f0b232 for default yellow */
+	--streaming: {{colors.on_primary.light.hex}};       /* change to #593695 for default purple */
 
 	/* accent colors */
     --accent-1: {{colors.tertiary.light.hex}};            /* links */
@@ -117,6 +118,7 @@
 	--accent-3: {{colors.primary.light.hex}};             /* accent buttons */
 	--accent-4: {{colors.surface_bright.light.hex}};      /* accent buttons when hovered */
 	--accent-5: {{colors.primary_fixed_dim.light.hex}};   /* accent buttons when clicked */
+	--accent-new: {{colors.error.light.hex}};
 	--mention:  {{colors.surface.light.hex}};             /* mentions & mention messages */
 	--mention-hover: {{colors.surface_bright.light.hex}}; /* mentions & mention messages when hovered */
 
