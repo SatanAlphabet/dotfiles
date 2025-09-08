@@ -10,6 +10,7 @@ output_path = '~/.config/waybar/themes/matugen-light.css'
 [templates.waybar-dark]
 input_path = './templates/waybar-dark.css'
 output_path = '~/.config/waybar/themes/matugen-dark.css'
+post_hook = 'sed -i s/i/i/ ~/.config/waybar/style.css'
 
 [templates.swaync-dark]
 input_path = './templates/swaync-dark.css'

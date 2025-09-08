@@ -3,7 +3,7 @@
 
 @define-color main-bg {{colors.surface.light.hex}};
 @define-color main-fg {{colors.on_surface.light.hex}};
-@define-color main-fg-alt {{colors.on_primary_container.light.hex}};
+@define-color main-fg-alt {{colors.primary.light.hex}};
 
 @define-color inact-bg {{colors.surface_container_highest.light.hex}};
 @define-color inact-fg {{colors.on_surface.light.hex}};
