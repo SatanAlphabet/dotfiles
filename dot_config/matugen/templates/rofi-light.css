@@ -1,0 +1,9 @@
+* {
+  background-alt:    {{colors.surface_bright.light.hex}};
+  background:        {{colors.surface.light.hex}};
+  foreground:        {{colors.on_surface.light.hex}};
+  selected:          {{colors.primary.light.hex}};
+  active:            {{colors.primary.light.hex}};
+  urgent:            {{colors.primary.light.hex}};
+  border:            {{colors.outline.light.hex}};
+}
