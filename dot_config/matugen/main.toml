@@ -22,10 +22,6 @@ output_path = '~/.config/rofi/colors/matugen.rasi'
 input_path = './templates/midnight-discord.css'
 output_path = '~/.config/vesktop/themes/midnight-matugen.css'
 
-[templates.color-scheme]
-input_path = '~/.config/matugen/templates/Matugen.colors'
-output_path = '~/.local/share/color-schemes/Matugen.colors'
-
 [templates.kitty-dark]
 input_path = './templates/kitty-dark.conf'
 output_path = '~/.config/kitty/dark-theme.auto.conf'
@@ -42,3 +38,25 @@ output_path = '~/.config/btop/themes/matugen.theme'
 [templates.niri]
 input_path = '~/.config/matugen/templates/niri-matugen'
 output_path = '~/.config/niri/config.kdl'
+
+[templates.gtk3]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk'
+
+[templates.gtk4]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava-colors.ini'
+output_path = '~/.config/cava/config'
+post_hook = "pkill -USR1 cava"
+
+[templates.yazi]
+input_path = './templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.color-scheme]
+input_path = '~/.config/matugen/templates/Matugen.colors'
+output_path = '~/.local/share/color-schemes/Matugen.colors'

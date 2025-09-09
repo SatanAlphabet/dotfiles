@@ -114,8 +114,8 @@ window#waybar #workspaces {
   color: @main-fg;
   background: transparent;
   border-radius: 13pt;
-  padding: 1px 0;
-  margin: 5px 4px;
+  padding: 0px 0;
+  margin: 4px 4px;
   transition: all 0.2s;
   opacity: 0.5;
 }
@@ -191,6 +191,10 @@ tooltip {
   border-style: solid;
   border-color: @main-fg;
   border-radius: 4pt;
+}
+
+tooltip label {
+  color: @main-fg;
 }
 
 /* Adjust margin & padding for modules in bottom pills */
