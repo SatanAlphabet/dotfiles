@@ -38,3 +38,7 @@ post_hook = 'pkill -SIGUSR1 kitty'
 [templates.btop]
 input_path = './templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.niri]
+input_path = '~/.config/matugen/templates/niri-matugen'
+output_path = '~/.config/niri/config.kdl'

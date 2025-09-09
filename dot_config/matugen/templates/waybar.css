@@ -1,0 +1,19 @@
+@define-color bar-bg {{colors.surface.default.hex}};
+@define-color border-col {{colors.surface_container_highest.default.hex}};
+
+@define-color main-bg {{colors.surface.default.hex}};
+@define-color main-fg {{colors.on_surface.default.hex}};
+@define-color main-fg-alt {{colors.primary.default.hex}};
+
+@define-color inact-bg {{colors.surface_container_highest.default.hex}};
+@define-color inact-fg {{colors.on_surface.default.hex}};
+
+@define-color act-bg {{colors.primary.default.hex}};
+@define-color act-fg {{colors.on_primary.default.hex}};
+
+@define-color hvr-bg {{colors.secondary.default.hex}};
+@define-color hvr-fg {{colors.on_secondary.default.hex}};
+
+@define-color pill-dark-bg {{colors.surface_container_low.default.hex}};
+@define-color pill-bg {{colors.surface_container.default.hex}};
+@define-color pill-bright-bg {{colors.surface_container_high.default.hex}};
