@@ -3,31 +3,20 @@ command = "notify-send"
 arguments = ["-t", "1000", "-e", "Running matugen..."]
 set = false
 
-[templates.waybar-light]
-input_path = './templates/waybar-light.css'
-output_path = '~/.config/waybar/themes/matugen-light.css'
 
-[templates.waybar-dark]
-input_path = './templates/waybar-dark.css'
-output_path = '~/.config/waybar/themes/matugen-dark.css'
+[templates.waybar]
+input_path = './templates/waybar.css'
+output_path = '~/.config/waybar/themes/matugen.css'
 post_hook = 'sed -i s/i/i/ ~/.config/waybar/style.css'
 
-[templates.swaync-dark]
-input_path = './templates/swaync-dark.css'
-output_path = '~/.config/swaync/colors/matugen-dark.css'
+[templates.swaync]
+input_path = './templates/swaync.css'
+output_path = '~/.config/swaync/colors/matugen.css'
 post_hook = 'swaync-client -rs'
 
-[templates.swaync-light]
-input_path = './templates/swaync-light.css'
-output_path = '~/.config/swaync/colors/matugen-light.css'
-
-[templates.rofi-dark]
-input_path = './templates/rofi-dark.css'
-output_path = '~/.config/rofi/colors/matugen-dark.rasi'
-
-[templates.rofi-light]
-input_path = './templates/rofi-light.css'
-output_path = '~/.config/rofi/colors/matugen-light.rasi'
+[templates.rofi]
+input_path = './templates/rofi.css'
+output_path = '~/.config/rofi/colors/matugen.rasi'
 
 [templates.midnight-discord]
 input_path = './templates/midnight-discord.css'
