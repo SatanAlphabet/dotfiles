@@ -57,6 +57,11 @@ post_hook = "pkill -USR1 cava"
 input_path = './templates/yazi-theme.toml'
 output_path = '~/.config/yazi/theme.toml'
 
+[templates.spotify]
+input_path = './templates/spotify-color.ini'
+output_path = '~/.config/spicetify/Themes/colorful/color.ini'
+post_hook = 'spicetify refresh'
+
 [templates.color-scheme]
 input_path = '~/.config/matugen/templates/Matugen.colors'
 output_path = '~/.local/share/color-schemes/Matugen.colors'
