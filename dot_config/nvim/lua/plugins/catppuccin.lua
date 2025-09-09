@@ -3,7 +3,7 @@ return {
   lazy = true,
   name = "catppuccin",
   priority = 1000,
-  enabled = false,
+  enabled = true,
   opts = {
     flavour = "auto", -- latte, frappe, macchiato, mocha
     background = { -- :h background
