@@ -5,7 +5,6 @@ wallpaper=$(waypaper --list | jq '.[].wallpaper' | sed 's/"//g')
 
 if [ $current_theme = "'prefer-dark'" ]; then
 
-  niri msg action do-screen-transition
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
   matugen image ${wallpaper} -c ~/.config/matugen/main.toml -m light
 
@@ -18,7 +17,6 @@ if [ $current_theme = "'prefer-dark'" ]; then
 
 elif [ $current_theme = "'prefer-light'" ]; then
 
-  niri msg action do-screen-transition
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   matugen image ${wallpaper} -c ~/.config/matugen/main.toml -m dark
 
