@@ -17,3 +17,6 @@
 @define-color pill-dark-bg {{colors.surface_container_low.default.hex}};
 @define-color pill-bg {{colors.surface_container.default.hex}};
 @define-color pill-bright-bg {{colors.surface_container_high.default.hex}};
+
+@define-color crit-bg {{colors.error.default.hex}};
+@define-color crit-fg {{colors.on_error.default.hex}};
