@@ -4,5 +4,5 @@ timeout 600 'loginctl lock-session'
 timeout 900 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors'
 timeout 1200 'systemctl suspend'
 
-lock 'niri msg action do-screen-transition --delay-ms 500 && hyprlock -c ~/.config/hyprlock/hyprlock.conf'
+lock 'hyprlock -c ~/.config/hyprlock/hyprlock.conf'
 before-sleep 'loginctl lock-session'

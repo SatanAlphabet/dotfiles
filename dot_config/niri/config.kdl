@@ -198,9 +198,9 @@ layout {
         // off
 
         width 2
-        active-color "#ffb4aa"
+        active-color "#ffb1c4"
         urgent-color "#ffb4ab"
-        inactive-color "#534341"
+        inactive-color "#514346"
     }
 
     tab-indicator {
@@ -787,7 +787,7 @@ binds {
   }
 
   overview {
-    backdrop-color "#1a1110"
+    backdrop-color "#191113"
     workspace-shadow {
        // off
     }

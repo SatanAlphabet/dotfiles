@@ -65,6 +65,10 @@ output_path = '~/.config/spicetify/Themes/colorful/color.ini'
 input_path = './templates/hyprlock-colors.conf'
 output_path = '~/.config/hyprlock/colors.conf'
 
+[templates.vscode]
+input_path = './templates/vscode-color-theme.json'
+output_path = '~/.config/VSCodium/User/settings.json'
+
 [templates.color-scheme]
 input_path = '~/.config/matugen/templates/Matugen.colors'
 output_path = '~/.local/share/color-schemes/Matugen.colors'
