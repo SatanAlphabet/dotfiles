@@ -112,8 +112,8 @@ body {
 	--text-1: {{colors.on_surface_variant.dark.hex}};            /* other normally white text */
 	--text-2: {{colors.on_surface.dark.hex}};            /* headings and important text */
 	--text-3: {{colors.on_surface_variant.dark.hex}};    /* normal text */
-	--text-4: {{colors.outline.dark.hex}};    /* icon buttons and channels */
-	--text-5: {{colors.outline_variant.dark.hex}};               /* muted channels/chats and timestamps */
+	--text-4: {{colors.on_surface_variant.dark.hex}};    /* icon buttons and channels */
+	--text-5: {{colors.outline.dark.hex}};               /* muted channels/chats and timestamps */
 
 	/* background and dark colors */
   --bg-1: {{colors.primary.dark.hex}};                             /* dark buttons when clicked */
@@ -153,8 +153,8 @@ body {
 	--text-1: {{colors.on_surface_variant.light.hex}};            /* other normally white text */
 	--text-2: {{colors.on_surface.light.hex}};            /* headings and important text */
 	--text-3: {{colors.on_surface_variant.light.hex}};    /* normal text */
-	--text-4: {{colors.outline.light.hex}};    /* icon buttons and channels */
-	--text-5: {{colors.outline_variant.light.hex}};               /* muted channels/chats and timestamps */
+	--text-4: {{colors.on_surface_variant.light.hex}};    /* icon buttons and channels */
+	--text-5: {{colors.outline.light.hex}};               /* muted channels/chats and timestamps */
 
 	/* background and dark colors */
   --bg-1: {{colors.primary.light.hex}};                             /* dark buttons when clicked */

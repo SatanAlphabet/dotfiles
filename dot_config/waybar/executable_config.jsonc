@@ -122,11 +122,6 @@
     "on-click": "waypaper",
     "tooltip-format": "Change wallpaper"
   },
-  "custom/browser": {
-    "format": "",
-    "on-click": "zen-browser",
-    "tooltip-format": "Open web browser"
-  },
 	"mpris": {
 		"format": "{player_icon}",
 		"rotate": 0,
@@ -242,7 +237,7 @@
 		"states": {
 			"good": 95,
 			"warning": 30,
-			"critical": 20
+			"critical": 15
 		},
 		"design-capacity": true,
 		"format": "{icon}",
