@@ -5,5 +5,5 @@
   selected:          {{colors.primary.default.hex}};
   active:            {{colors.primary.default.hex}};
   urgent:            {{colors.primary.default.hex}};
-  border:            {{colors.outline.default.hex}};
+  border:            {{colors.surface_variant.default.hex}};
 }

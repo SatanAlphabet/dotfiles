@@ -20,3 +20,5 @@
 
 @define-color crit-bg {{colors.error.default.hex}};
 @define-color crit-fg {{colors.on_error.default.hex}};
+
+@define-color clock-col {{colors.primary_fixed_dim.default.hex}};

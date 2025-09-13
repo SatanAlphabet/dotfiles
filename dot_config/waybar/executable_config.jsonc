@@ -1,4 +1,4 @@
-{
+[{
 	"layer": "top",
 	"output": ["*"],
 	"position": "left",
@@ -287,4 +287,44 @@
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
 		"on-click": "~/.scripts/update.sh"
 	}, 
-}
+},
+  {
+    "layer": "top",
+    "position": "right",
+    "width": 8
+  },
+  {
+    "layer": "top",
+    "position": "top",
+    "height": 8
+  },
+  {
+    "layer": "top",
+    "position": "bottom",
+    "height": 8
+  },
+  {
+    "name": "date-widget",
+    "layer": "bottom",
+    "position": "bottom",
+    "exclusive": false,
+    "modules-right": ["clock#date"],
+    "clock#date": {
+      "format": "{:%A, %d %B %Y}",
+      "justify": "end",
+      "tooltip": false
+    }
+  },
+  {
+    "name": "time-widget",
+    "layer": "bottom",
+    "position": "bottom",
+    "exclusive": false,
+    "modules-right": ["clock#time"],
+    "clock#time": {
+      "format": "{:%I:%M %p}",
+      "justify": "end",
+      "tooltip": false
+    },
+  }
+]
