@@ -198,18 +198,18 @@ layout {
         // off
 
         width 2
-        active-color "#904a42"
+        active-color "#3e5f90"
         urgent-color "#ba1a1a"
-        inactive-color "#d8c2be"
+        inactive-color "#c4c6cf"
     }
 
     tab-indicator {
         width 6
         gap 2
         gaps-between-tabs 4
-        corner-radius 4
+        corner-radius 0
         place-within-column
-        length total-proportion=0.975
+        length total-proportion=1.0
     }
 
     // You can enable drop shadows for windows.
@@ -483,7 +483,7 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 
@@ -787,7 +787,7 @@ binds {
   }
 
   overview {
-    backdrop-color "#fff8f7"
+    backdrop-color "#f9f9ff"
     workspace-shadow {
        // off
     }

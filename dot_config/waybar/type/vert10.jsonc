@@ -289,16 +289,19 @@
 	}, 
 },
   {
+    "name": "border-right",
     "layer": "top",
     "position": "right",
     "width": 8
   },
   {
+    "name": "border-top",
     "layer": "top",
     "position": "top",
     "height": 8
   },
   {
+    "name": "border-bottom",
     "layer": "top",
     "position": "bottom",
     "height": 8
@@ -311,7 +314,6 @@
     "modules-right": ["clock#date"],
     "clock#date": {
       "format": "{:%A, %d %B %Y}",
-      "justify": "end",
       "tooltip": false
     }
   },
@@ -323,7 +325,6 @@
     "modules-right": ["clock#time"],
     "clock#time": {
       "format": "{:%I:%M %p}",
-      "justify": "end",
       "tooltip": false
     },
   }
