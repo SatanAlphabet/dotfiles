@@ -198,9 +198,9 @@ layout {
         // off
 
         width 2
-        active-color "#3e5f90"
+        active-color "#28638a"
         urgent-color "#ba1a1a"
-        inactive-color "#c4c6cf"
+        inactive-color "#c1c7ce"
     }
 
     tab-indicator {
@@ -423,6 +423,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"zen$"# title="^Picture-in-Picture$"
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     match app-id=r#"Chromium-browser$"# title="^| Spotify$"
 
     open-floating true
@@ -432,6 +433,7 @@ window-rule {
 window-rule {
     match app-id=r#"discord$"#
     match app-id=r#"zen$"#
+    match app-id=r#"firefox$"#
     match app-id=r#"vencord$"#
     match app-id=r#"vesktop$"#
 
@@ -524,8 +526,8 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+1%"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-1%"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "~/.scripts/volumecontrol.sh" "+" "2"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "~/.scripts/volumecontrol.sh" "-" "2"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
@@ -616,10 +618,10 @@ binds {
     // To avoid scrolling through workspaces really fast, you can use
     // the cooldown-ms property. The bind will be rate-limited to this value.
     // You can set a cooldown on any bind, but it's most useful for the wheel.
-    Mod+Ctrl+WheelScrollDown      cooldown-ms=100 { focus-workspace-down; }
-    Mod+Ctrl+WheelScrollUp        cooldown-ms=100 { focus-workspace-up; }
-    Mod+Ctrl+Shift+WheelScrollDown cooldown-ms=100 { move-column-to-workspace-down; }
-    Mod+Ctrl+Shift+WheelScrollUp   cooldown-ms=100 { move-column-to-workspace-up; }
+    Mod+Ctrl+WheelScrollDown      cooldown-ms=20 { focus-workspace-down; }
+    Mod+Ctrl+WheelScrollUp        cooldown-ms=20 { focus-workspace-up; }
+    Mod+Ctrl+Shift+WheelScrollDown cooldown-ms=20 { move-column-to-workspace-down; }
+    Mod+Ctrl+Shift+WheelScrollUp   cooldown-ms=20 { move-column-to-workspace-up; }
 
     Mod+WheelScrollRight      { focus-column-right; }
     Mod+WheelScrollLeft       { focus-column-left; }
@@ -774,7 +776,7 @@ binds {
     Mod+Ctrl+V repeat=false { spawn "nirius" "toggle-follow-mode"; }
 
     // New experimental binds for certain apps
-    Mod+B repeat=false { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
+    Mod+B repeat=false { spawn "nirius" "focus-or-spawn" "-a" "firefox" "firefox"; }
     Mod+Alt+W repeat=false { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
   }
 
@@ -787,7 +789,7 @@ binds {
   }
 
   overview {
-    backdrop-color "#f9f9ff"
+    backdrop-color "#f7f9ff"
     workspace-shadow {
        // off
     }

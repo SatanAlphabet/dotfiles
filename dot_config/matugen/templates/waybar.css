@@ -1,4 +1,4 @@
-@define-color bar-bg {{colors.surface.default.hex}};
+@define-color bar-bg rgba({{colors.surface.default.red}}, {{colors.surface.default.green}}, {{colors.surface.default.blue}}, .999);
 @define-color border-col {{colors.surface_container_highest.default.hex}};
 
 @define-color main-bg rgba({{colors.surface.default.red}}, {{colors.surface.default.green}}, {{colors.surface.default.blue}}, .999);
@@ -21,4 +21,5 @@
 @define-color crit-bg {{colors.error.default.hex}};
 @define-color crit-fg {{colors.on_error.default.hex}};
 
-@define-color clock-col {{colors.primary_fixed_dim.default.hex}};
+@define-color widget-col {{colors.primary_fixed_dim.default.hex}};
+@define-color shadow {{colors.shadow.default.hex}};

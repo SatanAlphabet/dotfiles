@@ -27,5 +27,10 @@
                 <property name="label">Change Wallpaper</property>
             </object>
         </child>
+        <child>
+            <object class="GtkMenuItem" id="theme">
+                <property name="label">Toggle device theme</property>
+            </object>
+        </child>
     </object>
 </interface>

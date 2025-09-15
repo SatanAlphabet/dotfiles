@@ -93,7 +93,8 @@
       "cliphist": "~/.scripts/cliphist-niri.sh",
       "emoji": "~/.scripts/emoji-picker.sh",
       "glyph": "~/.scripts/glyph-picker.sh",
-      "wallpaper": "waypaper"
+      "wallpaper": "waypaper",
+      "theme": "~/.scripts/themechange.sh"
     },
 		"tooltip-format": "Application Launcher\nRight click for more actions"
 	},
@@ -311,11 +312,27 @@
     "layer": "bottom",
     "position": "bottom",
     "exclusive": false,
+    "modules-left": ["mpris#widget"],
     "modules-right": ["clock#date"],
     "clock#date": {
       "format": "{:%A, %d %B %Y}",
       "tooltip": false
-    }
+    },
+    "mpris#widget": {
+		"format": "<b>Playing:</b> {title}",
+		"rotate": 0,
+		"format-paused": "Media Paused",
+    "tooltip": false,
+    "on-click": "~/.scripts/mediacontrol.sh",
+		"player-icons": {
+			"default": "",
+		},
+		"status-icons": {
+			"paused": ""
+		},
+		"max-length": 50,
+		"interval": 1
+    },
   },
   {
     "name": "time-widget",
