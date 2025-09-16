@@ -3,7 +3,6 @@ command = "notify-send"
 arguments = ["-t", "1000", "-e", "Running matugen..."]
 set = false
 
-
 [templates.waybar]
 input_path = './templates/waybar.css'
 output_path = '~/.config/waybar/themes/matugen.css'

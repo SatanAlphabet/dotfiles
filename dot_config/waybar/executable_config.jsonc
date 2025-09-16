@@ -130,7 +130,7 @@
     "tooltip-format": "{player}: PLAYING [{position}/{length}]\n{title} - {artist}",
     "tooltip-format-paused": "{player}: PAUSED [{position}/{length}]\n{title} - {artist}",
     "tooltip-format-stopped": "{player}: STOPPED",
-    "on-click": "~/.scripts/mediacontrol.sh",
+    "on-click": "~/.scripts/mediacontrol.sh toggle",
 		"player-icons": {
 			"default": "",
 		},
@@ -312,7 +312,7 @@
     "layer": "bottom",
     "position": "bottom",
     "exclusive": false,
-    "modules-left": ["mpris#widget"],
+    // "modules-left": ["mpris#widget"],
     "modules-right": ["clock#date"],
     "clock#date": {
       "format": "{:%A, %d %B %Y}",
@@ -323,7 +323,6 @@
 		"rotate": 0,
 		"format-paused": "Media Paused",
     "tooltip": false,
-    "on-click": "~/.scripts/mediacontrol.sh",
 		"player-icons": {
 			"default": "",
 		},

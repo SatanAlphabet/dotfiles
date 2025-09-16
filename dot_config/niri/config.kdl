@@ -281,6 +281,7 @@ spawn-at-startup "systemctl" "--user" "start" "swaync-niri.service"
 spawn-at-startup "systemctl" "--user" "start" "overview-blur.service"
 spawn-at-startup "waypaper" "--restore" "--backend" "swww"
 spawn-at-startup "niriusd"
+spawn-at-startup "~/.scripts/greetings.sh"
 
 layer-rule {
     match namespace="^wallpaper$"
@@ -517,7 +518,7 @@ binds {
     Mod+Alt+B repeat=false hotkey-overlay-title="Toggle waybar visibility" { spawn "pkill" "-SIGUSR1" "waybar"; }
     Mod+Alt+P repeat=false hotkey-overlay-title="Pick color" { spawn "~/.scripts/colorpick.sh";}
     Mod+Alt+M repeat=false { spawn "~/.scripts/themechange.sh"; }
-    Mod+P repeat=false { spawn "~/.scripts/mediacontrol.sh" ; }
+    Mod+P repeat=false { spawn "~/.scripts/mediacontrol.sh" "toggle" ; }
     // Mod+Alt+W repeat=false { spawn "waypaper"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
@@ -530,6 +531,10 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true { spawn "~/.scripts/volumecontrol.sh" "-" "2"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioPlay        allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "toggle"; }
+    XF86AudioPause       allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "toggle"; }
+    XF86AudioPrev        allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "prev"; }
+    XF86AudioNext        allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "next"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -776,7 +781,7 @@ binds {
     Mod+Ctrl+V repeat=false { spawn "nirius" "toggle-follow-mode"; }
 
     // New experimental binds for certain apps
-    Mod+B repeat=false { spawn "nirius" "focus-or-spawn" "-a" "firefox" "firefox"; }
+    Mod+B repeat=false { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
     Mod+Alt+W repeat=false { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
   }
 
