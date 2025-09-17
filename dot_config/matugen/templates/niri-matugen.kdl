@@ -528,6 +528,8 @@ binds {
     // The allow-when-locked=true property makes them work even when the session is locked.
     XF86AudioRaiseVolume allow-when-locked=true { spawn "~/.scripts/volumecontrol.sh" "+" "2"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "~/.scripts/volumecontrol.sh" "-" "2"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "~/.scripts/brightnesscontrol.sh" "+" "5"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "~/.scripts/brightnesscontrol.sh" "-" "5"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
     XF86AudioPlay        allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "toggle"; }

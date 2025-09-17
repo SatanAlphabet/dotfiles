@@ -89,11 +89,17 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/menu/launcher-vert10.xml",
     "menu-actions": {
-      "powermenu": "~/.scripts/logoutlaunch.sh",
       "cliphist": "~/.scripts/cliphist-niri.sh",
       "emoji": "~/.scripts/emoji-picker.sh",
       "glyph": "~/.scripts/glyph-picker.sh",
-      "wallpaper": "waypaper",
+      "lock": "loginctl lock-session",
+      "reboot": "systemctl reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibetnate",
+      "shutdown": "systemctl poweroff",
+      "logout": "niri msg action quit -s",
+      "wallpaper-random": "waypaper --random",
+      "wallpaper-select": "waypaper",
       "theme": "~/.scripts/themechange.sh"
     },
 		"tooltip-format": "Application Launcher\nRight click for more actions"
