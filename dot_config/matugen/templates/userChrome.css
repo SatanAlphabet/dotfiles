@@ -1,0 +1,67 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zen-primary-color: {{colors.primary.dark.hex}} !important;
+    --zen-colors-secondary: {{colors.secondary.dark.hex}} !important;
+    --zen-colors-tertiary: {{colors.tertiary.dark.hex}} !important;
+    --zen-main-browser-background: {{colors.surface.dark.hex}} !important;
+    --toolbar-field-color: {{colors.on_surface.dark.hex}} !important;
+    --arrowpanel-color: {{colors.on_surface.dark.hex}} !important;
+    --arrowpanel-background: {{colors.surface.dark.hex}} !important;
+    --zen-native-content-radius: 0;
+    --zen-border-radius: 0;
+  }
+
+  #zen-workspaces-button {
+    background-color: {{colors.surface.dark.hex}} !important;
+  }
+
+  hbox#titlebar {
+    background-color: {{colors.surface.dark.hex}} !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    background-color: {{colors.surface.dark.hex}} !important;
+  }
+
+  #TabsToolbar {
+    background-color: {{colors.surface.dark.hex}} !important;
+  }
+
+  #urlbar-background {
+    background-color: {{colors.surface_container_high.dark.hex}} !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --zen-primary-color: {{colors.primary.light.hex}} !important;
+    --zen-colors-secondary: {{colors.secondary.light.hex}} !important;
+    --zen-colors-tertiary: {{colors.tertiary.light.hex}} !important;
+    --zen-main-browser-background: {{colors.surface.light.hex}} !important;
+    --toolbar-field-color: {{colors.on_surface.light.hex}} !important;
+    --arrowpanel-color: {{colors.on_surface.light.hex}} !important;
+    --arrowpanel-background: {{colors.surface.light.hex}} !important;
+    --zen-native-content-radius: 0;
+    --zen-border-radius: 0;
+  }
+
+  #zen-workspaces-button {
+    background-color: {{colors.surface.light.hex}} !important;
+  }
+
+  hbox#titlebar {
+    background-color: {{colors.surface.light.hex}} !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    background-color: {{colors.surface.light.hex}} !important;
+  }
+
+  #TabsToolbar {
+    background-color: {{colors.surface.light.hex}} !important;
+  }
+
+  #urlbar-background {
+    background-color: {{colors.surface_container_high.light.hex}} !important;
+  }
+}

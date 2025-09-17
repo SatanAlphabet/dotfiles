@@ -1,9 +1,11 @@
 * {
     background-image: none;
     font-size: 24px;
+    font-weight: 400;
+    font-family: 'Inter Variable';
 }
 
-@import "$HOME/.config/waybar/themes/gruv-mat-dark.css";
+@import "$HOME/.config/waybar/themes/matugen.css";
 
 window {
     background-color: rgba(40, 40, 40, 0.75);

@@ -198,9 +198,9 @@ layout {
         // off
 
         width 2
-        active-color "#28638a"
-        urgent-color "#ba1a1a"
-        inactive-color "#c1c7ce"
+        active-color "{{colors.primary.default.hex}}"
+        urgent-color "{{colors.error.default.hex}}"
+        inactive-color "{{colors.outline_variant.default.hex}}"
     }
 
     tab-indicator {
@@ -795,7 +795,7 @@ binds {
   }
 
   overview {
-    backdrop-color "#f7f9ff"
+    backdrop-color "{{colors.surface.default.hex}}"
     workspace-shadow {
        // off
     }

@@ -1,4 +1,4 @@
-{
+[{
 	"layer": "top",
 	"output": ["*"],
 	"position": "left",
@@ -89,11 +89,18 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/menu/launcher-vert10.xml",
     "menu-actions": {
-      "powermenu": "~/.scripts/logoutlaunch.sh",
       "cliphist": "~/.scripts/cliphist-niri.sh",
       "emoji": "~/.scripts/emoji-picker.sh",
       "glyph": "~/.scripts/glyph-picker.sh",
-      "wallpaper": "waypaper"
+      "lock": "loginctl lock-session",
+      "reboot": "systemctl reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibetnate",
+      "shutdown": "systemctl poweroff",
+      "logout": "niri msg action quit -s",
+      "wallpaper-random": "waypaper --random",
+      "wallpaper-select": "waypaper",
+      "theme": "~/.scripts/themechange.sh"
     },
 		"tooltip-format": "Application Launcher\nRight click for more actions"
 	},
@@ -122,11 +129,6 @@
     "on-click": "waypaper",
     "tooltip-format": "Change wallpaper"
   },
-  "custom/browser": {
-    "format": "",
-    "on-click": "zen-browser",
-    "tooltip-format": "Open web browser"
-  },
 	"mpris": {
 		"format": "{player_icon}",
 		"rotate": 0,
@@ -134,7 +136,7 @@
     "tooltip-format": "{player}: PLAYING [{position}/{length}]\n{title} - {artist}",
     "tooltip-format-paused": "{player}: PAUSED [{position}/{length}]\n{title} - {artist}",
     "tooltip-format-stopped": "{player}: STOPPED",
-    "on-click": "~/.scripts/mediacontrol.sh",
+    "on-click": "~/.scripts/mediacontrol.sh toggle",
 		"player-icons": {
 			"default": "",
 		},
@@ -242,7 +244,7 @@
 		"states": {
 			"good": 95,
 			"warning": 30,
-			"critical": 20
+			"critical": 15
 		},
 		"design-capacity": true,
 		"format": "{icon}",
@@ -258,7 +260,7 @@
 		"tooltip-format": "{icon} {desc}: {volume}%",
     "on-scroll-up": "~/.scripts/volumecontrol.sh + 1",
     "on-scroll-down": "~/.scripts/volumecontrol.sh - 1",
-		"on-click": "pavucontrol -t 3",
+		"on-click": "pavucontrol-qt -t 3",
 		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"scroll-step": 1,
 		"format-icons": {
@@ -292,4 +294,60 @@
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
 		"on-click": "~/.scripts/update.sh"
 	}, 
-}
+},
+  {
+    "name": "border-right",
+    "layer": "top",
+    "position": "right",
+    "width": 8
+  },
+  {
+    "name": "border-top",
+    "layer": "top",
+    "position": "top",
+    "height": 8
+  },
+  {
+    "name": "border-bottom",
+    "layer": "top",
+    "position": "bottom",
+    "height": 8
+  },
+  {
+    "name": "date-widget",
+    "layer": "bottom",
+    "position": "bottom",
+    "exclusive": false,
+    // "modules-left": ["mpris#widget"],
+    "modules-right": ["clock#date"],
+    "clock#date": {
+      "format": "{:%A, %d %B %Y}",
+      "tooltip": false
+    },
+    "mpris#widget": {
+		"format": "<b>Playing:</b> {title}",
+		"rotate": 0,
+		"format-paused": "Media Paused",
+    "tooltip": false,
+		"player-icons": {
+			"default": "",
+		},
+		"status-icons": {
+			"paused": ""
+		},
+		"max-length": 50,
+		"interval": 1
+    },
+  },
+  {
+    "name": "time-widget",
+    "layer": "bottom",
+    "position": "bottom",
+    "exclusive": false,
+    "modules-right": ["clock#time"],
+    "clock#time": {
+      "format": "{:%I:%M %p}",
+      "tooltip": false
+    },
+  }
+]

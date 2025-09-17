@@ -1,4 +1,4 @@
-@import "./colors/gruv-mat-dark.css";
+@import "./colors/matugen.css";
 
 * {
   all: unset;
@@ -43,7 +43,7 @@ slider {
   border: 1pt solid @pill-bg;
   color: @main-fg;
   transition: all 0.15s ease-in-out;
-  border-radius: 6pt;
+  border-radius: 4pt;
   width: auto;
 }
 
@@ -57,17 +57,17 @@ slider {
 }
 
 .floating-notifications.background .notification-row .notification-background {
-  box-shadow: inset 0 0 0 1.5px @border-col;
-  border-radius: 8px;
+  box-shadow: inset 0 0 0 1.5px @main-bg-alt;
+  border-radius: 0px;
   margin: 8px;
-  background-color: @main-bg-alt;
+  background-color: @main-bg;
   color: @main-fg;
   padding: 0;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {
   padding: 7px;
-  border-radius: 8px;
+  border-radius: 0px;
   font-size: 1rem;
 }
 
@@ -92,7 +92,7 @@ slider {
 }
 
 .floating-notifications.background .notification-row .notification-background .notification .notification-content .time {
-  color: @border-col;
+  color: @main-fg-alt;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification .notification-content .body {
@@ -104,7 +104,7 @@ slider {
 }
 
 .floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action {
-  border-radius: 7px;
+  border-radius: 0px;
   color: @main-fg;
   background-color: @pill-bg;
   box-shadow: inset 0 0 0 1px @border-col;
@@ -126,7 +126,7 @@ slider {
 .floating-notifications.background .notification-row .notification-background .close-button {
   margin: 7px;
   padding: 2px;
-  border-radius: 6.3px;
+  border-radius: 4px;
   color: @main-bg;
   background-color: @crit-bg;
 }
@@ -145,7 +145,7 @@ slider {
   background-color: @main-bg;
   color: @main-fg;
   padding: 20px 20px 20px 20px;
-  border-right: 2pt solid @border-col;
+  border-right: 2pt solid @main-bg-alt;
 }
 
 .control-center .widget-title>label {
@@ -154,7 +154,7 @@ slider {
 }
 
 .control-center .widget-title button {
-  border-radius: 7px;
+  border-radius: 4px;
   color: @main-fg;
   background-color: @main-bg-alt;
   box-shadow: inset 0 0 0 1px @border-col;
@@ -162,9 +162,8 @@ slider {
 }
 
 .control-center .widget-title button:hover {
-  box-shadow: inset 0 0 0 1px #7c6f64;
-  background-color: @border-col;
-  color: @main-fg;
+  box-shadow: inset 0 0 0 1px @main-fg;
+  color: @main-fg-alt;
 }
 
 .control-center .widget-title button:active {
@@ -174,16 +173,16 @@ slider {
 }
 
 .control-center .notification-row .notification-background {
-  border-radius: 7px;
+  border-radius: 0px;
   color: @main-fg;
   background-color: @main-bg-alt;
-  box-shadow: inset 0 0 0px 1px @border-col;
+  box-shadow: inset 0 0 0px 1px @main-bg-alt;
   margin-top: 10px;
 }
 
 .control-center .notification-row .notification-background .notification {
   padding: 7px;
-  border-radius: 7px;
+  border-radius: 0px;
 }
 
 .control-center .notification-row .notification-background .notification.critical {
@@ -201,7 +200,7 @@ slider {
 }
 
 .control-center .notification-row .notification-background .notification .notification-content .time {
-  color: @inact-bg;
+  color: @main-fg-alt;
 }
 
 .control-center .notification-row .notification-background .notification .notification-content .body {
@@ -213,7 +212,7 @@ slider {
 }
 
 .control-center .notification-row .notification-background .notification>*:last-child>* .notification-action {
-  border-radius: 7px;
+  border-radius: 0px;
   color: @main-fg;
   background-color: @main-bg;
   box-shadow: inset 0 0 0 1px @border-col;
@@ -245,23 +244,22 @@ slider {
 }
 
 .control-center .notification-row .notification-background .close-button:hover {
-  background-color: #f38ba8;
-  color: #1e1e2e;
+  border-color: @main-fg;
 }
 
 .control-center .notification-row .notification-background .close-button:active {
-  background-color: #f38ba8;
-  color: #1e1e2e;
+  background-color: @main-bg-alt;
+  color: @crit-bg;
 }
 
 .control-center .notification-row .notification-background:hover {
   box-shadow: inset 0 0 0 3px @border-col;
-  color: #ddc7a1;
+  color: @main-bg;
 }
 
 .control-center .notification-row .notification-background:active {
-  box-shadow: inset 0 0 0 3px @main-bg-alt;
-  background-color: @act-bg;
+  box-shadow: inset 0 0 0 2px @main-bg-alt;
+  background-color: @act-fg;
   color: @main-bg;
 }
 
@@ -295,7 +293,7 @@ slider {
 
 .control-center-dnd slider {
   background: @border-col;
-  border-radius: 7px;
+  border-radius: 18px;
 }
 
 .widget-dnd {
@@ -305,7 +303,7 @@ slider {
 
 .widget-dnd>switch {
   font-size: initial;
-  border-radius: 7px;
+  border-radius: 9px;
   background-color: @main-bg-alt;
   border: 1px solid @border-col;
   box-shadow: none;

@@ -5,7 +5,7 @@ BackgroundNormal=#103350FF
 TerminalApplication=/usr/bin/kitty
 
 [Icons]
-Theme=Gruvbox-Plus-Dark
+Theme=breeze
 
 [KDE]
 widgetStyle=qt6ct-style

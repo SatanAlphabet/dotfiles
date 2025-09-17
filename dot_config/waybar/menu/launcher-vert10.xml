@@ -3,29 +3,105 @@
     <object class="GtkMenu" id="menu">
 
         <child>
-            <object class="GtkMenuItem" id="powermenu">
+            <object class="GtkMenuItem" id="launcher-extra">
+                <property name="label">Extra launcher option</property>
+            <child type="submenu">
+                <object class="GtkMenu">
+
+                    <child>
+                        <object class="GtkMenuItem" id="cliphist">
+                            <property name="label">Clipboard History</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="GtkMenuItem" id="emoji">
+                            <property name="label">Emoji Picker</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="GtkMenuItem" id="glyph">
+                            <property name="label">Glyph Picker</property>
+                        </object>
+                    </child>
+
+                </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+            <object class="GtkMenuItem" id="power">
                 <property name="label">Power Menu</property>
-            </object>
+            <child type="submenu">
+                <object class="GtkMenu">
+
+                    <child>
+                        <object class="GtkMenuItem" id="lock">
+                            <property name="label">Lock session</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="GtkMenuItem" id="reboot">
+                            <property name="label">Reboot</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="GtkMenuItem" id="suspend">
+                            <property name="label">Suspend</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="GtkMenuItem" id="hibernate">
+                            <property name="label">Hibernate</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="GtkMenuItem" id="logout">
+                            <property name="label">Logout</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="GtkMenuItem" id="shutdown">
+                            <property name="label">Shutdown</property>
+                        </object>
+                    </child>
+
+                </object>
+            </child>
+          </object>
         </child>
-        <child>
-            <object class="GtkMenuItem" id="cliphist">
-                <property name="label">Clipboard Manager</property>
-            </object>
-        </child>
-        <child>
-            <object class="GtkMenuItem" id="emoji">
-                <property name="label">Emoji Picker</property>
-            </object>
-        </child>
-        <child>
-            <object class="GtkMenuItem" id="glyph">
-                <property name="label">Glyph Picker</property>
-            </object>
-        </child>
+
         <child>
             <object class="GtkMenuItem" id="wallpaper">
-                <property name="label">Change Wallpaper</property>
+                <property name="label">Wallpaper Settings</property>
+            <child type="submenu">
+                <object class="GtkMenu">
+
+                    <child>
+                        <object class="GtkMenuItem" id="wallpaper-random">
+                            <property name="label">Random Wallpaper</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="GtkMenuItem" id="wallpaper-select">
+                            <property name="label">Select Wallpaper</property>
+                        </object>
+                    </child>
+
+                </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+            <object class="GtkSeparatorMenuItem" id="delimiter-1" />
+        </child>
+
+        <child>
+            <object class="GtkMenuItem" id="theme">
+                <property name="label">Toggle device theme</property>
             </object>
         </child>
+
     </object>
 </interface>

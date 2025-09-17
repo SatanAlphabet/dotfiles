@@ -76,16 +76,8 @@ alias ffec='_fuzzy_edit_search_file_content' \
     ffcd='_fuzzy_change_directory' \
     ffe='_fuzzy_edit_search_file' 
 
-export FZF_DEFAULT_OPTS=" --color=fg:#d4be98,bg:#141617,hl:#d3869b \
-  --color=fg+:#89b482,bg+:#1d2021,hl+:#ea6962 \
-  --color=info:#e78a4e,prompt:#ea6962,pointer:#7daea3 \
-  --color=marker:#d3869b,spinner:#d8a657,header:#ea6962 \
-  --color=separator:#504945,gutter:#141617,border:#504945 \
-  --color=label:#928374 \
-  --border=rounded --border-label-pos=6 \
-  --color=input-border:#442e2d,list-border:#333e34,preview-border:#2e3b3b \
-  --color=preview-label:#7daea3,list-label:#a9b665,input-label:#ea6962 \
-  --margin=0 --padding=1 --style=full\
+export FZF_DEFAULT_OPTS="   --border=rounded --border-label-pos=6 \
+  --margin=0 --padding=1 --style=minimal\
   --layout=reverse --info=default \
   --marker=  --prompt='[$USER@fzf]$ ' \
   --height=100% --list-label=' Result '\

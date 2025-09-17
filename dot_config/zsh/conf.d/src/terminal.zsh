@@ -203,7 +203,6 @@ alias c='clear' \
     pl='${PM_COMMAND[@]} search installed' \
     pa='${PM_COMMAND[@]} search all' \
     vc='code' \
-    fastfetch='fastfetch --logo-type kitty' \
     ..='cd ..' \
     ...='cd ../..' \
     .3='cd ../../..' \
