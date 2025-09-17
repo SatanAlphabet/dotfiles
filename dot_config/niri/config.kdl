@@ -281,7 +281,6 @@ spawn-at-startup "systemctl" "--user" "start" "swaync-niri.service"
 spawn-at-startup "systemctl" "--user" "start" "overview-blur.service"
 spawn-at-startup "waypaper" "--restore" "--backend" "swww"
 spawn-at-startup "niriusd"
-spawn-at-startup "~/.scripts/greetings.sh"
 
 layer-rule {
     match namespace="^wallpaper$"
@@ -302,7 +301,7 @@ environment {
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     GDK_BACKEND "wayland,x11,*"
     GDK_SCALE "1"
-    QT_QPA_PLATFORMTHEME "qt5ct"
+    QT_QPA_PLATFORMTHEME "qt6ct"
     QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
     _JAVA_AWT_WM_NONREPARENTING "1"

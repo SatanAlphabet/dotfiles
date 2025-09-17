@@ -22,12 +22,6 @@ window#waybar #custom-seperator {
 	background: transparent;
 }
 
-window#waybar #custom-seperator.bottom {
-}
-
-window#waybar #custom-seperator.top {
-}
-
 /*
 #custom-swaync {
   color: @act-bg;
@@ -222,6 +216,7 @@ window#waybar.bottom * {
 window#waybar.time-widget,
 window#waybar.date-widget {
   background: transparent;
+  border: 0px solid transparent;
 }
 
 window#waybar #clock.time {

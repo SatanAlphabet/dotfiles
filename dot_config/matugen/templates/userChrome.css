@@ -7,6 +7,8 @@
     --toolbar-field-color: {{colors.on_surface.dark.hex}} !important;
     --arrowpanel-color: {{colors.on_surface.dark.hex}} !important;
     --arrowpanel-background: {{colors.surface.dark.hex}} !important;
+    --zen-native-content-radius: 0;
+    --zen-border-radius: 0;
   }
 
   #zen-workspaces-button {
@@ -39,6 +41,8 @@
     --toolbar-field-color: {{colors.on_surface.light.hex}} !important;
     --arrowpanel-color: {{colors.on_surface.light.hex}} !important;
     --arrowpanel-background: {{colors.surface.light.hex}} !important;
+    --zen-native-content-radius: 0;
+    --zen-border-radius: 0;
   }
 
   #zen-workspaces-button {
