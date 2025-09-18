@@ -102,6 +102,11 @@
                 <property name="label">Toggle device theme</property>
             </object>
         </child>
+        <child>
+            <object class="GtkMenuItem" id="niri">
+                <property name="label">About niri</property>
+            </object>
+        </child>
 
     </object>
 </interface>

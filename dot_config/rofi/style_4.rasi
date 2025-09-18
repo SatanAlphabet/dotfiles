@@ -85,7 +85,7 @@ mainbox {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     20px;
+    padding:                     15px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
@@ -253,7 +253,7 @@ element-text {
 mode-switcher{
     enabled:                     true;
     spacing:                     0px;
-    margin:                      0px 0px 0px 5px;
+    margin:                      0px 0px 0px 10px;
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;

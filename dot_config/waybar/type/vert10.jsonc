@@ -100,7 +100,8 @@
       "logout": "niri msg action quit -s",
       "wallpaper-random": "waypaper --random",
       "wallpaper-select": "waypaper",
-      "theme": "~/.scripts/themechange.sh"
+      "theme": "~/.scripts/themechange.sh",
+      "niri": "xdg-open https://github.com/YaLTeR/niri"
     },
 		"tooltip-format": "Application Launcher\nRight click for more actions"
 	},
@@ -164,9 +165,9 @@
 			"mode-mon-col": 3,
 			"on-scroll": 1,
 			"format": {
-				"months": "<span color='#d8a657'><b>{}</b></span>",
-				"weekdays": "<span color='#e78a4e'><b>{}</b></span>",
-				"today": "<span color='#ea6962'><b>{}</b></span>"
+				"months": "<b>{}</b>",
+				"weekdays": "<b>{}</b>",
+				"today": "<b>{}</b>"
 			}
 		},
 		"actions": {
