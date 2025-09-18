@@ -505,20 +505,19 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+T repeat=false hotkey-overlay-title="Open a Terminal" { spawn "kitty" "-1"; }
-    Mod+Shift+T repeat=false { spawn "kitty" "--class" "dropdown" "-1"; }
-    Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "~/.scripts/rofilaunch.sh";  }
-    Mod+Alt+C repeat=false { spawn "~/.scripts/cliphist-niri.sh" "-c"; }
-    Mod+Alt+E repeat=false { spawn "~/.scripts/emoji-picker.sh"; }
-    Mod+Alt+G repeat=false { spawn "~/.scripts/glyph-picker.sh"; }
-    Mod+N repeat=false { spawn "swaync-client" "-t"; }
+    Mod+Shift+T repeat=false hotkey-overlay-title="Open Dropdown Terminal" { spawn "kitty" "--class" "dropdown" "-1"; }
+    Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "~/.scripts/rofilaunch.sh" "style_4";  }
+    Mod+Alt+C repeat=false hotkey-overlay-title="Clipboard History" { spawn "~/.scripts/cliphist-niri.sh" "-c"; }
+    Mod+Alt+E repeat=false hotkey-overlay-title="Emoji Picker" { spawn "~/.scripts/emoji-picker.sh"; }
+    Mod+Alt+G repeat=false hotkey-overlay-title="Glyph Picker" { spawn "~/.scripts/glyph-picker.sh"; }
+    Mod+N repeat=false hotkey-overlay-title="Notification Panel" { spawn "swaync-client" "-t"; }
     // Mod+B repeat=false { spawn "zen-browser"; }
-    Mod+E repeat=false { spawn "dolphin"; } 
+    Mod+E repeat=false hotkey-overlay-title="File Browser" { spawn "dolphin"; } 
     Mod+Alt+L repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
     Mod+Alt+B repeat=false hotkey-overlay-title="Toggle waybar visibility" { spawn "pkill" "-SIGUSR1" "waybar"; }
     Mod+Alt+P repeat=false hotkey-overlay-title="Pick color" { spawn "~/.scripts/colorpick.sh";}
-    Mod+Alt+M repeat=false { spawn "~/.scripts/themechange.sh"; }
-    Mod+P repeat=false { spawn "~/.scripts/mediacontrol.sh" "toggle" ; }
-    // Mod+Alt+W repeat=false { spawn "waypaper"; }
+    Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn "~/.scripts/themechange.sh"; }
+    Mod+Alt+V repeat=false hotkey-overlay-title="Calculator" { spawn "~/.scripts/calc.sh"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -768,22 +767,22 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Ctrl+Alt+Delete hotkey-overlay-title="Open wlogout" { spawn "~/.scripts/logoutlaunch.sh"; }
+    Ctrl+Alt+Delete hotkey-overlay-title="Power Menu" { spawn "~/.scripts/logoutlaunch.sh"; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     
     // Nirius specific commands
     // Mark Windows & Switch focus between marked windows
-    Mod+M { spawn "nirius" "focus-marked"; }
-    Mod+Shift+M repeat=false { spawn "nirius" "toggle-mark"; }
+    Mod+M hotkey-overlay-title="Focus Marked Window" { spawn "nirius" "focus-marked"; }
+    Mod+Shift+M repeat=false hotkey-overlay-title="Toggle Mark" { spawn "nirius" "toggle-mark"; }
 
     // Toggle follow mode (Window follows between workspaces)
-    Mod+Ctrl+V repeat=false { spawn "nirius" "toggle-follow-mode"; }
+    Mod+Ctrl+V repeat=false hotkey-overlay-title="Toggle Follow Mode" { spawn "nirius" "toggle-follow-mode"; }
 
     // New experimental binds for certain apps
-    Mod+B repeat=false { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
-    Mod+Alt+W repeat=false { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
+    Mod+B repeat=false hotkey-overlay-title="Web Browser" { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
+    Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
   }
 
   hotkey-overlay {
