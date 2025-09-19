@@ -1,6 +1,5 @@
 [config.wallpaper]
-command = "notify-send"
-arguments = ["-t", "1000", "-e", "Running matugen..."]
+command = "true"
 set = false
 
 [templates.midnight-discord]

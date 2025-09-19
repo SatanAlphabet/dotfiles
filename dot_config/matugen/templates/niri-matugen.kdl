@@ -401,6 +401,16 @@ window-rule {
     default-column-width {}
 }
 
+window-rule {
+    geometry-corner-radius 20
+    clip-to-geometry true
+}
+
+layer-rule {
+    match namespace="^quickshell-overview$"
+    place-within-backdrop true
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -482,11 +492,6 @@ window-rule {
 
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
-}
-
-window-rule {
-    geometry-corner-radius 0
-    clip-to-geometry true
 }
 
 binds {

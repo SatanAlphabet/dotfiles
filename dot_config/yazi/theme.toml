@@ -1,153 +1,165 @@
-# vim:fileencoding=utf-8:foldmethod=marker
+# : Manager [[[
 
-# : Manager {{{
-
-[mgr]
-cwd = { fg = "#7daea3" }
-
-# Hovered
-hovered = { reversed = true, bold = true }
-# hovered         = { bg = "#3c3836", bold = true }
-preview_hovered = { underline = true }
-
-# Find
-find_keyword = { fg = "#a9b665", italic = true }
-find_position = { fg = "#e78a4e", bg = "reset", italic = true }
-
-# Marker
-marker_copied = { fg = "#8ec07c", bg = "#8ec07c" }
-marker_cut = { fg = "#d3869b", bg = "#d3869b" }
-marker_marked = { fg = "#7daea3", bg = "#83a598" }
-marker_selected = { fg = "#ddc7a1", bg = "#fbf1c7" }
+[manager]
+cwd = { fg = "#181c20" }
 
 # Tab
-tab_active = { fg = "#282828", bg = "#a89984" }
-tab_inactive = { fg = "#a89984", bg = "#504945" }
+tab_active = { fg = "#ffffff", bg = "#28638a", bold = true }
+tab_inactive = { fg = "#cae6ff", bg = "#001e30" }
 tab_width = 1
 
+# Find
+find_keyword = { fg = "#ba1a1a", bold = true, italic = true, underline = true }
+find_position = { fg = "#ba1a1a", bold = true, italic = true }
+
+# Marker
+marker_copied = { fg = "#b176ff", bg = "#b176ff" }
+marker_cut = { fg = "#ebdcff", bg = "#ebdcff" }
+marker_marked = { fg = "#ba1a1a", bg = "#ba1a1a" }
+marker_selected = { fg = "#65587b", bg = "#65587b" }
+
 # Count
-count_copied = { fg = "#282828", bg = "#8ec07c" }
-count_cut = { fg = "#282828", bg = "#d3869b" }
-count_selected = { fg = "#282828", bg = "#ddc7a1" }
+count_copied = { fg = "#201634", bg = "#ebdcff" }
+count_cut = { fg = "#201634", bg = "#ebdcff" }
+count_selected = { fg = "#ffffff", bg = "#65587b" }
 
 # Border
 border_symbol = "│"
-border_style = { fg = "#665c54" }
+border_style  = { fg = "#28638a" }
 
-# : }}}
+# : ]]]
 
-# : Mode {{{
 
-[mode]
-normal_main = { fg = "#282828", bg = "#a89984", bold = true }
-normal_alt = { fg = "#a89984", bg = "#504945" }
-select_main = { fg = "#282828", bg = "#e78a4e", bold = true }
-select_alt = { fg = "#a89984", bg = "#504945" }
-unset_main = { fg = "#282828", bg = "#a9b665", bold = true }
-unset_alt = { fg = "#a89984", bg = "#504945" }
-
-# : }}}
-
-# : Status {{{
+# : Status [[[
 
 [status]
-sep_left = { open = "\ue0be", close = "\ue0b8" }
-sep_right = { open = "\ue0be", close = "\ue0b8" }
-overall = { }
+separator_open = "🭁"
+separator_close = "🭠"
+separator_style = { bg = "#ffffff", fg = "#F4A261" }
+
+[mode]
+# Mode
+normal_main = { bg = "#28638a", fg = "#ffffff", bold = true }
+normal_alt  = { bg = "#dde3ea", fg = "#41474d" }
+
+# Select mode
+select_main = { bg = "#50606e", fg = "#ffffff", bold = true }
+select_alt  = { bg = "#dde3ea", fg = "#41474d" }
+
+# Unset mode
+unset_main = { bg = "#65587b", fg = "#ffffff", bold = true }
+unset_alt  = { bg = "#dde3ea", fg = "#41474d" }
 
 # Progress
-progress_label = { fg = "#d4be98", bold = true }
-progress_normal = { fg = "#504945", bg = "#3c3836" }
-progress_error = { fg = "#ea6962", bg = "#3c3836" }
+progress_label = { bold = true }
+progress_normal = { fg = "#28638a", bg = "#f7f9ff" }
+progress_error = { fg = "#ba1a1a", bg = "#f7f9ff" }
 
 # Permissions
-perm_type = { fg = "#504945" }
-perm_read = { fg = "#a9b665" }
-perm_write = { fg = "#ea6962" }
-perm_exec = { fg = "#a9b665" }
-perm_sep = { fg = "#665c54" }
+permissions_t = { fg = "#9eacb9" }
+permissions_w = { fg = "#b3aac2" }
+permissions_x = { fg = "#ed8080" }
+permissions_r = { fg = "#9443ff" }
+permissions_s = { fg = "#319eff" }
 
-# : }}}
+# : ]]]
 
-# : Select {{{
 
-[pick]
-border = { fg = "#458588" }
-active = { fg = "#d3869b", bold = true }
+# : Select [[[
+
+[select]
+border = { fg = "#28638a" }
+active = { fg = "#65587b", bold = true }
 inactive = {}
 
-# : }}}
+# : ]]]
 
-# : Input {{{
+
+# : Input [[[
 
 [input]
-border = { fg = "#d4be98" }
-title = {}
-value = {}
-selected = { reversed = true }
+border = { fg = "#28638a" }
+value = { fg = "#181c20" }
 
-# : }}}
+# : ]]]
 
-# : Tasks {{{
+
+# : Completion [[[
+
+[completion]
+border = { fg = "#28638a", bg = "#ffffff" }
+
+# : ]]]
+
+
+# : Tasks [[[
 
 [tasks]
-border = { fg = "#504945" }
+border = { fg = "#28638a" }
 title = {}
-hovered = { underline = true }
+hovered = { fg = "#ebdcff", underline = true }
 
-# : }}}
+# : ]]]
 
-# : Which {{{
+
+# : Which [[[
 
 [which]
-mask = { bg = "#3c3836" }
-cand = { fg = "#7daea3" }
-rest = { fg = "#928374" }
-desc = { fg = "#e78a4e" }
-separator = "  "
-separator_style = { fg = "#504945" }
+cols = 3
+mask = { bg = "#f7f9ff" }
+cand = { fg = "#28638a" }
+rest = { fg = "#ffffff" }
+desc = { fg = "#181c20" }
+separator = " ▶ "
+separator_style = { fg = "#181c20" }
 
-# : }}}
+# : ]]]
 
-# : Help {{{
+
+# : Help [[[
 
 [help]
-on = { fg = "#7daea3" }
-run = { fg = "#d3869b" }
-hovered = { reversed = true, bold = true }
-footer = { fg = "#3c3836", bg = "#a89984" }
+on = { fg = "#181c20" }
+run = { fg = "#181c20" }
+footer = { fg = "#ffffff", bg = "#50606e" }
 
-# : }}}
+# : ]]]
 
-# : Notify {{{
+
+# : Notify [[[
 
 [notify]
-title_info = { fg = "#89b482" }
-title_warn = { fg = "#ddc7a1" }
-title_error = { fg = "#d3869b" }
+title_info = { fg = "#65587b" }
+title_warn = { fg = "#28638a" }
+title_error = { fg = "#ba1a1a" }
 
-# : }}}
+# : ]]]
 
-# : File-specific styles {{{
+
+# : File-specific styles [[[
 
 [filetype]
+
 rules = [
-  # Images
-  { mime = "image/*", fg = "#d3869b" },
+    # Images
+    { mime = "image/*", fg = "#94e2d5" },
 
-  # Media
-  { mime = "{audio,video}/*", fg = "#fabd2f" },
+    # Media
+    { mime = "{audio,video}/*", fg = "#f9e2af" },
 
-  # Archives
-  { mime = "application/*zip", fg = "#ea6962" },
-  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#ea6962" },
+    # Archives
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#f5c2e7" },
 
-  # Documents
-  { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#689d6a" },
+    # Documents
+    { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
 
-  # Fallback
-  { name = "*", fg = "#d4be98" },
-  { name = "*/", fg = "#7daea3" },
+    # Special files
+    { name = "*", is = "orphan", bg = "#ffdad6" },
+    { name = "*", is = "exec", fg = "#410002" },
+
+    # Fallback
+    { name = "*", fg = "#181c20" },
+    { name = "*/", fg = "#28638a" },
 ]
 
-# : }}}
+# : ]]]

@@ -6,3 +6,5 @@ if [ $current_theme = "'prefer-dark'" ]; then
 elif [ $current_theme = "'prefer-light'" ]; then
   matugen image "$1" -c ~/.config/matugen/main.toml -m light
 fi
+
+cp "$1" "${cache_dir}/noctalia/background"
