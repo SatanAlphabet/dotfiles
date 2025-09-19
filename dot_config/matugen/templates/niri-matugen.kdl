@@ -506,18 +506,14 @@ binds {
 
     Mod+T repeat=false hotkey-overlay-title="Open a Terminal" { spawn "kitty" "-1"; }
     Mod+Shift+T repeat=false hotkey-overlay-title="Open Dropdown Terminal" { spawn "kitty" "--class" "dropdown" "-1"; }
-    Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "~/.scripts/rofilaunch.sh" "style_4";  }
-    Mod+Alt+C repeat=false hotkey-overlay-title="Clipboard History" { spawn "~/.scripts/cliphist-niri.sh" "-c"; }
-    Mod+Alt+E repeat=false hotkey-overlay-title="Emoji Picker" { spawn "~/.scripts/emoji-picker.sh"; }
-    Mod+Alt+G repeat=false hotkey-overlay-title="Glyph Picker" { spawn "~/.scripts/glyph-picker.sh"; }
+    Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Ctrl+Shift+Escape repeat=false hotkey-overlay-title="Open Settings" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
+    Mod+Alt+C repeat=false hotkey-overlay-title="Clipboard History" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
     Mod+N repeat=false hotkey-overlay-title="Notification Panel" { spawn "swaync-client" "-t"; }
     // Mod+B repeat=false { spawn "zen-browser"; } 
     Mod+E repeat=false hotkey-overlay-title="File Browser" { spawn "dolphin"; } 
     Mod+Alt+L repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
-    Mod+Alt+B repeat=false hotkey-overlay-title="Toggle waybar visibility" { spawn "pkill" "-SIGUSR1" "waybar"; }
-    Mod+Alt+P repeat=false hotkey-overlay-title="Pick color" { spawn "~/.scripts/colorpick.sh";}
-    Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn "~/.scripts/themechange.sh"; }
-    Mod+Alt+V repeat=false hotkey-overlay-title="Calculator" { spawn "~/.scripts/calc.sh"; }
+    Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "darkMode" "toggle"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -791,7 +787,7 @@ binds {
 
     // New experimental binds for certain apps
     Mod+B repeat=false hotkey-overlay-title="Web Browser" { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
-    Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
+    Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle"; }
   }
 
   hotkey-overlay {
