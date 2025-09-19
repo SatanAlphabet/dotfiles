@@ -4,5 +4,5 @@ timeout 600 'loginctl lock-session'
 timeout 900 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors'
 timeout 1200 'systemctl suspend'
 
-lock 'qs ipc call lockScreen toggle'
+lock 'qs -c noctalia-shell ipc call lockScreen toggle'
 before-sleep 'loginctl lock-session'
