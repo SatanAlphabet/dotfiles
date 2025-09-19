@@ -202,49 +202,48 @@ window#waybar .modules-right label.module {
 
 /* EXPERIMENTAL CONFIGS FOR BORDER & CLOCK WIDGETS */
 
-window#waybar.top * ,
+window#waybar.top *,
 window#waybar.right *,
 window#waybar.bottom * {
-  margin: 0;
-  padding: 0;
-  font-size: 0px;
-  min-height: 0px;
-  min-width: 0px;
-  border: 0px solid transparent;
+	margin: 0;
+	padding: 0;
+	font-size: 0px;
+	min-height: 0px;
+	min-width: 0px;
+	border: 0px solid transparent;
 }
 
 window#waybar.time-widget,
 window#waybar.date-widget {
-  background: transparent;
-  border: 0px solid transparent;
+	background: transparent;
+	border: 0px solid transparent;
 }
 
 window#waybar #clock.time {
-  background: transparent;
-  color: @widget-col;
-  font-size: 72px;
-  font-weight: 600;
-  font-family: "Inter Variable";
-  padding: 25px 0;
-  margin: 0 20px;
+	background: transparent;
+	color: @widget-col;
+	font-size: 72px;
+	font-weight: 600;
+	font-family: "Inter Variable";
+	padding: 25px 0;
+	margin: 0 20px;
 }
 
 window#waybar #clock.date {
-  background: transparent;
-  color: @widget-col;
-  font-size: 24px;
-  font-weight: 400;
-  font-family: "Inter Variable";
-  padding: 10px 0;
-  margin: 0 20px;
+	background: transparent;
+	color: @widget-col;
+	font-size: 24px;
+	font-weight: 400;
+	font-family: "Inter Variable";
+	padding: 10px 0;
+	margin: 0 20px;
 }
 
 window#waybar #mpris.widget {
-  background: transparent;
-  color: @widget-col;
-  font-size: 18px;
-  font-weight: 300;
-  font-family: "Inter Variable";
-  margin: 0 20px;
+	background: transparent;
+	color: @widget-col;
+	font-size: 18px;
+	font-weight: 300;
+	font-family: "Inter Variable";
+	margin: 0 20px;
 }
-
