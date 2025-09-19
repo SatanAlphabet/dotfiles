@@ -686,15 +686,15 @@ binds {
     Mod+Alt+7 { move-column-to-workspace 7 focus=false; }
     Mod+Alt+8 { move-column-to-workspace 8 focus=false; }
     Mod+Alt+9 { move-column-to-workspace 9 focus=false; }
-    Mod+Ctrl+Shift+1 { move-workspace-to-index 1; }
-    Mod+Ctrl+Shift+2 { move-workspace-to-index 2; }
-    Mod+Ctrl+Shift+3 { move-workspace-to-index 3; }
-    Mod+Ctrl+Shift+4 { move-workspace-to-index 4; }
-    Mod+Ctrl+Shift+5 { move-workspace-to-index 5; }
-    Mod+Ctrl+Shift+6 { move-workspace-to-index 6; }
-    Mod+Ctrl+Shift+7 { move-workspace-to-index 7; }
-    Mod+Ctrl+Shift+8 { move-workspace-to-index 8; }
-    Mod+Ctrl+Shift+9 { move-workspace-to-index 9; }
+    Mod+Ctrl+1 { move-workspace-to-index 1; }
+    Mod+Ctrl+2 { move-workspace-to-index 2; }
+    Mod+Ctrl+3 { move-workspace-to-index 3; }
+    Mod+Ctrl+4 { move-workspace-to-index 4; }
+    Mod+Ctrl+5 { move-workspace-to-index 5; }
+    Mod+Ctrl+6 { move-workspace-to-index 6; }
+    Mod+Ctrl+7 { move-workspace-to-index 7; }
+    Mod+Ctrl+8 { move-workspace-to-index 8; }
+    Mod+Ctrl+9 { move-workspace-to-index 9; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
