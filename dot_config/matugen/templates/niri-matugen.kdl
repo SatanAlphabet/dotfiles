@@ -469,7 +469,7 @@ window-rule {
     match app-id="^dropdown$"
 
     open-floating true
-    default-floating-position x=0 y=30 relative-to="top"
+    default-floating-position x=0 y=16 relative-to="top"
     default-window-height { proportion 0.5; }
     default-column-width { proportion 0.5; }
 }
@@ -511,7 +511,7 @@ binds {
     Mod+Alt+E repeat=false hotkey-overlay-title="Emoji Picker" { spawn "~/.scripts/emoji-picker.sh"; }
     Mod+Alt+G repeat=false hotkey-overlay-title="Glyph Picker" { spawn "~/.scripts/glyph-picker.sh"; }
     Mod+N repeat=false hotkey-overlay-title="Notification Panel" { spawn "swaync-client" "-t"; }
-    // Mod+B repeat=false { spawn "zen-browser"; }
+    // Mod+B repeat=false { spawn "zen-browser"; } 
     Mod+E repeat=false hotkey-overlay-title="File Browser" { spawn "dolphin"; } 
     Mod+Alt+L repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
     Mod+Alt+B repeat=false hotkey-overlay-title="Toggle waybar visibility" { spawn "pkill" "-SIGUSR1" "waybar"; }

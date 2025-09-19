@@ -98,7 +98,7 @@
       "hibernate": "systemctl hibetnate",
       "shutdown": "systemctl poweroff",
       "logout": "niri msg action quit -s",
-      "wallpaper-random": "waypaper --random",
+      "wallpaper-random": "waypaper --random --backend swww",
       "wallpaper-select": "waypaper",
       "theme": "~/.scripts/themechange.sh",
       "niri": "xdg-open https://github.com/YaLTeR/niri"
