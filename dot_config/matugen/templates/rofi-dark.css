@@ -1,9 +1,0 @@
-* {
-  background-alt:    {{colors.surface_bright.dark.hex}};
-  background:        {{colors.surface.dark.hex}};
-  foreground:        {{colors.on_surface.dark.hex}};
-  selected:          {{colors.primary.dark.hex}};
-  active:            {{colors.primary.dark.hex}};
-  urgent:            {{colors.primary.dark.hex}};
-  border:            {{colors.outline.dark.hex}};
-}
