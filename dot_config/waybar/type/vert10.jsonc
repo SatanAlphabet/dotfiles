@@ -319,7 +319,7 @@
     "layer": "bottom",
     "position": "bottom",
     "exclusive": false,
-    // "modules-left": ["mpris#widget"],
+    "modules-left": ["mpris#widget"],
     "modules-right": ["clock#date"],
     "clock#date": {
       "format": "{:%A, %d %B %Y}",

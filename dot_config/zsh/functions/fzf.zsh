@@ -73,7 +73,6 @@ _fuzzy_edit_search_file() {
 }
 
 alias ffec='_fuzzy_edit_search_file_content' \
-    ffcd='_fuzzy_change_directory' \
     ffe='_fuzzy_edit_search_file' 
 
 export FZF_DEFAULT_OPTS="   --border=rounded --border-label-pos=6 \

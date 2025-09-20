@@ -13,113 +13,7 @@ function _load_common() {
 
 }
 
-function _dedup_zsh_plugins {
-    unset -f _dedup_zsh_plugins
-    # Oh-my-zsh installation path
-    zsh_paths=(
-        "$HOME/.oh-my-zsh"
-        "/usr/local/share/oh-my-zsh"
-        "/usr/share/oh-my-zsh"
-    )
-    for zsh_path in "${zsh_paths[@]}"; do [[ -d $zsh_path ]] && export ZSH=$zsh_path && break; done
-    # Load Plugins
-    default_plugins=(git zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
-    plugins+=("${plugins[@]}" "${default_plugins[@]}")
-    # Deduplicate plugins
-    plugins=("${plugins[@]}")
-    plugins=($(printf "%s\n" "${plugins[@]}" | sort -u))
-    # Defer oh-my-zsh loading until after prompt appears
-    typeset -g DEFER_OMZ_LOAD=1
-}
 
-function _defer_omz_after_prompt_before_input() {
-
-    [[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
-    #! Never load time consuming functions here
-
-    # Add your completions directory to fpath
-    fpath=($ZDOTDIR/completions "${fpath[@]}")
-
-    _load_compinit
-
-    _load_common
-
-    # zsh-autosuggestions won't work on first prompt when deferred
-    if typeset -f _zsh_autosuggest_start >/dev/null; then
-        _zsh_autosuggest_start
-    fi
-
-    chmod +r $ZDOTDIR/.zshrc # Make sure .zshrc is readable
-    [[ -r $ZDOTDIR/.zshrc ]] && source $ZDOTDIR/.zshrc
-}
-
-function _load_deferred_plugin_system_by_hyde() {
-
-    # Exit early if HYDE_ZSH_DEFER is not set to 1
-    if [[ "${ZSH_DEFER}" != "1" ]]; then
-        unset -f _load_deferred_plugin_system_by_hyde
-        return
-    fi
-
-    # Defer oh-my-zsh loading until after prompt appears
-    # Load oh-my-zsh when line editor initializes // before user input
-    if [[ -n $DEFER_OMZ_LOAD ]]; then
-        unset DEFER_OMZ_LOAD
-        [[ ${VSCODE_INJECTION} == 1 ]] || chmod -r $ZDOTDIR/.zshrc # let vscode read .zshrc
-        zle -N zle-line-init _defer_omz_after_prompt_before_input  # Loads when the line editor initializes // The best option
-    fi
-    #  Below this line are the commands that are executed after the prompt appears
-
-    # autoload -Uz add-zsh-hook
-    # add-zsh-hook zshaddhistory load_omz_deferred # loads after the first command is added to history
-    # add-zsh-hook precmd load_omz_deferred # Loads when shell is ready to accept commands
-    # add-zsh-hook preexec load_omz_deferred # Loads before the first command executes
-
-    # TODO: add handlers in pm.sh
-    # for these aliases please manually add the following lines to your .zshrc file.(Using yay as the aur helper)
-    # pc='yay -Sc' # remove all cached packages
-    # po='yay -Qtdq | ${PM_COMMAND[@]} -Rns -' # remove orphaned packages
-
-    # zsh-autosuggestions won't work on first prompt when deferred
-    if typeset -f _zsh_autosuggest_start >/dev/null; then
-        _zsh_autosuggest_start
-    fi
-
-    # Some binds won't work on first prompt when deferred
-    bindkey '\e[H' beginning-of-line
-    bindkey '\e[F' end-of-line
-
-}
-
-function do_render {
-    # Check if the terminal supports images
-    local type="${1:-image}"
-    # TODO: update this list if needed
-    TERMINAL_IMAGE_SUPPORT=(kitty konsole ghostty WezTerm)
-    local terminal_no_art=(vscode code codium)
-    TERMINAL_NO_ART="${TERMINAL_NO_ART:-${terminal_no_art[@]}}"
-    CURRENT_TERMINAL="${TERM_PROGRAM:-$(ps -o comm= -p $(ps -o ppid= -p $$))}"
-
-    case "${type}" in
-    image)
-        if [[ " ${TERMINAL_IMAGE_SUPPORT[@]} " =~ " ${CURRENT_TERMINAL} " ]]; then
-            return 0
-        else
-            return 1
-        fi
-        ;;
-    art)
-        if [[ " ${TERMINAL_NO_ART[@]} " =~ " ${CURRENT_TERMINAL} " ]]; then
-            return 1
-        else
-            return 0
-        fi
-        ;;
-    *)
-        return 1
-        ;;
-    esac
-}
 
 function _load_compinit() {
     # Initialize completions with optimized performance
@@ -140,19 +34,14 @@ function _load_compinit() {
 
 function _load_prompt() {
     # Try to load prompts immediately
-if ! source ${ZDOTDIR}/prompt.zsh > /dev/null 2>&1; then
-    [[ -f $ZDOTDIR/conf.d/hyde/prompt.zsh ]] && source $ZDOTDIR/conf.d/hyde/prompt.zsh
+if ! source ${ZDOTDIR}/conf.d/src/prompt.zsh > /dev/null 2>&1; then
+    [[ -f $ZDOTDIR/conf.d/src/prompt.zsh ]] && source $ZDOTDIR/conf.d/src/prompt.zsh
 fi
 
 }
 
-#? Override this environment variable in ~/.zshrc
-# cleaning up home folder
 # ZSH Plugin Configuration
 
-ZSH_DEFER="1"      #Unset this variable in $ZDOTDIR/user.zsh to disable HyDE's deferred Zsh loading.
-ZSH_PROMPT="1"     #Unset this variable in $ZDOTDIR/user.zsh to disable HyDE's prompt customization.
-ZSH_NO_PLUGINS="1" #Unset this variable in $ZDOTDIR/user.zsh to disable HyDE's deferred Zsh loading.
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
@@ -165,42 +54,22 @@ fi
 
 export HISTFILE ZSH_AUTOSUGGEST_STRATEGY
 
-# HyDE Package Manager
-PM_COMMAND=(paru)
 
-# Optionally load user configuration // useful for customizing the shell without modifying the main file
-if [[ -f $HOME/.hyde.zshrc ]]; then
-    source $HOME/.hyde.zshrc # for backward compatibility
-elif [[ -f $HOME/.user.zsh ]]; then
-    source $HOME/.user.zsh # renamed to .user.zsh for intuitiveness that it is a user config
-elif [[ -f $ZDOTDIR/user.zsh ]]; then
+if [[ -f $ZDOTDIR/user.zsh ]]; then
     source $ZDOTDIR/user.zsh
 fi
+[[ -r $ZDOTDIR/.zshrc ]] && source $ZDOTDIR/.zshrc
 
 _load_compinit
 
+[[ -r $HOME/.oh-my-zsh/oh-my-zsh.sh ]] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
-if [[ ${ZSH_NO_PLUGINS} == "1" ]]; then
-    # Deduplicate omz plugins()
-    _dedup_zsh_plugins
+_load_prompt
+_load_common
 
-    if [[ "$ZSH_OMZ_DEFER" == "1" ]]; then
-        _load_deferred_plugin_system_by_hyde
-        _load_prompt # This disables transient prompts sadly
-    else
-        [[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
-        _load_prompt
-        _load_common
-
-    fi
-fi
 
 
 alias c='clear' \
-    in='${PM_COMMAND[@]} -S' \
-    un='${PM_COMMAND[@]} -R' \
-    up='${PM_COMMAND[@]} -Syu' \
-    vc='code' \
     ..='cd ..' \
     ...='cd ../..' \
     .3='cd ../../..' \
