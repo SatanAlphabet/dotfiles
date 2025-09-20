@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
 rofi_running=$(pidof rofi)
+rofi_style=style_3
+[[ -n "$1" ]]
+rofi_style="$1"
 
-if [ "$rofi_running" -ne 0 ]; then
-  pkill rofi
+if [ -n "$rofi_running" ]; then
+  pkill -SIGUSR2 rofi
 else
   if [[ -n $1 ]]; then
     rofi -theme "$1" -show

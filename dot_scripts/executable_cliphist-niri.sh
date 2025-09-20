@@ -6,7 +6,7 @@
 cache_dir="$HOME/.cache/niri"
 favorites_file="${cache_dir}/landing/cliphist_favorites"
 [ -f "$HOME/.cliphist_favorites" ] && favorites_file="$HOME/.cliphist_favorites"
-cliphist_style="${ROFI_CLIPHIST_STYLE:-style_3}"
+cliphist_style="${2:-style_3}"
 del_mode=false
 
 # process clipboard selections for multi-select mode
@@ -84,45 +84,18 @@ check_content() {
 
 # execute rofi with common parameters
 run_rofi() {
+  rofi_running=$(pidof rofi)
   local placeholder="$1"
   shift
 
-  if [ $(pidof rofi) -ne 0 ]; then
-    pkill rofi
-    exit 0
+  if [ -n "$rofi_running" ]; then
+    pkill -SIGUSR2 rofi
+  else
+    rofi -dmenu \
+      -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}" \
+      -theme "${cliphist_style}" \
+      "$@"
   fi
-
-  rofi -dmenu \
-    -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}" \
-    -theme "${cliphist_style}" \
-    "$@"
-}
-
-# setup rofi configuration
-setup_rofi_config() {
-  # font scale
-  local font_scale="${ROFI_CLIPHIST_SCALE}"
-  [[ "${font_scale}" =~ ^[0-9]+$ ]] || font_scale=${ROFI_SCALE:-10}
-
-  # set font name
-  local font_name=${ROFI_CLIPHIST_FONT:-$ROFI_FONT}
-  font_name=${font_name:-$(get_hyprConf "MENU_FONT")}
-  font_name=${font_name:-$(get_hyprConf "FONT")}
-
-  # set rofi font override
-  font_override="* {font: \"${font_name:-"JetBrainsMono Nerd Font"} ${font_scale}\";}"
-
-  # border settings
-  #local hypr_border=${hypr_border:-"$(12 | jq '.int')"}
-  #local wind_border=$((hypr_border * 3 / 2))
-  #local elem_border=$((hypr_border == 0 ? 5 : hypr_border))
-
-  # rofi position
-  rofi_position=$(get_rofi_pos)
-
-  # border width
-  #local hypr_width=${hypr_width:-"$(2 | jq '.int')"}
-  r_override="window{border:2px;border-radius:12px;}wallbox{border-radius:8px;} element{border-radius:2px;}"
 }
 
 # create favorites directory if it doesn't exist
@@ -333,7 +306,6 @@ EOF
 
 # main function
 main() {
-  setup_rofi_config
 
   local main_action
   # show main menu if no arguments are passed

@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
 
 # shellcheck disable=SC1090
-#if ! source "$(command -v hyde-shell)"; then
-#  echo "[wallbash] code :: Error: hyde-shell not found."
-#  echo "[wallbash] code :: Is HyDE installed?"
-#  exit 1
-#fi
-
-#* This glyph Data is from `https://www.nerdfonts.com/cheat-sheet`
-#* I don't own any of it
-#TODO:   Needed a way to fetch the glyph from the NerdFonts source.
-#TODO:    find a way make the  DB update
-#TODO:    make the update Script run on User space
 
 # Define paths and files
 glyph_dir=${HYDE_DATA_HOME:-$HOME/.local/share/niri}
@@ -37,47 +26,54 @@ save_recent() {
   awk 'NF' "${recent_data}" | awk '!seen[$0]++' >temp && mv temp "${recent_data}"
 }
 
-# rofi settings
-setup_rofi_config() {
-  # font scale
-  local font_scale="${ROFI_GLYPH_SCALE}"
-  [[ "${font_scale}" =~ ^[0-9]+$ ]] || font_scale=${ROFI_SCALE:-10}
+# Parse command line arguments
+parse_arguments() {
+  while (($# > 0)); do
+    case $1 in
+    --style | -s)
+      if (($# > 1)); then
+        rofi_style="$2"
+        shift # Consume the value argument
+      else
+        print_log +y "[warn] " "--style needs argument"
+        rofi_style="style_3"
+        shift
+      fi
+      ;;
+    --rasi)
+      [[ -z ${2} ]] && print_log +r "[error] " +y "--rasi requires an file.rasi config file" && exit 1
+      use_rofile=${2}
+      shift
+      ;;
+    -*)
+      cat <<HELP
+Usage:
+--style <style_name>     Change Glyph style
+HELP
 
-  # font name
-  local font_name=${ROFI_GLYPH_FONT:-$ROFI_FONT}
-  font_name=${font_name:-$(get_hyprConf "MENU_FONT")}
-  font_name=${font_name:-$(get_hyprConf "FONT")}
-
-  # rofi font override
-  font_override="* {font: \"${font_name:-"JetBrainsMono Nerd Font Propo"} ${font_scale}\";}"
-
-  # border settings
-  local hypr_border=${hypr_border:-2}
-  local wind_border=$((hypr_border * 3 / 2))
-  local elem_border=$((hypr_border == 0 ? 5 : hypr_border))
-
-  # rofi position
-  rofi_position=$(get_rofi_pos)
-
-  # border width
-  local hypr_width=${hypr_width:-2}
-  r_override="window{border:2px;border-radius:12px;}wallbox{border-radius:8px;} element{border-radius:2px;}"
+      exit 0
+      ;;
+    esac
+    shift # Shift off the current option being processed
+  done
 }
 
 # rofi menu, get selection
 get_glyph_selection() {
   rofi_running=$(pidof rofi)
 
-  if [ "$rofi_running" -ne 0 ]; then
-    pkill rofi
+  if [ -n "$rofi_running" ]; then
+    pkill -SIGUSR2 rofi
   else
+    local style_type=${rofi_style:-style_3}
     echo "${unique_entries}" | rofi -dmenu -multi-select -i \
       -theme-str "entry { placeholder: \" 🔣 Glyph\";} configuration { show-icons: false; }" \
-      -theme "${ROFI_GLYPH_STYLE:-style_3}"
+      -theme "${style_type}"
   fi
 }
 
 main() {
+  parse_arguments "$@"
   # create recent data file if it doesn't exist
   if [[ ! -f "${recent_data}" ]]; then
     mkdir -p "$(dirname "${recent_data}")"
@@ -93,9 +89,6 @@ main() {
   # combine entries and remove duplicates
   combined_entries="${recent_entries}\n${main_entries}"
   unique_entries=$(echo -e "${combined_entries}" | awk '!seen[$0]++')
-
-  # rofi config
-  setup_rofi_config
 
   # get glyph selection from rofi
   data_glyph=$(get_glyph_selection)

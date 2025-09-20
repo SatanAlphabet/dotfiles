@@ -26,6 +26,5 @@ alias ff='fastfetch'
 # Add your configurations here
 alias yay='paru'
 export EDITOR=nvim
-export BROWSER='zen-browser'
 export BAT_THEME='ansi'
 # export EDITOR=code
