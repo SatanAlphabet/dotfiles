@@ -55,9 +55,7 @@ fi
 export HISTFILE ZSH_AUTOSUGGEST_STRATEGY
 
 
-if [[ -f $ZDOTDIR/user.zsh ]]; then
-    source $ZDOTDIR/user.zsh
-fi
+[[ -r $ZDOTDIR/user.zsh ]] && source $ZDOTDIR/user.zsh
 [[ -r $ZDOTDIR/.zshrc ]] && source $ZDOTDIR/.zshrc
 
 _load_compinit

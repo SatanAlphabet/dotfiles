@@ -1,7 +1,15 @@
-ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
+#  Startup 
+# Commands to execute on startup (before the prompt is shown)
+# Check if the interactive shell option is set
+if [[ $- == *i* ]]; then
+   # This is a good place to load graphic/ascii art, display system information, etc.
+fi
 
 #  Plugins 
 # oh-my-zsh plugins are loaded  in $ZDOTDIR/.user.zsh file, see the file for more information
+plugins=(sudo git zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
+
+ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
 # # Directory navigation shortcuts
 # alias ..='cd ..'
@@ -9,6 +17,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 # alias .3='cd ../../..'
 # alias .4='cd ../../../..'
 # alias .5='cd ../../../../..'
+alias ff='fastfetch'
 
 # # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 # alias mkdir='mkdir -p'
@@ -17,5 +26,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 # Add your configurations here
 alias yay='paru'
 export EDITOR=nvim
+export BROWSER='zen-browser'
 export BAT_THEME='ansi'
 # export EDITOR=code
