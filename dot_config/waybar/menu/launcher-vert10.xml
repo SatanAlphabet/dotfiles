@@ -23,6 +23,11 @@
                             <property name="label">Glyph Picker</property>
                         </object>
                     </child>
+                    <child>
+                        <object class="GtkMenuItem" id="calc">
+                            <property name="label">Calculator</property>
+                        </object>
+                    </child>
 
                 </object>
             </child>

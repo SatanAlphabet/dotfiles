@@ -92,6 +92,7 @@
       "cliphist": "~/.scripts/cliphist-niri.sh",
       "emoji": "~/.scripts/emoji-picker.sh",
       "glyph": "~/.scripts/glyph-picker.sh",
+      "calc": "~/.scripts/calc.sh",
       "lock": "loginctl lock-session",
       "reboot": "systemctl reboot",
       "suspend": "systemctl suspend",
@@ -319,7 +320,7 @@
     "layer": "bottom",
     "position": "bottom",
     "exclusive": false,
-    "modules-left": ["mpris#widget"],
+    // "modules-left": ["mpris#widget"],
     "modules-right": ["clock#date"],
     "clock#date": {
       "format": "{:%A, %d %B %Y}",

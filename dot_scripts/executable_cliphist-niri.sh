@@ -6,7 +6,7 @@
 cache_dir="$HOME/.cache/niri"
 favorites_file="${cache_dir}/landing/cliphist_favorites"
 [ -f "$HOME/.cliphist_favorites" ] && favorites_file="$HOME/.cliphist_favorites"
-cliphist_style="${2:-style_3}"
+cliphist_style=style_3
 del_mode=false
 
 # process clipboard selections for multi-select mode
