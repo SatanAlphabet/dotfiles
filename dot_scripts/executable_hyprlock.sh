@@ -112,7 +112,7 @@ mpris_icon() {
 mpris_thumb() { # Generate thumbnail for mpris
   local player=${1:-""}
   artUrl=$(playerctl -p "${player}" metadata --format '{{mpris:artUrl}}')
-  [ "${artUrl}" == "$(cat "${THUMB}".lnk)" ] && [ -f "${THUMB}".png ] && exit 0
+  [ "${artUrl}" == "$(cat "${THUMB}".lnk)" ] && [ -f "${THUMB}".png ] && ["$player_status" == "Paused" ] && exit 0
   echo "${artUrl}" >"${THUMB}".lnk
   curl -Lso "${THUMB}".art "$artUrl"
   magick "${THUMB}.art" -quality 50 "${THUMB}.png"
