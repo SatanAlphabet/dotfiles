@@ -69,20 +69,8 @@ fn_mpris() {
   player_status="$(playerctl -p "${player}" status 2>/dev/null)"
   if [[ "${player_status}" == "Playing" ]]; then
     playerctl -p "${player}" metadata --format "{{xesam:title}} $(mpris_icon "${player}")  {{xesam:artist}}"
-    mpris_thumb "${player}"
   else
-    if [ -f "$HOME/.face.icon" ]; then
-      if ! cmp -s "$HOME/.face.icon" "${THUMB}.png"; then
-        cp -f "$HOME/.face.icon" "${THUMB}.png"
-        pkill -USR2 hyprlock >/dev/null 2>&1 # updates the mpris thumbnail
-      fi
-    else
-      if ! cmp -s "$XDG_DATA_HOME/icons/Wallbash-Icon/hyde.png" "${THUMB}.png"; then
-        cp "$XDG_DATA_HOME/icons/Wallbash-Icon/hyde.png" "${THUMB}.png"
-        pkill -USR2 hyprlock >/dev/null 2>&1 # updates the mpris thumbnail
-      fi
-    fi
-    exit 1
+    exit 1 # let the other fallback command run
   fi
 }
 
@@ -107,16 +95,6 @@ mpris_icon() {
   done
   echo "" # Default icon if no match is found
 
-}
-
-mpris_thumb() { # Generate thumbnail for mpris
-  local player=${1:-""}
-  artUrl=$(playerctl -p "${player}" metadata --format '{{mpris:artUrl}}')
-  [ "${artUrl}" == "$(cat "${THUMB}".lnk)" ] && [ -f "${THUMB}".png ] && ["$player_status" == "Paused" ] && exit 0
-  echo "${artUrl}" >"${THUMB}".lnk
-  curl -Lso "${THUMB}".art "$artUrl"
-  magick "${THUMB}.art" -quality 50 "${THUMB}.png"
-  pkill -USR2 hyprlock >/dev/null 2>&1 # updates the mpris thumbnail
 }
 
 fn_cava() {
