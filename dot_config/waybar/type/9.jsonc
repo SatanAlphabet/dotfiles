@@ -1,4 +1,4 @@
-{
+[{
 	"layer": "top",
 	"output": ["*"],
 	"position": "top",
@@ -10,10 +10,12 @@
 	"reload_style_on_change": true,
 
 	"modules-left": ["custom/launcher", "niri/window"],
-	"modules-center": ["custom/sysupdate", "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock", "custom/swaync", "mpris" ],
+	"modules-center": [ "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock", "custom/swaync", "mpris" ],
 	"modules-right": [
-    "privacy",
+    "custom/sysupdate",
     "tray",
+    "bluetooth",
+    "network",
     "niri/language"
 	],
   "wlr/taskbar": {
@@ -41,9 +43,34 @@
 		  }
     ]
   },
+  "network": {
+    "tooltip": true,
+    "format-wifi": "󰤨",
+    "rotate": 0,
+    "on-click": "kitty -1 nmtui",
+    "format-ethernet": "\udb80\ude00",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "\udb80\ude00",
+    "format-disconnected": "󰤮",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 2
+  },
+  "bluetooth": {
+    "format": "󰂲",
+    "rotate": 0,
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-connected": "󰂯",
+    "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
+    "on-click": "blueman-manager"
+  },
 	"niri/window": {
     "max-length": 50,
     "icon-size": 18,
+    "format": "<b>{}</b>"
 	},
 	"niri/workspaces": {
 		"format": "{}",
@@ -71,11 +98,20 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/menu/launcher-vert10.xml",
     "menu-actions": {
-      "powermenu": "~/.scripts/logoutlaunch.sh",
       "cliphist": "~/.scripts/cliphist-niri.sh",
       "emoji": "~/.scripts/emoji-picker.sh",
       "glyph": "~/.scripts/glyph-picker.sh",
-      "wallpaper": "waypaper"
+      "calc": "~/.scripts/calc.sh",
+      "lock": "loginctl lock-session",
+      "reboot": "systemctl reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibetnate",
+      "shutdown": "systemctl poweroff",
+      "logout": "niri msg action quit -s",
+      "wallpaper-random": "waypaper --random --backend swww",
+      "wallpaper-select": "waypaper",
+      "theme": "~/.scripts/themechange.sh",
+      "niri": "xdg-open https://github.com/YaLTeR/niri"
     },
 		"tooltip-format": "Application Launcher\nRight click for more actions"
 	},
@@ -116,6 +152,7 @@
     "tooltip-format": "{player}: PLAYING [{position}/{length}]\n{title} - {artist}",
     "tooltip-format-paused": "{player}: PAUSED [{position}/{length}]\n{title} - {artist}",
     "tooltip-format-stopped": "{player}: STOPPED",
+    "on-click": "~/.scripts/mediacontrol.sh toggle",
     "max-length": 50,
 		"player-icons": {
 			"default": "",
@@ -202,12 +239,12 @@
 		"format": "{icon}",
 		"format-charging": "",
 		"format-plugged": "",
-		"format-warning": "<span foreground='#d8a657'>{icon}</span>",
-		"format-critical": "<span foreground='#ea6962'>{icon}</span>",
-		"format-charging-warning": "<span foreground='#d8a657'></span>",
-		"format-charging-critical": "<span foreground='#ea6962'></span>",
-		"format-plugged-warning": "<span foreground='#d8a657'></span>",
-		"format-plugged-critical": "<span foreground='#ea6962'></span>",
+		"format-warning": "{icon}",
+		"format-critical": "{icon}",
+		"format-charging-warning": "",
+		"format-charging-critical": "",
+		"format-plugged-warning": "",
+		"format-plugged-critical": "",
 		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "tooltip-format": "{capacity}% \n({timeTo})"
 	},
@@ -216,6 +253,8 @@
 		"rotate": 0,
 		"format-muted": "",
 		"tooltip-format": "{icon} {desc}: {volume}%",
+    "on-scroll-up": "~/.scripts/volumecontrol.sh + 1",
+    "on-scroll-down": "~/.scripts/volumecontrol.sh - 1",
 		"on-click": "pavucontrol -t 3",
 		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"scroll-step": 1,
@@ -250,18 +289,60 @@
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
 		"on-click": "~/.scripts/update.sh"
 	}, 
-  "bluetooth": {
-    "format": "",
-    "format-disabled": "",
-    "format-connected": "",
-    "format-connected-battery": "{icon}",
-    // "format-connected-battery": "{icon} {device_alias}-{device_battery_percentage}%",
-    "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
-    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device If this config option is not defined or none of the devices in the list are connected, it will fall back to showing the last connected device.
-    "tooltip-format": "{controller_alias}\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
-    "on-click": "blueman-manager"
+},
+  {
+    "name": "border-right",
+    "layer": "top",
+    "position": "right",
+    "width": 8
+  },
+  {
+    "name": "border-left",
+    "layer": "top",
+    "position": "left",
+    "width": 8
+  },
+  {
+    "name": "border-bottom",
+    "layer": "top",
+    "position": "bottom",
+    "height": 8
+  },
+  {
+    "name": "date-widget",
+    "layer": "bottom",
+    "position": "bottom",
+    "exclusive": false,
+    // "modules-left": ["mpris#widget"],
+    "modules-right": ["clock#date"],
+    "clock#date": {
+      "format": "{:%A, %d %B %Y}",
+      "tooltip": false
+    },
+    "mpris#widget": {
+		"format": "<b>Playing:</b> {title}",
+		"rotate": 0,
+		"format-paused": "Media Paused",
+    "tooltip": false,
+		"player-icons": {
+			"default": "",
+		},
+		"status-icons": {
+			"paused": ""
+		},
+		"max-length": 50,
+		"interval": 1
+    },
+  },
+  {
+    "name": "time-widget",
+    "layer": "bottom",
+    "position": "bottom",
+    "exclusive": false,
+    "modules-right": ["clock#time"],
+    "clock#time": {
+      "format": "{:%I:%M %p}",
+      "tooltip": false
+    },
   }
-}
+  ]

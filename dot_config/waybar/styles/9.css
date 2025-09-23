@@ -1,4 +1,6 @@
 #pulseaudio,
+#bluetooth,
+#network,
 #custom-sysupdate,
 #custom-swaync,
 #custom-drawer-arrow-up,
@@ -90,9 +92,6 @@ window#waybar #custom-powermenu {
   font-size: 12px;
 }
 
-window#waybar #battery {
-}
-
 window#waybar #tray {
   padding: 0em 0.5em;
   margin: 0.5em 0.6em;
@@ -117,7 +116,7 @@ window#waybar #workspaces {
   border-radius: 13pt;
   padding: 0px 5px;
   margin: 7px 3px;
-  transition: all 0.3s;
+  transition: all 0s;
   opacity: 0.7;
 }
 
@@ -137,7 +136,7 @@ window#waybar #clock {
   font-size: 14px;
   font-weight: 400;
   border-radius: 5pt;
-  color: @main-fg-alt;
+  color: @main-fg;
 }
 
 window#waybar #pill {
@@ -167,10 +166,73 @@ tooltip {
   border-radius: 4pt;
 }
 
-window#waybar #custom-triangle-bottom,
-window#waybar #custom-triangle-top {
-  font-size: 45pt;
-  margin: 0;
-  padding: 0;
-  color: @pill-dark-bg;
+tooltip label {
+	color: @main-fg;
+}
+
+#network.disabled,
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off {
+	opacity: 0.7;
+}
+
+#battery.warning {
+	color: @hvr-bg;
+}
+
+#battery.critical {
+	color: @crit-bg;
+}
+
+window#waybar .modules-right label.module {
+	background: transparent;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+window#waybar.left *,
+window#waybar.right *,
+window#waybar.bottom * {
+	margin: 0;
+	padding: 0;
+	font-size: 0px;
+	min-height: 0px;
+	min-width: 0px;
+	border: 0px solid transparent;
+}
+
+window#waybar.time-widget,
+window#waybar.date-widget {
+	background: transparent;
+	border: 0px solid transparent;
+}
+
+window#waybar #clock.time {
+	background: transparent;
+	color: @widget-col;
+	font-size: 72px;
+	font-weight: 600;
+	font-family: "Inter Variable";
+	padding: 25px 0;
+	margin: 0 20px;
+}
+
+window#waybar #clock.date {
+	background: transparent;
+	color: @widget-col;
+	font-size: 24px;
+	font-weight: 400;
+	font-family: "Inter Variable";
+	padding: 10px 0;
+	margin: 0 20px;
+}
+
+window#waybar #mpris.widget {
+	background: transparent;
+	color: @widget-col;
+	font-size: 18px;
+	font-weight: 300;
+	font-family: "Inter Variable";
+	margin: 0 20px;
 }
