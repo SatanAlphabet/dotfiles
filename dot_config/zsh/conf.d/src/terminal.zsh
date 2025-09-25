@@ -55,7 +55,6 @@ fi
 export HISTFILE ZSH_AUTOSUGGEST_STRATEGY
 
 
-[[ -r $ZDOTDIR/user.zsh ]] && source $ZDOTDIR/user.zsh
 [[ -r $ZDOTDIR/.zshrc ]] && source $ZDOTDIR/.zshrc
 
 _load_compinit
@@ -64,7 +63,6 @@ _load_compinit
 
 _load_prompt
 _load_common
-
 
 
 alias c='clear' \
