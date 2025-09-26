@@ -281,6 +281,7 @@ spawn-at-startup "systemctl" "--user" "start" "swaync-niri.service"
 spawn-at-startup "systemctl" "--user" "start" "overview-blur.service"
 spawn-at-startup "waypaper" "--restore" "--backend" "swww"
 spawn-at-startup "niriusd"
+spawn-at-startup "~/.scripts/reload-portal.sh"
 
 layer-rule {
     match namespace="^wallpaper$"
