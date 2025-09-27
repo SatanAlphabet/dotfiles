@@ -1,0 +1,21 @@
+{
+  "name": "matugen-vscode",
+  "displayName": "Matugen VSCode",
+  "description": "Dynamically generated VS Code theme by Matugen",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Matugen",
+        "uiTheme": "vs",
+        "path": "./themes/Matugen-color-theme.json"
+      }
+    ]
+  }
+}
