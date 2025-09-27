@@ -59,7 +59,8 @@ export HISTFILE ZSH_AUTOSUGGEST_STRATEGY
 
 _load_compinit
 
-[[ -r $HOME/.oh-my-zsh/oh-my-zsh.sh ]] && source $HOME/.oh-my-zsh/oh-my-zsh.sh
+export ZSH="$HOME/.oh-my-zsh"
+[[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 
 _load_prompt
 _load_common

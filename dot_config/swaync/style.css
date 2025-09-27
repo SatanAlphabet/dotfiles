@@ -40,10 +40,10 @@ slider {
   margin: 0.5rem 0.2rem;
   box-shadow: none;
   background: @main-bg;
-  border: 1pt solid @pill-bg;
+  border: .3pt solid @act-bg;
   color: @main-fg;
   transition: all 0.15s ease-in-out;
-  border-radius: 4pt;
+  border-radius: 0pt;
   width: auto;
 }
 
@@ -57,7 +57,6 @@ slider {
 }
 
 .floating-notifications.background .notification-row .notification-background {
-  box-shadow: inset 0 0 0 1.5px @main-bg-alt;
   border-radius: 0px;
   margin: 8px;
   background-color: @main-bg;
@@ -68,11 +67,14 @@ slider {
 .floating-notifications.background .notification-row .notification-background .notification {
   padding: 7px;
   border-radius: 0px;
+  border: 2px solid @act-bg;
+  border-left: 6px solid @act-bg;
   font-size: 1rem;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification.critical {
-  box-shadow: inset 0 0 0 1.5px @act-bg;
+  border: 2px solid @crit-bg;
+  border-left: 6px solid @crit-bg;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .image {
@@ -175,18 +177,20 @@ slider {
 .control-center .notification-row .notification-background {
   border-radius: 0px;
   color: @main-fg;
-  background-color: @main-bg-alt;
-  box-shadow: inset 0 0 0px 1px @main-bg-alt;
+  background-color: @main-bg;
   margin-top: 10px;
 }
 
 .control-center .notification-row .notification-background .notification {
   padding: 7px;
+  border: 2px solid @act-bg;
+  border-left: 6px solid @act-bg;
   border-radius: 0px;
 }
 
 .control-center .notification-row .notification-background .notification.critical {
-  box-shadow: inset 0 0 2px 0 @act-bg;
+  border: 2px solid @crit-bg;
+  border-left: 6px solid @crit-bg;
 }
 
 .control-center .notification-row .notification-background .notification .notification-content {
