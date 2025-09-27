@@ -58,23 +58,25 @@ slider {
 
 .floating-notifications.background .notification-row .notification-background {
   border-radius: 0px;
-  margin: 8px;
+  margin: 16px;
+  margin-bottom: 0px;
   background-color: @main-bg;
   color: @main-fg;
   padding: 0;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {
-  padding: 7px;
+  padding: 8px;
+  margin: 0px;
   border-radius: 0px;
   border: 2px solid @act-bg;
-  border-left: 6px solid @act-bg;
+  border-left: 8px solid @act-bg;
   font-size: 1rem;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification.critical {
   border: 2px solid @crit-bg;
-  border-left: 6px solid @crit-bg;
+  border-left: 8px solid @crit-bg;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .image {
@@ -182,15 +184,15 @@ slider {
 }
 
 .control-center .notification-row .notification-background .notification {
-  padding: 7px;
+  padding: 8px;
   border: 2px solid @act-bg;
-  border-left: 6px solid @act-bg;
+  border-left: 8px solid @act-bg;
   border-radius: 0px;
 }
 
 .control-center .notification-row .notification-background .notification.critical {
   border: 2px solid @crit-bg;
-  border-left: 6px solid @crit-bg;
+  border-left: 8px solid @crit-bg;
 }
 
 .control-center .notification-row .notification-background .notification .notification-content {
