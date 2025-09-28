@@ -1,6 +1,7 @@
 @import "./colors/matugen.css";
 
 * {
+  all: unset;
   font-size: 12px;
   font-family: "JetBrainsMono Nerd Font Propo";
 }
@@ -183,12 +184,32 @@ notificationwindow, blankwindow, blankwindow {
   text-shadow: none;
 }
 
-.notification-row .notification-background .notification .notification-default-action .notification-content progressbar {
+.notification progressbar {
   /* The optional notification progress bar */
   margin-top: 4px;
   min-height: 10px;
   filter: none;
-  color: @main-fg;
+  border-radius: 0;
+}
+
+.notification trough {
+  min-height: 10px;
+  background-color: @main-bg-alt;
+  border-radius: 0;
+}
+
+.notification progress {
+  min-height: 10px;
+  background-color: @act-bg;
+  border-radius: 0;
+}
+
+.notification.low progress {
+  background-color: @main-fg;
+}
+
+.notification.critical progress {
+  background-color: @crit-bg;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .body-image {
@@ -380,7 +401,7 @@ notificationwindow, blankwindow, blankwindow {
 /* Title widget */
 .widget-title > label {
   margin-right: 8px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .widget-title > button {
@@ -389,7 +410,7 @@ notificationwindow, blankwindow, blankwindow {
   background-color: @main-bg-alt;
   color: @main-fg;
   box-shadow: inset 0 0 0 1px @border-col;
-  padding: 4px 8px;
+  padding: 6px 12px;
 }
 
 .widget-title > button:hover {
@@ -406,6 +427,7 @@ notificationwindow, blankwindow, blankwindow {
 .widget-dnd label {
   color: @main-fg;
   margin-right: 8px;
+  font-size: 1.1rem;
 }
 
 .widget-dnd switch {
