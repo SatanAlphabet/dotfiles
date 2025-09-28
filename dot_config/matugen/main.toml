@@ -21,6 +21,10 @@ output_path = '~/.config/rofi/colors/matugen.rasi'
 input_path = './templates/midnight-discord.css'
 output_path = '~/.config/vesktop/themes/midnight-matugen.css'
 
+[templates.system24-discord]
+input_path = './templates/system24-discord.css'
+output_path = '~/.config/vesktop/themes/system24-matugen.css'
+
 [templates.kitty-dark]
 input_path = './templates/kitty-dark.conf'
 output_path = '~/.config/kitty/dark-theme.auto.conf'
@@ -60,6 +64,10 @@ output_path = '~/.config/yazi/theme.toml'
 input_path = './templates/spotify-color.ini'
 output_path = '~/.config/spicetify/Themes/colorful/color.ini'
 post_hook = 'spicetify refresh'
+
+[templates.spotify-text]
+input_path = './templates/spotify-text-color.ini'
+output_path = '~/.config/spicetify/Themes/text/color.ini'
 
 [templates.hyprlock]
 input_path = './templates/hyprlock-colors.conf'
