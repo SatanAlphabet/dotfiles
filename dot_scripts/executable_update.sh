@@ -1,7 +1,7 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 command="
-        fastfetch --logo-type kitty
+        fastfetch
         echo '''
 
  ===>  Beginning system update...

@@ -7,7 +7,7 @@ elif [ $current_theme = "'prefer-light'" ]; then
   matugen image "$1" -c ~/.config/matugen/main.toml -m light
 fi
 
-cp -f "$1" ${cache_dir}/niri/landing/background
+cp -sf "$1" ${cache_dir}/niri/landing/background
 magick "$1" -blur 20x10 ${cache_dir}/niri/landing/blur
 systemctl --user restart overview-blur.service
 notify-send -e -r 2 -t 2000 "Wallpaper switch successful..." "$1"
