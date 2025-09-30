@@ -9,7 +9,7 @@ fi
 if [ -n "$rofi_running" ]; then
   pkill -SIGUSR2 rofi
 else
-  rofi -modi calc -show calc -no-show-match -no-sort -theme ${rofi_style} \
+  rofi -modi calc -show calc -no-show-match -no-sort -theme "${rofi_style}" \
     -theme-str "entry { placeholder: \"Calculate...\"; }" \
     -calc-command "echo -n '{result}' | wl-copy && notify-send \"Result copied to clipboard...\" -e" \
     -theme-str "configuration { calc { hint-welcome: \" Ctrl-Enter to copy current result to clipboard.\"; } } " \

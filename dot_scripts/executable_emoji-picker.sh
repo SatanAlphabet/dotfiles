@@ -34,10 +34,6 @@ setup_rofi_config() {
   local font_name=${ROFI_EMOJI_FONT:-$ROFI_FONT}
   font_name=${font_name:-$(get_hyprConf "MENU_FONT")}
   font_name=${font_name:-$(get_hyprConf "FONT")}
-
-  # rofi font override
-  font_override="* {font: \"${font_name:-"JetBrainsMono Nerd Font Propo"} ${font_scale}\";}"
-
 }
 
 # Parse command line arguments

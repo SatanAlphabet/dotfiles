@@ -9,8 +9,6 @@ fi
 
 #// set file variables
 
-scrDir=$(dirname "$(realpath "$0")")
-# shellcheck disable=SC1091
 [ -n "${1}" ] && wlogoutStyle="${1}"
 wlogoutStyle=1
 confDir="${confDir:-$HOME/.config}"
@@ -61,16 +59,16 @@ dcol_mode="${dcol_mode:-dark}"
 [ -f "${cacheDir}/wall.dcol" ] && source "${cacheDir}/wall.dcol"
 
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
-if [ $current_theme = "'prefer-dark'" ]; then
+if [ "$current_theme" = "'prefer-dark'" ]; then
   export BtnCol="white"
 else
   export BtnCol="black"
 fi
 #// eval hypr border radius
 
-hypr_border="${hypr_border:-10}"
-export active_rad=$((hypr_border * 5))
-export button_rad=$((hypr_border * 8))
+border="4"
+export active_rad=$((border * 5))
+export button_rad=$((border * 8))
 
 #// eval config files
 

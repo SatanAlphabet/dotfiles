@@ -42,7 +42,6 @@ parse_arguments() {
       ;;
     --rasi)
       [[ -z ${2} ]] && print_log +r "[error] " +y "--rasi requires an file.rasi config file" && exit 1
-      use_rofile=${2}
       shift
       ;;
     -*)
