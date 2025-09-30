@@ -1,19 +1,2 @@
 [color]
-background = 'default'
-foreground = '#28638a'
-
-; gradient = 0
-gradient = 1
-gradient_color_1 = '#cae6ff'
-gradient_color_2 = '#28638a'
-gradient_color_3 = '#001e30'
-
-horizontal_gradient = 0
-; horizontal_gradient = 1
-horizontal_gradient_color_1 = '#cae6ff'
-horizontal_gradient_color_2 = '#28638a'
-horizontal_gradient_color_3 = '#001e30'
-horizontal_gradient_color_4 = '#28638a'
-horizontal_gradient_color_5 = '#cae6ff'
-
-
+theme = 'matugen'
