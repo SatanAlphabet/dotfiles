@@ -26,24 +26,49 @@ if [ ! -f "${wLayout}" ] || [ ! -f "${wlTmplt}" ]; then
 fi
 
 #// detect monitor res
+get_output() {
+  outputs=$(niri msg -j outputs | jq '.[]')
+  current_mode=$(echo "${outputs}" | jq '.current_mode')
+  current_output=$(echo "${outputs}" | jq .modes["${current_mode}"])
 
-x_mon=16
-y_mon=9
-hypr_scale=1
+  current_height=$(echo "${current_output}" | jq '.height')
+  current_width=$(echo "${current_output}" | jq '.width')
+
+  gcd=$(qalc -t gcd "${current_width}", "${current_height}")
+  height_ratio=$(("${current_height}" / "${gcd}"))
+  width_ratio=$(("${current_width}" / "${gcd}"))
+
+  case "$1" in
+  width)
+    echo "${width_ratio}"
+    ;;
+  height)
+    echo "${height_ratio}"
+    ;;
+  *)
+    echo "Invalid parameter (use 'width' or 'height')."
+    return 1
+    ;;
+  esac
+}
+
+x_mon=$(get_output width)
+y_mon=$(get_output height)
+scale=1
 #// scale config layout and style
 
 case "${wlogoutStyle}" in
 1)
   wlColms=6
-  export mgn=$((y_mon * 28 / hypr_scale))
-  export hvr=$((y_mon * 23 / hypr_scale))
+  export mgn=$((y_mon * 28 / scale))
+  export hvr=$((y_mon * 23 / scale))
   ;;
 2)
   wlColms=2
-  export x_mgn=$((x_mon * 35 / hypr_scale))
-  export y_mgn=$((y_mon * 25 / hypr_scale))
-  export x_hvr=$((x_mon * 32 / hypr_scale))
-  export y_hvr=$((y_mon * 20 / hypr_scale))
+  export x_mgn=$((x_mon * 35 / scale))
+  export y_mgn=$((y_mon * 25 / scale))
+  export x_hvr=$((x_mon * 32 / scale))
+  export y_hvr=$((y_mon * 20 / scale))
   ;;
 esac
 
