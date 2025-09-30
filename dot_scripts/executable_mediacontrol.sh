@@ -5,7 +5,7 @@ if [[ -z ${status} ]]; then
   exit 0
 fi
 
-media_data="$(playerctl metadata artist) - $(playerctl metadata title)"
+media_data="$(playerctl metadata title)"
 
 if [[ "$1" = 'next' ]]; then
   playerctl next 2>/dev/null

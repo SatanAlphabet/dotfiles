@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 command="
         fastfetch
@@ -20,7 +20,7 @@ command="
 
         '''
         sudo checkservices
-        notify-send 'System update completed...'
+        notify-send 'System update completed...' -a 'System Update'
         read -n 1 -p 'Press any key to exit...'
         "
 

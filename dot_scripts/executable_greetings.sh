@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 repo_updates=$(checkupdates | wc -l)
 aur_updates=$(paru -Quaq | wc -l)
