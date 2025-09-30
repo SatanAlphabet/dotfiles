@@ -6,25 +6,20 @@ if [[ $- == *i* ]]; then
 fi
 
 #  Plugins 
-# oh-my-zsh plugins are loaded  in $ZDOTDIR/.user.zsh file, see the file for more information
 plugins=(sudo git zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
 
-ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # # Directory navigation shortcuts
-# alias ..='cd ..'
-# alias ...='cd ../..'
-# alias .3='cd ../../..'
-# alias .4='cd ../../../..'
-# alias .5='cd ../../../../..'
+alias c='clear' \
+    ..='cd ..' \
+    ...='cd ../..' \
+    .3='cd ../../..' \
+    .4='cd ../../../..' \
+    .5='cd ../../../../..' \
+    mkdir='mkdir -p'
 alias ff='fastfetch'
 
-# # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
-# alias mkdir='mkdir -p'
-
-#  This is your file 
-# Add your configurations here
 alias yay='paru'
 export EDITOR=nvim
 export BAT_THEME='ansi'
-# export EDITOR=code

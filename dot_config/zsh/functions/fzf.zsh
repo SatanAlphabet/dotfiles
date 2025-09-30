@@ -75,6 +75,7 @@ _fuzzy_edit_search_file() {
 alias ffec='_fuzzy_edit_search_file_content' \
     ffe='_fuzzy_edit_search_file' 
 
+# Default fzf options
 export FZF_DEFAULT_OPTS="   --border=rounded --border-label-pos=6 \
   --margin=0 --padding=1 --style=minimal\
   --layout=reverse --info=default \
@@ -85,6 +86,7 @@ export FZF_DEFAULT_OPTS="   --border=rounded --border-label-pos=6 \
   --walker-skip .git,node_modules \
   "
 
+# Keybind-specific fzf options
 export FZF_ALT_C_OPTS="--preview='tree -C {} | head -n 300' --border-label='| Change Directory |'"
 export FZF_CTRL_R_OPTS="--border-label='| Command History |'"
 export FZF_CTRL_T_OPTS="--border-label='| Search |'"

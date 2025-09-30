@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
-for file in "${ZDOTDIR:-$HOME/.config/zsh}/conf.d/"*.zsh; do
-  [ -r "$file" ] && source "$file"
-done
+env_dir="$ZDOTDIR/src/env.zsh"
+terminal_dir="$ZDOTDIR/src/terminal.zsh"
+
+if ! . "$env_dir"; then
+    echo "Error: Could not source ${env_dir}"
+    return 1
+fi
+
+if [ -t 1 ] && [ -f "$terminal_dir" ]; then
+    . "$terminal_dir" || echo "Error: Could not source ${terminal_dir}"
+fi
