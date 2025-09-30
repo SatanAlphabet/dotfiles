@@ -309,7 +309,7 @@
 			},
 			"exec-if": "which waybar-module-pacman-updates",
 			"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
-			"on-click": "~/.scripts/update.sh"
+			"on-click": "kitty --class 'sysupdate' --title 'System Update' ~/.scripts/sysupdate.sh"
 		}
 	},
 	{

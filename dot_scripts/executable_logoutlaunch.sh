@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 
 #// Check if wlogout is already running
-
 if pgrep -x "wlogout" >/dev/null; then
   pkill -x "wlogout"
   exit 0
 fi
 
 #// set file variables
-
 [ -n "${1}" ] && wlogoutStyle="${1}"
 wlogoutStyle=1
 confDir="${confDir:-$HOME/.config}"
@@ -73,15 +71,7 @@ case "${wlogoutStyle}" in
 esac
 
 #// scale font size
-
 export fntSize=$((y_mon * 2 / 100))
-
-#// detect wallpaper brightness
-
-cacheDir="${HYDE_CACHE_HOME}"
-dcol_mode="${dcol_mode:-dark}"
-# shellcheck disable=SC1091
-[ -f "${cacheDir}/wall.dcol" ] && source "${cacheDir}/wall.dcol"
 
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
 if [ "$current_theme" = "'prefer-dark'" ]; then
@@ -89,16 +79,13 @@ if [ "$current_theme" = "'prefer-dark'" ]; then
 else
   export BtnCol="black"
 fi
-#// eval hypr border radius
-
+#// eval border radius
 border="4"
 export active_rad=$((border * 5))
 export button_rad=$((border * 8))
 
 #// eval config files
-
 wlStyle="$(envsubst <"${wlTmplt}")"
 
 #// launch wlogout
-
 wlogout -b "${wlColms}" -c 0 -r 0 -m 0 --layout "${wLayout}" --css <(echo "${wlStyle}") --protocol layer-shell
