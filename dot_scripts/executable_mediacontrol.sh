@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 status=$(playerctl status 2>/dev/null)
 
 if [[ -z ${status} ]]; then
