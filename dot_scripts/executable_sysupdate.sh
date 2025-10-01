@@ -20,4 +20,4 @@ echo '''
         '''
 sudo checkservices
 notify-send 'System update completed...' -a 'System Update'
-read -n 1 -p 'Press any key to exit...'
+read -r -n 1 -p 'Press any key to exit...'

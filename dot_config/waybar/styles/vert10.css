@@ -54,7 +54,7 @@ window#waybar {
 
 window#waybar box.module,
 window#waybar label.module {
-	background: @pill-dark-bg;
+	background: @pill-bg;
 	margin: 0em 0.5em;
 	padding: 0.2em 0;
 	border-radius: 5pt;
@@ -152,7 +152,7 @@ window#waybar #clock {
 }
 
 window#waybar #pill {
-	background: @pill-dark-bg;
+	background: @pill-bg;
 	border-radius: 5pt;
 }
 

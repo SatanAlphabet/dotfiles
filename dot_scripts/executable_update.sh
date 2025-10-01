@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 ## Deprecated script, use sysupdate.sh instead.
-./sysupdate.sh
+kitty --class 'sysupdate' --title 'System Update' ~/.scripts/sysupdate.sh
