@@ -5,7 +5,7 @@ input {
              options "grp:menu_toggle"
         }
         repeat-delay 300
-        repeat-rate 15
+        repeat-rate 20
         numlock
     }
 
@@ -42,8 +42,6 @@ input {
     }
 
     warp-mouse-to-focus mode="center-xy"
-
     focus-follows-mouse max-scroll-amount="0%"
-
     workspace-auto-back-and-forth
 }

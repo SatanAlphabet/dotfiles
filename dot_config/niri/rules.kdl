@@ -89,6 +89,7 @@ window-rule {
 
 layer-rule {
     match namespace="^wallpaper$"
+    match namespace="^swww-daemonoverview$"
 
     place-within-backdrop true
 }

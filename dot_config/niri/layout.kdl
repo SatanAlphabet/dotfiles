@@ -29,7 +29,6 @@ layout {
         inactive-gradient from="#b4befe4c" to="#6c70864c" angle=45 relative-to="workspace-view"
     }
 
-    // You can also add a border. It's similar to the focus ring, but always visible.
     border {
         on
         width 2
@@ -66,9 +65,9 @@ layout {
     background-color "transparent"
 }
 
-  overview {
-    backdrop-color "#f6fafd"
-    workspace-shadow {
-       // off
-    }
+overview {
+  backdrop-color "#f6fafd"
+  workspace-shadow {
+     // off
   }
+}

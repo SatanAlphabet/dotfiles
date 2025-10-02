@@ -1,10 +1,15 @@
 layout {
-    border {
-        active-color "{{colors.primary.default.hex}}"
-        urgent-color "{{colors.error.default.hex}}"
-        inactive-color "{{colors.outline_variant.default.hex}}"
-    }
+  border {
+    active-color "{{colors.primary.default.hex}}"
+    urgent-color "{{colors.error.default.hex}}"
+    inactive-color "{{colors.outline_variant.default.hex}}"
+  }
+
+  insert-hint {
+    gradient from="{{colors.primary.default.rgba | set_alpha: 0.5}}" to="{{colors.secondary.default.rgba | set_alpha: 0.5}}"
+  }
 }
+
 overview {
     backdrop-color "{{colors.surface.default.hex}}"
 }
