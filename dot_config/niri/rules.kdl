@@ -1,0 +1,94 @@
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+window-rule {
+    match title="MainPicker"
+    match app-id=r#"^[Xx]dg-desktop-portal-gtk$"#
+    match app-id=r#"^org\.freedesktop\.impl\.portal\.desktop.*$#"
+    match app-id=r#"^org\.kde\.polkit-kde-authentication-agent-1$"#
+    match app-id=r#"^\.*dialog\.*$"#
+    match app-id=r#"nm-applet"#
+    match app-id=r#"pavucontrol"#
+    match app-id=r#"blueman-manager"#
+    match app-id=r#"waypaper"#
+
+    open-floating true
+    default-window-height {}
+    default-column-width {}
+}
+
+window-rule {
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"Chromium-browser$"# title="^| Spotify$"
+
+    open-floating true
+    default-floating-position x=32 y=32 relative-to="bottom-right"
+}
+
+window-rule {
+    match app-id=r#"discord$"#
+    match app-id=r#"zen$"#
+    match app-id=r#"firefox$"#
+    match app-id=r#"vencord$"#
+    match app-id=r#"vesktop$"#
+
+    open-maximized true
+}
+
+window-rule {
+    draw-border-with-background false
+}
+
+window-rule {
+    match app-id=r#"org\.kde\.kdeconnect\.daemon$"#
+
+    open-floating true
+    opacity 0.5
+}
+
+window-rule {
+    match app-id=r#"^org\.vinegarhq\.Sober$"#
+
+    open-fullscreen true
+}
+
+window-rule {
+  match app-id=r#"sysupdate$"#
+
+  open-floating true
+  default-window-height { proportion 0.7; }
+  default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id="^dropdown$"
+
+    open-floating true
+    default-floating-position x=0 y=16 relative-to="top"
+    default-window-height { proportion 0.5; }
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+layer-rule {
+    match namespace="^wallpaper$"
+
+    place-within-backdrop true
+}

@@ -40,7 +40,7 @@ output_path = '~/.config/btop/themes/matugen.theme'
 
 [templates.niri]
 input_path = '~/.config/matugen/templates/niri-matugen.kdl'
-output_path = '~/.config/niri/config.kdl'
+output_path = '~/.config/niri/matugen-colors.kdl'
 
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
