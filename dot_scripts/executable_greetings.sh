@@ -1,8 +1,8 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 repo_updates=$(checkupdates | wc -l)
 aur_updates=$(paru -Quaq | wc -l)
-total_updates=($repo_updates + $aur_updates)
+total_updates=$((repo_updates + aur_updates))
 
 if [[ $total_updates = 0 ]]; then
   notify-send "Welcome back, $USER." "All packages are up to date." -e -t 10000

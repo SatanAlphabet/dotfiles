@@ -34,7 +34,7 @@ elif [[ "$1" = 'prev' ]]; then
 elif [[ "$1" = 'toggle' ]]; then
   playerctl play-pause
   if [[ ${status} = 'Playing' ]]; then
-    notify-send -e -r 4 -t 1500 -u low "Paused media [ 󰏤 ]" "$media_data" -h int:value:"$media_progress"
+    notify-send -e -r 4 -t 1500 "Paused media [ 󰏤 ]" "$media_data" -h int:value:"$media_progress"
   elif [[ ${status} = 'Paused' ]]; then
     notify-send -e -r 4 -t 1500 "Playing media [ 󰝚 ]" "$media_data" -h int:value:"$media_progress"
   fi
