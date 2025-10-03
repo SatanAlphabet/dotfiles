@@ -2,4 +2,4 @@
 
 *This setup is a work in progress and is subject to constant changes.*
 
-![Setup Preview Image](/assets/preview.png "Desktop Preview")
+![Setup Preview Image](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview.png "Desktop Preview")
