@@ -2,7 +2,7 @@
 status=$(playerctl status 2>/dev/null)
 
 if [[ -z ${status} ]]; then
-  notify-send "No media found..." -e -r 4 -t 1500
+  notify-send "No media found..." -e -r 4 -t 1500 -u low
   exit 0
 fi
 

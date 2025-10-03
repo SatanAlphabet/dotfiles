@@ -99,8 +99,8 @@ notificationwindow, blankwindow, blankwindow {
 
 .notification-row .notification-background .notification.low {
   /* Low Priority Notification */
-  border: 2px solid @main-fg;
-  border-left: 8px solid @main-fg;
+  border: 2px solid @border-col;
+  border-left: 8px solid @border-col;
 }
 
 .notification-row .notification-background .notification.normal {
@@ -205,7 +205,7 @@ notificationwindow, blankwindow, blankwindow {
 }
 
 .notification.low progress {
-  background-color: @main-fg;
+  background-color: @border-col;
 }
 
 .notification.critical progress {

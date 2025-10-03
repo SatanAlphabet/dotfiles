@@ -167,7 +167,7 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
     
-    spacing:                     5px;
+    spacing:                     6px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -197,6 +197,7 @@ element {
     background-color:            transparent;
     text-color:                  @foreground-colour;
     cursor:                      pointer;
+    orientation:                 horizontal;
 }
 element normal.normal {
     background-color:            var(normal-background);

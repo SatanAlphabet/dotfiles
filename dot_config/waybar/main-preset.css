@@ -38,7 +38,6 @@ window#waybar #custom-seperator {
 window#waybar #language {
 	font-size: 14px;
 	margin: 0 0.6em;
-	border-radius: 5pt;
 	font-weight: 400;
 	background: transparent;
 	margin-top: 0.4em;
@@ -132,14 +131,12 @@ window#waybar #workspaces {
 	color: @main-fg-alt;
 	background: @inact-bg;
 	opacity: 1;
-	transition: all 0.5s;
 }
 
 #workspaces button.active:hover {
 	color: @main-bg;
 	background: @hvr-bg;
 	opacity: 1;
-	transition: all 0.5s;
 }
 
 window#waybar #clock {
@@ -182,7 +179,6 @@ tooltip {
 	border-width: 0.3pt;
 	border-style: solid;
 	border-color: @main-fg;
-	border-radius: 4pt;
 }
 
 tooltip label {
