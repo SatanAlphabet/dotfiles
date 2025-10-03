@@ -7,6 +7,11 @@ if [[ -z ${status} ]]; then
 fi
 
 media_data="$(playerctl metadata title)"
+current_pos=$(printf "%0.f" $(playerctl position))
+media_length=$(playerctl metadata mpris:length)
+
+media_length=$((media_length / 60 / 1000 / 1000))
+media_progress=$((current_pos / 60 * 100 / media_length))
 
 if [[ "$1" = 'next' ]]; then
   playerctl next 2>/dev/null
@@ -17,9 +22,9 @@ elif [[ "$1" = 'prev' ]]; then
 elif [[ "$1" = 'toggle' ]]; then
   playerctl play-pause
   if [[ ${status} = 'Playing' ]]; then
-    notify-send -e -r 4 -t 1500 "Paused media..." "$media_data"
+    notify-send -e -r 4 -t 1500 "Paused media [ 󰏤 ]" "$media_data" -h int:value:"$media_progress"
   elif [[ ${status} = 'Paused' ]]; then
-    notify-send -e -r 4 -t 1500 "Playing media..." "$media_data"
+    notify-send -e -r 4 -t 1500 "Playing media [ 󰝚 ]" "$media_data" -h int:value:"$media_progress"
   fi
 else
   echo "Invalid command (Available commands are \"prev\", \"next\" and \"toggle\")."
