@@ -2,3 +2,6 @@ README.md
 
 assets/
 assets/**
+install.sh
+package.list
+package-aur.list
