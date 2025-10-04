@@ -14,22 +14,15 @@ else
   echo -e "\n===>  paru is installed. Skipping...\n"
 fi
 
+pkg_path="$HOME/.local/share/chezmoi"
 echo -e "\n===>  Installing base packages...\n"
-paru -S --needed - <"package.list"
+paru -S --needed - <"$pkg_path/package.list"
 
 echo -e "\n===>  Installing AUR packages...\n"
-paru -S --needed --confirm - <"package-aur.list"
+paru -S --needed --confirm - <"$pkg_path/package-aur.list"
 
 echo -e "\n===>  Switching shell to zsh...\n"
 chsh -s "$(which zsh)"
-
-if ! command -v chezmoi &>/dev/null; then
-  echo -e "\n===>  chezmoi is not installed. Installing...\n"
-  sudo pacman -S chezmoi
-fi
-echo -e "\n===>  Setting up config with chezmoi...\n"
-chezmoi init SatanAlphabet
-chezmoi apply
 
 services=(swayidle-niri wl-clip-persist niriusd wl-paste-text-niri wl-paste-image-niri)
 echo -e "\n===>  Adding necessary user services...\n"
@@ -37,6 +30,9 @@ for service in "${services[@]}"; do
   echo "- Adding: ""$service"".service"
   systemctl --user add-wants niri.service "$service"
 done
+
+echo -e "\n===>  Creating cache folder..."
+mkdir -p "$HOME/.cache/niri/landing/"
 
 echo -e "\n===>  Basic setup installed."
 echo -e "\nAdd 'post_command = ~/.scripts/wallswitch.sh \$wallpaper' to your waypaper's config.ini"
