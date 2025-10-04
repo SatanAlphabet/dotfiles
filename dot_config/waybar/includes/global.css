@@ -1,8 +1,9 @@
 * {
   border-radius: 0em;
-  font-family: "JetBrainsMono Nerd Font Propo";
-  font-size: 10.2px;
   text-shadow: none;
+  box-shadow: none;
+  min-width: 0px;
+  min-height: 0px;
 }
 
 tooltip label {

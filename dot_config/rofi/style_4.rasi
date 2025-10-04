@@ -267,7 +267,7 @@ button {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
-    background-color:            @alternate-background;
+    background-color:            @background-colour;
     text-color:                  inherit;
     cursor:                      pointer;
 }

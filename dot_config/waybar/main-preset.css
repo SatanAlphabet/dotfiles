@@ -1,25 +1,37 @@
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 10px;
+}
+
 #pulseaudio,
+#bluetooth,
+#network,
 #custom-sysupdate,
 #custom-swaync,
 #custom-drawer-arrow-up,
 #mpris,
-#backlight,
 #bluetooth,
-#network,
 #battery {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 window#waybar #custom-drawer-arrow-up {
-	font-weight: bolder;
-	padding-top: 0.5em;
+  font-weight: bolder;
+  padding-top: 0.5em;
 }
 
 window#waybar #custom-seperator {
-	font-size: 13px;
-	margin: -0.3em 0;
-	opacity: 0.4;
-	background: transparent;
+  font-size: 18px;
+  margin: 0 0.1em;
+  padding: 0;
+  opacity: 0.35;
+  background: transparent;
+}
+
+window#waybar #custom-seperator.bottom {
+}
+
+window#waybar #custom-seperator.top {
 }
 
 /*
@@ -36,42 +48,40 @@ window#waybar #custom-seperator {
 */
 
 window#waybar #language {
-	font-size: 14px;
-	margin: 0 0.6em;
-	font-weight: 400;
-	background: transparent;
-	margin-top: 0.4em;
+  font-size: 12px;
+  border-radius: 5pt;
+  font-weight: 500;
+  background: transparent;
 }
 
 window#waybar {
-	box-shadow: none;
-	text-shadow: none;
-	background: @bar-bg;
-	color: @main-fg;
-	border-right: 0.5pt solid @border-col;
+  box-shadow: none;
+  text-shadow: none;
+  background: @bar-bg;
+  color: @main-fg;
+  border-bottom: 0.5pt solid @border-col;
 }
 
 window#waybar box.module,
 window#waybar label.module {
-	background: @pill-bg;
-	margin: 0em 0.5em;
-	padding: 0.2em 0;
-	border-radius: 0pt;
+  background: @pill-dark-bg;
+  margin: 0.3em 0em;
+  padding: 0em 0.4em;
+  border-radius: 5pt;
 }
 
 window#waybar .modules-left {
-	margin-top: 1.5em;
+  margin-left: 1em;
 }
 
 window#waybar .modules-right {
-	margin-bottom: 1em;
+  margin-right: 1.5em;
 }
 
 window#waybar #custom-launcher {
-	font-size: 20px;
-	margin: 0 0.3em;
-	background: transparent;
-	color: @main-fg-alt;
+  font-size: 18px;
+  background: transparent;
+  color: @main-fg-alt;
 }
 
 window#waybar #custom-glyph-picker,
@@ -79,82 +89,90 @@ window#waybar #custom-emoji-picker,
 window#waybar #custom-browser,
 window#waybar #custom-wallpaper,
 window#waybar #custom-clipboard {
-	font-size: 13px;
+  font-size: 13px;
 }
 
 window#waybar #custom-picker,
 window#waybar #custom-powermenu {
-	font-size: 12px;
+  font-size: 12px;
 }
 
-window#waybar #privacy,
 window#waybar #tray {
-	padding: 0em 0;
-	margin: 0.5em 0em;
+  padding: 0em 0.5em;
+  margin: 0.5em 0.6em;
+}
+
+window#waybar #backlight {
+  font-size: 16px;
 }
 
 window#waybar #workspaces {
-	padding: 0em 0;
-	margin: 0 0.8em;
+  border-radius: 5pt;
+  margin: 0.4em 0;
 }
 
 #workspaces button {
-	text-shadow: none;
-	box-shadow: none;
-	min-width: 1px;
-	min-height: 1px;
-	color: @main-fg;
-	background: transparent;
-	border-radius: 13pt;
-	padding: 0px 0;
-	margin: 4px 4px;
-	transition: all 0s;
-	opacity: 0.5;
-}
-
-#workspaces button label {
-	font-size: 11px;
-}
-
-#workspaces button.empty {
-	background: transparent;
-	opacity: 0.5;
+  text-shadow: none;
+  box-shadow: none;
+  min-width: 1px;
+  min-height: 1px;
+  color: @main-fg;
+  background: transparent;
+  border-radius: 13pt;
+  padding: 0px 5px;
+  margin: 7px 3px;
+  transition: all 0s;
+  opacity: 0.7;
 }
 
 #workspaces button.active {
-	background: @main-fg-alt;
-	color: @main-bg;
-	opacity: 1;
+  background: @main-fg-alt;
+  color: @main-bg;
+  opacity: 1;
 }
 
 #workspaces button:hover {
-	color: @main-fg-alt;
-	background: @inact-bg;
-	opacity: 1;
-}
-
-#workspaces button.active:hover {
-	color: @main-bg;
-	background: @hvr-bg;
-	opacity: 1;
+  color: @hvr-bg;
+  opacity: 1;
+  transition: all 0.5s;
 }
 
 window#waybar #clock {
-	font-size: 15px;
-	font-weight: 300;
-	margin: 0em 0.55em;
-	padding: 0.4em 0;
-	color: @main-fg;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 5pt;
+  color: @main-fg;
 }
 
 window#waybar #pill {
-	background: @pill-bg;
+  background: @pill-dark-bg;
+  border-right: 1.0pt solid @border-col;
+  padding: 0 0.1em;
+  margin: 0;
 }
 
-window#waybar #pill.bottom {
-	margin: 0 0.8em;
-	padding: 0.5em 0;
-	padding-bottom: 0;
+window#waybar #memory {
+  font-size: 12px;
+  margin: 0.5em 0;
+}
+
+window#waybar #user,
+window#waybar #window {
+  background: transparent;
+}
+
+tooltip {
+  /* all: unset; */
+  background: @main-bg;
+  color: @main-fg;
+  border-width: 0.3pt;
+  border-style: solid;
+  border-color: @main-fg;
+  border-radius: 4pt;
+}
+
+tooltip label {
+	color: @main-fg;
 }
 
 #network.disabled,
@@ -172,31 +190,13 @@ window#waybar #pill.bottom {
 	color: @crit-bg;
 }
 
-tooltip {
-	/* all: unset; */
-	background: @main-bg;
-	color: @main-fg;
-	border-width: 0.3pt;
-	border-style: solid;
-	border-color: @main-fg;
-}
-
-tooltip label {
-	color: @main-fg;
-}
-
-/* Adjust margin & padding for modules in bottom pills */
 window#waybar .modules-right label.module {
 	background: transparent;
-	padding-left: 0;
-	padding-right: 0;
 	margin-left: 0;
 	margin-right: 0;
 }
 
-/* EXPERIMENTAL CONFIGS FOR BORDER & CLOCK WIDGETS */
-
-window#waybar.top *,
+window#waybar.left *,
 window#waybar.right *,
 window#waybar.bottom * {
 	margin: 0;
@@ -213,31 +213,29 @@ window#waybar.date-widget {
 	border: 0px solid transparent;
 }
 
+window#waybar #mpris.widget,
+window#waybar #clock.date,
 window#waybar #clock.time {
-	background: transparent;
+	font-family: "Inter Variable";
 	color: @widget-col;
+}
+
+window#waybar #clock.time {
 	font-size: 72px;
 	font-weight: 600;
-	font-family: "Inter Variable";
 	padding: 25px 0;
 	margin: 0 20px;
 }
 
 window#waybar #clock.date {
-	background: transparent;
-	color: @widget-col;
 	font-size: 24px;
 	font-weight: 400;
-	font-family: "Inter Variable";
 	padding: 10px 0;
 	margin: 0 20px;
 }
 
 window#waybar #mpris.widget {
-	background: transparent;
-	color: @widget-col;
 	font-size: 18px;
 	font-weight: 300;
-	font-family: "Inter Variable";
 	margin: 0 20px;
 }
