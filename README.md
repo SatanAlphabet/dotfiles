@@ -19,3 +19,7 @@ A comfy setup built on [niri](https://github.com/YaLTeR/niri "A scrollable-tilin
 ## Preview
 
 ![Setup Preview Image](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview.png "Desktop Preview")
+
+![Setup Preview Image 2](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview_2.png "Desktop Preview /w Dolphin & fastfetch")
+
+![Setup Preview Image 3](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview_3.png "Dark Mode /w swaync & Zen Browser")
