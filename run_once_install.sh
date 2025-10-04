@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 echo -e "\n===>  Starting setup installation...\n"
 
@@ -18,7 +18,7 @@ echo -e "\n===>  Installing base packages...\n"
 paru -S --needed - <"package.list"
 
 echo -e "\n===>  Installing AUR packages...\n"
-paru -S --needed - <"package-aur.list"
+paru -S --needed --confirm - <"package-aur.list"
 
 echo -e "\n===>  Switching shell to zsh...\n"
 chsh -s "$(which zsh)"
