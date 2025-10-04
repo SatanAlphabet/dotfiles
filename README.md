@@ -16,6 +16,20 @@ A comfy setup built on [niri](https://github.com/YaLTeR/niri "A scrollable-tilin
    
 ---
 
+## Software
+
+| Type | Software Used |
+| :----- | :----- |
+| Compositor | niri |
+| Application launcher | rofi |
+| Notification daemon | swaync |
+| Lock screen | hyprlock |
+| Shell | zsh /w Oh My Zsh |
+| File picker | Dolphin |
+| Web browser | Zen Browser |
+
+---
+
 ## Preview
 
 ![Setup Preview Image](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview.png "Desktop Preview")
