@@ -18,7 +18,7 @@ echo -e "\n===>  Installing base packages...\n"
 paru -S --needed - <"package.list"
 
 echo -e "\n===>  Installing AUR packages...\n"
-paru -S --needed - <"package.aur-list"
+paru -S --needed - <"package-aur.list"
 
 echo -e "\n===>  Switching shell to zsh...\n"
 chsh -s "$(which zsh)"
@@ -31,7 +31,7 @@ echo -e "\n===>  Setting up config with chezmoi...\n"
 chezmoi init SatanAlphabet
 chezmoi apply
 
-services=(swayidle-niri wl-clip-persist nirius wl-paste-text-niri wl-paste-image-niri)
+services=(swayidle-niri wl-clip-persist niriusd wl-paste-text-niri wl-paste-image-niri)
 echo -e "\n===>  Adding necessary user services...\n"
 for service in "${services[@]}"; do
   echo "- Adding: ""$service"".service"
