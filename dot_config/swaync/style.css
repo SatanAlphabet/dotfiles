@@ -147,14 +147,15 @@ notificationwindow, blankwindow, blankwindow {
   /* Notification summary/title */
   color: @main-fg;
   font-size: 1.1em;
-  font-weight: bold;
+  font-weight: 600;
   background: transparent;
   text-shadow: none;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .time {
   /* Notification time-ago */
-  font-weight: bold;
+  font-weight: 300;
+  font-size: 0.8em;
   background: transparent;
   color: @main-fg-alt;
   text-shadow: none;
