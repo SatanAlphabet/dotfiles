@@ -38,15 +38,5 @@ for service in "${services[@]}"; do
   systemctl --user add-wants niri.service "$service"
 done
 
-echo -e "\n===>  Installing oh-my-zsh...\n"
-git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git "${ZSH:-$HOME/.oh-my-zsh}"
-
-echo -e "\n===>  Installing powerlevel10k...\n"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-echo -e "\n===>  Installing zsh-autosuggestions...\n"
-git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
-echo -e "\n===>  Installing zsh-syntax-highlighting...\n"
-git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
-
 echo -e "\n===>  Basic setup installed."
 echo -e "\nAdd 'post_command = ~/.scripts/wallswitch.sh \$wallpaper' to your waypaper's config.ini"
