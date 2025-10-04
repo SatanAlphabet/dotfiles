@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+waybar_path="$HOME/.config/waybar"
+new_preset="${waybar_path}/type/${1}.jsonc"
+new_style="${waybar_path}/styles/${1}.css"
+
+if [[ $# -ne 1 ]]; then
+  echo "Error: Invalid number of arguments" >&2
+  exit 1
+fi
+
+if [[ ! -f "$new_style" ]]; then
+  echo "Error: Style ${new_style} is not found." >&2
+  exit 1
+fi
+
+if [[ ! -f "$new_preset" ]]; then
+  echo "Error: Preset ${new_preset} is not found." >&2
+  exit 1
+fi
+
+cat "${new_preset}" >"${waybar_path}"/config.jsonc
+cat "${new_style}" >"${waybar_path}"/main-preset.css
+
+# Restarts waybar
+systemctl --user restart waybar-niri
