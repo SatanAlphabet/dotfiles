@@ -4,34 +4,27 @@
 }
 
 #pulseaudio,
-#bluetooth,
-#network,
 #custom-sysupdate,
 #custom-swaync,
 #custom-drawer-arrow-up,
 #mpris,
+#backlight,
 #bluetooth,
+#network,
 #battery {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 window#waybar #custom-drawer-arrow-up {
-  font-weight: bolder;
-  padding-top: 0.5em;
+	font-weight: bolder;
+	padding-top: 0.5em;
 }
 
 window#waybar #custom-seperator {
-  font-size: 18px;
-  margin: 0 0.1em;
-  padding: 0;
-  opacity: 0.35;
-  background: transparent;
-}
-
-window#waybar #custom-seperator.bottom {
-}
-
-window#waybar #custom-seperator.top {
+	font-size: 13px;
+	margin: -0.3em 0;
+	opacity: 0.4;
+	background: transparent;
 }
 
 /*
@@ -48,40 +41,42 @@ window#waybar #custom-seperator.top {
 */
 
 window#waybar #language {
-  font-size: 12px;
-  border-radius: 5pt;
-  font-weight: 500;
-  background: transparent;
+	font-size: 14px;
+	margin: 0 0.6em;
+	font-weight: 400;
+	background: transparent;
+	margin-top: 0.4em;
 }
 
 window#waybar {
-  box-shadow: none;
-  text-shadow: none;
-  background: @bar-bg;
-  color: @main-fg;
-  border-bottom: 0.5pt solid @border-col;
+	box-shadow: none;
+	text-shadow: none;
+	background: @bar-bg;
+	color: @main-fg;
+	border-right: 0.5pt solid @border-col;
 }
 
 window#waybar box.module,
 window#waybar label.module {
-  background: @pill-dark-bg;
-  margin: 0.3em 0em;
-  padding: 0em 0.4em;
-  border-radius: 5pt;
+	background: @pill-bg;
+	margin: 0em 0.5em;
+	padding: 0.2em 0;
+	border-radius: 0pt;
 }
 
 window#waybar .modules-left {
-  margin-left: 1em;
+	margin-top: 1.5em;
 }
 
 window#waybar .modules-right {
-  margin-right: 1.5em;
+	margin-bottom: 1em;
 }
 
 window#waybar #custom-launcher {
-  font-size: 18px;
-  background: transparent;
-  color: @main-fg-alt;
+	font-size: 20px;
+	margin: 0 0.3em;
+	background: transparent;
+	color: @main-fg-alt;
 }
 
 window#waybar #custom-glyph-picker,
@@ -89,90 +84,82 @@ window#waybar #custom-emoji-picker,
 window#waybar #custom-browser,
 window#waybar #custom-wallpaper,
 window#waybar #custom-clipboard {
-  font-size: 13px;
+	font-size: 13px;
 }
 
 window#waybar #custom-picker,
 window#waybar #custom-powermenu {
-  font-size: 12px;
+	font-size: 12px;
 }
 
+window#waybar #privacy,
 window#waybar #tray {
-  padding: 0em 0.5em;
-  margin: 0.5em 0.6em;
-}
-
-window#waybar #backlight {
-  font-size: 16px;
+	padding: 0em 0;
+	margin: 0.5em 0em;
 }
 
 window#waybar #workspaces {
-  border-radius: 5pt;
-  margin: 0.4em 0;
+	padding: 0em 0;
+	margin: 0 0.8em;
 }
 
 #workspaces button {
-  text-shadow: none;
-  box-shadow: none;
-  min-width: 1px;
-  min-height: 1px;
-  color: @main-fg;
-  background: transparent;
-  border-radius: 13pt;
-  padding: 0px 5px;
-  margin: 7px 3px;
-  transition: all 0s;
-  opacity: 0.7;
+	text-shadow: none;
+	box-shadow: none;
+	min-width: 1px;
+	min-height: 1px;
+	color: @main-fg;
+	background: transparent;
+	border-radius: 13pt;
+	padding: 0px 0;
+	margin: 4px 4px;
+	transition: all 0s;
+	opacity: 0.5;
+}
+
+#workspaces button label {
+	font-size: 11px;
+}
+
+#workspaces button.empty {
+	background: transparent;
+	opacity: 0.5;
 }
 
 #workspaces button.active {
-  background: @main-fg-alt;
-  color: @main-bg;
-  opacity: 1;
+	background: @main-fg-alt;
+	color: @main-bg;
+	opacity: 1;
 }
 
 #workspaces button:hover {
-  color: @hvr-bg;
-  opacity: 1;
-  transition: all 0.5s;
+	color: @main-fg-alt;
+	background: @inact-bg;
+	opacity: 1;
+}
+
+#workspaces button.active:hover {
+	color: @main-bg;
+	background: @hvr-bg;
+	opacity: 1;
 }
 
 window#waybar #clock {
-  font-size: 14px;
-  font-weight: 400;
-  border-radius: 5pt;
-  color: @main-fg;
+	font-size: 15px;
+	font-weight: 300;
+	margin: 0em 0.55em;
+	padding: 0.4em 0;
+	color: @main-fg;
 }
 
 window#waybar #pill {
-  background: @pill-dark-bg;
-  border-right: 1.0pt solid @border-col;
-  padding: 0 0.1em;
-  margin: 0;
+	background: @pill-bg;
 }
 
-window#waybar #memory {
-  font-size: 12px;
-  margin: 0.5em 0;
-}
-
-window#waybar #user,
-window#waybar #window {
-  background: transparent;
-}
-
-tooltip {
-  /* all: unset; */
-  background: @main-bg;
-  color: @main-fg;
-  border-width: 0.3pt;
-  border-style: solid;
-  border-color: @main-fg;
-  border-radius: 4pt;
-}
-
-tooltip label {
-	color: @main-fg;
+window#waybar #pill.bottom {
+	margin: 0 0.8em;
+	padding: 0.5em 0;
+	padding-bottom: 0;
 }
 
 #network.disabled,
@@ -190,13 +177,31 @@ tooltip label {
 	color: @crit-bg;
 }
 
+tooltip {
+	/* all: unset; */
+	background: @main-bg;
+	color: @main-fg;
+	border-width: 0.3pt;
+	border-style: solid;
+	border-color: @main-fg;
+}
+
+tooltip label {
+	color: @main-fg;
+}
+
+/* Adjust margin & padding for modules in bottom pills */
 window#waybar .modules-right label.module {
 	background: transparent;
+	padding-left: 0;
+	padding-right: 0;
 	margin-left: 0;
 	margin-right: 0;
 }
 
-window#waybar.left *,
+/* EXPERIMENTAL CONFIGS FOR BORDER & CLOCK WIDGETS */
+
+window#waybar.top *,
 window#waybar.right *,
 window#waybar.bottom * {
 	margin: 0;
