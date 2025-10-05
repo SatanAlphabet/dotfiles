@@ -212,6 +212,7 @@ window#waybar.bottom * {
 	border: 0px solid transparent;
 }
 
+window#waybar #mpris.widget,
 window#waybar.time-widget,
 window#waybar.date-widget {
 	background: transparent;
