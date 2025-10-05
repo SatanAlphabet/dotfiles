@@ -23,7 +23,6 @@ dconf-editor
 ddcutil
 devtools
 dolphin
-dunst
 efibootmgr
 eza
 fastfetch
@@ -32,10 +31,7 @@ ffmpegthumbs
 firefox
 fish
 flatpak
-fwupd
 fzf
-gammastep
-geoclue
 git
 github-cli
 gnome-keyring
@@ -76,8 +72,6 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 playerctl
-plymouth
-polkit-gnome
 powertop
 qt5-graphicaleffects
 qt5-imageformats
@@ -89,21 +83,14 @@ qt6-wayland
 rofi
 rofi-calc
 sassc
-sddm
-snapper
-swappy
 swaybg
 swayidle
 swaync
 swww
 tree
 ttf-cascadia-code-nerd
-ttf-firacode-nerd
-ttf-iosevkaterm-nerd
 ttf-jetbrains-mono-nerd
-tuned-ppd
 udiskie
-ufw
 unzip
 vim
 viu
@@ -120,7 +107,4 @@ xdg-user-dirs
 xsettingsd
 xwayland-satellite
 yazi
-yt-dlp
-zoxide
-zram-generator
 zsh
