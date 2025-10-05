@@ -32,6 +32,9 @@ View Style=Simple
 [KShortcutsDialog Settings]
 Dialog Size=600,480
 
+[Sounds]
+Enable=false
+
 [UiSettings]
 ColorScheme=colors
 

@@ -30,12 +30,12 @@ else
   echo -e "===>  Cache folder exist. Skipping..."
 fi
 
-if _install_confirm "Build xdg-menu cache? [Y/n]" -eq 0; then
+if _install_confirm "Build xdg-menu cache? [Y/n] " -eq 0; then
   echo -e "===> Building xdg-menu cache..."
   XDG_MENU_PREFIX=plasma- kbuildsyscoca6 --noincremental >/dev/null
 fi
 
-if _install_confirm "Change GTK settings? [Y/n]" -eq 0; then
+if _install_confirm "Change GTK settings? [Y/n] " -eq 0; then
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Ice'
   gsettings set org.gnome.desktop.interface font-name 'Inter 10'
