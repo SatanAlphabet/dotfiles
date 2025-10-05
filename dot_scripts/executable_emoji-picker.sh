@@ -46,7 +46,7 @@ parse_arguments() {
         shift # Consume the value argument
       else
         print_log +y "[warn] " "--style needs argument"
-        emoji_style="style_3"
+        emoji_style="style_1"
         shift
       fi
       ;;
@@ -82,7 +82,7 @@ get_emoji_selection() {
       echo "${unique_entries}" | rofi -dmenu -multi-select -i \
         -theme-str "entry { placeholder: \" 🔎 Emoji\";}" \
         -theme-str "configuration {show-icons: false;}" \
-        -theme "${style_type:-style_3}"
+        -theme "${style_type:-style_1}"
     fi
   fi
 }

@@ -4,7 +4,7 @@ binds {
 
   Mod+T repeat=false hotkey-overlay-title="Open a Terminal" { spawn "kitty" "-1"; }
   Mod+Shift+T repeat=false hotkey-overlay-title="Open Dropdown Terminal" { spawn "kitty" "--class" "dropdown" "-1"; }
-  Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "~/.scripts/rofilaunch.sh" "style_4";  }
+  Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "~/.scripts/rofilaunch.sh" "style_1";  }
   Mod+Alt+C repeat=false hotkey-overlay-title="Clipboard History" { spawn "~/.scripts/cliphist-niri.sh" "-c"; }
   Mod+Alt+E repeat=false hotkey-overlay-title="Emoji Picker" { spawn "~/.scripts/emoji-picker.sh"; }
   Mod+Alt+G repeat=false hotkey-overlay-title="Glyph Picker" { spawn "~/.scripts/glyph-picker.sh"; }

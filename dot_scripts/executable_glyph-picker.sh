@@ -36,7 +36,7 @@ parse_arguments() {
         shift # Consume the value argument
       else
         print_log +y "[warn] " "--style needs argument"
-        rofi_style="style_3"
+        rofi_style="style_1"
         shift
       fi
       ;;
@@ -64,7 +64,7 @@ get_glyph_selection() {
   if [ -n "$rofi_running" ]; then
     pkill -SIGUSR2 rofi
   else
-    local style_type=${rofi_style:-style_3}
+    local style_type=${rofi_style:-style_1}
     echo "${unique_entries}" | rofi -dmenu -multi-select -i \
       -theme-str "entry { placeholder: \" 🔣 Glyph\";} configuration { show-icons: false; }" \
       -theme "${style_type}"
