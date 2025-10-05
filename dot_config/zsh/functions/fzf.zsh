@@ -21,16 +21,22 @@ _fuzzy_change_directory() {
 }
 
 _fuzzy_edit_search_file_content() {
-    # [f]uzzy [e]dit  [s]earch [f]ile [c]ontent
+    local initial_query="$@"
     local selected_file
     local fzf_options=()
     local preview_cmd
     local max_depth=5
+
+    if [[ -n "$initial_query" ]]; then
+        fzf_options+=("--query=$initial_query")
+    fi
+
     if command -v "bat" &>/dev/null; then
         preview_cmd=('bat --color always --style=plain --paging=never {}')
     else
         preview_cmd=('cat {}')
     fi
+
     fzf_options+=(--layout=reverse --cycle --preview-window right:60% --preview ${preview_cmd[@]})
     selected_file=$(fd -H -t f -d $max_depth 2>/dev/null | fzf "${fzf_options[@]}")
 
@@ -48,10 +54,10 @@ _fuzzy_edit_search_file_content() {
 }
 
 _fuzzy_edit_search_file() {
-    local initial_query="$1"
+    local initial_query="$@"
     local selected_file
     local fzf_options=()
-    fzf_options+=(--height "80%" --layout=reverse --preview-window right:60% --cycle)
+    fzf_options+=(--layout=reverse --preview-window right:60% --cycle)
     local max_depth=5
 
     if [[ -n "$initial_query" ]]; then
