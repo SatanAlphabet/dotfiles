@@ -102,7 +102,7 @@
 			"format": "",
 			"on-click": "~/.scripts/rofilaunch.sh",
 			"menu": "on-click-right",
-			"menu-file": "~/.config/waybar/menu/launcher-vert10.xml",
+			"menu-file": "~/.config/waybar/menu/launcher.xml",
 			"menu-actions": {
 				"cliphist": "~/.scripts/cliphist-niri.sh",
 				"emoji": "~/.scripts/emoji-picker.sh",
