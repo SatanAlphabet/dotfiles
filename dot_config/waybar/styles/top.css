@@ -49,7 +49,6 @@ window#waybar #custom-seperator.top {
 
 window#waybar #language {
   font-size: 12px;
-  border-radius: 5pt;
   font-weight: 500;
   background: transparent;
 }
@@ -67,7 +66,7 @@ window#waybar label.module {
   background: @pill-dark-bg;
   margin: 0.3em 0em;
   padding: 0em 0.4em;
-  border-radius: 5pt;
+  border-radius: 0pt;
 }
 
 window#waybar .modules-left {
@@ -98,8 +97,6 @@ window#waybar #custom-powermenu {
 }
 
 window#waybar #tray {
-  padding: 0em 0.5em;
-  margin: 0.5em 0.6em;
 }
 
 window#waybar #backlight {
@@ -107,7 +104,6 @@ window#waybar #backlight {
 }
 
 window#waybar #workspaces {
-  border-radius: 5pt;
   margin: 0.4em 0;
 }
 
@@ -140,7 +136,6 @@ window#waybar #workspaces {
 window#waybar #clock {
   font-size: 14px;
   font-weight: 400;
-  border-radius: 5pt;
   color: @main-fg;
 }
 
@@ -168,7 +163,7 @@ tooltip {
   border-width: 0.3pt;
   border-style: solid;
   border-color: @main-fg;
-  border-radius: 4pt;
+  border-radius: 0pt;
 }
 
 tooltip label {
@@ -190,10 +185,13 @@ tooltip label {
 	color: @crit-bg;
 }
 
+window#waybar .modules-right box.module,
 window#waybar .modules-right label.module {
 	background: transparent;
 	margin-left: 0;
 	margin-right: 0;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
 }
 
 window#waybar.left *,
@@ -207,6 +205,7 @@ window#waybar.bottom * {
 	border: 0px solid transparent;
 }
 
+window#waybar #mpris.widget,
 window#waybar.time-widget,
 window#waybar.date-widget {
 	background: transparent;

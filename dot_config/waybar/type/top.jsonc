@@ -10,8 +10,9 @@
 	"reload_style_on_change": true,
 
 	"modules-left": ["custom/launcher", "niri/window"],
-	"modules-center": [ "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock", "custom/swaync", "mpris" ],
-	"modules-right": [
+	"modules-center": [ "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock", "custom/swaync" ],
+	"modules-right": [ 
+    "mpris",
     "custom/sysupdate",
     "tray",
     "bluetooth",
@@ -172,8 +173,7 @@
 		"interval": 1
 	},
 	"clock": {
-		"format": "{:%R}",
-    "format-alt": "{:%b %d, %I:%M %p}",
+    "format": "{:%b %d %R}",
 		"rotate": 0,
 		"tooltip-format": "<span>{calendar}</span>",
 		"calendar": {
@@ -195,7 +195,7 @@
 		}
 	},
 	"custom/swaync": {
-		"format": "{icon}",
+		"format": "{icon} {0}",
 		"tooltip": true,
 		"format-icons": {
 			"notification": "",
@@ -231,25 +231,18 @@
 	},
 	"battery": {
 		"states": {
-			"good": 95,
 			"warning": 30,
 			"critical": 20
 		},
 		"design-capacity": true,
-		"format": "{icon}",
-		"format-charging": "",
-		"format-plugged": "",
-		"format-warning": "{icon}",
-		"format-critical": "{icon}",
-		"format-charging-warning": "",
-		"format-charging-critical": "",
-		"format-plugged-warning": "",
-		"format-plugged-critical": "",
+		"format": "{icon} {capacity}",
+		"format-charging": " {capacity}",
+		"format-plugged": " {capacity}",
 		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "tooltip-format": "{capacity}% \n({timeTo})"
 	},
 	"pulseaudio": {
-		"format": "{icon}",
+		"format": "{icon} {volume}",
 		"rotate": 0,
 		"format-muted": "",
 		"tooltip-format": "{icon} {desc}: {volume}%",
@@ -270,7 +263,7 @@
 	},
 	"backlight": {
 		"rotate": 0,
-		"format": "{icon}",
+		"format": "{icon} {percent}",
 		"format-icons": ["", "", "", "", "", "", "", "", ""],
 		"min-length": 1,
 		"tooltip": true,
