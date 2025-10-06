@@ -76,6 +76,7 @@ notificationwindow, blankwindow, blankwindow {
   border: 2px solid @act-bg;
   border-left: 8px solid @act-bg;
   padding: 8px;
+  padding-left: 4px;
   margin: 16px;
   margin-bottom: 0px;
   background: @main-bg;
@@ -128,7 +129,7 @@ notificationwindow, blankwindow, blankwindow {
   -gtk-icon-size: var(--notification-icon-size);
   border-radius: 100px;
   /* Size in px */
-  margin: 4px;
+  margin-right: 8px;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .app-icon {
