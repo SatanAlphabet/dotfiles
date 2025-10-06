@@ -46,7 +46,7 @@ parse_arguments() {
         shift # Consume the value argument
       else
         print_log +y "[warn] " "--style needs argument"
-        emoji_style="style_1"
+        emoji_style="style_2"
         shift
       fi
       ;;
@@ -78,11 +78,11 @@ get_emoji_selection() {
     if [[ -n ${use_rofile} ]]; then
       echo "${unique_entries}" | rofi -dmenu -i -config "${use_rofile}"
     else
-      local style_type="${emoji_style:-$ROFI_EMOJI_STYLE}"
+      local style_type="${emoji_style}"
       echo "${unique_entries}" | rofi -dmenu -multi-select -i \
         -theme-str "entry { placeholder: \" 🔎 Emoji\";}" \
         -theme-str "configuration {show-icons: false;}" \
-        -theme "${style_type:-style_1}"
+        -theme "${style_type:-style_2}"
     fi
   fi
 }
