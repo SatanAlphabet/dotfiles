@@ -1,62 +1,60 @@
+/// --- Window rules --- ///
+
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+  geometry-corner-radius 0
+  clip-to-geometry true
+  draw-border-with-background false
+  tiled-state true
 }
 
 window-rule {
-    match title="MainPicker"
-    match app-id=r#"^[Xx]dg-desktop-portal-gtk$"#
-    match app-id=r#"^org\.freedesktop\.impl\.portal\.desktop.*$#"
-    match app-id=r#"^org\.kde\.polkit-kde-authentication-agent-1$"#
-    match app-id=r#"^\.*dialog\.*$"#
-    match app-id=r#"nm-applet"#
-    match app-id=r#"pavucontrol"#
-    match app-id=r#"blueman-manager"#
-    match app-id=r#"waypaper"#
-
-    open-floating true
-    default-window-height {}
-    default-column-width {}
+  match app-id=r#"^org\.wezfurlong\.wezterm$"#
+  default-column-width {}
 }
 
 window-rule {
-    match app-id=r#"zen$"# title="^Picture-in-Picture$"
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    match app-id=r#"Chromium-browser$"# title="^| Spotify$"
+  match title="MainPicker"
+  match app-id=r#"^[Xx]dg-desktop-portal-gtk$"#
+  match app-id=r#"^org\.freedesktop\.impl\.portal\.desktop.*$#"
+  match app-id=r#"^org\.kde\.polkit-kde-authentication-agent-1$"#
+  match app-id=r#"^\.*dialog\.*$"#
+  match app-id=r#"nm-applet"#
+  match app-id=r#"pavucontrol"#
+  match app-id=r#"blueman-manager"#
+  match app-id=r#"waypaper"#
 
-    open-floating true
-    default-floating-position x=32 y=32 relative-to="bottom-right"
+  open-floating true
+  default-window-height {}
+  default-column-width {}
 }
 
 window-rule {
-    match app-id=r#"discord$"#
-    match app-id=r#"zen$"#
-    match app-id=r#"firefox$"#
-    match app-id=r#"vencord$"#
-    match app-id=r#"vesktop$"#
+  match app-id=r#"zen$"# title="^[Pp]icture-in-Picture$"
+  match app-id=r#"firefox$"# title="^[Pp]icture-in-Picture$"
+  match app-id=r#"Chromium-browser$"# title="^| Spotify$"
 
-    open-maximized true
+  open-floating true
+  default-floating-position x=24 y=24 relative-to="bottom-right"
 }
 
 window-rule {
-    draw-border-with-background false
+  match app-id=r#"discord$"#
+  match app-id=r#"zen$"#
+  match app-id=r#"firefox$"#
+  match app-id=r#"vencord$"#
+  match app-id=r#"vesktop$"#
+
+  open-maximized true
 }
 
 window-rule {
-    match app-id=r#"org\.kde\.kdeconnect\.daemon$"#
+  match app-id=r#"^org\.vinegarhq\.Sober$"#
 
-    open-floating true
-    opacity 0.5
+  open-fullscreen true
 }
 
 window-rule {
-    match app-id=r#"^org\.vinegarhq\.Sober$"#
-
-    open-fullscreen true
-}
-
-window-rule {
-  match app-id=r#"sysupdate$"#
+  match app-id=r#"^sysupdate$"#
 
   open-floating true
   default-window-height { proportion 0.7; }
@@ -64,28 +62,34 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^dropdown$"
+  match app-id="^dropdown$"
 
-    open-floating true
-    default-floating-position x=0 y=16 relative-to="top"
-    default-window-height { proportion 0.5; }
-    default-column-width { proportion 0.5; }
+  open-floating true
+  default-floating-position x=0 y=16 relative-to="top"
+  default-window-height { proportion 0.5; }
+  default-column-width { proportion 0.5; }
 }
 
 window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+  match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+  match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
-    block-out-from "screen-capture"
+  block-out-from "screen-capture"
 
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
 }
 
 window-rule {
-    geometry-corner-radius 0
-    clip-to-geometry true
+  match is-floating=true
+  
+  tiled-state false
+  shadow {
+    on
+  }
 }
+
+/// --- Layer rules --- ///
 
 layer-rule {
     match namespace="^wallpaper$"

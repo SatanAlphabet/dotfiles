@@ -8,8 +8,22 @@ layout {
   insert-hint {
     gradient from="{{colors.primary.default.rgba | set_alpha: 0.5}}" to="{{colors.secondary.default.rgba | set_alpha: 0.5}}"
   }
+
+  shadow {
+    color "{{colors.shadow.default.rgba | set_alpha: 0.7 }}"
+  }
+
+  background-color "{{colors.inverse_primary.default.hex}}"
 }
 
 overview {
-    backdrop-color "{{colors.surface.default.hex}}"
+  backdrop-color "{{colors.surface.default.hex}}"
+}
+
+window-rule {
+  match is-floating=true
+
+  border {
+    active-color "{{colors.secondary.default.hex}}"
+  }
 }

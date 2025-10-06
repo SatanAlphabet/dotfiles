@@ -90,10 +90,10 @@ binds {
   Mod+Ctrl+Shift+U         { move-workspace-down; }
   Mod+Ctrl+Shift+I         { move-workspace-up; }
 
-  Mod+Ctrl+WheelScrollDown      cooldown-ms=20 { focus-workspace-down; }
-  Mod+Ctrl+WheelScrollUp        cooldown-ms=20 { focus-workspace-up; }
-  Mod+Ctrl+Shift+WheelScrollDown cooldown-ms=20 { move-column-to-workspace-down; }
-  Mod+Ctrl+Shift+WheelScrollUp   cooldown-ms=20 { move-column-to-workspace-up; }
+  Mod+Ctrl+WheelScrollDown      cooldown-ms=50 { focus-workspace-down; }
+  Mod+Ctrl+WheelScrollUp        cooldown-ms=50 { focus-workspace-up; }
+  Mod+Ctrl+Shift+WheelScrollDown cooldown-ms=50 { move-column-to-workspace-down; }
+  Mod+Ctrl+Shift+WheelScrollUp   cooldown-ms=50 { move-column-to-workspace-up; }
 
   Mod+WheelScrollRight      { focus-column-right; }
   Mod+WheelScrollLeft       { focus-column-left; }
@@ -169,7 +169,7 @@ binds {
   Mod+Shift+Minus { set-window-height "-2%"; }
   Mod+Shift+Equal { set-window-height "+2%"; }
 
-  Mod+V       { toggle-window-floating; }
+  Mod+V repeat=false { toggle-window-floating; }
   Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
   Mod+G repeat=false { toggle-column-tabbed-display; }
@@ -180,7 +180,7 @@ binds {
 
   Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-  Ctrl+Alt+Delete hotkey-overlay-title="Power Menu" { spawn "~/.scripts/logoutlaunch.sh"; }
+  Ctrl+Alt+Delete repeat=false hotkey-overlay-title="Power Menu" { spawn "~/.scripts/logoutlaunch.sh"; }
 
   // Nirius specific commands
   Mod+M hotkey-overlay-title="Focus Marked Window" { spawn "nirius" "focus-marked"; }
