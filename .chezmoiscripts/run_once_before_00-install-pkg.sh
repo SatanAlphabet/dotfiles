@@ -2,7 +2,7 @@
 
 echo -e "===>  Starting setup installation...\n"
 
-pkg_path="$HOME/.local/share/chezmoi/install-asset"
+pkg_path="$HOME/.local/share/chezmoi/assets/install"
 
 _install_confirm() {
   local response
