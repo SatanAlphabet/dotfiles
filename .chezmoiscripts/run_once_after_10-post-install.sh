@@ -4,7 +4,7 @@ echo -e "===>  Starting post-setup configuration..."
 echo -e "NOTE: This should be run inside niri to work properly."
 
 pkg_path="$HOME/.local/share/chezmoi/assets/install"
-wall_path="$HOME/Picutres/Wallpaper"
+wall_path="$HOME/Pictures/Wallpaper"
 
 _install_confirm() {
   local response
@@ -54,7 +54,7 @@ fi
 
 if _install_confirm "Set default background and run matugen? [Y/n] " -eq 0; then
   mkdir -p "$wall_path/"
-  cp "$pkg_path/default-bg.png" "$wall_path/"
+  cp "$pkg_path/default-bg.png" "$wall_path/default-bg.png"
   waypaper --wallpaper "$wall_path/default-bg.png"
 fi
 
