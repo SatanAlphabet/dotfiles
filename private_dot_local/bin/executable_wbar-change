@@ -23,4 +23,4 @@ cat "${new_preset}" >"${waybar_path}"/config.jsonc
 cat "${new_style}" >"${waybar_path}"/main-preset.css
 
 # Restarts waybar
-systemctl --user restart waybar-niri
+systemctl --user restart waybar
