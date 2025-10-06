@@ -2,6 +2,8 @@
 
 echo -e "===>  Starting setup installation...\n"
 
+pkg_path="$HOME/.local/share/chezmoi/install-asset"
+
 _install_confirm() {
   local response
   echo -n -e "$1"
@@ -26,7 +28,6 @@ else
   echo -e "===>  paru is installed. Skipping..."
 fi
 
-pkg_path="$HOME/.local/share/chezmoi"
 if _install_confirm "Install base packages? [Y/n] " -eq 0; then
   echo -e "\n===>  Installing base packages...\n"
   paru -S --needed - <"$pkg_path/package.list"
