@@ -2,8 +2,8 @@ _conda_setup_init() {
 # >>> conda initialize >>>
 __conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-  echo -e " ==> Starting conda..."
-  eval "$__conda_setup"
+  echo -e "\n ==> Starting conda..."
+  eval "$__conda_setup" && echo -e " ==> Conda started."
 else
   if [ -f "/usr/etc/profile.d/conda.sh" ]; then
     . "/usr/etc/profile.d/conda.sh"
