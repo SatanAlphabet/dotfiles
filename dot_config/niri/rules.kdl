@@ -48,6 +48,20 @@ window-rule {
 }
 
 window-rule {
+  match app-id="^discord$"
+  match app-id="^vesktop$"
+
+  open-on-workspace "chat"
+}
+
+window-rule {
+  match app-id="^zen$"
+  match app-id="^firefox$"
+
+  open-on-workspace "browser"
+}
+
+window-rule {
   match app-id=r#"^org\.vinegarhq\.Sober$"#
 
   open-fullscreen true
