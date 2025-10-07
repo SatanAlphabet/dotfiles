@@ -1,12 +1,51 @@
 #!/usr/bin/env zsh
+#
+# Basic PATH prepending (user local bin)
+PATH="$HOME/.local/bin:$PATH"
 
-env_dir="$ZDOTDIR/src/env.zsh"
-terminal_dir="$ZDOTDIR/src/terminal.zsh"
+# XDG Base Directory Specification variables with defaults
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+XDG_DATA_DIRS="${XDG_DATA_DIRS:-$XDG_DATA_HOME:/usr/local/share:/usr/share}"
+XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
+XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 
-if ! . "$env_dir" 2>/dev/null; then
-  echo "Error: Could not source ${env_dir}"
+# XDG User Directories (fallback to xdg-user-dir command if available)
+if command -v xdg-user-dir >/dev/null 2>&1; then
+  XDG_DESKTOP_DIR="${XDG_DESKTOP_DIR:-$(xdg-user-dir DESKTOP)}"
+  XDG_DOWNLOAD_DIR="${XDG_DOWNLOAD_DIR:-$(xdg-user-dir DOWNLOAD)}"
+  XDG_TEMPLATES_DIR="${XDG_TEMPLATES_DIR:-$(xdg-user-dir TEMPLATES)}"
+  XDG_PUBLICSHARE_DIR="${XDG_PUBLICSHARE_DIR:-$(xdg-user-dir PUBLICSHARE)}"
+  XDG_DOCUMENTS_DIR="${XDG_DOCUMENTS_DIR:-$(xdg-user-dir DOCUMENTS)}"
+  XDG_MUSIC_DIR="${XDG_MUSIC_DIR:-$(xdg-user-dir MUSIC)}"
+  XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-$(xdg-user-dir PICTURES)}"
+  XDG_VIDEOS_DIR="${XDG_VIDEOS_DIR:-$(xdg-user-dir VIDEOS)}"
 fi
 
-if ! . "$terminal_dir" 2>/dev/null; then
-  echo "Error: Could not source ${terminal_dir}"
+# Less history file location
+LESSHISTFILE="${LESSHISTFILE:-/tmp/less-hist}"
+
+# Application config files
+PARALLEL_HOME="$XDG_CONFIG_HOME/parallel"
+SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
+
+# History configuration
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+HISTFILE=${HISTFILE:-$ZDOTDIR/.zsh_history}
+if [[ -f $HOME/.zsh_history ]] && [[ ! -f $HISTFILE ]]; then
+    echo "Please manually move $HOME/.zsh_history to $HISTFILE"
+    echo "Or move it somewhere else to avoid conflicts"
 fi
+HISTSIZE=10000
+SAVEHIST=10000
+
+# Oh My Zsh path
+ZSH="$HOME/.oh-my-zsh"
+
+# Export all variables
+export PATH \
+  XDG_CONFIG_HOME XDG_DATA_HOME XDG_DATA_DIRS XDG_STATE_HOME XDG_CACHE_HOME \
+  XDG_DESKTOP_DIR XDG_DOWNLOAD_DIR XDG_TEMPLATES_DIR XDG_PUBLICSHARE_DIR \
+  XDG_DOCUMENTS_DIR XDG_MUSIC_DIR XDG_PICTURES_DIR XDG_VIDEOS_DIR \
+  LESSHISTFILE PARALLEL_HOME SCREENRC HISTFILE ZSH_AUTOSUGGEST_STRATEGY \
+  HISTSIZE SAVEHIST ZSH
