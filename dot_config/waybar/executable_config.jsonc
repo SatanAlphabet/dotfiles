@@ -82,12 +82,14 @@
 			"format": "{}",
 			"format-icons": {
 				"default": "",
+        // "active": "󰫢",
 				// Named workspaces icon
 				"browser": "",
 				"chat": ""
 			},
 			"on-scroll-up": "niri msg action focus-workspace-up",
-			"on-scroll-down": "niri msg action focus-workspace-down"
+			"on-scroll-down": "niri msg action focus-workspace-down",
+      "on-click-right": "niri msg action toggle-overview"
 		},
 		"niri/language": {
 			"format-en": "US",
