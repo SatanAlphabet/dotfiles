@@ -3,11 +3,10 @@
 env_dir="$ZDOTDIR/src/env.zsh"
 terminal_dir="$ZDOTDIR/src/terminal.zsh"
 
-if ! . "$env_dir"; then
-    echo "Error: Could not source ${env_dir}"
-    return 1
+if ! . "$env_dir" 2>/dev/null; then
+  echo "Error: Could not source ${env_dir}"
 fi
 
-if [ -t 1 ] && [ -f "$terminal_dir" ]; then
-    . "$terminal_dir" || echo "Error: Could not source ${terminal_dir}"
+if ! . "$terminal_dir" 2>/dev/null; then
+  echo "Error: Could not source ${terminal_dir}"
 fi

@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-if [ -f $ZDOTDIR/.p10k.zsh ]; then
+if [[ -r $ZDOTDIR/.p10k.zsh && -f $ZDOTDIR/.p10k.zsh ]]; then
     # ===== START Initialize Powerlevel10k theme =====
-    [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+    source $ZDOTDIR/.p10k.zsh
     # ===== END Initialize Powerlevel10k theme =====
 elif command -v starship &>/dev/null; then
     # ===== START Initialize Starship prompt =====

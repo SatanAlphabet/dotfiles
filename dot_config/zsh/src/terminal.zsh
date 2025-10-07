@@ -13,6 +13,7 @@ function _load_completion() {
     done
   }
 
+# Currently unused (Handled by OMZ)
 function _load_compinit() {
     # Initialize completions with optimized performance
     autoload -Uz compinit
@@ -51,8 +52,8 @@ export HISTFILE ZSH_AUTOSUGGEST_STRATEGY HISTSIZE SAVEHIST
 export ZSH="$HOME/.oh-my-zsh"
 
 # main stuff
-[[ -r $ZDOTDIR/.zshrc ]] && source $ZDOTDIR/.zshrc
-_load_compinit
+[[ -r $ZDOTDIR/pre-load.zsh ]] && source $ZDOTDIR/pre-load.zsh
+setopt EXTENDED_GLOB
 [[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 _load_prompt
 _load_function

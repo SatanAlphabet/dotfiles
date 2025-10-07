@@ -1,16 +1,4 @@
-#  Startup 
-# Commands to execute on startup (before the prompt is shown)
-# Check if the interactive shell option is set
-if [[ $- == *i* ]]; then
-   # This is a good place to load graphic/ascii art, display system information, etc.
-fi
-
-#  Plugins 
-plugins=(sudo git zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# # Directory navigation shortcuts
+# Directory navigation shortcuts
 alias c='clear' \
     ..='cd ..' \
     ...='cd ../..' \
@@ -18,8 +6,10 @@ alias c='clear' \
     .4='cd ../../../..' \
     .5='cd ../../../../..' \
     mkdir='mkdir -p'
-alias ff='fastfetch'
 
+# Custom aliases
+alias ff='fastfetch'
 alias yay='paru'
 export EDITOR=nvim
 export BAT_THEME='ansi'
+
