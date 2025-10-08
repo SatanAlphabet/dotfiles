@@ -1,31 +1,18 @@
 #!/usr/bin/env zsh
 
-function _load_function() {
-  for file in "${ZDOTDIR:-$HOME/.config/zsh}/functions/"*.zsh; do
-    [ -r "$file" ] && source "$file" || echo -e "==>  Failed to source $file"
-  done
-}
+if [[ -f "$ZDOTDIR/settings.zsh" ]]; then
+  source $ZDOTDIR/settings.zsh
+fi
 
-function _load_completion() {
-  for file in "${ZDOTDIR:-$HOME/.config/zsh}/completions/"*.zsh; do
-    [ -r "$file" ] && source "$file" || echo -e "==>  Failed to source $file"
-  done
-}
-
-function _load_prompt() {
-  source $ZDOTDIR/prompt.zsh || echo -e "==>  Failed to source prompt settings."
-}
-
-function _load_plugin() {
-  if [[ -n ${ZSH_PLUGIN_FRAMEWORK} ]]; then
+if [[ -n ${ZSH_PLUGIN_FRAMEWORK} ]]; then
   source $ZDOTDIR/plugins/"$ZSH_PLUGIN_FRAMEWORK".zsh || echo -e "==>  Failed to source ${ZSH_PLUGIN_FRAMEWORK}"
-  fi
-}
+fi
 
-# main stuff
-[[ -r $ZDOTDIR/startup.zsh ]] && source $ZDOTDIR/startup.zsh
-_load_plugin
-_load_prompt
-_load_function
-_load_completion
-[[ -r $ZDOTDIR/custom.zsh ]] && source $ZDOTDIR/custom.zsh
+if [[ -n ${ZSH_PROMPT} && ${SKIP_PROMPT_LOAD} != 1 ]]; then
+  source $ZDOTDIR/prompts/"$ZSH_PROMPT".zsh || echo -e "==>  Failed to source ${ZSH_PROMPT}"
+fi
+
+# Source other configs in conf.d
+for file in "${ZDOTDIR:-$HOME/.config/zsh}/conf.d/"*.zsh; do
+  [ -r "$file" ] && source "$file" || echo -e "==>  Failed to source $file"
+done

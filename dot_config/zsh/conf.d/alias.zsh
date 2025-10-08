@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# Directory navigation shortcuts
+
 alias c='clear' \
     ..='cd ..' \
     ...='cd ../..' \
@@ -7,10 +7,7 @@ alias c='clear' \
     .4='cd ../../../..' \
     .5='cd ../../../../..' \
     mkdir='mkdir -p'
-
-# Custom aliases
 alias ff='fastfetch'
 alias yay='paru'
 export EDITOR=nvim
 export BAT_THEME='ansi'
-

@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 _conda_init_setup() {
 # >>> conda initialize >>>
 __conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
