@@ -4,18 +4,22 @@ waybar_path="$HOME/.config/waybar"
 new_preset="${waybar_path}/type/${1}.jsonc"
 new_style="${waybar_path}/styles/${1}.css"
 
+err() {
+  echo -e "$1" >&2
+}
+
 if [[ $# -ne 1 ]]; then
-  echo "Error: Invalid number of arguments" >&2
+  err "Error: Invalid number of arguments. (1 required, $# provided)"
   exit 1
 fi
 
 if [[ ! -f "$new_style" ]]; then
-  echo "Error: Style ${new_style} is not found." >&2
+  err "Error: Style ${new_style} is not found."
   exit 1
 fi
 
 if [[ ! -f "$new_preset" ]]; then
-  echo "Error: Preset ${new_preset} is not found." >&2
+  err "Error: Preset ${new_preset} is not found."
   exit 1
 fi
 

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Currently breaks named workspaces declared in the config.
+
+current_workspace=$(niri msg -j workspaces | jq '.[] | select(.is_active == true).name' | sed 's|"||g')
+
+if [[ "$current_workspace" != "$1" ]]; then
+  echo -e "Setting workspace name to $1"
+  niri msg action set-workspace-name "$1"
+else
+  echo -e "Resetting workspace name..."
+  niri msg action unset-workspace-name
+fi
