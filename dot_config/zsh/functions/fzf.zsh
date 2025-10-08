@@ -11,7 +11,7 @@ _fuzzy_change_directory() {
     fi
 
     #type -d
-    selected_dir=$(fd -t d -H -d $max_depth -E .git -E node_modules -E .venv -E target -E .cache 2>/dev/null | fzf "${fzf_options[@]}")
+    selected_dir=$(fd -t d -H -d $max_depth -E .git -E node_modules -E .venv -E target -E .cache -E __pycache__ 2>/dev/null | fzf "${fzf_options[@]}")
 
     if [[ -n "$selected_dir" && -d "$selected_dir" ]]; then
         cd "$selected_dir" || return 1
@@ -99,7 +99,7 @@ export FZF_CTRL_R_OPTS="--border-label='| Command History |'"
 export FZF_CTRL_T_OPTS="--border-label='| Search |'"
 
 export FZF_CTRL_T_COMMAND='fd -H -E .git -E node_modules -E .venv -E target'
-export FZF_ALT_C_COMMAND='fd -t d -H -E .git -E node_modules -E .venv -E target'
+export FZF_ALT_C_COMMAND='fd -t d -H -E .git -E node_modules -E .venv -E target -E __pycache__'
 
 
 

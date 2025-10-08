@@ -17,7 +17,9 @@ function _load_prompt() {
 }
 
 function _load_plugin() {
-  source $ZDOTDIR/plugin.zsh || echo -e "==>  Failed to source plugin settings."
+  if [[ -n ${ZSH_PLUGIN_FRAMEWORK} ]]; then
+  source $ZDOTDIR/plugins/"$ZSH_PLUGIN_FRAMEWORK".zsh || echo -e "==>  Failed to source ${ZSH_PLUGIN_FRAMEWORK}"
+  fi
 }
 
 # main stuff

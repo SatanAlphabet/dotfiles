@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+# Skip prompt load (with specific plugins)
+if [[ "$SKIP_PROMPT_LOAD" == "1" ]]; then
+  return 0
+fi
+
 if [[ -r $ZDOTDIR/.p10k.zsh && -f $ZDOTDIR/.p10k.zsh ]]; then
   # ===== START Initialize Powerlevel10k theme =====
   source $ZDOTDIR/.p10k.zsh

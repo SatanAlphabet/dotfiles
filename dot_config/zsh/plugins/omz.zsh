@@ -7,5 +7,5 @@ ZSH_CACHE_DIR="$ZSH/cache"
 ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
 
 # --- Source OMZ --- #
-
 [[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
+
