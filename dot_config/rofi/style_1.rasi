@@ -11,7 +11,7 @@
 configuration {
 	modi:                       "drun,run,filebrowser,window";
     show-icons:                 true;
-    display-drun:               "";
+    display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
@@ -23,7 +23,7 @@ configuration {
 @import                          "~/.config/rofi/colors.rasi"
 
 * {
-    font:                        "JetBrains Mono Nerd Font Propo 10";
+    font:                        "Inter Variable, JetBrains Mono Nerd Font Propo 10";
     border-colour:               var(selected);
     handle-colour:               var(selected);
     background-colour:           var(background);
