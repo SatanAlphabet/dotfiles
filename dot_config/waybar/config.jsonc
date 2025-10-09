@@ -332,6 +332,30 @@
 		"position": "bottom",
 		"height": 8
 	},
+  {
+    "name": "outline-left",
+    "layer": "top",
+    "position": "left",
+    "width": 2
+  },
+  {
+    "name": "outline-right",
+    "layer": "top",
+    "position": "right",
+    "width": 2
+  },
+  {
+    "name": "outline-top",
+    "layer": "top",
+    "position": "top",
+    "height": 2
+  },
+  {
+    "name": "outline-bottom",
+    "layer": "top",
+    "position": "bottom",
+    "height": 2
+  },
 	{
 		"name": "date-widget",
 		"layer": "bottom",

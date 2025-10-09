@@ -53,7 +53,6 @@ window#waybar {
 	text-shadow: none;
 	background: @bar-bg;
 	color: @main-fg;
-	border-right: 0.5pt solid @border-col;
 }
 
 window#waybar box.module,
@@ -210,6 +209,55 @@ window#waybar.bottom * {
 	min-height: 0px;
 	min-width: 0px;
 	border: 0px solid transparent;
+}
+
+window#waybar.outline-left,
+window#waybar.outline-right,
+window#waybar.outline-top,
+window#waybar.outline-bottom {
+  background-color: @border-outline;
+}
+
+window#waybar.outline-left-1,
+window#waybar.outline-right-1,
+window#waybar.outline-top-1,
+window#waybar.outline-bottom-1 {
+  background-color: @border-outline-1;
+}
+
+window#waybar.outline-left-2,
+window#waybar.outline-right-2,
+window#waybar.outline-top-2,
+window#waybar.outline-bottom-2 {
+  background-color: @border-outline-2;
+}
+
+window#waybar.outline-left-3,
+window#waybar.outline-right-3,
+window#waybar.outline-top-3,
+window#waybar.outline-bottom-3 {
+  background-color: @border-outline-3;
+}
+
+window#waybar.outline-left-4,
+window#waybar.outline-right-4,
+window#waybar.outline-top-4,
+window#waybar.outline-bottom-4 {
+  background-color: @border-outline-4;
+}
+
+window#waybar.outline-left-5,
+window#waybar.outline-right-5,
+window#waybar.outline-top-5,
+window#waybar.outline-bottom-5 {
+  background-color: @border-outline-5;
+}
+
+window#waybar.outline-left-6,
+window#waybar.outline-right-6,
+window#waybar.outline-top-6,
+window#waybar.outline-bottom-6 {
+  background-color: @border-outline-6;
 }
 
 window#waybar #mpris.widget,
