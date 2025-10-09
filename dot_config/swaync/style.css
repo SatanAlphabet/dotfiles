@@ -339,7 +339,7 @@ notificationwindow, blankwindow, blankwindow {
   color: @main-fg;
   border-radius: 0;
   padding: 5px;
-  border-right: 2pt solid @main-bg-alt;
+  border: 2px solid @act-bg;
 }
 
 .control-center .control-center-list-placeholder {
