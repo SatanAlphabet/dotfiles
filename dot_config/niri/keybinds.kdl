@@ -30,6 +30,8 @@ binds {
   XF86AudioPause       allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "toggle"; }
   XF86AudioPrev        allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "prev"; }
   XF86AudioNext        allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "next"; }
+  Mod+Menu { spawn "~/.scripts/layout-toggle.sh" "next"; }
+  Mod+Shift+Menu { spawn "~/.scripts/layout-toggle.sh" "prev"; }
 
   Mod+Alt+X repeat=false { toggle-overview; }
 
