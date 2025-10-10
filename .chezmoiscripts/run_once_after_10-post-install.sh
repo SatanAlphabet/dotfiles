@@ -57,7 +57,7 @@ if _install_confirm "Setup missing auto-generated colors? [Y/n] " -eq 0; then
   mkdir -p "$HOME/.config/swaync/"
   cp "$pkg_path/Matugen.colors" "$HOME/.local/share/color-schemes/Matugen.colors" && echo -e "===>  Copied colorscheme..."
   cp "$pkg_path/waybar-colors.css" "$HOME/.config/waybar/colors.css" && echo -e "===>  Copied waybar colors..."
-  cp "$pkg_path/niri-colors.css" "$HOME/.config/niri/matugen-colors.kdl" && echo -e "===>  Copied niri colors..."
+  cp "$pkg_path/niri-colors.kdl" "$HOME/.config/niri/matugen-colors.kdl" && echo -e "===>  Copied niri colors..."
   cp "$pkg_path/swaync-colors.css" "$HOME/.config/swaync/colors.css" && echo -e "===>  Copied SwayNC colors..."
   cp "$pkg_path/rofi-colors.rasi" "$HOME/.config/rofi/colors.rasi" && echo -e "===>  Copied rofi colors..."
 fi
