@@ -5,17 +5,17 @@ set = false
 
 [templates.waybar]
 input_path = './templates/waybar.css'
-output_path = '~/.config/waybar/themes/matugen.css'
+output_path = '~/.config/waybar/colors.css'
 post_hook = 'sed -i s/i/i/ ~/.config/waybar/style.css'
 
 [templates.swaync]
 input_path = './templates/swaync.css'
-output_path = '~/.config/swaync/colors/matugen.css'
+output_path = '~/.config/swaync/colors.css'
 post_hook = 'swaync-client -rs'
 
 [templates.rofi]
 input_path = './templates/rofi.css'
-output_path = '~/.config/rofi/colors/matugen.rasi'
+output_path = '~/.config/rofi/colors.rasi'
 
 [templates.midnight-discord]
 input_path = './templates/midnight-discord.css'

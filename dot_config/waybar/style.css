@@ -5,6 +5,6 @@
 @import "./main-preset.css";
 
 /* Theme Colors */
-@import "./themes/matugen.css";
+@import "./colors.css";
 
 /* Custom overrides below */
