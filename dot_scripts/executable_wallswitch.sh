@@ -4,9 +4,9 @@ blur_img="${cache_dir}/niri/landing/blur"
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
 
 if [ "$current_theme" = "'prefer-dark'" ]; then
-  matugen image "$1" -c ~/.config/matugen/main.toml -m dark
+  matugen image "$1" -m dark
 elif [ "$current_theme" = "'prefer-light'" ]; then
-  matugen image "$1" -c ~/.config/matugen/main.toml -m light
+  matugen image "$1" -m light
 fi
 
 cp -sf "$1" "${cache_dir}"/niri/landing/background
