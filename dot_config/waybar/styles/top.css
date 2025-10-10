@@ -58,12 +58,12 @@ window#waybar {
   text-shadow: none;
   background: @bar-bg;
   color: @main-fg;
-  border-bottom: 0.5pt solid @border-col;
+  border: 0px solid transparent;
 }
 
 window#waybar box.module,
 window#waybar label.module {
-  background: @pill-dark-bg;
+  background: @pill-bg;
   margin: 0.3em 0em;
   padding: 0em 0.4em;
   border-radius: 0pt;
@@ -80,7 +80,7 @@ window#waybar .modules-right {
 window#waybar #custom-launcher {
   font-size: 18px;
   background: transparent;
-  color: @main-fg-alt;
+  color: @act-bg;
 }
 
 window#waybar #custom-glyph-picker,
@@ -122,7 +122,7 @@ window#waybar #workspaces {
 }
 
 #workspaces button.active {
-  background: @main-fg-alt;
+  background: @act-bg;
   color: @main-bg;
   opacity: 1;
 }
@@ -140,8 +140,7 @@ window#waybar #clock {
 }
 
 window#waybar #pill {
-  background: @pill-dark-bg;
-  border-right: 1.0pt solid @border-col;
+  background: @pill-bg;
   padding: 0 0.1em;
   margin: 0;
 }

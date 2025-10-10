@@ -51,7 +51,7 @@ window#waybar #language {
 window#waybar {
 	box-shadow: none;
 	text-shadow: none;
-	background: @bar-bg;
+	background: @main-bg;
 	color: @main-fg;
 }
 
@@ -75,7 +75,7 @@ window#waybar #custom-launcher {
 	font-size: 20px;
 	margin: 0 0.3em;
 	background: transparent;
-	color: @main-fg-alt;
+	color: @act-bg;
 }
 
 window#waybar #custom-glyph-picker,
@@ -126,13 +126,13 @@ window#waybar #workspaces {
 }
 
 #workspaces button.active {
-	background: @main-fg-alt;
+	background: @act-bg;
 	color: @main-bg;
 	opacity: 1;
 }
 
 #workspaces button:hover {
-	color: @main-fg-alt;
+	color: @act-bg;
 	background: @inact-bg;
 	opacity: 1;
 }
@@ -148,7 +148,6 @@ window#waybar #clock {
 	font-weight: 300;
 	margin: 0em 0.55em;
 	padding: 0.4em 0;
-	color: @main-fg;
 }
 
 window#waybar #pill {
@@ -218,48 +217,6 @@ window#waybar.outline-bottom {
   background-color: @border-outline;
 }
 
-window#waybar.outline-left-1,
-window#waybar.outline-right-1,
-window#waybar.outline-top-1,
-window#waybar.outline-bottom-1 {
-  background-color: @border-outline-1;
-}
-
-window#waybar.outline-left-2,
-window#waybar.outline-right-2,
-window#waybar.outline-top-2,
-window#waybar.outline-bottom-2 {
-  background-color: @border-outline-2;
-}
-
-window#waybar.outline-left-3,
-window#waybar.outline-right-3,
-window#waybar.outline-top-3,
-window#waybar.outline-bottom-3 {
-  background-color: @border-outline-3;
-}
-
-window#waybar.outline-left-4,
-window#waybar.outline-right-4,
-window#waybar.outline-top-4,
-window#waybar.outline-bottom-4 {
-  background-color: @border-outline-4;
-}
-
-window#waybar.outline-left-5,
-window#waybar.outline-right-5,
-window#waybar.outline-top-5,
-window#waybar.outline-bottom-5 {
-  background-color: @border-outline-5;
-}
-
-window#waybar.outline-left-6,
-window#waybar.outline-right-6,
-window#waybar.outline-top-6,
-window#waybar.outline-bottom-6 {
-  background-color: @border-outline-6;
-}
-
 window#waybar #mpris.widget,
 window#waybar.time-widget,
 window#waybar.date-widget {
@@ -279,6 +236,7 @@ window#waybar #clock.time {
 	font-weight: 600;
 	padding: 25px 0;
 	margin: 0 20px;
+  text-shadow: -1px 0px 2px @border-outline, 1px 0px 2px @border-outline, 0px -1px 2px @border-outline, 0px 1px 2px @border-outline;
 }
 
 window#waybar #clock.date {
@@ -286,10 +244,12 @@ window#waybar #clock.date {
 	font-weight: 400;
 	padding: 10px 0;
 	margin: 0 20px;
+  text-shadow: -1px 0px @border-outline, 1px 0px @border-outline, 0px -1px @border-outline, 0px 1px @border-outline;
 }
 
 window#waybar #mpris.widget {
 	font-size: 18px;
 	font-weight: 300;
 	margin: 0 20px;
+  text-shadow: -1px 1px 1px @shadow;
 }
