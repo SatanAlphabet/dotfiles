@@ -34,11 +34,6 @@ else
   echo -e "===>  Cache folder exist. Skipping..."
 fi
 
-if _install_confirm "Build xdg-menu cache? [Y/n] " -eq 0; then
-  echo -e "===>  Building xdg-menu cache..."
-  XDG_MENU_PREFIX=plasma- kbuildsyscoca6 --noincremental >/dev/null
-fi
-
 if _install_confirm "Change GTK settings? [Y/n] " -eq 0; then
   echo -e "===>  Changing GTK settings..."
   device_theme="prefer-light"
@@ -67,4 +62,4 @@ if _install_confirm "Set default background and run matugen? (REQUIRES WAYPAPER 
 fi
 
 echo -e "===>  Basic setup completed."
-echo -e "Setup your system theme with qt6ct & nwg-look and do a restart to run the services."
+echo -e "Setup your system theme with qt6ct & nwg-look and do a restart to ensure everything works."
