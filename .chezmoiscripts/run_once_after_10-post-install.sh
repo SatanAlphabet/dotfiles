@@ -48,18 +48,28 @@ if _install_confirm "Change GTK settings? [Y/n] " -eq 0; then
   gsettings set org.gnome.desktop.interface icon-theme "${icon_theme}" && echo -e "===>  Icon theme set to ${icon_theme}"
 fi
 
+if _install_confirm "Setup missing auto-generated colors? [Y/n] " -eq 0; then
+  # Directories should be handled by chezmoi, but just in case.
+  mkdir -p "$HOME/.local/share/color-schemes/"
+  mkdir -p "$HOME/.config/waybar/"
+  mkdir -p "$HOME/.config/rofi/"
+  mkdir -p "$HOME/.config/niri/"
+  mkdir -p "$HOME/.config/swaync/"
+  cp "$pkg_path/Matugen.colors" "$HOME/.local/share/color-schemes/Matugen.colors" && echo -e "===>  Copied colorscheme..."
+  cp "$pkg_path/waybar-colors.css" "$HOME/.config/waybar/colors.css" && echo -e "===>  Copied waybar colors..."
+  cp "$pkg_path/niri-colors.css" "$HOME/.config/niri/matugen-colors.kdl" && echo -e "===>  Copied niri colors..."
+  cp "$pkg_path/swaync-colors.css" "$HOME/.config/swaync/colors.css" && echo -e "===>  Copied SwayNC colors..."
+  cp "$pkg_path/rofi-colors.rasi" "$HOME/.config/rofi/colors.rasi" && echo -e "===>  Copied rofi colors..."
+fi
+
 if _install_confirm "Setup waypaper config? [Y/n] " -eq 0; then
+  echo -e "===>  Copying default background to wallpaper directory... (${wall_path})"
+  mkdir -p "$wall_path/"
+  cp "$pkg_path/default-bg.png" "$wall_path/default-bg.png" && echo -e "===>  Copied background..."
   mkdir -p "$HOME/.config/waypaper/"
+  echo -e "===>  Copying initial waypaper config..."
   cp "$pkg_path/waypaper-config.ini" "$HOME/.config/waypaper/config.ini" && echo -e "===>  Copied starting waypaper config..."
 fi
 
-if _install_confirm "Set default background and run matugen? (REQUIRES WAYPAPER CONFIGURED) [Y/n] " -eq 0; then
-  echo -e "===>  Copying default background to wallpaper directory... (${wall_path})"
-  mkdir -p "$wall_path/"
-  cp "$pkg_path/default-bg.png" "$wall_path/default-bg.png"
-  echo -e "===>  Applying changes with waypaper..."
-  waypaper --wallpaper "$wall_path/default-bg.png"
-fi
-
-echo -e "===>  Basic setup completed."
-echo -e "Setup your system theme with qt6ct & nwg-look and do a restart to ensure everything works."
+echo -e "===>  Basic setup completed..."
+echo -e "===>  Restart your system to apply changes."

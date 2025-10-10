@@ -1,0 +1,22 @@
+@define-color main-bg rgba(255, 247, 251, 1.0);
+@define-color main-fg #1f1a1f;
+
+@define-color inact-bg #e9e0e7;
+@define-color inact-fg #1f1a1f;
+
+@define-color act-bg #765084;
+@define-color act-fg #ffffff;
+
+@define-color hvr-bg #69596d;
+@define-color hvr-fg #ffffff;
+
+@define-color pill-low-bg #fbf1f8;
+@define-color pill-bg #f5ebf2;
+@define-color pill-high-bg #efe5ed;
+
+@define-color crit-bg #ba1a1a;
+@define-color crit-fg #ffffff;
+
+@define-color widget-col #e4b7f3;
+@define-color shadow #000000;
+@define-color border-outline rgba(93, 56, 107, 1.0);
