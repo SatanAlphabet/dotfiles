@@ -1,5 +1,6 @@
 @define-color border-col {{colors.outline.default.hex}};
 @define-color hvr-border {{colors.outline_variant.default.hex}};
+@define-color dark-border {{colors.on_primary_fixed_variant.default.hex}};
 
 @define-color main-bg {{colors.surface.default.hex}};
 @define-color main-bg-alt {{colors.surface_variant.default.hex}};

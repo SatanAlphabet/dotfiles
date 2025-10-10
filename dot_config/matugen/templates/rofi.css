@@ -6,4 +6,5 @@
   active:            {{colors.primary.default.hex}};
   urgent:            {{colors.primary.default.hex}};
   border:            {{colors.surface_variant.default.hex}};
+  dark-border:       {{colors.on_primary_fixed_variant.default.hex}};
 }

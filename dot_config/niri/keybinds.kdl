@@ -188,4 +188,6 @@ binds {
   Mod+M hotkey-overlay-title="Focus Marked Window" { spawn "nirius" "focus-marked"; }
   Mod+Shift+M repeat=false hotkey-overlay-title="Toggle Mark" { spawn "nirius" "toggle-mark"; }
   Mod+Ctrl+V repeat=false hotkey-overlay-title="Toggle Follow Mode" { spawn "nirius" "toggle-follow-mode"; }
+  Mod+P repeat=false hotkey-overlay-title="Show/Hide scratchpad" { spawn "nirius" "scratchpad-show"; }
+  Mod+Shift+P repeat=false hotkey-overlay-title="Send to/Remove from scratchpad" { spawn "nirius" "scratchpad-toggle"; }
 }

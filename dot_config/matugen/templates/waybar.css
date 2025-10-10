@@ -23,4 +23,4 @@
 
 @define-color widget-col {{colors.primary_fixed_dim.default.hex}};
 @define-color shadow {{colors.shadow.default.hex}};
-@define-color border-outline {{colors.on_primary_fixed_variant.default.rgba | set_alpha: 0.75}};
+@define-color border-outline {{colors.on_primary_fixed_variant.default.rgba}};
