@@ -188,6 +188,16 @@ tooltip label {
 	color: @main-fg;
 }
 
+menu {
+  background: @main-bg;
+  color: @main-fg;
+  border: 1px solid @main-fg;
+}
+
+menuitem {
+  color: @main-fg;
+}
+
 /* Adjust margin & padding for modules in bottom pills */
 window#waybar .modules-right label.module {
 	background: transparent;
