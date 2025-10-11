@@ -55,9 +55,5 @@ export FZF_DEFAULT_OPTS="   --border=rounded --border-label-pos=6 \
 export FZF_ALT_C_OPTS="--preview='tree -C {} | head -n 300' --border-label='| Change Directory |'"
 export FZF_CTRL_R_OPTS="--border-label='| Command History |'"
 export FZF_CTRL_T_OPTS="--border-label='| Search |'"
-
 export FZF_CTRL_T_COMMAND='fd -H -E .git -E node_modules -E .venv -E target'
 export FZF_ALT_C_COMMAND='fd -t d -H -E .git -E node_modules -E .venv -E target -E __pycache__'
-
-
-
