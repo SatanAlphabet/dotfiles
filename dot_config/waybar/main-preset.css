@@ -237,7 +237,7 @@ window#waybar #clock.time {
 	padding: 25px 0;
   padding-top: 0;
 	margin: 0 20px;
-  text-shadow: -1px 0px @border-outline, 2px 0px @border-outline, 0px -1px @border-outline, 0px 2px @border-outline, 3px 3px @border-outline;
+  text-shadow: -1px 0px @widget-shadow, 2px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 3px 3px @widget-shadow;
 }
 
 window#waybar #clock.date {
@@ -246,7 +246,7 @@ window#waybar #clock.date {
 	padding: 8px 0;
   padding-top: 0;
 	margin: 0 20px;
-  text-shadow: -1px 0px @border-outline, 1px 0px @border-outline, 0px -1px @border-outline, 0px 2px @border-outline, 2px 2px @border-outline;
+  text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 2px 2px @widget-shadow;
 }
 
 window#waybar #mpris.widget {
@@ -254,5 +254,5 @@ window#waybar #mpris.widget {
 	font-weight: 300;
   padding-top: 0;
 	margin: 0 20px;
-  text-shadow: -2px 0px @border-outline, 0px 1px @border-outline;
+  text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 1px @widget-shadow, -0px 0px @widget-shadow;
 }

@@ -18,5 +18,5 @@
 @define-color crit-fg {{colors.on_error.default.hex}};
 
 @define-color widget-col {{colors.primary_fixed_dim.default.hex}};
-@define-color shadow {{colors.shadow.default.hex}};
+@define-color widget-shadow {{colors.on_primary_fixed_variant.default.rgba}};
 @define-color border-outline {{colors.on_primary_fixed_variant.default.rgba}};
