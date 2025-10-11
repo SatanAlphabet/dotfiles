@@ -146,7 +146,7 @@ binds {
   Mod+Ctrl+8 { move-workspace-to-index 8; }
   Mod+Ctrl+9 { move-workspace-to-index 9; }
 
-  Mod+X repeat=false { focus-workspace-previous; }
+  // Mod+X repeat=false { focus-workspace-previous; }
 
   Mod+Shift+A  { consume-or-expel-window-left; }
   Mod+Shift+D { consume-or-expel-window-right; }
@@ -188,6 +188,6 @@ binds {
   Mod+M hotkey-overlay-title="Focus Marked Window" { spawn "nirius" "focus-marked"; }
   Mod+Shift+M repeat=false hotkey-overlay-title="Toggle Mark" { spawn "nirius" "toggle-mark"; }
   Mod+Ctrl+V repeat=false hotkey-overlay-title="Toggle Follow Mode" { spawn "nirius" "toggle-follow-mode"; }
-  Mod+P repeat=false hotkey-overlay-title="Show/Hide scratchpad" { spawn "nirius" "scratchpad-show"; }
-  Mod+Shift+P repeat=false hotkey-overlay-title="Send to/Remove from scratchpad" { spawn "nirius" "scratchpad-toggle"; }
+  Mod+X repeat=false hotkey-overlay-title="Show/Hide scratchpad" { spawn "nirius" "scratchpad-show"; }
+  Mod+Ctrl+X repeat=false hotkey-overlay-title="Send to/Remove from scratchpad" { spawn "nirius" "scratchpad-toggle"; }
 }
