@@ -3,10 +3,45 @@
   font-size: 10px;
 }
 
+window#waybar {
+	box-shadow: none;
+	text-shadow: none;
+	background: @main-bg;
+	color: @main-fg;
+}
+
+window#waybar .module {
+	background: @pill-bg;
+	margin: 0em 0.5em;
+	padding: 0.2em 0;
+	border-radius: 0pt;
+}
+
+tooltip {
+	background: @main-bg;
+	color: @main-fg;
+	border-width: 0.3pt;
+	border-style: solid;
+	border-color: @main-fg;
+}
+
+tooltip label {
+	color: @main-fg;
+}
+
+menu {
+  background: @main-bg;
+  color: @main-fg;
+  border: 1px solid @main-fg;
+}
+
+menuitem {
+  color: @main-fg;
+}
+
 #pulseaudio,
 #custom-sysupdate,
 #custom-swaync,
-#custom-drawer-arrow-up,
 #mpris,
 #backlight,
 #bluetooth,
@@ -15,60 +50,12 @@
 	font-size: 16px;
 }
 
-window#waybar #custom-drawer-arrow-up {
-	font-weight: bolder;
-	padding-top: 0.5em;
-}
-
-window#waybar #custom-seperator {
-	font-size: 13px;
-	margin: -0.3em 0;
-	opacity: 0.4;
-	background: transparent;
-}
-
-/*
-#custom-swaync {
-  color: @act-bg;
-  transition: all 0.5s;
-}
-
-#custom-swaync.dnd-none,
-#custom-swaync.none {
-  color: @main-fg;
-  transition: all 0.5s;
-}
-*/
-
-window#waybar #language {
-	font-size: 14px;
-	margin: 0 0.6em;
-	font-weight: 400;
-	background: transparent;
-	margin-top: 0.4em;
-}
-
-window#waybar {
-	box-shadow: none;
-	text-shadow: none;
-	background: @main-bg;
-	color: @main-fg;
-}
-
-window#waybar box.module,
-window#waybar label.module {
-	background: @pill-bg;
-	margin: 0em 0.5em;
-	padding: 0.2em 0;
-	border-radius: 0pt;
-}
-
 window#waybar .modules-left {
 	margin-top: 1.5em;
 }
 
 window#waybar .modules-right {
-	margin-bottom: 1em;
+	margin-bottom: 1.5em;
 }
 
 window#waybar #custom-launcher {
@@ -78,23 +65,19 @@ window#waybar #custom-launcher {
 	color: @act-bg;
 }
 
-window#waybar #custom-glyph-picker,
-window#waybar #custom-emoji-picker,
-window#waybar #custom-browser,
-window#waybar #custom-wallpaper,
-window#waybar #custom-clipboard {
+#battery.warning {
+	color: @hvr-bg;
+}
+
+#battery.critical {
+	color: @crit-bg;
+}
+
+window#waybar #custom-seperator-vertical {
 	font-size: 13px;
-}
-
-window#waybar #custom-picker,
-window#waybar #custom-powermenu {
-	font-size: 12px;
-}
-
-window#waybar #privacy,
-window#waybar #tray {
-	padding: 0em 0;
-	margin: 0.5em 0em;
+	margin: -0.3em 0;
+	opacity: 0.3;
+	background: transparent;
 }
 
 window#waybar #workspaces {
@@ -150,6 +133,19 @@ window#waybar #clock {
 	padding: 0.4em 0;
 }
 
+/*
+#custom-swaync {
+  color: @act-bg;
+  transition: all 0.5s;
+}
+
+#custom-swaync.dnd-none,
+#custom-swaync.none {
+  color: @main-fg;
+  transition: all 0.5s;
+}
+*/
+
 window#waybar #pill {
 	background: @pill-bg;
 }
@@ -160,6 +156,12 @@ window#waybar #pill.bottom {
 	padding-bottom: 0;
 }
 
+window#waybar #privacy,
+window#waybar #tray {
+	padding: 0em 0;
+	margin: 0.5em 0em;
+}
+
 #network.disabled,
 #network.disconnected,
 #bluetooth.disabled,
@@ -167,39 +169,15 @@ window#waybar #pill.bottom {
 	opacity: 0.5;
 }
 
-#battery.warning {
-	color: @hvr-bg;
-}
-
-#battery.critical {
-	color: @crit-bg;
-}
-
-tooltip {
-	/* all: unset; */
-	background: @main-bg;
-	color: @main-fg;
-	border-width: 0.3pt;
-	border-style: solid;
-	border-color: @main-fg;
-}
-
-tooltip label {
-	color: @main-fg;
-}
-
-menu {
-  background: @main-bg;
-  color: @main-fg;
-  border: 1px solid @main-fg;
-}
-
-menuitem {
-  color: @main-fg;
+window#waybar #language {
+	font-size: 14px;
+	font-weight: 400;
+	background: transparent;
+	margin-top: 0.4em;
 }
 
 /* Adjust margin & padding for modules in bottom pills */
-window#waybar .modules-right label.module {
+window#waybar.main .modules-right label.module {
 	background: transparent;
 	padding-left: 0;
 	padding-right: 0;
@@ -207,10 +185,8 @@ window#waybar .modules-right label.module {
 	margin-right: 0;
 }
 
-/* EXPERIMENTAL CONFIGS FOR BORDER & CLOCK WIDGETS */
-
-window#waybar.top *,
-window#waybar.right *,
+/* Allows for very thin bar (to be used as borders) */
+window#waybar.top * ,
 window#waybar.bottom * {
 	margin: 0;
 	padding: 0;
@@ -227,7 +203,6 @@ window#waybar.outline-bottom {
   background-color: @border-outline;
 }
 
-window#waybar #mpris.widget,
 window#waybar.time-widget,
 window#waybar.date-widget {
 	background: transparent;
@@ -237,6 +212,7 @@ window#waybar.date-widget {
 window#waybar #mpris.widget,
 window#waybar #clock.date,
 window#waybar #clock.time {
+  background: transparent;
 	font-family: "Inter Variable";
 	color: @widget-col;
 }

@@ -1,0 +1,178 @@
+{
+	"network": {
+		"format-wifi": "󰤨",
+		"format-ethernet": "󰈁",
+		"format-linked": "󰈁",
+		"format-disconnected": "󰤮",
+		"tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+		"tooltip-format-disconnected": "Disconnected",
+		"on-click": "kitty -1 nmtui",
+		"tooltip": true,
+		"interval": 2
+	},
+	"bluetooth": {
+		"format": "󰂲",
+		"format-disabled": "󰂲",
+		"format-off": "󰂲",
+		"format-connected": "󰂯",
+		"tooltip-format": "{controller_alias}\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
+		"on-click": "blueman-manager"
+	},
+	"niri/window": {
+		"max-length": 50,
+	},
+	"niri/workspaces": {
+		"on-scroll-up": "niri msg action focus-workspace-up",
+		"on-scroll-down": "niri msg action focus-workspace-down",
+    "on-click-right": "niri msg action toggle-overview"
+	},
+	"niri/language": {
+		"format-en": "US",
+		"format-th": "TH",
+		"on-click": "niri msg action switch-layout next"
+	},
+	"custom/seperator-vertical": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/launcher": {
+		"on-click": "~/.scripts/rofilaunch.sh",
+		"menu": "on-click-right",
+		"menu-file": "~/.config/waybar/menu/launcher.xml",
+		"menu-actions": {
+			"cliphist": "~/.scripts/cliphist-niri.sh",
+			"emoji": "~/.scripts/emoji-picker.sh",
+			"glyph": "~/.scripts/glyph-picker.sh",
+			"calc": "~/.scripts/calc.sh",
+			"lock": "loginctl lock-session",
+			"reboot": "systemctl reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibetnate",
+			"shutdown": "systemctl poweroff",
+			"logout": "niri msg action quit -s",
+			"wallpaper-random": "waypaper --random --backend swww",
+			"wallpaper-select": "waypaper",
+			"theme": "~/.scripts/themechange.sh",
+			"niri": "xdg-open https://github.com/YaLTeR/niri"
+		},
+		"tooltip-format": "Application Launcher\nRight click for more actions"
+	},
+  "mpris": {
+		"tooltip-format": "{player}: PLAYING [{position}/{length}]\n{title} - {artist}",
+		"tooltip-format-paused": "{player}: PAUSED [{position}/{length}]\n{title} - {artist}",
+		"tooltip-format-stopped": "{player}: STOPPED",
+		"on-click": "~/.scripts/mediacontrol.sh toggle",
+		"max-length": 60,
+		"interval": 1
+	},
+	"clock": {
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"on-scroll": 1,
+			"format": {
+				"months": "<b>{}</b>",
+				"weekdays": "<b>{}</b>",
+				"today": "<b>{}</b>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
+	"custom/swaync": {
+		"format": "{icon}",
+		"tooltip": true,
+		"format-icons": {
+			"notification": "",
+			"none": "",
+			"dnd-notification": "",
+			"dnd-none": "",
+			"inhibited-notification": "",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "",
+			"dnd-inhibited-none": "",
+			"email-notification": "",
+			"chat-notification": "󱋊",
+			"warning-notification": "󱨪",
+			"error-notification": "󱨪",
+			"network-notification": "󱂇",
+			"battery-notification": "󰁺",
+			"update-notification": "󰚰",
+			"music-notification": "󰝚",
+			"volume-notification": "󰕿"
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client", // This is to check if swaync daemon is running
+		"exec": "pgrep -x swaync && swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+	"privacy": {
+		"icon-spacing": 10,
+		"icon-size": 13,
+		"transition-duration": 250,
+		"modules": [
+			{
+				"type": "screenshare",
+				"tooltip": true,
+				"tooltip-icon-size": 24
+			},
+			{
+				"type": "audio-in",
+				"tooltip": true,
+				"tooltip-icon-size": 24
+			}
+		],
+		"ignore-monitor": true,
+		"ignore": [
+			{
+				"type": "audio-in",
+				"name": "cava"
+			},
+			{
+				"type": "screenshare",
+				"name": "obs"
+			}
+		]
+	},
+	"tray": {
+		"icon-size": 15,
+		"spacing": 10
+	},
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"design-capacity": true,
+	},
+	"pulseaudio": {
+		"on-scroll-up": "~/.scripts/volumecontrol.sh + 1",
+		"on-scroll-down": "~/.scripts/volumecontrol.sh - 1",
+		"on-click": "pavucontrol-qt -t 3",
+		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"scroll-step": 1,
+	},
+	"backlight": {
+		"format": "{icon}",
+		"format-icons": ["", "", "", "", "", "", "", "", ""],
+		"tooltip-format": "Backlight level: {icon} {percent}%",
+		"tooltip": true,
+		"on-scroll-up": "~/.scripts/brightnesscontrol.sh + 1",
+		"on-scroll-down": "~/.scripts/brightnesscontrol.sh - 1"
+	},
+	"custom/sysupdate": {
+		"exec-if": "which waybar-module-pacman-updates",
+		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
+		"on-click": "kitty --class 'sysupdate' --title 'System Update' ~/.scripts/sysupdate.sh"
+	}
+}
