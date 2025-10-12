@@ -16,7 +16,7 @@
 
 body {
   /* font, change to 'gg sans' for default discord font*/
-  --font: 'figtree';
+  --font: 'Inter Variable';
   --code-font: '';
 
   /* amount of spacing and padding */
