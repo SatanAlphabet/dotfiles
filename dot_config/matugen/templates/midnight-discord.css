@@ -28,7 +28,6 @@ body {
   /* Border radius settings */
   --radius-lg: 0;
   --radius-md: 0;
-  --radius-sm: 0;
 
   /* animations */
   --list-item-transition: 0.2s ease;
