@@ -63,7 +63,7 @@ window {
 
     /* properties for all widgets */
     enabled:                     true;
-    margin:                      6px;
+    margin:                      8px;
     padding:                     0px;
     border:                      2px solid;
     border-radius:               0px;
