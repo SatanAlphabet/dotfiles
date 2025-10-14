@@ -3,71 +3,71 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
 
-    gaps 6
+  gaps 6
 
-    center-focused-column "never"
+  center-focused-column "never"
 
-    preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 0.66667
-    }
+  preset-column-widths {
+    proportion 0.33333
+    proportion 0.5
+    proportion 0.66667
+  }
 
-     preset-window-heights { 
-        proportion 0.5
-        proportion 1.0
-    }
+   preset-window-heights { 
+    proportion 0.5
+    proportion 1.0
+  }
 
-    default-column-width { proportion 0.5; }
+  default-column-width { proportion 0.5; }
 
-    focus-ring {
-        off
-        width 2
-        active-color "#8fc8ff"
-        inactive-color "#505050"
-        active-gradient from="#ca9ee6ff" to="#f2d5cfff" angle=45 relative-to="workspace-view"
-        inactive-gradient from="#b4befe4c" to="#6c70864c" angle=45 relative-to="workspace-view"
-    }
+  focus-ring {
+    off
+    width 2
+    active-color "#8fc8ff"
+    inactive-color "#505050"
+    active-gradient from="#ca9ee6ff" to="#f2d5cfff" angle=45 relative-to="workspace-view"
+    inactive-gradient from="#b4befe4c" to="#6c70864c" angle=45 relative-to="workspace-view"
+  }
 
-    border {
-        on
-        width 2
-        active-color "#116682"
-        urgent-color "#ba1a1a"
-        inactive-color "#c0c8cd"
-    }
+  border {
+    on
+    width 2
+    active-color "#116682"
+    urgent-color "#ba1a1a"
+    inactive-color "#c0c8cd"
+  }
 
-    tab-indicator {
-        width 6
-        gap 2
-        gaps-between-tabs 4
-        corner-radius 0
-        place-within-column
-        length total-proportion=1.0
-    }
+  tab-indicator {
+    width 6
+    gap 2
+    gaps-between-tabs 4
+    corner-radius 0
+    place-within-column
+    length total-proportion=1.0
+  }
 
-    shadow {
-        off
-        softness 15
-        spread -3
-        offset x=0 y=5
+  shadow {
+    off
+    softness 10
+    spread -3
+    offset x=0 y=5
 
-        color "#0007"
-    }
+    color "#0007"
+  }
 
-    struts {
-         left 0
-         right 0
-        // top 64
-        // bottom 64
-    }
+  struts {
+    left 0
+    right 0
+    // top 64
+    // bottom 64
+  }
 
-    background-color "transparent"
+  background-color "transparent"
 }
 
 overview {
   backdrop-color "#f6fafd"
   workspace-shadow {
-     // off
+   // off
   }
 }
