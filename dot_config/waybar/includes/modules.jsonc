@@ -32,7 +32,8 @@
 	"niri/language": {
 		"format-en": "US",
 		"format-th": "TH",
-		"on-click": "niri msg action switch-layout next"
+		"on-click": "~/.scripts/layout-toggle.sh next",
+		"on-click-right": "~/.scripts/layout-toggle.sh prev"
 	},
 	"custom/seperator-vertical": {
 		"format": "",
