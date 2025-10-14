@@ -97,7 +97,6 @@ window-rule {
 window-rule {
   match is-floating=true
   
-  tiled-state false
   shadow {
     on
   }
