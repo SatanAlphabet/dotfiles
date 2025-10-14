@@ -6,7 +6,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Zinit settings
-zi ice depth"1"; zi light romkatv/powerlevel10k
+
 zi wait lucid for \
   OMZL::git.zsh \
   OMZP::git \
@@ -16,6 +16,10 @@ zi wait lucid for \
     zdharma-continuum/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions \
+
+if [[ "$ZSH_PROMPT" == "p10k" ]]; then
+  zi ice depth"1"; zi light romkatv/powerlevel10k
+fi
 
 # Plugin-specific settings
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
