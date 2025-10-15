@@ -16,11 +16,7 @@ A comfy setup built on [niri](https://github.com/YaLTeR/niri "A scrollable-tilin
   **Note that the install script only supports Arch-based distros and is currently untested on a minimal setup.**
   
 - `niri-git` may be required for config [`include`](https://yalter.github.io/niri/Configuration%3A-Include.html) to work.
-- A post-hook command is required in `~/.config/waypaper/config.ini` for dynamic theming to work properly
 
-		[Settings]
-  		post_command = ~/.scripts/wallswitch.sh $wallpaper
-   
 ---
 
 ## Software
@@ -33,7 +29,7 @@ A comfy setup built on [niri](https://github.com/YaLTeR/niri "A scrollable-tilin
 | Lock screen | hyprlock |
 | Wallpaper management | waypaper |
 | Dynamic theming | matugen |
-| Shell | zsh /w [Oh My Zsh](https://ohmyz.sh/) |
+| Shell | zsh |
 | File picker | Dolphin & yazi |
 | Web browser | Zen Browser |
 
