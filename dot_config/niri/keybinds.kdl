@@ -177,6 +177,7 @@ binds {
   Mod+G repeat=false { toggle-column-tabbed-display; }
 
   Print repeat=false { screenshot; }
+  Mod+Print repeat=false hotkey-overlay-title="Screenshot & Annotate" { spawn-sh "grim -g \"$(slurp)\" - | satty -f -"; }
   Ctrl+Print repeat=false { screenshot-screen; }
   Alt+Print repeat=false { screenshot-window; }
 
