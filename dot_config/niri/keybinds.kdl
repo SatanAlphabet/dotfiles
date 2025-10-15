@@ -4,34 +4,34 @@ binds {
 
   Mod+T repeat=false hotkey-overlay-title="Open a Terminal" { spawn "kitty" "-1"; }
   Mod+Shift+T repeat=false hotkey-overlay-title="Open Dropdown Terminal" { spawn "kitty" "--class" "dropdown" "-1"; }
-  Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "~/.scripts/rofilaunch.sh" "style_1";  }
-  Mod+Alt+C repeat=false hotkey-overlay-title="Clipboard History" { spawn "~/.scripts/cliphist-niri.sh" "-c"; }
-  Mod+Alt+E repeat=false hotkey-overlay-title="Emoji Picker" { spawn "~/.scripts/emoji-picker.sh"; }
-  Mod+Alt+G repeat=false hotkey-overlay-title="Glyph Picker" { spawn "~/.scripts/glyph-picker.sh"; }
+  Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "rofilaunch.sh" "style_1";  }
+  Mod+Alt+C repeat=false hotkey-overlay-title="Clipboard History" { spawn "clipboard.sh" "-c"; }
+  Mod+Alt+E repeat=false hotkey-overlay-title="Emoji Picker" { spawn "emoji-picker.sh"; }
+  Mod+Alt+G repeat=false hotkey-overlay-title="Glyph Picker" { spawn "glyph-picker.sh"; }
   Mod+N repeat=false hotkey-overlay-title="Notification Panel" { spawn "swaync-client" "-t"; }
   // Mod+B repeat=false { spawn "zen-browser"; } // (Using nirius instead)
   Mod+E repeat=false hotkey-overlay-title="File Browser" { spawn "dolphin"; } 
   Mod+Alt+L repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
   Mod+Alt+B repeat=false hotkey-overlay-title="Toggle waybar visibility" { spawn "pkill" "-SIGUSR1" "waybar"; }
-  Mod+Alt+P repeat=false hotkey-overlay-title="Pick color" { spawn "~/.scripts/colorpick.sh";}
-  Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn "~/.scripts/themechange.sh"; }
-  Mod+Alt+V repeat=false hotkey-overlay-title="Calculator" { spawn "~/.scripts/calc.sh"; }
+  Mod+Alt+P repeat=false hotkey-overlay-title="Pick color" { spawn "colorpick.sh";}
+  Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn "themechange.sh"; }
+  Mod+Alt+V repeat=false hotkey-overlay-title="Calculator" { spawn "calc.sh"; }
   // Nirius specific binds for browser & wallpaper
   Mod+B repeat=false hotkey-overlay-title="Web Browser" { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
   Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
 
-  XF86AudioRaiseVolume allow-when-locked=true { spawn "~/.scripts/volumecontrol.sh" "+" "2"; }
-  XF86AudioLowerVolume allow-when-locked=true { spawn "~/.scripts/volumecontrol.sh" "-" "2"; }
-  XF86MonBrightnessUp allow-when-locked=true { spawn "~/.scripts/brightnesscontrol.sh" "+" "5"; }
-  XF86MonBrightnessDown allow-when-locked=true { spawn "~/.scripts/brightnesscontrol.sh" "-" "5"; }
-  XF86AudioMute        allow-when-locked=true { spawn "~/.scripts/volumecontrol.sh" "toggle-mute"; }
+  XF86AudioRaiseVolume allow-when-locked=true { spawn "volumecontrol.sh" "+" "2"; }
+  XF86AudioLowerVolume allow-when-locked=true { spawn "volumecontrol.sh" "-" "2"; }
+  XF86MonBrightnessUp allow-when-locked=true { spawn "brightnesscontrol.sh" "+" "5"; }
+  XF86MonBrightnessDown allow-when-locked=true { spawn "brightnesscontrol.sh" "-" "5"; }
+  XF86AudioMute        allow-when-locked=true { spawn "volumecontrol.sh" "toggle-mute"; }
   XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-  XF86AudioPlay        allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "toggle"; }
-  XF86AudioPause       allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "toggle"; }
-  XF86AudioPrev        allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "prev"; }
-  XF86AudioNext        allow-when-locked=true { spawn "~/.scripts/mediacontrol.sh" "next"; }
-  Mod+Menu hotkey-overlay-title="Switch to next keyboard layout" { spawn "~/.scripts/layout-toggle.sh" "next"; }
-  Mod+Shift+Menu hotkey-overlay-title="Switch to previous keyboard layout" { spawn "~/.scripts/layout-toggle.sh" "prev"; }
+  XF86AudioPlay        allow-when-locked=true { spawn "mediacontrol.sh" "toggle"; }
+  XF86AudioPause       allow-when-locked=true { spawn "mediacontrol.sh" "toggle"; }
+  XF86AudioPrev        allow-when-locked=true { spawn "mediacontrol.sh" "prev"; }
+  XF86AudioNext        allow-when-locked=true { spawn "mediacontrol.sh" "next"; }
+  Mod+Menu hotkey-overlay-title="Switch to next keyboard layout" { spawn "layout-toggle.sh" "next"; }
+  Mod+Shift+Menu hotkey-overlay-title="Switch to previous keyboard layout" { spawn "layout-toggle.sh" "prev"; }
 
   Mod+Alt+X repeat=false { toggle-overview; }
 
@@ -159,7 +159,8 @@ binds {
   Mod+Ctrl+R { reset-window-height; }
   Mod+F repeat=false { maximize-column; }
   Mod+Shift+F repeat=false { fullscreen-window; }
-  Mod+Ctrl+Shift+F repeat=false { toggle-windowed-fullscreen; }
+  Mod+Ctrl+Shift+F repeat=false { maximize-window-to-edges; }
+  Mod+Alt+F repeat=false { toggle-windowed-fullscreen; }
 
   Mod+Ctrl+F { expand-column-to-available-width; }
   Mod+C { center-column; }
@@ -183,7 +184,7 @@ binds {
 
   Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-  Ctrl+Alt+Delete repeat=false hotkey-overlay-title="Power Menu" { spawn "~/.scripts/logoutlaunch.sh"; }
+  Ctrl+Alt+Delete repeat=false hotkey-overlay-title="Power Menu" { spawn "logoutlaunch.sh"; }
 
   // Nirius specific commands
   Mod+M hotkey-overlay-title="Focus Marked Window" { spawn "nirius" "focus-marked"; }

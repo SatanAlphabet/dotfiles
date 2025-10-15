@@ -1,2 +1,2 @@
 spawn-at-startup "waypaper" "--restore" "--backend" "swww"
-spawn-at-startup "~/.scripts/reload-portal.sh"
+spawn-at-startup "reload-portal.sh"

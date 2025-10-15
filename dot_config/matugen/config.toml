@@ -84,7 +84,7 @@ output_path = '~/.zen/32k6x2yc.Default (release)/chrome/userChrome.css'
 [templates.pywalfox]
 input_path = './templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
-post_hook = '~/.scripts/matugen-pywalfox.sh'
+post_hook = 'matugen-pywalfox.sh'
 
 [templates.color-scheme]
 input_path = '~/.config/matugen/templates/Matugen.colors'

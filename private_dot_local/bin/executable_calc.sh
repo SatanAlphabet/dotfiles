@@ -14,5 +14,5 @@ else
     -calc-command "echo -n '{result}' | wl-copy && notify-send \"Result copied to clipboard...\" -e" \
     -theme-str "configuration { calc { hint-welcome: \" Ctrl-Enter to copy current result to clipboard.\"; } } " \
     -theme-str "mode-switcher { enabled: false; } " \
-    -theme ${rofi_style}
+    -theme "${rofi_style}"
 fi

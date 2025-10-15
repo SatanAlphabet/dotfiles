@@ -30,22 +30,22 @@
     "on-click-right": "niri msg action toggle-overview"
 	},
 	"niri/language": {
-		"on-click": "~/.scripts/layout-toggle.sh next",
-		"on-click-right": "~/.scripts/layout-toggle.sh prev"
+		"on-click": "layout-toggle.sh next",
+		"on-click-right": "layout-toggle.sh prev"
 	},
 	"custom/seperator-vertical": {
 		"format": "",
 		"tooltip": false
 	},
 	"custom/launcher": {
-		"on-click": "~/.scripts/rofilaunch.sh",
+		"on-click": "rofilaunch.sh",
 		"menu": "on-click-right",
 		"menu-file": "~/.config/waybar/menu/launcher.xml",
 		"menu-actions": {
-			"cliphist": "~/.scripts/cliphist-niri.sh",
-			"emoji": "~/.scripts/emoji-picker.sh",
-			"glyph": "~/.scripts/glyph-picker.sh",
-			"calc": "~/.scripts/calc.sh",
+			"cliphist": "clipboard.sh",
+			"emoji": "emoji-picker.sh",
+			"glyph": "glyph-picker.sh",
+			"calc": "calc.sh",
 			"lock": "loginctl lock-session",
 			"reboot": "systemctl reboot",
 			"suspend": "systemctl suspend",
@@ -54,7 +54,7 @@
 			"logout": "niri msg action quit -s",
 			"wallpaper-random": "waypaper --random --backend swww",
 			"wallpaper-select": "waypaper",
-			"theme": "~/.scripts/themechange.sh",
+			"theme": "themechange.sh",
 			"niri": "xdg-open https://github.com/YaLTeR/niri"
 		},
 		"tooltip-format": "Application Launcher\nRight click for more actions"
@@ -63,7 +63,7 @@
 		"tooltip-format": "{player}: PLAYING [{position}/{length}]\n{title} - {artist}",
 		"tooltip-format-paused": "{player}: PAUSED [{position}/{length}]\n{title} - {artist}",
 		"tooltip-format-stopped": "{player}: STOPPED",
-		"on-click": "~/.scripts/mediacontrol.sh toggle",
+		"on-click": "mediacontrol.sh toggle",
 		"max-length": 60,
 		"interval": 1
 	},
@@ -155,8 +155,8 @@
 		"design-capacity": true,
 	},
 	"pulseaudio": {
-		"on-scroll-up": "~/.scripts/volumecontrol.sh + 1",
-		"on-scroll-down": "~/.scripts/volumecontrol.sh - 1",
+		"on-scroll-up": "volumecontrol.sh + 1",
+		"on-scroll-down": "volumecontrol.sh - 1",
 		"on-click": "pavucontrol-qt -t 3",
 		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"scroll-step": 1,
@@ -166,12 +166,12 @@
 		"format-icons": ["", "", "", "", "", "", "", "", ""],
 		"tooltip-format": "Backlight level: {icon} {percent}%",
 		"tooltip": true,
-		"on-scroll-up": "~/.scripts/brightnesscontrol.sh + 1",
-		"on-scroll-down": "~/.scripts/brightnesscontrol.sh - 1"
+		"on-scroll-up": "brightnesscontrol.sh + 1",
+		"on-scroll-down": "brightnesscontrol.sh - 1"
 	},
 	"custom/sysupdate": {
 		"exec-if": "which waybar-module-pacman-updates",
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
-		"on-click": "kitty --class 'sysupdate' --title 'System Update' ~/.scripts/sysupdate.sh"
+		"on-click": "kitty --class 'sysupdate' --title 'System Update' sysupdate.sh"
 	}
 }

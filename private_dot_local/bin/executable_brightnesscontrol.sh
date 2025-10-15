@@ -19,4 +19,4 @@ percent_brightness=$((cur_brightness * 100 / max_brightness))
 
 notif="Brightness level: ""${percent_brightness}""%"
 
-notify-send -r 7 -t 2000 -e "$notif" -h int:value:"$percent_brightness"
+notify-send -r 1 -t 2000 -e "$notif" -h int:value:"$percent_brightness"

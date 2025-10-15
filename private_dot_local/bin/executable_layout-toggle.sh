@@ -16,4 +16,4 @@ esac
 idx=$(niri msg -j keyboard-layouts | jq '.current_idx')
 current_layout=$(niri msg -j keyboard-layouts | jq .names["$idx"] | sed 's/"//g')
 
-notify-send -a "keyboard-layout" -r 9 -e -t 2000 "Current layout: $current_layout"
+notify-send -a "keyboard-layout" -r 1 -e -t 2000 "Current layout: $current_layout"

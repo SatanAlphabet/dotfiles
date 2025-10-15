@@ -93,6 +93,7 @@ run_rofi() {
   else
     rofi -dmenu \
       -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}" \
+      -theme-str "element-icon { enabled: false; }" \
       -theme "${cliphist_style}" \
       "$@"
   fi

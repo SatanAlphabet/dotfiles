@@ -2,7 +2,7 @@
 status=$(playerctl status 2>/dev/null)
 
 if [[ -z ${status} ]]; then
-  notify-send "No media found..." -e -r 4 -t 1500 -u low
+  notify-send "No media found..." -e -r 1 -t 1500 -u low
   exit 0
 fi
 
@@ -27,16 +27,16 @@ media_progress=$((current_pos * 100 * 1000000 / media_length))
 
 if [[ "$1" = 'next' ]]; then
   playerctl next 2>/dev/null
-  notify-send -e -r 4 -t 1500 'Playing next track...'
+  notify-send -e -r 1 -t 1500 'Playing next track...'
 elif [[ "$1" = 'prev' ]]; then
   playerctl previous 2>/dev/null
-  notify-send -e -r 4 -t 1500 'Playing previous track...'
+  notify-send -e -r 1 -t 1500 'Playing previous track...'
 elif [[ "$1" = 'toggle' ]]; then
   playerctl play-pause
   if [[ ${status} = 'Playing' ]]; then
-    notify-send -e -r 4 -t 1500 "Paused media [ 󰏤 ]" "$media_data" -h int:value:"$media_progress"
+    notify-send -e -r 1 -t 1500 "Paused media [ 󰏤 ]" "$media_data" -h int:value:"$media_progress"
   elif [[ ${status} = 'Paused' ]]; then
-    notify-send -e -r 4 -t 1500 "Playing media [ 󰝚 ]" "$media_data" -h int:value:"$media_progress"
+    notify-send -e -r 1 -t 1500 "Playing media [ 󰝚 ]" "$media_data" -h int:value:"$media_progress"
   fi
 else
   echo "Invalid command (Available commands are \"prev\", \"next\" and \"toggle\")."

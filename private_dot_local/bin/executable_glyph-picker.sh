@@ -3,9 +3,9 @@
 # shellcheck disable=SC1090
 
 # Define paths and files
-glyph_dir=${HYDE_DATA_HOME:-$HOME/.local/share/niri}
+glyph_dir="$HOME/.local/share/niri"
 glyph_data="${glyph_dir}/glyph.db"
-cache_dir="${HYDE_CACHE_HOME:-$HOME/.cache/niri}"
+cache_dir="$HOME/.cache/niri"
 recent_data="${cache_dir}/landing/show_glyph.recent"
 
 # checks if a glyph is valid, functionally identical logic to #344
