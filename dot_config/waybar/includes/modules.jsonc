@@ -30,8 +30,6 @@
     "on-click-right": "niri msg action toggle-overview"
 	},
 	"niri/language": {
-		"format-en": "US",
-		"format-th": "TH",
 		"on-click": "~/.scripts/layout-toggle.sh next",
 		"on-click-right": "~/.scripts/layout-toggle.sh prev"
 	},

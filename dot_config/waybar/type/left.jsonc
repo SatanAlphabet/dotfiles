@@ -31,9 +31,11 @@
 			"modules": ["custom/sysupdate", "tray", "bluetooth", "network"]
 		},
 		"custom/launcher": {
+      "justify": "center",
 			"format": "",
     },
 		"battery": {
+      "justify": "center",
 			"format": "{icon}",
 			"format-charging": "",
 			"format-plugged": "",
@@ -41,11 +43,13 @@
 			"tooltip-format": "{capacity}% \n({timeTo})",
     },
 		"backlight": {
+      "justify": "center",
 			"format": "{icon}",
 			"format-icons": ["", "", "", "", "", "", "", "", ""],
 			"tooltip-format": "Backlight level: {icon} {percent}%",
     },
 		"pulseaudio": {
+      "justify": "center",
 			"format": "{icon}",
 			"format-muted": "",
 			"format-icons": {
@@ -69,11 +73,13 @@
 			},
     },
 		"clock": {
+      "justify": "center",
 			"format": "{:%H\n%M}",
-			"format-alt": "{:%H\n%M\n\n%m\n%d}",
+			"format-alt": "{:%H\n%M\n--\n%m\n%d}",
 			"tooltip-format": "<span>{calendar}</span>",
     },
 		"mpris": {
+      "justify": "center",
 			"format": "{player_icon}",
 			"format-paused": "{status_icon}",
 			"player-icons": {
@@ -84,6 +90,7 @@
 			},
     },
 		"custom/sysupdate": {
+      "justify": "center",
 			"format": "{icon}",
 			"return-type": "json",
 			"format-icons": {
@@ -92,17 +99,24 @@
 			},
     },
 		"bluetooth": {
+      "justify": "center",
 			"format": "󰂲",
 			"format-disabled": "󰂲",
 			"format-off": "󰂲",
 			"format-connected": "󰂯",
     },
 		"network": {
+      "justify": "center",
 			"format-wifi": "󰤨",
 			"format-ethernet": "󰈁",
 			"format-linked": "󰈁",
 			"format-disconnected": "󰤮",
     },
+    "niri/language": {
+      "justify": "center",
+		  "format-en": "US",
+		  "format-th": "TH",
+    }
 	},
 
   /* Borders surrounding the screen + outlines */
