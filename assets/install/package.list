@@ -12,7 +12,6 @@ breeze5
 brightnessctl
 btop
 btrfs-assistant
-btrfs-progs
 cantarell-fonts
 cava
 chafa
@@ -23,7 +22,6 @@ dconf-editor
 ddcutil
 devtools
 dolphin
-efibootmgr
 eza
 fastfetch
 fd
@@ -58,7 +56,6 @@ neovim
 network-manager-applet
 networkmanager
 noto-fonts-emoji
-nwg-displays
 nwg-look
 obs-studio
 pacman-contrib
@@ -82,6 +79,7 @@ qt6-imageformats
 qt6-wayland
 rofi
 rofi-calc
+rofi-emoji
 sassc
 swaybg
 swayidle
