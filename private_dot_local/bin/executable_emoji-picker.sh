@@ -13,7 +13,7 @@ else
   rofi -modi emoji -show emoji \
     -theme-str "mode-switcher { enabled: false; }" \
     -theme-str "element-icon { enabled: false; }" \
-    -kb-custom-1 Ctrl+c \
+    -kb-secondary-copy "" -kb-custom-1 Ctrl+c \
     -emoji-mode copy \
     -theme "$rofi_style" 2>/dev/null
 fi
