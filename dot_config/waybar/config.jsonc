@@ -33,6 +33,7 @@
 		"custom/launcher": {
       "justify": "center",
 			"format": "",
+		  "tooltip-format": "Application Launcher\nRight click for more actions",
     },
 		"battery": {
       "justify": "center",
@@ -40,13 +41,13 @@
 			"format-charging": "",
 			"format-plugged": "",
 			"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-			"tooltip-format": "{capacity}% \n({timeTo})",
+			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n(<i>{timeTo}</i>)",
     },
 		"backlight": {
       "justify": "center",
 			"format": "{icon}",
 			"format-icons": ["", "", "", "", "", "", "", "", ""],
-			"tooltip-format": "Backlight level: {icon} {percent}%",
+			"tooltip-format": "{icon} Backlight level: {percent}%",
     },
 		"pulseaudio": {
       "justify": "center",
@@ -54,11 +55,17 @@
 			"format-muted": "",
 			"format-icons": {
 				"headphone": "",
+				"headphone-muted": "",
 				"hands-free": "",
+				"hands-free-mutrd": "",
 				"headset": "",
+				"headset-muted": "",
 				"phone": "",
+				"phone-muted": "",
 				"portable": "",
+				"portable-muted": "",
 				"car": "",
+				"car-muted": "",
 				"default": ["", "", ""]
 			},
 			"tooltip-format": "{icon} {desc}: {volume}%",
@@ -78,10 +85,16 @@
 			"format-alt": "{:%H\n%M\n--\n%m\n%d}",
 			"tooltip-format": "<span>{calendar}</span>",
     },
+    "custom/swaync": {
+      "justify": "center",
+		  "format": "{icon}",
+    },
 		"mpris": {
       "justify": "center",
 			"format": "{player_icon}",
 			"format-paused": "{status_icon}",
+		  "tooltip-format": "PLAYING [{position}/{length}]\n{title} - {artist}",
+		  "tooltip-format-paused": "PAUSED [{position}/{length}]\n{title} - {artist}",
 			"player-icons": {
 				"default": ""
 			},
@@ -98,12 +111,20 @@
 				"updated": ""
 			},
     },
+    "tray": {
+		  "icon-size": 15,
+		  "spacing": 10
+	  },
 		"bluetooth": {
       "justify": "center",
 			"format": "󰂲",
 			"format-disabled": "󰂲",
 			"format-off": "󰂲",
 			"format-connected": "󰂯",
+	  	"tooltip-format": "{controller_alias}\n{num_connections} connected",
+		  "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+		  "tooltip-format-enumerate-connected": "{device_alias}",
+		  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
     },
 		"network": {
       "justify": "center",
@@ -111,6 +132,8 @@
 			"format-ethernet": "󰈁",
 			"format-linked": "󰈁",
 			"format-disconnected": "󰤮",
+		  "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+		  "tooltip-format-disconnected": "Disconnected",
     },
     "niri/language": {
       "justify": "center",

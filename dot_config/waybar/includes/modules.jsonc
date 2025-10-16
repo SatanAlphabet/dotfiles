@@ -1,24 +1,9 @@
 {
 	"network": {
-		"format-wifi": "󰤨",
-		"format-ethernet": "󰈁",
-		"format-linked": "󰈁",
-		"format-disconnected": "󰤮",
-		"tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-		"tooltip-format-disconnected": "Disconnected",
 		"on-click": "kitty -1 nmtui",
-		"tooltip": true,
 		"interval": 2
 	},
 	"bluetooth": {
-		"format": "󰂲",
-		"format-disabled": "󰂲",
-		"format-off": "󰂲",
-		"format-connected": "󰂯",
-		"tooltip-format": "{controller_alias}\n{num_connections} connected",
-		"tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
-		"tooltip-format-enumerate-connected": "{device_alias}",
-		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
 		"on-click": "blueman-manager"
 	},
 	"niri/window": {
@@ -57,15 +42,12 @@
 			"theme": "themechange.sh",
 			"niri": "xdg-open https://github.com/YaLTeR/niri"
 		},
-		"tooltip-format": "Application Launcher\nRight click for more actions"
 	},
   "mpris": {
-		"tooltip-format": "{player}: PLAYING [{position}/{length}]\n{title} - {artist}",
-		"tooltip-format-paused": "{player}: PAUSED [{position}/{length}]\n{title} - {artist}",
-		"tooltip-format-stopped": "{player}: STOPPED",
 		"on-click": "mediacontrol.sh toggle",
-		"max-length": 60,
-		"interval": 1
+		"on-click-right": "mediacontrol.sh next",
+		"on-click-middle": "mediacontrol.sh prev",
+		"interval": 1,
 	},
 	"clock": {
 		"calendar": {
@@ -87,7 +69,6 @@
 		}
 	},
 	"custom/swaync": {
-		"format": "{icon}",
 		"tooltip": true,
 		"format-icons": {
 			"notification": "",
@@ -116,19 +97,15 @@
 		"escape": true
 	},
 	"privacy": {
-		"icon-spacing": 10,
-		"icon-size": 13,
 		"transition-duration": 250,
 		"modules": [
 			{
 				"type": "screenshare",
 				"tooltip": true,
-				"tooltip-icon-size": 24
 			},
 			{
 				"type": "audio-in",
 				"tooltip": true,
-				"tooltip-icon-size": 24
 			}
 		],
 		"ignore-monitor": true,
@@ -142,10 +119,6 @@
 				"name": "obs"
 			}
 		]
-	},
-	"tray": {
-		"icon-size": 15,
-		"spacing": 10
 	},
 	"battery": {
 		"states": {
@@ -162,10 +135,6 @@
 		"scroll-step": 1,
 	},
 	"backlight": {
-		"format": "{icon}",
-		"format-icons": ["", "", "", "", "", "", "", "", ""],
-		"tooltip-format": "Backlight level: {icon} {percent}%",
-		"tooltip": true,
 		"on-scroll-up": "brightnesscontrol.sh + 1",
 		"on-scroll-down": "brightnesscontrol.sh - 1"
 	},
