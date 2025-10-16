@@ -80,7 +80,7 @@ window#waybar #custom-launcher {
 
 window#waybar #custom-seperator-vertical {
 	font-size: 13px;
-	margin: -3px 0px;
+	margin: -4px 0px;
 	opacity: 0.3;
 	background: transparent;
 }
