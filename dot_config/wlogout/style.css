@@ -8,7 +8,7 @@
 @import "$HOME/.config/waybar/colors.css";
 
 window {
-    background-color: rgba(40, 40, 40, 0.75);
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 button {
@@ -23,7 +23,6 @@ button {
     border-radius: 0px;
     box-shadow: none;
     text-shadow: none;
-    animation: gradient_f 20s ease-in infinite;
 }
 
 button:focus {
@@ -37,7 +36,6 @@ button:hover {
     background-color: @hvr-bg;
     background-size: 40%;
     border-radius: ${active_rad}px;
-    animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
 

@@ -8,6 +8,7 @@ case "$1" in
   brightnessctl s "${2}"%- >/dev/null
   ;;
 *)
+  echo "Invalid command." >&2
   exit 1
   ;;
 esac

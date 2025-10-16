@@ -18,6 +18,10 @@ media_progress() {
   echo "$current_progress"
 }
 
+no_media_notif() {
+  notify-send "No media found..." -e -r 1 -t 1500 -u low
+}
+
 ## WIP
 # length_sec=$((media_length / 1000000))
 # length_min=$((media_length / 1000000 / 60))
@@ -37,7 +41,7 @@ case "$1" in
     playerctl next 2>/dev/null
     notify-send -e -r 1 -t 1500 'Playing next track...'
   else
-    notify-send "No media found..." -e -r 1 -t 1500 -u low
+    no_media_notif
   fi
   ;;
 'prev')
@@ -45,7 +49,7 @@ case "$1" in
     playerctl previous 2>/dev/null
     notify-send -e -r 1 -t 1500 'Playing previous track...'
   else
-    notify-send "No media found..." -e -r 1 -t 1500 -u low
+    no_media_notif
   fi
   ;;
 'toggle')
@@ -57,7 +61,7 @@ case "$1" in
     elif [[ ${status} = 'Paused' ]]; then
       notify-send -e -r 1 -t 1500 "Playing media [ 󰝚 ]" "$media_data" -h int:value:"$(media_progress)"
     else
-      notify-send "No media found..." -e -r 1 -t 1500 -u low
+      no_media_notif
     fi
   fi
   ;;
