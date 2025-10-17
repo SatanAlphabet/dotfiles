@@ -19,7 +19,7 @@ window#waybar .module {
 
 window#waybar #pill.bottom:hover,
 window#waybar .modules-center .module:hover {
-  box-shadow: 0px 0px 0px .3px @act-bg inset;
+  box-shadow: 0px 0px 0px .2px @act-bg inset;
 }
 
 window#waybar #workspaces:hover {
@@ -30,9 +30,7 @@ window#waybar #workspaces:hover {
 tooltip {
 	background: @main-bg;
 	color: @main-fg;
-	border-width: 1px;
-	border-style: solid;
-	border-color: @main-fg;
+  border: 1px solid @border-outline;
 }
 
 tooltip label {
@@ -43,7 +41,7 @@ tooltip label {
 menu {
   background: @main-bg;
   color: @main-fg;
-  border: 1px solid @main-fg;
+  border: 1px solid @border-outline;
 }
 
 menuitem {
@@ -53,6 +51,10 @@ menuitem {
 menuitem label {
   font-size: 12px;
   font-family: "Inter Variable";
+}
+
+menuitem:hover {
+  background: @pill-bg;
 }
 
 #pulseaudio,
