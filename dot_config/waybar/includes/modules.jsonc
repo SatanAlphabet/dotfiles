@@ -70,25 +70,6 @@
 	},
 	"custom/swaync": {
 		"tooltip": true,
-		"format-icons": {
-			"notification": "",
-			"none": "",
-			"dnd-notification": "",
-			"dnd-none": "",
-			"inhibited-notification": "",
-			"inhibited-none": "",
-			"dnd-inhibited-notification": "",
-			"dnd-inhibited-none": "",
-			"email-notification": "",
-			"chat-notification": "󱋊",
-			"warning-notification": "󱨪",
-			"error-notification": "󱨪",
-			"network-notification": "󱂇",
-			"battery-notification": "󰁺",
-			"update-notification": "󰚰",
-			"music-notification": "󰝚",
-			"volume-notification": "󰕿"
-		},
 		"return-type": "json",
 		"exec-if": "which swaync-client", // This is to check if swaync daemon is running
 		"exec": "pgrep -x swaync && swaync-client -swb",

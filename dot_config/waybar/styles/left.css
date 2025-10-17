@@ -17,6 +17,16 @@ window#waybar .module {
 	border-radius: 0px;
 }
 
+window#waybar #pill.bottom:hover,
+window#waybar .modules-center .module:hover {
+  box-shadow: 0px 0px 0px .3px @act-bg inset;
+}
+
+window#waybar #workspaces:hover {
+  box-shadow: none;
+  transition: all 0s;
+}
+
 tooltip {
 	background: @main-bg;
 	color: @main-fg;
@@ -162,7 +172,7 @@ window#waybar #pill.bottom {
 window#waybar #privacy,
 window#waybar #tray {
 	padding: 0px;
-	margin: 5px 0px;
+	margin: 5px 1px;
 }
 
 #network.disabled,

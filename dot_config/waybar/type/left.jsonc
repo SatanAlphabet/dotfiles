@@ -38,10 +38,12 @@
 		"battery": {
       "justify": "center",
 			"format": "{icon}",
-			"format-charging": "",
-			"format-plugged": "",
-			"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n(<i>{timeTo}</i>)",
+			"format-icons": {
+        "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "plugged": "",
+        "charging":  ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      },
+			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
     },
 		"backlight": {
       "justify": "center",
@@ -54,11 +56,11 @@
 			"format": "{icon}",
 			"format-muted": "",
 			"format-icons": {
-				"headphone": "",
+				"headphone": "󰋋",
 				"headphone-muted": "",
-				"hands-free": "",
+				"hands-free": "󰋋",
 				"hands-free-mutrd": "",
-				"headset": "",
+				"headset": "󰋋",
 				"headset-muted": "",
 				"phone": "",
 				"phone-muted": "",
@@ -71,6 +73,7 @@
 			"tooltip-format": "{icon} {desc}: {volume}%",
     },
 		"niri/workspaces": {
+      "cursor": false,
 			"format": "{}",
 			"format-icons": {
 				"default": "",
@@ -88,7 +91,17 @@
     "custom/swaync": {
       "justify": "center",
 		  "format": "{icon}",
-    },
+   	  "format-icons": {
+   			"notification": "󰅸",
+   			"none": "󰂜",
+   			"dnd-notification": "󰪑<sup>󰧞</sup>",
+   			"dnd-none": "󰪑",
+   			"inhibited-notification": "󰅸",
+   			"inhibited-none": "󰂜",
+   			"dnd-inhibited-notification": "󰪑<sup>󰧞</sup>",
+   			"dnd-inhibited-none": "󰪑",
+      },
+		},
 		"mpris": {
       "justify": "center",
 			"format": "{player_icon}",
@@ -96,10 +109,10 @@
 		  "tooltip-format": "PLAYING [{position}/{length}]\n{title} - {artist}",
 		  "tooltip-format-paused": "PAUSED [{position}/{length}]\n{title} - {artist}",
 			"player-icons": {
-				"default": ""
+				"default": "󰝚"
 			},
 			"status-icons": {
-				"paused": ""
+				"paused": "󰏤"
 			},
     },
 		"custom/sysupdate": {
