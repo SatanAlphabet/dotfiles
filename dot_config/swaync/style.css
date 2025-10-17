@@ -147,7 +147,7 @@ notificationwindow, blankwindow, blankwindow {
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .summary {
   /* Notification summary/title */
   color: @main-fg;
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 600;
   background: transparent;
   text-shadow: none;
