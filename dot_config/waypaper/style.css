@@ -3,22 +3,22 @@ button {
 }
 
 button:hover {
-    background-image: none;
-    box-shadow: none;
-    border-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 button:hover>image {
-    -gtk-icon-shadow: none;
-    -gtk-icon-effect: none;
+  -gtk-icon-shadow: none;
+  -gtk-icon-effect: none;
 }
 
 .highlighted-button {
-    background-image: none;
-    box-shadow: none;
-    border-radius: 0px;
+  background-image: none;
+  box-shadow: none;
+  border-radius: 0px;
 }
 
 .highlighted-button>image, .highlighted-button:hover>image {
-    -gtk-icon-effect: highlight;
+  -gtk-icon-effect: highlight;
 }
