@@ -2,7 +2,7 @@
 	{
     "name": "main",
 		"layer": "top",
-		"position": "left",
+		"position": "right",
 		"spacing": 2,
 		"width": 42,
 		"exclusive": true,
@@ -160,7 +160,7 @@
 
   /* Borders surrounding the screen + outlines */
 
-	{ "name": "border-right", "layer": "top", "position": "right", "width": 8 },
+	{ "name": "border-left", "layer": "top", "position": "left", "width": 8 },
 	{ "name": "border-top", "layer": "top", "position": "top", "height": 8 },
 	{ "name": "border-bottom", "layer": "top", "position": "bottom", "height": 8 },
   { "name": "outline-left", "layer": "top", "position": "left", "width": 2 },
@@ -175,8 +175,8 @@
 		"layer": "bottom",
 		"position": "bottom",
 		"exclusive": false,
-		// "modules-left": ["mpris#widget"],
-		"modules-right": ["clock#date"],
+		// "modules-right": ["mpris#widget"],
+		"modules-left": ["clock#date"],
 		"clock#date": {
 			"format": "{:%A, %d %B %Y}",
 			"tooltip": false
@@ -194,7 +194,7 @@
 		"layer": "bottom",
 		"position": "bottom",
 		"exclusive": false,
-		"modules-right": ["clock#time"],
+		"modules-left": ["clock#time"],
 		"clock#time": {
 			"format": "{:%I:%M %p}",
 			"tooltip": false
