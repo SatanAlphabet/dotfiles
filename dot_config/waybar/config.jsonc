@@ -2,7 +2,6 @@
 	{
     "name": "main",
 		"layer": "top",
-		"output": ["*"],
 		"position": "left",
 		"spacing": 2,
 		"width": 42,
