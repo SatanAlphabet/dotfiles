@@ -1,17 +1,18 @@
 #!/usr/bin/env zsh
 _conda_init_setup() {
-# >>> conda initialize >>>
-__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/usr/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/home/wowlolxdddd/.local/share/mamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
 if [ $? -eq 0 ]; then
-  echo -e "\n ==> Starting conda..."
-  eval "$__conda_setup" && echo -e " ==> Conda started."
+    eval "$__mamba_setup"
 else
-  if [ -f "/usr/etc/profile.d/conda.sh" ]; then
-    . "/usr/etc/profile.d/conda.sh"
-  fi
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
 fi
-unset __conda_setup
-# <<< conda initialize <<<
+unset __mamba_setup
+# <<< mamba initialize <<<
 }
 
 alias conda-start='_conda_init_setup'
+alias conda='micromamba'
