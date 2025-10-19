@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-_conda_init_setup() {
+_micromamba_init_setup() {
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'micromamba shell init' !!
 export MAMBA_EXE='/usr/bin/micromamba';
@@ -14,5 +14,11 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 }
 
-alias conda-start='_conda_init_setup'
-alias conda='micromamba'
+_miniconda_init_setup() {
+  if [[ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]]; then
+    source "/opt/miniconda3/etc/profile.d/conda.sh"
+  fi
+}
+
+alias micromamba-start='_micromamba_init_setup'
+alias miniconda-start='_miniconda_init_setup'
