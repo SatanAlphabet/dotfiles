@@ -60,9 +60,9 @@ case "$1" in
       notify-send -e -r 1 -t 1500 "Paused media [ 󰏤 ]" "$media_data" -h int:value:"$(media_progress)"
     elif [[ ${status} = 'Paused' ]]; then
       notify-send -e -r 1 -t 1500 "Playing media [ 󰝚 ]" "$media_data" -h int:value:"$(media_progress)"
-    else
-      no_media_notif
     fi
+  else
+    no_media_notif
   fi
   ;;
 *)
