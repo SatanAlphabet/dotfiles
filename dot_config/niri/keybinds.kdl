@@ -15,6 +15,7 @@ binds {
   Mod+Alt+B repeat=false hotkey-overlay-title="Toggle waybar visibility" { spawn "pkill" "-SIGUSR1" "waybar"; }
   Mod+Alt+P repeat=false hotkey-overlay-title="Pick color" { spawn "colorpick.sh";}
   Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn "themechange.sh"; }
+  Mod+Alt+N repeat=false hotkey-overlay-title="Toggle night light" { spawn "nightlight.sh"; }
   Mod+Alt+V repeat=false hotkey-overlay-title="Calculator" { spawn "calc.sh"; }
   // Nirius specific binds for browser & wallpaper
   Mod+B repeat=false hotkey-overlay-title="Web Browser" { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
