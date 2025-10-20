@@ -1,46 +1,32 @@
-# ------------------------------------------------------------------------------
-[global]
-corner_radius = 10
-icon_corner_radius = 10
-icon_theme = "Gruvbox-Plus-Dark"
-
-[urgency_critical]
-background = "#1d2021"
-foreground = "#d4be98"
-frame_color = "#7daea3"
-timeout = 0
-
-# ------------------------------------------------------------------------------
-
 [global]
 monitor = 0
 follow = mouse
+corner_radius = 0
+icon_corner_radius = 10
 enable_posix_regex = true
 width = 400
 height = (70, 500)
 origin = top-left
-offset = (10,10)
+offset = (16,16)
 scale = 0
 notification_limit = 20
 progress_bar = true
 progress_bar_height = 10
-progress_bar_frame_width = 0
-progress_bar_min_width = 125
-progress_bar_max_width = 250
-progress_bar_corner_radius = 4
+progress_bar_horizontal_alignment = left
+progress_bar_max_width = 400
+progress_bar_frame_width = 1
+progress_bar_corner_radius = 0
 indicate_hidden = yes
 transparency = 10
 separator_height = 2
 padding = 8
 horizontal_padding = 8
 text_icon_padding = 10
-frame_width = 1
-gap_size = 5
-separator_color = auto
+frame_width = 2
+gap_size = 0
 sort = yes
 line_height = 3
 markup = full
-format = "%s\n%b"
 alignment = left
 vertical_alignment = center
 show_age_threshold = 60
@@ -51,8 +37,9 @@ hide_duplicate_count = false
 show_indicators = yes
 enable_recursive_icon_lookup = true
 icon_position = left
-min_icon_size = 64
-max_icon_size = 64
+font = "Inter Variable 12"
+min_icon_size = 48
+max_icon_size = 48
 sticky_history = yes
 history_length = 20
 browser = /usr/bin/xdg-open
@@ -78,18 +65,4 @@ desktop_entry = "^Skype$"
 new_icon = skype
 
 [global]
-
-font = Cantarell 12
-dmenu = /usr/bin/rofi -theme $HOME/.config/niri/rofi/style_6.rasi -dmenu -p dunst:
-
-[urgency_low]
-    background = "#141617"
-    foreground = "#D4BE98"
-    frame_color = "#504945"
-    timeout = 5
-
-[urgency_normal]
-    background = "#141617"
-    foreground = "#D4BE98"
-    frame_color = "#504945"
-    timeout = 5
+dmenu = /usr/bin/rofi  -dmenu -p dunst:

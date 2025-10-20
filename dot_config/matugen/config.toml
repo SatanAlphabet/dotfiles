@@ -8,10 +8,15 @@ input_path = './templates/waybar.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'sed -i s/i/i/ ~/.config/waybar/style.css'
 
+[templates.dunst]
+input_path = './templates/dunstrc-colors'
+output_path = '~/.config/dunst/dunstrc.d/matugen-colors.conf'
+post_hook = 'pgrep -x dunst && dunstctl reload'
+
 [templates.swaync]
 input_path = './templates/swaync.css'
 output_path = '~/.config/swaync/colors.css'
-post_hook = 'swaync-client -rs'
+post_hook = 'pgrep -x swaync && swaync-client -rs'
 
 [templates.rofi]
 input_path = './templates/rofi.css'
