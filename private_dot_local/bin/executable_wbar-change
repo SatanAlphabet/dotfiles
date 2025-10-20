@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-waybar_path="$HOME/.config/waybar"
+waybar_path="${XDG_CONFIG_HOME:-$HOME/.config}/waybar"
 new_preset="${waybar_path}/type/${1}.jsonc"
 new_style="${waybar_path}/styles/${1}.css"
 
@@ -27,4 +27,4 @@ ln -sf "${new_preset}" "${waybar_path}"/config.jsonc
 ln -sf "${new_style}" "${waybar_path}"/main-preset.css
 
 # Restarts waybar
-systemctl --user restart waybar
+systemctl --user restart waybar && notify-send -e -t 3000 "Waybar reloaded..." "Current preset: $1"
