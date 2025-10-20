@@ -23,8 +23,8 @@ if [[ ! -f "$new_preset" ]]; then
   exit 1
 fi
 
-cat "${new_preset}" >"${waybar_path}"/config.jsonc
-cat "${new_style}" >"${waybar_path}"/main-preset.css
+ln -sf "${new_preset}" "${waybar_path}"/config.jsonc
+ln -sf "${new_style}" "${waybar_path}"/main-preset.css
 
 # Restarts waybar
 systemctl --user restart waybar
