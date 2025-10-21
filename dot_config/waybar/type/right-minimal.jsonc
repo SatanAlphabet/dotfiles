@@ -2,7 +2,7 @@
 	{
     "name": "main",
 		"layer": "top",
-		"position": "left",
+		"position": "right",
 		"spacing": 2,
 		"width": 42,
 		"exclusive": true,
@@ -157,5 +157,5 @@
 		  "format-th": "TH",
     }
 	},
-  { "name": "outline-left", "layer": "top", "position": "left", "width": 2 },
+  { "name": "outline-right", "layer": "top", "position": "right", "width": 2 },
 ]

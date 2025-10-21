@@ -56,7 +56,7 @@ window#waybar #language {
 window#waybar {
   box-shadow: none;
   text-shadow: none;
-  background: @bar-bg;
+  background: @main-bg;
   color: @main-fg;
   border: 0px solid transparent;
 }
