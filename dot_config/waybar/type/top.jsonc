@@ -3,7 +3,7 @@
     "name": "main",
 		"layer": "top",
 		"position": "top",
-		"spacing": 8,
+		"spacing": 6,
 		"exclusive": true,
 		"passthrough": false,
 		"gtk-layer-shell": true,
@@ -23,8 +23,6 @@
 			"mpris",
       "group/pill#tray",
 			"custom/swaync",
-			"backlight",
-			"pulseaudio",
       "battery",
       "group/pill#control",
       "niri/language"
@@ -35,7 +33,7 @@
 		},
 		"group/pill#control": {
 			"orientation": "inherit",
-			"modules": ["bluetooth", "network"]
+			"modules": ["backlight", "pulseaudio", "bluetooth", "network"]
 		},
 		"custom/launcher": {
 			"format": "",
@@ -46,7 +44,7 @@
       "max-length": 30,
     },
 		"battery": {
-			"format": "{icon} <span size='9.5pt'>{capacity}</span>",
+			"format": "{icon} <span size='9.9pt'>{capacity}</span>",
 			"format-icons": {
         "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "plugged": "",
@@ -55,12 +53,12 @@
 			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
     },
 		"backlight": {
-			"format": "{icon} <span size='9.5pt'>{percent}</span>",
+			"format": "{icon}",
 			"format-icons": ["", "", "", "", "", "", "", "", ""],
 			"tooltip-format": "{icon} Backlight level: {percent}%",
     },
 		"pulseaudio": {
-			"format": "{icon} <span size='9.5pt'>{volume}</span>",
+			"format": "{icon}",
 			"format-muted": "",
 			"format-icons": {
 				"headphone": "󰋋",
@@ -94,7 +92,7 @@
 			},
     },
 		"clock": {
-			"format": "{:%I:%M %p // %d %b}",
+			"format": "{:%I:%M %p, %d %b}",
 			"tooltip-format": "<span>{calendar}</span>",
     },
     "custom/swaync": {

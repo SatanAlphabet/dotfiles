@@ -14,12 +14,12 @@ window#waybar #pill,
 window#waybar .module {
 	background: @pill-bg;
 	margin: 6px 0px;
-	padding: 0px 4px;
+	padding: 0px 6px;
 	border-radius: 0px;
 }
 
 window#waybar #pill {
-  padding: 0px 0px;
+  padding: 0px 2px;
 }
 
 window#waybar #pill:hover,

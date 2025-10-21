@@ -7,6 +7,7 @@ glyph_dir="$HOME/.local/share/niri"
 glyph_data="${glyph_dir}/glyph.db"
 cache_dir="$HOME/.cache/niri"
 recent_data="${cache_dir}/landing/show_glyph.recent"
+rofi_style="menu"
 
 # checks if a glyph is valid, functionally identical logic to #344
 is_valid_glyph() {
@@ -35,13 +36,12 @@ parse_arguments() {
         rofi_style="$2"
         shift # Consume the value argument
       else
-        print_log +y "[warn] " "--style needs argument"
-        rofi_style="style_2"
+        echo "WARNING: ""--style needs argument"
         shift
       fi
       ;;
     --rasi)
-      [[ -z ${2} ]] && print_log +r "[error] " +y "--rasi requires an file.rasi config file" && exit 1
+      [[ -z ${2} ]] && echo "ERROR: ""--rasi requires an file.rasi config file" && exit 1
       shift
       ;;
     -*)
@@ -64,7 +64,7 @@ get_glyph_selection() {
   if [ -n "$rofi_running" ]; then
     pkill -SIGUSR2 rofi
   else
-    local style_type=${rofi_style:-style_2}
+    local style_type=${rofi_style:-"menu"}
     echo "${unique_entries}" | rofi -dmenu -multi-select -i \
       -theme-str "entry { placeholder: \" 🔣 Glyph\";} configuration { show-icons: false; }" \
       -theme "${style_type}"
@@ -76,7 +76,7 @@ main() {
   # create recent data file if it doesn't exist
   if [[ ! -f "${recent_data}" ]]; then
     mkdir -p "$(dirname "${recent_data}")"
-    echo -e " \tArch linux - I use Arch, BTW" >"${recent_data}"
+    echo -e " \tArch linux - I use Arch, BTW" >"${recent_data}"
   fi
 
   # read recent and main entries

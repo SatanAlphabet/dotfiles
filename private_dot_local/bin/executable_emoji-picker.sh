@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 rofi_running=$(pidof rofi)
-rofi_style="style_2"
+rofi_style="menu"
 if [[ -n "$1" ]]; then
   rofi_style="$1"
 fi

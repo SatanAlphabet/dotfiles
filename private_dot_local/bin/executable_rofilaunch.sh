@@ -8,6 +8,6 @@ else
   if [[ -n $1 ]]; then
     rofi -theme "$1" -show
   else
-    rofi -theme style_2 -show
+    rofi -show
   fi
 fi

@@ -3,7 +3,7 @@
 	"positionX": "right",
 	"positionY": "top",
 	"control-center-width": 400,
-  "control-center-margin-left": 8,
+  "control-center-margin-right": 8,
   "control-center-margin-top": 8,
   "control-center-margin-bottom": 8,
 	"fit-to-screen": true,
