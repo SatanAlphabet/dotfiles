@@ -1,341 +1,207 @@
-[{
-	"layer": "top",
-	"output": ["*"],
-	"position": "top",
-	"spacing": 2,
-	// "mode": "dock",
-	"exclusive": true,
-	"passthrough": false,
-	"gtk-layer-shell": true,
-	"reload_style_on_change": true,
-
-	"modules-left": ["custom/launcher", "niri/window"],
-	"modules-center": [ "battery", "backlight", "pulseaudio", "custom/seperator", "niri/workspaces", "custom/seperator", "clock", "custom/swaync" ],
-	"modules-right": [ 
-    "mpris",
-    "custom/sysupdate",
-    "tray",
-    "bluetooth",
-    "network",
-    "niri/language"
-	],
-  "wlr/taskbar": {
-    "icon-size": 16
-  },
-  "privacy": {
-    "rotate": 0,
-    "transition-duration": 250,
-    "icon-size": 13,
-    "icon-spacing": 8,
-    "modules": [
-      {
-        "type": "screenshare",
-        "tooltip": true
-      },
-      {
-        "type": "audio-in",
-        "tooltip": true
-      }
+[
+	{
+    "name": "main",
+		"layer": "top",
+		"position": "top",
+		"spacing": 8,
+		"exclusive": true,
+		"passthrough": false,
+		"gtk-layer-shell": true,
+		"reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/includes/modules.jsonc"
     ],
-    "ignore": [
-		  {
-			  "type": "audio-in",
-			  "name": "cava"
-		  }
-    ]
-  },
-  "network": {
-    "tooltip": true,
-    "format-wifi": "󰤨",
-    "rotate": 0,
-    "on-click": "kitty -1 nmtui",
-    "format-ethernet": "\udb80\ude00",
-    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-    "format-linked": "\udb80\ude00",
-    "format-disconnected": "󰤮",
-    "tooltip-format-disconnected": "Disconnected",
-    "interval": 2
-  },
-  "bluetooth": {
-    "format": "󰂲",
-    "rotate": 0,
-    "format-disabled": "󰂲",
-    "format-off": "󰂲",
-    "format-connected": "󰂯",
-    "tooltip-format": "{controller_alias}\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
-    "on-click": "blueman-manager"
-  },
-	"niri/window": {
-    "max-length": 50,
-    "icon-size": 18,
-    "format": "<b>{}</b>"
-	},
-	"niri/workspaces": {
-		"format": "{}",
-		"format-icons": {
-			"default": "",
-      // Named workspaces icon
-      "browser": "",
-      "chat": ""
-		},
-    "on-scroll-up": "niri msg action focus-workspace-up",
-    "on-scroll-down": "niri msg action focus-workspace-down"
-	},
-	"niri/language": {
-		"format-en": "US",
-		"format-th": "TH",
-		"on-click": "niri msg action switch-layout next"
-	},
-  "custom/seperator": {
-    "format": "|",
-    "tooltip": false
-  },
-	"custom/launcher": {
-		"format": "",
-    "on-click": "~/.scripts/rofilaunch.sh",
-    "menu": "on-click-right",
-    "menu-file": "~/.config/waybar/menu/launcher.xml",
-    "menu-actions": {
-      "cliphist": "~/.scripts/cliphist-niri.sh",
-      "emoji": "~/.scripts/emoji-picker.sh",
-      "glyph": "~/.scripts/glyph-picker.sh",
-      "calc": "~/.scripts/calc.sh",
-      "lock": "loginctl lock-session",
-      "reboot": "systemctl reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibetnate",
-      "shutdown": "systemctl poweroff",
-      "logout": "niri msg action quit -s",
-      "wallpaper-random": "waypaper --random --backend swww",
-      "wallpaper-select": "waypaper",
-      "theme": "~/.scripts/themechange.sh",
-      "niri": "xdg-open https://github.com/YaLTeR/niri"
-    },
-		"tooltip-format": "Application Launcher\nRight click for more actions"
-	},
-  "custom/powermenu": {
-    "format": "",
-    "on-click": "~/.scripts/logoutlaunch.sh",
-    "tooltip-format": "Power Menu"
-  },
-  "custom/clipboard": {
-    "format": "",
-    "on-click": "~/.scripts/cliphist-niri.sh -c",
-    "tooltip-format": "Manage clipboard"
-  },
-  "custom/glyph-picker": {
-    "format": "󱔁",
-    "on-click": "~/.scripts/glyph-picker.sh",
-    "tooltip-format": "Glyph picker"
-  },
-  "custom/emoji-picker": {
-    "format": "󰱱",
-    "on-click": "~/.scripts/emoji-picker.sh",
-    "tooltip-format": "Emoji picker"
-  },
-  "custom/wallpaper": {
-    "format":"󰸉",
-    "on-click": "waypaper",
-    "tooltip-format": "Change wallpaper"
-  },
-  "custom/browser": {
-    "format": "",
-    "on-click": "zen-browser",
-    "tooltip-format": "Open web browser"
-  },
-	"mpris": {
-		"format": "{player_icon}",
-		"rotate": 0,
-		"format-paused": "{status_icon}",
-    "tooltip-format": "{player}: PLAYING [{position}/{length}]\n{title} - {artist}",
-    "tooltip-format-paused": "{player}: PAUSED [{position}/{length}]\n{title} - {artist}",
-    "tooltip-format-stopped": "{player}: STOPPED",
-    "on-click": "~/.scripts/mediacontrol.sh toggle",
-    "max-length": 50,
-		"player-icons": {
-			"default": "",
-		},
-		"status-icons": {
-			"paused": ""
-		},
-		"max-length": 60,
-		"dynamic-len": -1,
-		"dynamic-importance-order": [
-			"title",
-			"position",
-			"length",
-			"artist",
-			"album"
+		"modules-left": [
+      "custom/launcher",
+			"niri/workspaces",
+      "niri/window"
+    ],
+		"modules-center": [
+			"clock",
 		],
-		"interval": 1
-	},
-	"clock": {
-    "format": "{:%b %d %R}",
-		"rotate": 0,
-		"tooltip-format": "<span>{calendar}</span>",
-		"calendar": {
-			"mode": "month",
-			"mode-mon-col": 3,
-			"on-scroll": 1,
-			"format": {
-				"months": "<span color='#d8a657'><b>{}</b></span>",
-				"weekdays": "<span color='#e78a4e'><b>{}</b></span>",
-				"today": "<span color='#ea6962'><b>{}</b></span>"
-			}
+		"modules-right": [
+			"mpris",
+      "group/pill#tray",
+			"custom/swaync",
+			"backlight",
+			"pulseaudio",
+      "battery",
+      "group/pill#control",
+      "niri/language"
+    ],
+		"group/pill#tray": {
+			"orientation": "inherit",
+			"modules": ["custom/sysupdate", "tray"]
 		},
-		"actions": {
-			"on-click-right": "mode",
-			"on-click-forward": "tz_up",
-			"on-click-backward": "tz_down",
-			"on-scroll-up": "shift_up",
-			"on-scroll-down": "shift_down"
-		}
-	},
-	"custom/swaync": {
-		"format": "{icon} {0}",
-		"tooltip": true,
-		"format-icons": {
-			"notification": "",
-			"none": "",
-			"dnd-notification": "",
-			"dnd-none": "",
-			"inhibited-notification": "",
-			"inhibited-none": "",
-			"dnd-inhibited-notification": "",
-			"dnd-inhibited-none": "",
-			"email-notification": "",
-			"chat-notification": "󱋊",
-			"warning-notification": "󱨪",
-			"error-notification": "󱨪",
-			"network-notification": "󱂇",
-			"battery-notification": "󰁺",
-			"update-notification": "󰚰",
-			"music-notification": "󰝚",
-			"volume-notification": "󰕿"
+		"group/pill#control": {
+			"orientation": "inherit",
+			"modules": ["bluetooth", "network"]
 		},
-		// "interval": "once",
-		"return-type": "json",
-		"exec-if": "which swaync-client", // This is to check if swaync daemon is running
-		"exec": "pgrep -x swaync && swaync-client -swb",
-		"on-click": "swaync-client -t -sw",
-		"on-click-right": "swaync-client -d -sw",
-		"escape": true
-		// "on-click-right": "menu",
-	},
-	"tray": {
-		"icon-size": 15,
-		"spacing": 10
-	},
-	"battery": {
-		"states": {
-			"warning": 30,
-			"critical": 20
-		},
-		"design-capacity": true,
-		"format": "{icon} {capacity}",
-		"format-charging": " {capacity}",
-		"format-plugged": " {capacity}",
-		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    "tooltip-format": "{capacity}% \n({timeTo})"
-	},
-	"pulseaudio": {
-		"format": "{icon} {volume}",
-		"rotate": 0,
-		"format-muted": "",
-		"tooltip-format": "{icon} {desc}: {volume}%",
-    "on-scroll-up": "~/.scripts/volumecontrol.sh + 1",
-    "on-scroll-down": "~/.scripts/volumecontrol.sh - 1",
-		"on-click": "pavucontrol -t 3",
-		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-		"scroll-step": 1,
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": ["", "", ""]
-		}
-	},
-	"backlight": {
-		"rotate": 0,
-		"format": "{icon} {percent}",
-		"format-icons": ["", "", "", "", "", "", "", "", ""],
-		"min-length": 1,
-		"tooltip": true,
-		"tooltip-format": "Backlight level: {icon} {percent}%",
-		"on-scroll-up": "~/.scripts/brightnesscontrol.sh + 1",
-		"on-scroll-down": "~/.scripts/brightnesscontrol.sh - 1"
-	},
-	"custom/sysupdate": {
-		"format": "{icon}",
-		"return-type": "json",
-		"format-icons": {
-			"has-updates": "󱧘",
-			"updated": ""
-		},
-		"exec-if": "which waybar-module-pacman-updates",
-		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
-		"on-click": "~/.scripts/update.sh"
-	}, 
-},
-  {
-    "name": "border-right",
-    "layer": "top",
-    "position": "right",
-    "width": 8
-  },
-  {
-    "name": "border-left",
-    "layer": "top",
-    "position": "left",
-    "width": 8
-  },
-  {
-    "name": "border-bottom",
-    "layer": "top",
-    "position": "bottom",
-    "height": 8
-  },
-  {
-    "name": "date-widget",
-    "layer": "bottom",
-    "position": "bottom",
-    "exclusive": false,
-    // "modules-left": ["mpris#widget"],
-    "modules-right": ["clock#date"],
-    "clock#date": {
-      "format": "{:%A, %d %B %Y}",
+		"custom/launcher": {
+			"format": "",
+		  "tooltip-format": "Application Launcher\nRight click for more actions",
+    },
+    "niri/window": {
+      "format": "<b>{app_id}</b> - {title}",
+      "max-length": 30,
+    },
+		"battery": {
+			"format": "{icon} <span size='9.5pt'>{capacity}</span>",
+			"format-icons": {
+        "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "plugged": "",
+        "charging":  ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      },
+			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
+    },
+		"backlight": {
+			"format": "{icon} <span size='9.5pt'>{percent}</span>",
+			"format-icons": ["", "", "", "", "", "", "", "", ""],
+			"tooltip-format": "{icon} Backlight level: {percent}%",
+    },
+		"pulseaudio": {
+			"format": "{icon} <span size='9.5pt'>{volume}</span>",
+			"format-muted": "",
+			"format-icons": {
+				"headphone": "󰋋",
+				"headphone-muted": "",
+				"hands-free": "󰋋",
+				"hands-free-muted": "",
+				"headset": "󰋋",
+				"headset-muted": "",
+				"phone": "",
+				"phone-muted": "",
+				"portable": "",
+				"portable-muted": "",
+				"car": "",
+				"car-muted": "",
+				"default": ["", "", ""]
+			},
+			"tooltip-format": "{icon} {desc}: {volume}%",
+    },
+    "custom/seperator": {
+      "format": "|",
       "tooltip": false
     },
-    "mpris#widget": {
-		"format": "<b>Playing:</b> {title}",
-		"rotate": 0,
-		"format-paused": "Media Paused",
-    "tooltip": false,
-		"player-icons": {
-			"default": "",
-		},
-		"status-icons": {
-			"paused": ""
-		},
-		"max-length": 50,
-		"interval": 1
+		"niri/workspaces": {
+      "cursor": false,
+			"format": "{}",
+			"format-icons": {
+				"default": "",
+        // "active": "󰫢",
+				"browser": "",
+				"chat": ""
+			},
     },
-  },
-  {
-    "name": "time-widget",
-    "layer": "bottom",
-    "position": "bottom",
-    "exclusive": false,
-    "modules-right": ["clock#time"],
-    "clock#time": {
-      "format": "{:%I:%M %p}",
-      "tooltip": false
+		"clock": {
+			"format": "{:%I:%M %p // %d %b}",
+			"tooltip-format": "<span>{calendar}</span>",
     },
-  }
-  ]
+    "custom/swaync": {
+		  "format": "{icon}",
+   	  "format-icons": {
+   			"notification": "󰅸",
+   			"none": "󰂜",
+   			"dnd-notification": "󰪑<sup>󰧞</sup>",
+   			"dnd-none": "󰪑",
+   			"inhibited-notification": "󰅸",
+   			"inhibited-none": "󰂜",
+   			"dnd-inhibited-notification": "󰪑<sup>󰧞</sup>",
+   			"dnd-inhibited-none": "󰪑",
+      },
+		},
+		"mpris": {
+			"format": "{player_icon}",
+			"format-paused": "{status_icon}",
+		  "tooltip-format": "PLAYING [{position}/{length}]\n{title} - {artist}",
+		  "tooltip-format-paused": "PAUSED [{position}/{length}]\n{title} - {artist}",
+			"player-icons": {
+				"default": "󰝚"
+			},
+			"status-icons": {
+				"paused": "󰏤"
+			},
+    },
+		"custom/sysupdate": {
+			"format": "{icon}",
+			"return-type": "json",
+			"format-icons": {
+				"has-updates": "󱧘",
+				"updated": ""
+			},
+    },
+    "tray": {
+		  "icon-size": 15,
+		  "spacing": 10
+	  },
+		"bluetooth": {
+			"format": "󰂲",
+			"format-disabled": "󰂲",
+			"format-off": "󰂲",
+			"format-connected": "󰂯",
+	  	"tooltip-format": "{controller_alias}\n{num_connections} connected",
+      "tooltip-format-disabled": "{controller_alias}\nBluetooth disabled",
+		  "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+		  "tooltip-format-enumerate-connected": "{device_alias}",
+		  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
+    },
+		"network": {
+      "format": "{icon}",
+      "format-icons": {
+        "wifi": ["󰤟", "󰤢", "󰤥", "󰤨"],
+			  "ethernet": "󰈁",
+			  "linked": "󰈁",
+			  "disconnected": "󰤮",
+      },
+		  "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+		  "tooltip-format-disconnected": "Disconnected",
+    },
+    "niri/language": {
+		  "format-en": "US",
+		  "format-th": "TH",
+    }
+	},
+
+  /* Borders surrounding the screen + outlines */
+
+	{ "name": "border-right", "layer": "top", "position": "right", "width": 8 },
+	{ "name": "border-left", "layer": "top", "position": "left", "width": 8 },
+	{ "name": "border-bottom", "layer": "top", "position": "bottom", "height": 8 },
+  { "name": "outline-left", "layer": "top", "position": "left", "width": 2 },
+  { "name": "outline-right", "layer": "top", "position": "right", "width": 2 },
+  { "name": "outline-top", "layer": "top", "position": "top", "height": 2 },
+  { "name": "outline-bottom", "layer": "top", "position": "bottom", "height": 2 },
+
+  /* Desktop widgets */
+
+	{
+		"name": "date-widget",
+		"layer": "bottom",
+		"position": "bottom",
+		"exclusive": false,
+		// "modules-left": ["mpris#widget"],
+		"modules-right": ["clock#date"],
+		"clock#date": {
+			"format": "{:%A, %d %B %Y}",
+			"tooltip": false
+		},
+		"mpris#widget": {
+			"format": "<b>Playing:</b> {title}",
+			"format-paused": "Media Paused",
+			"tooltip": false,
+			"max-length": 50,
+			"interval": 1
+		}
+	},
+	{
+		"name": "time-widget",
+		"layer": "bottom",
+		"position": "bottom",
+		"exclusive": false,
+		"modules-right": ["clock#time"],
+		"clock#time": {
+			"format": "{:%I:%M %p}",
+			"tooltip": false
+		}
+	}
+]

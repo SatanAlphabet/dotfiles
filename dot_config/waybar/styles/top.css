@@ -1,37 +1,163 @@
 * {
-  font-family: "JetBrainsMono Nerd Font Propo";
+  font-family: "Inter Variable, CaskaydiaCove Nerd Font Propo";
   font-size: 10px;
 }
 
+window#waybar {
+	box-shadow: none;
+	text-shadow: none;
+	background: @main-bg;
+	color: @main-fg;
+}
+
+window#waybar #pill,
+window#waybar .module {
+	background: @pill-bg;
+	margin: 6px 0px;
+	padding: 0px 4px;
+	border-radius: 0px;
+}
+
+window#waybar #pill {
+  padding: 0px 0px;
+}
+
+window#waybar #pill:hover,
+window#waybar .module:hover {
+  box-shadow: 0px 0px 0px .2px @act-bg inset;
+}
+
+/* Unset hover behaviour */
+window#waybar #custom-launcher:hover,
+window#waybar #pill .module:hover,
+window#waybar #workspaces:hover {
+  box-shadow: none;
+  transition: all 0s;
+}
+
+tooltip {
+	background: @main-bg;
+	color: @main-fg;
+  border: 1px solid @border-outline;
+}
+
+tooltip label {
+  font-size: 11px;
+  font-family: "CaskaydiaCove Nerd Font Propo";
+	color: @main-fg;
+}
+
+menu {
+  background: @main-bg;
+  color: @main-fg;
+  border: 1px solid @border-outline;
+}
+
+menuitem {
+  color: @main-fg;
+}
+
+menuitem label {
+  font-size: 12px;
+  font-family: "Inter Variable";
+}
+
+menuitem:hover {
+  background: @pill-bg;
+}
+
 #pulseaudio,
-#bluetooth,
-#network,
 #custom-sysupdate,
 #custom-swaync,
-#custom-drawer-arrow-up,
 #mpris,
+#backlight,
 #bluetooth,
+#network,
 #battery {
-  font-size: 16px;
+	font-size: 15px;
+  font-weight: 300;
 }
 
-window#waybar #custom-drawer-arrow-up {
-  font-weight: bolder;
-  padding-top: 0.5em;
+window#waybar.main .modules-left {
+	margin-left: 10px;
 }
 
-window#waybar #custom-seperator {
-  font-size: 18px;
-  margin: 0 0.1em;
-  padding: 0;
-  opacity: 0.35;
+window#waybar.main .modules-right {
+	margin-right: 10px;
+}
+
+window#waybar #custom-launcher {
+	font-size: 18px;
+  margin: 0px;
+	background: transparent;
+	color: @act-bg;
+}
+
+window#waybar #window * {
+  font-size: 12px;
+}
+
+window#waybar.empty #window {
   background: transparent;
 }
 
-window#waybar #custom-seperator.bottom {
+#battery.warning {
+	color: @hvr-bg;
 }
 
-window#waybar #custom-seperator.top {
+#battery.critical {
+	color: @crit-bg;
+}
+
+window#waybar #custom-seperator {
+	font-size: 16px;
+	margin: 0px 2px;
+  padding: 0px;
+	opacity: 0.3;
+	background: transparent;
+}
+
+#workspaces button {
+	text-shadow: none;
+	box-shadow: none;
+	min-width: 1px;
+	min-height: 1px;
+	color: @main-fg;
+	background: transparent;
+	border-radius: 100%;
+	padding: 0px 4px;
+	margin: 4px 4px;
+	transition: all 0s;
+	opacity: 0.5;
+}
+
+#workspaces button label {
+	font-size: 11px;
+}
+
+#workspaces button.empty {}
+
+#workspaces button.active {
+	background: @act-bg;
+	color: @main-bg;
+	opacity: 1;
+}
+
+#workspaces button:hover {
+	color: @act-bg;
+	background: @inact-bg;
+	opacity: 1;
+}
+
+#workspaces button.active:hover {
+	color: @main-bg;
+	background: @hvr-bg;
+	opacity: 1;
+}
+
+window#waybar #clock {
+	font-size: 14px;
+	font-weight: 300;
 }
 
 /*
@@ -47,164 +173,50 @@ window#waybar #custom-seperator.top {
 }
 */
 
-window#waybar #language {
-  font-size: 12px;
-  font-weight: 500;
-  background: transparent;
-}
-
-window#waybar {
-  box-shadow: none;
-  text-shadow: none;
-  background: @main-bg;
-  color: @main-fg;
-  border: 0px solid transparent;
-}
-
-window#waybar box.module,
-window#waybar label.module {
-  background: @pill-bg;
-  margin: 0.3em 0em;
-  padding: 0em 0.4em;
-  border-radius: 0pt;
-}
-
-window#waybar .modules-left {
-  margin-left: 1em;
-}
-
-window#waybar .modules-right {
-  margin-right: 1.5em;
-}
-
-window#waybar #custom-launcher {
-  font-size: 18px;
-  background: transparent;
-  color: @act-bg;
-}
-
-window#waybar #custom-glyph-picker,
-window#waybar #custom-emoji-picker,
-window#waybar #custom-browser,
-window#waybar #custom-wallpaper,
-window#waybar #custom-clipboard {
-  font-size: 13px;
-}
-
-window#waybar #custom-picker,
-window#waybar #custom-powermenu {
-  font-size: 12px;
-}
-
+window#waybar #privacy,
 window#waybar #tray {
-}
-
-window#waybar #backlight {
-  font-size: 16px;
-}
-
-window#waybar #workspaces {
-  margin: 0.4em 0;
-}
-
-#workspaces button {
-  text-shadow: none;
-  box-shadow: none;
-  min-width: 1px;
-  min-height: 1px;
-  color: @main-fg;
-  background: transparent;
-  border-radius: 13pt;
-  padding: 0px 5px;
-  margin: 7px 3px;
-  transition: all 0s;
-  opacity: 0.7;
-}
-
-#workspaces button.active {
-  background: @act-bg;
-  color: @main-bg;
-  opacity: 1;
-}
-
-#workspaces button:hover {
-  color: @hvr-bg;
-  opacity: 1;
-  transition: all 0.5s;
-}
-
-window#waybar #clock {
-  font-size: 14px;
-  font-weight: 400;
-  color: @main-fg;
-}
-
-window#waybar #pill {
-  background: @pill-bg;
-  padding: 0 0.1em;
-  margin: 0;
-}
-
-window#waybar #memory {
-  font-size: 12px;
-  margin: 0.5em 0;
-}
-
-window#waybar #user,
-window#waybar #window {
-  background: transparent;
-}
-
-tooltip {
-  /* all: unset; */
-  background: @main-bg;
-  color: @main-fg;
-  border-width: 0.3pt;
-  border-style: solid;
-  border-color: @main-fg;
-  border-radius: 0pt;
-}
-
-tooltip label {
-	color: @main-fg;
 }
 
 #network.disabled,
 #network.disconnected,
 #bluetooth.disabled,
 #bluetooth.off {
-	opacity: 0.7;
+	opacity: 0.5;
 }
 
-#battery.warning {
-	color: @hvr-bg;
-}
-
-#battery.critical {
-	color: @crit-bg;
-}
-
-window#waybar .modules-right box.module,
-window#waybar .modules-right label.module {
+window#waybar #language {
+	font-size: 14px;
+	font-weight: 300;
 	background: transparent;
-	margin-left: 0;
-	margin-right: 0;
-  padding-left: 0.4em;
-  padding-right: 0.4em;
 }
 
-window#waybar.left *,
-window#waybar.right *,
+/* Adjust margin & padding for modules in pills */
+window#waybar.main #pill .module {
+	background: transparent;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/* Allows for very thin bar (to be used as borders) */
+window#waybar.outline-top *,
 window#waybar.bottom * {
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 	font-size: 0px;
 	min-height: 0px;
 	min-width: 0px;
 	border: 0px solid transparent;
 }
 
-window#waybar #mpris.widget,
+window#waybar.outline-left,
+window#waybar.outline-right,
+window#waybar.outline-top,
+window#waybar.outline-bottom {
+  background-color: @border-outline;
+}
+
 window#waybar.time-widget,
 window#waybar.date-widget {
 	background: transparent;
@@ -214,6 +226,7 @@ window#waybar.date-widget {
 window#waybar #mpris.widget,
 window#waybar #clock.date,
 window#waybar #clock.time {
+  background: transparent;
 	font-family: "Inter Variable";
 	color: @widget-col;
 }
@@ -221,19 +234,25 @@ window#waybar #clock.time {
 window#waybar #clock.time {
 	font-size: 72px;
 	font-weight: 600;
-	padding: 25px 0;
-	margin: 0 20px;
+	padding: 25px 0px;
+  padding-top: 0px;
+	margin: 0px 20px;
+  text-shadow: -1px 0px @widget-shadow, 2px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 3px 3px @widget-shadow;
 }
 
 window#waybar #clock.date {
-	font-size: 24px;
+	font-size: 28px;
 	font-weight: 400;
-	padding: 10px 0;
-	margin: 0 20px;
+	padding: 8px 0px;
+  padding-top: 0px;
+	margin: 0px 20px;
+  text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 2px 2px @widget-shadow;
 }
 
 window#waybar #mpris.widget {
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 300;
-	margin: 0 20px;
+  padding-top: 0px;
+	margin: 0px 20px;
+  text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 1.5px 1.5px @widget-shadow;
 }
