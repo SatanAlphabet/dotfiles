@@ -10,7 +10,7 @@ window#waybar {
 	color: @main-fg;
 }
 
-window#waybar .module {
+window#waybar.main .module {
 	background: @pill-bg;
 	margin: 0px 8px;
 	padding: 4px 0px;
@@ -201,15 +201,10 @@ window#waybar.main #pill .module {
 }
 
 /* Allows for very thin bar (to be used as borders) */
-window#waybar.border-top *,
-window#waybar.border-bottom *,
-window#waybar.outline-top *,
-window#waybar.outline-bottom * {
+window#waybar.top *,
+window#waybar.bottom * {
 	margin: 0px;
 	padding: 0px;
-	font-size: 0px;
-	min-height: 0px;
-	min-width: 0px;
 	border: 0px solid transparent;
 }
 
@@ -224,6 +219,8 @@ window#waybar.time-widget,
 window#waybar.date-widget {
 	background: transparent;
 	border: 0px solid transparent;
+  margin: 0px;
+  padding: 0px;
 }
 
 window#waybar #mpris.widget,
@@ -238,7 +235,6 @@ window#waybar #clock.time {
 	font-size: 72px;
 	font-weight: 600;
 	padding: 25px 0px;
-  padding-top: 0px;
 	margin: 0px 20px;
   text-shadow: -1px 0px @widget-shadow, 2px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 3px 3px @widget-shadow;
 }
@@ -247,7 +243,6 @@ window#waybar #clock.date {
 	font-size: 28px;
 	font-weight: 400;
 	padding: 8px 0px;
-  padding-top: 0px;
 	margin: 0px 20px;
   text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 2px 2px @widget-shadow;
 }
@@ -255,7 +250,6 @@ window#waybar #clock.date {
 window#waybar #mpris.widget {
 	font-size: 20px;
 	font-weight: 300;
-  padding-top: 0px;
 	margin: 0px 20px;
   text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 1.5px 1.5px @widget-shadow;
 }
