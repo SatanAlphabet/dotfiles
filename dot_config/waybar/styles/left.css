@@ -191,8 +191,8 @@ window#waybar #language {
 	margin-top: 5px;
 }
 
-/* Adjust margin & padding for modules in bottom pills */
-window#waybar.main .modules-right label.module {
+/* Adjust margin & padding for modules in pills */
+window#waybar.main #pill .module {
 	background: transparent;
 	padding-left: 0px;
 	padding-right: 0px;
@@ -201,8 +201,10 @@ window#waybar.main .modules-right label.module {
 }
 
 /* Allows for very thin bar (to be used as borders) */
-window#waybar.top * ,
-window#waybar.bottom * {
+window#waybar.border-top *,
+window#waybar.border-bottom *,
+window#waybar.outline-top *,
+window#waybar.outline-bottom * {
 	margin: 0px;
 	padding: 0px;
 	font-size: 0px;
