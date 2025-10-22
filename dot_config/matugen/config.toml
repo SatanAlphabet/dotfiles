@@ -37,7 +37,7 @@ output_path = '~/.config/kitty/dark-theme.auto.conf'
 [templates.kitty-light]
 input_path = './templates/kitty-light.conf'
 output_path = '~/.config/kitty/light-theme.auto.conf'
-post_hook = 'pkill -SIGUSR1 kitty'
+post_hook = 'pgrep -x kitty && pkill -SIGUSR1 kitty'
 
 [templates.btop]
 input_path = './templates/btop.theme'
@@ -59,7 +59,7 @@ output_path = '~/.config/gtk-4.0/colors.css'
 [templates.cava]
 input_path = '~/.config/matugen/templates/cava-colors.ini'
 output_path = '~/.config/cava/themes/matugen'
-post_hook = "pkill -USR1 cava"
+post_hook = "pgrep -x cava && pkill -USR1 cava"
 
 [templates.yazi]
 input_path = './templates/yazi-theme.toml'
@@ -68,7 +68,7 @@ output_path = '~/.config/yazi/theme.toml'
 [templates.spotify]
 input_path = './templates/spotify-color.ini'
 output_path = '~/.config/spicetify/Themes/colorful/color.ini'
-post_hook = 'spicetify refresh'
+post_hook = 'pgrep -x spotify && spicetify refresh'
 
 [templates.spotify-text]
 input_path = './templates/spotify-text-color.ini'
@@ -94,3 +94,4 @@ post_hook = 'matugen-pywalfox.sh'
 [templates.color-scheme]
 input_path = '~/.config/matugen/templates/Matugen.colors'
 output_path = '~/.local/share/color-schemes/Matugen.colors'
+post_hook = 'reload-qt.sh &'
