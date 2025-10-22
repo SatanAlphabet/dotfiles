@@ -155,9 +155,10 @@ window#waybar #custom-seperator {
 	opacity: 1;
 }
 
-window#waybar #clock {
+window#waybar.main #clock {
+  color: @hvr-bg;
 	font-size: 14px;
-	font-weight: 300;
+	font-weight: 600;
 }
 
 /*
@@ -185,8 +186,9 @@ window#waybar #tray {
 }
 
 window#waybar #language {
+  color: @hvr-bg;
 	font-size: 14px;
-	font-weight: 300;
+	font-weight: 600;
 	background: transparent;
 }
 

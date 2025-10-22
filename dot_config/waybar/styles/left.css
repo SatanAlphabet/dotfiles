@@ -142,9 +142,10 @@ window#waybar #workspaces {
 	opacity: 1;
 }
 
-window#waybar #clock {
+window#waybar.main #clock {
+  color: @hvr-bg;
 	font-size: 16px;
-	font-weight: 300;
+	font-weight: 400;
 	padding: 6px 0px;
 }
 
@@ -185,8 +186,9 @@ window#waybar #tray {
 }
 
 window#waybar #language {
+  color: @hvr-bg;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 600;
 	background: transparent;
 	margin-top: 5px;
 }
