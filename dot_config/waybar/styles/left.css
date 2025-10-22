@@ -201,8 +201,8 @@ window#waybar.main #pill .module {
 }
 
 /* Allows for very thin bar (to be used as borders) */
-window#waybar.top *,
-window#waybar.bottom * {
+window#waybar.top box,
+window#waybar.bottom box {
 	margin: 0px;
 	padding: 0px;
 	border: 0px solid transparent;
@@ -218,14 +218,10 @@ window#waybar.outline-bottom {
 window#waybar.time-widget,
 window#waybar.date-widget {
 	background: transparent;
-	border: 0px solid transparent;
-  margin: 0px;
-  padding: 0px;
 }
 
-window#waybar #mpris.widget,
-window#waybar #clock.date,
-window#waybar #clock.time {
+window#waybar.time-widget .module,
+window#waybar.date-widget .module {
   background: transparent;
 	font-family: "Inter Variable";
 	color: @widget-col;
