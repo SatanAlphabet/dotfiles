@@ -3,7 +3,7 @@
     "name": "main",
 		"layer": "top",
 		"position": "right",
-		"spacing": 2,
+		"spacing": 4,
 		"width": 42,
 		"exclusive": true,
 		"passthrough": false,
@@ -24,12 +24,13 @@
       "custom/sysupdate",
       "tray",
 			"custom/swaync",
+      "battery",
       "group/pill#control",
       "niri/language"
     ],
 		"group/pill#control": {
 			"orientation": "inherit",
-			"modules": ["battery", "pulseaudio", "bluetooth", "network"]
+			"modules": ["pulseaudio", "bluetooth", "network"]
 		},
 		"custom/launcher": {
       "justify": "center",

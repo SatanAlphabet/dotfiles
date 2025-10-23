@@ -3,7 +3,7 @@
     "name": "main",
 		"layer": "top",
 		"position": "left",
-		"spacing": 2,
+		"spacing": 4,
 		"width": 42,
 		"exclusive": true,
 		"passthrough": false,

@@ -17,6 +17,11 @@ window#waybar.main .module {
 	border-radius: 0px;
 }
 
+window#waybar #pill {
+	background: @pill-bg;
+  margin: 0px 8px;
+}
+
 window#waybar #pill:hover,
 window#waybar .module:hover {
   box-shadow: 0px 0px 0px .2px @act-bg inset;
@@ -95,7 +100,7 @@ window#waybar #custom-launcher {
 
 window#waybar #custom-seperator-vertical {
 	font-size: 13px;
-	margin: -4px 0px;
+	margin: -8px 0px;
 	opacity: 0.3;
 	background: transparent;
 }
@@ -119,6 +124,7 @@ window#waybar #workspaces {
 }
 
 #workspaces button label {
+  font-weight: 800;
 	font-size: 11px;
 }
 
@@ -135,7 +141,6 @@ window#waybar #workspaces {
 
 #workspaces button:hover {
 	color: @act-bg;
-	background: @inact-bg;
 	opacity: 1;
 }
 
@@ -165,20 +170,10 @@ window#waybar.main #clock {
 }
 */
 
-window#waybar #pill {
-	background: @pill-bg;
-	padding: 5px 0px;
-  margin: 0px 8px;
-}
-
 window#waybar #privacy,
 window#waybar #tray {
 	padding: 0px;
 	margin: 5px 1px;
-}
-
-window#waybar #network {
-  padding-bottom: 0px;
 }
 
 #network.disabled,
@@ -190,10 +185,9 @@ window#waybar #network {
 
 window#waybar #language {
   color: @hvr-bg;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 600;
 	background: transparent;
-	margin-top: 5px;
 }
 
 /* Adjust margin & padding for modules in pills */
