@@ -17,11 +17,14 @@ window#waybar.main .module {
 	border-radius: 0px;
 }
 
-window#waybar #pill.bottom:hover,
-window#waybar .modules-center .module:hover {
+window#waybar #pill:hover,
+window#waybar .module:hover {
   box-shadow: 0px 0px 0px .2px @act-bg inset;
 }
 
+window#waybar #language:hover,
+window#waybar #custom-launcher:hover,
+window#waybar #pill .module:hover,
 window#waybar #workspaces:hover {
   box-shadow: none;
   transition: all 0s;
@@ -164,18 +167,18 @@ window#waybar.main #clock {
 
 window#waybar #pill {
 	background: @pill-bg;
-}
-
-window#waybar #pill.bottom {
 	padding: 5px 0px;
   margin: 0px 8px;
-	padding-bottom: 0px;
 }
 
 window#waybar #privacy,
 window#waybar #tray {
 	padding: 0px;
 	margin: 5px 1px;
+}
+
+window#waybar #network {
+  padding-bottom: 0px;
 }
 
 #network.disabled,
