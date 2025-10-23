@@ -32,10 +32,9 @@ get_glyph_selection() {
   if [[ -n "$(pgrep -x rofi)" ]]; then
     pkill rofi
   else
-    local style_type=${1:-"menu"}
     echo "${unique_entries}" | rofi -dmenu -multi-select -i \
       -theme-str "entry { placeholder: \" 🔣 Glyph\";} configuration { show-icons: false; }" \
-      -theme "${style_type}"
+      "$@"
   fi
 }
 
@@ -57,7 +56,7 @@ main() {
   unique_entries=$(echo -e "${combined_entries}" | awk '!seen[$0]++')
 
   # get glyph selection from rofi
-  data_glyph=$(get_glyph_selection)
+  data_glyph=$(get_glyph_selection "$@")
 
   # avoid copying typed text to clipboard, only copy valid glyph
   is_valid_glyph "${data_glyph}" || exit 0

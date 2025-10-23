@@ -9,5 +9,5 @@ else
     -theme-str "element-icon { enabled: false; }" \
     -kb-secondary-copy "" -kb-custom-1 Ctrl+c \
     -emoji-mode menu \
-    -theme "${1:-"menu"}" 2>/dev/null
+    "$@" 2>/dev/null
 fi

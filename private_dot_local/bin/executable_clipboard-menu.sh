@@ -4,6 +4,7 @@
 cache_dir="$HOME/.cache/niri"
 favorites_file="${cache_dir}/landing/cliphist_favorites"
 [ -f "$HOME/.cliphist_favorites" ] && favorites_file="$HOME/.cliphist_favorites"
+cliphist_style="menu"
 del_mode=false
 
 # process clipboard selections for multi-select mode
@@ -90,6 +91,7 @@ run_rofi() {
     rofi -dmenu \
       -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}" \
       -theme-str "element-icon { enabled: false; }" \
+      -theme "${cliphist_style}" \
       "$@"
   fi
 }
