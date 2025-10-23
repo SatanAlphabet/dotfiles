@@ -6,7 +6,7 @@
 cache_dir="$HOME/.cache/niri"
 favorites_file="${cache_dir}/landing/cliphist_favorites"
 [ -f "$HOME/.cliphist_favorites" ] && favorites_file="$HOME/.cliphist_favorites"
-cliphist_style=menu
+cliphist_style="menu"
 del_mode=false
 
 # process clipboard selections for multi-select mode
@@ -84,12 +84,11 @@ check_content() {
 
 # execute rofi with common parameters
 run_rofi() {
-  rofi_running=$(pidof rofi)
   local placeholder="$1"
   shift
 
-  if [ -n "$rofi_running" ]; then
-    pkill -SIGUSR2 rofi
+  if [[ -n "$(pgrep -x rofi)" ]]; then
+    pkill rofi
   else
     rofi -dmenu \
       -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}" \

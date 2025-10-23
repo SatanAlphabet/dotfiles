@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
-rofi_running=$(pidof rofi)
-rofi_style="menu"
-if [[ -n "$1" ]]; then
-  rofi_style="$1"
-fi
-
-if [[ -n "$rofi_running" ]]; then
-  pkill -SIGUSR2 rofi
+if [[ -n "$(pgrep -x rofi)" ]]; then
+  pkill rofi
   exit 0
 else
   rofi -modi emoji -show emoji \
@@ -15,5 +9,5 @@ else
     -theme-str "element-icon { enabled: false; }" \
     -kb-secondary-copy "" -kb-custom-1 Ctrl+c \
     -emoji-mode menu \
-    -theme "$rofi_style" 2>/dev/null
+    -theme "${1:-"menu"}" 2>/dev/null
 fi
