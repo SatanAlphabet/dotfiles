@@ -24,16 +24,15 @@
       "group/pill#tray",
 			"custom/swaync",
       "battery",
-      "group/pill#control",
+      "backlight", 
+      "pulseaudio",
+      "bluetooth", 
+      "network",
       "niri/language"
     ],
 		"group/pill#tray": {
 			"orientation": "inherit",
 			"modules": ["custom/sysupdate", "tray"]
-		},
-		"group/pill#control": {
-			"orientation": "inherit",
-			"modules": ["backlight", "pulseaudio", "bluetooth", "network"]
 		},
 		"custom/launcher": {
 			"format": "",

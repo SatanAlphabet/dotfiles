@@ -24,15 +24,19 @@ window#waybar #pill {
 
 window#waybar #pill:hover,
 window#waybar .module:hover {
-  box-shadow: 0px 0px 0px .2px @act-bg inset;
+  box-shadow: 0px 0px 0px .1px @act-bg inset;
+  background: @pill-hvr-bg;
 }
 
 window#waybar #language:hover,
 window#waybar #custom-launcher:hover,
 window#waybar #pill .module:hover,
 window#waybar #workspaces:hover {
-  box-shadow: none;
-  transition: all 0s;
+  box-shadow: inherit;
+}
+
+window#waybar #workspaces:hover {
+  background: @pill-bg;
 }
 
 tooltip {
@@ -180,7 +184,7 @@ window#waybar #tray {
 #network.disconnected,
 #bluetooth.disabled,
 #bluetooth.off {
-	opacity: 0.5;
+  color: @inact-fg;
 }
 
 window#waybar #language {

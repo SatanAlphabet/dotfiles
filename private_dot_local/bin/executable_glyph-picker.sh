@@ -34,6 +34,7 @@ get_glyph_selection() {
   else
     echo "${unique_entries}" | rofi -dmenu -multi-select -i \
       -theme-str "entry { placeholder: \" 🔣 Glyph\";} configuration { show-icons: false; }" \
+      -theme-str "mode-switcher { enabled: false; } " \
       "$@"
   fi
 }

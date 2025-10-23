@@ -91,6 +91,7 @@ run_rofi() {
     rofi -dmenu \
       -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}" \
       -theme-str "element-icon { enabled: false; }" \
+      -theme-str "mode-switcher { enabled: false; } " \
       -theme "${cliphist_style}" \
       "$@"
   fi

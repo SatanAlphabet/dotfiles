@@ -25,7 +25,9 @@
       "tray",
 			"custom/swaync",
       "battery",
-      "group/pill#control",
+      "pulseaudio",
+      "bluetooth",
+      "network",
       "niri/language"
     ],
 		"group/pill#control": {

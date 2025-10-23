@@ -25,13 +25,11 @@
       "tray",
 			"custom/swaync",
       "battery",
-      "group/pill#control",
+      "pulseaudio",
+      "bluetooth",
+      "network",
       "niri/language"
     ],
-		"group/pill#control": {
-			"orientation": "inherit",
-			"modules": ["pulseaudio", "bluetooth", "network"]
-		},
 		"custom/launcher": {
       "justify": "center",
 			"format": "",

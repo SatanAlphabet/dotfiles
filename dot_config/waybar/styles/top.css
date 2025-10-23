@@ -10,7 +10,6 @@ window#waybar {
 	color: @main-fg;
 }
 
-window#waybar #pill,
 window#waybar .module {
 	background: @pill-bg;
 	margin: 6px 0px;
@@ -19,20 +18,26 @@ window#waybar .module {
 }
 
 window#waybar #pill {
-  padding: 0px 2px;
+	background: @pill-bg;
+	margin: 6px 0px;
+	border-radius: 0px;
 }
 
 window#waybar #pill:hover,
 window#waybar .module:hover {
-  box-shadow: 0px 0px 0px .2px @act-bg inset;
+  box-shadow: 0px 0px 0px .1px @act-bg inset;
+  background: @pill-hvr-bg;
 }
 
-/* Unset hover behaviour */
+window#waybar #language:hover,
 window#waybar #custom-launcher:hover,
 window#waybar #pill .module:hover,
 window#waybar #workspaces:hover {
-  box-shadow: none;
-  transition: all 0s;
+  box-shadow: inherit;
+}
+
+window#waybar #workspaces:hover {
+  background: @pill-bg;
 }
 
 tooltip {
@@ -182,7 +187,7 @@ window#waybar #tray {
 #network.disconnected,
 #bluetooth.disabled,
 #bluetooth.off {
-	opacity: 0.5;
+  color: @inact-fg;
 }
 
 window#waybar #language {
