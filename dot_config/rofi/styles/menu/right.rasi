@@ -23,7 +23,7 @@ configuration {
 @import                          "~/.config/rofi/colors.rasi"
 
 * {
-    font:                        "Inter Variable, JetBrainsMono Nerd Font Propo 11";
+    font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 11";
     border-colour:               var(dark-border);
     handle-colour:               var(foreground);
     background-colour:           var(background);
@@ -170,7 +170,7 @@ listview {
 }
 scrollbar {
     handle-width:                5px ;
-    handle-color:                @handle-colour;
+    handle-color:                @active-background;
     border-radius:               8px;
     background-color:            @alternate-background;
 }

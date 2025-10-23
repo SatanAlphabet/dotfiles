@@ -23,7 +23,7 @@ configuration {
 @import                          "~/.config/rofi/colors.rasi"
 
 * {
-    font:                        "Inter Variable, JetBrains Mono Nerd Font Propo 10";
+    font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 10";
     border-colour:               var(selected);
     handle-colour:               var(selected);
     background-colour:           var(background);
@@ -96,7 +96,7 @@ mainbox {
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     0px;
+    spacing:                     10px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -115,6 +115,7 @@ prompt {
 textbox-prompt-colon {
     enabled:                     true;
     padding:                     5px 10px;
+    margin:                      0px;
     expand:                      false;
     str:                         "";
     background-color:            @border;
@@ -122,7 +123,8 @@ textbox-prompt-colon {
 }
 entry {
     enabled:                     true;
-    padding:                     5px 0px;
+    margin:                      0px;
+    padding:                     5px 10px;
     background-color:            @border;
     text-color:                  inherit;
     cursor:                      text;
@@ -164,7 +166,7 @@ listview {
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
+    fixed-height:                false;
     fixed-columns:               true;
     
     spacing:                     6px;
@@ -254,7 +256,7 @@ element-text {
 mode-switcher{
     enabled:                     true;
     spacing:                     0px;
-    margin:                      0px 0px 0px 10px;
+    margin:                      0px 0px 0px 0px;
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
