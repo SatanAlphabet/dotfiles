@@ -123,8 +123,8 @@ body {
 	--bg-2: {{colors.surface_container_high.dark.hex}};              /* dark buttons */
 	--bg-3: {{colors.surface_container_low.dark.hex}};               /* spacing, secondary elements */
 	--bg-4: {{colors.surface.dark.hex}};                             /* main background color */
-	--hover: {{colors.surface_bright.dark.hex}};                     /* channels and buttons when hovered */
-	--active: {{colors.surface_bright.dark.hex}};                    /* channels and buttons when clicked or selected */
+	--hover: {{colors.surface_container_low.dark.hex}};                     /* channels and buttons when hovered */
+	--active: {{colors.surface_container.dark.hex}};                    /* channels and buttons when clicked or selected */
 	--message-hover: {{colors.surface_bright.dark.hex}};             /* messages when hovered */
 }
 }
@@ -164,8 +164,8 @@ body {
 	--bg-2: {{colors.surface_container_high.light.hex}};              /* dark buttons */
 	--bg-3: {{colors.surface_container_low.light.hex}};               /* spacing, secondary elements */
 	--bg-4: {{colors.surface.light.hex}};                             /* main background color */
-	--hover: {{colors.surface_bright.light.hex}};                     /* channels and buttons when hovered */
-	--active: {{colors.surface_bright.light.hex}};                    /* channels and buttons when clicked or selected */
+	--hover: {{colors.surface_container_low.light.hex}};                     /* channels and buttons when hovered */
+	--active: {{colors.surface_container.light.hex}};                    /* channels and buttons when clicked or selected */
 	--message-hover: {{colors.surface_bright.light.hex}};             /* messages when hovered */
 }
 }
