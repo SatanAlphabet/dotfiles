@@ -71,6 +71,7 @@ menuitem:hover {
 
 #pulseaudio,
 #custom-sysupdate,
+#custom-nightlight,
 #custom-swaync,
 #mpris,
 #backlight,
@@ -128,7 +129,7 @@ window#waybar #workspaces {
 }
 
 #workspaces button label {
-  font-weight: 800;
+  font-weight: 600;
 	font-size: 0px;
 }
 
@@ -136,7 +137,7 @@ window#waybar #workspaces {
 }
 
 #workspaces button.active {
-	padding: 6px 0px;
+	padding: 8px 0px;
 	margin: 4px 6px;
 	background: @act-bg;
 	color: @main-bg;
