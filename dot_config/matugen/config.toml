@@ -44,7 +44,7 @@ input_path = './templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
 
 [templates.niri]
-input_path = '~/.config/matugen/templates/niri-matugen.kdl'
+input_path = './templates/niri-matugen.kdl'
 output_path = '~/.config/niri/matugen-colors.kdl'
 
 [templates.gtk3]
@@ -57,7 +57,7 @@ input_path = './templates/gtk-colors.css'
 output_path = '~/.config/gtk-4.0/colors.css'
 
 [templates.cava]
-input_path = '~/.config/matugen/templates/cava-colors.ini'
+input_path = './templates/cava-colors.ini'
 output_path = '~/.config/cava/themes/matugen'
 post_hook = "pgrep -x cava && pkill -USR1 cava"
 
@@ -92,6 +92,6 @@ output_path = '~/.cache/wal/colors.json'
 post_hook = 'matugen-pywalfox.sh'
 
 [templates.color-scheme]
-input_path = '~/.config/matugen/templates/Matugen.colors'
+input_path = './templates/Matugen.colors'
 output_path = '~/.local/share/color-schemes/Matugen.colors'
 post_hook = 'reload-qt.sh &'
