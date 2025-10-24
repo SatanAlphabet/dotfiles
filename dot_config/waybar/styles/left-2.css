@@ -118,33 +118,36 @@ window#waybar #workspaces {
 	box-shadow: none;
 	min-width: 1px;
 	min-height: 1px;
-	color: @main-fg;
-	background: transparent;
-	border-radius: 13pt;
-	padding: 0px 0px;
-	margin: 4px 5px;
+	color: transparent;
+	background: @hvr-bg;
+	border-radius: 10px;
+	padding: 2px 0px;
+	margin: 6px 10px;
 	transition: all 0s;
-	opacity: 0.5;
+	opacity: .6;
 }
 
 #workspaces button label {
   font-weight: 800;
-	font-size: 11px;
+	font-size: 0px;
 }
 
 #workspaces button.empty {
-	background: transparent;
-	opacity: 0.5;
 }
 
 #workspaces button.active {
+	padding: 6px 0px;
+	margin: 4px 6px;
 	background: @act-bg;
 	color: @main-bg;
 	opacity: 1;
 }
 
+#workspaces button.active label {
+  font-size: 14px;
+}
+
 #workspaces button:hover {
-	color: @act-bg;
 	opacity: 1;
 }
 
