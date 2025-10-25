@@ -34,6 +34,14 @@
 			"orientation": "inherit",
 			"modules": ["custom/sysupdate", "tray"]
 		},
+    "custom/nightlight": {
+      "format": "{icon}",
+      "tooltip-format": "Night Light: <b>{icon} {text}</b>",
+      "format-icons": {
+        "active": "󰽥",
+        "default": "󰖨"
+      },
+    },
 		"custom/launcher": {
 			"format": "",
 		  "tooltip-format": "Application Launcher\nRight click for more actions",

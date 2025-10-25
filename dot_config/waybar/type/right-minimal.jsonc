@@ -29,6 +29,14 @@
 			"orientation": "inherit",
 			"modules": ["custom/sysupdate", "tray", "bluetooth", "network"]
 		},
+    "custom/nightlight": {
+      "format": "{icon}",
+      "tooltip-format": "Night Light: <b>{icon} {text}</b>",
+      "format-icons": {
+        "active": "󰽥",
+        "default": "󰖨"
+      },
+    },
 		"custom/launcher": {
       "justify": "center",
 			"format": "",
