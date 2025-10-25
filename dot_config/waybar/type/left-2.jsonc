@@ -24,11 +24,35 @@
       "custom/sysupdate",
       "tray",
 			"custom/swaync",
-      "battery",
+      "group/pill#battery",
       "bluetooth",
       "network",
       "niri/language"
     ],
+    "group/pill#battery": {
+      "orientation": "inherit",
+      "modules": ["battery", "battery#text"],
+      "drawer": {
+        "transition-left-to-right": false,
+        "transition-duration": 300,
+      },
+    },
+    "group/pill#audio": {
+      "orientation": "inherit",
+      "modules": ["pulseaudio", "pulseaudio#text"],
+      "drawer": {
+        "transition-left-to-right": false,
+        "transition-duration": 300,
+      },
+    },
+    "group/pill#backlight": {
+      "orientation": "inherit",
+      "modules": ["backlight", "backlight#text"],
+      "drawer": {
+        "transition-left-to-right": false,
+        "transition-duration": 300,
+      },
+    },
     "custom/nightlight": {
       "format": "{icon}",
       "tooltip-format": "Night Light: <b>{icon} {text}</b>",
@@ -52,10 +76,23 @@
       },
 			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
     },
+		"battery#text": {
+      "justify": "center",
+			"format": "<span size='9pt'>{capacity:2}</span>",
+		  "design-capacity": true,
+      "tooltip": false,
+  		"on-scroll-up": "true",
+  		"on-scroll-down": "true",
+    },
 		"backlight": {
       "justify": "center",
 			"format": "{icon}",
 			"format-icons": ["", "", "", "", "", "", "", "", ""],
+			"tooltip-format": "{icon} Backlight level: {percent}%",
+    },
+		"backlight#text": {
+      "justify": "center",
+      "format": "<span size='9pt'>{percent:2}</span>",
 			"tooltip-format": "{icon} Backlight level: {percent}%",
     },
 		"pulseaudio": {
@@ -78,6 +115,10 @@
 				"default": ["", "", ""]
 			},
 			"tooltip-format": "{icon} {desc}: {volume}%",
+    },
+    "pulseaudio#text": {
+      "format": "<span size='9pt'>{volume:2}</span>",
+      "tooltip": false,
     },
 		"niri/workspaces": {
       "cursor": false,

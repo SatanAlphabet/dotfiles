@@ -20,6 +20,7 @@ window#waybar.main .module {
 window#waybar #pill {
 	background: @pill-bg;
   margin: 0px 8px;
+	border-radius: 20px;
 }
 
 window#waybar #pill:hover,

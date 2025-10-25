@@ -1,13 +1,19 @@
 {
 	"network": {
 		"on-click": "kitty -1 nmtui",
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 		"interval": 2
 	},
 	"bluetooth": {
-		"on-click": "blueman-manager"
+		"on-click": "blueman-manager",
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 	},
 	"niri/window": {
 		"max-length": 50,
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 	},
 	"niri/workspaces": {
 		"on-scroll-up": "niri msg action focus-workspace-up",
@@ -15,21 +21,30 @@
     "on-click-right": "niri msg action toggle-overview"
 	},
 	"niri/language": {
+    "tooltip": "Left Click: Next layout\nRight Click: Previous layout",
 		"on-click": "layout-toggle.sh next",
-		"on-click-right": "layout-toggle.sh prev"
+		"on-click-right": "layout-toggle.sh prev",
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 	},
 	"custom/seperator-vertical": {
 		"format": "",
-		"tooltip": false
+		"tooltip": false,
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 	},
   "custom/nightlight": {
     "return-type": "json",
     "signal": 8,
     "on-click": "nightlight.sh",
     "exec": "~/.config/waybar/scripts/waybar-nightlight.sh",
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
   },
 	"custom/launcher": {
 		"on-click": "rofilaunch.sh menu",
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 		"menu": "on-click-right",
 		"menu-file": "~/.config/waybar/menu/launcher.xml",
 		"menu-actions": {
@@ -50,6 +65,8 @@
 		},
 	},
   "mpris": {
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 		"on-click": "mediacontrol.sh toggle",
 		"on-click-right": "mediacontrol.sh next",
 		"on-click-middle": "mediacontrol.sh prev",
@@ -81,10 +98,14 @@
 		"exec": "pgrep -x swaync && swaync-client -swb",
 		"on-click": "swaync-client -t -sw",
 		"on-click-right": "swaync-client -d -sw",
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 		"escape": true
 	},
 	"privacy": {
 		"transition-duration": 250,
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 		"modules": [
 			{
 				"type": "screenshare",
@@ -113,8 +134,17 @@
 			"critical": 15
 		},
 		"design-capacity": true,
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 	},
 	"pulseaudio": {
+		"on-scroll-up": "volumecontrol.sh + 1",
+		"on-scroll-down": "volumecontrol.sh - 1",
+		"on-click": "pavucontrol-qt -t 3",
+		"on-click-right": "volumecontrol.sh toggle-mute",
+		"scroll-step": 1,
+	},
+	"pulseaudio#text": {
 		"on-scroll-up": "volumecontrol.sh + 1",
 		"on-scroll-down": "volumecontrol.sh - 1",
 		"on-click": "pavucontrol-qt -t 3",
@@ -125,7 +155,13 @@
 		"on-scroll-up": "brightnesscontrol.sh + 1",
 		"on-scroll-down": "brightnesscontrol.sh - 1"
 	},
+	"backlight#text": {
+		"on-scroll-up": "brightnesscontrol.sh + 1",
+		"on-scroll-down": "brightnesscontrol.sh - 1"
+	},
 	"custom/sysupdate": {
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
 		"exec-if": "which waybar-module-pacman-updates",
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
 		"on-click": "kitty --class 'sysupdate' --title 'System Update' sysupdate.sh"
