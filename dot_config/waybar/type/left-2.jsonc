@@ -83,7 +83,7 @@
     },
 		"clock": {
       "justify": "center",
-			"format": "<b>{:%H\n%M</b>\n--\n%m\n%d}",
+			"format": "<b>{:%H\n%M</b>\n󰇘\n%m\n%d}",
 			"tooltip-format": "<span>{calendar}</span>",
     },
     "custom/swaync": {

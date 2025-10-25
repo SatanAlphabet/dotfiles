@@ -14,7 +14,7 @@ window#waybar.main .module {
 	background: @pill-bg;
 	margin: 0px 8px;
 	padding: 4px 0px;
-	border-radius: 0px;
+	border-radius: 20px;
 }
 
 window#waybar #pill {
@@ -111,14 +111,15 @@ window#waybar #custom-seperator-vertical {
 }
 
 window#waybar #workspaces {
-	margin: 0 8px;
+	margin: 0px 8px;
+  border-radius: 30px;
 }
 
 #workspaces button {
 	text-shadow: none;
 	box-shadow: none;
-	min-width: 1px;
-	min-height: 1px;
+	min-width: 0px;
+	min-height: 0px;
 	color: transparent;
 	background: @hvr-bg;
 	border-radius: 10px;
@@ -137,7 +138,7 @@ window#waybar #workspaces {
 }
 
 #workspaces button.active {
-	padding: 15px 0px;
+	padding: 12px 0px;
 	margin: 4px 6px;
 	background: @act-bg;
 	color: @main-bg;
@@ -145,7 +146,7 @@ window#waybar #workspaces {
 }
 
 #workspaces button.active label {
-  font-size: 14px;
+  font-size: 11px;
 }
 
 #workspaces button:hover {
@@ -162,7 +163,7 @@ window#waybar.main #clock {
   color: @hvr-bg;
 	font-size: 16px;
 	font-weight: 400;
-	padding: 6px 0px;
+	padding: 8px 0px;
 }
 
 window#waybar #tray {
