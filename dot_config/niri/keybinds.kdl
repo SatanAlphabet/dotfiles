@@ -180,8 +180,8 @@ binds {
 
   Print repeat=false { screenshot; }
   Mod+Print repeat=false hotkey-overlay-title="Screenshot & Annotate" { spawn-sh "grim -g \"$(slurp)\" - | satty -f -"; }
-  Ctrl+Print repeat=false { screenshot-screen; }
-  Alt+Print repeat=false { screenshot-window; }
+  Ctrl+Print repeat=false { screenshot-screen write-to-disk=false; }
+  Alt+Print repeat=false { screenshot-window write-to-disk=false; }
 
   Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
