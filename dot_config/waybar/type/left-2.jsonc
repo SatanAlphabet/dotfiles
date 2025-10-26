@@ -25,9 +25,9 @@
       "tray",
 			"custom/swaync",
       "group/pill#battery",
-      "bluetooth",
+      "group/pill#audio",
       "network",
-      "niri/language"
+      "niri/language",
     ],
     "group/pill#battery": {
       "orientation": "inherit",

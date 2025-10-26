@@ -127,7 +127,7 @@ window#waybar #workspaces {
 	padding: 3px 0px;
 	margin: 6px 9px;
 	transition: all 0s;
-	opacity: 0.5;
+	opacity: 0.6;
 }
 
 #workspaces button label {
@@ -184,6 +184,8 @@ window#waybar #tray {
 }
 */
 
+#pulseaudio.muted,
+#mpris.paused,
 #network.disabled,
 #network.disconnected,
 #bluetooth.disabled,
