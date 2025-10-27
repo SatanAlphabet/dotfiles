@@ -5,14 +5,14 @@
     font-family: 'Inter Variable';
 }
 
-@import "$HOME/.config/waybar/colors.css";
+@import "$HOME/.config/wlogout/colors.css";
 
 window {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: @backdrop;
 }
 
 button {
-    color: ${BtnCol};
+    color: @main-fg;
     background-color: @main-bg;
     outline-style: none;
     border: none;

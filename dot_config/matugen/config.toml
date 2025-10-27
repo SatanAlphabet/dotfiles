@@ -8,6 +8,10 @@ input_path = './templates/waybar.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'sed -i s/i/i/ ~/.config/waybar/style.css'
 
+[templates.wlogout]
+input_path = './templates/wlogout.css'
+output_path = '~/.config/wlogout/colors.css'
+
 [templates.dunst]
 input_path = './templates/dunstrc-colors'
 output_path = '~/.config/dunst/dunstrc.d/matugen-colors.conf'
