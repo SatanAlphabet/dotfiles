@@ -61,6 +61,7 @@
 			"wallpaper-random": "waypaper --random --backend swww",
 			"wallpaper-select": "waypaper",
 			"theme": "themechange.sh",
+			"nightlight": "nightlight.sh",
 			"niri": "xdg-open https://github.com/YaLTeR/niri"
 		},
 	},

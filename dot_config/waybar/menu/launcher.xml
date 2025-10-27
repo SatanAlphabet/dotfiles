@@ -108,6 +108,11 @@
             </object>
         </child>
         <child>
+            <object class="GtkMenuItem" id="nightlight">
+                <property name="label">Toggle night light</property>
+            </object>
+        </child>
+        <child>
             <object class="GtkMenuItem" id="niri">
                 <property name="label">About niri</property>
             </object>
