@@ -161,8 +161,7 @@
     },
     "niri/language": {
       "justify": "center",
-		  "format-en": "US",
-		  "format-th": "TH",
+      "format": "<span text_transform='uppercase'>{short}</span>",
     }
 	},
   { "name": "outline-left", "layer": "top", "position": "left", "width": 2 },

@@ -162,8 +162,7 @@
 		  "tooltip-format-disconnected": "Disconnected",
     },
     "niri/language": {
-		  "format-en": "US",
-		  "format-th": "TH",
+      "format": "<span text_transform='uppercase'>{short}</span>",
     }
 	},
 
