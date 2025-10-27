@@ -80,7 +80,7 @@
       "justify": "center",
 			"format": "<span size='9pt'>{capacity:2}</span>",
 		  "design-capacity": true,
-      "tooltip": false,
+			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
   		"on-scroll-up": "true",
   		"on-scroll-down": "true",
     },
@@ -114,11 +114,11 @@
 				"car-muted": "",
 				"default": ["", "", ""]
 			},
-			"tooltip-format": "{icon} {desc}: {volume}%",
+			"tooltip-format": "{desc}: {volume}%",
     },
     "pulseaudio#text": {
       "format": "<span size='9pt'>{volume:2}</span>",
-      "tooltip": false,
+			"tooltip-format": "{desc}: {volume}%",
     },
 		"niri/workspaces": {
       "cursor": false,

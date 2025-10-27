@@ -11,20 +11,15 @@ template="${config_path}/wlogout/style.css"
 
 #// detect monitor res
 get_output() {
-  local outputs current_mode current_output current_height current_width
-  outputs=$(niri msg -j outputs | jq '.[]')
-  current_mode=$(echo "${outputs}" | jq '.current_mode')
-  current_output=$(echo "${outputs}" | jq .modes["${current_mode}"])
-
-  current_height=$(echo "${current_output}" | jq '.height')
-  current_width=$(echo "${current_output}" | jq '.width')
+  local output_dimensions
+  mapfile -t output_dimensions < <(niri msg -j focused-output | jq -r ".logical | .width, .height")
 
   case "$1" in
   width)
-    echo "${current_width}"
+    echo "${output_dimensions[0]}"
     ;;
   height)
-    echo "${current_height}"
+    echo "${output_dimensions[1]}"
     ;;
   *)
     echo "Invalid parameter (use 'width' or 'height')."

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
-wallpaper=$(waypaper --list | jq '.[].wallpaper' | sed 's/"//g')
+wallpaper=$(waypaper --list | jq -r '.[].wallpaper')
 
 if [ "$current_theme" = "'prefer-dark'" ]; then
 

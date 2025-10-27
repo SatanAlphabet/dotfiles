@@ -2,7 +2,12 @@
 
 # Currently breaks named workspaces declared in the config.
 
-current_workspace=$(niri msg -j workspaces | jq '.[] | select(.is_active == true).name' | sed 's|"||g')
+if [[ -z "$1" ]]; then
+  echo "Error: Workspace name required."
+  exit 1
+fi
+
+current_workspace=$(niri msg -j workspaces | jq -r '.[] | select(.is_active == true).name')
 
 if [[ "$current_workspace" != "$1" ]]; then
   echo -e "Setting workspace name to $1"

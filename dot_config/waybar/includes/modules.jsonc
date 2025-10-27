@@ -137,6 +137,15 @@
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 	},
+	"battery#text": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"design-capacity": true,
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
+	},
 	"pulseaudio": {
 		"on-scroll-up": "volumecontrol.sh + 1",
 		"on-scroll-down": "volumecontrol.sh - 1",

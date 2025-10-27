@@ -114,11 +114,11 @@
 				"car-muted": "",
 				"default": ["", "", ""]
 			},
-			"tooltip-format": "{icon} {desc}: {volume}%",
+			"tooltip-format": "{desc}: {volume}%",
     },
     "pulseaudio#text": {
       "format": "<span size='9pt'>{volume:2}</span>",
-      "tooltip": false,
+			"tooltip-format": "{desc}: {volume}%",
     },
 		"niri/workspaces": {
       "cursor": false,
