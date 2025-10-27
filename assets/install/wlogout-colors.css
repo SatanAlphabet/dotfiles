@@ -1,0 +1,9 @@
+@define-color backdrop rgba(255, 247, 251, 0.5);
+@define-color main-bg rgba(255, 247, 251, 1.0);
+@define-color main-fg #1f1a1f;
+
+@define-color act-bg #765084;
+@define-color act-fg #ffffff;
+
+@define-color hvr-bg #69596d;
+@define-color hvr-fg #ffffff;
