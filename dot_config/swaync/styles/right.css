@@ -10,7 +10,6 @@
   --notification-icon-size: 64px;
   --notification-app-icon-size: calc(var(--notification-icon-size) / 4);
   --notification-group-icon-size: 32px;
-  --border: 1px solid var(--noti-border-color);
   --border-radius: 0px;
   /* Deprecated variables (because of their typos). Keeeping them around for backwards compatibility. */
   --hover-tranistion: background 0.15s ease-in-out;
@@ -52,6 +51,13 @@ notificationwindow, blankwindow, blankwindow {
   min-height: 12px;
 }
 
+tooltip {
+  background-color: @main-bg;
+  color: @main-fg;
+  border: .2px solid @dark-border;
+  padding: 1px 2px;
+}
+
 .close-button:hover {
   box-shadow: none;
   background: @act-bg;
@@ -84,8 +90,7 @@ notificationwindow, blankwindow, blankwindow {
 
 .notification-row .notification-background .notification.low {
   /* Low Priority Notification */
-  border: 2px solid @border-col;
-  border-right: 8px solid @border-col;
+  border-color: @border-col;
 }
 
 .notification-row .notification-background .notification.normal {
@@ -94,8 +99,7 @@ notificationwindow, blankwindow, blankwindow {
 
 .notification-row .notification-background .notification.critical {
   /* Critical Priority Notification */
-  border: 2px solid @crit-bg;
-  border-right: 8px solid @crit-bg;
+  border-color: @crit-bg;
 }
 
 .notification-row .notification-background .notification .notification-default-action {
@@ -338,7 +342,7 @@ notificationwindow, blankwindow, blankwindow {
   background: @main-bg;
   color: @main-fg;
   border-radius: 0;
-  padding: 5px;
+  padding: 8px;
   border: 2px solid @dark-border;
 }
 
@@ -394,18 +398,18 @@ notificationwindow, blankwindow, blankwindow {
 .widget-title > button {
   margin-left: 8px;
   border-radius: var(--border-radius);
-  background-color: @main-bg-alt;
+  background-color: @pill-bg;
   color: @main-fg;
-  box-shadow: inset 0 0 0 1px @border-col;
+  box-shadow: inset 0 0 0 .5px @border-col;
   padding: 6px 12px;
 }
 
 .widget-title > button:hover {
-  box-shadow: inset 0 0 0 2px @main-fg;
+  box-shadow: inset 0 0 0 1px @main-fg;
 }
 
 .widget-title > button:active {
-  box-shadow: inset 0 0 0 1px @pill-bg;
+  box-shadow: inset 0 0 0 .5px @pill-bg;
   background-color: @act-bg;
   color: @main-bg-alt;
 }
@@ -419,7 +423,6 @@ notificationwindow, blankwindow, blankwindow {
 
 .widget-dnd switch {
   border-radius: var(--border-radius);
-  margin-left: 8px;
   background: @main-bg-alt;
   border: 0.5px solid @border-col;
 }
@@ -442,74 +445,112 @@ notificationwindow, blankwindow, blankwindow {
 :root {
   --mpris-album-art-overlay: rgba(0, 0, 0, 0.55);
   --mpris-button-hover: rgba(0, 0, 0, 0.5);
-  --mpris-album-art-icon-size: 96px;
-  --mpris-album-art-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+  --mpris-album-art-icon-size: 64px;
 }
 
 .widget-mpris {
-  padding: 0;
+  background: @pill-bg;
+  padding: 4px 8px;
   /* The parent to all players */
 }
 
 .widget-mpris .widget-mpris-player {
-  margin: 16px 20px;
+  margin: 8px 0px;
   border-radius: var(--border-radius);
-  box-shadow: var(--mpris-album-art-shadow);
+  box-shadow: none;
 }
 
 .widget-mpris .widget-mpris-player .mpris-background {
-  filter: blur(10px);
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay {
-  padding: 16px;
-  background-color: var(--mpris-album-art-overlay);
+  padding: 0px;
+  background-color: @pill-bg;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay button {
+  /* The media player buttons (play, pause, next, etc...) */
+  padding: 5px;
+  background: @inact-bg;
+  border-radius: 100%;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay button:hover {
-  /* The media player buttons (play, pause, next, etc...) */
-  background: var(--noti-bg-hover);
+  background-color: @hvr-border;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-album-art {
   border-radius: var(--border-radius);
-  box-shadow: var(--mpris-album-art-shadow);
   -gtk-icon-size: var(--mpris-album-art-icon-size);
+  margin-bottom: 12px;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-title {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.25rem;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay > box > button {
   /* Change player control buttons */
+  background: @inact-bg;
+  margin: 0px;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay > box > button:hover {
-  background-color: var(--mpris-button-hover);
+  background-color: @hvr-border;
 }
 
 .widget-mpris > box > button {
-  /* Change player side buttons */
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .widget-mpris > box > button:disabled {
   /* Change player side buttons insensitive */
+  color: @hvr-border;
 }
 
 /* Buttons widget */
+
+.widget-buttons-grid {
+  background-color: @pill-bg;
+  padding: 2px 4px;
+}
+
+
 .widget-buttons-grid flowboxchild > button {
   border-radius: var(--border-radius);
+  border: .3px solid @border-col;
+  transition: all 0s;
+  padding: 2px 0px;
+  margin: 4px;
+  background-color: @main-bg;
 }
 
 .widget-buttons-grid flowboxchild > button.toggle:checked {
   /* style given to the active toggle button */
+  background-color: @act-bg;
+  color: @act-fg;
 }
+
+.widget-buttons-grid flowboxchild > button:hover {
+  background-color: @hvr-border;
+  border-color: @main-fg;
+  color: @main-fg-alt;
+}
+
+.widget-buttons-grid flowboxchild > button:active {
+  background-color: @act-bg;
+  color: @act-fg;
+}
+
 
 /* Menubar widget */
 .widget-menubar {
@@ -566,16 +607,50 @@ notificationwindow, blankwindow, blankwindow {
 
 /* Volume widget */
 :root {
-  --widget-volume-row-icon-size: 24px;
+  --widget-volume-row-icon-size: 16px;
 }
 
 /* Each row app icon */
+
+.widget-backlight,
+.widget-volume {
+  background-color: @pill-bg;
+  padding: 4px 12px;
+}
+
+.widget-backlight {
+  margin-top: 0px;
+}
+
+.widget-volume {
+  margin-bottom: 0px;
+}
+
+.widget-backlight trough,
+.widget-volume trough {
+  background-color: @main-bg-alt;
+  min-height: 3px;
+  margin-left: 8px;
+}
+
+.widget-backlight slider,
+.widget-volume slider {
+  background-color: @main-bg;
+  min-height: 3px;
+  min-width: 15px;
+}
+
+.widget-backlight highlight,
+.widget-volume highlight {
+  background-color: @act-bg;
+  min-height: 3px;
+}
+
 .widget-volume row image {
   -gtk-icon-size: var(--widget-volume-row-icon-size);
 }
 
 .per-app-volume {
-  background-color: var(--noti-bg-alt);
   margin: 8px;
   margin-bottom: 0;
   border-radius: var(--border-radius);

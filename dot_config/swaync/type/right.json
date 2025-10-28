@@ -9,40 +9,46 @@
 	"fit-to-screen": true,
 	"control-center-height": 600,
   "notification-window-width": 400,
-  "notification-window-height": 500,
   "notification-2fa-action": false,
 	"cssPriority": "user",
 	"widgets": ["title", "inhibitor", "dnd", "notifications"],
 	"widget-config": {
 		"volume": {
-			"label": " "
+			"label": "󰕾",
+      "show-per-app": true,
+      "expand-button-label": " 󰅀 ",
+      "collapse-button-label": " 󰅃 "
 		},
+    "backlight": {
+      "label": "󰌵",
+      "device": "amdgpu_bl2"
+    },
+    "mpris": {
+      "autohide": true,
+      "blacklist": ["playerctld"]
+    },
 		"buttons-grid": {
-			"buttons-per-row": 3,
+			"buttons-per-row": 4,
 			"actions": [
 				{
-					"label": "⏻",
-					"command": "~/.scripts/logoutlaunch.sh"
+					"label": "󰖩",
+          "type": "toggle",
+					"command": "kitty -1 nmtui",
+          "update-command": "[ $(nmcli n) = 'enabled' ] && echo true || echo false"
 				},
 				{
-					"label": "󰌧",
-					"command": "~/.scripts/rofilaunch.sh"
-				},
-				{
-					"label": "",
-					"command": "~/.scripts/cliphist-niri.sh"
-				},
-				{
-					"label": "",
-					"command": " kitty -1 nmtui"
-				},
-				{
-					"label": "",
+					"label": "󰂯",
 					"command": "blueman-manager"
 				},
 				{
 					"label": "󰸉",
 					"command": "waypaper"
+				},	
+        {
+					"label": "",
+          "type": "toggle",
+					"command": "nightlight.sh",
+					"update-command": "pgrep -x wlsunset && echo 'true' || echo 'false'"
 				}
 			]
 		}
