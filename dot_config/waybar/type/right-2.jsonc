@@ -14,7 +14,7 @@
     ],
 		"modules-left": [
       "custom/launcher",
-      "niri/workspaces"
+      "niri/workspaces",
     ],
 		"modules-center": [
 			"clock",
@@ -54,11 +54,21 @@
       },
     },
     "custom/nightlight": {
+      "justify": "center",
       "format": "{icon}",
       "tooltip-format": "Night Light: <b>{icon} {text}</b>",
       "format-icons": {
         "active": "󰽥",
         "default": "󰖨"
+      },
+    },
+    "custom/idle": {
+      "justify": "center",
+      "format": "{icon}",
+      "tooltip-format": "Idle Inhibitor: <b>{icon} {text}</b>",
+      "format-icons": {
+        "active": "󰈉",
+        "default": "󰈈"
       },
     },
 		"custom/launcher": {
