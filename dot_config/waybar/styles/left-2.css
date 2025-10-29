@@ -173,15 +173,11 @@ window#waybar #tray {
 }
 
 /*
-#custom-swaync {
+#custom-swaync.dnd-inhibited-notification,
+#custom-swaync.dnd-notification,
+#custom-swaync.inhibited-notification,
+#custom-swaync.notification {
   color: @act-bg;
-  transition: all 0.5s;
-}
-
-#custom-swaync.dnd-none,
-#custom-swaync.none {
-  color: @main-fg;
-  transition: all 0.5s;
 }
 */
 
