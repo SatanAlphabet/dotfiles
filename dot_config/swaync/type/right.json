@@ -11,16 +11,16 @@
   "notification-window-width": 400,
   "notification-2fa-action": false,
 	"cssPriority": "user",
-	"widgets": ["title", "inhibitor", "dnd", "notifications"],
+	"widgets": ["title", "dnd", "notifications"],
 	"widget-config": {
 		"volume": {
 			"label": "󰕾",
-      "show-per-app": true,
+      "show-per-app": false,
       "expand-button-label": " 󰅀 ",
       "collapse-button-label": " 󰅃 "
 		},
     "backlight": {
-      "label": "󰌵",
+      "label": "󰖙",
       "device": "amdgpu_bl2"
     },
     "mpris": {

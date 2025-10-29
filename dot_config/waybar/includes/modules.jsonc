@@ -81,7 +81,7 @@
 			"format": {
 				"months": "<b>{}</b>",
 				"weekdays": "<b>{}</b>",
-				"today": "<b>{}</b>"
+				"today": "<b><u>{}</u></b>"
 			}
 		},
 		"actions": {
