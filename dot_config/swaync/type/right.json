@@ -32,9 +32,7 @@
 			"actions": [
 				{
 					"label": "󰖩",
-          "type": "toggle",
-					"command": "kitty -1 nmtui",
-          "update-command": "[ $(nmcli n) = 'enabled' ] && echo true || echo false"
+					"command": "kitty -1 nmtui"
 				},
 				{
 					"label": "󰂯",
