@@ -141,7 +141,7 @@ window#waybar #workspaces {
 
 #workspaces button.active {
 	padding: 12px 0px;
-	margin: 4px 6px;
+	margin: 3px 6px;
 	background: @act-bg;
 	color: @main-bg;
 	opacity: 1;
