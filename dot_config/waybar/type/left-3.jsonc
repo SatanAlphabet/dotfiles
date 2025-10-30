@@ -17,7 +17,6 @@
       "niri/workspaces"
     ],
 		"modules-center": [
-			"clock",
 		],
 		"modules-right": [
 			"mpris",
@@ -27,7 +26,7 @@
       "group/pill#battery",
       "group/pill#audio",
       "network",
-      "niri/language",
+			"clock",
     ],
     "group/pill#battery": {
       "orientation": "inherit",
@@ -142,7 +141,8 @@
     },
 		"clock": {
       "justify": "center",
-			"format": "{:%H\n%M\n--\n%m\n%d}",
+			"format": "{:%H\n%M}",
+			"format-alt": "<b>{:%H\n%M</b>\n--\n%m\n%d}",
 			"tooltip-format": "<span>{calendar}</span>",
     },
     "custom/swaync": {

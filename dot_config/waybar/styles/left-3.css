@@ -1,0 +1,257 @@
+* {
+  font-family: "CaskaydiaCove Nerd Font Propo";
+  font-size: 10px;
+}
+
+window#waybar {
+	box-shadow: none;
+	text-shadow: none;
+	background: @main-bg;
+	color: @main-fg;
+}
+
+window#waybar.main .module {
+	background: @pill-bg;
+	margin: 0px 8px;
+	padding: 4px 0px;
+	border-radius: 20px;
+}
+
+window#waybar #pill {
+	background: @pill-bg;
+  margin: 0px 8px;
+	border-radius: 20px;
+}
+
+window#waybar #pill:hover,
+window#waybar .module:hover {
+  box-shadow: 0px 0px 0px .1px @act-bg inset;
+  background: @pill-hvr-bg;
+}
+
+window#waybar #language:hover,
+window#waybar #custom-launcher:hover,
+window#waybar #pill .module:hover,
+window#waybar #workspaces:hover {
+  box-shadow: inherit;
+}
+
+window#waybar #workspaces:hover {
+  background: @pill-bg;
+}
+
+tooltip {
+	background: @main-bg;
+	color: @main-fg;
+  border: 1px solid @border-outline;
+}
+
+tooltip label {
+  font-size: 11px;
+	color: @main-fg;
+}
+
+menu {
+  background: @main-bg;
+  color: @main-fg;
+  border: 1px solid @border-outline;
+}
+
+menuitem {
+  color: @main-fg;
+}
+
+menuitem label {
+  font-size: 12px;
+  font-family: "Inter Variable";
+}
+
+menuitem:hover {
+  background: @pill-bg;
+}
+
+#pulseaudio,
+#custom-sysupdate,
+#custom-nightlight,
+#custom-idle,
+#custom-swaync,
+#mpris,
+#backlight,
+#bluetooth,
+#network,
+#battery {
+	font-size: 16px;
+}
+
+window#waybar .modules-left {
+	margin-top: 10px;
+}
+
+window#waybar .modules-right {
+	margin-bottom: 10px;
+}
+
+window#waybar #custom-launcher {
+	font-size: 20px;
+	background: transparent;
+	color: @act-bg;
+}
+
+#battery.warning {
+	color: @hvr-bg;
+}
+
+#battery.critical {
+	color: @crit-bg;
+}
+
+window#waybar #custom-seperator-vertical {
+	font-size: 13px;
+	margin: -8px 0px;
+	opacity: 0.3;
+	background: transparent;
+}
+
+window#waybar #workspaces {
+	margin: 0px 8px;
+  border-radius: 30px;
+}
+
+#workspaces button {
+	text-shadow: none;
+	box-shadow: none;
+	min-width: 0px;
+	min-height: 0px;
+	color: transparent;
+	background: @hvr-bg;
+	border-radius: 10px;
+	padding: 3px 0px;
+	margin: 6px 9px;
+	transition: all 0s;
+	opacity: 0.6;
+}
+
+#workspaces button label {
+  font-weight: 800;
+	font-size: 0px;
+}
+
+#workspaces button.empty {
+}
+
+#workspaces button.active {
+	padding: 12px 0px;
+	margin: 3px 6px;
+	background: @act-bg;
+	color: @main-bg;
+	opacity: 1;
+}
+
+#workspaces button.active label {
+  font-size: 11px;
+}
+
+#workspaces button:hover {
+	opacity: 1;
+}
+
+#workspaces button.active:hover {
+	color: @main-bg;
+	background: @hvr-bg;
+	opacity: 1;
+}
+
+window#waybar.main #clock {
+  color: @act-bg;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 8px 0px;
+}
+
+window#waybar #tray {
+  padding-top: 8px;
+}
+
+/*
+#custom-swaync.dnd-inhibited-notification,
+#custom-swaync.dnd-notification,
+#custom-swaync.inhibited-notification,
+#custom-swaync.notification {
+  color: @act-bg;
+}
+*/
+
+#pulseaudio.muted,
+#mpris.paused,
+#network.disabled,
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off {
+  color: @inact-fg;
+}
+
+window#waybar #language {
+  color: @hvr-bg;
+	font-size: 15px;
+	font-weight: 600;
+	background: transparent;
+}
+
+/* Adjust margin & padding for modules in pills */
+window#waybar.main #pill .module {
+	background: transparent;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+/* Allows for very thin bar (to be used as borders) */
+window#waybar.top box,
+window#waybar.bottom box {
+	margin: 0px;
+	padding: 0px;
+	border: 0px solid transparent;
+}
+
+window#waybar.outline-left,
+window#waybar.outline-right,
+window#waybar.outline-top,
+window#waybar.outline-bottom {
+  background-color: @border-outline;
+}
+
+window#waybar.time-widget,
+window#waybar.date-widget {
+	background: transparent;
+}
+
+window#waybar.time-widget .module,
+window#waybar.date-widget .module {
+  background: transparent;
+	font-family: "Inter Variable";
+	color: @widget-col;
+}
+
+window#waybar #clock.time {
+	font-size: 72px;
+	font-weight: 600;
+	padding: 25px 0px;
+	margin: 0px 20px;
+  text-shadow: -1px 0px @widget-shadow, 2px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 3px 3px @widget-shadow;
+}
+
+window#waybar #clock.date {
+	font-size: 28px;
+	font-weight: 400;
+	padding: 8px 0px;
+	margin: 0px 20px;
+  text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 2px 2px @widget-shadow;
+}
+
+window#waybar #mpris.widget {
+	font-size: 20px;
+	font-weight: 300;
+	margin: 0px 20px;
+  text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 1.5px 1.5px @widget-shadow;
+}
