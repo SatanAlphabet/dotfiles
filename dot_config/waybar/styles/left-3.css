@@ -30,6 +30,7 @@ window#waybar .module:hover {
 }
 
 window#waybar #language:hover,
+window#waybar #clock:hover,
 window#waybar #custom-launcher:hover,
 window#waybar #pill .module:hover,
 window#waybar #workspaces:hover {
@@ -162,10 +163,10 @@ window#waybar #workspaces {
 }
 
 window#waybar.main #clock {
+  background: transparent;
   color: @act-bg;
 	font-size: 16px;
 	font-weight: 400;
-	padding: 8px 0px;
 }
 
 window#waybar #tray {
