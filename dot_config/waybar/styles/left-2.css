@@ -140,10 +140,10 @@ window#waybar #workspaces {
 }
 
 #workspaces button.active {
-	padding: 12px 0px;
+	padding: 15px 0px;
 	margin: 3px 6px;
 	background: @act-bg;
-	color: @main-bg;
+	color: @act-fg;
 	opacity: 1;
 }
 
