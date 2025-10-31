@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # define paths and files
-cache_dir="$HOME/.cache/niri"
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/niri"
 favorites_file="${cache_dir}/landing/cliphist_favorites"
 [ -f "$HOME/.cliphist_favorites" ] && favorites_file="$HOME/.cliphist_favorites"
 del_mode=false
