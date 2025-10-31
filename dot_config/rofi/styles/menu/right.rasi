@@ -56,7 +56,7 @@ window {
     location:                    east;
     anchor:                      east;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       450px;
     height:                      100%;
     x-offset:                    0px;
     y-offset:                    0px;
