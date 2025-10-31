@@ -25,7 +25,7 @@ window#waybar #pill {
 
 window#waybar #pill:hover,
 window#waybar .module:hover {
-  box-shadow: 0px 0px 0px .1px @act-bg inset;
+  box-shadow: 0px 0px 0px .3px @act-bg inset;
   background: @pill-hvr-bg;
 }
 
