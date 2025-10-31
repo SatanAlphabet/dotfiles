@@ -422,18 +422,26 @@ tooltip {
 }
 
 .widget-dnd switch {
+  padding: 2px;
   border-radius: var(--border-radius);
   background: @main-bg-alt;
-  border: 0.5px solid @border-col;
+  border: 1px solid @border-col;
 }
 
 .widget-dnd>switch:checked {
-  background-color: @act-bg;
+  background: @act-bg;
+  border-color: @act-bg;
 }
 
 .widget-dnd switch slider {
   border-radius: var(--border-radius);
+  background: @border-col;
+  border: 0.5px solid @main-bg-alt;
+}
+
+.widget-dnd>switch:checked slider {
   background: @main-bg;
+  border-color: @act-bg;
 }
 
 /* Label widget */
