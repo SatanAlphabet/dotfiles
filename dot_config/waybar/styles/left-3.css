@@ -133,7 +133,7 @@ window#waybar #workspaces {
 }
 
 #workspaces button label {
-  font-weight: 800;
+  font-weight: 400;
   font-size: 0px;
 }
 
@@ -141,7 +141,7 @@ window#waybar #workspaces {
 
 #workspaces button.active {
   padding: 15px 0px;
-  margin: 3px 6px;
+  margin: 4px 7px;
   background: @act-bg;
   color: @act-fg;
   opacity: 1;
@@ -156,7 +156,6 @@ window#waybar #workspaces {
 }
 
 #workspaces button.active:hover {
-  color: @main-bg;
   background: @hvr-bg;
   opacity: 1;
 }
