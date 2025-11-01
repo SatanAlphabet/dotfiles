@@ -1,7 +1,7 @@
 @define-color main-bg {{colors.surface.default.rgba | set_alpha: 0.999}};
 @define-color main-fg {{colors.on_surface.default.hex}};
 
-@define-color inact-fg {{colors.on_surface.default.rgba | set_alpha: 0.5}};
+@define-color inact-fg {{colors.outline.default.rgba}};
 
 @define-color act-bg {{colors.primary.default.hex}};
 @define-color act-fg {{colors.on_primary.default.hex}};

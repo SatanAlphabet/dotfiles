@@ -6,7 +6,7 @@ layout {
   }
 
   insert-hint {
-    gradient from="{{colors.primary.default.rgba | set_alpha: 0.5}}" to="{{colors.secondary.default.rgba | set_alpha: 0.5}}"
+    gradient from="{{colors.primary.default.hex}}80" to="{{colors.secondary.default.hex}}80"
   }
 
   shadow {
@@ -18,12 +18,4 @@ layout {
 
 overview {
   backdrop-color "{{colors.surface.default.hex}}"
-}
-
-window-rule {
-  match is-floating=true
-
-  border {
-    active-color "{{colors.secondary.default.hex}}"
-  }
 }
