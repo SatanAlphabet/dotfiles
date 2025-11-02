@@ -233,8 +233,8 @@
 		"position": "bottom",
 		"exclusive": false,
 		// "modules-right": ["mpris#widget"],
-		"modules-left": ["clock#date"],
-		"clock#date": {
+		"modules-left": ["clock#widget-date"],
+		"clock#widget-date": {
 			"format": "{:%A, %d %B %Y}",
 			"tooltip": false
 		},
@@ -251,8 +251,8 @@
 		"layer": "bottom",
 		"position": "bottom",
 		"exclusive": false,
-		"modules-left": ["clock#time"],
-		"clock#time": {
+		"modules-left": ["clock#widget-time"],
+		"clock#widget-time": {
 			"format": "{:%I:%M %p}",
 			"tooltip": false
 		}

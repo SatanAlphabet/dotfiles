@@ -17,22 +17,23 @@ window#waybar.main .module {
   border-radius: 20px;
 }
 
-window#waybar #pill {
+window#waybar.main #pill {
   background: @pill-bg;
   margin: 0px 8px;
   border-radius: 20px;
 }
 
-window#waybar #pill:hover,
-window#waybar .module:hover {
+window#waybar.main #pill:hover,
+window#waybar.main .module:hover {
   box-shadow: 0px 0px 0px .3px @act-bg inset;
   background: @pill-hvr-bg;
 }
 
-window#waybar #language:hover,
-window#waybar #custom-launcher:hover,
-window#waybar #pill .module:hover,
-window#waybar #workspaces:hover {
+window#waybar.main #language:hover,
+window#waybar.main #clock:hover,
+window#waybar.main #custom-launcher:hover,
+window#waybar.main #pill .module:hover,
+window#waybar.main #workspaces:hover {
   box-shadow: inherit;
 }
 
@@ -107,8 +108,8 @@ window#waybar #custom-launcher {
 
 window#waybar #custom-seperator-vertical {
   font-size: 13px;
-  margin: -8px 0px;
-  opacity: 0.3;
+  margin: -12px 0px;
+  opacity: 0.5;
   background: transparent;
 }
 
@@ -160,10 +161,19 @@ window#waybar #workspaces {
 }
 
 window#waybar.main #clock {
-  color: @hvr-bg;
+  background: transparent;
   font-size: 16px;
+  padding: 0px;
+}
+
+window#waybar.main #clock.time {
+  font-weight: 300;
+  color: @main-fg;
+}
+
+window#waybar.main #clock.date {
+  color: @act-bg;
   font-weight: 400;
-  padding: 8px 0px;
 }
 
 window#waybar #tray {
@@ -231,7 +241,7 @@ window#waybar.date-widget .module {
   color: @widget-col;
 }
 
-window#waybar #clock.time {
+window#waybar #clock.widget-time {
   font-size: 72px;
   font-weight: 600;
   padding: 25px 0px;
@@ -239,7 +249,7 @@ window#waybar #clock.time {
   text-shadow: -1px 0px @widget-shadow, 2px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 3px 3px @widget-shadow;
 }
 
-window#waybar #clock.date {
+window#waybar #clock.widget-date {
   font-size: 28px;
   font-weight: 400;
   padding: 8px 0px;

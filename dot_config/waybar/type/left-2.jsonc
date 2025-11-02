@@ -17,7 +17,9 @@
       "niri/workspaces"
     ],
 		"modules-center": [
-			"clock",
+			"clock#time",
+      "custom/seperator-vertical",
+			"clock#date",
 		],
 		"modules-right": [
 			"mpris",
@@ -140,9 +142,14 @@
 				"chat": ""
 			},
     },
-		"clock": {
+		"clock#time": {
       "justify": "center",
-			"format": "{:%H\n%M\n--\n%m\n%d}",
+			"format": "{:%H\n%M}",
+			"tooltip-format": "<span>{calendar}</span>",
+    },
+		"clock#date": {
+      "justify": "center",
+			"format": "{:%m\n%d}",
 			"tooltip-format": "<span>{calendar}</span>",
     },
     "custom/swaync": {
@@ -233,8 +240,8 @@
 		"position": "bottom",
 		"exclusive": false,
 		// "modules-left": ["mpris#widget"],
-		"modules-right": ["clock#date"],
-		"clock#date": {
+		"modules-right": ["clock#widget-date"],
+		"clock#widget-date": {
 			"format": "{:%A, %d %B %Y}",
 			"tooltip": false
 		},
@@ -251,8 +258,8 @@
 		"layer": "bottom",
 		"position": "bottom",
 		"exclusive": false,
-		"modules-right": ["clock#time"],
-		"clock#time": {
+		"modules-right": ["clock#widget-time"],
+		"clock#widget-time": {
 			"format": "{:%I:%M %p}",
 			"tooltip": false
 		}
