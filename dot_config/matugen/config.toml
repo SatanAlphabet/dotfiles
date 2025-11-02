@@ -87,6 +87,10 @@ output_path = '~/.config/hypr/colors.conf'
 input_path = './templates/vscode-color-theme.json'
 output_path = '~/.vscode-oss/extensions/matugen-vscode/themes/Matugen-color-theme.json'
 
+[templates.vscode-dark]
+input_path = './templates/vscode-color-theme-dark.json'
+output_path = '~/.vscode-oss/extensions/matugen-vscode-dark/themes/Matugen (Dark)-color-theme.json'
+
 [templates.zen]
 input_path = './templates/userChrome.css'
 output_path = '~/.zen/32k6x2yc.Default (release)/chrome/userChrome.css'
