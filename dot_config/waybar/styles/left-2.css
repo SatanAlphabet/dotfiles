@@ -173,7 +173,7 @@ window#waybar.main #clock.time {
 
 window#waybar.main #clock.date {
   color: @act-bg;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 window#waybar #tray {
