@@ -100,6 +100,44 @@
 			"on-scroll-down": "shift_down"
 		}
 	},
+	"clock#time": {
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"on-scroll": 1,
+			"format": {
+				"months": "<b>{}</b>",
+				"weekdays": "<b>{}</b>",
+				"today": "<b><u>{}</u></b>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
+	"clock#date": {
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"on-scroll": 1,
+			"format": {
+				"months": "<b>{}</b>",
+				"weekdays": "<b>{}</b>",
+				"today": "<b><u>{}</u></b>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
 	"custom/swaync": {
 		"tooltip": true,
 		"return-type": "json",
