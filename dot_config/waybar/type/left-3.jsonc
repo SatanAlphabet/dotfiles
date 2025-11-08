@@ -17,6 +17,7 @@
       "niri/workspaces"
     ],
 		"modules-center": [
+      "wlr/taskbar",
 		],
 		"modules-right": [
 			"mpris",
@@ -28,6 +29,9 @@
       "network",
 			"clock",
     ],
+    "wlr/taskbar": {
+      "tooltip-format": "{name} - {title}",
+    },
     "group/pill#battery": {
       "orientation": "inherit",
       "modules": ["battery", "battery#text"],
