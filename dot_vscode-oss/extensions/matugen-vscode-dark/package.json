@@ -2,7 +2,7 @@
   "name": "matugen-vscode-dark",
   "displayName": "Matugen VSCode (Dark)",
   "description": "Dynamically generated VS Code theme by Matugen (Dark)",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.105.0"
   },
@@ -13,8 +13,9 @@
     "themes": [
       {
         "label": "Matugen (Dark)",
-        "uiTheme": "vs",
-        "path": "./themes/Matugen (Dark)-color-theme.json"
+        "uiTheme": "vs-dark",
+        "path": "./themes/colors.json",
+				"_watch": true
       }
     ]
   }
