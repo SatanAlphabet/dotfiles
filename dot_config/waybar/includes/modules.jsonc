@@ -81,6 +81,11 @@
 		"on-click-middle": "mediacontrol.sh prev",
 		"interval": 1,
 	},
+  "wlr/taskbar": {
+    "on-click": "activate",
+    "on-click-right": "close",
+    "on-click-middle": "maximize",
+  },
 	"clock": {
 		"calendar": {
 			"mode": "month",
