@@ -4,7 +4,10 @@ return {
   opts = {
     display = {
       theme = "catppuccin",
-      flavor = "light",
+      flavor = "accent",
+    },
+    editor = {
+      tooltip = ":3",
     },
   },
 }
