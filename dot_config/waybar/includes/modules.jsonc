@@ -150,7 +150,7 @@
 		"exec-if": "which waybar-module-pacman-updates",
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
 		"on-click": "kitty --class 'sysupdate' --title 'System Update' sysupdate.sh"
-	}
+	},
   "mpris": {
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
