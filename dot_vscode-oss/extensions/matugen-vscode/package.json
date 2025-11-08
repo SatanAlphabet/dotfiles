@@ -2,7 +2,8 @@
   "name": "matugen-vscode",
   "displayName": "Matugen VSCode",
   "description": "Dynamically generated VS Code theme by Matugen",
-  "version": "1.0.0",
+	"publisher": "SatanAlphabet",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.104.0"
   },
@@ -14,7 +15,13 @@
       {
         "label": "Matugen",
         "uiTheme": "vs",
-        "path": "./themes/colors.json",
+        "path": "./themes/light.json",
+				"_watch": true
+      },
+      {
+        "label": "Matugen (Dark)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark.json",
 				"_watch": true
       }
     ]
