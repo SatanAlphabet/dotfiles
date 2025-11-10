@@ -47,6 +47,10 @@ post_hook = 'pgrep -x kitty && pkill -SIGUSR1 kitty'
 input_path = './templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
 
+[templates.rmpc]
+input_path = './templates/rmpc.ron'
+output_path = '~/.config/rmpc/themes/matugen.ron'
+
 [templates.niri]
 input_path = './templates/niri-matugen.kdl'
 output_path = '~/.config/niri/matugen-colors.kdl'
