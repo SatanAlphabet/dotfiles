@@ -18,7 +18,7 @@ _install_confirm() {
   fi
 }
 
-services=(waybar swaync swayidle overview-blur wl-clip-persist niriusd wl-paste polkit-niri)
+services=(waybar swaync swayidle waypaper overview-blur wl-clip-persist niriusd wl-paste polkit-niri)
 if _install_confirm "Add necessary systemd services? [Y/n] " -eq 0; then
   echo -e "===>  Adding necessary user services..."
   systemctl --user daemon-reload
