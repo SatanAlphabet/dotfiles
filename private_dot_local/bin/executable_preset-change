@@ -37,7 +37,7 @@ ln -sf "$config_dir/swaync/styles/$new_preset.css" "$config_dir/swaync/style.css
 ln -sf "$config_dir/rofi/styles/menu/$new_preset.rasi" "$config_dir/rofi/menu.rasi"
 
 # Reloads necessary software
-pgrep -x waybar >/dev/null && systemctl --user restart waybar
+pgrep -x waybar >/dev/null && systemctl --user reload waybar
 pgrep -x swaync >/dev/null && systemctl --user reload swaync
 
 notify-send -e -t 3000 "New preset loaded..." "Current preset: $1"
