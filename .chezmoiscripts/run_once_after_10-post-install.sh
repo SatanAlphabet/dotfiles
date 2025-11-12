@@ -64,6 +64,10 @@ if _install_confirm "Setup missing auto-generated colors? [Y/n] " -eq 0; then
   cp "$pkg_path/rofi-colors.rasi" "$HOME/.config/rofi/colors.rasi" && echo -e "===>  Copied rofi colors..."
 fi
 
+if _install_confirm "Install VSCode themes for matugen? [Y/n] " -eq 0; then
+  codium --install-extension "$pkg_path/matugen-vscode-1.1.0.vsix" && echo -e "===>  Theme installed successfully..."
+fi
+
 if _install_confirm "Setup waypaper config? [Y/n] " -eq 0; then
   echo -e "===>  Copying default background to wallpaper directory... (${wall_path})"
   mkdir -p "$wall_path/"
