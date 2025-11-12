@@ -113,11 +113,6 @@ window#waybar #custom-seperator-vertical {
   background: transparent;
 }
 
-window#waybar #workspaces {
-  margin: 0px 8px;
-  border-radius: 30px;
-}
-
 #workspaces button {
   text-shadow: none;
   box-shadow: none;
