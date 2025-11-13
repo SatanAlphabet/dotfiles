@@ -32,8 +32,8 @@ binds {
   XF86AudioPause       allow-when-locked=true { spawn "mediacontrol.sh" "toggle"; }
   XF86AudioPrev        allow-when-locked=true { spawn "mediacontrol.sh" "prev"; }
   XF86AudioNext        allow-when-locked=true { spawn "mediacontrol.sh" "next"; }
-  Mod+Menu hotkey-overlay-title="Switch to next keyboard layout" { spawn "layout-toggle.sh" "next"; }
-  Mod+Shift+Menu hotkey-overlay-title="Switch to previous keyboard layout" { spawn "layout-toggle.sh" "prev"; }
+  Mod+Menu allow-when-locked=true hotkey-overlay-title="Switch to next keyboard layout" { spawn "layout-toggle.sh" "next"; }
+  Mod+Shift+Menu allow-when-locked=true hotkey-overlay-title="Switch to previous keyboard layout" { spawn "layout-toggle.sh" "prev"; }
 
   Mod+Alt+X repeat=false { toggle-overview; }
 
