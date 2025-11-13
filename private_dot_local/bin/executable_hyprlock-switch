@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+config_path="${XDG_CONFIG_HOME:-$HOME/.config}/hypr"
+layout_path="$config_path/hyprlock"
+
+if [ ! -f "$layout_path/$1.conf" ]; then
+  echo "Error: \"$layout_path/$1.conf\" not found." >&2
+  exit 1
+else
+  ln -sf "$layout_path/$1.conf" "$config_path/hyprlock-layout.conf" && echo -e "Switched hyprlock layout: $1"
+fi
