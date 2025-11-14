@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 dbus-update-activation-environment --systemd --all
 systemctl --user import-environment QT_QPA_PLATFORMTHEME
