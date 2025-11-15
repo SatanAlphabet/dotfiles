@@ -54,9 +54,10 @@ index=$((average_capacity / 10))
 # Charging icons from 0% to 100% (last icons repeated to fill 11 levels)
 charging_icons=(" " " " " " " " " " " " " " " " " " " " " ")
 discharging_icons=("󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹")
-status_icons=("" "X" "󰂇") # Add appropriate icons for different statuses
+status_icons=("󰂇" "X" "") # Add appropriate icons for different statuses
 
 battery_status=$(cat "$battery_path/status")
+[ "$battery_status" = "Not charging" ] && battery_status="Plugged"
 
 # Parse format options
 formats=("$@")
@@ -65,10 +66,10 @@ formats=("$@")
 output_format() {
   case "$1" in
   icon)
-    if [[ "$battery_status" == "Charging" ]]; then
-      echo -n "${charging_icons[$index]} "
-    else
+    if [ "$battery_status" = "Discharging" ]; then
       echo -n "${discharging_icons[$index]} "
+    else
+      echo -n "${charging_icons[$index]} "
     fi
     ;;
   percentage)
@@ -85,7 +86,7 @@ output_format() {
     "Charging")
       echo -n "${status_icons[0]} "
       ;;
-    "Not Charging")
+    "Discharging")
       echo -n "${status_icons[1]} "
       ;;
     *)
