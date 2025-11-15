@@ -159,7 +159,8 @@ window#waybar #custom-seperator-vertical {
 window#waybar.main #clock {
   background: transparent;
   font-size: 16px;
-  font-family: "Roboto";
+  font-family: "Inter Variable";
+  font-feature-settings: "tnum";
   padding: 0px;
 }
 
