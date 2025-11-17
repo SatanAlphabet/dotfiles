@@ -105,8 +105,8 @@ window-rule {
 /// --- Layer rules --- ///
 
 layer-rule {
-    match namespace="^wallpaper$"
-    match namespace="^swww-daemonoverview$"
+  match namespace="^wallpaper$"
+  match namespace="^swww-daemonoverview$"
 
-    place-within-backdrop true
+  place-within-backdrop true
 }
