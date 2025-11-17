@@ -1,0 +1,19 @@
+recent-windows {
+  open-delay-ms 200
+  highlight {
+    padding 30
+    corner-radius 0
+  }
+
+  previews {
+    max-height 540
+    max-scale 0.5
+  }
+
+  binds {
+    Alt+Tab { next-window; }
+    Alt+Shift+Tab { previous-window; }
+    Alt+Grave { next-window filter="app-id"; }
+    Alt+Shift+Grave { previous-window filter="app-id"; }
+  }
+}

@@ -19,3 +19,10 @@ layout {
 overview {
   backdrop-color "{{colors.surface.default.hex}}"
 }
+
+recent-windows {
+  highlight {
+    active-color "{{colors.primary.dark.hex}}"
+    urgent-color "{{colors.error.dark.hex}}"
+  }
+}

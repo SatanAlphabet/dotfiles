@@ -35,6 +35,7 @@ binds {
   Mod+Menu allow-when-locked=true hotkey-overlay-title="Switch to next keyboard layout" { spawn "layout-toggle.sh" "next"; }
   Mod+Shift+Menu allow-when-locked=true hotkey-overlay-title="Switch to previous keyboard layout" { spawn "layout-toggle.sh" "prev"; }
 
+  Mod+Tab repeat=false { toggle-overview; }
   Mod+Alt+X repeat=false { toggle-overview; }
 
   Mod+Q repeat=false { close-window; }
