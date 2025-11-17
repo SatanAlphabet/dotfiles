@@ -14,7 +14,7 @@ binds {
   Mod+Alt+L repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
   Mod+Alt+B repeat=false hotkey-overlay-title="Toggle waybar visibility" { spawn "pkill" "-SIGUSR1" "waybar"; }
   Mod+Alt+P repeat=false hotkey-overlay-title="Pick color" { spawn "colorpick.sh";}
-  Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn "themechange.sh"; }
+  Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn-sh "themechange.sh \"$(waypaper --list | jq -r '.[].wallpaper')\" "; }
   Mod+Alt+N repeat=false hotkey-overlay-title="Toggle night light" { spawn "nightlight.sh"; }
   Mod+Alt+I repeat=false hotkey-overlay-title="Toggle idle innhibitor" { spawn "idle-inhibit.sh"; }
   Mod+Alt+V repeat=false hotkey-overlay-title="Calculator" { spawn "calc.sh"; }
