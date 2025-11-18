@@ -19,8 +19,9 @@ if [[ "$1" != "$(readlink -f "$cache_dir/niri/landing/background")" ]]; then
   magick "$1" -blur 20x10 "${blur_img}"
   # waypaper doesn't work properly with multiple swww-daemon instances
   # swww img -n overview --transition-duration 2 -t fade "${blur_img}"
+  notify-send -e -r 2 -t 2000 "Wallpaper switch successful..." "Current Wallpaper: $(basename "$1")"
 else
-  echo "Same wallpaper found. Skipping matugen & caching..."
+  echo "Same wallpaper detected. Skipping matugen & caching..."
 fi
+
 systemctl --user restart overview-blur.service
-notify-send -e -r 2 -t 2000 "Wallpaper switch successful..." "Current Wallpaper: $(basename "$1")"
