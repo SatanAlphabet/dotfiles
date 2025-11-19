@@ -39,7 +39,7 @@ case "$1" in
 'next')
   if media_check -eq 0; then
     playerctl next 2>/dev/null
-    notify-send -e -r 1 -t 1500 'Playing next track...'
+    notify-send -e -r 1 -t 1500 'Playing next track...' -i media-skip-forward
   else
     no_media_notif
   fi
@@ -47,7 +47,7 @@ case "$1" in
 'prev')
   if media_check -eq 0; then
     playerctl previous 2>/dev/null
-    notify-send -e -r 1 -t 1500 'Playing previous track...'
+    notify-send -e -r 1 -t 1500 'Playing previous track...' -i media-skip-backward
   else
     no_media_notif
   fi
@@ -57,9 +57,9 @@ case "$1" in
     media_data="$(playerctl metadata title)"
     playerctl play-pause
     if [[ ${status} = 'Playing' ]]; then
-      notify-send -e -r 1 -t 1500 "Paused media [ 󰏤 ]" "$media_data" -h int:value:"$(media_progress)"
+      notify-send -e -r 1 -t 1500 "Paused media..." "$media_data" -h int:value:"$(media_progress)" -i media-playback-pause
     elif [[ ${status} = 'Paused' ]]; then
-      notify-send -e -r 1 -t 1500 "Playing media [ 󰝚 ]" "$media_data" -h int:value:"$(media_progress)"
+      notify-send -e -r 1 -t 1500 "Playing media..." "$media_data" -h int:value:"$(media_progress)" -i media-playback-start
     fi
   else
     no_media_notif
