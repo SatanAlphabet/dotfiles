@@ -77,19 +77,12 @@ window-rule {
 
 window-rule {
   match app-id="^dropdown$"
+  match title="^gsr notify$"
 
   open-floating true
   default-floating-position x=0 y=16 relative-to="top"
   default-window-height { proportion 0.5; }
   default-column-width { proportion 0.5; }
-}
-
-window-rule {
-  match title="^gsr notify$"
-
-  open-floating true
-  open-focused false
-  default-floating-position x=8 y=8 relative-to="top"
 }
 
 window-rule {
