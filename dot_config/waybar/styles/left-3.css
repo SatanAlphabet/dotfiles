@@ -191,7 +191,8 @@ window#waybar.main #clock {
 }
 
 window#waybar #tray {
-  padding-top: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 /*

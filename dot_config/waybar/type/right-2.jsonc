@@ -189,8 +189,8 @@
 			},
     },
     "tray": {
-		  "icon-size": 15,
-		  "spacing": 10
+		  "icon-size": 16,
+		  "spacing": 10,
 	  },
 		"bluetooth": {
       "justify": "center",
