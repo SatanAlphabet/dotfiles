@@ -85,6 +85,14 @@ window-rule {
 }
 
 window-rule {
+  match title="^gsr notify$"
+
+  open-floating true
+  open-focused false
+  default-floating-position x=8 y=8 relative-to="top"
+}
+
+window-rule {
   match app-id=r#"^org\.keepassxc\.KeePassXC$"#
   match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
