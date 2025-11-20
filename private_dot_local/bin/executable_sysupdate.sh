@@ -15,7 +15,7 @@ echo -e """
         """
 if ! paru -Syu; then
   failed_update=true
-  pkg_text=" - Failed to update system packages."
+  pkg_text=" [!] Failed to update system packages."
 fi
 echo -e """
 
@@ -24,7 +24,7 @@ echo -e """
         """
 if ! flatpak update; then
   failed_update=true
-  flatpak_text=" - Failed to update flatpak packages."
+  flatpak_text=" [!] Failed to update flatpak packages."
 fi
 echo -e """
 
@@ -33,15 +33,15 @@ echo -e """
         """
 if ! sudo checkservices; then
   failed_update=true
-  post_upd_text=" - Failed to run post-service checks."
+  post_upd_text=" [!] Failed to run post-service checks."
 fi
 
 notif_msg="$pkg_text\n$flatpak_text\n$post_upd_text"
 
 if [ "$failed_update" ]; then
-  notify-send 'System update failed...' "$notif_msg" -a 'System Update' -u critical
+  notify-send 'System update failed...' "$notif_msg" -a 'System Update' -u critical -i dialog-warning-symbolic
 else
-  notify-send 'System update completed...' "$notif_msg" -a 'System Update'
+  notify-send 'System update completed...' "$notif_msg" -a 'System Update' -i object-select-symbolic
 fi
 
 read -r -n 1 -p 'Press any key to exit...'
