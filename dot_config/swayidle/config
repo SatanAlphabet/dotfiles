@@ -5,6 +5,6 @@ timeout 900 'niri msg action power-off-monitors' resume 'niri msg action power-o
 timeout 1200 'systemctl suspend'
 
 lock 'if ! pgrep -x hyprlock; then hyprlock && loginctl unlock-session; fi'
-unlock 'notify-send "Session unlocked..." "Welcome back, ${USER}." -e -a "Session"'
+unlock 'notify-send "Session unlocked..." "Welcome back, ${USER}." -e -a "Session" -i changes-allow-symbolic'
 
 before-sleep 'loginctl lock-session'
