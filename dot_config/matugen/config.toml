@@ -46,6 +46,7 @@ post_hook = 'pgrep -x kitty && pkill -SIGUSR1 kitty'
 [templates.btop]
 input_path = './templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = "pkill -USR2 btop"
 
 [templates.rmpc]
 input_path = './templates/rmpc.ron'
