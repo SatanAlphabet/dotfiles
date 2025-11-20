@@ -110,8 +110,8 @@ body {
   --accent-1: {{colors.tertiary.default.hex}};            /* links */
 	--accent-2: {{colors.primary.default.hex}};             /* general unread/mention elements, some icons when active */
 	--accent-3: {{colors.primary.default.hex}};             /* accent buttons */
-	--accent-4: {{colors.surface_bright.default.hex}};      /* accent buttons when hovered */
-	--accent-5: {{colors.primary_fixed_dim.default.hex}};   /* accent buttons when clicked */
+	--accent-4: {{colors.secondary.default.hex}};      /* accent buttons when hovered */
+	--accent-5: {{colors.tertiary.default.hex}};   /* accent buttons when clicked */
 	--accent-new: {{colors.error.default.hex}};
   --mention: linear-gradient(
       to right,
@@ -149,7 +149,7 @@ body {
 	--bg-4: {{colors.surface.default.hex}};                             /* main background color */
 	--hover: {{colors.surface_container_low.default.hex}};                     /* channels and buttons when hovered */
 	--active: {{colors.surface_container.default.hex}};                    /* channels and buttons when clicked or selected */
-	--message-hover: {{colors.surface_bright.default.hex}};             /* messages when hovered */
+	--message-hover: {{colors.surface_container.default.hex}};             /* messages when hovered */
 
   /* border colors */
   --border-light: {{colors.surface_container_highest.default.hex}}; /* light border color */
