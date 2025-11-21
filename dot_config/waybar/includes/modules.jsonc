@@ -12,6 +12,11 @@
 			"warning": 30,
 			"critical": 15
 		},
+    "events": {
+      "on-discharging-warning": "notify-send -a 'Battery' 'Low Battery...' 'Please plug in your device.' -i battery-caution-symbolic",
+      "on-discharging-critical": "notify-send -a 'Battery' -u critical 'Critical Battery...' 'System shutting down in 1 minute.' -i battery-level-0-symbolic; shutdown",
+      "on-charging-100": "notify-send -e -a 'Battery' 'Battery full...' 'Battery capacity at maximum level.' -i battery-level-100-charged-symbolic"
+    },
 		"design-capacity": true,
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
