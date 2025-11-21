@@ -3,5 +3,5 @@ show_hidden = true
 
 [opener]
 edit = [
-	{ run = 'nvim "$@"', block = true, for = "unix" },
+	{ run = '$EDITOR "$@"', block = true, for = "unix" },
 ]
