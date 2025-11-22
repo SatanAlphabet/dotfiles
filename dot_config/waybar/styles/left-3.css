@@ -1,6 +1,6 @@
 * {
   font-family: "CaskaydiaCove Nerd Font Propo";
-  font-size: 10px;
+  font-size: 16px;
 }
 
 window#waybar {
@@ -70,19 +70,6 @@ menuitem label {
 
 menuitem:hover {
   background: @pill-bg;
-}
-
-#pulseaudio,
-#custom-sysupdate,
-#custom-nightlight,
-#custom-idle,
-#custom-swaync,
-#mpris,
-#backlight,
-#bluetooth,
-#network,
-#battery {
-  font-size: 16px;
 }
 
 window#waybar .modules-left {
