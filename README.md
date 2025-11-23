@@ -11,7 +11,7 @@ A comfy setup built on [niri](https://github.com/YaLTeR/niri "A scrollable-tilin
 - This setup is managed by `chezmoi`. Install [chezmoi](https://www.chezmoi.io/) and proceed to install the setup using the following commands
 
       chezmoi init SatanAlphabet
-       chezmoi apply
+      chezmoi apply
 
   This will additionally run a script to install necessary packages on your first time running `chezmoi apply`.  
   **Note that the install script only supports Arch-based distros and is currently untested on a minimal setup.**
