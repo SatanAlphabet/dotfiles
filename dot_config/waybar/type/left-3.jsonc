@@ -34,7 +34,7 @@
     },
     "group/pill#battery": {
       "orientation": "inherit",
-      "modules": ["battery", "battery#text"],
+      "modules": ["battery", "battery#hover-text"],
       "drawer": {
         "transition-left-to-right": false,
         "transition-duration": 300,
@@ -42,7 +42,7 @@
     },
     "group/pill#audio": {
       "orientation": "inherit",
-      "modules": ["pulseaudio", "pulseaudio#text"],
+      "modules": ["pulseaudio", "pulseaudio#hover-text"],
       "drawer": {
         "transition-left-to-right": false,
         "transition-duration": 300,
@@ -50,7 +50,7 @@
     },
     "group/pill#backlight": {
       "orientation": "inherit",
-      "modules": ["backlight", "backlight#text"],
+      "modules": ["backlight", "backlight#hover-text"],
       "drawer": {
         "transition-left-to-right": false,
         "transition-duration": 300,
@@ -89,9 +89,9 @@
       },
 			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
     },
-		"battery#text": {
+		"battery#hover-text": {
       "justify": "center",
-			"format": "<span size='9pt'>{capacity:2}</span>",
+			"format": "{capacity:2}",
 		  "design-capacity": true,
 			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
   		"on-scroll-up": "true",
@@ -103,9 +103,9 @@
 			"format-icons": ["", "", "", "", "", "", "", "", ""],
 			"tooltip-format": "{icon} Backlight level: {percent}%",
     },
-		"backlight#text": {
+		"backlight#hover-text": {
       "justify": "center",
-      "format": "<span size='9pt'>{percent:2}</span>",
+      "format": "{percent:2}",
 			"tooltip-format": "{icon} Backlight level: {percent}%",
     },
 		"pulseaudio": {
@@ -129,8 +129,8 @@
 			},
 			"tooltip-format": "{desc}: {volume}%",
     },
-    "pulseaudio#text": {
-      "format": "<span size='9pt'>{volume:2}</span>",
+    "pulseaudio#hover-text": {
+      "format": "{volume:2}",
 			"tooltip-format": "{desc}: {volume}%",
     },
 		"niri/workspaces": {

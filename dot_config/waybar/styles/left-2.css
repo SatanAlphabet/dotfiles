@@ -71,6 +71,10 @@ menuitem:hover {
   background: @pill-bg;
 }
 
+.hover-text {
+  font-size: 11px;
+}
+
 window#waybar .modules-left {
   margin-top: 10px;
 }

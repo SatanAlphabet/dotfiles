@@ -3,7 +3,3 @@
   text-shadow: none;
   box-shadow: none;
 }
-
-tooltip label {
-  color: @main-fg;
-}

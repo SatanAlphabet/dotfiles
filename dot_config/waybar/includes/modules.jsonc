@@ -3,7 +3,7 @@
 		"on-scroll-up": "brightnesscontrol.sh + 1",
 		"on-scroll-down": "brightnesscontrol.sh - 1"
 	},
-	"backlight#text": {
+	"backlight#hover-text": {
 		"on-scroll-up": "brightnesscontrol.sh + 1",
 		"on-scroll-down": "brightnesscontrol.sh - 1"
 	},
@@ -21,7 +21,7 @@
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 	},
-	"battery#text": {
+	"battery#hover-text": {
 		"states": {
 			"warning": 30,
 			"critical": 15
@@ -220,7 +220,7 @@
 		"on-click-right": "volumecontrol.sh toggle-mute",
 		"scroll-step": 1,
 	},
-	"pulseaudio#text": {
+	"pulseaudio#hover-text": {
 		"on-scroll-up": "volumecontrol.sh + 1",
 		"on-scroll-down": "volumecontrol.sh - 1",
 		"on-click": "pavucontrol-qt -t 3",
