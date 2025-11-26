@@ -37,7 +37,7 @@ window#waybar.main #workspaces:hover {
   box-shadow: inherit;
 }
 
-window#waybar #workspaces:hover {
+window#waybar.main #workspaces:hover {
   background: @pill-bg;
 }
 
@@ -71,33 +71,45 @@ menuitem:hover {
   background: @pill-bg;
 }
 
-.hover-text {
-  font-size: 11px;
-}
-
-window#waybar .modules-left {
+window#waybar.main .modules-left {
   margin-top: 10px;
 }
 
-window#waybar .modules-right {
+window#waybar.main .modules-right {
   margin-bottom: 10px;
 }
 
-window#waybar #custom-launcher {
+window#waybar.main .hover-text {
+  font-size: 11px;
+}
+
+window#waybar.main #custom-launcher {
   font-size: 20px;
   background: transparent;
   color: @act-bg;
 }
 
-#battery.warning {
+window#waybar.main #custom-launcher:hover {
   color: @hvr-bg;
 }
 
-#battery.critical {
+.warning {
+  color: @hvr-bg;
+}
+
+.critical {
   color: @crit-bg;
 }
 
-window#waybar #custom-seperator-vertical {
+.muted,
+.paused,
+.disabled,
+.disconnected,
+.off {
+  color: @inact-fg;
+}
+
+window#waybar.main #custom-seperator-vertical {
   font-size: 13px;
   margin: -12px 0px;
   opacity: 0.5;
@@ -165,7 +177,7 @@ window#waybar.main #clock.date {
   font-weight: 300;
 }
 
-window#waybar #tray {
+window#waybar.main #tray {
   padding-top: 6px;
   padding-bottom: 6px;
 }
@@ -179,20 +191,15 @@ window#waybar #tray {
 }
 */
 
-#pulseaudio.muted,
-#mpris.paused,
-#network.disabled,
-#network.disconnected,
-#bluetooth.disabled,
-#bluetooth.off {
-  color: @inact-fg;
-}
-
-window#waybar #language {
+window#waybar.main #language {
   color: @hvr-bg;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
   background: transparent;
+}
+
+window#waybar.main #language:hover {
+  font-weight: 800;
 }
 
 /* Adjust margin & padding for modules in pills */
@@ -202,14 +209,6 @@ window#waybar.main #pill .module {
   padding-right: 0px;
   margin-left: 0px;
   margin-right: 0px;
-}
-
-/* Allows for very thin bar (to be used as borders) */
-window#waybar.top box,
-window#waybar.bottom box {
-  margin: 0px;
-  padding: 0px;
-  border: 0px solid transparent;
 }
 
 window#waybar.outline-left,
