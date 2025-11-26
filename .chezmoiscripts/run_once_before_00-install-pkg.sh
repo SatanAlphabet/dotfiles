@@ -17,13 +17,14 @@ _install_confirm() {
 }
 
 if ! command -v paru &>/dev/null; then
-  echo -e "===>  paru is not installed. Installing paru..."
-  sudo pacman -S --needed base-devel
-  git clone https://aur.archlinux.org/paru-bin.git ./paru
-  cd paru || exit 1
-  makepkg -si
-  cd ..
-  rm -rf paru
+  if _install_confirm "===>  paru is not installed. Install paru? [Y/n] " -eq 0; then
+    echo -e "===>  Installing paru..."
+    sudo pacman -S --needed base-devel
+    git clone https://aur.archlinux.org/paru-bin.git tmp/paru
+    cd /tmp/paru || exit 1
+    makepkg -si
+    cd ~ || exit 1
+  fi
 else
   echo -e "===>  paru is installed. Skipping..."
 fi
