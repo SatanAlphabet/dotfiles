@@ -3,7 +3,7 @@
 echo -e "===>  Starting post-setup configuration..."
 echo -e "NOTE: This should be run inside niri to work properly."
 
-pkg_path="$HOME/.local/share/chezmoi/assets/install"
+pkg_path="{{ .chezmoi.sourceDir }}/assets/install"
 wall_path="$HOME/Pictures/Wallpaper"
 
 _install_confirm() {

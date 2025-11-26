@@ -11,8 +11,6 @@ breeze
 breeze5
 brightnessctl
 btop
-btrfs-assistant
-cantarell-fonts
 cava
 chafa
 chezmoi
@@ -34,9 +32,7 @@ git
 github-cli
 gnome-keyring
 gst-plugin-pipewire
-gtk-engine-murrine
 gwenview
-hypridle
 hyprlock
 i2c-tools
 imagemagick
@@ -51,7 +47,6 @@ libpulse
 libqalculate
 man-db
 man-pages
-mate-polkit
 neovim
 network-manager-applet
 networkmanager
@@ -63,13 +58,13 @@ pacutils
 pamixer
 parallel
 pavucontrol-qt
-phonon-qt6
 pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
 playerctl
 powertop
+polkit-kde-agent
 qt5-graphicaleffects
 qt5-imageformats
 qt5-quickcontrols
@@ -88,6 +83,7 @@ swww
 tree
 ttf-cascadia-code-nerd
 ttf-jetbrains-mono-nerd
+ttf-roboto
 udiskie
 unzip
 vim
