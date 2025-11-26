@@ -1,6 +1,6 @@
 /**
  * @name Midnight (Matugen)
- * @description A dark, rounded discord theme.
+ * @description Modified template based on midnigh.
  * @author refact0r
  * @version 1.6.2
  * @invite nz87hXyvcy
@@ -58,8 +58,6 @@ body {
   /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
   --chatbar-height: 47px;
   /* height of the chatbar (52px by default, 47px recommended for aligned, 56px recommended for separated) */
-  --chatbar-padding: 8px;
-  /* padding of the chatbar. only applies in aligned mode. */
 
   /* other options */
   --small-user-panel: off;
@@ -68,10 +66,10 @@ body {
   /* dms button options */
   --custom-dms-icon: custom;
   /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
-  --dms-icon-svg-url: url('https://refact0r.github.io/midnight-discord/assets/Font_Awesome_5_solid_moon.svg');
+  --dms-icon-svg-url: url('https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/discord-logo.svg');
   /* icon svg url. MUST BE A SVG. */
   /* Arch logo: https://www.vectorlogo.zone/logos/archlinux/archlinux-icon.svg */
-  --dms-icon-svg-size: 90%;
+  --dms-icon-svg-size: 100%;
   /* size of the svg (css mask-size property) */
   --dms-icon-color-before: var(--icon-secondary);
   /* normal icon color */
@@ -115,22 +113,22 @@ body {
 	--accent-new: {{colors.error.default.hex}};
   --mention: linear-gradient(
       to right,
-      color-mix(in hsl, {{colors.primary_container.default.hex}}, transparent 60%) 50%,
+      color-mix(in hsl, {{colors.primary_container.default.hex}}, transparent 80%) 40%,
       transparent
   ); /* background of messages that mention you */
   --mention-hover: linear-gradient(
       to right,
-      color-mix(in hsl, {{colors.primary_container.default.hex}}, transparent 75%) 50%,
+      color-mix(in hsl, {{colors.primary_container.default.hex}}, transparent 90%) 40%,
       transparent
   ); /* background of messages that mention you when hovered */
   --reply: linear-gradient(
       to right,
-      color-mix(in hsl, {{colors.tertiary_container.default.hex}}, transparent 60%) 50%,
+      color-mix(in hsl, {{colors.tertiary_container.default.hex}}, transparent 80%) 40%,
       transparent
   ); /* background of messages that reply to you */
   --reply-hover: linear-gradient(
       to right,
-      color-mix(in hsl, {{colors.tertiary_container.default.hex}}, transparent 75%) 50%,
+      color-mix(in hsl, {{colors.tertiary_container.default.hex}}, transparent 90%) 40%,
       transparent
   ); /* background of messages that reply to you when hovered */
 
@@ -143,7 +141,7 @@ body {
 	--text-5: {{colors.outline.default.hex}};               /* muted channels/chats and timestamps */
 
 	/* background and default colors */
-  --bg-1: {{colors.primary.default.hex}};                             /* dark buttons when clicked */
+  --bg-1: {{colors.primary_container.default.hex}};                             /* dark buttons when clicked */
 	--bg-2: {{colors.surface_container_high.default.hex}};              /* dark buttons */
 	--bg-3: {{colors.surface_container_low.default.hex}};               /* spacing, secondary elements */
 	--bg-4: {{colors.surface.default.hex}};                             /* main background color */
@@ -154,6 +152,7 @@ body {
   /* border colors */
   --border-light: {{colors.surface_container_highest.default.hex}}; /* light border color */
   --border: {{colors.surface_container_highest.default.hex}}; /* normal border color */
+  --border-hover: {{colors.surface_container_highest.default.hex}}; /*  border color of panels when hovered */
   --button-border: {{colors.surface_container_high.default.hex}}; /* neutral border color of buttons */
 
 }
