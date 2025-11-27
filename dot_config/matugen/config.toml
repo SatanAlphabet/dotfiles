@@ -34,14 +34,10 @@ output_path = '~/.config/vesktop/themes/midnight-matugen.css'
 input_path = './templates/system24-discord.css'
 output_path = '~/.config/vesktop/themes/system24-matugen.css'
 
-[templates.kitty-dark]
-input_path = './templates/kitty-dark.conf'
-output_path = '~/.config/kitty/dark-theme.auto.conf'
-
-[templates.kitty-light]
-input_path = './templates/kitty-light.conf'
-output_path = '~/.config/kitty/light-theme.auto.conf'
-post_hook = 'pgrep -x kitty && pkill -SIGUSR1 kitty'
+[templates.kitty]
+input_path = './templates/kitty.conf'
+output_path = '~/.config/kitty/matugen-theme.conf'
+post_hook = 'pkill -USR1 kitty'
 
 [templates.btop]
 input_path = './templates/btop.theme'
