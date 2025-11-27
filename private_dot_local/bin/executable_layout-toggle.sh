@@ -14,4 +14,4 @@ case "$1" in
 esac
 
 current_layout=$(niri msg -j keyboard-layouts | jq -r '.names[.current_idx]')
-notify-send -a "keyboard-layout" -r 1 -e -t 2000 "Current layout: $current_layout"
+notify-send -a "keyboard-layout" -r 1 -e -t 2000 "Current layout: $current_layout" -i input-keyboard-symbolic
