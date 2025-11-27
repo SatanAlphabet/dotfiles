@@ -7,7 +7,7 @@ pkg_text=" - System packages updated."
 flatpak_text=" - Flatpak packages updated."
 post_upd_text=" - Post-update checks completed."
 
-fastfetch
+fastfetch.sh
 echo -e """
 
  ${ORANGE}===>${NC}  Beginning system update...
