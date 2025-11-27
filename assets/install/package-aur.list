@@ -1,7 +1,6 @@
 bibata-cursor-theme-bin
 darkly-bin
 downgrade
-matugen-bin
 nirius
 paccache-hook
 python-pywalfox
@@ -13,7 +12,7 @@ vesktop-bin
 vscodium-bin
 vscodium-bin-marketplace
 waybar-module-pacman-updates-git
-waypaper-git
+waypaper
 wlogout
 xdg-terminal-exec
 zen-browser-bin

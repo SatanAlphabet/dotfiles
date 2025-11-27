@@ -20,10 +20,11 @@ if ! command -v paru &>/dev/null; then
   if _install_confirm "===>  paru is not installed. Install paru? [Y/n] " -eq 0; then
     echo -e "===>  Installing paru..."
     sudo pacman -S --needed base-devel
-    git clone https://aur.archlinux.org/paru-bin.git tmp/paru
-    cd /tmp/paru || exit 1
-    makepkg -si --noconfirm
-    cd {{ .chezmoi.commandDir }} || exit 1
+    git clone https://aur.archlinux.org/paru-bin.git /tmp/paru
+    (
+      cd /tmp/paru/ || exit 1
+      makepkg -si
+    )
   fi
 else
   echo -e "===>  paru is installed. Skipping..."
@@ -31,12 +32,12 @@ fi
 
 if _install_confirm "Install base packages? [Y/n] " -eq 0; then
   echo -e "\n===>  Installing base packages...\n"
-  paru -S --needed --noconfirm - <"$pkg_path/package.list"
+  paru -S --needed $(cat "$pkg_path/package.list")
 fi
 
 if _install_confirm "Install AUR packages? [Y/n] " -eq 0; then
   echo -e "\n===>  Installing AUR packages...\n"
-  paru -S --needed --noconfirm - <"$pkg_path/package-aur.list"
+  paru -S --needed $(cat "$pkg_path/package-aur.list")
 fi
 
 if _install_confirm "Switch shell to zsh? [Y/n] " -eq 0; then
