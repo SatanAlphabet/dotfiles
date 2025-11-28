@@ -91,7 +91,7 @@
     },
 		"battery#hover-text": {
       "justify": "center",
-			"format": "{capacity:2}",
+			"format": "{capacity}",
 		  "design-capacity": true,
 			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
   		"on-scroll-up": "true",
@@ -105,7 +105,7 @@
     },
 		"backlight#hover-text": {
       "justify": "center",
-      "format": "{percent:2}",
+      "format": "{percent}",
 			"tooltip-format": "{icon} Backlight level: {percent}%",
     },
 		"pulseaudio": {
@@ -130,7 +130,8 @@
 			"tooltip-format": "{desc}: {volume}%",
     },
     "pulseaudio#hover-text": {
-      "format": "{volume:2}",
+      "justify": "center",
+      "format": "{volume}",
 			"tooltip-format": "{desc}: {volume}%",
     },
 		"niri/workspaces": {
