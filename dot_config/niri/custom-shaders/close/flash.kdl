@@ -1,0 +1,44 @@
+animations {
+  window-close {
+    duration-ms 500
+    curve "ease-out-quad"
+    custom-shader r"
+
+      vec4 close_color(vec3 coords_geo, vec3 size_geo) {
+        float p = niri_clamped_progress;
+
+        float vertical_shrink = smoothstep(0.0, 0.5, p);
+        float horizontal_shrink = smoothstep(0.5, 0.8, p);
+
+        // change the 0.0015 to a larger value if you want the bar to be thicker
+        vec2 scale = max(vec2(1.0 - horizontal_shrink, 1.0 - vertical_shrink), 0.0025);
+
+        vec2 centered_coords = coords_geo.xy - 0.5;
+        vec2 scaled_coords = centered_coords / scale;
+
+        vec4 color = vec4(0.0);
+
+        // this will only affect the area inside the scale
+        if (abs(scaled_coords.x) <= 0.5 && abs(scaled_coords.y) <= 0.5) {
+          vec3 sample_coords_geo = vec3(scaled_coords + 0.5, 1.0);
+          vec3 coords_tex = niri_geo_to_tex * sample_coords_geo;
+          color = texture2D(niri_tex, coords_tex.st);
+
+          float flash_intensity = 0.4 / (1.0 - p);
+          color.rgb += flash_intensity;
+        }
+
+        // this is the glowing dot in the middle!!
+        if (p > 0.5) {
+          float collapse_progress = (vertical_shrink + horizontal_shrink);
+          float glow = pow(1.0 - length(centered_coords), 200.0) * collapse_progress * 3.0;
+          color.rgb += glow;
+        }
+
+        // fade out at the end
+        color *= (1.0 - smoothstep(0.8, 1.0, p));
+
+        return color;
+      }"
+  }
+}
