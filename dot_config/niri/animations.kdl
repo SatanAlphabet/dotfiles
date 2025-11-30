@@ -35,5 +35,5 @@ animations {
   }
 }
 
-include "custom-shaders/close/fall-and-rotate.kdl"
+include "custom-shaders/close/slide-to-top.kdl"
 include "custom-shaders/open/slide-from-top.kdl"
