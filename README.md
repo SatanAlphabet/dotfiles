@@ -14,9 +14,7 @@ A comfy setup built on [niri](https://github.com/YaLTeR/niri "A scrollable-tilin
       chezmoi apply
 
   This will additionally run a script to install necessary packages on your first time running `chezmoi apply`.  
-  **Note that the install script only supports Arch-based distros and is currently untested on a minimal setup.**
-
-- `niri-git` may be required for config [`include`](https://yalter.github.io/niri/Configuration%3A-Include.html) to work.
+  **Note that the install script only supports Arch-based distros.**
 
 ---
 
