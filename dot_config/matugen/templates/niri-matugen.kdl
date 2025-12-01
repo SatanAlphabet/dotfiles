@@ -9,6 +9,10 @@ layout {
     gradient from="{{colors.primary.default.hex}}80" to="{{colors.secondary.default.hex}}80"
   }
 
+  tab-indicator {
+    inactive-color "{{colors.primary_container.default.hex}}"
+  }
+
   shadow {
     color "{{colors.shadow.default.rgba | set_alpha: 0.7 }}"
   }
