@@ -11,7 +11,7 @@ animations {
       vec3 coords_tex = niri_geo_to_tex * coords_geo;
       vec4 color = texture2D(niri_tex, coords_tex.st);
 
-      return color;
+      return color * (1.0 - progress);
     }
     vec4 close_color(vec3 coords_geo, vec3 size_geo) {
       return slide_to_top(coords_geo, size_geo);
