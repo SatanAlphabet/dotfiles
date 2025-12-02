@@ -125,10 +125,10 @@ window#waybar.main #custom-seperator-vertical {
   color: transparent;
   background: @hvr-bg;
   border-radius: 10px;
-  padding: 3px 0px;
-  margin: 6px 9px;
+  padding: 4px 0px;
+  margin: 6px 8px;
   transition: all 0s;
-  opacity: 0.6;
+  opacity: 1.0;
 }
 
 #workspaces button label {
@@ -137,7 +137,9 @@ window#waybar.main #custom-seperator-vertical {
   font-size: 0px;
 }
 
-#workspaces button.empty {}
+#workspaces button.empty {
+  opacity: 0.5;
+}
 
 #workspaces button.active {
   padding: 12px 0px;
