@@ -41,23 +41,24 @@ for capacity in /sys/class/power_supply/BAT*/capacity; do
   fi
 done
 
-# Exit if no battery is found
 if ((battery_count == 0)); then
-  exit 0
+  average_capacity="-- "
+  battery_status="No battery"
+  no_battery=true
+else
+  # Determine the icon based on average capacity
+  average_capacity=$((total_capacity / battery_count))
+  index=$((average_capacity / 10))
+
+  # Define icons for charging, discharging, and status
+  # Charging icons from 0% to 100% (last icons repeated to fill 11 levels)
+  charging_icons=("" "" "" "" "" "" "" "" "" "" "")
+  discharging_icons=("󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹")
+  status_icons=("󰂇" "X" "󰁹" "") # Add appropriate icons for different statuses
+
+  battery_status=$(cat "$battery_path/status")
+  [ "$battery_status" = "Not charging" ] && battery_status="Plugged"
 fi
-
-# Determine the icon based on average capacity
-average_capacity=$((total_capacity / battery_count))
-index=$((average_capacity / 10))
-
-# Define icons for charging, discharging, and status
-# Charging icons from 0% to 100% (last icons repeated to fill 11 levels)
-charging_icons=("" "" "" "" "" "" "" "" "" "" "")
-discharging_icons=("󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹")
-status_icons=("󰂇" "X" "󰁹" "") # Add appropriate icons for different statuses
-
-battery_status=$(cat "$battery_path/status")
-[ "$battery_status" = "Not charging" ] && battery_status="Plugged"
 
 # Parse format options
 formats=("$@")
@@ -66,10 +67,14 @@ formats=("$@")
 output_format() {
   case "$1" in
   icon)
-    if [ "$battery_status" = "Discharging" ]; then
-      echo -n "${discharging_icons[$index]} "
+    if ! no_battery; then
+      echo -n "󱉝"
     else
-      echo -n "${charging_icons[$index]} "
+      if [ "$battery_status" = "Discharging" ]; then
+        echo -n "${discharging_icons[$index]} "
+      else
+        echo -n "${charging_icons[$index]} "
+      fi
     fi
     ;;
   percentage)
@@ -91,6 +96,9 @@ output_format() {
       ;;
     "Full")
       echo -n "${status_icons[2]} "
+      ;;
+    "No battery")
+      echo -n "󱉝 "
       ;;
     *)
       echo -n "${status_icons[3]} "
