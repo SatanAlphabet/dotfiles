@@ -3,19 +3,16 @@
 * {
   all: unset;
   font-size: 16px;
-  font-family: "Inter Display, JetBrainsMono Nerd Font Propo";
+  font-family: "Inter Display, CaskaydiaCove Nerd Font Propo";
 }
 
 :root {
   --notification-icon-size: 64px;
   --notification-app-icon-size: calc(var(--notification-icon-size) / 4);
-  --notification-group-icon-size: 32px;
+  --notification-group-icon-size: 24px;
   --border-radius: 0px;
-  /* Deprecated variables (because of their typos). Keeeping them around for backwards compatibility. */
-  --hover-tranistion: background 0.15s ease-in-out;
-  --group-collapse-tranistion: opacity 400ms ease-in-out;
-  --hover-transition: var(--hover-tranistion);
-  --group-collapse-transition: var(--group-collapse-tranistion);
+  --hover-transition: background 0.15s ease-in-out;
+  --group-collapse-transition: opacity 400ms ease-in-out;
 }
 
 /* Fallback for older CSS themes */
@@ -78,7 +75,7 @@ tooltip {
 
 .notification-row .notification-background .notification {
   /* The actual notification */
-  border-radius: 0;
+  border-radius: var(--border-radius);
   border: 2px solid @act-bg;
   border-left: 8px solid @act-bg;
   padding: 8px;
@@ -123,7 +120,7 @@ tooltip {
 
 .notification-row .notification-background .notification .notification-default-action .notification-content {
   background: transparent;
-  border-radius: 0;
+  border-radius: var(--border-radius);
   padding: 0;
 }
 
@@ -131,7 +128,7 @@ tooltip {
   /* Notification Primary Image */
   -gtk-icon-filter: none;
   -gtk-icon-size: var(--notification-icon-size);
-  border-radius: 0px;
+  border-radius: var(--border-radius);
   /* Size in px */
   margin-right: 16px;
   margin-left: 8px;
@@ -181,19 +178,19 @@ tooltip {
   margin-top: 4px;
   min-height: 10px;
   filter: none;
-  border-radius: 0;
+  border-radius: var(--border-radius);
 }
 
 .notification trough {
   min-height: 10px;
   background-color: @main-bg-alt;
-  border-radius: 0;
+  border-radius: var(--border-radius);
 }
 
 .notification progress {
   min-height: 10px;
   background-color: @act-bg;
-  border-radius: 0;
+  border-radius: var(--border-radius);
 }
 
 .notification.low progress {
@@ -230,13 +227,13 @@ tooltip {
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button:disabled {
   background: initial;
-  color: var(--text-color-disabled);
-  border: var(--border);
+  color: @inact-bg;
+  border: 1px solid @main-fg-alt;
   border-color: transparent;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button:hover {
-  background: var(--noti-bg-hover);
+  background: @main-bg-alt;
 }
 
 .notification-row .notification-background .notification .notification-alt-actions {
@@ -254,10 +251,16 @@ tooltip {
 
 .notification-row .notification-background .notification .notification-action > button {
   padding: 2px;
-  border-radius: 0;
+  border-radius: var(--border-radius);
+  background: @pill-bg;
   color: @main-fg;
   border: 1px solid @main-fg-alt;
 }
+
+.notification-row .notification-background .notification.critical .notification-action > button {
+  border-color: @crit-bg;
+}
+
 .notification-row .notification-background .notification .notification-action > button:hover {
   transition: 200ms;
   background: @main-bg-alt;
@@ -342,7 +345,7 @@ tooltip {
   /* The Control Center which contains the old notifications + widgets */
   background: @main-bg;
   color: @main-fg;
-  border-radius: 0;
+  border-radius: var(--border-radius);
   padding: 8px;
   border: 2px solid @dark-border;
 }
@@ -363,7 +366,7 @@ tooltip {
 
 .control-center .control-center-list .notification .notification-default-action,
 .control-center .control-center-list .notification .notification-action {
-  transition: var(--group-collapse-tranistion), var(--hover-tranistion);
+  transition: var(--group-collapse-transition), var(--hover-transition);
 }
 
 .control-center .control-center-list .notification .notification-default-action:hover,
