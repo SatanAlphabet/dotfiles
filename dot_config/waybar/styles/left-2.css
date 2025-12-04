@@ -153,12 +153,12 @@ window#waybar.main #custom-seperator-vertical {
 }
 
 #workspaces button:hover {
+  background: @act-bg;
   opacity: 1;
 }
 
 #workspaces button.active:hover {
   background: @hvr-bg;
-  opacity: 1;
 }
 
 window#waybar.main #clock {
