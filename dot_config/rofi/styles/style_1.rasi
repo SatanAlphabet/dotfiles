@@ -118,14 +118,14 @@ textbox-prompt-colon {
     margin:                      0px;
     expand:                      false;
     str:                         "";
-    background-color:            @border;
+    background-color:            @alternate-background;
     text-color:                  inherit;
 }
 entry {
     enabled:                     true;
     margin:                      0px;
     padding:                     5px 10px;
-    background-color:            @border;
+    background-color:            @alternate-background;
     text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Search...";
