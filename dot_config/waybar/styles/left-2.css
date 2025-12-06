@@ -62,6 +62,10 @@ menuitem {
   color: @main-fg;
 }
 
+menuitem arrow {
+  color: @hvr-bg;
+}
+
 menuitem label {
   font-size: 12px;
   font-family: "Inter Variable";
@@ -69,6 +73,10 @@ menuitem label {
 
 menuitem:hover {
   background: @pill-bg;
+}
+
+menuitem:hover arrow {
+  color: @act-bg;
 }
 
 window#waybar.main .modules-left {
