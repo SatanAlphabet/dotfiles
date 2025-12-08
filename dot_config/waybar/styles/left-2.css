@@ -102,7 +102,7 @@ window#waybar.main #custom-launcher:hover {
 }
 
 .warning {
-  color: @hvr-bg;
+  color: @ter-bg;
 }
 
 .critical {
