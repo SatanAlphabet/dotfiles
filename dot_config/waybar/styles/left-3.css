@@ -146,12 +146,14 @@ window#waybar.main #custom-seperator-vertical {
 }
 
 #workspaces button.empty {
-  opacity: 0.5;
+  background: transparent;
+  border: 1.5px solid @hvr-bg;
 }
 
 #workspaces button.active {
   padding: 12px 0px;
   margin: 6px 7px;
+  border: none;
   background: @act-bg;
   color: @act-fg;
   opacity: 1;
