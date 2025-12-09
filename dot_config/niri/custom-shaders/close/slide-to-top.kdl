@@ -1,6 +1,6 @@
 animations {
   window-close {
-    duration-ms 500
+    duration-ms 300
     curve "ease-out-cubic"
     custom-shader r"
     vec4 slide_to_top(vec3 coords_geo, vec3 size_geo) {
