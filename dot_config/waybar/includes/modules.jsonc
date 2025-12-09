@@ -92,6 +92,22 @@
 			"on-scroll-down": "shift_down"
 		}
 	},
+  "cpu": {
+    "states": {
+      "warning": 60,
+      "critical": 90,
+    },
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
+  },
+  "cpu#hover-text": {
+    "states": {
+      "warning": 60,
+      "critical": 90,
+    },
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
+  },
   "custom/idle": {
     "return-type": "json",
     "signal": 7,
@@ -156,6 +172,22 @@
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
 		"on-click": "kitty --class 'sysupdate' --title 'System Update' sysupdate.sh"
 	},
+  "memory": {
+    "states": {
+      "warning": 70,
+      "critical": 90,
+    },
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
+  },
+  "memory#hover-text": {
+    "states": {
+      "warning": 70,
+      "critical": 90,
+    },
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
+  },
   "mpris": {
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
@@ -227,6 +259,18 @@
 		"on-click-right": "volumecontrol.sh toggle-mute",
 		"scroll-step": 1,
 	},
+  "temperature": {
+    "warning-threshold": 75,
+    "critical-threshold": 90,
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
+  },
+  "temperature#hover-text": {
+    "warning-threshold": 75,
+    "critical-threshold": 90,
+		"on-scroll-up": "true",
+		"on-scroll-down": "true",
+  },
   "wlr/taskbar": {
     "on-click": "activate",
     "on-click-right": "close",
