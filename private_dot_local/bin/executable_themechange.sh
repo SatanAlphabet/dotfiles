@@ -1,23 +1,50 @@
 #!/bin/bash
 
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
-wallpaper="$1"
 
-if [ ! -f "$wallpaper" ]; then
-  echo "Error: image $1 was not found."
-  exit 1
-fi
+change_theme() {
 
-if [ "$current_theme" = "'prefer-dark'" ]; then
+  if [ ! -f "$1" ]; then
+    echo "Error: image '$1' was not found."
+    exit 1
+  fi
 
-  gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-  matugen image "$wallpaper" -m light
-  notify-send -e -t 3000 "Switched to light mode..." -i weather-clear-symbolic
+  if [ "$current_theme" = "'prefer-dark'" ]; then
 
-elif [ "$current_theme" = "'prefer-light'" ]; then
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+    matugen image "$1" -m light
+    notify-send -e -t 3000 "Switched to light mode..." -i weather-clear-symbolic
 
-  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-  matugen image "$wallpaper" -m dark
-  notify-send -e -t 3000 "Switched to dark mode..." -i weather-clear-night-symbolic
+  elif [ "$current_theme" = "'prefer-light'" ]; then
 
-fi
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    matugen image "$1" -m dark
+    notify-send -e -t 3000 "Switched to dark mode..." -i weather-clear-night-symbolic
+
+  fi
+
+}
+
+while true; do
+  case "$1" in
+  -t | --theme)
+    case "$2" in
+    "dark")
+      current_theme="'prefer-light'"
+      ;;
+    "light")
+      current_theme="'prefer-dark'"
+      ;;
+    *)
+      echo "Invalid options: (Valid options are 'dark' and 'light')"
+      exit 1
+      ;;
+    esac
+    shift 2
+    ;;
+  *)
+    change_theme "$1"
+    break
+    ;;
+  esac
+done
