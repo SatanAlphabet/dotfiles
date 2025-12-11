@@ -99,6 +99,28 @@
         </child>
 
         <child>
+            <object class="GtkMenuItem" id="record">
+                <property name="label">Record</property>
+            <child type="submenu">
+                <object class="GtkMenu">
+
+                    <child>
+                        <object class="GtkMenuItem" id="record-screen">
+                            <property name="label">Record Screen</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="GtkMenuItem" id="record-region">
+                            <property name="label">Record Region</property>
+                        </object>
+                    </child>
+
+                </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
             <object class="GtkSeparatorMenuItem" id="delimiter-1" />
         </child>
 

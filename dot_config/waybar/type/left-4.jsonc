@@ -22,6 +22,7 @@
       "niri/workspaces"
 		],
 		"modules-right": [
+      "custom/screen-recorder",
 			"mpris",
       "custom/sysupdate",
       "tray",
@@ -68,6 +69,16 @@
       "drawer": {
         "transition-left-to-right": false,
         "transition-duration": 300,
+      },
+    },
+    "custom/screen-recorder": {
+      "justify": "center",
+      "hide-empty-text": true,
+      "format": "{icon}",
+      "tooltip-format": "Screen Recorder: <b>{text}</b>\n<b>Right Click</b>: Record Region",
+      "format-icons": {
+        "recording": "󰯜",
+        "default": ""
       },
     },
     "custom/nightlight": {

@@ -135,6 +135,8 @@
 			"logout": "niri msg action quit -s",
 			"wallpaper-random": "waypaper --random --backend swww",
 			"wallpaper-select": "waypaper",
+			"record-screen": "screen-record.sh",
+			"record-region": "screen-record.sh region",
 			"theme": "themechange.sh",
 			"nightlight": "nightlight.sh",
 			"niri": "xdg-open https://github.com/YaLTeR/niri"
@@ -152,6 +154,7 @@
     "return-type": "json",
     "signal": 6,
     "on-click": "screen-record.sh",
+    "on-click-right": "screen-record.sh region",
     "exec": "~/.config/waybar/scripts/waybar-screen-recorder.sh",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
