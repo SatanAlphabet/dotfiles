@@ -164,7 +164,7 @@ window#waybar.main #custom-seperator-vertical {
 
 #workspaces button:hover {
   background: @act-bg;
-  opacity: 1;
+  border-color: @act-bg;
 }
 
 #workspaces button.active:hover {

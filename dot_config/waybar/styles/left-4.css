@@ -164,12 +164,12 @@ window#waybar.main #custom-seperator-vertical {
 }
 
 #workspaces button:hover {
-  opacity: 1;
+  background: @act-bg;
+  border-color: @act-bg;
 }
 
 #workspaces button.active:hover {
   background: @hvr-bg;
-  opacity: 1;
 }
 
 window#waybar.main #taskbar {
