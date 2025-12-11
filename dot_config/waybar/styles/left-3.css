@@ -106,6 +106,7 @@ window#waybar.main #custom-launcher:hover {
   color: @ter-bg;
 }
 
+.recording,
 .critical {
   color: @crit-bg;
 }

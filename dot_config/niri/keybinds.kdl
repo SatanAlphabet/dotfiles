@@ -19,6 +19,7 @@ binds {
   Mod+Alt+N repeat=false hotkey-overlay-title="Toggle night light" { spawn "nightlight.sh"; }
   Mod+Alt+I repeat=false hotkey-overlay-title="Toggle idle innhibitor" { spawn "idle-inhibit.sh"; }
   Mod+Alt+V repeat=false hotkey-overlay-title="Calculator" { spawn "calc.sh"; }
+  Mod+Alt+R repeat=false hotkey-overlay-title="Toggle screen recording" { spawn "screen-record.sh"; }
   // Nirius specific binds for browser & wallpaper
   Mod+B repeat=false hotkey-overlay-title="Web Browser" { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
   Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
