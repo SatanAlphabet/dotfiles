@@ -10,6 +10,7 @@ window#waybar {
   color: @main-fg;
 }
 
+window#waybar.main #privacy,
 window#waybar.main .module {
   background: @pill-bg;
   margin: 0px 8px;
@@ -23,6 +24,7 @@ window#waybar.main #pill {
   border-radius: 20px;
 }
 
+window#waybar.main #privacy:hover,
 window#waybar.main #pill:hover,
 window#waybar.main .module:hover {
   box-shadow: 0px 0px 0px .5px @act-bg inset;
@@ -210,6 +212,7 @@ window#waybar.main #clock:hover {
   font-weight: 600;
 }
 
+window#waybar.main #privacy,
 window#waybar.main #tray {
   padding-top: 6px;
   padding-bottom: 6px;
