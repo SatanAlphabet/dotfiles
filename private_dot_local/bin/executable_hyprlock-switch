@@ -3,9 +3,35 @@
 config_path="${XDG_CONFIG_HOME:-$HOME/.config}/hypr"
 layout_path="$config_path/hyprlock"
 
-if [ ! -f "$layout_path/$1.conf" ]; then
-  echo "Error: \"$layout_path/$1.conf\" not found." >&2
-  exit 1
-else
+_change_hyprlock() {
+  if [ ! -f "$layout_path/$1.conf" ]; then
+    echo "Error: \"$layout_path/$1.conf\" not found." >&2
+    return 1
+  fi
+
   ln -sf "$layout_path/$1.conf" "$config_path/hyprlock-layout.conf" && echo -e "Switched hyprlock layout: $1"
+}
+
+_select_from_rofi() {
+  mapfile -t files < <(
+    find "$layout_path" -maxdepth 1 -type f -name "*.conf" -print0 | xargs -0 -I{} basename "{}" .conf
+  )
+
+  if [ -n "$(pgrep rofi)" ]; then
+    pkill rofi
+    exit
+  fi
+
+  selected_presets=$(printf "%s\n" "${files[@]}" | rofi -dmenu -theme-str 'entry {placeholder: "Select hyprlock presets...";}')
+  if [ -n "$selected_presets" ]; then
+    echo "$selected_presets"
+  else
+    return 1
+  fi
+}
+
+if [ -n "$1" ]; then
+  _change_hyprlock "$1"
+else
+  _change_hyprlock "$(_select_from_rofi)"
 fi
