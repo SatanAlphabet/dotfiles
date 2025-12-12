@@ -1,43 +1,75 @@
 #!/usr/bin/env bash
 
 config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
-new_preset="$1"
+src_dir="$config_dir/waybar/type"
 
 err() {
   echo -e "$1" >&2
 }
 
-if [[ $# -ne 1 ]]; then
-  err "Error: Invalid number of arguments. (1 required, $# provided)"
-  exit 1
+_change_preset() {
+  local new_preset="$1"
+  local PRESET_ERROR
+  if [[ $# -ne 1 ]]; then
+    err "Error: Invalid number of arguments. (1 required, $# provided)"
+    exit 1
+  fi
+
+  # Waybar checks
+  if [[ ! -f "$config_dir/waybar/styles/$new_preset.css" || ! -f "$config_dir/waybar/type/$new_preset.jsonc" ]]; then
+    err "Error: Waybar preset not found."
+    PRESET_ERROR=true
+  fi
+
+  # SwayNC checks
+  if [[ ! -f "$config_dir/swaync/styles/$new_preset.css" || ! -f "$config_dir/swaync/type/$new_preset.json" ]]; then
+    err "Error: SwayNC preset not found."
+    PRESET_ERROR=true
+  fi
+
+  # Rofi checks
+  if [[ ! -f "$config_dir/rofi/styles/menu/$new_preset.rasi" ]]; then
+    err "Error: Rofi menu preset not found."
+    PRESET_ERROR=true
+  fi
+
+  if [ $PRESET_ERROR ]; then
+    return 1
+  fi
+
+  ln -sf "$config_dir/waybar/type/$new_preset.jsonc" "$config_dir/waybar/config.jsonc"
+  ln -sf "$config_dir/waybar/styles/$new_preset.css" "$config_dir/waybar/main-preset.css"
+  ln -sf "$config_dir/swaync/type/$new_preset.json" "$config_dir/swaync/config.json"
+  ln -sf "$config_dir/swaync/styles/$new_preset.css" "$config_dir/swaync/style.css"
+  ln -sf "$config_dir/rofi/styles/menu/$new_preset.rasi" "$config_dir/rofi/menu.rasi"
+
+  # Reloads necessary software
+  test "$(systemctl --user is-active waybar)" = "active" && systemctl --user restart waybar
+  test "$(systemctl --user is-active swaync)" = "active" && systemctl --user reload swaync
+
+  notify-send -e -t 3000 "New preset loaded..." "Current preset: $1"
+}
+
+_select_from_rofi() {
+  mapfile -t files < <(
+    find "$src_dir" -maxdepth 1 -type f -name "*.jsonc" -print0 | xargs -0 -I{} basename "{}" .jsonc
+  )
+
+  if [ -n "$(pgrep rofi)" ]; then
+    pkill rofi
+    exit
+  fi
+
+  selected_presets=$(printf "%s\n" "${files[@]}" | rofi -dmenu -theme-str 'entry {placeholder: "Select desktop presets...";}')
+  if [ -n "$selected_presets" ]; then
+    echo "$selected_presets"
+  else
+    return 1
+  fi
+}
+
+if [ -n "$1" ]; then
+  _change_preset "$1"
+else
+  _change_preset "$(_select_from_rofi)"
 fi
-
-# Waybar checks
-if [[ ! -f "$config_dir/waybar/styles/$new_preset.css" || ! -f "$config_dir/waybar/type/$new_preset.jsonc" ]]; then
-  err "Error: Waybar preset not found."
-  exit 1
-fi
-
-# SwayNC checks
-if [[ ! -f "$config_dir/swaync/styles/$new_preset.css" || ! -f "$config_dir/swaync/type/$new_preset.json" ]]; then
-  err "Error: SwayNC preset not found."
-  exit 1
-fi
-
-# Rofi checks
-if [[ ! -f "$config_dir/rofi/styles/menu/$new_preset.rasi" ]]; then
-  err "Error: Rofi menu preset not found."
-  exit 1
-fi
-
-ln -sf "$config_dir/waybar/type/$new_preset.jsonc" "$config_dir/waybar/config.jsonc"
-ln -sf "$config_dir/waybar/styles/$new_preset.css" "$config_dir/waybar/main-preset.css"
-ln -sf "$config_dir/swaync/type/$new_preset.json" "$config_dir/swaync/config.json"
-ln -sf "$config_dir/swaync/styles/$new_preset.css" "$config_dir/swaync/style.css"
-ln -sf "$config_dir/rofi/styles/menu/$new_preset.rasi" "$config_dir/rofi/menu.rasi"
-
-# Reloads necessary software
-pgrep -x waybar >/dev/null && systemctl --user restart waybar
-pgrep -x swaync >/dev/null && systemctl --user reload swaync
-
-notify-send -e -t 3000 "New preset loaded..." "Current preset: $1"
