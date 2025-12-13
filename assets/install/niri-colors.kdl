@@ -1,29 +1,32 @@
 layout {
   border {
-    active-color "#765084"
+    active-color "#784f82"
     urgent-color "#ba1a1a"
-    inactive-color "#cec3cd"
+    inactive-color "#cfc3cd"
   }
 
   insert-hint {
-    gradient from="rgba(118, 80, 132, 0.5)" to="rgba(105, 89, 109, 0.5)"
+    gradient from="#784f8280" to="#6a596c80"
+  }
+
+  tab-indicator {
+    inactive-color "#fbd7ff"
   }
 
   shadow {
     color "rgba(0, 0, 0, 0.7)"
   }
 
-  background-color "#e4b7f3"
+  background-color "#e7b6f0"
 }
 
 overview {
   backdrop-color "#fff7fb"
 }
 
-window-rule {
-  match is-floating=true
-
-  border {
-    active-color "#69596d"
+recent-windows {
+  highlight {
+    active-color "#e7b6f0"
+    urgent-color "#ffb4ab"
   }
 }
