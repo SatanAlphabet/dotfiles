@@ -149,7 +149,7 @@ window#waybar.main #custom-seperator-vertical {
 
 #workspaces button.empty {
   background: transparent;
-  border: 1.5px solid @hvr-bg;
+  border: 1.8px solid @hvr-bg;
 }
 
 #workspaces button.active {
