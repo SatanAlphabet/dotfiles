@@ -1,0 +1,6 @@
+[gtk]
+deviceTheme = "prefer-light"
+cursorTheme = "Bibata-Modern-Ice"
+font = "Inter 10"
+gtkTheme = "adw-gtk3"
+iconTheme = "Adwaita"

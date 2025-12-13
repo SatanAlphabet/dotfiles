@@ -1,0 +1,11 @@
+services = [
+  "waybar",
+  "swaync",
+  "swayidle",
+  "waypaper",
+  "overview-blur",
+  "wl-clip-persist",
+  "niriusd",
+  "wl-paste",
+  "polkit-niri"
+]
