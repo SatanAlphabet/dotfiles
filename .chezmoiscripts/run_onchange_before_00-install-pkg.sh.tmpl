@@ -2,7 +2,13 @@
 
 echo -e "===>  Starting setup installation...\n"
 
-pkg_path="{{ .chezmoi.sourceDir }}/assets/install"
+{{ range .packages.pacman }}
+packages+=({{- . | quote -}})
+{{- end }}
+
+{{- range .packages.aur }}
+aur_packages+=({{- . | quote -}})
+{{- end }}
 
 _install_confirm() {
   local response
@@ -32,16 +38,12 @@ fi
 
 if _install_confirm "Install base packages? [Y/n] " -eq 0; then
   echo -e "\n===>  Installing base packages...\n"
-  {{- range .packages.pacman }}
-  paru -S --needed {{ . | quote }}
-  {{ end -}}
+  paru -S --needed "${packages[@]}"
 fi
 
 if _install_confirm "Install AUR packages? [Y/n] " -eq 0; then
   echo -e "\n===>  Installing AUR packages...\n"
-  {{- range .packages.aur }}
-  paru -S --needed {{ . | quote }}
-  {{ end -}}
+  paru -S --needed "${aur_packages[@]}"
 fi
 
 if _install_confirm "Switch shell to zsh? [Y/n] " -eq 0; then
