@@ -67,7 +67,7 @@ formats=("$@")
 output_format() {
   case "$1" in
   icon)
-    if no_battery; then
+    if [ "$no_battery" ]; then
       echo -n "󱉝"
     else
       if [ "$battery_status" = "Discharging" ]; then
