@@ -32,12 +32,16 @@ fi
 
 if _install_confirm "Install base packages? [Y/n] " -eq 0; then
   echo -e "\n===>  Installing base packages...\n"
-  paru -S --needed $(cat "$pkg_path/package.list")
+  {{- range .packages.pacman }}
+  paru -S --needed {{ . | quote }}
+  {{ end -}}
 fi
 
 if _install_confirm "Install AUR packages? [Y/n] " -eq 0; then
   echo -e "\n===>  Installing AUR packages...\n"
-  paru -S --needed $(cat "$pkg_path/package-aur.list")
+  {{- range .packages.aur }}
+  paru -S --needed {{ . | quote }}
+  {{ end -}}
 fi
 
 if _install_confirm "Switch shell to zsh? [Y/n] " -eq 0; then
