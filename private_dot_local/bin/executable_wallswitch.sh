@@ -3,6 +3,24 @@ cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}"
 blur_img="${cache_dir}/niri/landing/blur"
 blur_cache="${cache_dir}/niri/overview"
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
+waypaper_config=${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini
+
+_parse_waypaper_config() {
+  awk -F "=" "/$1/"'{printf $2}' "$waypaper_config" | tr -d ' '
+}
+
+_get_swww_args() {
+  type="$(_parse_waypaper_config "swww_transition_type")"
+  duration="$(_parse_waypaper_config "swww_transition_duration")"
+  step="$(_parse_waypaper_config "swww_transition_step")"
+  angle="$(_parse_waypaper_config "swww_transition_angle")"
+  fps="$(_parse_waypaper_config "swww_transition_fps")"
+  [ -n "$type" ] && swww_args+=("--transition-type" "$type")
+  [ -n "$duration" ] && swww_args+=("--transition-duration" "$duration")
+  [ -n "$step" ] && swww_args+=("--transition-step" "$step")
+  [ -n "$angle" ] && swww_args+=("--transition-angle" "$angle")
+  [ -n "$fps" ] && swww_args+=("--transition-fps" "$fps")
+}
 
 switch_wallpaper() {
 
@@ -18,11 +36,7 @@ switch_wallpaper() {
     if [ "$current_theme" = "'default'" ]; then
       gsettings set org.gnome.desktop.interface color-scheme prefer-light
     fi
-    if [ "$current_theme" = "'prefer-dark'" ]; then
-      matugen image "$1" -m dark
-    elif [ "$current_theme" = "'prefer-light'" ]; then
-      matugen image "$1" -m light
-    fi
+    matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" &
     ln -sf "$1" "$cache_dir/niri/landing/background"
 
     cache_img="$blur_cache"/"$(basename "$1")"
@@ -38,7 +52,9 @@ switch_wallpaper() {
   fi
 
   if [ ! "$SKIP_OVERVIEW" ]; then
-    systemctl --user restart overview-blur.service
+    _get_swww_args
+    systemctl --user is-active overview-blur || systemctl --user restart overview-blur.service
+    swww img -n overview "${swww_args[@]}" "$1"
   else
     echo "Skipping overview reloading..."
   fi
