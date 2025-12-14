@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}"
 blur_img="${cache_dir}/niri/landing/blur"
+blur_cache="${cache_dir}/niri/overview"
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
 
 switch_wallpaper() {
@@ -10,6 +11,7 @@ switch_wallpaper() {
     exit 1
   fi
 
+  [ ! -d "$cache_dir/niri/landing" ] && mkdir -p "$cache_dir/niri/landing"
   if [[ "$1" != "$(readlink -f "$cache_dir/niri/landing/background")" ]]; then
 
     # fallback to prefer-light if color-scheme is default
@@ -21,8 +23,15 @@ switch_wallpaper() {
     elif [ "$current_theme" = "'prefer-light'" ]; then
       matugen image "$1" -m light
     fi
-    ln -sf "$1" "${cache_dir}"/niri/landing/background
-    magick "$1" -blur 20x10 "${blur_img}"
+    ln -sf "$1" "$cache_dir/niri/landing/background"
+
+    cache_img="$blur_cache"/"$(basename "$1")"
+    [ ! -d "$blur_cache" ] && mkdir -p "$blur_cache"
+    if [[ ! -e "$cache_img" || "$(basename "$cache_img")" != "$(basename "$1")" ]]; then
+      magick "$1" -blur 20x10 "$cache_img"
+    fi
+    ln -sf "$cache_img" "$blur_img"
+
     notify-send -e -r 2 -t 2000 "Wallpaper switch successful..." "Current Wallpaper: $(basename "$1")"
   else
     echo "Same wallpaper detected. Skipping matugen & caching..."
