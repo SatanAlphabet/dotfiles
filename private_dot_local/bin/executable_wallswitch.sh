@@ -54,7 +54,7 @@ switch_wallpaper() {
   if [ ! "$SKIP_OVERVIEW" ]; then
     _get_swww_args
     systemctl --user is-active overview-blur || systemctl --user restart overview-blur.service
-    swww img -n overview "${swww_args[@]}" "$1"
+    swww img -n overview "${swww_args[@]}" "$blur_img"
   else
     echo "Skipping overview reloading..."
   fi
