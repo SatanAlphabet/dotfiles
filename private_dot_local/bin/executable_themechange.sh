@@ -2,6 +2,18 @@
 
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
 
+switch_to_light_mode() {
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+  matugen image "$1" -m light
+  notify-send -e -t 3000 "Switched to light mode..." -i weather-clear-symbolic
+}
+
+switch_to_dark_mode() {
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+  matugen image "$1" -m dark
+  notify-send -e -t 3000 "Switched to dark mode..." -i weather-clear-night-symbolic
+}
+
 change_theme() {
 
   if [ ! -f "$1" ]; then
@@ -9,18 +21,15 @@ change_theme() {
     exit 1
   fi
 
+  if [[ "$current_theme" != "'prefer-dark'" && "$current_theme" != "'prefer-light'" ]]; then
+    echo "Invalid color-scheme found. Falling back to light mode..."
+    switch_to_light_mode "$1"
+  fi
+
   if [ "$current_theme" = "'prefer-dark'" ]; then
-
-    gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-    matugen image "$1" -m light
-    notify-send -e -t 3000 "Switched to light mode..." -i weather-clear-symbolic
-
+    switch_to_light_mode "$1"
   elif [ "$current_theme" = "'prefer-light'" ]; then
-
-    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-    matugen image "$1" -m dark
-    notify-send -e -t 3000 "Switched to dark mode..." -i weather-clear-night-symbolic
-
+    switch_to_dark_mode "$1"
   fi
 
 }
