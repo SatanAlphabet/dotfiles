@@ -6,6 +6,7 @@ NC='\033[0m' # No Color
 pkg_text=" - System packages updated."
 flatpak_text=" - Flatpak packages updated."
 post_upd_text=" - Post-update checks completed."
+upd_command=pacman
 
 fastfetch.sh
 echo -e """
@@ -13,7 +14,13 @@ echo -e """
  ${ORANGE}===>${NC}  Beginning system update...
 
         """
-if ! paru -Syu; then
+if which paru >/dev/null 2>&1; then
+  upd_command=paru
+elif which yay >/dev/null 2>&1; then
+  upd_command=yay
+fi
+
+if ! $upd_command -Syu; then
   failed_update=true
   pkg_text=" [!] Failed to update system packages."
 fi
