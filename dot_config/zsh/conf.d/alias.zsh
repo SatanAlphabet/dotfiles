@@ -8,6 +8,11 @@ alias c='clear' \
     .5='cd ../../../../..' \
     mkdir='mkdir -p'
 alias ff='fastfetch.sh'
-alias yay='paru'
-export EDITOR=nvim
+export EDITOR='nvim'
 export BAT_THEME='ansi'
+
+if [[ ! "$(which yay)" && "$(which paru)" ]]; then
+  alias yay='paru'
+elif [[ ! "$(which paru)" && "$(which yay)" ]]; then
+  alias paru='yay'
+fi
