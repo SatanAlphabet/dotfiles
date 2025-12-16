@@ -40,7 +40,9 @@ if _install_confirm "Change GTK settings? [Y/n] " -eq 0; then
   echo -e "===>  Changing GTK settings..."
   gsettings set org.gnome.desktop.interface color-scheme {{ .gtk.deviceTheme | quote }} && echo -e "===>  Device theme set to {{ .gtk.deviceTheme -}}"
   gsettings set org.gnome.desktop.interface cursor-theme {{ .gtk.cursorTheme | quote }} && echo -e "===>  Cursor theme set to {{ .gtk.cursorTheme -}}"
+  gsettings set org.gnome.desktop.interface document-font-name {{ .gtk.font | quote }}
   gsettings set org.gnome.desktop.interface font-name {{ .gtk.font | quote }} && echo -e "===>  Font set to {{ .gtk.font -}}"
+  gsettings set org.gnome.desktop.interface monospace-font-name {{ .gtk.monospaceFont | quote }} && echo -e "===>  Monospace font set to {{ .gtk.monospaceFont -}}"
   gsettings set org.gnome.desktop.interface gtk-theme {{ .gtk.gtkTheme | quote }} && echo -e "===>  GTK theme set to {{ .gtk.gtkTheme -}}"
   gsettings set org.gnome.desktop.interface icon-theme {{ .gtk.iconTheme | quote }} && echo -e "===>  Icon theme set to {{ .gtk.iconTheme -}}"
 fi

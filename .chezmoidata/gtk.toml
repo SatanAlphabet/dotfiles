@@ -2,5 +2,6 @@
 deviceTheme = "prefer-light"
 cursorTheme = "Bibata-Modern-Ice"
 font = "Inter 10"
+monospaceFont = "CaskaydiaCove Nerd Font Mono 9"
 gtkTheme = "adw-gtk3"
 iconTheme = "Adwaita"
