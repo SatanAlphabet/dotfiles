@@ -40,7 +40,7 @@ A comfy setup built on [niri](https://github.com/YaLTeR/niri "A scrollable-tilin
 
 ![Setup Preview Image 2](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview_2.png "Desktop Preview /w Dolphin & fastfetch")
 
-![Setup Preview Image 3](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview_3.png "Dark Mode /w swaync & Zen Browser")
+![Setup Preview Image 3](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview_3.png "Dark Mode /w several apps open")
 
 ![Setup Preview Image 4](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview_4.png "Hyprlock Preview")
 
