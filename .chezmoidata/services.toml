@@ -3,7 +3,7 @@ services = [
   "swaync",
   "swayidle",
   "waypaper",
-  "overview-blur",
+  "overview-backdrop",
   "wl-clip-persist",
   "niriusd",
   "wl-paste",
