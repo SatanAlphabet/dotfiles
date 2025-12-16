@@ -47,26 +47,6 @@ if _install_confirm "Change GTK settings? [Y/n] " -eq 0; then
   gsettings set org.gnome.desktop.interface icon-theme {{ .gtk.iconTheme | quote }} && echo -e "===>  Icon theme set to {{ .gtk.iconTheme -}}"
 fi
 
-if _install_confirm "Setup missing auto-generated colors? [Y/n] " -eq 0; then
-  # Directories should be handled by chezmoi, but just in case.
-  mkdir -p "$data_dir/color-schemes/"
-  mkdir -p "$config_dir/waybar/"
-  mkdir -p "$config_dir/rofi/"
-  mkdir -p "$config_dir/niri/"
-  mkdir -p "$config_dir/swaync/"
-  mkdir -p "$config_dir/wlogout/"
-  cp "$pkg_dir/Matugen.colors" "$data_dir/color-schemes/Matugen.colors" && echo -e "===>  Copied colorscheme..."
-  cp "$pkg_dir/waybar-colors.css" "$config_dir/waybar/colors.css" && echo -e "===>  Copied waybar colors..."
-  cp "$pkg_dir/wlogout-colors.css" "$config_dir/wlogout/colors.css" && echo -e "===>  Copied waybar colors..."
-  cp "$pkg_dir/niri-colors.kdl" "$config_dir/niri/matugen-colors.kdl" && echo -e "===>  Copied niri colors..."
-  cp "$pkg_dir/swaync-colors.css" "$config_dir/swaync/colors.css" && echo -e "===>  Copied SwayNC colors..."
-  cp "$pkg_dir/rofi-colors.rasi" "$config_dir/rofi/colors.rasi" && echo -e "===>  Copied rofi colors..."
-fi
-
-if _install_confirm "Install VSCode themes for matugen? [Y/n] " -eq 0; then
-  codium --install-extension "$pkg_dir/matugen-vscode-1.1.0.vsix" && echo -e "===>  Theme installed successfully..."
-fi
-
 if _install_confirm "Setup waypaper config? [Y/n] " -eq 0; then
   echo -e "===>  Copying default background to wallpaper directory... (${wall_dir})"
   mkdir -p "$wall_dir/"
@@ -74,6 +54,14 @@ if _install_confirm "Setup waypaper config? [Y/n] " -eq 0; then
   mkdir -p "$config_dir/waypaper/"
   echo -e "===>  Copying initial waypaper config..."
   cp "$pkg_dir/waypaper-config.ini" "$config_dir/waypaper/config.ini" && echo -e "===>  Copied starting waypaper config..."
+fi
+
+if _install_confirm "Install VSCode themes for matugen? [Y/n] " -eq 0; then
+  codium --install-extension "$pkg_dir/matugen-vscode-1.1.0.vsix" && echo -e "===>  Theme installed successfully..."
+fi
+
+if _install_confirm "Setup missing auto-generated colors? [Y/n] " -eq 0; then
+  matugen image "$pkg_dir/default-bg.png" --continue-on-error -m light
 fi
 
 echo -e "===>  Basic setup completed..."
