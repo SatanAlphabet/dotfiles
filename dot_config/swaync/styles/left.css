@@ -428,8 +428,8 @@ tooltip {
 .widget-dnd switch {
   padding: 2px;
   border-radius: var(--border-radius);
-  background: @main-bg-alt;
-  border: 1px solid @border-col;
+  background: @pill-bg;
+  border: 0.5px solid @border-col;
 }
 
 .widget-dnd>switch:checked {
