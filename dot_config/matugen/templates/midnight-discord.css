@@ -1,6 +1,6 @@
 /**
  * @name Midnight (Matugen)
- * @description Modified template based on midnigh.
+ * @description Modified template based on midnight-discord.
  * @author refact0r
  * @version 1.6.2
  * @invite nz87hXyvcy
@@ -71,7 +71,7 @@ body {
   /* Arch logo: https://www.vectorlogo.zone/logos/archlinux/archlinux-icon.svg */
   --dms-icon-svg-size: 100%;
   /* size of the svg (css mask-size property) */
-  --dms-icon-color-before: var(--icon-secondary);
+  --dms-icon-color-before: var(--icon-subtle);
   /* normal icon color */
   --dms-icon-color-after: var(--white);
   /* icon color when button is hovered/selected */
@@ -86,9 +86,6 @@ body {
 }
 /* customize things here */
 :root {
-	/* font, change to 'gg sans' for default discord font*/
-	--font: 'figtree';
-
 	/* top left corner text */
 	--corner-text: 'Midnight';
 	/* color of status indicators and window controls */
