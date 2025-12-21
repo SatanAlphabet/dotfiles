@@ -30,13 +30,14 @@ switch_wallpaper() {
   fi
 
   [ ! -d "$cache_dir/niri/landing" ] && mkdir -p "$cache_dir/niri/landing"
-  if [[ "$1" != "$(readlink -f "$cache_dir/niri/landing/background")" ]]; then
+  if [[ "$1" != "$(readlink -f "$cache_dir/niri/landing/background")" || "$scheme" ]]; then
+    scheme=${scheme:-"scheme-tonal-spot"}
 
     # fallback to prefer-light if color-scheme is default
     if [ "$current_theme" = "'default'" ]; then
       gsettings set org.gnome.desktop.interface color-scheme prefer-light
     fi
-    matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" &
+    matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" -t "$scheme" >/dev/null 2>&1 &
     ln -sf "$1" "$cache_dir/niri/landing/background"
 
     cache_img="$blur_cache"/"$(basename "$1")"
@@ -51,9 +52,13 @@ switch_wallpaper() {
     echo "Same wallpaper detected. Skipping matugen & caching..."
   fi
 
-  if [ ! "$SKIP_OVERVIEW" ]; then
+  if [[ ! "$SKIP_OVERVIEW" || "$FORCE_RESTART_OVERVIEW" ]]; then
     _get_swww_args
-    systemctl --user is-active overview-backdrop || systemctl --user restart overview-backdrop.service
+    if [ ! "$FORCE_RESTART_OVERVIEW" ]; then
+      systemctl --user is-active overview-backdrop >/dev/null || systemctl --user restart overview-backdrop.service
+    else
+      systemctl --user restart overview-backdrop.service
+    fi
     swww img -n overview "${swww_args[@]}" "$blur_img"
   else
     echo "Skipping overview reloading..."
@@ -63,9 +68,17 @@ switch_wallpaper() {
 
 while true; do
   case "$1" in
-  --skip-overview)
+  --skip-overview | -S)
     SKIP_OVERVIEW=1
     shift
+    ;;
+  --force | -F)
+    FORCE_RESTART_OVERVIEW=1
+    shift
+    ;;
+  --scheme | -s)
+    scheme="scheme-$2"
+    shift 2
     ;;
   *)
     echo "Switching wallpaper: $1"
