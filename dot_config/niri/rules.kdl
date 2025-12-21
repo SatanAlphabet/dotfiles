@@ -1,7 +1,7 @@
 /// --- Window rules --- ///
 
 window-rule {
-  geometry-corner-radius 0
+  geometry-corner-radius 4
   clip-to-geometry true
   draw-border-with-background false
   tiled-state true
@@ -61,11 +61,6 @@ window-rule {
   open-on-workspace "browser"
 }
 
-window-rule {
-  match app-id=r#"^org\.vinegarhq\.Sober$"#
-
-  open-fullscreen true
-}
 
 window-rule {
   match app-id=r#"^sysupdate$"#
@@ -101,6 +96,8 @@ window-rule {
   shadow {
     on
   }
+  geometry-corner-radius 8
+  tiled-state false
 }
 
 /// --- Layer rules --- ///
