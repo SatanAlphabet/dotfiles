@@ -37,9 +37,9 @@
         playlist_style: None,
     ),
     level_styles: (
-        info: (fg: "blue", bg: "{{colors.primary_container.default.hex}}"),
-        warn: (fg: "yellow", bg: "{{colors.primary_container.default.hex}}"),
-        error: (fg: "red", bg: "{{colors.primary_container.default.hex}}"),
+        info: (fg: "{{colors.primary.default.hex}}", bg: "{{colors.primary_container.default.hex}}"),
+        warn: (fg: "{{colors.tertiary.default.hex}}", bg: "{{colors.tertiary_container.default.hex}}"),
+        error: (fg: "{{colors.error.default.hex}}", bg: "{{colors.error_container.default.hex}}"),
         debug: (fg: "light_green", bg: "{{colors.primary_container.default.hex}}"),
         trace: (fg: "magenta", bg: "{{colors.primary_container.default.hex}}"),
     ),
