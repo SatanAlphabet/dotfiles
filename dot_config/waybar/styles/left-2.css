@@ -107,9 +107,13 @@ window#waybar.main #custom-launcher:hover {
   color: @ter-bg;
 }
 
-.recording,
 .critical {
   color: @crit-bg;
+}
+
+window#waybar.main .recording {
+  background: @crit-bg;
+  color: @crit-fg;
 }
 
 .muted,
@@ -198,14 +202,10 @@ window#waybar.main #tray {
   padding-bottom: 6px;
 }
 
-/*
-#custom-swaync.dnd-inhibited-notification,
-#custom-swaync.dnd-notification,
-#custom-swaync.inhibited-notification,
-#custom-swaync.notification {
-  color: @act-bg;
+window#waybar.main #custom-swaync.cc-open {
+  background: @act-bg;
+  color: @act-fg;
 }
-*/
 
 window#waybar.main #language {
   color: @hvr-bg;
