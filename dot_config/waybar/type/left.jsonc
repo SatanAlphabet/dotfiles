@@ -12,29 +12,76 @@
     "include": [
       "~/.config/waybar/includes/modules.jsonc"
     ],
-		"modules-left": ["custom/launcher"],
+		"modules-left": [
+      "custom/launcher",
+      "niri/workspaces"
+    ],
 		"modules-center": [
-			"battery",
-			"backlight",
-			"pulseaudio",
-			"custom/seperator-vertical",
-			"niri/workspaces",
-			"custom/seperator-vertical",
-			"clock",
-			"custom/swaync",
-			"mpris"
+			"clock#time",
+      "custom/seperator-vertical",
+			"clock#date",
 		],
-		"modules-right": ["group/pill#bottom", "niri/language"],
-		"group/pill#bottom": {
-			"orientation": "inherit",
-			"modules": ["custom/sysupdate", "tray", "bluetooth", "network"]
-		},
+		"modules-right": [
+      "custom/screen-recorder",
+			"mpris",
+      "custom/sysupdate",
+      "tray",
+			"custom/swaync",
+      "group/pill#battery",
+      "group/pill#audio",
+      "network",
+      "niri/language",
+    ],
+    "group/pill#battery": {
+      "orientation": "inherit",
+      "modules": ["battery", "battery#hover-text"],
+      "drawer": {
+        "transition-left-to-right": false,
+        "transition-duration": 300,
+      },
+    },
+    "group/pill#audio": {
+      "orientation": "inherit",
+      "modules": ["pulseaudio", "pulseaudio#hover-text"],
+      "drawer": {
+        "transition-left-to-right": false,
+        "transition-duration": 300,
+      },
+    },
+    "group/pill#backlight": {
+      "orientation": "inherit",
+      "modules": ["backlight", "backlight#hover-text"],
+      "drawer": {
+        "transition-left-to-right": false,
+        "transition-duration": 300,
+      },
+    },
+    "custom/screen-recorder": {
+      "justify": "center",
+      "hide-empty-text": true,
+      "format": "{icon}",
+      "tooltip-format": "Screen Recorder: <b>{text}</b>\n<b>Right Click</b>: Record Region",
+      "format-icons": {
+        "recording": "󰯜",
+        "default": ""
+      },
+    },
     "custom/nightlight": {
+      "justify": "center",
       "format": "{icon}",
       "tooltip-format": "Night Light: <b>{icon} {text}</b>",
       "format-icons": {
         "active": "󰽥",
         "default": "󰖨"
+      },
+    },
+    "custom/idle": {
+      "justify": "center",
+      "format": "{icon}",
+      "tooltip-format": "Idle Inhibitor: <b>{icon} {text}</b>",
+      "format-icons": {
+        "active": "󰈉",
+        "default": "󰈈"
       },
     },
 		"custom/launcher": {
@@ -52,10 +99,23 @@
       },
 			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
     },
+		"battery#hover-text": {
+      "justify": "center",
+			"format": "{capacity}",
+		  "design-capacity": true,
+			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
+  		"on-scroll-up": "true",
+  		"on-scroll-down": "true",
+    },
 		"backlight": {
       "justify": "center",
 			"format": "{icon}",
 			"format-icons": ["", "", "", "", "", "", "", "", ""],
+			"tooltip-format": "{icon} Backlight level: {percent}%",
+    },
+		"backlight#hover-text": {
+      "justify": "center",
+      "format": "{percent}",
 			"tooltip-format": "{icon} Backlight level: {percent}%",
     },
 		"pulseaudio": {
@@ -77,11 +137,16 @@
 				"car-muted": "",
 				"default": ["", "", ""]
 			},
-			"tooltip-format": "{icon} {desc}: {volume}%",
+			"tooltip-format": "{desc}: {volume}%",
+    },
+    "pulseaudio#hover-text": {
+      "justify": "center",
+      "format": "{volume}",
+			"tooltip-format": "{desc}: {volume}%",
     },
 		"niri/workspaces": {
       "cursor": false,
-			"format": "{}",
+			"format": "{index}",
 			"format-icons": {
 				"default": "",
         // "active": "󰫢",
@@ -89,10 +154,14 @@
 				"chat": ""
 			},
     },
-		"clock": {
+		"clock#time": {
       "justify": "center",
 			"format": "{:%H\n%M}",
-			"format-alt": "{:%H\n%M\n--\n%m\n%d}",
+			"tooltip-format": "<span>{calendar}</span>",
+    },
+		"clock#date": {
+      "justify": "center",
+			"format": "{:%m\n%d}",
 			"tooltip-format": "<span>{calendar}</span>",
     },
     "custom/swaync": {
@@ -132,8 +201,8 @@
 			},
     },
     "tray": {
-		  "icon-size": 15,
-		  "spacing": 10
+		  "icon-size": 16,
+		  "spacing": 10,
 	  },
 		"bluetooth": {
       "justify": "center",
@@ -160,8 +229,8 @@
 		  "tooltip-format-disconnected": "Disconnected",
     },
     "niri/language": {
-      "justify": "center",
       "format": "<span text_transform='uppercase'>{short}</span>",
+      "justify": "center",
     }
 	},
 
@@ -183,8 +252,8 @@
 		"position": "bottom",
 		"exclusive": false,
 		// "modules-left": ["mpris#widget"],
-		"modules-right": ["clock#date"],
-		"clock#date": {
+		"modules-right": ["clock#widget-date"],
+		"clock#widget-date": {
 			"format": "{:%A, %d %B %Y}",
 			"tooltip": false
 		},
@@ -201,8 +270,8 @@
 		"layer": "bottom",
 		"position": "bottom",
 		"exclusive": false,
-		"modules-right": ["clock#time"],
-		"clock#time": {
+		"modules-right": ["clock#widget-time"],
+		"clock#widget-time": {
 			"format": "{:%I:%M %p}",
 			"tooltip": false
 		}

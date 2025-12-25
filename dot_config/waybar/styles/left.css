@@ -1,53 +1,57 @@
 * {
   font-family: "CaskaydiaCove Nerd Font Propo";
-  font-size: 10px;
+  font-size: 16px;
 }
 
 window#waybar {
-	box-shadow: none;
-	text-shadow: none;
-	background: @main-bg;
-	color: @main-fg;
+  box-shadow: none;
+  text-shadow: none;
+  background: @main-bg;
+  color: @main-fg;
 }
 
+window#waybar.main #privacy,
 window#waybar.main .module {
-	background: @pill-bg;
-	margin: 0px 8px;
-	padding: 4px 0px;
-	border-radius: 0px;
-}
-
-window#waybar #pill {
-	background: @pill-bg;
+  background: @pill-bg;
   margin: 0px 8px;
+  padding: 4px 0px;
+  border-radius: 20px;
 }
 
-window#waybar #pill:hover,
-window#waybar .module:hover {
-  box-shadow: 0px 0px 0px .1px @act-bg inset;
+window#waybar.main #pill {
+  background: @pill-bg;
+  margin: 0px 8px;
+  border-radius: 20px;
+}
+
+window#waybar.main #privacy:hover,
+window#waybar.main #pill:hover,
+window#waybar.main .module:hover {
+  box-shadow: 0px 0px 0px .5px @act-bg inset;
   background: @pill-hvr-bg;
 }
 
-window#waybar #language:hover,
-window#waybar #custom-launcher:hover,
-window#waybar #pill .module:hover,
-window#waybar #workspaces:hover {
+window#waybar.main #language:hover,
+window#waybar.main #clock:hover,
+window#waybar.main #custom-launcher:hover,
+window#waybar.main #pill .module:hover,
+window#waybar.main #workspaces:hover {
   box-shadow: inherit;
 }
 
-window#waybar #workspaces:hover {
+window#waybar.main #workspaces:hover {
   background: @pill-bg;
 }
 
 tooltip {
-	background: @main-bg;
-	color: @main-fg;
+  background: @main-bg;
+  color: @main-fg;
   border: 1px solid @border-outline;
 }
 
 tooltip label {
   font-size: 11px;
-	color: @main-fg;
+  color: @main-fg;
 }
 
 menu {
@@ -60,6 +64,10 @@ menuitem {
   color: @main-fg;
 }
 
+menuitem arrow {
+  color: @hvr-bg;
+}
+
 menuitem label {
   font-size: 12px;
   font-family: "Inter Variable";
@@ -69,144 +77,154 @@ menuitem:hover {
   background: @pill-bg;
 }
 
-#pulseaudio,
-#custom-sysupdate,
-#custom-swaync,
-#mpris,
-#backlight,
-#bluetooth,
-#network,
-#battery {
-	font-size: 16px;
-}
-
-window#waybar .modules-left {
-	margin-top: 10px;
-}
-
-window#waybar .modules-right {
-	margin-bottom: 10px;
-}
-
-window#waybar #custom-launcher {
-	font-size: 20px;
-	background: transparent;
-	color: @act-bg;
-}
-
-#battery.warning {
-	color: @hvr-bg;
-}
-
-#battery.critical {
-	color: @crit-bg;
-}
-
-window#waybar #custom-seperator-vertical {
-	font-size: 13px;
-	margin: -8px 0px;
-	opacity: 0.3;
-	background: transparent;
-}
-
-window#waybar #workspaces {
-	margin: 0 8px;
-}
-
-#workspaces button {
-	text-shadow: none;
-	box-shadow: none;
-	min-width: 1px;
-	min-height: 1px;
-	color: @main-fg;
-	background: transparent;
-	border-radius: 13pt;
-	padding: 0px 0px;
-	margin: 4px 5px;
-	transition: all 0s;
-	opacity: 0.5;
-}
-
-#workspaces button label {
-  font-weight: 800;
-	font-size: 11px;
-}
-
-#workspaces button.empty {
-	background: transparent;
-	opacity: 0.5;
-}
-
-#workspaces button.active {
-	background: @act-bg;
-	color: @main-bg;
-	opacity: 1;
-}
-
-#workspaces button:hover {
-	color: @act-bg;
-	opacity: 1;
-}
-
-#workspaces button.active:hover {
-	color: @main-bg;
-	background: @hvr-bg;
-	opacity: 1;
-}
-
-window#waybar.main #clock {
-  color: @hvr-bg;
-	font-size: 16px;
-	font-weight: 400;
-	padding: 6px 0px;
-}
-
-window#waybar #tray {
-  padding-top: 8px;
-}
-
-/*
-#custom-swaync {
+menuitem:hover arrow {
   color: @act-bg;
-  transition: all 0.5s;
 }
 
-#custom-swaync.dnd-none,
-#custom-swaync.none {
-  color: @main-fg;
-  transition: all 0.5s;
+window#waybar.main .modules-left {
+  margin-top: 10px;
 }
-*/
 
-#network.disabled,
-#network.disconnected,
-#bluetooth.disabled,
-#bluetooth.off {
+window#waybar.main .modules-right {
+  margin-bottom: 10px;
+}
+
+window#waybar.main .hover-text {
+  font-size: 11px;
+}
+
+window#waybar.main #custom-launcher {
+  font-size: 20px;
+  background: transparent;
+  color: @act-bg;
+}
+
+window#waybar.main #custom-launcher:hover {
+  color: @hvr-bg;
+}
+
+.warning {
+  color: @ter-bg;
+}
+
+.critical {
+  color: @crit-bg;
+}
+
+window#waybar.main .recording {
+  background: @crit-bg;
+  color: @crit-fg;
+}
+
+.muted,
+.paused,
+.disabled,
+.disconnected,
+.off {
   color: @inact-fg;
 }
 
-window#waybar #language {
+window#waybar.main #custom-seperator-vertical {
+  font-size: 13px;
+  margin: -12px 0px;
+  opacity: 0.5;
+  background: transparent;
+}
+
+#workspaces button {
+  text-shadow: none;
+  box-shadow: none;
+  min-width: 0px;
+  min-height: 0px;
+  color: transparent;
+  background: @hvr-bg;
+  border-radius: 10px;
+  padding: 4px 0px;
+  margin: 6px 8px;
+  transition: all 0s;
+  opacity: 1.0;
+}
+
+#workspaces button label {
+  font-weight: 500;
+  font-family: "Roboto";
+  font-size: 0px;
+}
+
+#workspaces button.empty {
+  background: transparent;
+  border: 1.8px solid @hvr-bg;
+}
+
+#workspaces button.active {
+  padding: 12px 0px;
+  margin: 6px 7px;
+  border: none;
+  background: @act-bg;
+  color: @act-fg;
+  opacity: 1;
+}
+
+#workspaces button.active label {
+  font-size: 11px;
+}
+
+#workspaces button:hover {
+  background: @act-bg;
+  border-color: @act-bg;
+}
+
+#workspaces button.active:hover {
+  background: @hvr-bg;
+}
+
+window#waybar.main #clock {
+  background: transparent;
+  font-size: 16px;
+  font-family: "Inter Variable";
+  font-feature-settings: "tnum";
+  padding: 0px;
+}
+
+window#waybar.main #clock.time {
+  font-weight: 300;
+  color: @main-fg;
+}
+
+window#waybar.main #clock.date {
+  color: @act-bg;
+  font-weight: 300;
+}
+
+window#waybar.main #privacy,
+window#waybar.main #tray {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+window#waybar.main #custom-swaync.cc-open {
+  background: @act-bg;
+  color: @act-fg;
+}
+
+window#waybar.main #language {
   color: @hvr-bg;
-	font-size: 15px;
-	font-weight: 600;
-	background: transparent;
+  font-size: 15px;
+  font-weight: 400;
+  background: transparent;
+}
+
+window#waybar.main #language:hover {
+  font-weight: 800;
 }
 
 /* Adjust margin & padding for modules in pills */
 window#waybar.main #pill .module {
-	background: transparent;
-	padding-left: 0px;
-	padding-right: 0px;
-	margin-left: 0px;
-	margin-right: 0px;
-}
-
-/* Allows for very thin bar (to be used as borders) */
-window#waybar.top box,
-window#waybar.bottom box {
-	margin: 0px;
-	padding: 0px;
-	border: 0px solid transparent;
+  background: transparent;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 window#waybar.outline-left,
@@ -218,35 +236,35 @@ window#waybar.outline-bottom {
 
 window#waybar.time-widget,
 window#waybar.date-widget {
-	background: transparent;
+  background: transparent;
 }
 
 window#waybar.time-widget .module,
 window#waybar.date-widget .module {
   background: transparent;
-	font-family: "Inter Variable";
-	color: @widget-col;
+  font-family: "Inter Variable";
+  color: @widget-col;
 }
 
-window#waybar #clock.time {
-	font-size: 72px;
-	font-weight: 600;
-	padding: 25px 0px;
-	margin: 0px 20px;
+window#waybar #clock.widget-time {
+  font-size: 72px;
+  font-weight: 600;
+  padding: 25px 0px;
+  margin: 0px 20px;
   text-shadow: -1px 0px @widget-shadow, 2px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 3px 3px @widget-shadow;
 }
 
-window#waybar #clock.date {
-	font-size: 28px;
-	font-weight: 400;
-	padding: 8px 0px;
-	margin: 0px 20px;
+window#waybar #clock.widget-date {
+  font-size: 28px;
+  font-weight: 400;
+  padding: 8px 0px;
+  margin: 0px 20px;
   text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 2px 2px @widget-shadow;
 }
 
 window#waybar #mpris.widget {
-	font-size: 20px;
-	font-weight: 300;
-	margin: 0px 20px;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0px 20px;
   text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 1.5px 1.5px @widget-shadow;
 }

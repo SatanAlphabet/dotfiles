@@ -17,9 +17,7 @@
       "niri/workspaces"
     ],
 		"modules-center": [
-			"clock#time",
-      "custom/seperator-vertical",
-			"clock#date",
+      "wlr/taskbar",
 		],
 		"modules-right": [
       "custom/screen-recorder",
@@ -30,8 +28,11 @@
       "group/pill#battery",
       "group/pill#audio",
       "network",
-      "niri/language",
+			"clock",
     ],
+    "wlr/taskbar": {
+      "tooltip-format": "{name} - {title}",
+    },
     "group/pill#battery": {
       "orientation": "inherit",
       "modules": ["battery", "battery#hover-text"],
@@ -154,14 +155,10 @@
 				"chat": ""
 			},
     },
-		"clock#time": {
+		"clock": {
       "justify": "center",
 			"format": "{:%H\n%M}",
-			"tooltip-format": "<span>{calendar}</span>",
-    },
-		"clock#date": {
-      "justify": "center",
-			"format": "{:%m\n%d}",
+			"format-alt": "{:%H\n%M\n--\n%m\n%d}",
 			"tooltip-format": "<span>{calendar}</span>",
     },
     "custom/swaync": {

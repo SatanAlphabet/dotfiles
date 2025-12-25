@@ -14,10 +14,12 @@
     ],
 		"modules-left": [
       "custom/launcher",
-      "niri/workspaces"
+      "group/pill#temperature",
+      "group/pill#cpu",
+      "group/pill#memory",
     ],
 		"modules-center": [
-      "wlr/taskbar",
+      "niri/workspaces"
 		],
 		"modules-right": [
       "custom/screen-recorder",
@@ -32,6 +34,18 @@
     ],
     "wlr/taskbar": {
       "tooltip-format": "{name} - {title}",
+    },
+    "group/pill#temperature": {
+      "orientation": "inherit",
+      "modules": ["temperature", "temperature#hover-text"],
+    },
+    "group/pill#cpu": {
+      "orientation": "inherit",
+      "modules": ["cpu", "cpu#hover-text"],
+    },
+    "group/pill#memory": {
+      "orientation": "inherit",
+      "modules": ["memory", "memory#hover-text"],
     },
     "group/pill#battery": {
       "orientation": "inherit",
@@ -84,6 +98,35 @@
         "active": "󰈉",
         "default": "󰈈"
       },
+    },
+    "temperature": {
+      "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+      "format": "{icon}",
+      "format-icons": ["", "", "", "", ""],
+    },
+    "temperature#hover-text": {
+      "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+      "format": "{temperatureC}",
+    },
+    "cpu": {
+      "format": "󰾆",
+      "format-warning": "󰾅",
+      "format-critical": "󰓅",
+      "format-icons": "",
+      "tooltip": true,
+    },
+    "cpu#hover-text": {
+      "format": "{usage}",
+      "tooltip": true,
+    },
+    "memory": {
+      "format": "{icon}",
+      "format-icons": "󰍛",
+      "tooltip-format": "Memory: {used:0.1f}/{total:0.1f}G\nSwap: {swapUsed:0.1f}/{swapTotal:0.1f}G"
+    },
+    "memory#hover-text": {
+      "format": "{percentage}",
+      "tooltip-format": "Memory: {used:0.1f}/{total:0.1f}G\nSwap: {swapUsed:0.1f}/{swapTotal:0.1f}G"
     },
 		"custom/launcher": {
       "justify": "center",
