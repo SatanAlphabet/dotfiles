@@ -1,0 +1,118 @@
+* {
+  font-family: "CaskaydiaCove Nerd Font Propo";
+  font-size: 14px;
+  font-weight: 400;
+}
+
+window#waybar {
+  box-shadow: none;
+  text-shadow: none;
+  background: @main-bg;
+  color: @main-fg;
+}
+
+window#waybar.main #privacy,
+window#waybar.main .module {
+  padding: 0px 8px;
+  border-radius: 0px;
+}
+
+tooltip {
+  background: @main-bg;
+  color: @main-fg;
+  border: 1px solid @border-outline;
+}
+
+tooltip label {
+  font-size: 11px;
+  color: @main-fg;
+  font-weight: 400;
+}
+
+menu {
+  background: @main-bg;
+  color: @main-fg;
+  border: 1px solid @border-outline;
+}
+
+menuitem {
+  color: @main-fg;
+}
+
+menuitem arrow {
+  color: @hvr-bg;
+}
+
+menuitem label {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+menuitem:hover {
+  background: @pill-bg;
+}
+
+menuitem:hover arrow {
+  color: @act-bg;
+}
+
+window#waybar.main .modules-right {
+  margin-right: 0px;
+}
+
+.warning {
+  color: @ter-bg;
+}
+
+.recording,
+.critical {
+  color: @crit-bg;
+}
+
+.muted,
+.paused,
+.disabled,
+.disconnected,
+.off {
+  color: @inact-fg;
+}
+
+window#waybar.main #workspaces {
+  padding-left: 0px;
+}
+
+#workspaces button {
+  text-shadow: none;
+  box-shadow: none;
+  color: @main-fg;
+  min-width: 10px;
+  min-height: 0px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#workspaces button:hover {
+  background: @pill-hvr-bg;
+  transition: all 0s;
+}
+
+#workspaces button.active {
+  opacity: 1.0;
+  background: @act-bg;
+  color: @act-fg;
+}
+
+#workspaces button.active label {
+  font-weight: 800;
+}
+
+#window label {
+  font-size: 12px;
+}
+
+window#waybar.main #custom-swaync.cc-open {
+  background: @act-bg;
+  color: @act-fg;
+}

@@ -1,0 +1,5 @@
+@import "~/.config/rofi/styles/menu/styles/style_1.rasi"
+
+window {
+  location: west;
+}
