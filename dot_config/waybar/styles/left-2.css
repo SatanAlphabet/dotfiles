@@ -15,13 +15,13 @@ window#waybar.main .module {
   background: @pill-bg;
   margin: 0px 8px;
   padding: 4px 0px;
-  border-radius: 20px;
+  border-radius: 4px;
 }
 
 window#waybar.main #pill {
   background: @pill-bg;
   margin: 0px 8px;
-  border-radius: 20px;
+  border-radius: 4px;
 }
 
 window#waybar.main #privacy:hover,
@@ -92,8 +92,18 @@ window#waybar.main .modules-right {
 
 window#waybar.main #pill .alt {
   font-size: 11px;
-  margin-top: 2px;
-  margin-bottom: -4px;
+  font-family: "Inter Variable";
+  font-feature-settings: "tnum";
+}
+
+window#waybar.main .modules-left #pill .alt {
+  margin-bottom: 1px;
+  margin-top: -2px;
+}
+
+window#waybar.main .modules-right #pill .alt {
+  margin-top: 1px;
+  margin-bottom: -2px;
 }
 
 window#waybar.main #custom-launcher {
