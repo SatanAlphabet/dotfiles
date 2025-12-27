@@ -37,19 +37,19 @@
     },
     "group/pill#temperature": {
       "orientation": "inherit",
-      "modules": ["temperature", "temperature#hover-text"],
+      "modules": ["temperature", "temperature#alt"],
     },
     "group/pill#cpu": {
       "orientation": "inherit",
-      "modules": ["cpu", "cpu#hover-text"],
+      "modules": ["cpu", "cpu#alt"],
     },
     "group/pill#memory": {
       "orientation": "inherit",
-      "modules": ["memory", "memory#hover-text"],
+      "modules": ["memory", "memory#alt"],
     },
     "group/pill#battery": {
       "orientation": "inherit",
-      "modules": ["battery", "battery#hover-text"],
+      "modules": ["battery", "battery#alt"],
       "drawer": {
         "transition-left-to-right": false,
         "transition-duration": 300,
@@ -57,7 +57,7 @@
     },
     "group/pill#audio": {
       "orientation": "inherit",
-      "modules": ["pulseaudio", "pulseaudio#hover-text"],
+      "modules": ["pulseaudio", "pulseaudio#alt"],
       "drawer": {
         "transition-left-to-right": false,
         "transition-duration": 300,
@@ -65,7 +65,7 @@
     },
     "group/pill#backlight": {
       "orientation": "inherit",
-      "modules": ["backlight", "backlight#hover-text"],
+      "modules": ["backlight", "backlight#alt"],
       "drawer": {
         "transition-left-to-right": false,
         "transition-duration": 300,
@@ -104,7 +104,7 @@
       "format": "{icon}",
       "format-icons": ["", "", "", "", ""],
     },
-    "temperature#hover-text": {
+    "temperature#alt": {
       "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
       "format": "{temperatureC}",
     },
@@ -115,7 +115,7 @@
       "format-icons": "",
       "tooltip": true,
     },
-    "cpu#hover-text": {
+    "cpu#alt": {
       "format": "{usage}",
       "tooltip": true,
     },
@@ -124,7 +124,7 @@
       "format-icons": "󰍛",
       "tooltip-format": "Memory: {used:0.1f}/{total:0.1f}G\nSwap: {swapUsed:0.1f}/{swapTotal:0.1f}G"
     },
-    "memory#hover-text": {
+    "memory#alt": {
       "format": "{percentage}",
       "tooltip-format": "Memory: {used:0.1f}/{total:0.1f}G\nSwap: {swapUsed:0.1f}/{swapTotal:0.1f}G"
     },
@@ -143,7 +143,7 @@
       },
 			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
     },
-		"battery#hover-text": {
+		"battery#alt": {
       "justify": "center",
 			"format": "{capacity}",
 		  "design-capacity": true,
@@ -157,7 +157,7 @@
 			"format-icons": ["", "", "", "", "", "", "", "", ""],
 			"tooltip-format": "{icon} Backlight level: {percent}%",
     },
-		"backlight#hover-text": {
+		"backlight#alt": {
       "justify": "center",
       "format": "{percent}",
 			"tooltip-format": "{icon} Backlight level: {percent}%",
@@ -183,7 +183,7 @@
 			},
 			"tooltip-format": "{desc}: {volume}%",
     },
-    "pulseaudio#hover-text": {
+    "pulseaudio#alt": {
       "justify": "center",
       "format": "{volume}",
 			"tooltip-format": "{desc}: {volume}%",

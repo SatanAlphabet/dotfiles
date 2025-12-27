@@ -3,7 +3,7 @@
 		"on-scroll-up": "brightnesscontrol.sh + 1",
 		"on-scroll-down": "brightnesscontrol.sh - 1"
 	},
-	"backlight#hover-text": {
+	"backlight#alt": {
 		"on-scroll-up": "brightnesscontrol.sh + 1",
 		"on-scroll-down": "brightnesscontrol.sh - 1"
 	},
@@ -21,7 +21,7 @@
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 	},
-	"battery#hover-text": {
+	"battery#alt": {
 		"states": {
 			"warning": 30,
 			"critical": 15
@@ -100,7 +100,7 @@
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
   },
-  "cpu#hover-text": {
+  "cpu#alt": {
     "states": {
       "warning": 60,
       "critical": 90,
@@ -191,7 +191,7 @@
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
   },
-  "memory#hover-text": {
+  "memory#alt": {
     "states": {
       "warning": 70,
       "critical": 90,
@@ -263,7 +263,7 @@
 		"on-click-right": "volumecontrol.sh toggle-mute",
 		"scroll-step": 1,
 	},
-	"pulseaudio#hover-text": {
+	"pulseaudio#alt": {
 		"on-scroll-up": "volumecontrol.sh + 1",
 		"on-scroll-down": "volumecontrol.sh - 1",
 		"on-click": "pavucontrol-qt -t 3",
@@ -276,7 +276,7 @@
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
   },
-  "temperature#hover-text": {
+  "temperature#alt": {
     "warning-threshold": 75,
     "critical-threshold": 90,
 		"on-scroll-up": "true",
