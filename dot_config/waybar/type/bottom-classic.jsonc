@@ -18,14 +18,14 @@
 			"clock",
 		],
 		"modules-right": [
+			"group/music",
       "custom/screen-recorder",
-			"mpris",
       "tray",
       "custom/sysupdate",
+			"custom/swaync",
       "battery",
       "pulseaudio",
       "network",
-			"custom/swaync",
     ],
 		"niri/workspaces": {
 			"format": "{index}",
@@ -45,6 +45,14 @@
         "default": ""
       },
     },
+    "group/music": {
+      "orientation": "inherit",
+      "modules": ["mpris", "mpris#alt"],
+      "drawer": {
+        "transition-left-to-right": true,
+        "transition-duration": 500,
+      },
+    },
 		"mpris": {
 			"format": "{player_icon}",
 			"format-paused": "{status_icon}",
@@ -56,6 +64,19 @@
 			"status-icons": {
 				"paused": "󰐊"
 			},
+    },
+		"mpris#alt": {
+			"format": "{title}",
+			"format-paused": "<i>{title}</i>",
+		  "tooltip-format": "PLAYING [{position}/{length}]\n{title} - {artist}",
+		  "tooltip-format-paused": "PAUSED [{position}/{length}]\n{title} - {artist}",
+			"player-icons": {
+				"default": "󰝚"
+			},
+			"status-icons": {
+				"paused": "󰐊"
+			},
+      "max-length": 30,
     },
     "tray": {
 		  "icon-size": 16,
@@ -70,7 +91,7 @@
 			},
     },
 		"battery": {
-			"format": "{icon} {capacity}%",
+			"format": "{icon}",
 			"format-icons": {
         "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "plugged": "",
@@ -79,7 +100,7 @@
 			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
     },
 		"pulseaudio": {
-			"format": "{icon} {volume}%",
+			"format": "{icon}",
 			"format-muted": "",
 			"format-icons": {
 				"headphone": "󰋋",
@@ -99,7 +120,7 @@
 			"tooltip-format": "{desc}: {volume}%",
     },
 		"network": {
-      "format": "{icon} {signalStrength}%",
+      "format": "{icon}",
       "format-icons": {
         "wifi": ["󰤟", "󰤢", "󰤥", "󰤨"],
 			  "ethernet": "󰈁",
