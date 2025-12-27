@@ -7,8 +7,16 @@
     --toolbar-field-color: {{colors.on_surface.dark.hex}} !important;
     --arrowpanel-color: {{colors.on_surface.dark.hex}} !important;
     --arrowpanel-background: {{colors.surface.dark.hex}} !important;
-    --zen-native-content-radius: 0;
-    --zen-border-radius: 0;
+    --zen-native-content-radius: 0 !important;
+    --zen-border-radius: 0 !important;
+    --border-radius-small: 0 !important;
+    --border-radius-medium: 0 !important;
+    --border-radius-large: 0 !important;
+    --zen-button-border-radius: 0 !important;
+    --toolbarbutton-border-radius: 0 !important;
+    --tab-border-radius: 0 !important;
+    --arrowpanel-border-radius: 0 !important;
+    --arrowpanel-menuitem-border-radius: 0 !important;
   }
 
   #zen-workspaces-button {
@@ -41,8 +49,16 @@
     --toolbar-field-color: {{colors.on_surface.light.hex}} !important;
     --arrowpanel-color: {{colors.on_surface.light.hex}} !important;
     --arrowpanel-background: {{colors.surface.light.hex}} !important;
-    --zen-native-content-radius: 0;
-    --zen-border-radius: 0;
+    --zen-native-content-radius: 0 !important;
+    --zen-border-radius: 0 !important;
+    --border-radius-small: 0 !important;
+    --border-radius-medium: 0 !important;
+    --border-radius-large: 0 !important;
+    --zen-button-border-radius: 0 !important;
+    --toolbarbutton-border-radius: 0 !important;
+    --tab-border-radius: 0 !important;
+    --arrowpanel-border-radius: 0 !important;
+    --arrowpanel-menuitem-border-radius: 0 !important;
   }
 
   #zen-workspaces-button {
