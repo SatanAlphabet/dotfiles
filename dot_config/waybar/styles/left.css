@@ -89,8 +89,10 @@ window#waybar.main .modules-right {
   margin-bottom: 10px;
 }
 
-window#waybar.main .alt {
+window#waybar.main #pill .alt {
   font-size: 11px;
+  margin-top: 2px;
+  margin-bottom: -4px;
 }
 
 window#waybar.main #custom-launcher {
