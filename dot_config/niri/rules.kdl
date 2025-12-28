@@ -42,8 +42,8 @@ window-rule {
 
   open-floating true
   default-floating-position x=24 y=24 relative-to="bottom-right"
-  default-window-height { proportion 0.2; }
-  default-column-width { proportion 0.2; }
+  default-window-height { fixed 500; }
+  default-column-width { fixed 300; }
 }
 
 window-rule {
