@@ -38,6 +38,15 @@ window-rule {
 }
 
 window-rule {
+  match title="^Discord Popout$"
+
+  open-floating true
+  default-floating-position x=24 y=24 relative-to="bottom-right"
+  default-window-height { proportion 0.2; }
+  default-column-width { proportion 0.2; }
+}
+
+window-rule {
   match app-id=r#"discord$"#
   match app-id=r#"zen$"#
   match app-id=r#"firefox$"#
