@@ -4,9 +4,13 @@
     --zen-colors-secondary: {{colors.secondary.dark.hex}} !important;
     --zen-colors-tertiary: {{colors.tertiary.dark.hex}} !important;
     --zen-main-browser-background: {{colors.surface.dark.hex}} !important;
-    --toolbar-field-color: {{colors.on_surface.dark.hex}} !important;
     --arrowpanel-color: {{colors.on_surface.dark.hex}} !important;
     --arrowpanel-background: {{colors.surface.dark.hex}} !important;
+    --toolbarbutton-icon-fill: {{colors.primary.dark.hex}} !important;
+    --toolbar-field-color: {{colors.on_surface.dark.hex}} !important;
+    --tab-selected-textcolor: {{colors.primary.dark.hex}} !important;
+    --toolbar-color: {{colors.on_surface.dark.hex}} !important;
+    --sidebar-text-color: {{colors.on_surface.dark.hex}} !important;
     --zen-native-content-radius: 0 !important;
     --zen-border-radius: 0 !important;
     --border-radius-small: 0 !important;
@@ -38,6 +42,11 @@
   #urlbar-background {
     background-color: {{colors.surface_container_high.dark.hex}} !important;
   }
+
+  .urlbar-input::selection {
+    color: {{colors.on_primary.dark.hex}} !important;
+    background-color: {{colors.primary.dark.hex}} !important;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -46,9 +55,13 @@
     --zen-colors-secondary: {{colors.secondary.light.hex}} !important;
     --zen-colors-tertiary: {{colors.tertiary.light.hex}} !important;
     --zen-main-browser-background: {{colors.surface.light.hex}} !important;
-    --toolbar-field-color: {{colors.on_surface.light.hex}} !important;
     --arrowpanel-color: {{colors.on_surface.light.hex}} !important;
     --arrowpanel-background: {{colors.surface.light.hex}} !important;
+    --toolbarbutton-icon-fill: {{colors.primary.light.hex}} !important;
+    --toolbar-field-color: {{colors.on_surface.light.hex}} !important;
+    --tab-selected-textcolor: {{colors.primary.light.hex}} !important;
+    --toolbar-color: {{colors.on_surface.light.hex}} !important;
+    --sidebar-text-color: {{colors.on_surface.light.hex}} !important;
     --zen-native-content-radius: 0 !important;
     --zen-border-radius: 0 !important;
     --border-radius-small: 0 !important;
@@ -79,5 +92,10 @@
 
   #urlbar-background {
     background-color: {{colors.surface_container_high.light.hex}} !important;
+  }
+
+  .urlbar-input::selection {
+    color: {{colors.on_primary.light.hex}} !important;
+    background-color: {{colors.primary.light.hex}} !important;
   }
 }
