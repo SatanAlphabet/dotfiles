@@ -104,6 +104,7 @@ aur = [
   "bibata-cursor-theme-bin",
   "darkly-bin",
   "downgrade",
+  "gpu-screen-recorder",
   "nirius",
   "paccache-hook",
   "python-pywalfox",
