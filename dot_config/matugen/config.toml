@@ -6,7 +6,7 @@ set = false
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar.css'
 output_path = '~/.config/waybar/colors.css'
-post_hook = 'sed -i s/i/i/ ~/.config/waybar/style.css'
+post_hook = 'sed -i s/// ~/.config/waybar/style.css'
 
 [templates.wlogout]
 input_path = '~/.config/matugen/templates/wlogout.css'
@@ -15,12 +15,12 @@ output_path = '~/.config/wlogout/colors.css'
 [templates.dunst]
 input_path = '~/.config/matugen/templates/dunstrc-colors'
 output_path = '~/.config/dunst/dunstrc.d/matugen-colors.conf'
-post_hook = 'pgrep -x dunst && dunstctl reload'
+post_hook = 'dunstctl reload'
 
 [templates.swaync]
 input_path = '~/.config/matugen/templates/swaync.css'
 output_path = '~/.config/swaync/colors.css'
-post_hook = 'pgrep -x swaync && swaync-client -rs'
+post_hook = 'swaync-client -rs -sw'
 
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi.css'
@@ -65,7 +65,7 @@ post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings s
 [templates.cava]
 input_path = '~/.config/matugen/templates/cava-colors.ini'
 output_path = '~/.config/cava/themes/matugen'
-post_hook = "pgrep -x cava && pkill -USR1 cava"
+post_hook = "pkill -USR1 cava"
 
 [templates.yazi]
 input_path = '~/.config/matugen/templates/yazi-theme.toml'
@@ -74,7 +74,7 @@ output_path = '~/.config/yazi/theme.toml'
 [templates.spotify]
 input_path = '~/.config/matugen/templates/spotify-color.ini'
 output_path = '~/.config/spicetify/Themes/colorful/color.ini'
-post_hook = 'pgrep -x spotify && spicetify refresh'
+post_hook = 'pgrep -x spotify && spicetify refresh &'
 
 [templates.spotify-text]
 input_path = '~/.config/matugen/templates/spotify-text-color.ini'
@@ -95,15 +95,17 @@ output_path = '~/.vscode-oss/extensions/satanalphabet.matugen-vscode-1.1.0/theme
 [templates.zen-userChrome]
 input_path = '~/.config/matugen/templates/userChrome.css'
 output_path = '~/.cache/matugen/zen-browser/userChrome.css'
+post_hook = 'sync-zen-settings.sh'
 
 [templates.zen-userContent]
 input_path = '~/.config/matugen/templates/userContent.css'
 output_path = '~/.cache/matugen/zen-browser/userContent.css'
+post_hook = 'sync-zen-settings.sh'
 
 [templates.pywalfox]
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
-post_hook = 'matugen-pywalfox.sh'
+post_hook = 'matugen-pywalfox.sh &'
 
 [templates.color-scheme]
 input_path = '~/.config/matugen/templates/Matugen.colors'
