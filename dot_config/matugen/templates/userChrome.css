@@ -1,16 +1,34 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --zen-primary-color: {{colors.primary.dark.hex}} !important;
+    --zen-colors-primary: {{colors.surface.dark.hex}} !important;
     --zen-colors-secondary: {{colors.secondary.dark.hex}} !important;
     --zen-colors-tertiary: {{colors.tertiary.dark.hex}} !important;
+    --zen-colors-border: {{colors.outline.dark.hex}} !important;
+
     --zen-main-browser-background: {{colors.surface.dark.hex}} !important;
+    --toolbox-bgcolor-inactive: {{colors.surface.dark.hex}} !important;
+    --newtab-background-color: {{colors.surface.dark.hex}} !important;
+    --zen-themed-toolbar-bg: {{colors.surface.dark.hex}} !important;
+    --toolbar-bgcolor: {{colors.surface_container.dark.hex}} !important;
+
     --arrowpanel-color: {{colors.on_surface.dark.hex}} !important;
     --arrowpanel-background: {{colors.surface.dark.hex}} !important;
+
     --toolbarbutton-icon-fill: {{colors.primary.dark.hex}} !important;
     --toolbar-field-color: {{colors.on_surface.dark.hex}} !important;
-    --tab-selected-textcolor: {{colors.primary.dark.hex}} !important;
+    --toolbar-field-focus-color: {{colors.on_surface.dark.hex}} !important;
     --toolbar-color: {{colors.on_surface.dark.hex}} !important;
+    --newtab-text-primary-color: {{colors.on_surface.dark.hex}} !important;
+
     --sidebar-text-color: {{colors.on_surface.dark.hex}} !important;
+    --lwt-sidebar-text-color: {{colors.on_surface.dark.hex}} !important;
+    --lwt-sidebar-background-color: {{colors.surface.dark.hex}} !important;
+    --tab-selected-textcolor: {{colors.primary.dark.hex}} !important;
+
+    --urlbarView-highlight-background: {{colors.primary.dark.rgba | set_alpha: 0.35}} !important;
+    --urlbarView-highlight-color: {{colors.on_primary.dark.hex}} !important;
+
     --zen-native-content-radius: 0 !important;
     --zen-border-radius: 0 !important;
     --border-radius-small: 0 !important;
@@ -47,21 +65,61 @@
     color: {{colors.on_primary.dark.hex}} !important;
     background-color: {{colors.primary.dark.hex}} !important;
   }
+  /* Pane UI button visibility issue fix */
+  #PanelUI-menu-button[open] .toolbarbutton-icon {
+    fill: {{colors.primary.dark.hex}} !important;
+  }
+  /* Selected URLs contrast visibility issue fix */
+  .urlbarView-row[descendant-selected] {
+    background-color: {{colors.primary.dark.rgba | set_alpha: 0.35}} !important;
+    color: {{colors.primary.dark.hex}} !important;
+  }
+  
+  .urlbarView-row[descendant-selected] .urlbarView-url {
+    color: {{colors.primary.dark.hex}} !important;
+  }
+  
+  .urlbarView-row[descendant-selected] .urlbarView-title {
+    color: {{colors.primary.dark.hex}} !important;
+  }
+  
+  /* Zen toast/indicator contrast visibility issue fix */
+  #zen-toast-container {
+    color: {{colors.on_primary.dark.hex}} !important;
+  }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --zen-primary-color: {{colors.primary.light.hex}} !important;
+    --zen-colors-primary: {{colors.surface.light.hex}} !important;
     --zen-colors-secondary: {{colors.secondary.light.hex}} !important;
     --zen-colors-tertiary: {{colors.tertiary.light.hex}} !important;
+    --zen-colors-border: {{colors.outline.light.hex}} !important;
+
     --zen-main-browser-background: {{colors.surface.light.hex}} !important;
+    --toolbox-bgcolor-inactive: {{colors.surface.light.hex}} !important;
+    --newtab-background-color: {{colors.surface.light.hex}} !important;
+    --zen-themed-toolbar-bg: {{colors.surface.light.hex}} !important;
+    --toolbar-bgcolor: {{colors.surface_container.light.hex}} !important;
+
     --arrowpanel-color: {{colors.on_surface.light.hex}} !important;
     --arrowpanel-background: {{colors.surface.light.hex}} !important;
+
     --toolbarbutton-icon-fill: {{colors.primary.light.hex}} !important;
     --toolbar-field-color: {{colors.on_surface.light.hex}} !important;
-    --tab-selected-textcolor: {{colors.primary.light.hex}} !important;
+    --toolbar-field-focus-color: {{colors.on_surface.light.hex}} !important;
     --toolbar-color: {{colors.on_surface.light.hex}} !important;
+    --newtab-text-primary-color: {{colors.on_surface.light.hex}} !important;
+
     --sidebar-text-color: {{colors.on_surface.light.hex}} !important;
+    --lwt-sidebar-text-color: {{colors.on_surface.light.hex}} !important;
+    --lwt-sidebar-background-color: {{colors.surface.light.hex}} !important;
+    --tab-selected-textcolor: {{colors.primary.light.hex}} !important;
+
+    --urlbarView-highlight-background: {{colors.primary.light.rgba | set_alpha: 0.35}} !important;
+    --urlbarView-highlight-color: {{colors.on_primary.light.hex}} !important;
+
     --zen-native-content-radius: 0 !important;
     --zen-border-radius: 0 !important;
     --border-radius-small: 0 !important;
@@ -97,5 +155,27 @@
   .urlbar-input::selection {
     color: {{colors.on_primary.light.hex}} !important;
     background-color: {{colors.primary.light.hex}} !important;
+  }
+  /* Pane UI button visibility issue fix */
+  #PanelUI-menu-button[open] .toolbarbutton-icon {
+    fill: {{colors.primary.light.hex}} !important;
+  }
+  /* Selected URLs contrast visibility issue fix */
+  .urlbarView-row[descendant-selected] {
+    background-color: {{colors.primary.light.rgba | set_alpha: 0.35}} !important;
+    color: {{colors.primary.light.hex}} !important;
+  }
+  
+  .urlbarView-row[descendant-selected] .urlbarView-url {
+    color: {{colors.primary.light.hex}} !important;
+  }
+  
+  .urlbarView-row[descendant-selected] .urlbarView-title {
+    color: {{colors.primary.light.hex}} !important;
+  }
+  
+  /* Zen toast/indicator contrast visibility issue fix */
+  #zen-toast-container {
+    color: {{colors.on_primary.light.hex}} !important;
   }
 }
