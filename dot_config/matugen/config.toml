@@ -92,9 +92,13 @@ output_path = '~/.vscode-oss/extensions/satanalphabet.matugen-vscode-1.1.0/theme
 input_path = '~/.config/matugen/templates/vscode-color-theme-dark.json'
 output_path = '~/.vscode-oss/extensions/satanalphabet.matugen-vscode-1.1.0/themes/dark.json'
 
-[templates.zen]
+[templates.zen-userChrome]
 input_path = '~/.config/matugen/templates/userChrome.css'
-output_path = '~/.zen/32k6x2yc.Default (release)/chrome/userChrome.css'
+output_path = '~/.cache/matugen/zen-browser/userChrome.css'
+
+[templates.zen-userContent]
+input_path = '~/.config/matugen/templates/userContent.css'
+output_path = '~/.cache/matugen/zen-browser/userContent.css'
 
 [templates.pywalfox]
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
