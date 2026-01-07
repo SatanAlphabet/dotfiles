@@ -203,10 +203,7 @@
 		},
 		{
 			"name": "java type",
-			"scope": [
-				"storage.type.annotation.java",
-				"storage.type.object.array.java"
-			],
+			"scope": ["storage.type.annotation.java", "storage.type.object.array.java"],
 			"settings": {
 				"foreground": "{{colors.secondary.dark.hex}}"
 			}
@@ -822,10 +819,7 @@
 		},
 		{
 			"name": "go operator",
-			"scope": [
-				"keyword.operator.arithmetic.go",
-				"keyword.operator.address.go"
-			],
+			"scope": ["keyword.operator.arithmetic.go", "keyword.operator.address.go"],
 			"settings": {
 				"foreground": "{{colors.primary.dark.hex}}"
 			}
@@ -1081,11 +1075,7 @@
 		},
 		{
 			"name": "Class name",
-			"scope": [
-				"entity.name.class",
-				"variable.other.class.js",
-				"variable.other.class.ts"
-			],
+			"scope": ["entity.name.class", "variable.other.class.js", "variable.other.class.ts"],
 			"settings": {
 				"foreground": "{{colors.secondary.dark.hex}}"
 			}
@@ -1624,11 +1614,11 @@
 		"focusBorder": "{{colors.primary.dark.hex}}",
 		"selection.background": "{{colors.primary.dark.hex}}66",
 		"scrollbar.shadow": "{{colors.background.dark.hex}}00",
-    "activityBar.background": "{{colors.surface_container_high.dark.hex}}",
-    "activityBar.foreground": "{{colors.on_surface.dark.hex}}",
-    "activityBar.inactiveForeground": "{{colors.on_surface_variant.dark.hex}}",
-    "activityBarBadge.background": "{{colors.primary.dark.hex}}",
-    "activityBarBadge.foreground": "{{colors.on_primary.dark.hex}}",
+		"activityBar.background": "{{colors.surface_container_high.dark.hex}}",
+		"activityBar.foreground": "{{colors.on_surface.dark.hex}}",
+		"activityBar.inactiveForeground": "{{colors.on_surface_variant.dark.hex}}",
+		"activityBarBadge.background": "{{colors.primary.dark.hex}}",
+		"activityBarBadge.foreground": "{{colors.on_primary.dark.hex}}",
 		"sideBar.background": "{{colors.surface_container.dark.hex}}",
 		"sideBar.foreground": "{{colors.on_surface.dark.hex}}",
 		"sideBarSectionHeader.background": "{{colors.surface_container.dark.hex}}",

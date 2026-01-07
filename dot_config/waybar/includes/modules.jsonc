@@ -1,22 +1,22 @@
 {
 	"backlight": {
 		"on-scroll-up": "brightnesscontrol.sh + 1",
-		"on-scroll-down": "brightnesscontrol.sh - 1"
+		"on-scroll-down": "brightnesscontrol.sh - 1",
 	},
 	"backlight#alt": {
 		"on-scroll-up": "brightnesscontrol.sh + 1",
-		"on-scroll-down": "brightnesscontrol.sh - 1"
+		"on-scroll-down": "brightnesscontrol.sh - 1",
 	},
 	"battery": {
 		"states": {
 			"warning": 30,
-			"critical": 15
+			"critical": 15,
 		},
-    "events": {
-      "on-discharging-warning": "notify-send -a 'Battery' 'Low Battery...' 'Please plug in your device.' -i battery-caution-symbolic",
-      "on-discharging-critical": "systemd-run --user ~/.config/waybar/scripts/critical-battery-event.sh",
-      "on-charging-100": "notify-send -e -a 'Battery' 'Battery full...' 'Battery capacity at maximum level.' -i battery-level-100-charged-symbolic"
-    },
+		"events": {
+			"on-discharging-warning": "notify-send -a 'Battery' 'Low Battery...' 'Please plug in your device.' -i battery-caution-symbolic",
+			"on-discharging-critical": "systemd-run --user ~/.config/waybar/scripts/critical-battery-event.sh",
+			"on-charging-100": "notify-send -e -a 'Battery' 'Battery full...' 'Battery capacity at maximum level.' -i battery-level-100-charged-symbolic",
+		},
 		"design-capacity": true,
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
@@ -24,7 +24,7 @@
 	"battery#alt": {
 		"states": {
 			"warning": 30,
-			"critical": 15
+			"critical": 15,
 		},
 		"design-capacity": true,
 		"on-scroll-up": "true",
@@ -43,16 +43,16 @@
 			"format": {
 				"months": "<b>{}</b>",
 				"weekdays": "<b>{}</b>",
-				"today": "<b><u>{}</u></b>"
-			}
+				"today": "<b><u>{}</u></b>",
+			},
 		},
 		"actions": {
 			"on-click-right": "mode",
 			"on-click-forward": "tz_up",
 			"on-click-backward": "tz_down",
 			"on-scroll-up": "shift_up",
-			"on-scroll-down": "shift_down"
-		}
+			"on-scroll-down": "shift_down",
+		},
 	},
 	"clock#date": {
 		"calendar": {
@@ -62,16 +62,16 @@
 			"format": {
 				"months": "<b>{}</b>",
 				"weekdays": "<b>{}</b>",
-				"today": "<b><u>{}</u></b>"
-			}
+				"today": "<b><u>{}</u></b>",
+			},
 		},
 		"actions": {
 			"on-click-right": "mode",
 			"on-click-forward": "tz_up",
 			"on-click-backward": "tz_down",
 			"on-scroll-up": "shift_up",
-			"on-scroll-down": "shift_down"
-		}
+			"on-scroll-down": "shift_down",
+		},
 	},
 	"clock#time": {
 		"calendar": {
@@ -81,41 +81,41 @@
 			"format": {
 				"months": "<b>{}</b>",
 				"weekdays": "<b>{}</b>",
-				"today": "<b><u>{}</u></b>"
-			}
+				"today": "<b><u>{}</u></b>",
+			},
 		},
 		"actions": {
 			"on-click-right": "mode",
 			"on-click-forward": "tz_up",
 			"on-click-backward": "tz_down",
 			"on-scroll-up": "shift_up",
-			"on-scroll-down": "shift_down"
-		}
+			"on-scroll-down": "shift_down",
+		},
 	},
-  "cpu": {
-    "states": {
-      "warning": 60,
-      "critical": 90,
-    },
+	"cpu": {
+		"states": {
+			"warning": 60,
+			"critical": 90,
+		},
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-  },
-  "cpu#alt": {
-    "states": {
-      "warning": 60,
-      "critical": 90,
-    },
+	},
+	"cpu#alt": {
+		"states": {
+			"warning": 60,
+			"critical": 90,
+		},
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-  },
-  "custom/idle": {
-    "return-type": "json",
-    "signal": 7,
-    "on-click": "idle-inhibit.sh",
-    "exec": "~/.config/waybar/scripts/waybar-idle.sh",
+	},
+	"custom/idle": {
+		"return-type": "json",
+		"signal": 7,
+		"on-click": "idle-inhibit.sh",
+		"exec": "~/.config/waybar/scripts/waybar-idle.sh",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-  },
+	},
 	"custom/launcher": {
 		"on-click": "rofilaunch.sh menu",
 		"on-scroll-up": "true",
@@ -139,26 +139,26 @@
 			"record-region": "screen-record.sh region",
 			"theme": "themechange.sh",
 			"nightlight": "nightlight.sh",
-			"niri": "xdg-open https://github.com/YaLTeR/niri"
+			"niri": "xdg-open https://github.com/YaLTeR/niri",
 		},
 	},
-  "custom/nightlight": {
-    "return-type": "json",
-    "signal": 8,
-    "on-click": "nightlight.sh",
-    "exec": "~/.config/waybar/scripts/waybar-nightlight.sh",
+	"custom/nightlight": {
+		"return-type": "json",
+		"signal": 8,
+		"on-click": "nightlight.sh",
+		"exec": "~/.config/waybar/scripts/waybar-nightlight.sh",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-  },
-  "custom/screen-recorder": {
-    "return-type": "json",
-    "signal": 6,
-    "on-click": "screen-record.sh",
-    "on-click-right": "screen-record.sh region",
-    "exec": "~/.config/waybar/scripts/waybar-screen-recorder.sh",
+	},
+	"custom/screen-recorder": {
+		"return-type": "json",
+		"signal": 6,
+		"on-click": "screen-record.sh",
+		"on-click-right": "screen-record.sh region",
+		"exec": "~/.config/waybar/scripts/waybar-screen-recorder.sh",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-  },
+	},
 	"custom/seperator-vertical": {
 		"format": "",
 		"tooltip": false,
@@ -174,32 +174,32 @@
 		"on-click-right": "swaync-client -d -sw",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-		"escape": true
+		"escape": true,
 	},
 	"custom/sysupdate": {
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 		"exec-if": "which waybar-module-pacman-updates",
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
-		"on-click": "kitty --class 'sysupdate' --title 'System Update' sysupdate.sh"
+		"on-click": "kitty --class 'sysupdate' --title 'System Update' sysupdate.sh",
 	},
-  "memory": {
-    "states": {
-      "warning": 70,
-      "critical": 90,
-    },
+	"memory": {
+		"states": {
+			"warning": 70,
+			"critical": 90,
+		},
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-  },
-  "memory#alt": {
-    "states": {
-      "warning": 70,
-      "critical": 90,
-    },
+	},
+	"memory#alt": {
+		"states": {
+			"warning": 70,
+			"critical": 90,
+		},
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-  },
-  "mpris": {
+	},
+	"mpris": {
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 		"on-click": "mediacontrol.sh toggle",
@@ -211,10 +211,10 @@
 		"on-click": "kitty -1 nmtui",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-		"interval": 2
+		"interval": 2,
 	},
 	"niri/language": {
-    "tooltip": "Left Click: Next layout\nRight Click: Previous layout",
+		"tooltip": "Left Click: Next layout\nRight Click: Previous layout",
 		"on-click": "layout-toggle.sh next",
 		"on-click-right": "layout-toggle.sh prev",
 		"on-scroll-up": "true",
@@ -228,7 +228,7 @@
 	"niri/workspaces": {
 		"on-scroll-up": "niri msg action focus-workspace-up",
 		"on-scroll-down": "niri msg action focus-workspace-down",
-    "on-click-right": "niri msg action toggle-overview"
+		"on-click-right": "niri msg action toggle-overview",
 	},
 	"privacy": {
 		"transition-duration": 250,
@@ -242,19 +242,19 @@
 			{
 				"type": "audio-in",
 				"tooltip": true,
-			}
+			},
 		],
 		"ignore-monitor": true,
 		"ignore": [
 			{
 				"type": "audio-in",
-				"name": "cava"
+				"name": "cava",
 			},
 			{
 				"type": "screenshare",
-				"name": "obs"
-			}
-		]
+				"name": "obs",
+			},
+		],
 	},
 	"pulseaudio": {
 		"on-scroll-up": "volumecontrol.sh + 1",
@@ -270,21 +270,21 @@
 		"on-click-right": "volumecontrol.sh toggle-mute",
 		"scroll-step": 1,
 	},
-  "temperature": {
-    "warning-threshold": 75,
-    "critical-threshold": 90,
+	"temperature": {
+		"warning-threshold": 75,
+		"critical-threshold": 90,
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-  },
-  "temperature#alt": {
-    "warning-threshold": 75,
-    "critical-threshold": 90,
+	},
+	"temperature#alt": {
+		"warning-threshold": 75,
+		"critical-threshold": 90,
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
-  },
-  "wlr/taskbar": {
-    "on-click": "activate",
-    "on-click-right": "close",
-    "on-click-middle": "maximize",
-  },
+	},
+	"wlr/taskbar": {
+		"on-click": "activate",
+		"on-click-right": "close",
+		"on-click-middle": "maximize",
+	},
 }

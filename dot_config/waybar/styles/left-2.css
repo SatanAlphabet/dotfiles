@@ -1,34 +1,34 @@
 * {
-  font-family: "CaskaydiaCove Nerd Font Propo";
-  font-size: 16px;
+	font-family: "CaskaydiaCove Nerd Font Propo";
+	font-size: 16px;
 }
 
 window#waybar {
-  box-shadow: none;
-  text-shadow: none;
-  background: @main-bg;
-  color: @main-fg;
+	box-shadow: none;
+	text-shadow: none;
+	background: @main-bg;
+	color: @main-fg;
 }
 
 window#waybar.main #privacy,
 window#waybar.main .module {
-  background: @pill-bg;
-  margin: 0px 8px;
-  padding: 4px 0px;
-  border-radius: 4px;
+	background: @pill-bg;
+	margin: 0px 8px;
+	padding: 4px 0px;
+	border-radius: 4px;
 }
 
 window#waybar.main #pill {
-  background: @pill-bg;
-  margin: 0px 8px;
-  border-radius: 4px;
+	background: @pill-bg;
+	margin: 0px 8px;
+	border-radius: 4px;
 }
 
 window#waybar.main #privacy:hover,
 window#waybar.main #pill:hover,
 window#waybar.main .module:hover {
-  box-shadow: 0px 0px 0px .5px @act-bg inset;
-  background: @pill-hvr-bg;
+	box-shadow: 0px 0px 0px 0.5px @act-bg inset;
+	background: @pill-hvr-bg;
 }
 
 window#waybar.main #language:hover,
@@ -37,97 +37,97 @@ window#waybar.main #clock:hover,
 window#waybar.main #custom-launcher:hover,
 window#waybar.main #pill .module:hover,
 window#waybar.main #workspaces:hover {
-  box-shadow: inherit;
+	box-shadow: inherit;
 }
 
 window#waybar.main #workspaces:hover {
-  background: @pill-bg;
+	background: @pill-bg;
 }
 
 tooltip {
-  background: @main-bg;
-  color: @main-fg;
-  border: 1px solid @border-outline;
+	background: @main-bg;
+	color: @main-fg;
+	border: 1px solid @border-outline;
 }
 
 tooltip label {
-  font-size: 11px;
-  color: @main-fg;
+	font-size: 11px;
+	color: @main-fg;
 }
 
 menu {
-  background: @main-bg;
-  color: @main-fg;
-  border: 1px solid @border-outline;
+	background: @main-bg;
+	color: @main-fg;
+	border: 1px solid @border-outline;
 }
 
 menuitem {
-  color: @main-fg;
+	color: @main-fg;
 }
 
 menuitem arrow {
-  color: @hvr-bg;
+	color: @hvr-bg;
 }
 
 menuitem label {
-  font-size: 12px;
-  font-family: "Inter Variable";
+	font-size: 12px;
+	font-family: "Inter Variable";
 }
 
 menuitem:hover {
-  background: @pill-bg;
+	background: @pill-bg;
 }
 
 menuitem:hover arrow {
-  color: @act-bg;
+	color: @act-bg;
 }
 
 window#waybar.main .modules-left {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 window#waybar.main .modules-right {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 window#waybar.main #pill .alt {
-  font-size: 11px;
-  font-family: "Inter Variable";
-  font-feature-settings: "tnum";
+	font-size: 11px;
+	font-family: "Inter Variable";
+	font-feature-settings: "tnum";
 }
 
 window#waybar.main .modules-left #pill .alt {
-  margin-bottom: 1px;
-  margin-top: -2px;
+	margin-bottom: 1px;
+	margin-top: -2px;
 }
 
 window#waybar.main .modules-right #pill .alt {
-  margin-top: 1px;
-  margin-bottom: -2px;
+	margin-top: 1px;
+	margin-bottom: -2px;
 }
 
 window#waybar.main #custom-launcher {
-  font-size: 20px;
-  background: transparent;
-  color: @act-bg;
+	font-size: 20px;
+	background: transparent;
+	color: @act-bg;
 }
 
 window#waybar.main #custom-launcher:hover {
-  color: @hvr-bg;
+	color: @hvr-bg;
 }
 
 .warning {
-  color: @ter-bg;
+	color: @ter-bg;
 }
 
 .critical {
-  color: @crit-bg;
+	color: @crit-bg;
 }
 
 window#waybar.main .recording,
 window#waybar.main .recording:hover {
-  background: @crit-bg;
-  color: @crit-fg;
+	background: @crit-bg;
+	color: @crit-fg;
 }
 
 .muted,
@@ -135,165 +135,180 @@ window#waybar.main .recording:hover {
 .disabled,
 .disconnected,
 .off {
-  color: @inact-fg;
+	color: @inact-fg;
 }
 
 window#waybar.main #custom-seperator-vertical {
-  font-size: 13px;
-  margin: -8px 0px;
-  opacity: 0.3;
-  background: transparent;
+	font-size: 13px;
+	margin: -8px 0px;
+	opacity: 0.3;
+	background: transparent;
 }
 
 #workspaces button {
-  text-shadow: none;
-  box-shadow: none;
-  min-width: 0px;
-  min-height: 0px;
-  color: transparent;
-  background: @hvr-bg;
-  border-radius: 10px;
-  padding: 4px 0px;
-  margin: 6px 8px;
-  transition: all 0s;
-  opacity: 1.0;
+	text-shadow: none;
+	box-shadow: none;
+	min-width: 0px;
+	min-height: 0px;
+	color: transparent;
+	background: @hvr-bg;
+	border-radius: 10px;
+	padding: 4px 0px;
+	margin: 6px 8px;
+	transition: all 0s;
+	opacity: 1;
 }
 
 #workspaces button label {
-  font-weight: 500;
-  font-family: "Roboto";
-  font-size: 0px;
+	font-weight: 500;
+	font-family: "Roboto";
+	font-size: 0px;
 }
 
 #workspaces button.empty {
-  background: transparent;
-  border: 1.8px solid @hvr-bg;
+	background: transparent;
+	border: 1.8px solid @hvr-bg;
 }
 
 #workspaces button.active {
-  padding: 12px 0px;
-  margin: 6px 7px;
-  border: none;
-  background: @act-bg;
-  color: @act-fg;
-  opacity: 1;
+	padding: 12px 0px;
+	margin: 6px 7px;
+	border: none;
+	background: @act-bg;
+	color: @act-fg;
+	opacity: 1;
 }
 
 #workspaces button.active label {
-  font-size: 11px;
+	font-size: 11px;
 }
 
 #workspaces button:hover {
-  background: @act-bg;
-  border-color: @act-bg;
+	background: @act-bg;
+	border-color: @act-bg;
 }
 
 #workspaces button.active:hover {
-  background: @hvr-bg;
+	background: @hvr-bg;
 }
 
 window#waybar.main #taskbar {
-  background: transparent;
-  margin: 0px 6px;
+	background: transparent;
+	margin: 0px 6px;
 }
 
 #taskbar button {
-  min-width: 0px;
-  min-height: 0px;
-  padding: 6px;
-  margin: 1px 0px;
-  border-radius: 200px;
-  opacity: 0.6;
+	min-width: 0px;
+	min-height: 0px;
+	padding: 6px;
+	margin: 1px 0px;
+	border-radius: 200px;
+	opacity: 0.6;
 }
 
 #taskbar button:hover {
-  background: @act-bg;
+	background: @act-bg;
 }
 
 #taskbar button.active {
-  opacity: 1;
-  background: @pill-hvr-bg;
-  box-shadow: 0px 0px 0px .5px @act-bg inset;
+	opacity: 1;
+	background: @pill-hvr-bg;
+	box-shadow: 0px 0px 0px 0.5px @act-bg inset;
 }
 
 window#waybar.main #clock {
-  background: transparent;
-  color: @act-bg;
-  font-size: 16px;
-  font-family: "Inter Variable";
-  font-feature-settings: "tnum";
-  font-weight: 400;
+	background: transparent;
+	color: @act-bg;
+	font-size: 16px;
+	font-family: "Inter Variable";
+	font-feature-settings: "tnum";
+	font-weight: 400;
 }
 
 window#waybar.main #clock:hover {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 window#waybar.main #privacy,
 window#waybar.main #tray {
-  padding-top: 6px;
-  padding-bottom: 6px;
+	padding-top: 6px;
+	padding-bottom: 6px;
 }
 
 window#waybar.main #custom-swaync.cc-open {
-  background: @act-bg;
-  color: @act-fg;
+	background: @act-bg;
+	color: @act-fg;
 }
 
 window#waybar.main #language {
-  color: @hvr-bg;
-  font-size: 15px;
-  font-weight: 600;
-  background: transparent;
+	color: @hvr-bg;
+	font-size: 15px;
+	font-weight: 600;
+	background: transparent;
 }
 
 /* Adjust margin & padding for modules in pills */
 window#waybar.main #pill .module {
-  background: transparent;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
+	background: transparent;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 window#waybar.outline-left,
 window#waybar.outline-right,
 window#waybar.outline-top,
 window#waybar.outline-bottom {
-  background-color: @border-outline;
+	background-color: @border-outline;
 }
 
 window#waybar.time-widget,
 window#waybar.date-widget {
-  background: transparent;
+	background: transparent;
 }
 
 window#waybar.time-widget .module,
 window#waybar.date-widget .module {
-  background: transparent;
-  font-family: "Inter Variable";
-  color: @widget-col;
+	background: transparent;
+	font-family: "Inter Variable";
+	color: @widget-col;
 }
 
 window#waybar #clock.widget-time {
-  font-size: 72px;
-  font-weight: 600;
-  padding: 25px 0px;
-  margin: 0px 20px;
-  text-shadow: -1px 0px @widget-shadow, 2px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 3px 3px @widget-shadow;
+	font-size: 72px;
+	font-weight: 600;
+	padding: 25px 0px;
+	margin: 0px 20px;
+	text-shadow:
+		-1px 0px @widget-shadow,
+		2px 0px @widget-shadow,
+		0px -1px @widget-shadow,
+		0px 2px @widget-shadow,
+		3px 3px @widget-shadow;
 }
 
 window#waybar #clock.widget-date {
-  font-size: 28px;
-  font-weight: 400;
-  padding: 8px 0px;
-  margin: 0px 20px;
-  text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 2px 2px @widget-shadow;
+	font-size: 28px;
+	font-weight: 400;
+	padding: 8px 0px;
+	margin: 0px 20px;
+	text-shadow:
+		-1px 0px @widget-shadow,
+		1px 0px @widget-shadow,
+		0px -1px @widget-shadow,
+		0px 2px @widget-shadow,
+		2px 2px @widget-shadow;
 }
 
 window#waybar #mpris.widget {
-  font-size: 20px;
-  font-weight: 300;
-  margin: 0px 20px;
-  text-shadow: -1px 0px @widget-shadow, 1px 0px @widget-shadow, 0px -1px @widget-shadow, 0px 2px @widget-shadow, 1.5px 1.5px @widget-shadow;
+	font-size: 20px;
+	font-weight: 300;
+	margin: 0px 20px;
+	text-shadow:
+		-1px 0px @widget-shadow,
+		1px 0px @widget-shadow,
+		0px -1px @widget-shadow,
+		0px 2px @widget-shadow,
+		1.5px 1.5px @widget-shadow;
 }

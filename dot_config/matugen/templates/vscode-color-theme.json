@@ -203,10 +203,7 @@
 		},
 		{
 			"name": "java type",
-			"scope": [
-				"storage.type.annotation.java",
-				"storage.type.object.array.java"
-			],
+			"scope": ["storage.type.annotation.java", "storage.type.object.array.java"],
 			"settings": {
 				"foreground": "{{colors.secondary.light.hex}}"
 			}
@@ -822,10 +819,7 @@
 		},
 		{
 			"name": "go operator",
-			"scope": [
-				"keyword.operator.arithmetic.go",
-				"keyword.operator.address.go"
-			],
+			"scope": ["keyword.operator.arithmetic.go", "keyword.operator.address.go"],
 			"settings": {
 				"foreground": "{{colors.primary.light.hex}}"
 			}
@@ -1081,11 +1075,7 @@
 		},
 		{
 			"name": "Class name",
-			"scope": [
-				"entity.name.class",
-				"variable.other.class.js",
-				"variable.other.class.ts"
-			],
+			"scope": ["entity.name.class", "variable.other.class.js", "variable.other.class.ts"],
 			"settings": {
 				"foreground": "{{colors.secondary.light.hex}}"
 			}
@@ -1624,11 +1614,11 @@
 		"focusBorder": "{{colors.primary.light.hex}}",
 		"selection.background": "{{colors.primary.light.hex}}66",
 		"scrollbar.shadow": "{{colors.background.light.hex}}00",
-    "activityBar.background": "{{colors.surface_container_high.light.hex}}",
-    "activityBar.foreground": "{{colors.on_surface.light.hex}}",
-    "activityBar.inactiveForeground": "{{colors.on_surface_variant.light.hex}}",
-    "activityBarBadge.background": "{{colors.primary.light.hex}}",
-    "activityBarBadge.foreground": "{{colors.on_primary.light.hex}}",
+		"activityBar.background": "{{colors.surface_container_high.light.hex}}",
+		"activityBar.foreground": "{{colors.on_surface.light.hex}}",
+		"activityBar.inactiveForeground": "{{colors.on_surface_variant.light.hex}}",
+		"activityBarBadge.background": "{{colors.primary.light.hex}}",
+		"activityBarBadge.foreground": "{{colors.on_primary.light.hex}}",
 		"sideBar.background": "{{colors.surface_container.light.hex}}",
 		"sideBar.foreground": "{{colors.on_surface.light.hex}}",
 		"sideBarSectionHeader.background": "{{colors.surface_container.light.hex}}",
