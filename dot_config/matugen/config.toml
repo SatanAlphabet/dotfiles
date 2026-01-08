@@ -1,12 +1,9 @@
-[config.wallpaper]
-command = "notify-send"
-arguments = ["-t", "1000", "-e", "Running matugen..."]
-set = false
+[config]
+caching = false
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar.css'
 output_path = '~/.config/waybar/colors.css'
-post_hook = 'sed -i s/// ~/.config/waybar/style.css'
 
 [templates.wlogout]
 input_path = '~/.config/matugen/templates/wlogout.css'
