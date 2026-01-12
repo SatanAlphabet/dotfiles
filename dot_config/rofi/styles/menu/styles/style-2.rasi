@@ -183,8 +183,8 @@ element {
   spacing:                     8px;
   margin:                      0px;
   padding:                     8px;
-  border:                      0px solid;
-  border-radius:               4px;
+  border:                      0px 0px 0px 2px;
+  border-radius:               0px 4px 4px 0px;
   border-color:                transparent;
   background-color:            transparent;
   text-color:                  @foreground-colour;
@@ -195,6 +195,7 @@ element normal {
   text-color:                  inherit;
 }
 element selected {
+  border-color:                @selected-background;
   background-color:            @selected-background-alt;
   text-color:                  @selected-background;
 }
@@ -230,7 +231,7 @@ mode-switcher {
 button {
   padding:                     8px 0px;
   margin:                      8px;
-  border:                      0px solid;
+  border:                      1px solid;
   border-radius:               4px;
   border-color:                transparent;
   background-color:            @alternate-background;
@@ -238,6 +239,7 @@ button {
   cursor:                      pointer;
 }
 button selected {
+  border-color:                @selected-background;
   background-color:            @selected-background-alt;
   text-color:                  @selected-background;
 }
