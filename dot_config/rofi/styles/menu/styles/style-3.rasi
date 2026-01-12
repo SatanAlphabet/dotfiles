@@ -51,26 +51,26 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
   enabled:                     true;
-  spacing:                     8px;
+  spacing:                     0px;
   margin:                      0px;
   padding:                     12px;
   border:                      0px solid;
   border-color:                @border-colour;
   background-color:            transparent;
-  orientation:                 vertical;
-  children:                    [ "inputbar",  "dummybox" ];
+  orientation:                 horizontal;
+  children:                    [ "dummybox", "modebox" ];
 }
 dummybox {
-  spacing:                     0px;
-  orientation:                 horizontal;
-  children:                    [ "listbox", "modebox" ];
+  spacing:                     8px;
+  orientation:                 vertical;
+  children:                    [ "inputbar", "message", "listbox" ];
   background-color:            transparent;
   background-image:            transparent;
 }
 
 listbox {
   padding:                     0px;
-  children:                    [ "message", "listview", "dummy" ];
+  children:                    [ "listview", "dummy" ];
   background-color:            inherit;
 }
 modebox {
@@ -94,7 +94,7 @@ inputbar {
   border-color:                transparent;
   background-color:            @alternate-background;
   text-color:                  @foreground-colour;
-  children:                    [ "textbox-prompt-colon", "entry", "num-filtered-rows", "textbox-num-sep", "num-rows" ];
+  children:                    [ "textbox-prompt-colon", "entry" ];
 }
 textbox-prompt-colon {
   enabled:                     true;
@@ -204,20 +204,20 @@ element-text {
 mode-switcher {
   enabled:                     true;
   orientation:                 vertical;
-  margin:                      0px 0px 0px 8px;
+  margin:                      0px 0px 0px 12px;
   spacing:                     8px;
-  padding:                     8px;
+  padding:                     0px;
   border:                      0px solid;
   border-radius:               0px;
-  width:                       60px;
+  width:                       50px;
   expand:                      false;
   border-color:                transparent;
-  background-color:            @alternate-background;
+  background-color:            transparent;
 }
 button {
   padding:                     8px 0px;
   margin:                      0px;
-  border:                      1px solid;
+  border:                      0px solid;
   border-radius:               4px;
   border-color:                transparent;
   background-color:            @background-colour;
@@ -232,7 +232,7 @@ button selected {
 /*****----- Message -----*****/
 message {
   enabled:                     true;
-  margin:                      0px 0px 8px 0px;
+  margin:                      0px;
   padding:                     0px;
   border:                      0px solid;
   border-radius:               4px;
