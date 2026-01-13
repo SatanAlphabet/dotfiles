@@ -53,7 +53,7 @@ mainbox {
   enabled:                     true;
   spacing:                     0px;
   margin:                      0px;
-  padding:                     12px;
+  padding:                     0px;
   border:                      0px solid;
   border-color:                @border-colour;
   background-color:            transparent;
@@ -62,6 +62,7 @@ mainbox {
 }
 dummybox {
   spacing:                     8px;
+  padding:                     12px;
   orientation:                 vertical;
   children:                    [ "inputbar", "message", "listbox" ];
   background-color:            transparent;
@@ -77,7 +78,7 @@ modebox {
   padding:                     0px;
   expand:                      false;
   children:                    [ "mode-switcher", "dummy" ];
-  background-color:            inherit;
+  background-color:            @alternate-background;
 }
 dummy {
   background-color:            transparent;
@@ -112,25 +113,6 @@ entry {
   placeholder:                 "Search...";
   placeholder-color:           inherit;
 }
-num-filtered-rows {
-  enabled:                     true;
-  expand:                      false;
-  background-color:            transparent;
-  text-color:                  @selected-background;
-}
-textbox-num-sep {
-  enabled:                     true;
-  expand:                      false;
-  str:                         "/";
-  background-color:            inherit;
-  text-color:                  inherit;
-}
-num-rows {
-  enabled:                     true;
-  expand:                      false;
-  background-color:            inherit;
-  text-color:                  @foreground-colour;
-}
 
 /*****----- Listview -----*****/
 listview {
@@ -147,12 +129,12 @@ listview {
   
   spacing:                     8px;
   margin:                      0px;
-  padding:                     8px;
+  padding:                     0px;
   expand:                      false;
   border:                      0px solid;
   border-radius:               0px;
   border-color:                @border-colour;
-  background-color:            @alternate-background;
+  background-color:            transparent;
   text-color:                  @foreground-colour;
   cursor:                      "default";
 }
@@ -182,7 +164,7 @@ element normal {
 }
 element selected {
   border-color:                @selected-background;
-  background-color:            @selected-background-alt;
+  background-color:            @alternate-background;
   text-color:                  @selected-background;
 }
 element-icon {
@@ -204,12 +186,12 @@ element-text {
 mode-switcher {
   enabled:                     true;
   orientation:                 vertical;
-  margin:                      0px 0px 0px 12px;
-  spacing:                     8px;
+  margin:                      12px;
+  spacing:                     12px;
   padding:                     0px;
   border:                      0px solid;
   border-radius:               0px;
-  width:                       50px;
+  width:                       60px;
   expand:                      false;
   border-color:                transparent;
   background-color:            transparent;
@@ -220,7 +202,7 @@ button {
   border:                      0px solid;
   border-radius:               4px;
   border-color:                transparent;
-  background-color:            @background-colour;
+  background-color:            inherit;
   text-color:                  @foreground-colour;
   cursor:                      pointer;
 }
