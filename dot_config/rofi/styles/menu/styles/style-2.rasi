@@ -1,15 +1,15 @@
 /*****----- Configuration -----*****/
 
 configuration {
-	modi:                        "drun,run,filebrowser,window";
+  modi:                        "drun,run,filebrowser,window";
   font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 11";
   show-icons:                  true;
   display-drun:                "󰌧";
   display-run:                 "";
   display-filebrowser:         "";
   display-window:              "";
-	drun-display-format:         "{name}\n<span weight='light' size='75%'>{comment}</span>";
-	window-format:               "{t}\n<span weight='light' size='75%'>{c}</span>";
+  drun-display-format:         "{name}\n<span weight='light' size='75%'>{comment}</span>";
+  window-format:               "{t}\n<span weight='light' size='75%'>{c}</span>";
 }
 
 ?import                        "~/.config/rofi/colors.rasi"
