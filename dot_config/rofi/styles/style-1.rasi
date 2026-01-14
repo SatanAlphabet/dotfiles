@@ -146,15 +146,11 @@ element {
   text-color:                  @on-surface;
   cursor:                      pointer;
 }
-element normal.normal {
+element normal {
   background-color:            inherit;
   text-color:                  inherit;
 }
-element alternate.normal {
-  background-color:            inherit;
-  text-color:                  inherit;
-}
-element selected.normal {
+element selected {
   background-color:            @primary;
   text-color:                  @on-primary;
 }
