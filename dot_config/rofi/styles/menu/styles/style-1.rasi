@@ -15,29 +15,6 @@ configuration {
 
 * {
   font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 11";
-  border-colour:               var(dark-border);
-  handle-colour:               var(foreground);
-  background-colour:           var(background);
-  foreground-colour:           var(foreground);
-  alternate-background:        var(background-alt);
-  normal-background:           var(background);
-  normal-foreground:           var(foreground);
-  urgent-background:           var(urgent);
-  urgent-foreground:           var(background);
-  active-background:           var(active);
-  active-foreground:           var(background);
-  selected-normal-background:  var(selected);
-  selected-normal-foreground:  var(background);
-  selected-urgent-background:  var(active);
-  selected-urgent-foreground:  var(background);
-  selected-active-background:  var(urgent);
-  selected-active-foreground:  var(background);
-  alternate-normal-background: var(background);
-  alternate-normal-foreground: var(foreground);
-  alternate-urgent-background: var(urgent);
-  alternate-urgent-foreground: var(background);
-  alternate-active-background: var(active);
-  alternate-active-foreground: var(background);
 }
 
 /*****----- Main Window -----*****/
@@ -58,9 +35,9 @@ window {
   padding:                     0px;
   border:                      2px solid;
   border-radius:               0px;
-  border-color:                @border-colour;
+  border-color:                @on-primary-fixed-variant;
   cursor:                      "default";
-  background-color:            @background-colour;
+  background-color:            @surface;
 }
 
 /*****----- Main Box -----*****/
@@ -69,10 +46,7 @@ mainbox {
   spacing:                     20px;
   margin:                      0px;
   padding:                     20px;
-  border:                      0px solid;
-  border-radius:               0px 0px 0px 0px;
-  border-color:                @border-colour;
-  background-color:            transparent;
+  background-color:            inherit;
   children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
 }
 
@@ -82,11 +56,9 @@ inputbar {
   spacing:                     10px;
   margin:                      0px;
   padding:                     8px;
-  border:                      0px solid;
   border-radius:               4px;
-  border-color:                @border-colour;
-  background-color:            @alternate-background;
-  text-color:                  @foreground-colour;
+  background-color:            @surface-container;
+  text-color:                  inherit;
   children:                    [ "textbox-prompt-colon", "entry" ];
 }
 
@@ -152,18 +124,15 @@ listview {
   spacing:                     5px;
   margin:                      0px;
   padding:                     0px;
-  border:                      0px solid;
-  border-radius:               0px;
-  border-color:                @border-colour;
-  background-color:            transparent;
-  text-color:                  @foreground-colour;
+  background-color:            inherit;
+  text-color:                  inherit;
   cursor:                      "default";
 }
 scrollbar {
   handle-width:                5px ;
-  handle-color:                @handle-colour;
+  handle-color:                @surface-variant;
   border-radius:               8px;
-  background-color:            @alternate-background;
+  background-color:            inherit;
 }
 
 /*****----- Elements -----*****/
@@ -172,48 +141,18 @@ element {
   spacing:                     8px;
   margin:                      0px;
   padding:                     8px;
-  border:                      0px solid;
   border-radius:               4px;
-  border-color:                @border-colour;
-  background-color:            transparent;
-  text-color:                  @foreground-colour;
+  background-color:            inherit;
+  text-color:                  inherit;
   cursor:                      pointer;
 }
-element normal.normal {
+element normal {
   background-color:            inherit;
   text-color:                  inherit;
 }
-element normal.urgent {
-  background-color:            @urgent-background;
-  text-color:                  @urgent-foreground;
-}
-element normal.active {
-  background-color:            @active-background;
-  text-color:                  @active-foreground;
-}
-element selected.normal {
-  background-color:            @selected-normal-background;
-  text-color:                  @selected-normal-foreground;
-}
-element selected.urgent {
-  background-color:            @selected-urgent-background;
-  text-color:                  @selected-urgent-foreground;
-}
-element selected.active {
-  background-color:            @selected-active-background;
-  text-color:                  @selected-active-foreground;
-}
-element alternate.normal {
-  background-color:            @alternate-normal-background;
-  text-color:                  @alternate-normal-foreground;
-}
-element alternate.urgent {
-  background-color:            @alternate-urgent-background;
-  text-color:                  @alternate-urgent-foreground;
-}
-element alternate.active {
-  background-color:            @alternate-active-background;
-  text-color:                  @alternate-active-foreground;
+element selected {
+  background-color:            @primary;
+  text-color:                  @on-primary;
 }
 element-icon {
   background-color:            transparent;
@@ -236,24 +175,20 @@ mode-switcher{
   spacing:                     10px;
   margin:                      0px;
   padding:                     0px;
-  border:                      0px solid;
   border-radius:               4px;
-  border-color:                @border-colour;
-  background-color:            @alternate-background;
-  text-color:                  @foreground-colour;
+  background-color:            @surface-container;
+  text-color:                  inherit;
 }
 button {
   padding:                     8px;
-  border:                      0px solid;
   border-radius:               4px;
-  border-color:                @border-colour;
   background-color:            transparent;
   text-color:                  inherit;
   cursor:                      pointer;
 }
 button selected {
-  background-color:            @selected-normal-background;
-  text-color:                  @selected-normal-foreground;
+  background-color:            @primary;
+  text-color:                  @on-primary;
 }
 
 /*****----- Message -----*****/
@@ -261,31 +196,23 @@ message {
   enabled:                     true;
   margin:                      0px;
   padding:                     0px;
-  border:                      0px solid;
-  border-radius:               0px 0px 0px 0px;
-  border-color:                @border-colour;
-  background-color:            transparent;
-  text-color:                  @foreground-colour;
+  background-color:            inherit;
+  text-color:                  inherit;
 }
 textbox {
   padding:                     8px;
-  border:                      0px solid;
   border-radius:               4px;
-  border-color:                @border-colour;
-  background-color:            @alternate-background;
-  text-color:                  @foreground-colour;
+  background-color:            @surface-container;
+  text-color:                  inherit;
   vertical-align:              0.5;
   horizontal-align:            0.0;
   highlight:                   none;
-  placeholder-color:           @foreground-colour;
+  placeholder-color:           @on-surface;
   blink:                       true;
   markup:                      true;
 }
 error-message {
   padding:                     10px;
-  border:                      0px solid;
-  border-radius:               0px;
-  border-color:                @border-colour;
-  background-color:            @background-colour;
-  text-color:                  @foreground-colour;
+  background-color:            @surface;
+  text-color:                  @on-surface;
 }
