@@ -17,4 +17,4 @@ if [[ ! -f "$config_dir/rofi/styles/$new_preset.rasi" ]]; then
   exit 1
 fi
 
-ln -sf "$config_dir/rofi/styles/$new_preset.rasi" "$config_dir/rofi/config.rasi" && echo "Switched rofi theme to $1"
+ln -sf "$config_dir/rofi/styles/$new_preset.rasi" "$config_dir/rofi/current-theme.rasinc" && echo "Switched rofi theme to $1"
