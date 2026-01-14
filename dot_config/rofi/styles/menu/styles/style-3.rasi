@@ -1,88 +1,78 @@
 /*****----- Configuration -----*****/
+
 configuration {
-	modi:                       "drun,run,filebrowser,window";
-  font:                       "Inter Variable, CaskaydiaCove Nerd Font Propo 11";
-  show-icons:                 true;
-  display-drun:               "󰌧";
-  display-run:                "";
-  display-filebrowser:        "";
-  display-window:             "";
-	drun-display-format:        "{name}\n<span weight='light' size='75%'>{comment}</span>";
-	window-format:              "{t}\n<span weight='light' size='75%'>{c}</span>";
+	modi:                        "drun,run,filebrowser,window";
+  font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 11";
+  show-icons:                  true;
+  display-drun:                "󰌧";
+  display-run:                 "";
+  display-filebrowser:         "";
+  display-window:              "";
+	drun-display-format:         "{name}\n<span weight='light' size='75%'>{comment}</span>";
+	window-format:               "{t}\n<span weight='light' size='75%'>{c}</span>";
 }
 
-?import                          "~/.config/rofi/colors.rasi"
+?import                        "~/.config/rofi/colors.rasi"
+
+* {
+  text-color:                  @on-surface;
+  placeholder-color:           @outline;
+  background-color:            @surface;
+  border-radius:               4px;
+}
 
 /*****----- Main Window -----*****/
+
 window {
-  /* properties for window widget */
+  enabled:                     true;
   transparency:                "real";
   location:                    west;
   anchor:                      west;
   fullscreen:                  false;
   width:                       400px;
-  x-offset:                    0px;
-  y-offset:                    0px;
-
-  /* properties for all widgets */
-  enabled:                     true;
   margin:                      8px;
-  padding:                     0px;
   border:                      2px solid;
   border-color:                @on-primary-fixed-variant;
-  border-radius:               4px;
   cursor:                      "default";
-  background-color:            @surface;
-  text-color:                  @on-surface;
 }
 
 /*****----- Main Box -----*****/
+
 mainbox {
   enabled:                     true;
-  spacing:                     0px;
-  margin:                      0px;
-  padding:                     0px;
-  border:                      0px solid;
-  background-color:            transparent;
   orientation:                 horizontal;
   children:                    [ "dummybox", "modebox" ];
 }
+
 dummybox {
   spacing:                     8px;
   padding:                     12px;
   orientation:                 vertical;
-  children:                    [ "inputbar", "message", "listbox" ];
-  background-color:            transparent;
-  background-image:            transparent;
+  children:                    [ "inputbar", "message", "listview" ];
 }
-listbox {
-  padding:                     0px;
-  children:                    [ "listview", "dummy" ];
-  background-color:            inherit;
-}
+
 modebox {
-  padding:                     0px;
+  border-radius:               0px;
   expand:                      false;
-  children:                    [ "mode-switcher", "dummy" ];
+  children:                    [ "mode-switcher" ];
   background-color:            @surface-container;
 }
+
 dummy {
-  background-color:            transparent;
+  background-color:            inherit;
 }
 
 /*****----- Inputbar -----*****/
+
 inputbar {
   enabled:                     true;
   spacing:                     8px;
-  margin:                      0px;
   padding:                     8px;
-  border:                      0px;
-  border-radius:               4px;
-  border-color:                transparent;
   background-color:            @surface-container;
-  text-color:                  inherit;
+  orientation:                 horizontal;
   children:                    [ "textbox-prompt-colon", "entry" ];
 }
+
 textbox-prompt-colon {
   enabled:                     true;
   expand:                      false;
@@ -91,16 +81,17 @@ textbox-prompt-colon {
   background-color:            inherit;
   text-color:                  inherit;
 }
+
 entry {
   enabled:                     true;
   background-color:            inherit;
   text-color:                  inherit;
   cursor:                      text;
   placeholder:                 "Search...";
-  placeholder-color:           inherit;
 }
 
 /*****----- Listview -----*****/
+
 listview {
   enabled:                     true;
   columns:                     1;
@@ -112,53 +103,36 @@ listview {
   reverse:                     false;
   fixed-height:                true;
   fixed-columns:               true;
-  
   spacing:                     8px;
-  margin:                      0px;
-  padding:                     0px;
-  expand:                      false;
-  border:                      0px;
-  background-color:            transparent;
-  text-color:                  @on-surface;
+  border-radius:               0px;
   cursor:                      "default";
-}
-scrollbar {
-  handle-width:                4px ;
-  handle-color:                @surface-variant;
-  border-radius:               4px;
-  background-color:            inherit;
 }
 
 /*****----- Elements -----*****/
+
 element {
   enabled:                     true;
   spacing:                     8px;
-  margin:                      0px;
   padding:                     8px;
   border:                      0px 0px 0px 2px;
   border-radius:               0px 4px 4px 0px;
-  border-color:                transparent;
-  background-color:            transparent;
-  text-color:                  inherit;
   cursor:                      pointer;
 }
-element normal {
-  background-color:            inherit;
-  text-color:                  inherit;
-}
+
 element selected {
   border-color:                @primary;
   background-color:            @surface-variant;
   text-color:                  @primary;
 }
+
 element-icon {
-  background-color:            transparent;
-  text-color:                  inherit;
-  size:                        32px;
+  background-color:            inherit;
   cursor:                      inherit;
+  size:                        32px;
 }
+
 element-text {
-  background-color:            transparent;
+  background-color:            inherit;
   text-color:                  inherit;
   highlight:                   inherit;
   cursor:                      inherit;
@@ -167,56 +141,45 @@ element-text {
 }
 
 /*****----- Mode Switcher -----*****/
+
 mode-switcher {
   enabled:                     true;
   orientation:                 vertical;
   margin:                      12px;
   spacing:                     12px;
-  padding:                     0px;
-  border-radius:               0px;
   width:                       60px;
   expand:                      false;
-  border-color:                transparent;
-  background-color:            transparent;
+  border-color:                inherit;
+  background-color:            inherit;
 }
+
 button {
   padding:                     8px 0px;
-  margin:                      0px;
-  border-radius:               4px;
-  border-color:                transparent;
   background-color:            inherit;
   text-color:                  inherit;
   cursor:                      pointer;
 }
+
 button selected {
   background-color:            @surface-variant;
   text-color:                  @primary;
 }
 
 /*****----- Message -----*****/
+
 message {
   enabled:                     true;
-  margin:                      0px;
-  padding:                     0px;
-  border-radius:               4px;
-  background-color:            transparent;
-  text-color:                  inherit;
 }
+
 textbox {
   padding:                     8px;
-  border-radius:               4px;
-  background-color:            @surface-container;
-  text-color:                  inherit;
   vertical-align:              0.5;
   horizontal-align:            0.0;
   highlight:                   none;
-  placeholder-color:           @on-surface;
   blink:                       true;
   markup:                      true;
 }
+
 error-message {
   padding:                     8px;
-  border-radius:               4px;
-  background-color:            @surface;
-  text-color:                  @on-surface;
 }
