@@ -26,8 +26,8 @@ body {
   /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
   --border-thickness: 2px;
   /* Border radius settings */
-  --radius-lg: 0;
-  --radius-md: 0;
+  --radius-lg: 4px;
+  --radius-md: 4px;
 
   /* animations */
   --list-item-transition: 0.2s ease;
@@ -71,7 +71,7 @@ body {
   /* Arch logo: https://www.vectorlogo.zone/logos/archlinux/archlinux-icon.svg */
   --dms-icon-svg-size: 100%;
   /* size of the svg (css mask-size property) */
-  --dms-icon-color-before: var(--icon-subtle);
+  --dms-icon-color-before: var(--accent-3);
   /* normal icon color */
   --dms-icon-color-after: var(--white);
   /* icon color when button is hovered/selected */
