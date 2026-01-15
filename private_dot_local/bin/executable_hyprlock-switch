@@ -22,7 +22,12 @@ _select_from_rofi() {
     exit
   fi
 
-  selected_presets=$(printf "%s\n" "${files[@]}" | rofi -dmenu -theme-str 'entry {placeholder: "Select hyprlock presets...";}')
+  selected_presets=$(
+    printf "%s\n" "${files[@]}" | rofi -dmenu \
+      -theme-str 'entry {placeholder: "Select hyprlock presets...";}' \
+      -theme-str 'mode-switcher {enabled: false;}' \
+      -theme-str 'configuration {show-icons: false;}'
+  )
   if [ -n "$selected_presets" ]; then
     echo "$selected_presets"
   else
