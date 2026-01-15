@@ -1,0 +1,190 @@
+/*****----- Configuration -----*****/
+
+configuration {
+	modi:                        "drun,run,filebrowser,window";
+  font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 11";
+  show-icons:                  true;
+  display-drun:                "";
+  display-run:                 "";
+  display-filebrowser:         "";
+  display-window:              "";
+  drun-display-format:         "{name}\n<span weight='light' size='75%'>{comment}</span>";
+  window-format:               "{t}\n<span weight='light' size='75%'>{c}</span>";
+}
+
+?import                        "~/.config/rofi/colors.rasi"
+
+* {
+  text-color:                  @on-surface;
+  placeholder-color:           @outline;
+  background-color:            @surface;
+  border-radius:               4px;
+}
+
+/*****----- Main Window -----*****/
+
+window {
+  transparency:                "real";
+  location:                    center;
+  anchor:                      center;
+  fullscreen:                  false;
+  width:                       500px;
+  enabled:                     true;
+  border:                      2px solid;
+  border-color:                @primary;
+  cursor:                      "default";
+}
+
+/*****----- Main Box -----*****/
+
+mainbox {
+  enabled:                     true;
+  orientation:                 vertical;
+  children:                    [ "listbox", "modebox" ];
+}
+
+listbox {
+  enabled:                     true;
+  spacing:                     8px;
+  padding:                     12px;
+  orientation:                 vertical;
+  children:                    [ "inputbar", "message", "listview" ];
+}
+
+modebox {
+  enabled:                     true;
+  border-radius:               0px;
+  background-color:            @surface-container;
+  expand:                      false;
+  orientation:                 horizontal;
+  children:                    [ "mode-switcher" ];
+}
+
+dummy {
+  background-color:            inherit;
+}
+
+/*****----- Inputbar -----*****/
+
+inputbar {
+  enabled:                     true;
+  spacing:                     8px;
+  padding:                     8px;
+  background-color:            @surface-container;
+  orientation:                 horizontal;
+  children:                    [ "textbox-prompt-colon", "entry", "num-filtered-rows" ];
+}
+
+textbox-prompt-colon {
+  enabled:                     true;
+  expand:                      false;
+  str:                         "";
+  padding:                     0px 8px;
+  background-color:            inherit;
+  text-color:                  @outline;
+}
+
+entry {
+  enabled:                     true;
+  background-color:            inherit;
+  text-color:                  inherit;
+  cursor:                      text;
+  placeholder:                 "Search...";
+}
+
+num-filtered-rows {
+  enabled:                     true;
+  expand:                      false;
+  background-color:            inherit;
+  text-color:                  @outline;
+}
+
+/*****----- Listview -----*****/
+
+listview {
+  enabled:                     true;
+  columns:                     1;
+  lines:                       8;
+  cycle:                       true;
+  dynamic:                     true;
+  scrollbar:                   false;
+  layout:                      vertical;
+  reverse:                     false;
+  fixed-height:                false;
+  fixed-columns:               true;
+  spacing:                     8px;
+  cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+
+element {
+  enabled:                     true;
+  spacing:                     8px;
+  padding:                     8px;
+  cursor:                      pointer;
+}
+
+element selected {
+  border-color:                @primary;
+  background-color:            @surface-variant;
+  text-color:                  @primary;
+}
+
+element-icon {
+  background-color:            inherit;
+  cursor:                      inherit;
+  size:                        32px;
+}
+
+element-text {
+  background-color:            inherit;
+  text-color:                  inherit;
+  highlight:                   inherit;
+  cursor:                      inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.0;
+}
+
+/*****----- Mode Switcher -----*****/
+
+mode-switcher {
+  enabled:                     true;
+  orientation:                 horizontal;
+  spacing:                     8px;
+  padding:                     8px 12px;
+  expand:                      true;
+  border-color:                inherit;
+  background-color:            inherit;
+}
+
+button {
+  padding:                     8px;
+  background-color:            inherit;
+  text-color:                  inherit;
+  cursor:                      pointer;
+}
+
+button selected {
+  background-color:            @surface-variant;
+  text-color:                  @primary;
+}
+
+/*****----- Message -----*****/
+
+message {
+  enabled:                     true;
+}
+
+textbox {
+  padding:                     8px;
+  vertical-align:              0.5;
+  horizontal-align:            0.0;
+  highlight:                   none;
+  blink:                       true;
+  markup:                      true;
+}
+
+error-message {
+  padding:                     8px;
+}
