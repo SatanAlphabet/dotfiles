@@ -4,33 +4,32 @@ configuration {
   modi:                        "drun,run,filebrowser,window";
   font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 11";
   show-icons:                  true;
-  display-drun:                "";
-  display-run:                 "";
+  display-drun:                "󰌧";
+  display-run:                 "";
   display-filebrowser:         "";
   display-window:              "";
-  drun-display-format:         "{name}";
-  window-format:               "{w}{t}";
+  drun-display-format:         "{name}\n<span weight='light' size='75%'>{comment}</span>";
+  window-format:               "{t}\n<span weight='light' size='75%'>{c}</span>";
 }
 
-?import                          "~/.config/rofi/colors.rasi"
+?import                        "~/.config/rofi/colors.rasi"
 
 * {
-  background-color:            @surface;
   text-color:                  @on-surface;
   placeholder-color:           @outline;
+  background-color:            @surface;
   border-radius:               4px;
 }
 
 /*****----- Main Window -----*****/
 
 window {
+  enabled:                     true;
   transparency:                "real";
   location:                    west;
   anchor:                      west;
   fullscreen:                  false;
-  width:                       450px;
-  height:                      100%;
-  enabled:                     true;
+  width:                       400px;
   margin:                      8px;
   border:                      2px solid;
   border-color:                @on-primary-fixed-variant;
@@ -38,38 +37,83 @@ window {
 }
 
 /*****----- Main Box -----*****/
+
 mainbox {
   enabled:                     true;
-  spacing:                     20px;
-  padding:                     20px;
+  spacing:                     8px;
+  padding:                     12px;
   orientation:                 vertical;
-  children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
+  children:                    [ "inputbar",  "dummybox" ];
+}
+
+dummybox {
+  orientation:                 horizontal;
+  children:                    [ "listbox", "modebox" ];
+}
+
+listbox {
+  orientation:                 vertical;
+  children:                    [ "message", "listview" ];
+}
+
+modebox {
+  expand:                      false;
+  children:                    [ "mode-switcher" ];
+}
+
+dummy {
+  background-color:            inherit;
 }
 
 /*****----- Inputbar -----*****/
 
 inputbar {
   enabled:                     true;
-  spacing:                     10px;
+  spacing:                     8px;
   padding:                     8px;
   background-color:            @surface-container;
   orientation:                 horizontal;
-  children:                    [ "textbox-prompt-colon", "entry" ];
+  children:                    [ "textbox-prompt-colon", "entry", "num-filtered-rows", "textbox-num-sep", "num-rows" ];
 }
 
 textbox-prompt-colon {
   enabled:                     true;
   expand:                      false;
   str:                         "";
-  padding:                     0px 12px;
+  padding:                     0px 8px;
   background-color:            inherit;
+  text-color:                  inherit;
 }
 
 entry {
   enabled:                     true;
   background-color:            inherit;
+  text-color:                  inherit;
   cursor:                      text;
   placeholder:                 "Search...";
+  placeholder-color:           inherit;
+}
+
+num-filtered-rows {
+  enabled:                     true;
+  expand:                      false;
+  background-color:            inherit;
+  text-color:                  @primary;
+}
+
+textbox-num-sep {
+  enabled:                     true;
+  expand:                      false;
+  str:                         "/";
+  background-color:            inherit;
+  text-color:                  inherit;
+}
+
+num-rows {
+  enabled:                     true;
+  expand:                      false;
+  background-color:            inherit;
+  text-color:                  inherit;
 }
 
 /*****----- Listview -----*****/
@@ -79,33 +123,42 @@ listview {
   columns:                     1;
   lines:                       10;
   cycle:                       true;
-  dynamic:                     true;
+  dynamic:                     false;
   scrollbar:                   false;
   layout:                      vertical;
   reverse:                     false;
   fixed-height:                true;
   fixed-columns:               true;
-  spacing:                     5px;
+  spacing:                     8px;
+  padding:                     8px;
+  expand:                      false;
+  background-color:            @surface-container;
   cursor:                      "default";
 }
 
 /*****----- Elements -----*****/
+
 element {
   enabled:                     true;
   spacing:                     8px;
   padding:                     8px;
+  border:                      0px 0px 0px 2px;
+  border-radius:               0px 4px 4px 0px;
+  background-color:            inherit;
+  text-color:                  inherit;
   cursor:                      pointer;
 }
 
 element selected {
-  background-color:            @primary;
-  text-color:                  @on-primary;
+  border-color:                @primary;
+  background-color:            @surface-variant;
+  text-color:                  @primary;
 }
 
 element-icon {
   background-color:            inherit;
   text-color:                  inherit;
-  size:                        24px;
+  size:                        32px;
   cursor:                      inherit;
 }
 
@@ -122,18 +175,24 @@ element-text {
 
 mode-switcher {
   enabled:                     true;
-  spacing:                     10px;
+  orientation:                 vertical;
+  margin:                      0px 0px 0px 8px;
+  spacing:                     8px;
+  padding:                     8px;
+  width:                       60px;
+  expand:                      false;
   background-color:            @surface-container;
 }
 
 button {
-  padding:                     8px;
+  padding:                     8px 0px;
+  background-color:            @surface;
   cursor:                      pointer;
 }
 
 button selected {
-  background-color:            @primary;
-  text-color:                  @on-primary;
+  background-color:            @surface-variant;
+  text-color:                  @primary;
 }
 
 /*****----- Message -----*****/
@@ -153,5 +212,5 @@ textbox {
 }
 
 error-message {
-  padding:                     10px;
+  padding:                     8px;
 }

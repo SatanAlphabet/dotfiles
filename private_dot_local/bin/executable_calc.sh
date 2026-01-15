@@ -7,6 +7,7 @@ else
     -theme-str "entry { placeholder: \"Calculate...\"; }" \
     -calc-command "echo -n '{result}' | wl-copy && notify-send \"Result copied to clipboard...\" -e" \
     -theme-str "configuration { calc { hint-welcome: \" Ctrl-Enter to copy current result to clipboard.\"; } } " \
+    -theme-str "element-icon { enabled: false; }" \
     -theme-str "mode-switcher { enabled: false; } " \
     "$@"
 fi
