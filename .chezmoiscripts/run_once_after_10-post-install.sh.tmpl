@@ -3,7 +3,6 @@
 echo -e "===>  Starting post-setup configuration..."
 
 pkg_dir="{{- .chezmoi.sourceDir -}}/assets/install"
-wall_dir="{{- .chezmoi.homeDir -}}/Pictures/Wallpaper"
 config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
 cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}"
 data_dir="${XDG_DATA_HOME:-$HOME/.local/share}"
@@ -45,15 +44,6 @@ if _install_confirm "Change GTK settings? [Y/n] " -eq 0; then
   gsettings set org.gnome.desktop.interface monospace-font-name {{ .gtk.monospaceFont | quote }} && echo -e "===>  Monospace font set to {{ .gtk.monospaceFont -}}"
   gsettings set org.gnome.desktop.interface gtk-theme {{ .gtk.gtkTheme | quote }} && echo -e "===>  GTK theme set to {{ .gtk.gtkTheme -}}"
   gsettings set org.gnome.desktop.interface icon-theme {{ .gtk.iconTheme | quote }} && echo -e "===>  Icon theme set to {{ .gtk.iconTheme -}}"
-fi
-
-if _install_confirm "Setup waypaper config? [Y/n] " -eq 0; then
-  echo -e "===>  Copying default background to wallpaper directory... (${wall_dir})"
-  mkdir -p "$wall_dir/"
-  cp "$pkg_dir/default-bg.png" "$wall_dir/default-bg.png" && echo -e "===>  Copied background..."
-  mkdir -p "$config_dir/waypaper/"
-  echo -e "===>  Copying initial waypaper config..."
-  cp "$pkg_dir/waypaper-config.ini" "$config_dir/waypaper/config.ini" && echo -e "===>  Copied starting waypaper config..."
 fi
 
 if _install_confirm "Install VSCode themes for matugen? [Y/n] " -eq 0; then
