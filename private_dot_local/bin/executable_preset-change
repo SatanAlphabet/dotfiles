@@ -52,7 +52,7 @@ _change_preset() {
 
 _select_from_rofi() {
   mapfile -t files < <(
-    find "$src_dir" -maxdepth 1 -type f -name "*.jsonc" -print0 | xargs -0 -I{} basename "{}" .jsonc | sort
+    find "$src_dir" -maxdepth 1 -type f,l -name "*.jsonc" -print0 | xargs -0 -I{} basename "{}" .jsonc | sort
   )
 
   if [ -n "$(pgrep rofi)" ]; then

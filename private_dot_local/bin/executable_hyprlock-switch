@@ -14,7 +14,7 @@ _change_hyprlock() {
 
 _select_from_rofi() {
   mapfile -t files < <(
-    find "$layout_path" -maxdepth 1 -type f -name "*.conf" -print0 | xargs -0 -I{} basename "{}" .conf | sort
+    find "$layout_path" -maxdepth 1 -type f,l -name "*.conf" -print0 | xargs -0 -I{} basename "{}" .conf | sort
   )
 
   if [ -n "$(pgrep rofi)" ]; then

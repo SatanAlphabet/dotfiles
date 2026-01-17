@@ -14,7 +14,7 @@ _change_rofi_style() {
 
 _select_from_rofi() {
   mapfile -t files < <(
-    find "$style_path" -maxdepth 1 -type f -name "*.rasi" -print0 | xargs -0 -I{} basename "{}" .rasi | sort
+    find "$style_path" -maxdepth 1 -type f,l -name "*.rasi" -print0 | xargs -0 -I{} basename "{}" .rasi | sort
   )
 
   if [ -n "$(pgrep rofi)" ]; then
