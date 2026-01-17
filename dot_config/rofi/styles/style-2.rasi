@@ -4,9 +4,9 @@ configuration {
 	modi:                        "drun,run,filebrowser,window";
   font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 11";
   show-icons:                  true;
-  display-drun:                "";
-  display-run:                 "";
-  display-filebrowser:         "";
+  display-drun:                "󰀻";
+  display-run:                 "";
+  display-filebrowser:         "";
   display-window:              "";
   drun-display-format:         "{name}\n<span weight='light' size='75%'>{comment}</span>";
   window-format:               "{t}\n<span weight='light' size='75%'>{c}</span>";
@@ -154,7 +154,8 @@ mode-switcher {
   spacing:                     8px;
   padding:                     8px 12px;
   expand:                      true;
-  border-color:                inherit;
+  border:                      1px 0px 0px 0px;
+  border-color:                @outline-variant;
   background-color:            inherit;
 }
 
@@ -166,8 +167,8 @@ button {
 }
 
 button selected {
-  background-color:            @surface-variant;
-  text-color:                  @primary;
+  background-color:            @primary;
+  text-color:                  @on-primary;
 }
 
 /*****----- Message -----*****/

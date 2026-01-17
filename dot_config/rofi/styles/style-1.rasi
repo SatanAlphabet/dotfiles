@@ -4,9 +4,9 @@ configuration {
   modi:                        "drun,run,filebrowser,window";
   font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 10";
   show-icons:                  true;
-  display-drun:                "";
-  display-run:                 "";
-  display-filebrowser:         "";
+  display-drun:                "󰀻";
+  display-run:                 "";
+  display-filebrowser:         "";
   display-window:              "";
   drun-display-format:         "{name}";
   window-format:               "{t}";

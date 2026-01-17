@@ -4,7 +4,7 @@ configuration {
   modi:                        "drun,run,filebrowser,window";
   font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 11";
   show-icons:                  true;
-  display-drun:                "󰌧";
+  display-drun:                "󰀻";
   display-run:                 "";
   display-filebrowser:         "";
   display-window:              "";
@@ -53,6 +53,8 @@ dummybox {
 
 modebox {
   border-radius:               0px;
+  border:                      0px 0px 0px 1px;
+  border-color:                @outline-variant;
   expand:                      false;
   children:                    [ "mode-switcher" ];
   background-color:            @surface-container;
@@ -161,8 +163,8 @@ button {
 }
 
 button selected {
-  background-color:            @surface-variant;
-  text-color:                  @primary;
+  background-color:            @primary;
+  text-color:                  @on-primary;
 }
 
 /*****----- Message -----*****/

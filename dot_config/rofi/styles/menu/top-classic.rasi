@@ -1,5 +1,1 @@
-@theme "~/.config/rofi/styles/menu/styles/style-1.rasi"
-
-window {
-  location: west;
-}
+@theme "current-theme"
