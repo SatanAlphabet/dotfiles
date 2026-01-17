@@ -157,14 +157,16 @@ mode-switcher {
 
 button {
   padding:                     8px 0px;
+  border:                      1px;
   background-color:            inherit;
   text-color:                  @outline;
   cursor:                      pointer;
 }
 
 button selected {
-  background-color:            @primary;
-  text-color:                  @on-primary;
+  border-color:                @outline-variant;
+  background-color:            @surface-variant;
+  text-color:                  @primary;
 }
 
 /*****----- Message -----*****/
