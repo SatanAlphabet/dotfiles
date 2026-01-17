@@ -14,7 +14,7 @@ _change_hyprlock() {
 
 _select_from_rofi() {
   mapfile -t files < <(
-    find "$layout_path" -maxdepth 1 -type f -name "*.conf" -print0 | xargs -0 -I{} basename "{}" .conf | sort
+    find "$layout_path" -maxdepth 1 -type f,l -name "*.conf" -print0 | xargs -0 -I{} basename "{}" .conf | sort
   )
 
   if [ -n "$(pgrep rofi)" ]; then
@@ -22,7 +22,12 @@ _select_from_rofi() {
     exit
   fi
 
-  selected_presets=$(printf "%s\n" "${files[@]}" | rofi -dmenu -theme-str 'entry {placeholder: "Select hyprlock presets...";}')
+  selected_presets=$(
+    printf "%s\n" "${files[@]}" | rofi -dmenu \
+      -theme-str 'entry {placeholder: "Select hyprlock presets...";}' \
+      -theme-str 'mode-switcher {enabled: false;}' \
+      -theme-str 'configuration {show-icons: false;}'
+  )
   if [ -n "$selected_presets" ]; then
     echo "$selected_presets"
   else
