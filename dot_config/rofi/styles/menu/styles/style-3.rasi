@@ -158,7 +158,7 @@ mode-switcher {
 button {
   padding:                     8px 0px;
   background-color:            inherit;
-  text-color:                  inherit;
+  text-color:                  @outline;
   cursor:                      pointer;
 }
 
