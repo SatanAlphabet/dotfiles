@@ -70,6 +70,8 @@ inputbar {
   enabled:                     true;
   spacing:                     8px;
   padding:                     8px;
+  border:                      1px;
+  border-color:                @outline-variant;
   background-color:            @surface-container;
   orientation:                 horizontal;
   children:                    [ "textbox-prompt-colon", "entry", "num-filtered-rows" ];
@@ -87,7 +89,6 @@ textbox-prompt-colon {
 entry {
   enabled:                     true;
   background-color:            inherit;
-  text-color:                  inherit;
   cursor:                      text;
   placeholder:                 "Search...";
 }
@@ -126,7 +127,6 @@ element {
 }
 
 element selected {
-  border-color:                @primary;
   background-color:            @surface-variant;
   text-color:                  @primary;
 }
@@ -168,7 +168,7 @@ button {
 }
 
 button selected {
-  border-color:                @outline-variant;
+  border-color:                @primary;
   background-color:            @surface-variant;
   text-color:                  @primary;
 }
