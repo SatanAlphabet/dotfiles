@@ -180,8 +180,9 @@
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 		"exec-if": "which waybar-module-pacman-updates",
-		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600 --no-zero-output",
+		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600",
 		"on-click": "kitty --class 'sysupdate' --title 'System Update' sysupdate.sh",
+		"on-click-right": "kitty --class 'sysupdate' --title 'System Update' sysupdate.sh -y",
 	},
 	"memory": {
 		"states": {
