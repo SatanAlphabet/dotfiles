@@ -160,12 +160,12 @@ button {
   padding:                     8px 0px;
   border:                      1px;
   background-color:            inherit;
-  text-color:                  @outline;
+  text-color:                  @on-surface-variant;
   cursor:                      pointer;
 }
 
 button selected {
-  border-color:                @primary;
+  border-color:                @primary-variant;
   background-color:            @surface-variant;
   text-color:                  @primary;
 }
