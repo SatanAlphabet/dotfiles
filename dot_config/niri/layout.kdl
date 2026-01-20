@@ -49,17 +49,17 @@ layout {
   shadow {
     on
     softness 10
-    spread 0
-    offset x=0 y=5
+    spread 1
+    offset x=0 y=2
 
     color "#0007"
   }
 
   struts {
-    left 0
-    right 0
-    // top 64
-    // bottom 64
+    left 8
+    right 8
+    top 8
+    bottom 8
   }
 
   background-color "transparent"

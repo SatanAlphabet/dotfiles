@@ -16,6 +16,3 @@ fi
 for file in "${ZDOTDIR:-$HOME/.config/zsh}/conf.d/"*.zsh; do
   [ -r "$file" ] && source "$file" || echo -e "==>  Failed to source $file"
 done
-
-# De-duplicate PATH just in case
-typeset -U path

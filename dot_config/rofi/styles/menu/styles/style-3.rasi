@@ -70,6 +70,8 @@ inputbar {
   enabled:                     true;
   spacing:                     8px;
   padding:                     8px;
+  border:                      1px;
+  border-color:                @outline-variant;
   background-color:            @surface-container;
   orientation:                 horizontal;
   children:                    [ "textbox-prompt-colon", "entry" ];
@@ -81,13 +83,12 @@ textbox-prompt-colon {
   str:                         "";
   padding:                     0px 8px;
   background-color:            inherit;
-  text-color:                  inherit;
+  text-color:                  @outline;
 }
 
 entry {
   enabled:                     true;
   background-color:            inherit;
-  text-color:                  inherit;
   cursor:                      text;
   placeholder:                 "Search...";
 }
@@ -123,7 +124,7 @@ element {
 
 element selected {
   border-color:                @primary;
-  background-color:            @surface-variant;
+  background-color:            @surface-container-high;
   text-color:                  @primary;
 }
 
@@ -157,14 +158,16 @@ mode-switcher {
 
 button {
   padding:                     8px 0px;
+  border:                      1px;
   background-color:            inherit;
-  text-color:                  inherit;
+  text-color:                  @on-surface-variant;
   cursor:                      pointer;
 }
 
 button selected {
-  background-color:            @primary;
-  text-color:                  @on-primary;
+  border-color:                @primary-outline;
+  background-color:            @secondary-container;
+  text-color:                  @primary;
 }
 
 /*****----- Message -----*****/

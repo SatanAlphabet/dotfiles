@@ -105,7 +105,7 @@ window-rule {
   shadow {
     on
     softness 12
-    spread -1
+    spread 0
     offset x=0 y=5
   }
   geometry-corner-radius 8
