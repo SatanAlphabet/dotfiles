@@ -1,27 +1,3 @@
 <* for name, value in colors *>
 @define-color {{ name | replace: "_", "-" }} {{ value.default.hex }};
 <* endfor *>
-
-@define-color main-bg @surface;
-@define-color main-fg @on-surface;
-
-@define-color inact-fg @outline;
-
-@define-color act-bg @primary;
-@define-color act-fg @on-primary;
-
-@define-color hvr-bg @secondary;
-@define-color hvr-fg @on-secondary;
-
-@define-color pill-bg @surface-container-high;
-@define-color pill-hvr-bg @surface-variant;
-
-@define-color ter-bg @tertiary;
-@define-color ter-fg @on-tertiary;
-
-@define-color crit-bg @error;
-@define-color crit-fg @on-error;
-
-@define-color widget-col @primary-fixed-dim;
-@define-color widget-shadow @on-primary-fixed-variant;
-@define-color border-outline @on-primary-fixed-variant;

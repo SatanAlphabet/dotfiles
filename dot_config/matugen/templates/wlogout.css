@@ -2,12 +2,4 @@
 @define-color {{ name | replace: "_", "-" }} {{ value.default.hex }};
 <* endfor *>
 
-@define-color backdrop {{colors.shadow.default.rgba | set_alpha: 0.5}};
-@define-color main-bg @surface;
-@define-color main-fg @on-surface;
-
-@define-color act-bg @primary;
-@define-color act-fg @on-primary;
-
-@define-color hvr-bg @secondary;
-@define-color hvr-fg @on-secondary;
+@define-color backdrop {{colors.scrim.default.rgba | set_alpha: 0.5}};
