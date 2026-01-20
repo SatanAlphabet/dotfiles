@@ -123,11 +123,13 @@ element {
   enabled:                     true;
   spacing:                     8px;
   padding:                     8px;
+  border:                      1px;
   cursor:                      pointer;
 }
 
 element selected {
-  background-color:            @surface-variant;
+  border-color:                @outline-variant;
+  background-color:            @surface-container-high;
   text-color:                  @primary;
 }
 
@@ -168,8 +170,8 @@ button {
 }
 
 button selected {
-  border-color:                @primary-variant;
-  background-color:            @surface-variant;
+  border-color:                @primary-outline;
+  background-color:            @secondary-container;
   text-color:                  @primary;
 }
 

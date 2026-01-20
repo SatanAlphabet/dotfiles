@@ -124,7 +124,7 @@ element {
 
 element selected {
   border-color:                @primary;
-  background-color:            @surface-variant;
+  background-color:            @surface-container-high;
   text-color:                  @primary;
 }
 
@@ -165,8 +165,8 @@ button {
 }
 
 button selected {
-  border-color:                @primary-variant;
-  background-color:            @surface-variant;
+  border-color:                @primary-outline;
+  background-color:            @secondary-container;
   text-color:                  @primary;
 }
 
