@@ -1,23 +1,27 @@
-@define-color main-bg {{colors.surface.default.rgba | set_alpha: 0.999}};
-@define-color main-fg {{colors.on_surface.default.hex}};
+<* for name, value in colors *>
+@define-color {{ name | replace: "_", "-" }} {{ value.default.hex }};
+<* endfor *>
 
-@define-color inact-fg {{colors.outline.default.hex}};
+@define-color main-bg @surface;
+@define-color main-fg @on-surface;
 
-@define-color act-bg {{colors.primary.default.hex}};
-@define-color act-fg {{colors.on_primary.default.hex}};
+@define-color inact-fg @outline;
 
-@define-color hvr-bg {{colors.secondary.default.hex}};
-@define-color hvr-fg {{colors.on_secondary.default.hex}};
+@define-color act-bg @primary;
+@define-color act-fg @on-primary;
 
-@define-color pill-bg {{colors.surface_container_high.default.hex}};
-@define-color pill-hvr-bg {{colors.surface_variant.default.hex}};
+@define-color hvr-bg @secondary;
+@define-color hvr-fg @on-secondary;
 
-@define-color ter-bg {{colors.tertiary.default.hex}};
-@define-color ter-fg {{colors.on_tertiary.default.hex}};
+@define-color pill-bg @surface-container-high;
+@define-color pill-hvr-bg @surface-variant;
 
-@define-color crit-bg {{colors.error.default.hex}};
-@define-color crit-fg {{colors.on_error.default.hex}};
+@define-color ter-bg @tertiary;
+@define-color ter-fg @on-tertiary;
 
-@define-color widget-col {{colors.primary_fixed_dim.default.hex}};
-@define-color widget-shadow {{colors.on_primary_fixed_variant.default.hex}};
-@define-color border-outline {{colors.on_primary_fixed_variant.default.hex}};
+@define-color crit-bg @error;
+@define-color crit-fg @on-error;
+
+@define-color widget-col @primary-fixed-dim;
+@define-color widget-shadow @on-primary-fixed-variant;
+@define-color border-outline @on-primary-fixed-variant;
