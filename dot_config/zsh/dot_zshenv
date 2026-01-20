@@ -7,6 +7,5 @@ typeset -U path
 path=($HOME/.local/bin $path)
 
 # History configuration
-HISTFILE=${HISTFILE:-$ZDOTDIR/.zsh_history}
 export HISTSIZE=10000
 export SAVEHIST=10000
