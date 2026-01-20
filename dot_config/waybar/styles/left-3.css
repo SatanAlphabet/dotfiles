@@ -6,20 +6,20 @@
 window#waybar {
 	box-shadow: none;
 	text-shadow: none;
-	background: @main-bg;
-	color: @main-fg;
+	background: @surface;
+	color: @on-surface;
 }
 
 window#waybar.main #privacy,
 window#waybar.main .module {
-	background: @pill-bg;
+	background: @surface-container-high;
 	margin: 0px 8px;
 	padding: 4px 0px;
 	border-radius: 4px;
 }
 
 window#waybar.main #pill {
-	background: @pill-bg;
+	background: @surface-container-high;
 	margin: 0px 8px;
 	border-radius: 4px;
 }
@@ -27,8 +27,8 @@ window#waybar.main #pill {
 window#waybar.main #privacy:hover,
 window#waybar.main #pill:hover,
 window#waybar.main .module:hover {
-	box-shadow: 0px 0px 0px 0.5px @act-bg inset;
-	background: @pill-hvr-bg;
+	box-shadow: 0px 0px 0px 0.5px @primary inset;
+	background: @surface-variant;
 }
 
 window#waybar.main #language:hover,
@@ -41,32 +41,32 @@ window#waybar.main #workspaces:hover {
 }
 
 window#waybar.main #workspaces:hover {
-	background: @pill-bg;
+	background: @surface-container-high;
 }
 
 tooltip {
-	background: @main-bg;
-	color: @main-fg;
-	border: 1px solid @border-outline;
+	background: @surface;
+	color: @on-surface;
+	border: 1px solid @on-primary-fixed-variant;
 }
 
 tooltip label {
 	font-size: 11px;
-	color: @main-fg;
+	color: @on-surface;
 }
 
 menu {
-	background: @main-bg;
-	color: @main-fg;
-	border: 1px solid @border-outline;
+	background: @surface;
+	color: @on-surface;
+	border: 1px solid @on-primary-fixed-variant;
 }
 
 menuitem {
-	color: @main-fg;
+	color: @on-surface;
 }
 
 menuitem arrow {
-	color: @hvr-bg;
+	color: @secondary;
 }
 
 menuitem label {
@@ -75,11 +75,11 @@ menuitem label {
 }
 
 menuitem:hover {
-	background: @pill-bg;
+	background: @surface-container-high;
 }
 
 menuitem:hover arrow {
-	color: @act-bg;
+	color: @primary;
 }
 
 window#waybar.main .modules-left {
@@ -109,25 +109,25 @@ window#waybar.main .modules-right #pill .alt {
 window#waybar.main #custom-launcher {
 	font-size: 20px;
 	background: transparent;
-	color: @act-bg;
+	color: @primary;
 }
 
 window#waybar.main #custom-launcher:hover {
-	color: @hvr-bg;
+	color: @secondary;
 }
 
 .warning {
-	color: @ter-bg;
+	color: @tertiary;
 }
 
 .critical {
-	color: @crit-bg;
+	color: @error;
 }
 
 window#waybar.main .recording,
 window#waybar.main .recording:hover {
-	background: @crit-bg;
-	color: @crit-fg;
+	background: @error;
+	color: @on-error;
 }
 
 .muted,
@@ -135,7 +135,7 @@ window#waybar.main .recording:hover {
 .disabled,
 .disconnected,
 .off {
-	color: @inact-fg;
+	color: @outline;
 }
 
 window#waybar.main #custom-seperator-vertical {
@@ -151,7 +151,7 @@ window#waybar.main #custom-seperator-vertical {
 	min-width: 0px;
 	min-height: 0px;
 	color: transparent;
-	background: @hvr-bg;
+	background: @secondary;
 	border-radius: 4px;
 	padding: 4px 0px;
 	margin: 6px 8px;
@@ -167,15 +167,15 @@ window#waybar.main #custom-seperator-vertical {
 
 #workspaces button.empty {
 	background: transparent;
-	border: 1.8px solid @hvr-bg;
+	border: 1.8px solid @secondary;
 }
 
 #workspaces button.active {
 	padding: 12px 0px;
 	margin: 6px 7px;
 	border: none;
-	background: @act-bg;
-	color: @act-fg;
+	background: @primary;
+	color: @on-primary;
 	opacity: 1;
 }
 
@@ -184,12 +184,12 @@ window#waybar.main #custom-seperator-vertical {
 }
 
 #workspaces button:hover {
-	background: @act-bg;
-	border-color: @act-bg;
+	background: @primary;
+	border-color: @primary;
 }
 
 #workspaces button.active:hover {
-	background: @hvr-bg;
+	background: @secondary;
 }
 
 window#waybar.main #taskbar {
@@ -207,18 +207,18 @@ window#waybar.main #taskbar {
 }
 
 #taskbar button:hover {
-	background: @act-bg;
+	background: @primary;
 }
 
 #taskbar button.active {
 	opacity: 1;
-	background: @pill-hvr-bg;
-	box-shadow: 0px 0px 0px 0.5px @act-bg inset;
+	background: @surface-variant;
+	box-shadow: 0px 0px 0px 0.5px @primary inset;
 }
 
 window#waybar.main #clock {
 	background: transparent;
-	color: @act-bg;
+	color: @primary;
 	font-size: 16px;
 	font-family: "Inter Variable";
 	font-feature-settings: "tnum";
@@ -236,12 +236,12 @@ window#waybar.main #tray {
 }
 
 window#waybar.main #custom-swaync.cc-open {
-	background: @act-bg;
-	color: @act-fg;
+	background: @primary;
+	color: @on-primary;
 }
 
 window#waybar.main #language {
-	color: @hvr-bg;
+	color: @secondary;
 	font-size: 15px;
 	font-weight: 600;
 	background: transparent;
@@ -260,7 +260,7 @@ window#waybar.outline-left,
 window#waybar.outline-right,
 window#waybar.outline-top,
 window#waybar.outline-bottom {
-	background-color: @border-outline;
+	background-color: @on-primary-fixed-variant;
 }
 
 window#waybar.time-widget,
@@ -272,7 +272,7 @@ window#waybar.time-widget .module,
 window#waybar.date-widget .module {
 	background: transparent;
 	font-family: "Inter Variable";
-	color: @widget-col;
+	color: @primary-fixed-dim;
 }
 
 window#waybar #clock.widget-time {
@@ -281,11 +281,11 @@ window#waybar #clock.widget-time {
 	padding: 25px 0px;
 	margin: 0px 20px;
 	text-shadow:
-		-1px 0px @widget-shadow,
-		2px 0px @widget-shadow,
-		0px -1px @widget-shadow,
-		0px 2px @widget-shadow,
-		3px 3px @widget-shadow;
+		-1px 0px @on-primary-fixed-variant,
+		2px 0px @on-primary-fixed-variant,
+		0px -1px @on-primary-fixed-variant,
+		0px 2px @on-primary-fixed-variant,
+		3px 3px @on-primary-fixed-variant;
 }
 
 window#waybar #clock.widget-date {
@@ -294,11 +294,11 @@ window#waybar #clock.widget-date {
 	padding: 8px 0px;
 	margin: 0px 20px;
 	text-shadow:
-		-1px 0px @widget-shadow,
-		1px 0px @widget-shadow,
-		0px -1px @widget-shadow,
-		0px 2px @widget-shadow,
-		2px 2px @widget-shadow;
+		-1px 0px @on-primary-fixed-variant,
+		1px 0px @on-primary-fixed-variant,
+		0px -1px @on-primary-fixed-variant,
+		0px 2px @on-primary-fixed-variant,
+		2px 2px @on-primary-fixed-variant;
 }
 
 window#waybar #mpris.widget {
@@ -306,9 +306,9 @@ window#waybar #mpris.widget {
 	font-weight: 300;
 	margin: 0px 20px;
 	text-shadow:
-		-1px 0px @widget-shadow,
-		1px 0px @widget-shadow,
-		0px -1px @widget-shadow,
-		0px 2px @widget-shadow,
-		1.5px 1.5px @widget-shadow;
+		-1px 0px @on-primary-fixed-variant,
+		1px 0px @on-primary-fixed-variant,
+		0px -1px @on-primary-fixed-variant,
+		0px 2px @on-primary-fixed-variant,
+		1.5px 1.5px @on-primary-fixed-variant;
 }

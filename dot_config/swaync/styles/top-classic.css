@@ -15,31 +15,15 @@
 	--group-collapse-transition: opacity 400ms ease-in-out;
 }
 
-/* Fallback for older CSS themes */
-/* Fallback for older CSS themes */
-@define-color cc-bg rgba(46, 46, 46, 0.7);
-@define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg rgba(48, 48, 48, 0.8);
-@define-color noti-bg-opaque rgb(48, 48, 48);
-@define-color noti-bg-darker rgb(38, 38, 38);
-@define-color noti-bg-hover rgb(56, 56, 56);
-@define-color noti-bg-hover-opaque rgb(56, 56, 56);
-@define-color noti-bg-focus rgba(68, 68, 68, 0.6);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-@define-color text-color rgb(255, 255, 255);
-@define-color text-color-disabled rgb(150, 150, 150);
-@define-color bg-selected rgb(0, 128, 255);
 notificationwindow,
-blankwindow,
 blankwindow {
 	background: transparent;
 }
 
 .close-button {
 	/* The notification Close Button */
-	background: @crit-bg;
-	color: @crit-fg;
+	background: @error;
+	color: @on-error;
 	text-shadow: none;
 	padding: 2px;
 	border-radius: 4px;
@@ -51,15 +35,15 @@ blankwindow {
 }
 
 tooltip {
-	background-color: @main-bg;
-	color: @main-fg;
-	border: 0.2px solid @dark-border;
+	background-color: @surface;
+	color: @on-surface;
+	border: 0.2px solid @on-primary-fixed-variant;
 	padding: 1px 2px;
 }
 
 .close-button:hover {
 	box-shadow: none;
-	background: @act-bg;
+	background: @primary;
 	border: none;
 }
 
@@ -78,18 +62,18 @@ tooltip {
 .notification-row .notification-background .notification {
 	/* The actual notification */
 	border-radius: var(--border-radius);
-	border: 2px solid @act-bg;
-	border-right: 8px solid @act-bg;
+	border: 2px solid @primary;
+	border-right: 8px solid @primary;
 	padding: 8px;
 	padding-left: 4px;
 	margin: 16px;
 	margin-bottom: 0px;
-	background: @main-bg;
+	background: @surface;
 }
 
 .notification-row .notification-background .notification.low {
 	/* Low Priority Notification */
-	border-color: @border-col;
+	border-color: @outline;
 }
 
 .notification-row .notification-background .notification.normal {
@@ -98,7 +82,7 @@ tooltip {
 
 .notification-row .notification-background .notification.critical {
 	/* Critical Priority Notification */
-	border-color: @crit-bg;
+	border-color: @error;
 }
 
 .notification-row .notification-background .notification .notification-default-action {
@@ -108,12 +92,12 @@ tooltip {
 	box-shadow: none;
 	background: transparent;
 	border: none;
-	color: @main-fg;
+	color: @on-surface;
 }
 
 .notification-row .notification-background .notification .notification-default-action:hover {
 	background: transparent;
-	color: @main-fg;
+	color: @on-surface;
 }
 
 .notification-row
@@ -179,7 +163,7 @@ tooltip {
 	.text-box
 	.summary {
 	/* Notification summary/title */
-	color: @main-fg;
+	color: @on-surface;
 	font-size: 1.2em;
 	font-weight: 600;
 	background: transparent;
@@ -197,7 +181,7 @@ tooltip {
 	font-weight: 300;
 	font-size: 0.8em;
 	background: transparent;
-	color: @main-fg-alt;
+	color: @on-primary-container;
 	text-shadow: none;
 }
 
@@ -212,7 +196,7 @@ tooltip {
 	font-weight: normal;
 	font-size: 0.9em;
 	background: transparent;
-	color: @main-fg;
+	color: @on-surface;
 	text-shadow: none;
 }
 
@@ -226,22 +210,22 @@ tooltip {
 
 .notification trough {
 	min-height: 10px;
-	background-color: @main-bg-alt;
+	background-color: @surface-variant;
 	border-radius: var(--border-radius);
 }
 
 .notification progress {
 	min-height: 10px;
-	background-color: @act-bg;
+	background-color: @primary;
 	border-radius: var(--border-radius);
 }
 
 .notification.low progress {
-	background-color: @border-col;
+	background-color: @outline;
 }
 
 .notification.critical progress {
-	background-color: @crit-bg;
+	background-color: @error;
 }
 
 .notification-row
@@ -274,8 +258,8 @@ tooltip {
 	.inline-reply
 	.inline-reply-entry {
 	background: transparent;
-	color: @main-fg;
-	caret-color: @main-fg;
+	color: @on-surface;
+	caret-color: @on-surface;
 }
 
 .notification-row
@@ -286,8 +270,8 @@ tooltip {
 	.inline-reply
 	.inline-reply-button {
 	margin-left: 4px;
-	background: @main-bg-alt;
-	color: @main-fg;
+	background: @surface-variant;
+	color: @on-surface;
 }
 
 .notification-row
@@ -298,8 +282,8 @@ tooltip {
 	.inline-reply
 	.inline-reply-button:disabled {
 	background: initial;
-	color: @inact-bg;
-	border: 1px solid @main-fg-alt;
+	color: @surface-container-highest;
+	border: 1px solid @on-primary-container;
 	border-color: transparent;
 }
 
@@ -310,7 +294,7 @@ tooltip {
 	.notification-content
 	.inline-reply
 	.inline-reply-button:hover {
-	background: @main-bg-alt;
+	background: @surface-variant;
 }
 
 .notification-row .notification-background .notification .notification-alt-actions {
@@ -329,25 +313,25 @@ tooltip {
 .notification-row .notification-background .notification .notification-action > button {
 	padding: 2px;
 	border-radius: var(--border-radius);
-	background: @pill-bg;
-	color: @main-fg;
-	border: 1px solid @main-fg-alt;
+	background: @surface-container-high;
+	color: @on-surface;
+	border: 1px solid @on-primary-container;
 }
 
 .notification-row .notification-background .notification.critical .notification-action > button {
-	border-color: @crit-bg;
+	border-color: @error;
 }
 
 .notification-row .notification-background .notification .notification-action > button:hover {
 	transition: 200ms;
-	background: @main-bg-alt;
-	color: @main-fg;
+	background: @surface-variant;
+	color: @on-surface;
 }
 
 .notification-group {
 	/* Styling only for Grouped Notifications */
 	background: transparent;
-	color: @main-fg;
+	color: @on-surface;
 	transition: opacity 200ms ease-in-out;
 	/* The groups close button */
 }
@@ -380,21 +364,21 @@ tooltip {
 .notification-group .notification-group-headers {
 	/* Notification Group Headers */
 	background: transparent;
-	color: @main-fg;
+	color: @on-surface;
 }
 
 .notification-group .notification-group-headers .notification-group-icon {
-	color: @main-fg;
+	color: @on-surface;
 	-gtk-icon-size: var(--notification-group-icon-size);
 }
 
 .notification-group .notification-group-headers .notification-group-header {
-	color: @main-fg;
+	color: @on-surface;
 }
 
 .notification-group .notification-group-buttons {
 	/* Notification Group Buttons */
-	color: @main-fg;
+	color: @on-surface;
 }
 
 .notification-group.collapsed {
@@ -421,11 +405,11 @@ tooltip {
 
 .control-center {
 	/* The Control Center which contains the old notifications + widgets */
-	background: @main-bg;
-	color: @main-fg;
+	background: @surface;
+	color: @on-surface;
 	border-radius: var(--border-radius);
 	padding: 8px;
-	border: 2px solid @dark-border;
+	border: 2px solid @on-primary-fixed-variant;
 }
 
 .control-center .control-center-list-placeholder {
@@ -480,25 +464,25 @@ tooltip {
 .widget-title > button {
 	margin-left: 8px;
 	border-radius: var(--border-radius);
-	background-color: @pill-bg;
-	color: @main-fg;
-	box-shadow: inset 0 0 0 0.5px @border-col;
+	background-color: @surface-container-high;
+	color: @on-surface;
+	box-shadow: inset 0 0 0 0.5px @outline;
 	padding: 6px 12px;
 }
 
 .widget-title > button:hover {
-	box-shadow: inset 0 0 0 1px @main-fg;
+	box-shadow: inset 0 0 0 1px @on-surface;
 }
 
 .widget-title > button:active {
-	box-shadow: inset 0 0 0 0.5px @pill-bg;
-	background-color: @act-bg;
-	color: @main-bg-alt;
+	box-shadow: inset 0 0 0 0.5px @surface-container-high;
+	background-color: @primary;
+	color: @surface-variant;
 }
 
 /* DND widget */
 .widget-dnd label {
-	color: @main-fg;
+	color: @on-surface;
 	margin-right: 8px;
 	font-size: 1.1rem;
 }
@@ -506,24 +490,24 @@ tooltip {
 .widget-dnd switch {
 	padding: 2px;
 	border-radius: var(--border-radius);
-	background: @pill-bg;
-	border: 0.5px solid @border-col;
+	background: @surface-container-high;
+	border: 0.5px solid @outline;
 }
 
 .widget-dnd > switch:checked {
-	background: @act-bg;
-	border-color: @act-bg;
+	background: @primary;
+	border-color: @primary;
 }
 
 .widget-dnd switch slider {
 	border-radius: var(--border-radius);
-	background: @border-col;
-	border: 0.5px solid @main-bg-alt;
+	background: @outline;
+	border: 0.5px solid @surface-variant;
 }
 
 .widget-dnd > switch:checked slider {
-	background: @main-bg;
-	border-color: @act-bg;
+	background: @surface;
+	border-color: @primary;
 }
 
 /* Label widget */
@@ -539,7 +523,7 @@ tooltip {
 }
 
 .widget-mpris {
-	background: @pill-bg;
+	background: @surface-container-high;
 	padding: 4px 8px;
 	/* The parent to all players */
 }
@@ -555,18 +539,18 @@ tooltip {
 
 .widget-mpris .widget-mpris-player .mpris-overlay {
 	padding: 0px;
-	background-color: @pill-bg;
+	background-color: @surface-container-high;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay button {
 	/* The media player buttons (play, pause, next, etc...) */
 	padding: 5px;
-	background: @inact-bg;
+	background: @surface-container-highest;
 	border-radius: 100%;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay button:hover {
-	background-color: @hvr-border;
+	background-color: @outline-variant;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-album-art {
@@ -586,12 +570,12 @@ tooltip {
 
 .widget-mpris .widget-mpris-player .mpris-overlay > box > button {
 	/* Change player control buttons */
-	background: @inact-bg;
+	background: @surface-container-highest;
 	margin: 0px;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay > box > button:hover {
-	background-color: @hvr-border;
+	background-color: @outline-variant;
 }
 
 .widget-mpris > box > button {
@@ -604,40 +588,40 @@ tooltip {
 
 .widget-mpris > box > button:disabled {
 	/* Change player side buttons insensitive */
-	color: @hvr-border;
+	color: @outline-variant;
 }
 
 /* Buttons widget */
 
 .widget-buttons-grid {
-	background-color: @pill-bg;
+	background-color: @surface-container-high;
 	padding: 2px 4px;
 }
 
 .widget-buttons-grid flowboxchild > button {
 	border-radius: var(--border-radius);
-	border: 0.3px solid @border-col;
+	border: 0.3px solid @outline;
 	transition: all 0s;
 	padding: 2px 0px;
 	margin: 4px;
-	background-color: @main-bg;
+	background-color: @surface;
 }
 
 .widget-buttons-grid flowboxchild > button.toggle:checked {
 	/* style given to the active toggle button */
-	background-color: @act-bg;
-	color: @act-fg;
+	background-color: @primary;
+	color: @on-primary;
 }
 
 .widget-buttons-grid flowboxchild > button:hover {
-	background-color: @hvr-border;
-	border-color: @main-fg;
-	color: @main-fg-alt;
+	background-color: @outline-variant;
+	border-color: @on-surface;
+	color: @on-primary-container;
 }
 
 .widget-buttons-grid flowboxchild > button:active {
-	background-color: @act-bg;
-	color: @act-fg;
+	background-color: @primary;
+	color: @on-primary;
 }
 
 /* Menubar widget */
@@ -702,7 +686,7 @@ tooltip {
 
 .widget-backlight,
 .widget-volume {
-	background-color: @pill-bg;
+	background-color: @surface-container-high;
 	padding: 4px 12px;
 }
 
@@ -716,21 +700,21 @@ tooltip {
 
 .widget-backlight trough,
 .widget-volume trough {
-	background-color: @main-bg;
+	background-color: @surface;
 	min-height: 3px;
 	margin-left: 8px;
 }
 
 .widget-backlight slider,
 .widget-volume slider {
-	background-color: @hvr-border;
+	background-color: @outline-variant;
 	min-height: 3px;
 	min-width: 15px;
 }
 
 .widget-backlight highlight,
 .widget-volume highlight {
-	background-color: @act-bg;
+	background-color: @primary;
 	min-height: 3px;
 }
 

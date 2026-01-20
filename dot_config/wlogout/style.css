@@ -12,11 +12,11 @@ window {
 }
 
 button {
-  color: @main-fg;
-  background-color: @main-bg;
+  color: @on-surface;
+  background-color: @surface;
   outline-style: none;
-  border-top: 1px solid @act-bg;
-  border-bottom: 2px solid @act-bg;
+  border-top: 1px solid @primary;
+  border-bottom: 2px solid @primary;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20%;
@@ -26,16 +26,16 @@ button {
 }
 
 button:focus {
-  color: @act-fg;
-  background-color: @act-bg;
+  color: @on-primary;
+  background-color: @primary;
   background-size: 30%;
 }
 
 button:hover {
-  color: @hvr-fg;
-  background-color: @hvr-bg;
+  color: @on-secondary;
+  background-color: @secondary;
   background-size: 40%;
-  border-color: @hvr-bg;
+  border-color: @secondary;
   border-radius: ${active_rad}px;
   transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
@@ -74,7 +74,7 @@ button:hover#reboot {
   background-image: image(url("$HOME/.config/wlogout/icons/lock_${BtnCol}.png"), url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
   border-radius: ${button_rad}px 0px 0px ${button_rad}px;
   margin : ${mgn}px 0px ${mgn}px ${mgn}px;
-  border-left: 1px solid @act-bg;
+  border-left: 1px solid @primary;
 }
 
 #logout {
@@ -105,5 +105,5 @@ button:hover#reboot {
   background-image: image(url("$HOME/.config/wlogout/icons/reboot_${BtnCol}.png"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
   border-radius: 0px ${button_rad}px ${button_rad}px 0px;
   margin : ${mgn}px ${mgn}px ${mgn}px 0px;
-  border-right: 1px solid @act-bg;
+  border-right: 1px solid @primary;
 }
