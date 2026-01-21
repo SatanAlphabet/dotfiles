@@ -1,0 +1,163 @@
+/**
+ * @name system24 (Matugen)
+ * @description Modified template based on system24.
+ * @author refact0r
+ * @version 2.0.0
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/system24
+ * @source https://github.com/refact0r/system24/blob/master/theme/system24.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+/* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
+
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+body {
+  /* font, change to 'gg sans' for default discord font*/
+  --font: 'CaskaydiaCove Nerd Font';
+  --code-font: '';
+  font-weight: 400; /* text font weight. 300 is light, 400 is normal. DOES NOT AFFECT BOLD TEXT */
+  letter-spacing: -0.05ch; /* decreases letter spacing for better readability. recommended on monospace fonts.*/
+
+  /* amount of spacing and padding */
+  --gap: 12px;
+  /* thickness of unread messages divider and highlighted message borders */
+  --divider-thickness: 4px;
+  /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+  --border-thickness: 2px;
+
+  /* animations */
+  --list-item-transition: 0.2s ease;
+  /* channels/members/settings hover transition */
+  --unread-bar-transition: 0.2s ease;
+  /* unread bar moving into view transition */
+  --dms-icon-svg-transition: 0.4s ease;
+  /* moon icon spin */
+
+  /* top bar options */
+  --top-bar-height: var(--gap);
+  /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
+  --top-bar-button-position: titlebar;
+  /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
+  --top-bar-title-position: left;
+  /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
+  --subtle-top-bar-title: on;
+  /* off: default, on: hide the icon and use subtle text color (like old discord) */
+
+  /* window controls */
+  --custom-window-controls: on;
+  /* off: default window controls, on: custom window controls */
+  --window-control-size: 14px;
+  /* size of custom window controls */
+
+  /* chatbar options */
+  --custom-chatbar: aligned;
+  /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
+  --chatbar-height: 47px;
+  /* height of the chatbar (52px by default, 47px recommended for aligned, 56px recommended for separated) */
+  --chatbar-padding: 8px;
+  /* padding of the chatbar. only applies in aligned mode. */
+
+  /* other options */
+  --small-user-panel: off;
+  /* off: default user panel, on: smaller user panel like in old discord */
+
+  /* dms button options */
+  --custom-dms-icon: custom;
+  /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+  --dms-icon-svg-url: url('https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/discord-logo.svg');
+  /* icon svg url. MUST BE A SVG. */
+  /* Arch logo: https://www.vectorlogo.zone/logos/archlinux/archlinux-icon.svg */
+  --dms-icon-svg-size: 90%;
+  /* size of the svg (css mask-size property) */
+  --dms-icon-color-before: var(--icon-subtle);
+  /* normal icon color */
+  --dms-icon-color-after: var(--white);
+  /* icon color when button is hovered/selected */
+  --custom-dms-background: off;
+  /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
+  --dms-background-image-url: url('');
+  /* url of the background image */
+  --dms-background-image-size: cover;
+  /* size of the background image (css background-size property) */
+  --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
+  /* fixed color/gradient (css background property) */
+
+  /* unrounding options */
+  --unrounding: on; /* off: default, on: remove rounded corners from panels */
+
+  /* styling options */
+  --custom-spotify-bar: on; /* off: default, on: custom text-like spotify progress bar */
+  --ascii-titles: off; /* off: default, on: use ascii font for titles at the start of a channel */
+  --ascii-loader: system24; /* off: default, system24: use system24 ascii loader, cats: use cats loader */
+
+  /* panel labels */
+  --panel-labels: off; /* off: default, on: add labels to panels */
+  --label-color: var(--text-muted); /* color of labels */
+  --label-font-weight: 500; /* font weight of labels */
+}
+/* customize things here */
+:root {
+
+	/* top left corner text */
+	--corner-text: 'Midnight';
+	/* color of status indicators and window controls */
+  --online: #40a02b;     /* change to #23a55a for default green */
+	--dnd: #d20f39;                  /* change to #f13f43 for default red */
+	--idle: #df831d;    /* change to #f0b232 for default yellow */
+	--streaming: #8839ef;       /* change to #593695 for default purple */
+  
+
+	/* accent colors */
+  --accent-1: #82524e;            /* links */
+	--accent-2: #784f82;             /* general unread/mention elements, some icons when active */
+	--accent-3: #784f82;             /* accent buttons */
+	--accent-4: #6a596c;      /* accent buttons when hovered */
+	--accent-5: #82524e;   /* accent buttons when clicked */
+	--accent-new: #ba1a1a;
+  --mention: linear-gradient(
+      to right,
+      color-mix(in hsl, #fbd7ff, transparent 80%) 40%,
+      transparent
+  ); /* background of messages that mention you */
+  --mention-hover: linear-gradient(
+      to right,
+      color-mix(in hsl, #fbd7ff, transparent 90%) 40%,
+      transparent
+  ); /* background of messages that mention you when hovered */
+  --reply: linear-gradient(
+      to right,
+      color-mix(in hsl, #ffdad6, transparent 80%) 40%,
+      transparent
+  ); /* background of messages that reply to you */
+  --reply-hover: linear-gradient(
+      to right,
+      color-mix(in hsl, #ffdad6, transparent 90%) 40%,
+      transparent
+  ); /* background of messages that reply to you when hovered */
+
+	/* text colors */
+	--text-0: #fff7fb;               /* text on colored elements */
+	--text-1: #4c444c;            /* other normally white text */
+	--text-2: #1f1a1f;            /* headings and important text */
+	--text-3: #4c444c;    /* normal text */
+	--text-4: #4c444c;    /* icon buttons and channels */
+	--text-5: #7e747d;               /* muted channels/chats and timestamps */
+
+	/* background and default colors */
+  --bg-1: #fbd7ff;                             /* dark buttons when clicked */
+	--bg-2: #f0e5ec;              /* dark buttons */
+	--bg-3: #fbf1f8;               /* spacing, secondary elements */
+	--bg-4: #fff7fb;                             /* main background color */
+	--hover: #fbf1f8;                     /* channels and buttons when hovered */
+	--active: #f5ebf2;                    /* channels and buttons when clicked or selected */
+	--message-hover: #f5ebf2;             /* messages when hovered */
+
+  /* border colors */
+  --border-light: #eae0e7; /* light border color */
+  --border: #eae0e7; /* normal border color */
+  --border-hover: #eae0e7; /*  border color of panels when hovered */
+  --button-border: #f0e5ec; /* neutral border color of buttons */
+}
