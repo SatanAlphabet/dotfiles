@@ -1,3 +1,6 @@
+/* Very minor alpha reduction to fix black background issue on rounded corners */
+
 <* for name, value in colors *>
-@define-color {{ name | replace: "_", "-" }} {{ value.default.hex }};
+@define-color {{ name | replace: "_", "-" }} {{ value.default.rgba | set_alpha: 0.99999 }};
 <* endfor *>
+

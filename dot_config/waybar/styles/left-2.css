@@ -46,8 +46,8 @@ window#waybar.main #workspaces:hover {
 
 tooltip {
 	background: @surface;
-	color: @on-surface;
 	border: 1px solid @on-primary-fixed-variant;
+	border-radius: 4px;
 }
 
 tooltip label {
@@ -59,14 +59,16 @@ menu {
 	background: @surface;
 	color: @on-surface;
 	border: 1px solid @on-primary-fixed-variant;
+	border-radius: 4px;
 }
 
 menuitem {
 	color: @on-surface;
+	border-radius: 4px;
 }
 
 menuitem arrow {
-	color: @secondary;
+	color: @outline;
 }
 
 menuitem label {
