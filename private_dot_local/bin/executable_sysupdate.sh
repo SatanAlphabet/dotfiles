@@ -7,54 +7,91 @@ pkg_text=" - System packages updated."
 flatpak_text=" - Flatpak packages updated."
 post_upd_text=" - Post-update checks completed."
 
-upd_command=pacman
+upd_command="pacman" # Fallback when no alternative package managers are detected
 
-upd_flags=(-Syu)
-flatpak_flags=(-u --system)
-post_upd_flags=(-i "sddm.service" -i "gdm.service") # Ignore display manager services to avoid nuking the current session
+upd_args=(-Syu)
+flatpak_args=(-u --system)
+post_upd_args=(-i "sddm.service" -i "gdm.service") # Ignore display manager services to avoid nuking the current session
 
-fastfetch.sh
+_confirm_prompt() {
+  local response
+  echo -n -e "Skip confirmation prompts? [y/N] "
+  read -r response
 
-if [ "$1" = "-y" ]; then
-  upd_flags+=(--noconfirm)
-  flatpak_flags+=(-y)
-  post_upd_flags+=(-a)
-  echo -e " ${ORANGE}WARNING:${NC} Skipping confirmation prompts..."
-fi
+  if [[ "$response" =~ ^[Yy]$ ]]; then
+    SKIP_PROMPT=1
+  elif [[ "$response" =~ ^[Nn]|^\s*$ ]]; then
+    SKIP_PROMPT=0
+  else
+    _confirm_prompt
+  fi
+}
 
-echo -e "\n ${ORANGE}===>${NC}  Beginning system update...\n"
+_uodate_system() {
 
-if which paru >/dev/null 2>&1; then
-  upd_command=paru
-elif which yay >/dev/null 2>&1; then
-  upd_command=yay
-fi
+  if [ "$SKIP_PROMPT" -eq 1 ]; then
+    upd_args+=(--noconfirm)
+    flatpak_args+=(-y)
+    post_upd_args+=(-a)
+    echo -e "${ORANGE}===>${NC}  Skipping confirmation prompts..."
+  fi
 
-if ! $upd_command "${upd_flags[@]}"; then
-  failed_update=true
-  pkg_text=" [!] Failed to update system packages."
-fi
+  echo -e "${ORANGE}===>${NC}  Beginning system update...\n"
 
-echo -e "\n${ORANGE}===>${NC}  Checking for flatpak updates...\n"
+  pm_list=(paru yay)
 
-if ! flatpak update "${flatpak_flags[@]}"; then
-  failed_update=true
-  flatpak_text=" [!] Failed to update flatpak packages."
-fi
+  for pm in "${pm_list[@]}"; do
+    if which "$pm" >/dev/null 2>&1; then
+      upd_command="$pm"
+      break
+    fi
+  done
 
-echo -e "\n${ORANGE}===>${NC}  Running post-installation checks...\n"
+  if ! $upd_command "${upd_args[@]}"; then
+    failed_update=true
+    pkg_text=" [!] Failed to update system packages."
+  fi
 
-if ! sudo checkservices "${post_upd_flags[@]}"; then
-  failed_update=true
-  post_upd_text=" [!] Failed to run post-service checks."
-fi
+  echo -e "\n${ORANGE}===>${NC}  Checking for flatpak updates...\n"
 
-notif_msg="$pkg_text\n$flatpak_text\n$post_upd_text"
+  if ! flatpak update "${flatpak_args[@]}"; then
+    failed_update=true
+    flatpak_text=" [!] Failed to update flatpak packages."
+  fi
 
-if [ "$failed_update" ]; then
-  notify-send 'System update failed...' "$notif_msg" -a 'System Update' -u critical -i dialog-warning-symbolic
-else
-  notify-send 'System update completed...' "$notif_msg" -a 'System Update' -i object-select-symbolic
-fi
+  echo -e "\n${ORANGE}===>${NC}  Running post-installation checks...\n"
 
-read -r -n 1 -p 'Press any key to exit...'
+  if ! sudo checkservices "${post_upd_args[@]}"; then
+    failed_update=true
+    post_upd_text=" [!] Failed to run post-service checks."
+  fi
+
+  notif_msg="$pkg_text\n$flatpak_text\n$post_upd_text"
+
+  if [ "$failed_update" ]; then
+    notify-send 'System update failed...' "$notif_msg" -a 'System Update' -u critical -i dialog-warning-symbolic
+  else
+    notify-send 'System update completed...' "$notif_msg" -a 'System Update' -i object-select-symbolic
+  fi
+
+  read -r -n 1 -p 'Press any key to exit...'
+}
+
+while true; do
+  case "$1" in
+  --confirm)
+    SKIP_PROMPT=0
+    shift
+    ;;
+  --no-confirm | -y)
+    SKIP_PROMPT=1
+    shift
+    ;;
+  *)
+    fastfetch.sh 2>/dev/null || fastfetch
+    [ -z "$SKIP_PROMPT" ] && _confirm_prompt
+    _uodate_system
+    break
+    ;;
+  esac
+done
