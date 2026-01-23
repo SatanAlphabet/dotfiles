@@ -196,26 +196,34 @@ window#waybar.main #custom-seperator-vertical {
 
 window#waybar.main #taskbar {
 	background: transparent;
-	margin: 0px 6px;
+	margin: 0px;
 }
 
 #taskbar button {
 	min-width: 0px;
 	min-height: 0px;
 	padding: 6px;
-	margin: 1px 0px;
-	border-radius: 200px;
+	margin: 1px 6px;
 	opacity: 0.6;
+	border: 0px solid transparent;
+}
+
+window#waybar.left.main #taskbar button {
+	border-left-width: 2px;
+}
+
+window#waybar.right.main #taskbar button {
+	border-right-width: 2px;
 }
 
 #taskbar button:hover {
-	background: @primary;
+	background: @secondary-container;
 }
 
 #taskbar button.active {
 	opacity: 1;
-	background: @surface-variant;
-	box-shadow: 0px 0px 0px 0.5px @primary inset;
+	background: @surface-container-high;
+	border-color: @primary;
 }
 
 window#waybar.main #clock {
