@@ -3,11 +3,10 @@
 # shellcheck disable=SC1090
 
 # Define paths and files
-glyph_dir="$HOME/.local/share/niri"
+glyph_dir="${XDG_DATA_HOME:-$HOME/.local/share}/niri"
 glyph_data="${glyph_dir}/glyph.db"
-cache_dir="$HOME/.cache/niri"
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/niri"
 recent_data="${cache_dir}/landing/show_glyph.recent"
-rofi_style="menu"
 
 # checks if a glyph is valid, functionally identical logic to #344
 is_valid_glyph() {
@@ -67,7 +66,6 @@ main() {
   sel_glyphs=$(echo "${data_glyph}" | cut -d' ' -f1 | tr -d '\n\r')
 
   wl-copy "${sel_glyphs}"
-  paste_string "${@}"
 }
 
 # exit trap to save recent glyphs
