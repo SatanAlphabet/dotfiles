@@ -16,19 +16,19 @@ process_selections() {
 
     # handle special commands
     if [[ "${lines[0]}" = ":d:e:l:e:t:e:"* ]]; then
-      "${0}" --delete
+      main_menu --delete
       return
     elif [[ "${lines[0]}" = ":w:i:p:e:"* ]]; then
-      "${0}" --wipe
+      main_menu --wipe
       return
     elif [[ "${lines[0]}" = ":b:a:r:"* ]] || [[ "${lines[0]}" = *":c:o:p:y:"* ]]; then
-      "${0}" --copy
+      main_menu --copy
       return
     elif [[ "${lines[0]}" = ":f:a:v:"* ]]; then
-      "${0}" --favorites
+      main_menu --favorites
       return
     elif [[ "${lines[0]}" = ":o:p:t:"* ]]; then
-      "${0}"
+      main_menu
       return
     fi
 
@@ -83,16 +83,17 @@ check_content() {
 run_rofi() {
   local placeholder="$1"
   shift
+  local rofi_args=(
+    -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}"
+    -theme-str "element-icon { enabled: false; }"
+    -theme-str "mode-switcher { enabled: false; }"
+  )
 
-  if [[ -n "$(pgrep -x rofi)" ]]; then
-    pkill rofi
-  else
-    rofi -dmenu \
-      -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}" \
-      -theme-str "element-icon { enabled: false; }" \
-      -theme-str "mode-switcher { enabled: false; } " \
-      "$@"
+  if [ "$CLIPHIST_THEME" ]; then
+    rofi_args+=(-theme "$CLIPHIST_THEME")
   fi
+
+  pkill rofi || rofi -dmenu "${rofi_args[@]}" "$@"
 }
 
 # create favorites directory if it doesn't exist
@@ -286,20 +287,18 @@ clear_history() {
 show_help() {
   cat <<EOF
 Options:
-  -c  | --copy | History            Show clipboard history and copy selected item
-  -d  | --delete | Delete           Delete selected item from clipboard history
-  -f  | --favorites| View Favorites              View favorite clipboard items
-  -mf | -manage-fav | Manage Favorites  Manage favorite clipboard items
-  -w  | --wipe | Clear History      Clear clipboard history
-  -h  | --help | Help               Display this help message
-
-Note: To enable autopaste, install 'wtype' package.
+  -t  | --theme <theme>                  Select rofi theme to use
+  -c  | --copy      | History            Show clipboard history and copy selected item
+  -d  | --delete    | Delete             Delete selected item from clipboard history
+  -f  | --favorites | View Favorites     View favorite clipboard items
+  -mf | -manage-fav | Manage Favorites   Manage favorite clipboard items
+  -w  | --wipe      | Clear History      Clear clipboard history
+  -h  | --help      | Help               Display this help message
 EOF
   exit 0
 }
 
-# main function
-main() {
+main_menu() {
 
   local main_action
   # show main menu if no arguments are passed
@@ -334,5 +333,15 @@ main() {
   esac
 }
 
-# run main function
-main "$@"
+while true; do
+  case "$1" in
+  -t | --theme)
+    CLIPHIST_THEME="$2"
+    shift 2
+    ;;
+  *)
+    main_menu "$@"
+    break
+    ;;
+  esac
+done
