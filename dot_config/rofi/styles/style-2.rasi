@@ -46,7 +46,7 @@ mainbox {
 
 listbox {
   enabled:                     true;
-  spacing:                     8px;
+  spacing:                     0px;
   padding:                     12px;
   orientation:                 vertical;
   children:                    [ "inputbar", "message", "listview" ];
@@ -115,6 +115,7 @@ listview {
   fixed-height:                false;
   fixed-columns:               true;
   spacing:                     8px;
+  margin:                      8px 0px 0px 0px;
   cursor:                      "default";
 }
 
@@ -180,6 +181,7 @@ button selected {
 
 message {
   enabled:                     true;
+  margin:                      8px 0px 0px 0px;
 }
 
 textbox {
