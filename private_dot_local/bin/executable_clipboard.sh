@@ -30,6 +30,7 @@ handle_special_commands() {
   ":w:i:p:e:"*) exec "$0" "${theme_args[@]}" --wipe ;;
   ":b:a:r:"* | *":c:o:p:y:"*) exec "$0" "${theme_args[@]}" --copy ;;
   ":f:a:v:"*) exec "$0" "${theme_args[@]}" --favorites ;;
+  ":m:a:n:"*) exec "$0" "${theme_args[@]}" -manage-fav ;;
   ":o:p:t:"*) exec "$0" "${theme_args[@]}" ;;
   esac
 }
@@ -86,6 +87,7 @@ run_rofi() {
     -kb-custom-3 "Alt+n"
     -kb-custom-4 "Alt+w"
     -kb-custom-5 "Alt+o"
+    -kb-custom-6 "Alt+m"
   )
 
   if [ "$CLIPHIST_THEME" ]; then
@@ -102,6 +104,7 @@ run_rofi() {
     12) printf ":f:a:v:" ;;
     13) printf ":w:i:p:e:" ;;
     14) printf ":o:p:t:" ;;
+    15) printf ":m:a:n:" ;;
     esac
   fi
 }
@@ -321,7 +324,7 @@ main_menu_options() {
 		Delete Item:::<sub>(Alt+D)</sub>
 		Clear History:::<sub>(Alt+W)</sub>
 		View Favorites:::<sub>(Alt+N)</sub>
-		Manage Favorites:::
+		Manage Favorites:::<sub>(Alt+M)</sub>
 	EOF
 }
 
