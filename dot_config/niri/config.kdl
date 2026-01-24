@@ -1,7 +1,7 @@
 include "input.kdl"
 include "layout.kdl"
 include "animations.kdl"
-include "env.kdl"
+include "misc.kdl"
 include "rules.kdl"
 include "keybinds.kdl"
 include "startup.kdl"
