@@ -1,23 +1,6 @@
-@define-color main-bg {{colors.surface.default.rgba | set_alpha: 0.999}};
-@define-color main-fg {{colors.on_surface.default.hex}};
+/* Very minor alpha reduction to fix black background issue on rounded corners */
 
-@define-color inact-fg {{colors.outline.default.hex}};
+<* for name, value in colors *>
+@define-color {{ name | replace: "_", "-" }} {{ value.default.rgba | set_alpha: 0.99999 }};
+<* endfor *>
 
-@define-color act-bg {{colors.primary.default.hex}};
-@define-color act-fg {{colors.on_primary.default.hex}};
-
-@define-color hvr-bg {{colors.secondary.default.hex}};
-@define-color hvr-fg {{colors.on_secondary.default.hex}};
-
-@define-color pill-bg {{colors.surface_container_high.default.hex}};
-@define-color pill-hvr-bg {{colors.surface_variant.default.hex}};
-
-@define-color ter-bg {{colors.tertiary.default.hex}};
-@define-color ter-fg {{colors.on_tertiary.default.hex}};
-
-@define-color crit-bg {{colors.error.default.hex}};
-@define-color crit-fg {{colors.on_error.default.hex}};
-
-@define-color widget-col {{colors.primary_fixed_dim.default.hex}};
-@define-color widget-shadow {{colors.on_primary_fixed_variant.default.hex}};
-@define-color border-outline {{colors.on_primary_fixed_variant.default.hex}};

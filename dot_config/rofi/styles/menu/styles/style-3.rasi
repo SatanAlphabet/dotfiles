@@ -4,6 +4,7 @@ configuration {
   modi:                        "drun,run,filebrowser,window";
   font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 11";
   show-icons:                  true;
+  scroll-method:               1;
   display-drun:                "󰀻";
   display-run:                 "";
   display-filebrowser:         "";
@@ -106,7 +107,7 @@ listview {
   reverse:                     false;
   fixed-height:                true;
   fixed-columns:               true;
-  spacing:                     8px;
+  spacing:                     0px;
   border-radius:               0px;
   cursor:                      "default";
 }

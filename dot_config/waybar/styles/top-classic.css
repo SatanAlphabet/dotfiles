@@ -1,72 +1,72 @@
 * {
-  font-family: "CaskaydiaCove Nerd Font Propo";
-  font-size: 14px;
-  font-weight: 400;
+	font-family: "CaskaydiaCove Nerd Font Propo";
+	font-size: 14px;
+	font-weight: 400;
 }
 
 window#waybar {
-  box-shadow: none;
-  text-shadow: none;
-  background: @main-bg;
-  color: @main-fg;
+	box-shadow: none;
+	text-shadow: none;
+	background: @surface;
+	color: @on-surface;
 }
 
 window#waybar.main #privacy,
 window#waybar.main .module {
-  padding: 0px 8px;
-  border-radius: 0px;
+	padding: 0px 8px;
+	border-radius: 0px;
 }
 
 tooltip {
-  background: @main-bg;
-  color: @main-fg;
-  border: 1px solid @border-outline;
+	background: @surface;
+	color: @on-surface;
+	border: 1px solid @on-primary-fixed-variant;
 }
 
 tooltip label {
-  font-size: 11px;
-  color: @main-fg;
-  font-weight: 400;
+	font-size: 11px;
+	color: @on-surface;
+	font-weight: 400;
 }
 
 menu {
-  background: @main-bg;
-  color: @main-fg;
-  border: 1px solid @border-outline;
+	background: @surface;
+	color: @on-surface;
+	border: 1px solid @on-primary-fixed-variant;
 }
 
 menuitem {
-  color: @main-fg;
+	color: @on-surface;
 }
 
 menuitem arrow {
-  color: @hvr-bg;
+	color: @secondary;
 }
 
 menuitem label {
-  font-size: 11px;
-  font-weight: 400;
+	font-size: 11px;
+	font-weight: 400;
 }
 
 menuitem:hover {
-  background: @pill-bg;
+	background: @surface-container-high;
 }
 
 menuitem:hover arrow {
-  color: @act-bg;
+	color: @primary;
 }
 
 window#waybar.main .modules-right {
-  margin-right: 0px;
+	margin-right: 0px;
 }
 
 .warning {
-  color: @ter-bg;
+	color: @tertiary;
 }
 
 .recording,
 .critical {
-  color: @crit-bg;
+	color: @error;
 }
 
 .muted,
@@ -74,46 +74,46 @@ window#waybar.main .modules-right {
 .disabled,
 .disconnected,
 .off {
-  color: @inact-fg;
+	color: @outline;
 }
 
 window#waybar.main #workspaces {
-  padding-left: 0px;
+	padding-left: 0px;
 }
 
 #workspaces button {
-  text-shadow: none;
-  box-shadow: none;
-  color: @main-fg;
-  min-width: 10px;
-  min-height: 0px;
+	text-shadow: none;
+	box-shadow: none;
+	color: @on-surface;
+	min-width: 10px;
+	min-height: 0px;
 }
 
 #workspaces button.empty {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 #workspaces button:hover {
-  background: @pill-hvr-bg;
-  transition: all 0s;
+	background: @surface-variant;
+	transition: all 0s;
 }
 
 #workspaces button.active {
-  opacity: 1.0;
-  background: @act-bg;
-  color: @act-fg;
+	opacity: 1;
+	background: @primary;
+	color: @on-primary;
 }
 
 #workspaces button.active label {
-  font-weight: 800;
+	font-weight: 800;
 }
 
 #mpris.alt,
 #window label {
-  font-size: 11px;
+	font-size: 11px;
 }
 
 window#waybar.main #custom-swaync.cc-open {
-  background: @act-bg;
-  color: @act-fg;
+	background: @primary;
+	color: @on-primary;
 }

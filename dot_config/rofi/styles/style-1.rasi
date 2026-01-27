@@ -4,6 +4,7 @@ configuration {
   modi:                        "drun,run,filebrowser,window";
   font:                        "Inter Variable, CaskaydiaCove Nerd Font Propo 10";
   show-icons:                  true;
+  scroll-method:               1;
   display-drun:                "󰀻";
   display-run:                 "";
   display-filebrowser:         "";
@@ -41,7 +42,7 @@ window {
 
 mainbox {
   enabled:                     true;
-  spacing:                     10px;
+  spacing:                     0px;
   padding:                     15px;
   background-color:            inherit;
   orientation:                 vertical;
@@ -88,7 +89,7 @@ listview {
   reverse:                     false;
   fixed-height:                false;
   fixed-columns:               true;
-  
+  margin:                      10px 0px 0px 0px;
   spacing:                     6px;
   cursor:                      "default";
 }
@@ -133,7 +134,7 @@ element-text {
 
 /*****----- Mode Switcher -----*****/
 
-mode-switcher{
+mode-switcher {
   enabled:                     true;
   spacing:                     0px;
   margin:                      0px;
@@ -143,6 +144,7 @@ mode-switcher{
 }
 
 button {
+  expand:                      false;
   padding:                     5px 10px;
   background-color:            inherit;
   text-color:                  inherit;
@@ -158,7 +160,7 @@ button selected {
 
 message {
   enabled:                     true;
-  margin:                      0px;
+  margin:                      10px 0px 0px 0px;
   padding:                     0px;
   border:                      0px;
 }

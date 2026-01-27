@@ -1,0 +1,101 @@
+
+@define-color background #fff7fb;
+
+@define-color error #ba1a1a;
+
+@define-color error-container #ffdad6;
+
+@define-color inverse-on-surface #f8eef5;
+
+@define-color inverse-primary #e7b6f0;
+
+@define-color inverse-surface #342f34;
+
+@define-color on-background #1f1a1f;
+
+@define-color on-error #ffffff;
+
+@define-color on-error-container #410002;
+
+@define-color on-primary #ffffff;
+
+@define-color on-primary-container #2f0a3a;
+
+@define-color on-primary-fixed #2f0a3a;
+
+@define-color on-primary-fixed-variant #5f3869;
+
+@define-color on-secondary #ffffff;
+
+@define-color on-secondary-container #241727;
+
+@define-color on-secondary-fixed #241727;
+
+@define-color on-secondary-fixed-variant #514154;
+
+@define-color on-surface #1f1a1f;
+
+@define-color on-surface-variant #4c444c;
+
+@define-color on-tertiary #ffffff;
+
+@define-color on-tertiary-container #33110f;
+
+@define-color on-tertiary-fixed #33110f;
+
+@define-color on-tertiary-fixed-variant #663b37;
+
+@define-color outline #7e747d;
+
+@define-color outline-variant #cfc3cd;
+
+@define-color primary #784f82;
+
+@define-color primary-container #fbd7ff;
+
+@define-color primary-fixed #fbd7ff;
+
+@define-color primary-fixed-dim #e7b6f0;
+
+@define-color scrim #000000;
+
+@define-color secondary #6a596c;
+
+@define-color secondary-container #f2dbf3;
+
+@define-color secondary-fixed #f2dbf3;
+
+@define-color secondary-fixed-dim #d6c0d6;
+
+@define-color shadow #000000;
+
+@define-color source-color #af69c2;
+
+@define-color surface #fff7fb;
+
+@define-color surface-bright #fff7fb;
+
+@define-color surface-container #f5ebf2;
+
+@define-color surface-container-high #f0e5ec;
+
+@define-color surface-container-highest #eae0e7;
+
+@define-color surface-container-low #fbf1f8;
+
+@define-color surface-container-lowest #ffffff;
+
+@define-color surface-dim #e1d7de;
+
+@define-color surface-tint #784f82;
+
+@define-color surface-variant #ecdfe9;
+
+@define-color tertiary #82524e;
+
+@define-color tertiary-container #ffdad6;
+
+@define-color tertiary-fixed #ffdad6;
+
+@define-color tertiary-fixed-dim #f5b7b2;
+

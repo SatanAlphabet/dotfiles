@@ -4,64 +4,59 @@
 cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/niri"
 favorites_file="${cache_dir}/landing/cliphist_favorites"
 [ -f "$HOME/.cliphist_favorites" ] && favorites_file="$HOME/.cliphist_favorites"
-del_mode=false
 
-# process clipboard selections for multi-select mode
-process_selections() {
-  if [ true != "${del_mode}" ]; then
-    # Read the entire input into an array
-    mapfile -t lines #! Not POSIX compliant
-    # Get the total number of lines
-    total_lines=${#lines[@]}
-
-    # handle special commands
-    if [[ "${lines[0]}" = ":d:e:l:e:t:e:"* ]]; then
-      "${0}" --delete
-      return
-    elif [[ "${lines[0]}" = ":w:i:p:e:"* ]]; then
-      "${0}" --wipe
-      return
-    elif [[ "${lines[0]}" = ":b:a:r:"* ]] || [[ "${lines[0]}" = *":c:o:p:y:"* ]]; then
-      "${0}" --copy
-      return
-    elif [[ "${lines[0]}" = ":f:a:v:"* ]]; then
-      "${0}" --favorites
-      return
-    elif [[ "${lines[0]}" = ":o:p:t:"* ]]; then
-      "${0}"
-      return
+process_deletion() {
+  while IFS= read -r line; do
+    echo "$line"
+    if [[ $line == ":w:i:p:e:"* ]]; then
+      main_menu --wipe
+      break
+    elif [[ $line == ":b:a:r:"* ]]; then
+      main_menu --delete
+      break
+    elif [ -n "$line" ]; then
+      cliphist delete <<<"$line"
+      notify-send -e "Deleted" "$line"
     fi
+  done
+  exit 0
+}
 
-    # process regular clipboard items
-    local output=""
-    # Iterate over each line in the array
-    for ((i = 0; i < total_lines; i++)); do
-      local line="${lines[$i]}"
-      local decoded_line
-      decoded_line="$(echo -e "$line\t" | cliphist decode)"
-      if [ $i -lt $((total_lines - 1)) ]; then
-        printf -v output '%s%s\n' "$output" "$decoded_line"
-      else
-        printf -v output '%s%s' "$output" "$decoded_line"
-      fi
-    done
-    echo -n "$output"
-  else
-    # handle delete mode
-    while IFS= read -r line; do
-      if [[ "${line}" = ":w:i:p:e:"* ]]; then
-        "${0}" --wipe
-        break
-      elif [[ "${line}" = ":b:a:r:"* ]]; then
-        "${0}" --delete
-        break
-      elif [ -n "$line" ]; then
-        cliphist delete <<<"${line}"
-        notify-send -e "Deleted" "${line}"
-      fi
-    done
-    exit 0
-  fi
+handle_special_commands() {
+  local lines=("$@")
+  [ "$CLIPHIST_THEME" ] && local theme_args=("-t" "$CLIPHIST_THEME")
+  case "${lines[0]}" in
+  ":d:e:l:e:t:e:"*) exec "$0" "${theme_args[@]}" --delete ;;
+  ":w:i:p:e:"*) exec "$0" "${theme_args[@]}" --wipe ;;
+  ":b:a:r:"* | *":c:o:p:y:"*) exec "$0" "${theme_args[@]}" --copy ;;
+  ":f:a:v:"*) exec "$0" "${theme_args[@]}" --favorites ;;
+  ":m:a:n:"*) exec "$0" "${theme_args[@]}" -manage-fav ;;
+  ":o:p:t:"*) exec "$0" "${theme_args[@]}" ;;
+  esac
+}
+
+process_selections() {
+  # Read the entire input into an array
+  mapfile -t lines #! Not POSIX compliant
+  # Get the total number of lines
+  total_lines=${#lines[@]}
+
+  handle_special_commands "${lines[@]}"
+
+  # process regular clipboard items
+  local output=""
+  # Iterate over each line in the array
+  for ((i = 0; i < total_lines; i++)); do
+    local line="${lines[$i]}"
+    local decoded_line
+    decoded_line="$(echo -e "$line\t" | cliphist decode)"
+    if [ $i -lt $((total_lines - 1)) ]; then
+      printf -v output '%s%s\n' "$output" "$decoded_line"
+    else
+      printf -v output '%s%s' "$output" "$decoded_line"
+    fi
+  done
+  echo -n "$output"
 }
 
 # check if content is binary and handle accordingly
@@ -72,7 +67,7 @@ check_content() {
     cliphist decode <<<"$line" | wl-copy
     local img_idx
     img_idx=$(awk -F '\t' '{print $1}' <<<"$line")
-    local temp_preview="/run/user/1000/pastebin-preview_${img_idx}"
+    local temp_preview="$XDG_RUNTIME_DIR/pastebin-preview_${img_idx}"
     wl-paste >"${temp_preview}"
     notify-send -e -a "Pastebin:" "Preview: ${img_idx}" -i "${temp_preview}" -t 2000
     return 1
@@ -83,15 +78,34 @@ check_content() {
 run_rofi() {
   local placeholder="$1"
   shift
+  local rofi_args=(
+    -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}"
+    -theme-str "element-icon { enabled: false; }"
+    -theme-str "mode-switcher { enabled: false; }"
+    -kb-custom-1 "Alt+c"
+    -kb-custom-2 "Alt+d"
+    -kb-custom-3 "Alt+n"
+    -kb-custom-4 "Alt+w"
+    -kb-custom-5 "Alt+o"
+    -kb-custom-6 "Alt+m"
+  )
 
-  if [[ -n "$(pgrep -x rofi)" ]]; then
-    pkill rofi
-  else
-    rofi -dmenu \
-      -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}" \
-      -theme-str "element-icon { enabled: false; }" \
-      -theme-str "mode-switcher { enabled: false; } " \
-      "$@"
+  if [ "$CLIPHIST_THEME" ]; then
+    rofi_args+=(-theme "$CLIPHIST_THEME")
+  fi
+
+  pkill rofi || rofi -dmenu "${rofi_args[@]}" "$@"
+  local exit_code=$?
+  echo $exit_code >&2
+  if [ $exit_code -ne 0 ]; then
+    case "$exit_code" in
+    10) printf ":c:o:p:y:" ;;
+    11) printf ":d:e:l:e:t:e:" ;;
+    12) printf ":f:a:v:" ;;
+    13) printf ":w:i:p:e:" ;;
+    14) printf ":o:p:t:" ;;
+    15) printf ":m:a:n:" ;;
+    esac
   fi
 }
 
@@ -135,7 +149,7 @@ show_history() {
   ) | run_rofi " 📜 History..." -multi-select -i -display-columns 2 -selected-row 2)
 
   [ -n "${selected_item}" ] || exit 0
-
+  handle_special_commands "${selected_item##*$'\n'}"
   if echo -e "${selected_item}" | check_content; then
     process_selections <<<"${selected_item}" | wl-copy
     echo -e "${selected_item}\t" | cliphist delete
@@ -147,22 +161,25 @@ show_history() {
 
 # delete items from clipboard history
 delete_items() {
-  export del_mode=true
-  cliphist list | run_rofi " 🗑️ Delete" -multi-select -i -display-columns 2 | process_selections
+  local selected_item
+  selected_item="$(cliphist list | run_rofi " 🗑️ Delete" -multi-select -i -display-columns 2)"
+  handle_special_commands "${selected_item##*$'\n'}"
+  process_deletion <<<"$selected_item"
 }
 
 # favorite clipboard items
 view_favorites() {
   prepare_favorites_for_display || {
-    notify-send -e "No favorites."
+    notify-send -u low -e "No favorites."
     return
   }
 
   local selected_favorite
-  selected_favorite=$(printf "%s\n" "${decoded_lines[@]}" | run_rofi "📌 View Favorites")
+  selected_favorite=$(printf "%s\n" "${decoded_lines[@]}" | run_rofi "📌 View Favorites") || exit 0
 
   if [ -n "$selected_favorite" ]; then
     # Find the index of the selected favorite
+    handle_special_commands "${selected_favorite##*$'\n'}"
     local index
     index=$(printf "%s\n" "${decoded_lines[@]}" | grep -nxF "$selected_favorite" | cut -d: -f1)
 
@@ -182,7 +199,8 @@ add_to_favorites() {
   ensure_favorites_dir
 
   local item
-  item=$(cliphist list | run_rofi "➕ Add to Favorites...")
+  item=$(cliphist list | run_rofi "➕ Add to Favorites...") || exit 0
+  handle_special_commands "${item##*$'\n'}"
 
   if [ -n "$item" ]; then
     local full_item
@@ -209,7 +227,8 @@ delete_from_favorites() {
   }
 
   local selected_favorite
-  selected_favorite=$(printf "%s\n" "${decoded_lines[@]}" | run_rofi "➖ Remove from Favorites...")
+  selected_favorite=$(printf "%s\n" "${decoded_lines[@]}" | run_rofi "➖ Remove from Favorites...") || exit 0
+  handle_special_commands "${selected_favorite##*$'\n'}"
 
   if [ -n "$selected_favorite" ]; then
     local index
@@ -236,7 +255,8 @@ delete_from_favorites() {
 clear_favorites() {
   if [ -f "$favorites_file" ] && [ -s "$favorites_file" ]; then
     local confirm
-    confirm=$(echo -e "Yes\nNo" | run_rofi "☢️ Clear All Favorites?")
+    confirm=$(echo -e "Yes\nNo" | run_rofi "☢️ Clear All Favorites?") || exit 0
+    handle_special_commands "${confirm##*$'\n'}"
 
     if [ "$confirm" = "Yes" ]; then
       : >"$favorites_file"
@@ -250,8 +270,8 @@ clear_favorites() {
 # manage favorites
 manage_favorites() {
   local manage_action
-  manage_action=$(echo -e "Add to Favorites\nDelete from Favorites\nClear All Favorites" |
-    run_rofi "📓 Manage Favorites")
+  manage_action=$(echo -e "Add to Favorites\nDelete from Favorites\nClear All Favorites" | run_rofi "📓 Manage Favorites") || exit 0
+  handle_special_commands "${manage_action##*$'\n'}"
 
   case "${manage_action}" in
   "Add to Favorites")
@@ -275,6 +295,7 @@ manage_favorites() {
 clear_history() {
   local confirm
   confirm=$(echo -e "Yes\nNo" | run_rofi "☢️ Clear Clipboard History?")
+  handle_special_commands "${confirm##*$'\n'}"
 
   if [ "$confirm" = "Yes" ]; then
     cliphist wipe
@@ -286,36 +307,51 @@ clear_history() {
 show_help() {
   cat <<EOF
 Options:
-  -c  | --copy | History            Show clipboard history and copy selected item
-  -d  | --delete | Delete           Delete selected item from clipboard history
-  -f  | --favorites| View Favorites              View favorite clipboard items
-  -mf | -manage-fav | Manage Favorites  Manage favorite clipboard items
-  -w  | --wipe | Clear History      Clear clipboard history
-  -h  | --help | Help               Display this help message
-
-Note: To enable autopaste, install 'wtype' package.
+  -t  | --theme <theme>                  Select rofi theme to use
+  -c  | --copy      | History            Show clipboard history and copy selected item
+  -d  | --delete    | Delete             Delete selected item from clipboard history
+  -f  | --favorites | View Favorites     View favorite clipboard items
+  -mf | -manage-fav | Manage Favorites   Manage favorite clipboard items
+  -w  | --wipe      | Clear History      Clear clipboard history
+  -h  | --help      | Help               Display this help message
 EOF
   exit 0
 }
 
-# main function
-main() {
+main_menu_options() {
+  cat <<-EOF
+		History:::<sub>(Alt+C)</sub>
+		Delete Item:::<sub>(Alt+D)</sub>
+		Clear History:::<sub>(Alt+W)</sub>
+		View Favorites:::<sub>(Alt+N)</sub>
+		Manage Favorites:::<sub>(Alt+M)</sub>
+	EOF
+}
+
+main_menu() {
 
   local main_action
   # show main menu if no arguments are passed
   if [ $# -eq 0 ]; then
-    main_action=$(echo -e "History\nDelete\nView Favorites\nManage Favorites\nClear History" |
-      run_rofi "🔎 Choose action")
+    main_action=$(
+      main_menu_options | run_rofi "🔎 Choose action (Alt+O)" \
+        -display-column-separator ":::" \
+        -display-columns 1,2 \
+        -markup-rows
+    )
   else
     main_action="$1"
   fi
+
+  handle_special_commands "${main_action##*$'\n'}"
+  main_action="${main_action%%:::*}"
 
   # process user selection
   case "${main_action}" in
   -c | --copy | "History")
     show_history "$@"
     ;;
-  -d | --delete | "Delete")
+  -d | --delete | "Delete Item")
     delete_items
     ;;
   -f | --favorites | "View Favorites")
@@ -334,5 +370,15 @@ main() {
   esac
 }
 
-# run main function
-main "$@"
+while true; do
+  case "$1" in
+  -t | --theme)
+    CLIPHIST_THEME="$2"
+    shift 2
+    ;;
+  *)
+    main_menu "$@"
+    break
+    ;;
+  esac
+done
