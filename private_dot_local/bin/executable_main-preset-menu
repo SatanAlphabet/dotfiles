@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+menu_options() {
+  cat <<MENU
+󰍹   Desktop Presets
+󰍁   Hyprlock Presets
+󰌧   Rofi Presets
+MENU
+}
+
+launch_rofi() {
+  rofi -dmenu \
+    -theme-str 'mode-switcher { enabled: false; }' \
+    -theme-str 'element-icon { enabled: false; }' \
+    -theme-str 'entry { placeholder: "Main Preset Menu"; }'
+}
+
+pkill rofi && exit 0
+
+case "$(menu_options | launch_rofi)" in
+"󰍹   Desktop Presets")
+  preset-change
+  ;;
+"󰍁   Hyprlock Presets")
+  hyprlock-switch
+  ;;
+"󰌧   Rofi Presets")
+  rofi-style.sh
+  ;;
+esac
