@@ -5,18 +5,16 @@ binds {
   Mod+T repeat=false hotkey-overlay-title="Open a Terminal" { spawn "kitty" "-1"; }
   Mod+Shift+T repeat=false hotkey-overlay-title="Open Dropdown Terminal" { spawn "kitty" "--class" "dropdown" "-1"; }
   Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "rofilaunch.sh";  }
-  Mod+Alt+Space repeat=false hotkey-overlay-title="Select rofi preset" { spawn "rofi-style.sh";  }
   Mod+Alt+C repeat=false hotkey-overlay-title="Clipboard History" { spawn "clipboard.sh" "-c"; }
   Mod+Alt+E repeat=false hotkey-overlay-title="Emoji Picker" { spawn "emoji-picker.sh"; }
   Mod+Alt+G repeat=false hotkey-overlay-title="Glyph Picker" { spawn "glyph-picker.sh"; }
   Mod+N repeat=false hotkey-overlay-title="Notification Panel" { spawn "swaync-client" "-t"; }
   // Mod+B repeat=false { spawn "zen-browser"; } // (Using nirius instead)
   Mod+E repeat=false hotkey-overlay-title="File Browser" { spawn "dolphin"; } 
-  Mod+Shift+Alt+L repeat=false hotkey-overlay-title="Select hyprlock preset" { spawn "hyprlock-switch"; }
   Mod+Alt+L repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
   Mod+Alt+B repeat=false hotkey-overlay-title="Toggle waybar visibility" { spawn "pkill" "-SIGUSR1" "waybar"; }
   Mod+Ctrl+P repeat=false hotkey-overlay-title="Pick color" { spawn "colorpick.sh";}
-  Mod+Alt+P repeat=false hotkey-overlay-title="Switch desktop preset" { spawn "preset-change";}
+  Mod+Alt+P repeat=false hotkey-overlay-title="Open preset menu" { spawn "main-preset-menu";}
   Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn-sh r#"themechange.sh "$(waypaper --list | jq -r '.[].wallpaper')""#; }
   Mod+Alt+N repeat=false hotkey-overlay-title="Toggle night light" { spawn "nightlight.sh"; }
   Mod+Alt+I repeat=false hotkey-overlay-title="Toggle idle innhibitor" { spawn "idle-inhibit.sh"; }

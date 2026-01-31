@@ -75,7 +75,7 @@ inputbar {
   border-color:                @outline-variant;
   background-color:            @surface-container;
   orientation:                 horizontal;
-  children:                    [ "textbox-prompt-colon", "entry", "num-filtered-rows" ];
+  children:                    [ "textbox-prompt-colon", "entry", "case-indicator", "num-filtered-rows" ];
 }
 
 textbox-prompt-colon {
@@ -94,7 +94,7 @@ entry {
   placeholder:                 "Search...";
 }
 
-num-filtered-rows {
+case-indicator, num-filtered-rows {
   enabled:                     true;
   expand:                      false;
   background-color:            inherit;
