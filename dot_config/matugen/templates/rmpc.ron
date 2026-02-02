@@ -232,19 +232,19 @@
                         (
                             size: "35",
                             borders: "LEFT | TOP | BOTTOM",
-                            border_symbols: Inherited(parent: Rounded, bottom_left: "├"),
+                            border_symbols: Inherited(bottom_left: "├"),
                             pane: Component("header_left")
                         ),
                         (
                             size: "100%",
                             borders: "ALL",
-                            border_symbols: Inherited(parent: Rounded, top_left: "┬", top_right: "┬", bottom_left: "┴", bottom_right: "┴"),
+                            border_symbols: Inherited(top_left: "┬", top_right: "┬", bottom_left: "┴", bottom_right: "┴"),
                             pane: Component("header_center")
                         ),
                         (
                             size: "35",
                             borders: "RIGHT | TOP | BOTTOM",
-                            border_symbols: Inherited(parent: Rounded, bottom_right: "┤"),
+                            border_symbols: Inherited(bottom_right: "┤"),
                             pane: Component("header_right")
                         ),
                     ]
@@ -253,7 +253,6 @@
             (
                 pane: Pane(Tabs),
                 borders: "RIGHT | LEFT | BOTTOM",
-                border_symbols: Rounded,
                 size: "2",
             ),
             (
@@ -268,13 +267,12 @@
                         (
                             size: "12",
                             borders: "ALL",
-                            border_symbols: Inherited(parent: Rounded, top_right: "┬", bottom_right: "┴"),
+                            border_symbols: Inherited(top_right: "┬", bottom_right: "┴"),
                             pane: Component("input_mode")
                         ),
                         (
                             size: "100%",
                             borders: "TOP | BOTTOM | RIGHT",
-                            border_symbols: Rounded,
                             border_title: [(kind: Text(" ")), (kind: Property(Status(QueueLength()))), (kind: Text(" songs / ")), (kind: Property(Status(QueueTimeTotal()))), (kind: Text(" total time "))],
                             border_title_alignment: Right,
                             pane: Component("progress_bar"),
