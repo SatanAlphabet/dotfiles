@@ -25,11 +25,11 @@ binds {
   Mod+B repeat=false hotkey-overlay-title="Web Browser" { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
   Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
 
-  XF86AudioRaiseVolume allow-when-locked=true { spawn "volumecontrol.sh" "+" "2"; }
-  XF86AudioLowerVolume allow-when-locked=true { spawn "volumecontrol.sh" "-" "2"; }
-  XF86MonBrightnessUp allow-when-locked=true { spawn "brightnesscontrol.sh" "+" "5"; }
-  XF86MonBrightnessDown allow-when-locked=true { spawn "brightnesscontrol.sh" "-" "5"; }
-  XF86AudioMute        allow-when-locked=true { spawn "volumecontrol.sh" "toggle-mute"; }
+  XF86AudioRaiseVolume allow-when-locked=true { spawn "volumecontrol.sh" "set-sink-volume" "@DEFAULT_SINK@" "+2%"; }
+  XF86AudioLowerVolume allow-when-locked=true { spawn "volumecontrol.sh" "set-sink-volume" "@DEFAULT_SINK@" "-2%"; }
+  XF86MonBrightnessUp allow-when-locked=true { spawn "brightnesscontrol.sh" "s" "+5%"; }
+  XF86MonBrightnessDown allow-when-locked=true { spawn "brightnesscontrol.sh" "s" "5%-"; }
+  XF86AudioMute        allow-when-locked=true { spawn "volumecontrol.sh" "set-sink-mute" "@DEFAULT_SINK@" "toggle"; }
   XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
   XF86AudioPlay        allow-when-locked=true { spawn "mediacontrol.sh" "toggle"; }
   XF86AudioPause       allow-when-locked=true { spawn "mediacontrol.sh" "toggle"; }

@@ -1,11 +1,11 @@
 {
 	"backlight": {
-		"on-scroll-up": "brightnesscontrol.sh + 1",
-		"on-scroll-down": "brightnesscontrol.sh - 1",
+		"on-scroll-up": "brightnesscontrol.sh s +1%",
+		"on-scroll-down": "brightnesscontrol.sh s 1%-",
 	},
 	"backlight#alt": {
-		"on-scroll-up": "brightnesscontrol.sh + 1",
-		"on-scroll-down": "brightnesscontrol.sh - 1",
+		"on-scroll-up": "brightnesscontrol.sh s +1%",
+		"on-scroll-down": "brightnesscontrol.sh s 1%-",
 	},
 	"battery": {
 		"states": {
@@ -258,17 +258,17 @@
 		],
 	},
 	"pulseaudio": {
-		"on-scroll-up": "volumecontrol.sh + 1",
-		"on-scroll-down": "volumecontrol.sh - 1",
+		"on-scroll-up": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ +1%",
+		"on-scroll-down": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ -1%",
 		"on-click": "pavucontrol-qt -t 3",
-		"on-click-right": "volumecontrol.sh toggle-mute",
+		"on-click-right": "volumecontrol.sh set-sink-mute @DEFAULT_SINK@ toggle",
 		"scroll-step": 1,
 	},
 	"pulseaudio#alt": {
-		"on-scroll-up": "volumecontrol.sh + 1",
-		"on-scroll-down": "volumecontrol.sh - 1",
+		"on-scroll-up": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ +1%",
+		"on-scroll-down": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ -1%",
 		"on-click": "pavucontrol-qt -t 3",
-		"on-click-right": "volumecontrol.sh toggle-mute",
+		"on-click-right": "volumecontrol.sh set-sink-mute @DEFAULT_SINK@ toggle",
 		"scroll-step": 1,
 	},
 	"temperature": {
