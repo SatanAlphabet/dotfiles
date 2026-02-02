@@ -166,8 +166,8 @@
             direction: Vertical,
             borders: "LEFT",
             panes: [
-              (size: "60%", pane: Pane(Queue)),
-              (size: "40%", pane: Split(
+              (size: "100%", pane: Pane(Queue)),
+              (size: "8", pane: Split(
                 direction: Horizontal,
                 borders: "TOP",
                 panes: [
