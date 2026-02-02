@@ -153,28 +153,35 @@
         pane: Pane(ProgressBar),
       ),
     ],
-),
+  ),
   tabs: [
     (
       name: "Queue",
       pane: Split(
         direction: Horizontal,
-        borders: "ALL",
         panes: [
-          (size: "40%", pane: Pane(AlbumArt)),
-          (size: "60%", pane: Split(
+          (
+            size: "40%",
             direction: Vertical,
-            borders: "LEFT",
+            borders: "LEFT | TOP | BOTTOM",
+            pane: Pane(AlbumArt)
+          ),
+          (
+            size: "60%", pane: Split(
+            direction: Vertical,
             panes: [
-              (size: "100%", pane: Pane(Queue)),
-              (size: "8", pane: Split(
-                direction: Horizontal,
-                borders: "TOP",
-                panes: [
-                  (size: "100%", pane: Pane(Cava))
-                ]
+              (
+                size: "100%",
+                borders: "LEFT | RIGHT | TOP",
+                border_symbols: Inherited(top_left: "┬",),
+                pane: Pane(Queue)),
+              (
+                size: "8",
+                borders: "ALL",
+                border_symbols: Inherited(top_left: "├", top_right: "┤", bottom_left: "┴",),
+                pane: Pane(Cava)
               ),
-            )],
+            ],
           ),
         )],
       ),
