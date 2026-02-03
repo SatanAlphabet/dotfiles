@@ -56,7 +56,7 @@ tooltip label {
 }
 
 .notification-background {
-	padding: 16px;
+	padding: 8px;
 }
 
 .notification {
@@ -64,8 +64,11 @@ tooltip label {
 	background: @surface;
 	padding: 8px;
 	border-radius: var(--border-radius);
-	border: 2px solid @outline-variant;
-	box-shadow: 0px 1px 10px -2px @shadow;
+	border: 1px solid @outline-variant;
+	box-shadow: 0px 1px 8px -2px @shadow;
+}
+
+.notification:last-child {
 }
 
 .notification.low {
@@ -98,8 +101,17 @@ tooltip label {
 
 .notification-content {
 	background: transparent;
-	border-radius: var(--border-radius);
-	padding: 0;
+	border-radius: 0px;
+	border-left: 4px solid @primary;
+	padding: 8px;
+}
+
+.notification.low .notification-content {
+	border-color: @outline;
+}
+
+.notification.critical .notification-content {
+	border-color: @error;
 }
 
 .notification-content .image {
@@ -217,11 +229,12 @@ tooltip label {
 	background: none;
 	border-bottom-left-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
-	padding: 4px;
+	padding: 0px;
 }
 
 .notification-action {
 	/* The alternative actions below the default action */
+	margin: 4px 0px;
 }
 
 .notification-action > button {
@@ -231,6 +244,14 @@ tooltip label {
 	background: @surface-container;
 	color: @on-surface;
 	border: 1px solid @outline-variant;
+}
+
+.notification-action:first-child > button {
+	margin-left: 0px;
+}
+
+.notification-action:last-child > button {
+	margin-right: 0px;
 }
 
 .notification.critical .notification-action > button {
@@ -265,13 +286,12 @@ tooltip label {
 }
 
 .notification-group .notification-group-close-button .close-button {
-	margin: 12px 20px;
+	margin: 8px;
 }
 
 .notification-group .notification-group-buttons,
 .notification-group .notification-group-headers {
 	margin: 8px;
-	color: transparent;
 }
 
 .notification-group .notification-group-headers {
@@ -336,7 +356,30 @@ tooltip label {
 	margin: 0px;
 }
 
-.control-center .control-center-list .notification {
+.control-center .notification-background {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.control-center .notification-row {
+}
+
+.control-center .notification {
+	background: @surface-container;
+	box-shadow: none;
+}
+
+.control-center .notification.critical {
+	border-color: @error;
+}
+
+.control-center .notification-action > button {
+	background: @surface;
+}
+
+.control-center .notification-action > button:hover {
+	background: @surface-variant;
+	border-color: @outline;
 }
 
 .control-center .control-center-list .notification .notification-default-action,
@@ -367,7 +410,6 @@ tooltip label {
 
 .widget-notifications {
 	background: @surface;
-	margin: 0px;
 	padding: 0px;
 }
 
@@ -395,8 +437,8 @@ tooltip label {
 }
 
 .widget-title > button:active {
-	background-color: @primary;
-	color: @on-primary;
+	background-color: @primary-container;
+	color: @primary;
 }
 
 /* DND widget */
@@ -446,9 +488,11 @@ tooltip label {
 
 .widget-mpris {
 	/* The parent to all players */
+	padding: 0px;
 }
 
 .widget-mpris-player {
+	margin: 8px;
 }
 
 .mpris-background {
@@ -492,6 +536,8 @@ tooltip label {
 }
 
 .widget-mpris > box > button {
+	margin: 0px 8px;
+	background: @surface-container-highest;
 }
 
 .widget-mpris > box > button:disabled {
@@ -502,7 +548,6 @@ tooltip label {
 /* Buttons widget */
 
 .widget-buttons-grid {
-	padding: 8px;
 }
 
 .widget-buttons-grid flowboxchild > button {
@@ -601,20 +646,16 @@ tooltip label {
 }
 
 .widget-backlight {
-	margin-top: 0px;
-	border-top-left-radius: 0px;
-	border-top-right-radius: 0px;
 }
 
 .widget-volume {
-	margin-bottom: 0px;
-	border-bottom-left-radius: 0px;
-	border-bottom-right-radius: 0px;
 }
 
 .widget-backlight trough,
 .widget-volume trough {
 	background-color: @surface;
+	border: 1px solid @outline-variant;
+	border-radius: var(--border-radius);
 	min-height: 4px;
 	margin: 2px 0px;
 	margin-left: 8px;
@@ -623,6 +664,8 @@ tooltip label {
 .widget-backlight slider,
 .widget-volume slider {
 	background-color: @outline-variant;
+	border: 1px solid @outline;
+	border-radius: var(--border-radius);
 	min-height: 4px;
 	min-width: 15px;
 }
@@ -635,6 +678,7 @@ tooltip label {
 .widget-backlight highlight,
 .widget-volume highlight {
 	background-color: @primary;
+	border-radius: var(--border-radius);
 	min-height: 4px;
 }
 
@@ -643,9 +687,9 @@ tooltip label {
 }
 
 .per-app-volume {
-	margin: 8px;
-	margin-bottom: 0;
 	border-radius: var(--border-radius);
+	margin-top: 8px;
+	margin-left: 8px;
 }
 
 /* Slider widget */
