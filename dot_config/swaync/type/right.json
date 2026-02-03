@@ -11,7 +11,7 @@
 	"notification-window-width": 400,
 	"notification-2fa-action": false,
 	"cssPriority": "user",
-	"widgets": ["title", "dnd", "notifications"],
+	"widgets": ["title", "dnd", "notifications", "mpris", "buttons-grid"],
 	"widget-config": {
 		"volume": {
 			"label": "󰕾",
@@ -28,25 +28,37 @@
 			"blacklist": ["playerctld"]
 		},
 		"buttons-grid": {
-			"buttons-per-row": 4,
+			"buttons-per-row": 6,
 			"actions": [
 				{
-					"label": "󰖩",
-					"command": "kitty -1 nmtui"
+					"label": "󰐥",
+					"command": "swaync-client -cp; logoutlaunch.sh"
 				},
 				{
-					"label": "󰂯",
-					"command": "blueman-manager"
+					"label": "󰄀",
+					"command": "swaync-client -cp; niri msg action screenshot"
 				},
 				{
-					"label": "󰸉",
-					"command": "waypaper"
+					"label": "",
+					"command": "niri msg action spawn -- themechange.sh"
 				},
 				{
 					"label": "",
 					"type": "toggle",
 					"command": "nightlight.sh",
 					"update-command": "pgrep -x wlsunset && echo 'true' || echo 'false'"
+				},
+				{
+					"label": "󰯜",
+					"type": "toggle",
+					"command": "screen-record.sh",
+					"update-command": "pidof gpu-screen-recorder && echo 'true' || echo 'false'"
+				},
+				{
+					"label": "󰅶",
+					"type": "toggle",
+					"command": "idle-inhibit.sh",
+					"update-command": "pidof systemd-inhibit && echo 'true' || echo 'false'"
 				}
 			]
 		}

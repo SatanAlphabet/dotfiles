@@ -65,7 +65,7 @@ tooltip label {
 	padding: 8px;
 	border-radius: var(--border-radius);
 	border: 2px solid @outline-variant;
-	box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 1px 10px -2px @shadow;
 }
 
 .notification.low {
@@ -138,14 +138,13 @@ tooltip label {
 	font-weight: 300;
 	font-size: 0.8em;
 	background: transparent;
-	color: @on-primary-container;
+	color: @outline;
 	text-shadow: none;
 }
 
 .text-box .body {
 	/* Notification body */
 	font-weight: normal;
-	font-size: 1em;
 	background: transparent;
 	color: @on-surface;
 	text-shadow: none;
@@ -379,7 +378,7 @@ tooltip label {
 
 .widget-title > label {
 	margin-right: 8px;
-	font-size: 1.5rem;
+	font-size: 1.25em;
 }
 
 .widget-title > button {
@@ -408,7 +407,7 @@ tooltip label {
 .widget-dnd label {
 	color: @on-surface;
 	margin-right: 8px;
-	font-size: 1.1rem;
+	font-size: 0.9em;
 }
 
 .widget-dnd switch {
@@ -436,14 +435,13 @@ tooltip label {
 
 /* Label widget */
 .widget-label > label {
-	font-size: 1.1rem;
 }
 
 /* Mpris widget */
 :root {
 	--mpris-album-art-overlay: rgba(0, 0, 0, 0.55);
 	--mpris-button-hover: rgba(0, 0, 0, 0.5);
-	--mpris-album-art-icon-size: 64px;
+	--mpris-album-art-icon-size: 80px;
 }
 
 .widget-mpris {
@@ -463,46 +461,37 @@ tooltip label {
 
 .mpris-overlay button {
 	/* The media player buttons (play, pause, next, etc...) */
-	padding: 5px;
-	background: @surface-container-highest;
-	border-radius: 100%;
+	padding: 6px;
+	background: @surface;
+	border-radius: var(--border-radius);
+	border: 1px solid @outline-variant;
 }
 
 .mpris-overlay button:hover {
-	background-color: @outline-variant;
+	background-color: @surface-variant;
+	border-color: @outline;
+}
+
+.mpris-overlay button:active {
+	background-color: @primary-container;
+	border-color: @primary;
+	color: @primary;
 }
 
 .widget-mpris-album-art {
 	border-radius: var(--border-radius);
 	-gtk-icon-size: var(--mpris-album-art-icon-size);
-	margin-bottom: 12px;
 }
 
 .widget-mpris-title {
 	font-weight: 600;
-	font-size: 1.25rem;
 }
 
 .widget-mpris-subtitle {
-	font-size: 1rem;
-}
-
-.mpris-overlay > box > button {
-	/* Change player control buttons */
-	background: @surface-container-highest;
-	margin: 0px;
-}
-
-.mpris-overlay > box > button:hover {
-	background-color: @outline-variant;
+	font-size: 0.8em;
 }
 
 .widget-mpris > box > button {
-	opacity: 0;
-	min-width: 0;
-	min-height: 0;
-	padding: 0;
-	margin: 0;
 }
 
 .widget-mpris > box > button:disabled {
@@ -513,17 +502,20 @@ tooltip label {
 /* Buttons widget */
 
 .widget-buttons-grid {
-	background-color: @surface-container-high;
-	padding: 2px 4px;
+	padding: 8px;
 }
 
 .widget-buttons-grid flowboxchild > button {
 	border-radius: var(--border-radius);
-	border: 0.3px solid @outline;
+	border: 1px solid @outline-variant;
 	transition: all 0s;
-	padding: 2px 0px;
+	padding: 4px 0px;
 	margin: 4px;
 	background-color: @surface;
+}
+
+.widget-buttons-grid flowboxchild > button label {
+	font-size: 1.2em;
 }
 
 .widget-buttons-grid flowboxchild > button.toggle:checked {
@@ -533,14 +525,15 @@ tooltip label {
 }
 
 .widget-buttons-grid flowboxchild > button:hover {
-	background-color: @outline-variant;
-	border-color: @on-surface;
-	color: @on-primary-container;
+	background-color: @surface-variant;
+	border-color: @outline;
 }
 
+.widget-buttons-grid flowboxchild > button.toggle:active,
 .widget-buttons-grid flowboxchild > button:active {
-	background-color: @primary;
-	color: @on-primary;
+	background-color: @primary-container;
+	border-color: @primary;
+	color: @primary;
 }
 
 /* Menubar widget */
@@ -664,7 +657,7 @@ tooltip label {
 /* Inhibitors widget */
 .widget-inhibitors > label {
 	margin-right: 8px;
-	font-size: 1.5rem;
+	font-size: 1.2em;
 }
 
 .widget-inhibitors > button {
