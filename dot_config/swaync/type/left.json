@@ -57,7 +57,7 @@
 				{
 					"label": "󰅶",
 					"type": "toggle",
-					"command": "idle-inhibit.sh",
+					"command": "niri msg action spawn -- idle-inhibit.sh",
 					"update-command": "pidof systemd-inhibit && echo 'true' || echo 'false'"
 				}
 			]
