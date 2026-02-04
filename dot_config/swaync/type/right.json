@@ -13,7 +13,7 @@
 	"notification-window-height": 400,
 	"notification-2fa-action": false,
 	"layer": "overlay",
-	"timeout": 5,
+	"timeout": 10,
 	"timeout-low": 5,
 	"timeout-critical": 0,
 	"notification-body-image-height": 200,
