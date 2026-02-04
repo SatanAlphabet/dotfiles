@@ -537,7 +537,7 @@ tooltip label {
 
 .widget-mpris > box > button {
 	margin: 0px 8px;
-	background: @surface-container-highest;
+	color: @on-surface-variant;
 }
 
 .widget-mpris > box > button:disabled {
