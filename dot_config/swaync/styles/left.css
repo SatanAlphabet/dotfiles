@@ -303,6 +303,7 @@ tooltip label {
 .notification-group .notification-group-headers .notification-group-icon {
 	color: @on-surface;
 	-gtk-icon-size: var(--notification-group-icon-size);
+	margin-right: 4px;
 }
 
 .notification-group .notification-group-headers .notification-group-header {
@@ -357,6 +358,7 @@ tooltip label {
 }
 
 .control-center .notification-background {
+	padding: 4px;
 	padding-left: 0px;
 	padding-right: 0px;
 }
