@@ -3,13 +3,21 @@
 	"positionX": "left",
 	"positionY": "top",
 	"control-center-width": 390,
+	"control-center-height": 600,
 	"control-center-margin-left": 8,
 	"control-center-margin-top": 8,
 	"control-center-margin-bottom": 8,
+	"control-center-layer": "overlay",
 	"fit-to-screen": true,
-	"control-center-height": 600,
 	"notification-window-width": 400,
+	"notification-window-height": 400,
 	"notification-2fa-action": false,
+	"layer": "overlay",
+	"timeout": 5,
+	"timeout-low": 5,
+	"timeout-critical": 0,
+	"notification-body-image-height": 200,
+	"notification-body-image-width": 200,
 	"cssPriority": "user",
 	"widgets": ["title", "dnd", "notifications", "mpris", "volume", "backlight", "buttons-grid"],
 	"widget-config": {
@@ -51,7 +59,7 @@
 				{
 					"label": "󰯜",
 					"type": "toggle",
-					"command": "screen-record.sh",
+					"command": "swaync-client -cp; screen-record.sh",
 					"update-command": "pidof gpu-screen-recorder && echo 'true' || echo 'false'"
 				},
 				{
