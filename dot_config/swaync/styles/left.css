@@ -64,7 +64,7 @@ tooltip label {
 	background: @surface;
 	padding: 8px;
 	border-radius: var(--border-radius);
-	border: 1px solid @outline-variant;
+	border: 2px solid @outline-variant;
 	box-shadow: 0px 1px 8px -2px @shadow;
 }
 
@@ -100,7 +100,6 @@ tooltip label {
 }
 
 .notification-content {
-	background: transparent;
 	border-radius: 0px;
 	border-left: 4px solid @primary;
 	padding: 8px;
@@ -297,22 +296,21 @@ tooltip label {
 .notification-group .notification-group-headers {
 	/* Notification Group Headers */
 	background: transparent;
-	color: @on-surface;
 }
 
 .notification-group .notification-group-headers .notification-group-icon {
-	color: @on-surface;
+	color: @outline;
 	-gtk-icon-size: var(--notification-group-icon-size);
 	margin-right: 4px;
 }
 
 .notification-group .notification-group-headers .notification-group-header {
-	color: @on-surface;
+	color: @on-surface-variant;
 }
 
 .notification-group .notification-group-buttons {
 	/* Notification Group Buttons */
-	color: @on-surface;
+	color: @outline;
 }
 
 .notification-group.collapsed {
@@ -384,13 +382,13 @@ tooltip label {
 	border-color: @outline;
 }
 
-.control-center .control-center-list .notification .notification-default-action,
-.control-center .control-center-list .notification .notification-action {
+.control-center .notification-default-action,
+.control-center .notification-action {
 	transition: var(--group-collapse-transition), var(--hover-transition);
 }
 
-.control-center .control-center-list .notification .notification-default-action:hover,
-.control-center .control-center-list .notification .notification-action:hover {
+.control-center .notification-default-action:hover,
+.control-center .notification-action:hover {
 }
 
 .blank-window {
