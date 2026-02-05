@@ -182,15 +182,52 @@ tooltip label {
 .notification-action > button {
 	padding: calc(var(--padding) / 2);
 	border-radius: var(--border-radius);
-	background: @surface-container;
-	color: @on-surface;
-	border: 1px solid @outline-variant;
+	transition: var(--transition-duration);
+	background: @primary;
+	color: @on-primary;
 }
 
 .notification-action > button:hover {
-	transition: var(--transition-duration);
+	background: @secondary;
+	color: @on-secondary;
+}
+
+.notification-action > button:active {
+	background: @primary-container;
+	color: @primary;
+	box-shadow: 0px 0px 0px 1px inset @primary;
+}
+
+.notification.low .notification-action > button {
+	background: @outline;
+	color: @surface;
+}
+
+.notification.low .notification-action > button:hover {
+	background: @secondary;
+	color: @on-secondary;
+}
+
+.notification.low .notification-action > button:active {
 	background: @surface-variant;
-	border-color: @outline;
+	color: @secondary;
+	box-shadow: 0px 0px 0px 1px inset @secondary;
+}
+
+.notification.critical .notification-action > button {
+	background: @error;
+	color: @on-error;
+}
+
+.notification.critical .notification-action > button:hover {
+	background: @on-surface;
+	color: @surface;
+}
+
+.notification.critical .notification-action > button:active {
+	background: @error-container;
+	color: @error;
+	box-shadow: 0px 0px 0px 1px inset @error;
 }
 
 .notification-group {
@@ -231,6 +268,10 @@ tooltip label {
 	box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
+.control-center-list-placeholder {
+	color: @outline;
+}
+
 .control-center .notification-background {
 	padding: calc(var(--padding) / 2) 0px;
 }
@@ -242,15 +283,6 @@ tooltip label {
 
 .control-center .notification.critical {
 	border-color: @error;
-}
-
-.control-center .notification-action > button {
-	background: @surface;
-}
-
-.control-center .notification-action > button:hover {
-	background: @surface-variant;
-	border-color: @outline;
 }
 
 .control-center .notification-default-action,
@@ -368,6 +400,7 @@ tooltip label {
 }
 
 .widget-mpris-album-art {
+	border: 1px solid @outline;
 	border-radius: var(--border-radius);
 	-gtk-icon-size: var(--mpris-album-art-icon-size);
 }
@@ -452,6 +485,12 @@ tooltip label {
 
 .widget-volume row image {
 	-gtk-icon-size: var(--widget-volume-row-icon-size);
+}
+
+.widget-volume button {
+	padding-left: calc(var(--padding) * 1.5);
+	padding-right: calc(var(--padding) / 2);
+	color: @on-surface-variant;
 }
 
 .per-app-volume {

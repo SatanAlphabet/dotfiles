@@ -24,8 +24,8 @@
 		"volume": {
 			"label": "󰕾",
 			"show-per-app": true,
-			"expand-button-label": " 󰅀 ",
-			"collapse-button-label": " 󰅃 "
+			"expand-button-label": "󰅀",
+			"collapse-button-label": "󰅃"
 		},
 		"backlight": {
 			"label": "󰖙",
