@@ -7,56 +7,60 @@
 }
 
 :root {
+	--border-radius: 4px;
+	--margin: 8px;
+	--padding: var(--margin);
+	--transition-duration: 100ms;
+
+	--notification-progress-thickness: 10px;
+	--control-center-slider-thickness: 4px;
+	--control-center-slider-handle-length: 12px;
+
 	--notification-icon-size: 64px;
 	--notification-app-icon-size: calc(var(--notification-icon-size) / 4);
 	--notification-group-icon-size: 16px;
 	--mpris-album-art-icon-size: 80px;
 	--widget-volume-row-icon-size: 16px;
-	--border-radius: 4px;
-}
-
-notificationwindow,
-blankwindow {
-	background: transparent;
 }
 
 .close-button {
 	/* The notification Close Button */
 	background: @error;
 	color: @on-error;
-	text-shadow: none;
-	padding: 0px;
-	margin: 8px;
+	margin: var(--margin);
 	border-radius: var(--border-radius);
-	box-shadow: none;
-	border: none;
-	min-width: 8px;
-	min-height: 8px;
+	transition: var(--transition-duration);
+}
+
+.close-button:hover {
+	box-shadow: 0px 0px 2px 0px inset @error-container;
+}
+
+.close-button:active {
+	background: @error-container;
+	color: @on-error-container;
+	box-shadow: 0px 0px 0px 1px inset @error;
 }
 
 tooltip {
 	background-color: @surface;
 	color: @on-surface;
-	border: 0.2px solid @on-primary-fixed-variant;
-	padding: 4px;
+	border: 0.5px solid @primary;
+	padding: calc(var(--padding) / 2) var(--padding);
 }
 
 tooltip label {
 	font-size: 0.8em;
 }
 
-.close-button:hover {
-	background: @secondary;
-}
-
 .notification-background {
-	padding: 8px;
+	padding: var(--padding);
 }
 
 .notification {
 	/* The actual notification */
 	background: @surface;
-	padding: 0px;
+	color: @on-surface;
 	border-radius: var(--border-radius);
 	border: 2px solid @outline-variant;
 	box-shadow: 0px 1px 8px -2px @shadow;
@@ -68,17 +72,12 @@ tooltip label {
 
 .notification-default-action {
 	/* The large action that also displays the notification summary and body */
-	padding: 8px;
-	box-shadow: none;
-	background: transparent;
-	border: none;
-	color: @on-surface;
+	padding: var(--padding);
 }
 
 .notification-content {
-	border-radius: 0px;
 	border-left: 4px solid @primary;
-	padding: 8px;
+	padding: var(--padding);
 }
 
 .notification.low .notification-content {
@@ -94,58 +93,44 @@ tooltip label {
 	-gtk-icon-filter: none;
 	-gtk-icon-size: var(--notification-icon-size);
 	border-radius: var(--border-radius);
-	margin-left: 8px;
-	margin-right: 16px;
+	margin-left: var(--margin);
+	margin-right: calc(var(--margin) * 2);
 }
 
 .app-icon {
 	/* Notification app icon (only visible when the primary image is set) */
 	-gtk-icon-filter: none;
 	-gtk-icon-size: var(--notification-app-icon-size);
-	margin: 8px;
-}
-
-.text-box label {
-	/* Fixes base GTK 4 CSS setting a filter of opacity 50% for some odd reason */
-	filter: none;
+	margin: var(--margin);
 }
 
 .text-box .summary {
-	color: @on-surface;
 	font-size: 1.2em;
 	font-weight: 600;
-	text-shadow: none;
 }
 
 .text-box .time {
 	font-weight: 300;
 	font-size: 0.8em;
-	color: @outline;
-	text-shadow: none;
-}
-
-.text-box .body {
-	font-weight: normal;
-	color: @on-surface;
-	text-shadow: none;
+	color: @on-surface-variant;
 }
 
 .notification progressbar {
 	/* The optional notification progress bar */
-	margin-top: 4px;
-	min-height: 10px;
+	margin-top: calc(var(--margin) / 2);
+	min-height: var(--notification-progress-thickness);
 	border: 1px solid @outline-variant;
 	border-radius: var(--border-radius);
 }
 
 .notification trough {
-	min-height: 10px;
+	min-height: var(--notification-progress-thickness);
 	background-color: @surface-variant;
 	border-radius: var(--border-radius);
 }
 
 .notification progress {
-	min-height: 10px;
+	min-height: var(--notification-progress-thickness);
 	background-color: @primary;
 	border-radius: var(--border-radius);
 }
@@ -160,25 +145,27 @@ tooltip label {
 
 .body-image {
 	/* The "extra" optional bottom notification image */
-	background-color: transparent;
 	-gtk-icon-filter: none;
 }
 
 .inline-reply {
 	/* The inline reply section */
-	margin-top: 4px;
+	margin-top: calc(var(--margin) / 2);
 }
 
 .inline-reply-entry {
-	background: transparent;
 	color: @on-surface;
 	caret-color: @on-surface;
 }
 
 .inline-reply-button {
-	margin-left: 4px;
+	margin-left: calc(var(--margin) / 2);
 	background: @surface-container;
 	color: @on-surface;
+}
+
+.inline-reply-button:hover {
+	background: @surface-variant;
 }
 
 .inline-reply-button:disabled {
@@ -186,24 +173,14 @@ tooltip label {
 	color: @outline;
 }
 
-.inline-reply-button:hover {
-	background: @surface-variant;
-}
-
-.notification-alt-actions {
-	background: none;
-	padding: 0px;
-}
-
 .notification-action {
 	/* The alternative actions below the default action */
-	margin: 8px;
+	margin: var(--margin);
 	margin-top: 0px;
 }
 
 .notification-action > button {
-	padding: 4px;
-	margin: 0px;
+	padding: calc(var(--padding) / 2);
 	border-radius: var(--border-radius);
 	background: @surface-container;
 	color: @on-surface;
@@ -211,32 +188,30 @@ tooltip label {
 }
 
 .notification-action > button:hover {
-	transition: 100ms;
+	transition: var(--transition-duration);
 	background: @surface-variant;
 	border-color: @outline;
 }
 
 .notification-group {
-	background: transparent;
 }
 
 .notification-group .notification-group-close-button .close-button {
-	margin: 8px;
+	margin: var(--margin);
 }
 
 .notification-group .notification-group-buttons,
 .notification-group .notification-group-headers {
-	margin: 8px;
+	margin: var(--margin);
 }
 
 .notification-group .notification-group-headers {
-	background: transparent;
 }
 
 .notification-group .notification-group-headers .notification-group-icon {
 	color: @outline;
 	-gtk-icon-size: var(--notification-group-icon-size);
-	margin-right: 4px;
+	margin-right: calc(var(--margin) / 2);
 }
 
 .notification-group .notification-group-headers .notification-group-header {
@@ -251,24 +226,13 @@ tooltip label {
 	background: @surface;
 	color: @on-surface;
 	border-radius: var(--border-radius);
-	padding: 12px;
+	padding: calc(var(--padding) * 1.5);
 	border: 2px solid @on-primary-fixed-variant;
 	box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
-.control-center .control-center-list-placeholder {
-	opacity: 1;
-}
-
-.control-center .control-center-list {
-	padding: 0px;
-	margin: 0px;
-}
-
 .control-center .notification-background {
-	padding: 4px;
-	padding-left: 0px;
-	padding-right: 0px;
+	padding: calc(var(--padding) / 2) 0px;
 }
 
 .control-center .notification {
@@ -291,25 +255,19 @@ tooltip label {
 
 .control-center .notification-default-action,
 .control-center .notification-action {
-	transition:
-		background 150ms ease-in-out,
-		opacity 400ms ease-in-out;
+	transition: var(--transition-duration);
 }
 
 .blank-window {
 	/* Window behind control center and on all other monitors */
-	background: transparent;
-}
-
-.floating-notifications {
-	background: transparent;
+	background: rgba(0, 0, 0, 0.25);
 }
 
 /*** Widgets ***/
 
 .widget {
-	margin: 4px 0px;
-	padding: 8px;
+	margin: calc(var(--margin) / 2) 0px;
+	padding: var(--padding);
 	border-radius: var(--border-radius);
 	background: @surface-container;
 }
@@ -324,17 +282,15 @@ tooltip label {
 }
 
 .widget-title > label {
-	margin-right: 8px;
 	font-size: 1.25em;
 }
 
 .widget-title > button {
-	transition: 100ms;
+	transition: var(--transition-duration);
 	border-radius: var(--border-radius);
 	background-color: @surface;
-	color: @on-surface;
 	border: 1px solid @outline-variant;
-	padding: 4px 8px;
+	padding: calc(var(--padding) / 2) var(--padding);
 }
 
 .widget-title > button:hover {
@@ -347,17 +303,12 @@ tooltip label {
 	border-color: @primary;
 }
 
-.widget-dnd {
-	background: @surface-container;
-}
-
 .widget-dnd label {
-	color: @on-surface;
 	font-size: 0.9em;
 }
 
 .widget-dnd switch {
-	padding: 2px;
+	padding: calc(var(--padding) / 4);
 	border-radius: var(--border-radius);
 	background: @surface;
 	border: 1px solid @outline-variant;
@@ -368,7 +319,7 @@ tooltip label {
 }
 
 .widget-dnd switch slider {
-	border-radius: calc(var(--border-radius) / 2);
+	border-radius: calc(var(--border-radius) - calc(var(--padding) / 4));
 	background: @outline;
 }
 
@@ -376,25 +327,17 @@ tooltip label {
 	background: @surface;
 }
 
-.widget-mpris {
-	/* The parent to all players */
-	padding: 0px;
-}
-
-.widget-mpris-player {
-	margin: 8px;
-}
-
 .mpris-overlay {
-	padding: 0px;
 	background-color: @surface-container;
 }
 
 .mpris-overlay button {
 	/* The media player buttons (play, pause, next, etc...) */
-	padding: 6px;
+	padding: calc(var(--padding) / 2);
+	margin-top: var(--margin);
+	margin-bottom: calc(var(--margin) / 2);
 	background: @surface;
-	transition: 100ms;
+	transition: var(--transition-duration);
 	border-radius: var(--border-radius);
 	border: 1px solid @outline-variant;
 }
@@ -425,7 +368,7 @@ tooltip label {
 
 .widget-mpris > box > button {
 	/* Change player side buttons */
-	margin: 0px 8px;
+	margin: 0px var(--margin);
 	color: @on-surface-variant;
 }
 
@@ -436,9 +379,9 @@ tooltip label {
 .widget-buttons-grid flowboxchild > button {
 	border-radius: var(--border-radius);
 	border: 1px solid @outline-variant;
-	transition: 100ms;
-	padding: 4px 0px;
-	margin: 4px;
+	transition: var(--transition-duration);
+	padding: calc(var(--padding) / 2) 0px;
+	margin: calc(var(--margin) / 2);
 	background-color: @surface;
 }
 
@@ -468,10 +411,8 @@ tooltip label {
 .widget-volume trough {
 	background-color: @surface;
 	border: 1px solid @outline-variant;
-	border-radius: var(--border-radius);
-	min-height: 4px;
-	margin: 2px 0px;
-	margin-left: 8px;
+	min-height: var(--control-center-slider-thickness);
+	margin-left: var(--margin);
 }
 
 .widget-backlight slider,
@@ -479,8 +420,8 @@ tooltip label {
 	background-color: @outline-variant;
 	border: 1px solid @outline;
 	border-radius: var(--border-radius);
-	min-height: 4px;
-	min-width: 15px;
+	min-height: var(--control-center-slider-thickness);
+	min-width: var(--control-center-slider-handle-length);
 }
 
 .widget-backlight slider:hover,
@@ -492,7 +433,7 @@ tooltip label {
 .widget-volume highlight {
 	background-color: @primary;
 	border-radius: var(--border-radius);
-	min-height: 4px;
+	min-height: var(--control-center-slider-thickness);
 }
 
 .widget-volume row image {
@@ -501,6 +442,6 @@ tooltip label {
 
 .per-app-volume {
 	border-radius: var(--border-radius);
-	margin-top: 8px;
-	margin-left: 8px;
+	margin-top: var(--margin);
+	margin-left: var(--margin);
 }
