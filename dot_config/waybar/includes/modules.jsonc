@@ -117,7 +117,7 @@
 		"on-scroll-down": "true",
 	},
 	"custom/launcher": {
-		"on-click": "rofilaunch.sh -theme menu",
+		"on-click": "niri msg action spawn -- rofilaunch.sh -theme menu",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 		"menu": "on-click-right",
