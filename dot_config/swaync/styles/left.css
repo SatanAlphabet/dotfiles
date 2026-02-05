@@ -361,6 +361,12 @@ tooltip label {
 	color: @primary;
 }
 
+.mpris-overlay button:disabled {
+	background: inherit;
+	color: @outline;
+	border-color: transparent;
+}
+
 .widget-mpris-album-art {
 	border-radius: var(--border-radius);
 	-gtk-icon-size: var(--mpris-album-art-icon-size);
