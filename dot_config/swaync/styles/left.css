@@ -331,15 +331,19 @@ tooltip label {
 	background: @surface;
 }
 
+.widget-mpris {
+	padding: calc(var(--padding) / 2);
+}
+
 .mpris-overlay {
-	background-color: @surface-container;
+	padding: calc(var(--padding) / 2);
+	background: @surface-container;
 }
 
 .mpris-overlay button {
 	/* The media player buttons (play, pause, next, etc...) */
 	padding: calc(var(--padding) / 2);
 	margin-top: var(--margin);
-	margin-bottom: calc(var(--margin) / 2);
 	background: @surface;
 	transition: var(--transition-duration);
 	border-radius: var(--border-radius);
@@ -372,7 +376,7 @@ tooltip label {
 
 .widget-mpris > box > button {
 	/* Change player side buttons */
-	margin: 0px var(--margin);
+	margin: 0px calc(var(--margin) * 1.5);
 	color: @on-surface-variant;
 }
 
