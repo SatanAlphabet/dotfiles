@@ -272,13 +272,17 @@ tooltip label {
 	background: @surface-container;
 }
 
+.widget:first-child {
+	margin-top: 0px;
+}
+
+.widget:last-child {
+	margin-bottom: 0px;
+}
+
 .widget-notifications {
 	background: @surface;
 	padding: 0px;
-}
-
-.widget-title {
-	margin-top: 0px;
 }
 
 .widget-title > label {
