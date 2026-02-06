@@ -423,6 +423,7 @@ tooltip label {
 
 .widget-mpris-album-art {
 	border: 1px solid @outline;
+	padding: calc(var(--padding) / 4);
 	border-radius: var(--border-radius);
 	-gtk-icon-size: var(--mpris-album-art-icon-size);
 }
@@ -450,8 +451,16 @@ tooltip label {
 	border: 1px solid @outline-variant;
 	transition: var(--transition-duration);
 	padding: calc(var(--padding) / 2) 0px;
-	margin: calc(var(--margin) / 2);
+	margin: 0px calc(var(--margin) / 2);
 	background-color: @surface;
+}
+
+.widget-buttons-grid flowboxchild:first-child > button {
+	margin-left: 0px;
+}
+
+.widget-buttons-grid flowboxchild:last-child > button {
+	margin-right: 0px;
 }
 
 .widget-buttons-grid flowboxchild > button label {
