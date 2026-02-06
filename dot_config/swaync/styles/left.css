@@ -37,6 +37,7 @@
 }
 
 .close-button:active {
+	transition: none;
 	background: @error-container;
 	color: @on-error-container;
 	box-shadow: 0px 0px 0px 1px inset @error;
@@ -193,6 +194,7 @@ tooltip label {
 }
 
 .notification-action > button:active {
+	transition: none;
 	background: @primary-container;
 	color: @primary;
 	box-shadow: 0px 0px 0px 1px inset @primary;
@@ -237,26 +239,44 @@ tooltip label {
 	margin: var(--margin);
 }
 
-.notification-group .notification-group-buttons,
-.notification-group .notification-group-headers {
+.notification-group-buttons,
+.notification-group-headers {
 	margin: var(--margin);
 }
 
-.notification-group .notification-group-headers {
-}
-
-.notification-group .notification-group-headers .notification-group-icon {
+.notification-group-icon {
 	color: @outline;
 	-gtk-icon-size: var(--notification-group-icon-size);
 	margin-right: calc(var(--margin) / 2);
 }
 
-.notification-group .notification-group-headers .notification-group-header {
-	color: @on-surface-variant;
+.notification-group-header {
+	font-size: 0.9em;
 }
 
-.notification-group .notification-group-buttons {
+.notification-group-buttons {
 	color: @outline;
+}
+
+.notification-group-buttons button {
+	transition: var(--transition-duration);
+	padding: calc(var(--padding) / 4);
+	border-radius: var(--border-radius);
+}
+
+.notification-group-buttons button:hover {
+	background: @surface-variant;
+}
+
+.notification-group-buttons button:active {
+	transition: none;
+	background: @secondary-container;
+	color: @secondary;
+}
+
+.notification-group-buttons button.notification-group-close-all-button:active {
+	background: @error-container;
+	color: @error;
 }
 
 .control-center {
@@ -313,7 +333,7 @@ tooltip label {
 }
 
 .widget-notifications {
-	background: @surface;
+	background: transparent;
 	padding: 0px;
 }
 
@@ -334,6 +354,7 @@ tooltip label {
 }
 
 .widget-title > button:active {
+	transition: none;
 	background-color: @primary-container;
 	color: @primary;
 	border-color: @primary;
@@ -388,6 +409,7 @@ tooltip label {
 }
 
 .mpris-overlay button:active {
+	transition: none;
 	background-color: @primary-container;
 	border-color: @primary;
 	color: @primary;
@@ -449,6 +471,7 @@ tooltip label {
 
 .widget-buttons-grid flowboxchild > button.toggle:active,
 .widget-buttons-grid flowboxchild > button:active {
+	transition: none;
 	background-color: @primary-container;
 	border-color: @primary;
 	color: @primary;
