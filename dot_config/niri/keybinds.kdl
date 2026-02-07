@@ -8,7 +8,7 @@ binds {
   Mod+Alt+C repeat=false hotkey-overlay-title="Clipboard History" { spawn "clipboard.sh" "-c"; }
   Mod+Alt+E repeat=false hotkey-overlay-title="Emoji Picker" { spawn "emoji-picker.sh"; }
   Mod+Alt+G repeat=false hotkey-overlay-title="Glyph Picker" { spawn "glyph-picker.sh"; }
-  Mod+N repeat=false hotkey-overlay-title="Notification Panel" { spawn "swaync-client" "-t"; }
+  Mod+N repeat=false hotkey-overlay-title="Notification Panel" { spawn "swaync-client" "-t" "-sw"; }
   // Mod+B repeat=false { spawn "zen-browser"; } // (Using nirius instead)
   Mod+E repeat=false hotkey-overlay-title="File Browser" { spawn "dolphin"; } 
   Mod+Alt+L repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
