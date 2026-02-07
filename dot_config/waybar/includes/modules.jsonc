@@ -168,7 +168,7 @@
 	"custom/swaync": {
 		"tooltip": true,
 		"return-type": "json",
-		"exec-if": "which swaync-client", // This is to check if swaync daemon is running
+		"exec-if": "pgrep swaync-client", // This is to check if swaync daemon is running
 		"exec": "pgrep -x swaync && swaync-client -swb",
 		"on-click": "swaync-client -t -sw",
 		"on-click-right": "swaync-client -d -sw",
