@@ -1,6 +1,14 @@
 [config]
 caching = false
 
+[config.custom_colors]
+red = { color = "#FF0000", blend = true }
+green = { color = "#00FF00", blend = true }
+blue = { color = "#0000FF", blend = true }
+yellow = { color = "#FFA500", blend = true } # Orange-ish color for better clarity since #FFFF00 results in greenish color
+cyan = { color ="#00FFFF", blend = true }
+magenta = { color = "#FF00FF", blend = true }
+
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar.css'
 output_path = '~/.config/waybar/colors.css'
@@ -31,8 +39,12 @@ output_path = '~/.config/vesktop/themes/midnight-matugen.css'
 input_path = '~/.config/matugen/templates/system24-discord.css'
 output_path = '~/.config/vesktop/themes/system24-matugen.css'
 
+[templates.kitty-base]
+input_path = '~/.config/matugen/templates/kitty-base.conf'
+
 [templates.kitty]
-input_path = '~/.config/matugen/templates/kitty.conf'
+input_path = '~/.config/matugen/templates/kitty-dark.conf'
+input_path_modes = { light = '~/.config/matugen/templates/kitty-light.conf', dark = '~/.config/matugen/templates/kitty-dark.conf' }
 output_path = '~/.config/kitty/matugen-theme.conf'
 post_hook = 'pkill -USR1 kitty'
 
