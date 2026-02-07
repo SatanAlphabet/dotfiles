@@ -29,7 +29,7 @@
 		},
 		"backlight": {
 			"label": "󰖙",
-			"device": {{ output "brightnessctl" "i" "-m" | trimAll "\n" | splitList "," | first | quote }},
+			"device": {{ output "brightnessctl" "i" "-m" | trimAll "\n" | splitList "," | first | quote }}
 		},
 		"mpris": {
 			"autohide": true,
