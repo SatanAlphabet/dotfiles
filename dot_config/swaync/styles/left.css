@@ -518,7 +518,7 @@ tooltip label {
 
 .widget-backlight > label,
 .widget-volume > box > label {
-	font-size: calc(var(--slider-icon-size) * 1.4);
+	font-size: calc(var(--slider-icon-size) * 1.33);
 }
 
 .widget-volume row image {
