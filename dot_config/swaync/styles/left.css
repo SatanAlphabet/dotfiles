@@ -13,14 +13,14 @@
 	--transition-duration: 100ms;
 
 	--notification-progress-thickness: 10px;
-	--control-center-slider-thickness: 4px;
+	--control-center-slider-thickness: 5px;
 	--control-center-slider-handle-length: 12px;
+	--slider-icon-size: 14px;
 
 	--notification-icon-size: 64px;
 	--notification-app-icon-size: calc(var(--notification-icon-size) / 4);
 	--notification-group-icon-size: 16px;
 	--mpris-album-art-icon-size: 80px;
-	--widget-volume-row-icon-size: 16px;
 }
 
 .close-button {
@@ -490,6 +490,7 @@ tooltip label {
 .widget-volume trough {
 	background-color: @surface;
 	border: 1px solid @outline-variant;
+	border-radius: var(--border-radius);
 	min-height: var(--control-center-slider-thickness);
 	margin-left: var(--margin);
 }
@@ -515,8 +516,13 @@ tooltip label {
 	min-height: var(--control-center-slider-thickness);
 }
 
+.widget-backlight > label,
+.widget-volume > box > label {
+	font-size: calc(var(--slider-icon-size) * 1.4);
+}
+
 .widget-volume row image {
-	-gtk-icon-size: var(--widget-volume-row-icon-size);
+	-gtk-icon-size: var(--slider-icon-size);
 }
 
 .widget-volume button {
@@ -525,8 +531,11 @@ tooltip label {
 	color: @on-surface-variant;
 }
 
-.per-app-volume {
-	border-radius: var(--border-radius);
+.per-app-volume > row {
 	margin-top: var(--margin);
-	margin-left: var(--margin);
+}
+
+.per-app-volume > row > label {
+	color: @outline;
+	font-size: 0.9em;
 }
