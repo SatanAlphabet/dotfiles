@@ -14,7 +14,7 @@
 		},
 		"events": {
 			"on-discharging-warning": "notify-send -a 'Battery' 'Low Battery...' 'Please plug in your device.' -i battery-caution-symbolic",
-			"on-discharging-critical": "systemd-run --user ~/.config/waybar/scripts/critical-battery-event.sh",
+			"on-discharging-critical": "niri msg action spawn -- ~/.config/waybar/scripts/critical-battery-event.sh",
 			"on-charging-100": "notify-send -e -a 'Battery' 'Battery full...' 'Battery capacity at maximum level.' -i battery-level-100-charged-symbolic",
 		},
 		"design-capacity": true,
@@ -137,7 +137,7 @@
 			"wallpaper-select": "niri msg action spawn -- waypaper",
 			"record-screen": "screen-record.sh",
 			"record-region": "screen-record.sh region",
-			"theme": "niri msg action spawn-sh -- themechange.sh",
+			"theme": "niri msg action spawn -- themechange.sh",
 			"nightlight": "nightlight.sh",
 			"niri": "xdg-open https://github.com/YaLTeR/niri",
 		},
@@ -181,8 +181,8 @@
 		"on-scroll-down": "true",
 		"exec-if": "which waybar-module-pacman-updates",
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600",
-		"on-click": "niri msg action spawn -- kitty --class 'sysupdate' --title 'System Update' sysupdate.sh",
-		"on-click-right": "niri msg action spawn -- kitty --class 'sysupdate' --title 'System Update' sysupdate.sh -y",
+		"on-click": "niri msg action spawn -- xdg-terminal-exec --app-id='sysupdate' --title='System Update' sysupdate.sh",
+		"on-click-right": "niri msg action spawn -- xdg-terminal-exec --app-id='sysupdate' --title='System Update' sysupdate.sh -y",
 	},
 	"memory": {
 		"states": {
@@ -209,7 +209,7 @@
 		"interval": 1,
 	},
 	"network": {
-		"on-click": "kitty -1 nmtui",
+		"on-click": "xdg-terminal-exec nmtui",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 		"interval": 2,
@@ -260,14 +260,14 @@
 	"pulseaudio": {
 		"on-scroll-up": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ +1%",
 		"on-scroll-down": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ -1%",
-		"on-click": "pavucontrol-qt -t 3",
+		"on-click": "niri msg action spawn -- pavucontrol-qt -t 3",
 		"on-click-right": "volumecontrol.sh set-sink-mute @DEFAULT_SINK@ toggle",
 		"scroll-step": 1,
 	},
 	"pulseaudio#alt": {
 		"on-scroll-up": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ +1%",
 		"on-scroll-down": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ -1%",
-		"on-click": "pavucontrol-qt -t 3",
+		"on-click": "niri msg action spawn -- pavucontrol-qt -t 3",
 		"on-click-right": "volumecontrol.sh set-sink-mute @DEFAULT_SINK@ toggle",
 		"scroll-step": 1,
 	},
