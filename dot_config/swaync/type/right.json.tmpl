@@ -29,7 +29,7 @@
 		},
 		"backlight": {
 			"label": "󰖙",
-			"device": {{ output "brightnessctl" "i" "-m" | trimAll "\n" | splitList "," | first | quote }}
+			"device": {{ output "brightnessctl" "i" "-m" | trim | splitList "," | first | quote }}
 		},
 		"mpris": {
 			"autohide": true,
@@ -39,7 +39,7 @@
 			"buttons-per-row": 6,
 			"actions": [
 				{
-					"label": "󰏘",
+					"label": "󰈋",
 					"command": "swaync-client -cp; niri msg action spawn -- colorpick.sh"
 				},
 				{
@@ -63,7 +63,7 @@
 					"update-command": "pidof gpu-screen-recorder && echo 'true' || echo 'false'"
 				},
 				{
-					"label": "󰅶",
+					"label": "󰛊",
 					"type": "toggle",
 					"command": "niri msg action spawn -- idle-inhibit.sh",
 					"update-command": "pidof systemd-inhibit && echo 'true' || echo 'false'"
