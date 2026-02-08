@@ -121,7 +121,7 @@ window#waybar.main #custom-launcher:hover {
 }
 
 .warning {
-	color: @tertiary;
+	color: @yellow;
 }
 
 .critical {
