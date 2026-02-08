@@ -16,20 +16,25 @@ switch_to_dark_mode() {
 
 change_theme() {
 
-  if [ ! -f "$1" ]; then
-    echo "Error: image '$1' was not found."
+  [ -n "$1" ] && img="$1" || {
+    echo "WARNING: No image provided. Using current wallpaper from waypaper..." >&2
+    img="$(waypaper --list | jq -r '.[].wallpaper')"
+  }
+
+  if [ ! -f "$img" ]; then
+    echo "Error: image '$img' was not found."
     exit 1
   fi
 
   if [[ "$current_theme" != "'prefer-dark'" && "$current_theme" != "'prefer-light'" ]]; then
     echo "Invalid color-scheme found. Falling back to light mode..."
-    switch_to_light_mode "$1"
+    switch_to_light_mode "$img"
   fi
 
   if [ "$current_theme" = "'prefer-dark'" ]; then
-    switch_to_light_mode "$1"
+    switch_to_light_mode "$img"
   elif [ "$current_theme" = "'prefer-light'" ]; then
-    switch_to_dark_mode "$1"
+    switch_to_dark_mode "$img"
   fi
 
 }

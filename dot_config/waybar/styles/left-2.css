@@ -16,12 +16,14 @@ window#waybar.main .module {
 	margin: 0px 8px;
 	padding: 4px 0px;
 	border-radius: 4px;
+	transition: 100ms;
 }
 
 window#waybar.main #pill {
 	background: @surface-container-high;
 	margin: 0px 8px;
 	border-radius: 4px;
+	transition: 100ms;
 }
 
 window#waybar.main #privacy:hover,
@@ -157,7 +159,7 @@ window#waybar.main #custom-seperator-vertical {
 	border-radius: 4px;
 	padding: 4px 0px;
 	margin: 6px 8px;
-	transition: all 0s;
+	transition: none;
 	opacity: 1;
 }
 

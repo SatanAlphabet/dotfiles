@@ -1,5 +1,11 @@
+{{- $aurHelperList := list "yay" "paru" -}}
+{{- $aurHelper := promptChoiceOnce . "aurHelperList" "Which AUR helper would you like to use" $aurHelperList "paru" -}}
+
 [add]
   templateSymlinks = true
 
 [edit]
   watch = true
+
+[data]
+    aurHelper = {{ $aurHelper | quote -}}

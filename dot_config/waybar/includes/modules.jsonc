@@ -1,11 +1,11 @@
 {
 	"backlight": {
-		"on-scroll-up": "brightnesscontrol.sh + 1",
-		"on-scroll-down": "brightnesscontrol.sh - 1",
+		"on-scroll-up": "brightnesscontrol.sh s +1%",
+		"on-scroll-down": "brightnesscontrol.sh s 1%-",
 	},
 	"backlight#alt": {
-		"on-scroll-up": "brightnesscontrol.sh + 1",
-		"on-scroll-down": "brightnesscontrol.sh - 1",
+		"on-scroll-up": "brightnesscontrol.sh s +1%",
+		"on-scroll-down": "brightnesscontrol.sh s 1%-",
 	},
 	"battery": {
 		"states": {
@@ -14,7 +14,7 @@
 		},
 		"events": {
 			"on-discharging-warning": "notify-send -a 'Battery' 'Low Battery...' 'Please plug in your device.' -i battery-caution-symbolic",
-			"on-discharging-critical": "systemd-run --user ~/.config/waybar/scripts/critical-battery-event.sh",
+			"on-discharging-critical": "niri msg action spawn -- ~/.config/waybar/scripts/critical-battery-event.sh",
 			"on-charging-100": "notify-send -e -a 'Battery' 'Battery full...' 'Battery capacity at maximum level.' -i battery-level-100-charged-symbolic",
 		},
 		"design-capacity": true,
@@ -117,27 +117,27 @@
 		"on-scroll-down": "true",
 	},
 	"custom/launcher": {
-		"on-click": "rofilaunch.sh menu",
+		"on-click": "niri msg action spawn -- rofilaunch.sh -theme menu",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 		"menu": "on-click-right",
 		"menu-file": "~/.config/waybar/menu/launcher.xml",
 		"menu-actions": {
-			"cliphist": "systemd-run --user clipboard.sh -t menu",
-			"emoji": "systemd-run --user emoji-picker.sh -theme menu",
-			"glyph": "systemd-run --user glyph-picker.sh -theme menu",
-			"calc": "systemd-run --user calc.sh -theme menu",
+			"cliphist": "niri msg action spawn -- clipboard.sh -t menu",
+			"emoji": "niri msg action spawn -- emoji-picker.sh -theme menu",
+			"glyph": "niri msg action spawn -- glyph-picker.sh -theme menu",
+			"calc": "niri msg action spawn -- calc.sh -theme menu",
 			"lock": "loginctl lock-session",
 			"reboot": "systemctl reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibetnate",
 			"shutdown": "systemctl poweroff",
 			"logout": "niri msg action quit -s",
-			"wallpaper-random": "waypaper --random --backend swww",
-			"wallpaper-select": "waypaper",
+			"wallpaper-random": "niri msg action spawn -- waypaper --random",
+			"wallpaper-select": "niri msg action spawn -- waypaper",
 			"record-screen": "screen-record.sh",
 			"record-region": "screen-record.sh region",
-			"theme": "themechange.sh",
+			"theme": "niri msg action spawn -- themechange.sh",
 			"nightlight": "nightlight.sh",
 			"niri": "xdg-open https://github.com/YaLTeR/niri",
 		},
@@ -168,7 +168,7 @@
 	"custom/swaync": {
 		"tooltip": true,
 		"return-type": "json",
-		"exec-if": "which swaync-client", // This is to check if swaync daemon is running
+		"exec-if": "pgrep swaync-client", // This is to check if swaync daemon is running
 		"exec": "pgrep -x swaync && swaync-client -swb",
 		"on-click": "swaync-client -t -sw",
 		"on-click-right": "swaync-client -d -sw",
@@ -181,8 +181,8 @@
 		"on-scroll-down": "true",
 		"exec-if": "which waybar-module-pacman-updates",
 		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 600",
-		"on-click": "kitty --class 'sysupdate' --title 'System Update' sysupdate.sh",
-		"on-click-right": "kitty --class 'sysupdate' --title 'System Update' sysupdate.sh -y",
+		"on-click": "niri msg action spawn -- xdg-terminal-exec --app-id='sysupdate' --title='System Update' sysupdate.sh",
+		"on-click-right": "niri msg action spawn -- xdg-terminal-exec --app-id='sysupdate' --title='System Update' sysupdate.sh -y",
 	},
 	"memory": {
 		"states": {
@@ -209,7 +209,7 @@
 		"interval": 1,
 	},
 	"network": {
-		"on-click": "kitty -1 nmtui",
+		"on-click": "xdg-terminal-exec nmtui",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 		"interval": 2,
@@ -258,17 +258,17 @@
 		],
 	},
 	"pulseaudio": {
-		"on-scroll-up": "volumecontrol.sh + 1",
-		"on-scroll-down": "volumecontrol.sh - 1",
-		"on-click": "pavucontrol-qt -t 3",
-		"on-click-right": "volumecontrol.sh toggle-mute",
+		"on-scroll-up": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ +1%",
+		"on-scroll-down": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ -1%",
+		"on-click": "niri msg action spawn -- pavucontrol-qt -t 3",
+		"on-click-right": "volumecontrol.sh set-sink-mute @DEFAULT_SINK@ toggle",
 		"scroll-step": 1,
 	},
 	"pulseaudio#alt": {
-		"on-scroll-up": "volumecontrol.sh + 1",
-		"on-scroll-down": "volumecontrol.sh - 1",
-		"on-click": "pavucontrol-qt -t 3",
-		"on-click-right": "volumecontrol.sh toggle-mute",
+		"on-scroll-up": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ +1%",
+		"on-scroll-down": "volumecontrol.sh set-sink-volume @DEFAULT_SINK@ -1%",
+		"on-click": "niri msg action spawn -- pavucontrol-qt -t 3",
+		"on-click-right": "volumecontrol.sh set-sink-mute @DEFAULT_SINK@ toggle",
 		"scroll-step": 1,
 	},
 	"temperature": {
