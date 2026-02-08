@@ -84,7 +84,7 @@ run_rofi() {
     -theme-str "mode-switcher { enabled: false; }"
     -kb-custom-1 "Alt+h"
     -kb-custom-2 "Alt+d"
-    -kb-custom-3 "Alt+n"
+    -kb-custom-3 "Alt+v"
     -kb-custom-4 "Alt+c"
     -kb-custom-5 "Alt+o"
     -kb-custom-6 "Alt+m"
@@ -320,10 +320,10 @@ EOF
 
 main_menu_options() {
   cat <<-EOF
-		History:::<sub>(Alt+C)</sub>
+		History:::<sub>(Alt+H)</sub>
 		Delete Item:::<sub>(Alt+D)</sub>
-		Clear History:::<sub>(Alt+W)</sub>
-		View Favorites:::<sub>(Alt+N)</sub>
+		Clear History:::<sub>(Alt+C)</sub>
+		View Favorites:::<sub>(Alt+V)</sub>
 		Manage Favorites:::<sub>(Alt+M)</sub>
 	EOF
 }
