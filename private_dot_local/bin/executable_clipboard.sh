@@ -82,10 +82,10 @@ run_rofi() {
     -theme-str "entry { placeholder: \"${placeholder}\";} configuration { show-icons: false;}"
     -theme-str "element-icon { enabled: false; }"
     -theme-str "mode-switcher { enabled: false; }"
-    -kb-custom-1 "Alt+c"
+    -kb-custom-1 "Alt+h"
     -kb-custom-2 "Alt+d"
     -kb-custom-3 "Alt+n"
-    -kb-custom-4 "Alt+w"
+    -kb-custom-4 "Alt+c"
     -kb-custom-5 "Alt+o"
     -kb-custom-6 "Alt+m"
   )
