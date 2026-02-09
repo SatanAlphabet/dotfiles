@@ -334,7 +334,7 @@ main_menu() {
   # show main menu if no arguments are passed
   if [ $# -eq 0 ]; then
     main_action=$(
-      main_menu_options | run_rofi "🔎 Choose action (Alt+O)" \
+      main_menu_options | run_rofi "🔎 Choose action (Alt+O to open this page)" \
         -display-column-separator ":::" \
         -display-columns 1,2 \
         -markup-rows
