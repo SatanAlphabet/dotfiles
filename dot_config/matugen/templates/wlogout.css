@@ -1,5 +1,7 @@
 <* for name, value in colors *>
 @define-color {{ name | replace: "_", "-" }} {{ value.default.hex }};
+@define-color {{ name | replace: "_", "-" }}-dark {{ value.dark.hex }};
+@define-color {{ name | replace: "_", "-" }}-light {{ value.light.hex }};
 <* endfor *>
 
 @define-color backdrop {{colors.scrim.default.rgba | set_alpha: 0.5}};

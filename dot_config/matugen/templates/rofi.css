@@ -1,6 +1,8 @@
 * {
 <* for name, value in colors *>
   {{ name | replace: "_", "-" }}: {{ value.default.hex }};
+  {{ name | replace: "_", "-" }}-dark: {{ value.dark.hex }};
+  {{ name | replace: "_", "-" }}-light: {{ value.light.hex }};
 <* endfor *>
 
   primary-outline: {{ colors.primary.default.rgba | set_alpha: 0.5 }};

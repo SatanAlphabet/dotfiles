@@ -2,5 +2,7 @@
 
 <* for name, value in colors *>
 @define-color {{ name | replace: "_", "-" }} {{ value.default.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-dark {{ value.dark.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-light {{ value.light.rgba | set_alpha: 0.99999 }};
 <* endfor *>
 
