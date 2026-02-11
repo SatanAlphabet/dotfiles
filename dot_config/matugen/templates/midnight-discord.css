@@ -17,7 +17,7 @@
 body {
   /* font, change to 'gg sans' for default discord font*/
   --font: 'Inter Variable';
-  --code-font: '';
+  --code-font: 'CaskaydiaCove Nerd Font';
 
   /* amount of spacing and padding */
   --gap: 12px;
@@ -73,7 +73,7 @@ body {
   /* size of the svg (css mask-size property) */
   --dms-icon-color-before: var(--accent-3);
   /* normal icon color */
-  --dms-icon-color-after: var(--white);
+  --dms-icon-color-after: {{colors.on_primary.default.hex}};
   /* icon color when button is hovered/selected */
   --custom-dms-background: off;
   /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
@@ -90,15 +90,15 @@ body {
 	--corner-text: 'Midnight';
 	/* color of status indicators and window controls */
   <* if {{ is_dark_mode }} *>
-  --online: #a6e3a1;     /* change to #23a55a for default green */
-	--dnd: #f38ba8;                  /* change to #f13f43 for default red */
-	--idle: #f9e2af;    /* change to #f0b232 for default yellow */
-	--streaming: #cba6f7;       /* change to #593695 for default purple */
+  --online: {{colors.green.default.hex | auto_lightness: 5.0}};     /* change to #23a55a for default green */
+	--dnd: {{colors.red.default.hex | auto_lightness: 5.0}};                  /* change to #f13f43 for default red */
+	--idle: {{colors.yellow.default.hex | auto_lightness: 5.0}};    /* change to #f0b232 for default yellow */
+	--streaming: {{colors.magenta.default.hex | auto_lightness: 5.0}};       /* change to #593695 for default purple */
   <* else *>
-  --online: #40a02b;     /* change to #23a55a for default green */
-	--dnd: #d20f39;                  /* change to #f13f43 for default red */
-	--idle: #df831d;    /* change to #f0b232 for default yellow */
-	--streaming: #8839ef;       /* change to #593695 for default purple */
+  --online: {{colors.green.default.hex | auto_lightness: 10.0 | saturate: 20.0, "hsl"}};     /* change to #23a55a for default green */
+	--dnd: {{colors.red.default.hex | auto_lightness: 10.0 | saturate: 20.0, "hsl"}};                  /* change to #f13f43 for default red */
+	--idle: {{colors.yellow.default.hex | auto_lightness: 10.0 | saturate: 20.0, "hsl"}};    /* change to #f0b232 for default yellow */
+	--streaming: {{colors.magenta.default.hex | auto_lightness: 10.0 | saturate: 20.0, "hsl"}};       /* change to #593695 for default purple */
   <* endif *>
 
 	/* accent colors */
@@ -131,9 +131,9 @@ body {
 
 	/* text colors */
 	--text-0: {{colors.surface.default.hex}};               /* text on colored elements */
-	--text-1: {{colors.on_surface_variant.default.hex}};            /* other normally white text */
+	--text-1: {{colors.on_surface.default.hex}};            /* other normally white text */
 	--text-2: {{colors.on_surface.default.hex}};            /* headings and important text */
-	--text-3: {{colors.on_surface_variant.default.hex}};    /* normal text */
+	--text-3: {{colors.on_surface.default.hex}};            /* normal text */
 	--text-4: {{colors.on_surface_variant.default.hex}};    /* icon buttons and channels */
 	--text-5: {{colors.outline.default.hex}};               /* muted channels/chats and timestamps */
 
@@ -149,7 +149,7 @@ body {
   /* border colors */
   --border-light: {{colors.surface_container_highest.default.hex}}; /* light border color */
   --border: {{colors.surface_container_highest.default.hex}}; /* normal border color */
-  --border-hover: {{colors.surface_container_highest.default.hex}}; /*  border color of panels when hovered */
+  --border-hover: {{colors.outline_variant.default.hex}}; /*  border color of panels when hovered */
   --button-border: {{colors.surface_container_high.default.hex}}; /* neutral border color of buttons */
 
 }
