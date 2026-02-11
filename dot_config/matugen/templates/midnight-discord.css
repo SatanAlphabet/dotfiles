@@ -86,20 +86,24 @@ body {
 }
 /* customize things here */
 :root {
+
+  --colors: on; /* off: discord default colors, on: midnight custom colors */
+
 	/* top left corner text */
 	--corner-text: 'Midnight';
 	/* color of status indicators and window controls */
   <* if {{ is_dark_mode }} *>
-  --online: {{colors.green.default.hex | auto_lightness: 5.0}};     /* change to #23a55a for default green */
-	--dnd: {{colors.red.default.hex | auto_lightness: 5.0}};                  /* change to #f13f43 for default red */
-	--idle: {{colors.yellow.default.hex | auto_lightness: 5.0}};    /* change to #f0b232 for default yellow */
-	--streaming: {{colors.magenta.default.hex | auto_lightness: 5.0}};       /* change to #593695 for default purple */
+  --online: {{colors.green.default.hex | auto_lightness: 8.0}};     /* change to #23a55a for default green */
+	--dnd: {{colors.red.default.hex | auto_lightness: 8.0}};                  /* change to #f13f43 for default red */
+	--idle: {{colors.yellow.default.hex | auto_lightness: 8.0}};    /* change to #f0b232 for default yellow */
+	--streaming: {{colors.magenta.default.hex | auto_lightness: 8.0}};       /* change to #593695 for default purple */
   <* else *>
-  --online: {{colors.green.default.hex | auto_lightness: 10.0 | saturate: 20.0, "hsl"}};     /* change to #23a55a for default green */
-	--dnd: {{colors.red.default.hex | auto_lightness: 10.0 | saturate: 20.0, "hsl"}};                  /* change to #f13f43 for default red */
-	--idle: {{colors.yellow.default.hex | auto_lightness: 10.0 | saturate: 20.0, "hsl"}};    /* change to #f0b232 for default yellow */
-	--streaming: {{colors.magenta.default.hex | auto_lightness: 10.0 | saturate: 20.0, "hsl"}};       /* change to #593695 for default purple */
+  --online: {{colors.green.default.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}};     /* change to #23a55a for default green */
+	--dnd: {{colors.red.default.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}};                  /* change to #f13f43 for default red */
+	--idle: {{colors.yellow.default.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}};    /* change to #f0b232 for default yellow */
+	--streaming: {{colors.magenta.default.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}};       /* change to #593695 for default purple */
   <* endif *>
+  --offline: {{colors.outline.default.hex}}; /* change to #82838b for default offline color */
 
 	/* accent colors */
   --accent-1: {{colors.tertiary.default.hex}};            /* links */
@@ -152,5 +156,35 @@ body {
   --border-hover: {{colors.outline_variant.default.hex}}; /*  border color of panels when hovered */
   --button-border: {{colors.surface_container_high.default.hex}}; /* neutral border color of buttons */
 
+  /* base colors */
+  --red-1: {{colors.red.default.hex}};
+  --red-2: {{colors.red.default.hex | auto_lightness: 5.0}};
+  --red-3: {{colors.red.default.hex | auto_lightness: 10.0}};
+  --red-4: {{colors.red.default.hex | auto_lightness: 15.0}};
+  --red-5: {{colors.red.default.hex | auto_lightness: 20.0}};
+
+  --green-1: {{colors.green.default.hex}};
+  --green-2: {{colors.green.default.hex | auto_lightness: 5.0}};
+  --green-3: {{colors.green.default.hex | auto_lightness: 10.0}};
+  --green-4: {{colors.green.default.hex | auto_lightness: 15.0}};
+  --green-5: {{colors.green.default.hex | auto_lightness: 20.0}};
+
+  --blue-1: {{colors.blue.default.hex}};
+  --blue-2: {{colors.blue.default.hex | auto_lightness: 5.0}};
+  --blue-3: {{colors.blue.default.hex | auto_lightness: 10.0}};
+  --blue-4: {{colors.blue.default.hex | auto_lightness: 15.0}};
+  --blue-5: {{colors.blue.default.hex | auto_lightness: 20.0}};
+
+  --yellow-1: {{colors.yellow.default.hex}};
+  --yellow-2: {{colors.yellow.default.hex | auto_lightness: 5.0}};
+  --yellow-3: {{colors.yellow.default.hex | auto_lightness: 10.0}};
+  --yellow-4: {{colors.yellow.default.hex | auto_lightness: 15.0}};
+  --yellow-5: {{colors.yellow.default.hex | auto_lightness: 20.0}};
+
+  --purple-1: {{colors.magenta.default.hex}};
+  --purple-2: {{colors.magenta.default.hex | auto_lightness: 5.0}};
+  --purple-3: {{colors.magenta.default.hex | auto_lightness: 10.0}};
+  --purple-4: {{colors.magenta.default.hex | auto_lightness: 15.0}};
+  --purple-5: {{colors.magenta.default.hex | auto_lightness: 20.0}};
 }
 
