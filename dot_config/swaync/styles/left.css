@@ -351,6 +351,7 @@ tooltip label {
 
 .widget-title > button:hover {
 	background: @surface-variant;
+	border-color: @outline;
 }
 
 .widget-title > button:active {
