@@ -28,7 +28,7 @@ output_path = '~/.config/swaync/colors.css'
 post_hook = 'swaync-client -rs -sw'
 
 [templates.rofi]
-input_path = '~/.config/matugen/templates/rofi.css'
+input_path = '~/.config/matugen/templates/rofi.rasi'
 output_path = '~/.config/rofi/colors.rasi'
 
 [templates.midnight-discord]
