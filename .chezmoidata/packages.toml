@@ -104,7 +104,7 @@ aur = [
   "darkly-bin",
   "downgrade",
   "gpu-screen-recorder",
-  # "nirius",
+  "nirius",
   "paccache-hook",
   "python-pywalfox",
   "qt6ct-kde",
@@ -119,5 +119,5 @@ aur = [
   "wlogout",
   "xdg-terminal-exec",
   "zen-browser-bin",
-  "matugen-bin"
+  "matugen-bin",
 ]
