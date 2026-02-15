@@ -48,7 +48,6 @@ pacman = [
   "libqalculate",
   "man-db",
   "man-pages",
-  "matugen",
   "neovim",
   "network-manager-applet",
   "networkmanager",
@@ -98,14 +97,14 @@ pacman = [
   "xsettingsd",
   "xwayland-satellite",
   "yazi",
-  "zsh"
+  "zsh",
 ]
 aur = [
   "bibata-cursor-theme-bin",
   "darkly-bin",
   "downgrade",
   "gpu-screen-recorder",
-  "nirius",
+  # "nirius",
   "paccache-hook",
   "python-pywalfox",
   "qt6ct-kde",
@@ -119,5 +118,8 @@ aur = [
   "waypaper",
   "wlogout",
   "xdg-terminal-exec",
-  "zen-browser-bin"
+  "zen-browser-bin",
+  "matugen-bin",
 ]
+
+cargo = ["nirius"]
