@@ -26,7 +26,7 @@
 			"warning": 30,
 			"critical": 15,
 		},
-		"design-capacity": true,
+		"design-capacity": false,
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 	},
