@@ -10,3 +10,7 @@ include "recent-windows.kdl"
 
 // Auto-generated colors from matugen: DO NOT EDIT
 include "matugen-colors.kdl"
+
+
+// adding niriusd to start automatically
+spawn-at-startup "niriusd"
