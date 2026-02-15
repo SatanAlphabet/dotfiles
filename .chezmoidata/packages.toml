@@ -119,7 +119,5 @@ aur = [
   "wlogout",
   "xdg-terminal-exec",
   "zen-browser-bin",
-  "matugen-bin",
+  "matugen-bin"
 ]
-
-cargo = ["nirius"]
