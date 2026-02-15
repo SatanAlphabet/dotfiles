@@ -105,7 +105,7 @@ aur = [
   "darkly-bin",
   "downgrade",
   "gpu-screen-recorder",
-  "nirius",
+  # "nirius", installing old version from AUR until the new one is released
   "paccache-hook",
   "python-pywalfox",
   "qt6ct-kde",
