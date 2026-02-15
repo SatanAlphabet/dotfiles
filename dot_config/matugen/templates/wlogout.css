@@ -1,5 +1,28 @@
 <* for name, value in colors *>
 @define-color {{ name | replace: "_", "-" }} {{ value.default.hex }};
+@define-color {{ name | replace: "_", "-" }}-dark {{ value.dark.hex }};
+@define-color {{ name | replace: "_", "-" }}-light {{ value.light.hex }};
 <* endfor *>
 
-@define-color backdrop {{colors.scrim.default.rgba | set_alpha: 0.5}};
+<* for name, value in palettes *>
+@define-color {{ name | replace: "_", "-" }}-palette-0 {{ value._0.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-5 {{ value._5.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-10 {{ value._10.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-15 {{ value._15.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-20 {{ value._20.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-25 {{ value._25.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-30 {{ value._30.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-35 {{ value._35.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-40 {{ value._40.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-50 {{ value._50.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-60 {{ value._60.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-70 {{ value._70.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-80 {{ value._80.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-90 {{ value._90.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-95 {{ value._95.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-98 {{ value._98.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-99 {{ value._99.hex }};
+@define-color {{ name | replace: "_", "-" }}-palette-100 {{ value._100.hex }};
+<* endfor *>
+
+@define-color backdrop {{ colors.scrim.default.rgba | set_alpha: 0.5 }};

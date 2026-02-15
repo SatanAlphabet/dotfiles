@@ -25,11 +25,11 @@ USAGE
 }
 
 send_playing_notif() {
-  notify-send -e -r 1 -t 1500 "Paused media..." "$(playerctl metadata title)" -h int:value:"$(media_progress)" -i media-playback-pause
+  notify-send -e -r 1 -t 2000 "Paused media..." "$(playerctl metadata title)" -h int:value:"$(media_progress)" -i media-playback-pause
 }
 
 send_paused_notif() {
-  notify-send -e -r 1 -t 1500 "Playing media..." "$(playerctl metadata title)" -h int:value:"$(media_progress)" -i media-playback-start
+  notify-send -e -r 1 -t 2000 "Playing media..." "$(playerctl metadata title)" -h int:value:"$(media_progress)" -i media-playback-start
 }
 
 [ $# -ne 1 ] && {
@@ -38,18 +38,18 @@ send_paused_notif() {
 }
 
 if [ -z "$(playerctl status 2>/dev/null)" ]; then
-  notify-send "No media found..." -e -r 1 -t 1500 -u low
+  notify-send "No media found..." -e -r 1 -t 2000 -u low
   exit 0
 fi
 
 case "$1" in
 'next')
   playerctl next 2>/dev/null
-  notify-send -e -r 1 -t 1500 'Playing next track...' -i media-skip-forward
+  notify-send -e -r 1 -t 2000 'Playing next track...' -i media-skip-forward
   ;;
 'prev')
   playerctl previous 2>/dev/null
-  notify-send -e -r 1 -t 1500 'Playing previous track...' -i media-skip-backward
+  notify-send -e -r 1 -t 2000 'Playing previous track...' -i media-skip-backward
   ;;
 'play')
   playerctl play 2>/dev/null

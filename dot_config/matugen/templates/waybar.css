@@ -2,5 +2,27 @@
 
 <* for name, value in colors *>
 @define-color {{ name | replace: "_", "-" }} {{ value.default.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-dark {{ value.dark.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-light {{ value.light.rgba | set_alpha: 0.99999 }};
 <* endfor *>
 
+<* for name, value in palettes *>
+@define-color {{ name | replace: "_", "-" }}-palette-0 {{ value._0.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-5 {{ value._5.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-10 {{ value._10.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-15 {{ value._15.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-20 {{ value._20.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-25 {{ value._25.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-30 {{ value._30.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-35 {{ value._35.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-40 {{ value._40.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-50 {{ value._50.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-60 {{ value._60.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-70 {{ value._70.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-80 {{ value._80.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-90 {{ value._90.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-95 {{ value._95.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-98 {{ value._98.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-99 {{ value._99.rgba | set_alpha: 0.99999 }};
+@define-color {{ name | replace: "_", "-" }}-palette-100 {{ value._100.rgba | set_alpha: 0.99999 }};
+<* endfor *>
