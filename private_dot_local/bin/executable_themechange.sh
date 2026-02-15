@@ -3,13 +3,13 @@
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
 
 switch_to_light_mode() {
-  matugen image "$1" -m light --source-color-index 0
+  matugen image "$1" -m light
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
   notify-send -e -t 3000 "Switched to light mode..." -i weather-clear-symbolic
 }
 
 switch_to_dark_mode() {
-  matugen image "$1" -m dark --source-color-index 0
+  matugen image "$1" -m dark
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   notify-send -e -t 3000 "Switched to dark mode..." -i weather-clear-night-symbolic
 }
