@@ -18,6 +18,5 @@ if [[ "$status" = "Playing" || "$status" = "Paused" ]]; then
   generate_thumbnail
   echo "$thumb_path/thumbnail"
 else
-  rm "$thumb_path/thumbnail" "$thumb_path/thumbnail.lnk"
   echo "$1"
 fi
