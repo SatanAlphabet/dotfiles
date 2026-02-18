@@ -42,6 +42,8 @@ if [ -z "$(playerctl status 2>/dev/null)" ]; then
   exit 0
 fi
 
+status="$(playerctl status 2>/dev/null)"
+
 case "$1" in
 'next')
   playerctl next 2>/dev/null
@@ -61,7 +63,6 @@ case "$1" in
   ;;
 'toggle')
   playerctl play-pause 2>/dev/null
-  status="$(playerctl status 2>/dev/null)"
   if [ "$status" = 'Playing' ]; then
     send_playing_notif
   elif [ "$status" = 'Paused' ]; then
