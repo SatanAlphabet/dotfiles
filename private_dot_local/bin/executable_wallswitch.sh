@@ -52,7 +52,7 @@ switch_wallpaper() {
     fi
     ln -sf "$cache_img" "$blur_img"
 
-    notify-send -e -r 2 -t 2000 "Wallpaper switch successful..." "Current Wallpaper: $(basename "$1")"
+    notify-send -i "$1" -e -r 2 -t 2000 "Wallpaper switch successful..." "Current Wallpaper: $(basename "$1")"
   else
     echo "Same wallpaper detected. Skipping matugen & caching..."
   fi
