@@ -122,3 +122,10 @@ layer-rule {
 
   place-within-backdrop true
 }
+
+layer-rule {
+  match namespace="^rofi$"
+  shadow {
+    on
+  }
+}
