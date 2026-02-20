@@ -31,7 +31,6 @@ window {
   anchor:                      west;
   fullscreen:                  false;
   width:                       400px;
-  margin:                      8px;
   border:                      2px solid;
   border-color:                @on-primary-fixed-variant;
   cursor:                      "default";

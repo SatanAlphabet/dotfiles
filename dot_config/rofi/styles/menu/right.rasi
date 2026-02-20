@@ -2,4 +2,6 @@
 
 window {
   location: north east;
+  x-offset: -8px;
+  y-offset: 8px;
 }
