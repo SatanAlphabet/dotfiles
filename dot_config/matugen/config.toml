@@ -114,7 +114,7 @@ post_hook = 'sync-zen-settings.sh'
 [templates.pywalfox]
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
-post_hook = 'matugen-pywalfox.sh &'
+post_hook = 'matugen-pywalfox.sh {{mode}} &'
 
 [templates.color-scheme]
 input_path = '~/.config/matugen/templates/Matugen.colors'
