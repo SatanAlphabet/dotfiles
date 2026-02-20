@@ -9,7 +9,7 @@ MENU
 }
 
 launch_rofi() {
-  rofi -dmenu \
+  rofi -dmenu -i -no-custom \
     -theme-str 'mode-switcher { enabled: false; }' \
     -theme-str 'element-icon { enabled: false; }' \
     -theme-str 'entry { placeholder: "Main Preset Menu"; }'
