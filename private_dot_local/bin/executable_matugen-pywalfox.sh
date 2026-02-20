@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
-current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
+mode="$1"
 
-if [ "$current_theme" = "'prefer-dark'" ]; then
+case "$mode" in
+"dark")
   pywalfox dark
-elif [ "$current_theme" = "'prefer-light'" ]; then
+  ;;
+"light")
   pywalfox light
-fi
+  ;;
+*)
+  echo "$0: Invalid mode" >&2
+  exit 1
+  ;;
+esac
 
 pywalfox update
