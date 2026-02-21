@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-video="${XDG_VIDEOS_DIR:-$HOME/Videos}/$(date "+%Y-%m-%d %H-%M-%S")"
-rec_args=(-c mp4 -o "$video")
+video="${XDG_VIDEOS_DIR:-$HOME/Videos}/$(date "+%Y-%m-%d %H-%M-%S").mp4"
+rec_args=(-o "$video")
 
 if ! pgrep -f gpu-screen-recorder >/dev/null; then
   case "$1" in
