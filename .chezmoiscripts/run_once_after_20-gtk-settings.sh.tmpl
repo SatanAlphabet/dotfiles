@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+_install_confirm() {
+  local response
+  echo -n -e "$1"
+  read -r response
+
+  if [[ "$response" =~ ^[Yy]$|^$ ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+if _install_confirm "Change GTK settings? [Y/n] " -eq 0; then
+  echo -e "===>  Changing GTK settings..."
+  {{ range $key, $val := .gtk -}}
+  gsettings set org.gnome.desktop.interface {{ $key | kebabcase }} {{ $val | quote }} && echo -e "===> {{ $key }} set to {{ $val }}"
+  {{ end -}}
+fi

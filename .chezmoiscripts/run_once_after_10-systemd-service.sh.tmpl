@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+_install_confirm() {
+  local response
+  echo -n -e "$1"
+  read -r response
+
+  if [[ "$response" =~ ^[Yy]$|^$ ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+if _install_confirm "Add necessary systemd services? [Y/n] " -eq 0; then
+  echo -e "===>  Adding necessary user services..."
+  systemctl --user daemon-reload
+  {{ range .services -}}
+  systemctl --user add-wants niri.service {{ . | quote }} && echo "===>  Added {{ . -}}.service"
+  {{ end -}}
+  systemctl --user daemon-reload
+fi

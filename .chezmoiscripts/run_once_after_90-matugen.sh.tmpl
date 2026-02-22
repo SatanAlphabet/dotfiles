@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+pkg_dir="{{- .chezmoi.sourceDir -}}/assets/install"
+
+_install_confirm() {
+  local response
+  echo -n -e "$1"
+  read -r response
+
+  if [[ "$response" =~ ^[Yy]$|^$ ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+if _install_confirm "Regenerate colors with matugen? [Y/n] " -eq 0; then
+  if [ $(matugen -V | awk '{printf $2}' | cut -d. -f1) -ge 4 ]; then
+    matugen image "$pkg_dir/default-bg.png" --continue-on-error -m light --source-color-index 0
+  else
+    matugen image "$pkg_dir/default-bg.png" --continue-on-error -m light
+  fi
+fi
