@@ -8,7 +8,7 @@
 			"foreground": "{{colors.surface_variant.light.hex}}"
 		},
 		"property": {
-			"foreground": "{{colors.blue.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
+			"foreground": "{{colors.primary.light.hex | auto_lightness: 5.0 | saturate: 15.0, "hsl"}}"
 		},
 		"function": {
 			"foreground": "{{colors.green.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
@@ -17,10 +17,10 @@
 			"foreground": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
 		},
 		"number": {
-			"foreground": "{{colors.blue.light.hex}}"
+			"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, "hsl"}}"
 		},
 		"keyword": {
-			"foreground": "{{colors.cyan.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
+			"foreground": "{{colors.tertiary.light.hex | auto_lightness: 5.0 | saturate: 15.0, "hsl"}}"
 		},
 		"comment": {
 			"foreground": "{{colors.outline.light.hex}}"
@@ -36,7 +36,7 @@
 		{
 			"scope": ["keyword"],
 			"settings": {
-				"foreground": "{{colors.cyan.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
+				"foreground": "{{colors.tertiary.light.hex | auto_lightness: 5.0 | saturate: 15.0, "hsl"}}"
 			}
 		},
 		{
@@ -48,7 +48,7 @@
 		{
 			"scope": ["constant", "constant.language", "constant.numeric"],
 			"settings": {
-				"foreground": "{{colors.blue.light.hex}}"
+				"foreground": "{{colors.tertiary.light.hex | auto_lightness: 15.0 | saturate: 25.0, "hsl"}}"
 			}
 		},
 		{
@@ -66,7 +66,7 @@
 		{
 			"scope": ["entity.name.class", "support.type"],
 			"settings": {
-				"foreground": "{{colors.blue.light.hex}}"
+				"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, "hsl"}}"
 			}
 		},
 		{
@@ -78,7 +78,7 @@
 		{
 			"scope": ["markup.heading"],
 			"settings": {
-				"foreground": "{{colors.primary.light.hex}}",
+				"foreground": "{{colors.primary.light.hex | auto_lightness: 5.0 | saturate: 15.0, "hsl"}}",
 				"fontStyle": "bold"
 			}
 		},
@@ -97,7 +97,7 @@
 		{
 			"scope": ["constant.language.boolean.yaml", "constant.language.null.yaml"],
 			"settings": {
-				"foreground": "{{colors.blue.light.hex}}"
+				"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, "hsl"}}"
 			}
 		},
 		{
@@ -121,7 +121,7 @@
 		{
 			"scope": ["constant.language.boolean.toml", "constant.numeric.toml"],
 			"settings": {
-				"foreground": "{{colors.blue.light.hex}}"
+				"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, "hsl"}}"
 			}
 		},
 		{

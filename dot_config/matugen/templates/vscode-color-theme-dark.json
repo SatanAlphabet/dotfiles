@@ -8,7 +8,7 @@
 			"foreground": "{{colors.surface_variant.light.hex}}"
 		},
 		"property": {
-			"foreground": "{{colors.blue.dark.hex | auto_lightness: 8.0}}"
+			"foreground": "{{colors.primary.dark.hex | auto_lightness: 8.0}}"
 		},
 		"function": {
 			"foreground": "{{colors.green.dark.hex | auto_lightness: 8.0}}"
@@ -17,10 +17,10 @@
 			"foreground": "{{colors.yellow.dark.hex | auto_lightness: 8.0}}"
 		},
 		"number": {
-			"foreground": "{{colors.blue.dark.hex}}"
+			"foreground": "{{colors.primary.dark.hex}}"
 		},
 		"keyword": {
-			"foreground": "{{colors.cyan.dark.hex | auto_lightness: 8.0}}"
+			"foreground": "{{colors.tertiary.dark.hex | auto_lightness: 8.0}}"
 		},
 		"comment": {
 			"foreground": "{{colors.outline.light.hex}}"
@@ -36,7 +36,7 @@
 		{
 			"scope": ["keyword"],
 			"settings": {
-				"foreground": "{{colors.cyan.dark.hex | auto_lightness: 8.0}}"
+				"foreground": "{{colors.tertiary.dark.hex | auto_lightness: 8.0}}"
 			}
 		},
 		{
@@ -48,7 +48,7 @@
 		{
 			"scope": ["constant", "constant.language", "constant.numeric"],
 			"settings": {
-				"foreground": "{{colors.blue.dark.hex}}"
+				"foreground": "{{colors.primary.dark.hex}}"
 			}
 		},
 		{
@@ -66,7 +66,7 @@
 		{
 			"scope": ["entity.name.class", "support.type"],
 			"settings": {
-				"foreground": "{{colors.blue.dark.hex}}"
+				"foreground": "{{colors.primary.dark.hex}}"
 			}
 		},
 		{
@@ -97,7 +97,7 @@
 		{
 			"scope": ["constant.language.boolean.yaml", "constant.language.null.yaml"],
 			"settings": {
-				"foreground": "{{colors.blue.dark.hex}}"
+				"foreground": "{{colors.primary.dark.hex}}"
 			}
 		},
 		{
@@ -121,7 +121,7 @@
 		{
 			"scope": ["constant.language.boolean.toml", "constant.numeric.toml"],
 			"settings": {
-				"foreground": "{{colors.blue.dark.hex}}"
+				"foreground": "{{colors.primary.dark.hex}}"
 			}
 		},
 		{
