@@ -11,6 +11,7 @@ binds {
   Mod+N repeat=false hotkey-overlay-title="Notification Panel" { spawn "swaync-client" "-t" "-sw"; }
   // Mod+B repeat=false { spawn "zen-browser"; } // (Using nirius instead)
   Mod+E repeat=false hotkey-overlay-title="File Browser" { spawn "dolphin"; } 
+  Mod+Shift+N repeat=false hotkey-overlay-title="Text Editor" { spawn "kitty" "-1" "nvim"; }
   Mod+Alt+L repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
   Mod+Alt+B repeat=false hotkey-overlay-title="Toggle waybar visibility" { spawn "pkill" "-SIGUSR1" "waybar"; }
   Mod+Ctrl+P repeat=false hotkey-overlay-title="Pick color" { spawn "colorpick.sh";}
@@ -21,7 +22,6 @@ binds {
   Mod+Alt+V repeat=false hotkey-overlay-title="Calculator" { spawn "calc.sh"; }
   Mod+Alt+R repeat=false hotkey-overlay-title="Toggle screen recording" { spawn "screen-record.sh"; }
   Mod+Shift+Alt+R repeat=false hotkey-overlay-title="Toggle region recording" { spawn "screen-record.sh" "region"; }
-  Mod+Shift+N repeat=false hotkey-overlay-title="Neovim" { spawn "kitty" "-e" "nvim"; }
   // Nirius specific binds for browser & wallpaper
   Mod+B repeat=false hotkey-overlay-title="Web Browser" { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
   Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
