@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}"
-blur_img="${cache_dir}/niri/landing/blur"
+landing_cache="${cache_dir}/niri/landing"
 blur_cache="${cache_dir}/niri/overview"
+blur_img="${landing_cache}/blur"
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
 waypaper_config=${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini
 
@@ -43,7 +44,8 @@ switch_wallpaper() {
     else
       matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" -t "$scheme" >/dev/null 2>&1 &
     fi
-    ln -sf "$1" "$cache_dir/niri/landing/background"
+    [ ! -d "$landing_cache" ] && mkdir -p "$landing_cache"
+    ln -sf "$1" "$landing_cache/background"
 
     cache_img="$blur_cache"/"$(basename "$1")"
     [ ! -d "$blur_cache" ] && mkdir -p "$blur_cache"
