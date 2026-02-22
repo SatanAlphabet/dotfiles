@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+{{ range .packages.pacman }}
+packages+=({{- . | quote -}})
+{{- end }}
+
+_install_confirm() {
+  local response
+  echo -n -e "$1"
+  read -r response
+
+  if [[ "$response" =~ ^[Yy]$|^$ ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+if _install_confirm "Install base packages? [Y/n] " -eq 0; then
+  echo -e "\n===>  Installing base packages...\n"
+  {{ .chezmoi.config.data.aurHelper }} -S --needed "${packages[@]}"
+fi

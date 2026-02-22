@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+_install_confirm() {
+  local response
+  echo -n -e "$1"
+  read -r response
+
+  if [[ "$response" =~ ^[Yy]$|^$ ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+if _install_confirm "Switch shell to {{ .chezmoi.config.data.shell -}}? [Y/n] " -eq 0; then
+  echo -e "\n===>  Switching shell to zsh...\n"
+  chsh -s "$(which zsh)"
+fi

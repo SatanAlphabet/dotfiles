@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+_install_confirm() {
+  local response
+  echo -n -e "$1"
+  read -r response
+
+  if [[ "$response" =~ ^[Yy]$|^$ ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+if ! command -v {{ .chezmoi.config.data.aurHelper }} &>/dev/null; then
+  if _install_confirm "===>  {{ .chezmoi.config.data.aurHelper }} is not installed. Install {{ .chezmoi.config.data.aurHelper -}}? [Y/n] " -eq 0; then
+    echo -e "===>  Installing {{ .chezmoi.config.data.aurHelper -}}..."
+    sudo pacman -S --needed base-devel
+    git clone https://aur.archlinux.org/{{- .chezmoi.config.data.aurHelper -}}-bin.git /tmp/aur-helper
+    (
+      cd /tmp/aur-helper/ || exit 1
+      makepkg -si
+    )
+  fi
+else
+  echo -e "===>  {{ .chezmoi.config.data.aurHelper }} is installed. Skipping..."
+fi
