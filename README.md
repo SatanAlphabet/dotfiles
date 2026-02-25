@@ -1,49 +1,73 @@
-# SatanAlphabet's Dotfiles
+<div align="center"><h1>SatanAlphabet's Dotfiles</h1></div>
 
 _This setup is currently a work in progress and is subject to constant changes._
 
-A comfy setup built on [niri](https://github.com/YaLTeR/niri "A scrollable-tiling wayland compositor"), featuring coherent & dynamic theming using `matugen`, and a keyboard driven workflow that does not sacrifice on the mouse.
+A comfy setup built on [niri](https://github.com/YaLTeR/niri "A scrollable-tiling wayland compositor"), managed by [chezmoi](https://www.chezmoi.io/). Featuring
+
+- Coherent & dynamic theming using `matugen`
+- Keyboard-driven workflow that does not sacrifice on mouse-only actions
+- Modular & extensible configuration
 
 ---
 
 ## Installation
 
-- This setup is managed by `chezmoi`. Install [chezmoi](https://www.chezmoi.io/) and proceed to install the setup using the following commands
+Install [chezmoi](https://www.chezmoi.io/) and proceed to install the setup using the following commands
 
       chezmoi init SatanAlphabet
       chezmoi apply
 
-  This will additionally run a script to install necessary packages on your first time running `chezmoi apply`.  
-  **Note that the install script only supports Arch-based distros.**
+This will additionally run a script to install necessary packages on your first time running `chezmoi apply`.
+
+> [!CAUTION]
+> The install script only supports Arch-based distros.
+
+> [!IMPORTANT]
+> Zen requires changing `toolkit.legacyUserProfileCustomizations.stylesheets` in `about:config` to true for theming changes to apply.
 
 ---
 
 ## Software
 
-| Type                 | Software Used  |
-| :------------------- | :------------- |
-| Compositor           | niri           |
-| Application launcher | rofi           |
-| Notification daemon  | swaync         |
-| Lock screen          | hyprlock       |
-| Wallpaper management | waypaper       |
-| Dynamic theming      | matugen        |
-| Shell                | zsh            |
-| File picker          | Dolphin & yazi |
-| Web browser          | Zen Browser    |
+| Type                 | Software Used         |
+| :------------------- | :-------------------- |
+| Compositor           | `niri`                |
+| Status bar           | `waybar`              |
+| Launcher             | `Rofi`                |
+| Notification daemon  | `SwayNC`              |
+| Lock screen          | `Hyprlock`            |
+| Wallpaper management | `Waypaper`            |
+| Color generation     | `Matugen`             |
+| Text editor          | `Neovim` / `VSCodium` |
+| Shell                | `zsh`                 |
+| File picker          | `Dolphin` / `Yazi`    |
+| Web browser          | `Zen Browser`         |
 
 ---
 
 ## Preview
 
-![Setup Preview Image](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview.png "Desktop Preview")
+<table>
+      <th colspan=2>Desktop</th>
+      <tr>
+            <td><img src="https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview.png"/></td>
+            <td><img src="https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview-2.png"/></td>
+      </tr>
+      <tr>
+            <td><img src="https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview-3.png"/></td>
+            <td><img src="https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview-4.png"/></td>
+      </tr>
+</table>
 
-![Setup Preview Image 2](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview_2.png "Desktop Preview /w Dolphin & fastfetch")
-
-![Setup Preview Image 3](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview_3.png "Dark Mode /w several apps open")
-
-![Setup Preview Image 4](https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview_4.png "Hyprlock Preview")
+<table>
+      <th colspan=3>Hyprlock</th>
+      <tr>
+            <td><img src="https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview-hyprlock.png"/></td>
+            <td><img src="https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview-hyprlock-2.png"/></td>
+            <td><img src="https://raw.githubusercontent.com/SatanAlphabet/dotfiles/main/assets/preview-hyprlock-3.png"/></td>
+      </tr>
+</table>
 
 ---
 
-**Special thanks to [adi1090x](https://github.com/adi1090x/rofi) and [HyDE](https://github.com/HyDE-Project/HyDE) for some of the assets used in this setup.**
+_Special thanks to [adi1090x](https://github.com/adi1090x/rofi) and [HyDE](https://github.com/HyDE-Project/HyDE) for some of the assets used in this setup._
