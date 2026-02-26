@@ -1,0 +1,52 @@
+gui:
+  theme:
+    # Border color of focused window
+    activeBorderColor:
+      - "{{colors.primary.default.hex}}"
+      - bold
+
+    # Border color of non-focused windows
+    inactiveBorderColor:
+      - "{{colors.on_surface.default.hex}}"
+
+    # Border color of focused window when searching in that window
+    searchingActiveBorderColor:
+      - "{{colors.tertiary.default.hex}}"
+      - bold
+
+    # Color of keybindings help text in the bottom line
+    optionsTextColor:
+      - "{{colors.secondary.default.hex}}"
+
+    # Background color of selected line.
+    # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#highlighting-the-selected-line
+    selectedLineBgColor:
+      - "{{colors.primary_container.default.hex}}"
+
+    # Background color of selected line when view doesn't have focus.
+    inactiveViewSelectedLineBgColor:
+      - "{{colors.primary_container.default.hex}}"
+
+    # Foreground color of copied commit
+    cherryPickedCommitFgColor:
+      - "{{colors.on_secondary_container.default.hex}}"
+
+    # Background color of copied commit
+    cherryPickedCommitBgColor:
+      - "{{colors.secondary_container.default.hex}}"
+
+    # Foreground color of marked base commit (for rebase)
+    markedBaseCommitFgColor:
+      - "{{colors.on_tertiary_container.default.hex}}"
+
+    # Background color of marked base commit (for rebase)
+    markedBaseCommitBgColor:
+      - "{{colors.tertiary_container.default.hex}}"
+
+    # Color for file with unstaged changes
+    unstagedChangesColor:
+      - "{{colors.error.default.hex}}"
+
+    # Default text color
+    defaultFgColor:
+      - "{{colors.on_surface.default.hex}}"
