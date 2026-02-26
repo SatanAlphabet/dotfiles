@@ -8,6 +8,7 @@ alias c='clear' \
     .5='cd ../../../../..' \
     mkdir='mkdir -p'
 alias ff='fastfetch.sh'
+alias lg='lazygit'
 export EDITOR='nvim'
 export BAT_THEME='ansi'
 
