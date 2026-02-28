@@ -55,6 +55,8 @@ _select_from_rofi() {
     find "$src_dir" -maxdepth 1 -type f,l -name "*.jsonc" -print0 | xargs -0 -I{} basename "{}" .jsonc | sort
   )
 
+  local current_preset="$(basename "$(readlink "$config_dir/waybar/config.jsonc")" .jsonc)"
+
   if [ -n "$(pgrep rofi)" ]; then
     pkill rofi
     exit
@@ -62,6 +64,7 @@ _select_from_rofi() {
 
   selected_presets=$(
     printf "%s\n" "${files[@]}" | rofi -dmenu \
+      -mesg "<b>Current preset:</b> $current_preset" \
       -theme-str 'entry {placeholder: "Select desktop presets...";}' \
       -theme-str 'mode-switcher {enabled: false;}' \
       -theme-str 'configuration {show-icons: false;}'

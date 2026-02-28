@@ -17,6 +17,8 @@ _select_from_rofi() {
     find "$layout_path" -maxdepth 1 -type f,l -name "*.conf" -print0 | xargs -0 -I{} basename "{}" .conf | sort
   )
 
+  local current_preset="$(basename "$(readlink "$config_path/hyprlock-layout.conf")" .conf)"
+
   if [ -n "$(pgrep rofi)" ]; then
     pkill rofi
     exit
@@ -24,6 +26,7 @@ _select_from_rofi() {
 
   selected_presets=$(
     printf "%s\n" "${files[@]}" | rofi -dmenu \
+      -mesg "<b>Current preset:</b> $current_preset" \
       -theme-str 'entry {placeholder: "Select hyprlock presets...";}' \
       -theme-str 'mode-switcher {enabled: false;}' \
       -theme-str 'configuration {show-icons: false;}'

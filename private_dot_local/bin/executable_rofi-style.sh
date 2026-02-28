@@ -17,6 +17,8 @@ _select_from_rofi() {
     find "$style_path" -maxdepth 1 -type f,l -name "*.rasi" -print0 | xargs -0 -I{} basename "{}" .rasi | sort
   )
 
+  local current_preset="$(basename "$(readlink "$config_dir/current-theme.rasi")" .rasi)"
+
   if [ -n "$(pgrep rofi)" ]; then
     pkill rofi
     exit
@@ -24,6 +26,7 @@ _select_from_rofi() {
 
   selected_presets=$(
     printf "%s\n" "${files[@]}" | rofi -dmenu \
+      -mesg "<b>Current preset:</b> $current_preset" \
       -theme-str 'entry {placeholder: "Select rofi presets...";}' \
       -theme-str 'mode-switcher {enabled: false;}' \
       -theme-str 'configuration {show-icons: false;}'
