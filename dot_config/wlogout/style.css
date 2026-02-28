@@ -26,14 +26,14 @@ button {
 }
 
 button:focus {
-  color: @on-primary;
-  background-color: @primary;
+  color: @on-secondary-container;
+  background-color: @secondary-container;
   background-size: 30%;
 }
 
 button:hover {
-  color: @on-secondary;
-  background-color: @secondary;
+  color: @on-primary-container;
+  background-color: @primary-container;
   background-size: 40%;
   border-color: @secondary;
   border-radius: ${active_rad}px;

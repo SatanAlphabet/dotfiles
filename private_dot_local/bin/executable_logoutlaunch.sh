@@ -31,8 +31,8 @@ get_output() {
 #// scale config layout and style
 y_mon=$(get_output height)
 wlColms=6
-export mgn=$((y_mon / 5))
-export hvr=$((y_mon / 6))
+export mgn=$((y_mon / 4))
+export hvr=$((y_mon / 5))
 
 if [ "$(gsettings get org.gnome.desktop.interface color-scheme)" = "'prefer-dark'" ]; then
   export BtnCol="white"
