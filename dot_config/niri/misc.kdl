@@ -25,5 +25,13 @@ debug {
   honor-xdg-activation-with-invalid-serial
 }
 
+blur {
+  on
+  passes 4
+  offset 4.0
+  noise 0.05
+  saturation 1.4
+}
+
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"

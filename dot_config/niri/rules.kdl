@@ -5,6 +5,11 @@ window-rule {
   clip-to-geometry true
   draw-border-with-background false
   tiled-state true
+
+  background-effect {
+    blur true
+    xray true
+  }
 }
 
 window-rule {
@@ -135,5 +140,15 @@ layer-rule {
     spread 0
     offset x=0 y=2
     color "#000"
+  }
+}
+
+layer-rule {
+  match namespace="^logout_dialog$"
+  background-effect {
+    blur true
+    xray false
+    saturation 1.2
+    noise 0.05
   }
 }
