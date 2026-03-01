@@ -7,7 +7,7 @@ gui:
 
     # Border color of non-focused windows
     inactiveBorderColor:
-      - "{{colors.on_surface.default.hex}}"
+      - "{{colors.outline.default.hex}}"
 
     # Border color of focused window when searching in that window
     searchingActiveBorderColor:
