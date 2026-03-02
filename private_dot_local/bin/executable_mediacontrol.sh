@@ -25,7 +25,7 @@ USAGE
 }
 
 send_playing_notif() {
-  notify-send -e -r 1 -t 2000 "Paused media..." "$(playerctl metadata title)" -h int:value:"$(media_progress)" -i media-playback-pause
+  notify-send -e -r 1 -t 2000 "Paused media..." "<i>$(playerctl metadata title)</i>" -h int:value:"$(media_progress)" -i media-playback-pause
 }
 
 send_paused_notif() {

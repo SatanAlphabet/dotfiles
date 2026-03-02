@@ -3,9 +3,9 @@
 ORANGE='\033[0;33m'
 NC='\033[0m' # No Color
 
-pkg_text=" - System packages updated."
-flatpak_text=" - Flatpak packages updated."
-post_upd_text=" - Post-update checks completed."
+pkg_text="- System packages updated."
+flatpak_text="- Flatpak packages updated."
+post_upd_text="- Post-update checks completed."
 
 upd_command="pacman" # Fallback when no alternative package managers are detected
 
@@ -49,21 +49,21 @@ _uodate_system() {
 
   if ! $upd_command "${upd_args[@]}"; then
     failed_update=true
-    pkg_text=" [!] Failed to update system packages."
+    pkg_text="<b>[!] Failed to update system packages.</b>"
   fi
 
   echo -e "\n${ORANGE}===>${NC}  Checking for flatpak updates...\n"
 
   if ! flatpak update "${flatpak_args[@]}"; then
     failed_update=true
-    flatpak_text=" [!] Failed to update flatpak packages."
+    flatpak_text="<b>[!] Failed to update flatpak packages.</b>"
   fi
 
   echo -e "\n${ORANGE}===>${NC}  Running post-installation checks...\n"
 
   if ! sudo checkservices "${post_upd_args[@]}"; then
     failed_update=true
-    post_upd_text=" [!] Failed to run post-service checks."
+    post_upd_text="<b>[!] Failed to run post-service checks.</b>"
   fi
 
   notif_msg="$pkg_text\n$flatpak_text\n$post_upd_text"
