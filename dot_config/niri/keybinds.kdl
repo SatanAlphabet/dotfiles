@@ -24,7 +24,7 @@ binds {
   Mod+Shift+Alt+R repeat=false hotkey-overlay-title="Toggle region recording" { spawn "screen-record.sh" "region"; }
   // Nirius specific binds for browser & wallpaper
   Mod+B repeat=false hotkey-overlay-title="Web Browser" { spawn "nirius" "focus-or-spawn" "-a" "zen" "zen-browser"; }
-  Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "nirius" "focus-or-spawn" "-a" "waypaper" "waypaper"; }
+  Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "nirius" "move-to-current-workspace-or-spawn" "-f" "--include-current-workspace" "-a" "waypaper" "waypaper"; }
 
   XF86AudioRaiseVolume allow-when-locked=true { spawn "volumecontrol.sh" "set-sink-volume" "@DEFAULT_SINK@" "+2%"; }
   XF86AudioLowerVolume allow-when-locked=true { spawn "volumecontrol.sh" "set-sink-volume" "@DEFAULT_SINK@" "-2%"; }
