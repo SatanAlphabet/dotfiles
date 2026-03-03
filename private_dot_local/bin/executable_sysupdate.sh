@@ -3,9 +3,9 @@
 ORANGE='\033[0;33m'
 NC='\033[0m' # No Color
 
-pkg_text="- System packages updated."
-flatpak_text="- Flatpak packages updated."
-post_upd_text="- Post-update checks completed."
+pkg_text=" - System packages updated."
+flatpak_text=" - Flatpak packages updated."
+post_upd_text=" - Post-update checks completed."
 
 upd_command="pacman" # Fallback when no alternative package managers are detected
 
