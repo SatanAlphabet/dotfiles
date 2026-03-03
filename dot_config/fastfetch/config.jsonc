@@ -10,13 +10,13 @@
 	},
 	"display": {
 		"separator": "",
-		"constants": ["-─-─-─-─-─-", "-─-─-─-─-─-─-─-─-─-─-─-─-─-─-─-", "│"],
+		"constants": ["-─-─-─-─-─-─-", "-─-─-─-─-─-─-─-─-─-─-─-─-─-─-─-", "│"],
 	},
 	"modules": [
 		"break",
 		{
 			"type": "custom",
-			"format": "┌{$2}",
+			"format": "╭{$2}",
 		},
 		{
 			"key": "{#default}{$3} ",
@@ -28,8 +28,9 @@
 			"format": "├{$1}",
 		},
 		{
-			"type": "custom",
-			"format": "{$3}",
+			"type": "chassis",
+			"key": "{#default}{$3} {#red}Chassis : ",
+			"format": "{type} {vendor} {version}",
 		},
 		{
 			"type": "os",
@@ -48,19 +49,22 @@
 		{
 			"type": "cpu",
 			"key": "{#default}{$3} {#green}CPU : ",
-			"format": "{name} & {freq-max}",
+			"format": "{name} @ {freq-max}",
+		},
+		{
+			"type": "display",
+			"key": "{#default}{$3} {#green}Display : ",
+			"format": "{width}x{height} @ {3}Hz [{type}]",
 		},
 		{
 			"type": "custom",
-			"format": "{$3}",
+			"format": "├{$1}<  >{$1}",
 		},
 		{
-			"type": "custom",
-			"format": "├{$1}─-<  >-─{$1}",
-		},
-		{
-			"type": "custom",
-			"format": "{$3}",
+			"type": "disk",
+			"key": "{#default}{$3} {#cyan}Disk : ",
+			"folders": "/",
+			"format": "{size-used} / {size-total} ({size-percentage})",
 		},
 		{
 			"type": "memory",
@@ -81,8 +85,10 @@
 			"key": "{#default}{$3} {#magenta}Uptime : ",
 		},
 		{
-			"type": "custom",
-			"format": "{$3}",
+			"type": "disk",
+			"key": "{#default}{$3} {#magenta}OS Age :",
+			"folders": "/",
+			"format": "{days} days",
 		},
 		{
 			"type": "custom",
@@ -90,12 +96,12 @@
 		},
 		{
 			"key": "{#default}{$3} ",
-			"type": "colors",
-			"symbol": "circle",
+			"type": "custom",
+			"format": "{#default} {#white} {#cyan} {#magenta} {#blue} {#yellow} {#green} {#red}",
 		},
 		{
 			"type": "custom",
-			"format": "└{$2}",
+			"format": "╰{$2}",
 		},
 	],
 }
