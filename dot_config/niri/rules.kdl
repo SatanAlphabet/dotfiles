@@ -84,7 +84,7 @@ window-rule {
   match title="^gsr notify$"
 
   open-floating true
-  default-floating-position x=0 y=16 relative-to="top"
+  default-floating-position x=0 y=8 relative-to="top"
   default-window-height { proportion 0.5; }
   default-column-width { proportion 0.5; }
 }
