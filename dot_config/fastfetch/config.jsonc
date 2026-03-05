@@ -86,7 +86,7 @@
 		},
 		{
 			"type": "disk",
-			"key": "{#default}{$3} {#magenta}OS Age :",
+			"key": "{#default}{$3} {#magenta}OS Age : ",
 			"folders": "/",
 			"format": "{days} days",
 		},
