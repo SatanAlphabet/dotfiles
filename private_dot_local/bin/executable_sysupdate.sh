@@ -88,7 +88,7 @@ while true; do
     shift
     ;;
   *)
-    fastfetch.sh 2>/dev/null || fastfetch
+    fastfetch
     [ -z "$SKIP_PROMPT" ] && _confirm_prompt
     _uodate_system
     break
