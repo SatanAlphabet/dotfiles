@@ -13,11 +13,6 @@ window-rule {
 }
 
 window-rule {
-  match title="MainPicker"
-  match app-id=r#"^[Xx]dg-desktop-portal-gtk$"#
-  match app-id=r#"^org\.freedesktop\.impl\.portal\.desktop.*$#"
-  match app-id=r#"^org\.kde\.polkit-kde-authentication-agent-1$"#
-  match app-id=r#"^\.*dialog\.*$"#
   match app-id=r#"nm-applet"#
   match app-id=r#"pavucontrol"#
   match app-id=r#"blueman-manager"#
