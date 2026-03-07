@@ -8,19 +8,19 @@
 			"foreground": "{{colors.surface_variant.light.hex}}"
 		},
 		"property": {
-			"foreground": "{{colors.primary.light.hex | auto_lightness: 5.0 | saturate: 15.0, "hsl"}}"
+			"foreground": "{{colors.primary.light.hex | auto_lightness: 5.0 | saturate: 15.0, hsl}}"
 		},
 		"function": {
-			"foreground": "{{colors.green.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
+			"foreground": "{{colors.green.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}"
 		},
 		"string": {
-			"foreground": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
+			"foreground": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}"
 		},
 		"number": {
-			"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, "hsl"}}"
+			"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, hsl}}"
 		},
 		"keyword": {
-			"foreground": "{{colors.tertiary.light.hex | auto_lightness: 5.0 | saturate: 15.0, "hsl"}}"
+			"foreground": "{{colors.tertiary.light.hex | auto_lightness: 5.0 | saturate: 15.0, hsl}}"
 		},
 		"comment": {
 			"foreground": "{{colors.outline.light.hex}}"
@@ -36,19 +36,19 @@
 		{
 			"scope": ["keyword"],
 			"settings": {
-				"foreground": "{{colors.tertiary.light.hex | auto_lightness: 5.0 | saturate: 15.0, "hsl"}}"
+				"foreground": "{{colors.tertiary.light.hex | auto_lightness: 5.0 | saturate: 15.0, hsl}}"
 			}
 		},
 		{
 			"scope": ["string"],
 			"settings": {
-				"foreground": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
+				"foreground": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}"
 			}
 		},
 		{
 			"scope": ["constant", "constant.language", "constant.numeric"],
 			"settings": {
-				"foreground": "{{colors.tertiary.light.hex | auto_lightness: 15.0 | saturate: 25.0, "hsl"}}"
+				"foreground": "{{colors.tertiary.light.hex | auto_lightness: 15.0 | saturate: 25.0, hsl}}"
 			}
 		},
 		{
@@ -60,13 +60,13 @@
 		{
 			"scope": ["entity.name.function"],
 			"settings": {
-				"foreground": "{{colors.green.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
+				"foreground": "{{colors.green.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}"
 			}
 		},
 		{
 			"scope": ["entity.name.class", "support.type"],
 			"settings": {
-				"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, "hsl"}}"
+				"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, hsl}}"
 			}
 		},
 		{
@@ -78,7 +78,7 @@
 		{
 			"scope": ["markup.heading"],
 			"settings": {
-				"foreground": "{{colors.primary.light.hex | auto_lightness: 5.0 | saturate: 15.0, "hsl"}}",
+				"foreground": "{{colors.primary.light.hex | auto_lightness: 5.0 | saturate: 15.0, hsl}}",
 				"fontStyle": "bold"
 			}
 		},
@@ -91,13 +91,13 @@
 		{
 			"scope": ["source.yaml string.unquoted", "source.yaml string.quoted"],
 			"settings": {
-				"foreground": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
+				"foreground": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}"
 			}
 		},
 		{
 			"scope": ["constant.language.boolean.yaml", "constant.language.null.yaml"],
 			"settings": {
-				"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, "hsl"}}"
+				"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, hsl}}"
 			}
 		},
 		{
@@ -115,13 +115,13 @@
 		{
 			"scope": ["string.quoted.single.basic.line.toml", "string.quoted.double.basic.line.toml"],
 			"settings": {
-				"foreground": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}"
+				"foreground": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}"
 			}
 		},
 		{
 			"scope": ["constant.language.boolean.toml", "constant.numeric.toml"],
 			"settings": {
-				"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, "hsl"}}"
+				"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, hsl}}"
 			}
 		},
 		{
@@ -324,20 +324,20 @@
 		"terminal.background": "{{colors.background.light.hex}}",
 		"terminal.foreground": "{{colors.on_background.light.hex}}",
 		"terminal.ansiBlack": "{{colors.surface.dark.hex}}",
-		"terminal.ansiRed": "{{colors.red.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}",
-		"terminal.ansiGreen": "{{colors.green.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}",
-		"terminal.ansiYellow": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}",
-		"terminal.ansiBlue": "{{colors.blue.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}",
-		"terminal.ansiMagenta": "{{colors.magenta.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}",
-		"terminal.ansiCyan": "{{colors.cyan.light.hex | auto_lightness: 5.0 | saturate: 25.0, "hsl"}}",
+		"terminal.ansiRed": "{{colors.red.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiGreen": "{{colors.green.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiYellow": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiBlue": "{{colors.blue.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiMagenta": "{{colors.magenta.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiCyan": "{{colors.cyan.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
 		"terminal.ansiWhite": "{{colors.surface_variant.light.hex}}",
 		"terminal.ansiBrightBlack": "{{colors.outline.light.hex}}",
-		"terminal.ansiBrightRed": "{{colors.red.light.hex | auto_lightness: 20.0 | saturate: 25.0, "hsl"}}",
-		"terminal.ansiBrightGreen": "{{colors.green.light.hex | auto_lightness: 20.0 | saturate: 25.0, "hsl"}}",
-		"terminal.ansiBrightYellow": "{{colors.yellow.light.hex | auto_lightness: 20.0 | saturate: 25.0, "hsl"}}",
-		"terminal.ansiBrightBlue": "{{colors.blue.light.hex | auto_lightness: 20.0 | saturate: 25.0, "hsl"}}",
-		"terminal.ansiBrightMagenta": "{{colors.magenta.light.hex | auto_lightness: 20.0 | saturate: 25.0, "hsl"}}",
-		"terminal.ansiBrightCyan": "{{colors.cyan.light.hex | auto_lightness: 20.0 | saturate: 25.0, "hsl"}}",
+		"terminal.ansiBrightRed": "{{colors.red.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiBrightGreen": "{{colors.green.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiBrightYellow": "{{colors.yellow.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiBrightBlue": "{{colors.blue.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiBrightMagenta": "{{colors.magenta.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiBrightCyan": "{{colors.cyan.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
 		"terminal.ansiBrightWhite": "{{colors.surface.light.hex}}",
 		"terminalCursor.background": "{{colors.background.light.hex}}",
 		"terminalCursor.foreground": "{{colors.primary.light.hex}}",
