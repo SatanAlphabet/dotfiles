@@ -47,9 +47,10 @@ switch_wallpaper() {
     [ ! -d "$landing_cache" ] && mkdir -p "$landing_cache"
     ln -sf "$1" "$landing_cache/background"
 
-    cache_img="$blur_cache"/"$(basename "$1")"
+    img_checksum="$(sha256sum "$1" | awk '{print $1}')"
+    cache_img="${blur_cache}"/"${img_checksum}"
     [ ! -d "$blur_cache" ] && mkdir -p "$blur_cache"
-    if [[ ! -e "$cache_img" || "$(basename "$cache_img")" != "$(basename "$1")" ]]; then
+    if [[ ! -e "$cache_img" || "$(basename "$cache_img")" != "$img_checksum" ]]; then
       magick "$1" -blur 30x10 -brightness-contrast -10 "$cache_img"
     fi
     ln -sf "$cache_img" "$blur_img"
