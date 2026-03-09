@@ -1,0 +1,150 @@
+* {
+	font-family: "Inter Variable, CaskaydiaCove Nerd Font Propo";
+	font-size: 16px;
+}
+
+window#waybar.main-bar {
+	box-shadow: none;
+	text-shadow: none;
+	background: @surface;
+	color: @on-surface;
+	border: 2px solid @on-primary-fixed-variant;
+	border-radius: 16px;
+}
+
+window#waybar.main-bar #privacy,
+window#waybar.main-bar .module {
+	margin: 6px 0px;
+	padding: 2px 4px;
+	border-radius: 4px;
+	transition: 100ms;
+}
+
+window#waybar.main-bar #privacy:hover,
+window#waybar.main-bar .module:hover {
+	background: @surface-variant;
+}
+
+window#waybar.main-bar #workspaces:hover,
+window#waybar.main-bar #clock:hover {
+	background: inherit;
+}
+
+tooltip {
+	background: @surface;
+	border: 1px solid @on-primary-fixed-variant;
+	border-radius: 4px;
+}
+
+tooltip label {
+	font-size: 11px;
+	font-family: "CaskaydiaCove Nerd Font Propo";
+	color: @on-surface;
+}
+
+menu {
+	background: @surface;
+	color: @on-surface;
+	border: 1px solid @on-primary-fixed-variant;
+	border-radius: 4px;
+}
+
+menuitem {
+	color: @on-surface;
+	border-radius: 4px;
+}
+
+menuitem arrow {
+	color: @outline;
+}
+
+menuitem label {
+	font-size: 12px;
+	font-family: "Inter Variable";
+}
+
+menuitem:hover {
+	background: @surface-container-high;
+}
+
+menuitem:hover arrow {
+	color: @primary;
+}
+
+window#waybar.main-bar .modules-left {
+	margin-left: 12px;
+}
+
+window#waybar.main-bar .modules-right {
+	margin-right: 12px;
+}
+
+.warning {
+	color: @yellow;
+}
+
+.critical {
+	color: @error;
+}
+
+window#waybar.main-bar .recording,
+window#waybar.main-bar .recording:hover {
+	background: @error-container;
+	color: @on-error-container;
+}
+
+.muted,
+.paused,
+.disabled,
+.disconnected,
+.off {
+	color: @outline;
+}
+
+window#waybar.main-bar #workspaces {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#workspaces button {
+	text-shadow: none;
+	box-shadow: none;
+	min-width: 0px;
+	min-height: 0px;
+	padding: 0px 3px;
+	margin: 12px 2px;
+	color: transparent;
+	background: @secondary;
+	border-radius: 8px;
+	transition: none;
+}
+
+#workspaces button label {
+	font-size: 0px;
+}
+
+#workspaces button.empty {
+	opacity: 0.5;
+}
+
+#workspaces button.active {
+	margin: 11px 2px;
+	padding: 0px 15px;
+	background: @primary;
+	color: @on-primary;
+	opacity: 1;
+}
+
+#workspaces button:hover {
+	background: @primary;
+	border-color: @primary;
+}
+
+#workspaces button.active:hover {
+	background: @tertiary;
+}
+
+window#waybar.main-bar #custom-swaync.cc-open {
+	background: @primary-container;
+	color: @on-primary-container;
+}

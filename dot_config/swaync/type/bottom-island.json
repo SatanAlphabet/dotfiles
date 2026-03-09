@@ -1,0 +1,27 @@
+{
+	"$schema": "/etc/xdg/swaync/configSchema.json",
+	"positionX": "center",
+	"positionY": "bottom",
+	"control-center-width": 390,
+	"control-center-height": 600,
+	"control-center-margin-bottom": 8,
+	"control-center-layer": "overlay",
+	"fit-to-screen": false,
+	"notification-window-width": 400,
+	"notification-window-height": 400,
+	"notification-2fa-action": false,
+	"layer": "overlay",
+	"timeout": 10,
+	"timeout-low": 5,
+	"timeout-critical": 0,
+	"notification-body-image-height": 200,
+	"notification-body-image-width": 200,
+	"cssPriority": "user",
+	"widgets": ["dnd", "mpris", "notifications"],
+	"widget-config": {
+		"mpris": {
+			"autohide": true,
+			"blacklist": ["playerctld"]
+		}
+	}
+}
