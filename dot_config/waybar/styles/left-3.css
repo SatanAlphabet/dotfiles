@@ -10,8 +10,8 @@ window#waybar {
 	color: @on-surface;
 }
 
-window#waybar.main #privacy,
-window#waybar.main .module {
+window#waybar.main-bar #privacy,
+window#waybar.main-bar .module {
 	background: @surface-container-high;
 	margin: 0px 8px;
 	padding: 4px 0px;
@@ -19,30 +19,30 @@ window#waybar.main .module {
 	transition: 100ms;
 }
 
-window#waybar.main #pill {
+window#waybar.main-bar #pill {
 	background: @surface-container-high;
 	margin: 0px 8px;
 	border-radius: 4px;
 	transition: 100ms;
 }
 
-window#waybar.main #privacy:hover,
-window#waybar.main #pill:hover,
-window#waybar.main .module:hover {
+window#waybar.main-bar #privacy:hover,
+window#waybar.main-bar #pill:hover,
+window#waybar.main-bar .module:hover {
 	box-shadow: 0px 0px 0px 0.5px @primary inset;
 	background: @surface-variant;
 }
 
-window#waybar.main #language:hover,
-window#waybar.main #taskbar:hover,
-window#waybar.main #clock:hover,
-window#waybar.main #custom-launcher:hover,
-window#waybar.main #pill .module:hover,
-window#waybar.main #workspaces:hover {
+window#waybar.main-bar #language:hover,
+window#waybar.main-bar #taskbar:hover,
+window#waybar.main-bar #clock:hover,
+window#waybar.main-bar #custom-launcher:hover,
+window#waybar.main-bar #pill .module:hover,
+window#waybar.main-bar #workspaces:hover {
 	box-shadow: inherit;
 }
 
-window#waybar.main #workspaces:hover {
+window#waybar.main-bar #workspaces:hover {
 	background: @surface-container-high;
 }
 
@@ -86,37 +86,37 @@ menuitem:hover arrow {
 	color: @primary;
 }
 
-window#waybar.main .modules-left {
+window#waybar.main-bar .modules-left {
 	margin-top: 10px;
 }
 
-window#waybar.main .modules-right {
+window#waybar.main-bar .modules-right {
 	margin-bottom: 10px;
 }
 
-window#waybar.main #pill .alt {
+window#waybar.main-bar #pill .alt {
 	font-size: 11px;
 	font-family: "Inter Variable";
 	font-feature-settings: "tnum";
 }
 
-window#waybar.main .modules-left #pill .alt {
+window#waybar.main-bar .modules-left #pill .alt {
 	margin-bottom: 1px;
 	margin-top: -2px;
 }
 
-window#waybar.main .modules-right #pill .alt {
+window#waybar.main-bar .modules-right #pill .alt {
 	margin-top: 1px;
 	margin-bottom: -2px;
 }
 
-window#waybar.main #custom-launcher {
+window#waybar.main-bar #custom-launcher {
 	font-size: 20px;
 	background: transparent;
 	color: @primary;
 }
 
-window#waybar.main #custom-launcher:hover {
+window#waybar.main-bar #custom-launcher:hover {
 	color: @secondary;
 }
 
@@ -128,8 +128,8 @@ window#waybar.main #custom-launcher:hover {
 	color: @error;
 }
 
-window#waybar.main .recording,
-window#waybar.main .recording:hover {
+window#waybar.main-bar .recording,
+window#waybar.main-bar .recording:hover {
 	background: @error;
 	color: @on-error;
 }
@@ -142,7 +142,7 @@ window#waybar.main .recording:hover {
 	color: @outline;
 }
 
-window#waybar.main #custom-seperator-vertical {
+window#waybar.main-bar #custom-seperator-vertical {
 	font-size: 13px;
 	margin: -8px 0px;
 	opacity: 0.3;
@@ -196,7 +196,7 @@ window#waybar.main #custom-seperator-vertical {
 	background: @secondary;
 }
 
-window#waybar.main #taskbar {
+window#waybar.main-bar #taskbar {
 	background: transparent;
 	margin: 0px 6px;
 }
@@ -220,7 +220,7 @@ window#waybar.main #taskbar {
 	box-shadow: 0px 0px 0px 0.5px @primary inset;
 }
 
-window#waybar.main #clock {
+window#waybar.main-bar #clock {
 	background: transparent;
 	color: @primary;
 	font-size: 16px;
@@ -229,22 +229,22 @@ window#waybar.main #clock {
 	font-weight: 400;
 }
 
-window#waybar.main #clock:hover {
+window#waybar.main-bar #clock:hover {
 	font-weight: 600;
 }
 
-window#waybar.main #privacy,
-window#waybar.main #tray {
+window#waybar.main-bar #privacy,
+window#waybar.main-bar #tray {
 	padding-top: 6px;
 	padding-bottom: 6px;
 }
 
-window#waybar.main #custom-swaync.cc-open {
+window#waybar.main-bar #custom-swaync.cc-open {
 	background: @primary;
 	color: @on-primary;
 }
 
-window#waybar.main #language {
+window#waybar.main-bar #language {
 	color: @secondary;
 	font-size: 15px;
 	font-weight: 600;
@@ -252,7 +252,7 @@ window#waybar.main #language {
 }
 
 /* Adjust margin & padding for modules in pills */
-window#waybar.main #pill .module {
+window#waybar.main-bar #pill .module {
 	background: transparent;
 	padding-left: 0px;
 	padding-right: 0px;

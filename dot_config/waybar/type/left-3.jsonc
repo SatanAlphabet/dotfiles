@@ -1,13 +1,12 @@
 [
 	{
-		"name": "main",
+		"name": "main-bar",
 		"layer": "top",
 		"position": "left",
 		"spacing": 4,
 		"width": 42,
 		"exclusive": true,
 		"passthrough": false,
-		"gtk-layer-shell": true,
 		"reload_style_on_change": true,
 		"include": ["~/.config/waybar/includes/modules.jsonc"],
 		"modules-left": [
