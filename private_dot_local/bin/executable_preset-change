@@ -29,8 +29,8 @@ _change_preset() {
 
   # Rofi checks
   if [[ ! -f "$config_dir/rofi/styles/menu/$new_preset.rasi" ]]; then
-    err "Error: Rofi menu preset not found."
-    PRESET_ERROR=true
+    echo -e "WARNING: Rofi menu preset not found. Loading default rofi theme."
+    USE_DEFAULT_ROFI=true
   fi
 
   if [ $PRESET_ERROR ]; then
@@ -41,7 +41,11 @@ _change_preset() {
   ln -sf "$config_dir/waybar/styles/$new_preset.css" "$config_dir/waybar/main-preset.css"
   ln -sf "$config_dir/swaync/type/$new_preset.json" "$config_dir/swaync/config.json"
   ln -sf "$config_dir/swaync/styles/$new_preset.css" "$config_dir/swaync/style.css"
-  ln -sf "$config_dir/rofi/styles/menu/$new_preset.rasi" "$config_dir/rofi/menu.rasi"
+  if [ "$USE_DEFAULT_ROFI" ]; then
+    ln -sf "$config_dir/rofi/config.rasi" "$config_dir/rofi/menu.rasi"
+  else
+    ln -sf "$config_dir/rofi/styles/menu/$new_preset.rasi" "$config_dir/rofi/menu.rasi"
+  fi
 
   # Reloads necessary software
   test "$(systemctl --user is-active waybar)" = "active" && systemctl --user restart waybar
@@ -55,7 +59,8 @@ _select_from_rofi() {
     find "$src_dir" -maxdepth 1 -type f,l -name "*.jsonc" -print0 | xargs -0 -I{} basename "{}" .jsonc | sort
   )
 
-  local current_preset="$(basename "$(readlink "$config_dir/waybar/config.jsonc")" .jsonc)"
+  local current_preset
+  current_preset="$(basename "$(readlink "$config_dir/waybar/config.jsonc")" .jsonc)"
 
   if [ -n "$(pgrep rofi)" ]; then
     pkill rofi
