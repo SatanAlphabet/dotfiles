@@ -201,16 +201,11 @@ window#waybar.main-bar #clock {
 	font-family: "Inter Variable";
 	font-feature-settings: "tnum";
 	padding: 0px;
-}
-
-window#waybar.main-bar #clock.time {
 	font-weight: 300;
-	color: @on-surface;
 }
 
-window#waybar.main-bar #clock.date {
+window#waybar.main-bar #clock.alt {
 	color: @primary;
-	font-weight: 300;
 }
 
 window#waybar.main-bar #privacy,

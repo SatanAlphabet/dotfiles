@@ -10,7 +10,7 @@
 		"reload_style_on_change": true,
 		"include": ["~/.config/waybar/includes/modules.jsonc"],
 		"modules-left": ["custom/launcher", "niri/workspaces"],
-		"modules-center": ["clock#time", "custom/seperator-vertical", "clock#date"],
+		"modules-center": ["clock", "custom/seperator-vertical", "clock#alt"],
 		"modules-right": [
 			"custom/screen-recorder",
 			"mpris",
@@ -144,12 +144,12 @@
 				"chat": "",
 			},
 		},
-		"clock#time": {
+		"clock": {
 			"justify": "center",
 			"format": "{:%H\n%M}",
 			"tooltip-format": "<span>{calendar}</span>",
 		},
-		"clock#date": {
+		"clock#alt": {
 			"justify": "center",
 			"format": "{:%m\n%d}",
 			"tooltip-format": "<span>{calendar}</span>",
