@@ -3,7 +3,11 @@
 ORANGE='\033[0;33m'
 NC='\033[0m' # No Color
 
-{{- range .packages.aur }}
+{{ range .packages.arch.pacman }}
+packages+=({{- . | quote -}})
+{{- end }}
+
+{{ range .packages.arch.aur }}
 aur_packages+=({{- . | quote -}})
 {{- end }}
 
@@ -18,6 +22,11 @@ _install_confirm() {
     return 1
   fi
 }
+
+if _install_confirm "Install base packages? [Y/n] " -eq 0; then
+  echo -e "\n===>  Installing base packages...\n"
+  {{ .chezmoi.config.data.aurHelper }} -S --needed "${packages[@]}" || echo -e "\n${ORANGE}WARNING${NC}: Package installation failed or cancelled by user.\n"
+fi
 
 if _install_confirm "Install AUR packages? [Y/n] " -eq 0; then
   echo -e "\n===>  Installing AUR packages...\n"

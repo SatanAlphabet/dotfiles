@@ -1,4 +1,4 @@
-[packages]
+[packages.arch]
 pacman = [
   "accountsservice",
   "adw-gtk-theme",
