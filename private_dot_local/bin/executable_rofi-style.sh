@@ -4,7 +4,10 @@ config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/rofi"
 style_path="$config_dir/styles"
 
 _change_rofi_style() {
-  if [[ ! -f "$style_path/$1.rasi" ]]; then
+  if [ ! "$1" ]; then
+    echo "No theme selected."
+    exit 1
+  elif [[ ! -f "$style_path/$1.rasi" ]]; then
     echo -e "Error: Rofi theme not found." >&2
     exit 1
   fi
@@ -17,7 +20,8 @@ _select_from_rofi() {
     find "$style_path" -maxdepth 1 -type f,l -name "*.rasi" -print0 | xargs -0 -I{} basename "{}" .rasi | sort
   )
 
-  local current_preset="$(basename "$(readlink "$config_dir/current-theme.rasi")" .rasi)"
+  local current_preset
+  current_preset="$(basename "$(readlink "$config_dir/current-theme.rasi")" .rasi)"
 
   if [ -n "$(pgrep rofi)" ]; then
     pkill rofi

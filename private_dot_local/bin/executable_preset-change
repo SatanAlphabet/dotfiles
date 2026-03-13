@@ -8,9 +8,12 @@ err() {
 }
 
 _change_preset() {
-  local new_preset="$1"
   local PRESET_ERROR
-  if [[ $# -ne 1 ]]; then
+  local new_preset="$1"
+  if [ ! "$new_preset" ]; then
+    echo "No preset selected."
+    exit 1
+  elif [[ $# -ne 1 ]]; then
     err "Error: Invalid number of arguments. (1 required, $# provided)"
     exit 1
   fi

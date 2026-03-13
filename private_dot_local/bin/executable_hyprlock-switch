@@ -4,7 +4,10 @@ config_path="${XDG_CONFIG_HOME:-$HOME/.config}/hypr"
 layout_path="$config_path/hyprlock"
 
 _change_hyprlock() {
-  if [ ! -f "$layout_path/$1.conf" ]; then
+  if [ ! "$1" ]; then
+    echo "No preset selected."
+    exit 1
+  elif [ ! -f "$layout_path/$1.conf" ]; then
     echo "Error: \"$layout_path/$1.conf\" not found." >&2
     return 1
   fi
