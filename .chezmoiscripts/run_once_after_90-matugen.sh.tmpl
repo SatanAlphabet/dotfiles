@@ -14,6 +14,7 @@ _install_confirm() {
   fi
 }
 if _install_confirm "Regenerate colors with matugen? [Y/n] " -eq 0; then
+  export PATH="$HOME/.local/bin:$PATH"
   if [ $(matugen -V | awk '{printf $2}' | cut -d. -f1) -ge 4 ]; then
     matugen image "$pkg_dir/default-bg.png" --continue-on-error -m light --source-color-index 0
   else
