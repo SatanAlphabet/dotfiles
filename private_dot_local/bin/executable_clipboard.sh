@@ -94,7 +94,7 @@ run_rofi() {
     rofi_args+=(-theme "$CLIPHIST_THEME")
   fi
 
-  pkill rofi || rofi -dmenu "${rofi_args[@]}" "$@"
+  pkill -x rofi || rofi -dmenu "${rofi_args[@]}" "$@"
   local exit_code=$?
   echo $exit_code >&2
   if [ $exit_code -ne 0 ]; then

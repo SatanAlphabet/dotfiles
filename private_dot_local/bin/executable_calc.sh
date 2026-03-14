@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ -n $(pgrep -x rofi) ]]; then
-  pkill rofi
+  pkill -x rofi
 else
   rofi -modi calc -show calc -no-show-match -no-sort \
     -theme-str "entry { placeholder: \"Calculate...\"; }" \

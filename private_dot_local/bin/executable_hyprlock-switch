@@ -20,10 +20,11 @@ _select_from_rofi() {
     find "$layout_path" -maxdepth 1 -type f,l -name "*.conf" -print0 | xargs -0 -I{} basename "{}" .conf | sort
   )
 
-  local current_preset="$(basename "$(readlink "$config_path/hyprlock-layout.conf")" .conf)"
+  local current_preset
+  current_preset="$(basename "$(readlink "$config_path/hyprlock-layout.conf")" .conf)"
 
   if [ -n "$(pgrep rofi)" ]; then
-    pkill rofi
+    pkill -x rofi
     exit
   fi
 

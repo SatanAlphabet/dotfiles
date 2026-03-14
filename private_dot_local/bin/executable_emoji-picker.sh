@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ -n "$(pgrep -x rofi)" ]]; then
-  pkill rofi
+  pkill -x rofi
   exit 0
 else
   rofi -modi emoji -show emoji \

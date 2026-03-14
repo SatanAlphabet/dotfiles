@@ -8,7 +8,7 @@ glyph_data="${glyph_dir}/glyph.db"
 cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/niri"
 recent_data="${cache_dir}/landing/show_glyph.recent"
 
-# checks if a glyph is valid, functionally identical logic to #344
+# checks if a glyph is valid
 is_valid_glyph() {
   local glyph="$1"
 
@@ -29,7 +29,7 @@ save_recent() {
 # rofi menu, get selection
 get_glyph_selection() {
   if [[ -n "$(pgrep -x rofi)" ]]; then
-    pkill rofi
+    pkill -x rofi
   else
     echo "${unique_entries}" | rofi -dmenu -multi-select -i \
       -theme-str "entry { placeholder: \" 🔣 Glyph\";} configuration { show-icons: false; }" \
@@ -42,7 +42,6 @@ main() {
   # create recent data file if it doesn't exist
   if [[ ! -f "${recent_data}" ]]; then
     mkdir -p "$(dirname "${recent_data}")"
-    echo -e " \tArch linux - I use Arch, BTW" >"${recent_data}"
   fi
 
   # read recent and main entries

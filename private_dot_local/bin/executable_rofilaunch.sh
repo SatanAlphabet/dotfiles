@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pkill rofi || rofi "$@" -show
+pkill -x rofi || rofi "$@" -show

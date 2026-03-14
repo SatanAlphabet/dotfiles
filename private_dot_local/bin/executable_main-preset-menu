@@ -15,7 +15,7 @@ launch_rofi() {
     -theme-str 'entry { placeholder: "Main Preset Menu"; }'
 }
 
-pkill rofi && exit 0
+pkill -x rofi && exit 0
 
 case "$(menu_options | launch_rofi)" in
 "󰍹   Desktop Presets")
