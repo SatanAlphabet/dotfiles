@@ -488,8 +488,7 @@ tooltip label {
 
 .widget-backlight trough,
 .widget-volume trough {
-	background-color: @surface;
-	border: 1px solid @outline-variant;
+	background-color: @outline-variant;
 	border-radius: var(--border-radius);
 	min-height: var(--control-center-slider-thickness);
 	margin-left: var(--margin);
@@ -501,12 +500,13 @@ tooltip label {
 	border: 1px solid @primary;
 	box-shadow: 0px 0px 0px 2px inset @surface;
 	border-radius: calc(var(--border-radius) / 2);
-	margin: -8px -5px;
+	margin: -8px -4px;
 }
 
 .widget-backlight slider:hover,
 .widget-volume slider:hover {
 	background-color: @outline;
+	box-shadow: 0px 0px 0px 2px inset @primary-container;
 }
 
 .widget-backlight highlight,
