@@ -14,7 +14,6 @@
 
 	--notification-progress-thickness: 10px;
 	--control-center-slider-thickness: 5px;
-	--control-center-slider-handle-length: 12px;
 	--slider-icon-size: 14px;
 
 	--notification-icon-size: 56px;
@@ -498,11 +497,11 @@ tooltip label {
 
 .widget-backlight slider,
 .widget-volume slider {
-	background-color: @outline-variant;
-	border: 1px solid @outline;
-	border-radius: var(--border-radius);
-	min-height: var(--control-center-slider-thickness);
-	min-width: var(--control-center-slider-handle-length);
+	background-color: @primary;
+	border: 1px solid @primary;
+	box-shadow: 0px 0px 0px 2px inset @surface;
+	border-radius: calc(var(--border-radius) / 2);
+	margin: -8px -5px;
 }
 
 .widget-backlight slider:hover,
