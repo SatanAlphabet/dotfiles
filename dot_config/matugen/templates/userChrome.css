@@ -41,6 +41,28 @@
     --arrowpanel-menuitem-border-radius: 0 !important;
   }
 
+  #PanelUI-menu-button .toolbarbutton-icon,
+  #downloads-button .toolbarbutton-icon,
+  #unified-extensions-button .toolbarbutton-icon {
+    fill: {{colors.primary.dark.hex}} !important;
+    color: {{colors.primary.dark.hex}} !important;
+  }
+
+  #PanelUI-menu-button .toolbarbutton-badge-stack,
+  #downloads-button .toolbarbutton-badge-stack,
+  #unified-extensions-button .toolbarbutton-badge-stack {
+    fill: {{colors.primary.dark.hex}} !important;
+    color: {{colors.primary.dark.hex}} !important;
+  }
+
+  toolbar .toolbarbutton-1 > .toolbarbutton-icon {
+    fill: {{colors.primary.dark.hex}} !important;
+  }
+
+  #zen-browser-background {
+    --zen-main-browser-background: {{colors.surface.dark.hex}} !important;
+  }
+
   #zen-workspaces-button {
     background-color: {{colors.surface.dark.hex}} !important;
   }
@@ -130,6 +152,28 @@
     --tab-border-radius: 0 !important;
     --arrowpanel-border-radius: 0 !important;
     --arrowpanel-menuitem-border-radius: 0 !important;
+  }
+
+  #PanelUI-menu-button .toolbarbutton-icon,
+  #downloads-button .toolbarbutton-icon,
+  #unified-extensions-button .toolbarbutton-icon {
+    fill: {{colors.primary.light.hex}} !important;
+    color: {{colors.primary.light.hex}} !important;
+  }
+
+  #PanelUI-menu-button .toolbarbutton-badge-stack,
+  #downloads-button .toolbarbutton-badge-stack,
+  #unified-extensions-button .toolbarbutton-badge-stack {
+    fill: {{colors.primary.light.hex}} !important;
+    color: {{colors.primary.light.hex}} !important;
+  }
+
+  toolbar .toolbarbutton-1 > .toolbarbutton-icon {
+    fill: {{colors.primary.light.hex}} !important;
+  }
+
+  #zen-browser-background {
+    --zen-main-browser-background: {{colors.surface.light.hex}} !important;
   }
 
   #zen-workspaces-button {
