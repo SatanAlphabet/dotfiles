@@ -1,27 +1,22 @@
 #!/usr/bin/env bash
 
-_install_confirm() {
-  local response
-  echo -n -e "$1"
-  read -r response
+{{ template "install-script-utils" -}}
 
-  if [[ "$response" =~ ^[Yy]$|^$ ]]; then
-    return 0
-  else
-    return 1
-  fi
-}
+{{ if (or (eq "arch" .chezmoi.osRelease.id) (eq "arch" .chezmoi.osRelease.idLike)) }}
 
-if ! command -v {{ .chezmoi.config.data.aurHelper }} &>/dev/null; then
-  if _install_confirm "===>  {{ .chezmoi.config.data.aurHelper }} is not installed. Install {{ .chezmoi.config.data.aurHelper -}}? [Y/n] " -eq 0; then
-    echo -e "===>  Installing {{ .chezmoi.config.data.aurHelper -}}..."
+
+if ! command -v {{ .aurHelper }} &>/dev/null; then
+  if _install_confirm "${YELLOW_BOLD}===>  ${PURPLE_BOLD}{{ .aurHelper }} ${NC}${BOLD}is not installed.\nInstall ${PURPLE_BOLD}{{ .aurHelper -}}${NC}${BOLD}? [Y/n]${NC} "; then
+    echo -e "${BLUE_BOLD}===>  ${BOLD}Installing ${PURPLE_BOLD}{{ .aurHelper -}}...${NC}"
     sudo pacman -S --needed base-devel
-    git clone https://aur.archlinux.org/{{- .chezmoi.config.data.aurHelper -}}-bin.git /tmp/aur-helper
+    git clone https://aur.archlinux.org/{{- .aurHelper -}}-bin.git /tmp/aur-helper
     (
       cd /tmp/aur-helper/ || exit 1
       makepkg -si
     )
   fi
 else
-  echo -e "===>  {{ .chezmoi.config.data.aurHelper }} is installed. Skipping..."
+  echo -e "${YELLOW_BOLD}===>  ${PURPLE_BOLD}{{ .aurHelper }}${NC}${BOLD} is installed. Skipping...${NC}"
 fi
+
+{{ end }}

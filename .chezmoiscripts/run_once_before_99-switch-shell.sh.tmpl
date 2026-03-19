@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
 
-_install_confirm() {
-  local response
-  echo -n -e "$1"
-  read -r response
+{{ template "install-script-utils" }}
 
-  if [[ "$response" =~ ^[Yy]$|^$ ]]; then
-    return 0
-  else
-    return 1
-  fi
-}
-
-if _install_confirm "Switch shell to {{ .chezmoi.config.data.shell -}}? [Y/n] " -eq 0; then
-  echo -e "\n===>  Switching shell to zsh...\n"
-  chsh -s "$(which zsh)"
+if _install_confirm "${BOLD}Switch shell to ${PURPLE_BOLD}{{ .chezmoi.config.data.shell -}}${NC}${BOLD}? [Y/n]${NC} "; then
+  echo -e "\n${BLUE_BOLD}===>  ${NC}${BOLD}Switching shell to ${PURPLE_BOLD}{{ .chezmoi.config.data.shell -}}${NC}${BOLD}...${NC}\n"
+  chsh -s "$(which {{ .chezmoi.config.data.shell -}})"
 fi

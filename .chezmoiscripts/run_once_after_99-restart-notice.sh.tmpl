@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-echo -e "===>  Basic setup completed..."
-echo -e "===>  Restart your system to apply changes."
+{{ template "install-script-utils" -}}
+
+echo -e "${BLUE_BOLD}===>  ${NC}${BOLD}Basic setup completed...${NC}"
+if ! _install_confirm "${BOLD}Reboot system? [y/N] ${NC}" "DEFAULT_NO"; then
+  systemctl reboot
+fi

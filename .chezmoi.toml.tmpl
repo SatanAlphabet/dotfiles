@@ -1,13 +1,17 @@
+[add]
+templateSymlinks = true
+
+[edit]
+watch = true
+
+[data]
+shell = "zsh" # More options may be added in the future
+{{ if (or (eq "arch" .chezmoi.osRelease.id) (eq "arch" .chezmoi.osRelease.idLike)) -}}
+
 {{- $aurHelperList := list "yay" "paru" -}}
 {{- $aurHelper := promptChoiceOnce . "aurHelperList" "Which AUR helper would you like to use" $aurHelperList "paru" -}}
 
-[add]
-  templateSymlinks = true
+aurHelper = {{ $aurHelper | quote }}
 
-[edit]
-  watch = true
-
-[data]
-  aurHelper = {{ $aurHelper | quote }}
-  shell = "zsh" # More options may be added in the future
+{{- end }}
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-ORANGE='\033[0;33m'
-NC='\033[0m' # No Color
+{{ template "install-script-utils" -}}
+
+{{- if (or (eq "arch" .chezmoi.osRelease.id) (eq "arch" .chezmoi.osRelease.idLike)) -}}
 
 {{ range .packages.arch.pacman }}
 packages+=({{- . | quote -}})
@@ -11,24 +12,19 @@ packages+=({{- . | quote -}})
 aur_packages+=({{- . | quote -}})
 {{- end }}
 
-_install_confirm() {
-  local response
-  echo -n -e "$1"
-  read -r response
-
-  if [[ "$response" =~ ^[Yy]$|^$ ]]; then
-    return 0
-  else
-    return 1
-  fi
-}
-
-if _install_confirm "Install base packages? [Y/n] " -eq 0; then
-  echo -e "\n===>  Installing base packages...\n"
-  {{ .chezmoi.config.data.aurHelper }} -S --needed "${packages[@]}" || echo -e "\n${ORANGE}WARNING${NC}: Package installation failed or cancelled by user.\n"
+if _install_confirm "${BOLD}Install base packages? [Y/n]${NC} "; then
+  echo -e "\n${BLUE_BOLD}===>  ${NC}${BOLD}Installing base packages...${NC}\n"
+  {{ .aurHelper }} -S --needed "${packages[@]}" || echo -e "\n${YELLOW_BOLD}WARNING: ${NC}Package installation failed or cancelled by user.\n"
 fi
 
-if _install_confirm "Install AUR packages? [Y/n] " -eq 0; then
-  echo -e "\n===>  Installing AUR packages...\n"
-  {{ .chezmoi.config.data.aurHelper }} -S --needed "${aur_packages[@]}" || echo -e "\n${ORANGE}WARNING${NC}: Package installation failed or cancelled by user.\n"
+if _install_confirm "${BOLD}Install AUR packages? [Y/n]${NC} "; then
+  echo -e "\n${BLUE_BOLD}===>  ${NC}${BOLD}Installing AUR packages...${NC}\n"
+  {{ .aurHelper }} -S --needed "${aur_packages[@]}" || echo -e "\n${YELLOW_BOLD}WARNING: ${NC}Package installation failed or cancelled by user.\n"
 fi
+
+{{- else -}}
+
+echo -e "${YELLOW_BOLD}WARNING:${NC}${BOLD} Unsupported distro detected.${NC}"
+echo -e "${BOLD}Manual package installation is required.${NC}"
+
+{{- end }}
