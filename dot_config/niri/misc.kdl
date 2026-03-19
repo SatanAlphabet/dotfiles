@@ -1,19 +1,19 @@
 environment {
-    CLUTTER_BACKEND "wayland"
-    SDL_VIDEODRIVER "wayland,x11"
-    QT_QPA_PLATFORM "wayland;xcb"
-    MOZ_ENABLE_WAYLAND "1"
-    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-    _JAVA_AWT_WM_NONREPARENTING "1"
+  CLUTTER_BACKEND "wayland"
+  SDL_VIDEODRIVER "wayland,x11"
+  QT_QPA_PLATFORM "wayland;xcb"
+  MOZ_ENABLE_WAYLAND "1"
+  QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+  _JAVA_AWT_WM_NONREPARENTING "1"
 }
 
 hotkey-overlay {
-    skip-at-startup
-    hide-not-bound
+  skip-at-startup
+  hide-not-bound
 }
 
 clipboard {
-    disable-primary
+  disable-primary
 }
 
 cursor {
