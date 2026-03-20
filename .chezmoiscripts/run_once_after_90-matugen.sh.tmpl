@@ -4,7 +4,7 @@
 
 {{ $home := .chezmoi.homeDir }}
 
-wallpaper="$HOME{{- (fromIni (output "bash" "-c" "cat ${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini")).Settings.wallpaper | replaceAllRegex "~" "$home" }}"
+wallpaper="$HOME{{- (fromIni (output "bash" "-c" "cat ${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini")).Settings.wallpaper | replaceAllRegex "^~" "$home" }}"
 scheme="$(gsettings get org.gnome.desktop.interface color-scheme | grep -Eo "dark|light|default")"
 scheme="${scheme:-"dark"}"
 
