@@ -2,13 +2,17 @@
 
 {{ template "install-script-utils" -}}
 
-pkg_dir="{{- .chezmoi.sourceDir -}}/assets/install"
+{{ $home := .chezmoi.homeDir }}
+
+wallpaper="$HOME{{- (fromIni (output "bash" "-c" "cat ${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini")).Settings.wallpaper | replaceAllRegex "~" "$home" }}"
+scheme="$(gsettings get org.gnome.desktop.interface color-scheme | grep -Eo "dark|light|default")"
+scheme="${scheme:-"dark"}"
 
 if _install_confirm "${BOLD}Regenerate colors with matugen? [Y/n]${NC} "; then
   export PATH="$HOME/.local/bin:$PATH"
   if [ $(matugen -V | awk '{printf $2}' | cut -d. -f1) -ge 4 ]; then
-    matugen image "$pkg_dir/default-bg.png" --continue-on-error -m light --source-color-index 0
+    matugen image "$wallpaper" --continue-on-error -m "$scheme" --source-color-index 0
   else
-    matugen image "$pkg_dir/default-bg.png" --continue-on-error -m light
+    matugen image "$wallpaper" --continue-on-error -m "$scheme"
   fi
 fi
