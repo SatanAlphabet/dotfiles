@@ -2,9 +2,9 @@
 
 {{ template "install-script-utils" -}}
 
-{{ $home := .chezmoi.homeDir }}
+{{ $HOME := .chezmoi.homeDir }}
 
-wallpaper="$HOME{{- (fromIni (output "bash" "-c" "cat ${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini")).Settings.wallpaper | replaceAllRegex "^~" "$home" }}"
+wallpaper="{{- (fromIni (output "bash" "-c" "cat ${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini")).Settings.wallpaper | replaceAllRegex "^~" $HOME }}"
 scheme="$(gsettings get org.gnome.desktop.interface color-scheme | grep -Eo "dark|light|default")"
 scheme="${scheme:-"dark"}"
 
