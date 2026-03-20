@@ -5,7 +5,7 @@
 {{ $HOME := .chezmoi.homeDir }}
 
 wallpaper="{{- (fromIni (output "bash" "-c" "cat ${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini")).Settings.wallpaper | replaceAllRegex "^~" $HOME }}"
-scheme="$(gsettings get org.gnome.desktop.interface color-scheme | grep -Eo "dark|light|default")"
+scheme="$(gsettings get org.gnome.desktop.interface color-scheme | grep -Eo "dark|light")"
 scheme="${scheme:-"dark"}"
 
 if _install_confirm "${BOLD}Regenerate colors with matugen? [Y/n]${NC} "; then
