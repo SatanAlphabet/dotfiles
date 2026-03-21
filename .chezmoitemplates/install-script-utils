@@ -39,11 +39,11 @@ _install_confirm() {
 
   case "$2" in
   "DEFAULT_NO")
-    default_ans="${no_regex}|^$"
+    default_ans="${no_regex}|^\s*$"
     alternate_ans="${yes_regex}"
     ;;
   "DEFAULT_YES" | *)
-    default_ans="${yes_regex}|^$"
+    default_ans="${yes_regex}|^\s*$"
     alternate_ans="${no_regex}"
     ;;
   esac
