@@ -58,7 +58,7 @@
 		},
 		{
 			"type": "custom",
-			"format": "├{$1}<  >{$1}",
+			"format": "├{$1}< {#keys}{#default} >{$1}",
 		},
 		{
 			"type": "disk",
