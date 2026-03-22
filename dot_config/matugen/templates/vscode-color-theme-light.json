@@ -2,16 +2,31 @@
 	"semanticHighlighting": true,
 	"semanticTokenColors": {
 		"variable": {
-			"foreground": "{{colors.surface.light.hex}}"
+			"foreground": "{{colors.surface.dark.hex}}"
 		},
 		"parameter": {
-			"foreground": "{{colors.surface_variant.light.hex}}"
+			"foreground": "{{colors.surface_variant.dark.hex}}"
 		},
 		"property": {
-			"foreground": "{{colors.primary.light.hex | auto_lightness: 5.0 | saturate: 15.0, hsl}}"
+			"foreground": "{{colors.primary.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}"
 		},
 		"function": {
 			"foreground": "{{colors.green.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}"
+		},
+		"method": {
+			"foreground": "{{colors.primary.default.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}"
+		},
+		"type": {
+			"foreground": "{{colors.secondary.default.hex}}"
+		},
+		"class": {
+			"foreground": "{{colors.secondary.default.hex}}"
+		},
+		"typeParameter": {
+			"foreground": "{{colors.tertiary.default.hex}}"
+		},
+		"enumMember": {
+			"foreground": "{{colors.error.default.hex}}"
 		},
 		"string": {
 			"foreground": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}"
@@ -20,10 +35,16 @@
 			"foreground": "{{colors.primary.light.hex | auto_lightness: 15.0 | saturate: 25.0, hsl}}"
 		},
 		"keyword": {
-			"foreground": "{{colors.tertiary.light.hex | auto_lightness: 5.0 | saturate: 15.0, hsl}}"
+			"foreground": "{{colors.secondary.light.hex | auto_lightness: 15.0 | saturate: 15.0, hsl}}"
 		},
 		"comment": {
 			"foreground": "{{colors.outline.light.hex}}"
+		},
+		"operator": {
+			"foreground": "{{colors.on_surface.light.hex}}"
+		},
+		"namespace": {
+			"foreground": "{{colors.on_surface.light.hex}}"
 		}
 	},
 	"tokenColors": [
@@ -36,7 +57,7 @@
 		{
 			"scope": ["keyword"],
 			"settings": {
-				"foreground": "{{colors.tertiary.light.hex | auto_lightness: 5.0 | saturate: 15.0, hsl}}"
+				"foreground": "{{colors.secondary.light.hex | auto_lightness: 15.0 | saturate: 15.0, hsl}}"
 			}
 		},
 		{
@@ -48,13 +69,13 @@
 		{
 			"scope": ["constant", "constant.language", "constant.numeric"],
 			"settings": {
-				"foreground": "{{colors.tertiary.light.hex | auto_lightness: 15.0 | saturate: 25.0, hsl}}"
+				"foreground": "{{colors.secondary.light.hex | auto_lightness: 15.0 | saturate: 25.0, hsl}}"
 			}
 		},
 		{
 			"scope": ["variable"],
 			"settings": {
-				"foreground": "{{colors.surface.light.hex}}"
+				"foreground": "{{colors.surface.dark.hex}}"
 			}
 		},
 		{
@@ -327,17 +348,17 @@
 		"terminal.ansiRed": "{{colors.red.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
 		"terminal.ansiGreen": "{{colors.green.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
 		"terminal.ansiYellow": "{{colors.yellow.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
-		"terminal.ansiBlue": "{{colors.blue.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
-		"terminal.ansiMagenta": "{{colors.magenta.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
-		"terminal.ansiCyan": "{{colors.cyan.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiBlue": "{{colors.primary.light.hex | auto_lightness: 5.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiMagenta": "{{colors.inverse_primary.light.hex | auto_lightness: 10.0 | saturate: 5.0, hsl}}",
+		"terminal.ansiCyan": "{{colors.secondary.light.hex | auto_lightness: 15.0 | saturate: 15.0, hsl}}",
 		"terminal.ansiWhite": "{{colors.surface_variant.light.hex}}",
 		"terminal.ansiBrightBlack": "{{colors.outline.light.hex}}",
 		"terminal.ansiBrightRed": "{{colors.red.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
 		"terminal.ansiBrightGreen": "{{colors.green.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
 		"terminal.ansiBrightYellow": "{{colors.yellow.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
-		"terminal.ansiBrightBlue": "{{colors.blue.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
-		"terminal.ansiBrightMagenta": "{{colors.magenta.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
-		"terminal.ansiBrightCyan": "{{colors.cyan.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiBrightBlue": "{{colors.primary.light.hex | auto_lightness: 20.0 | saturate: 25.0, hsl}}",
+		"terminal.ansiBrightMagenta": "{{colors.inverse_primary.light.hex}}",
+		"terminal.ansiBrightCyan": "{{colors.secondary.light.hex | auto_lightness: 30.0 | saturate: 15.0, hsl}}",
 		"terminal.ansiBrightWhite": "{{colors.surface.light.hex}}",
 		"terminalCursor.background": "{{colors.background.light.hex}}",
 		"terminalCursor.foreground": "{{colors.primary.light.hex}}",

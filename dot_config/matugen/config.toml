@@ -89,13 +89,18 @@ output_path = '~/.config/spicetify/Themes/text/color.ini'
 input_path = '~/.config/matugen/templates/hyprlock-colors.conf'
 output_path = '~/.config/hypr/colors.conf'
 
-[templates.vscode]
-input_path = '~/.config/matugen/templates/vscode-color-theme.json'
-output_path = '~/.vscode-oss/extensions/satanalphabet.matugen-vscode-1.1.0/themes/light.json'
+[templates.vscode-light]
+input_path = '~/.config/matugen/templates/vscode-color-theme-light.json'
+output_path = '~/.vscode-oss/extensions/satanalphabet.matugen-vscode-2.0.0/themes/light.json'
 
 [templates.vscode-dark]
 input_path = '~/.config/matugen/templates/vscode-color-theme-dark.json'
-output_path = '~/.vscode-oss/extensions/satanalphabet.matugen-vscode-1.1.0/themes/dark.json'
+output_path = '~/.vscode-oss/extensions/satanalphabet.matugen-vscode-2.0.0/themes/dark.json'
+
+[templates.vscode]
+input_path = '~/.config/matugen/templates/vscode-color-theme-dark.json'
+input_path_modes = { dark = "~/.config/matugen/templates/vscode-color-theme-dark.json", light = "~/.config/matugen/templates/vscode-color-theme-light.json" }
+output_path = '~/.vscode-oss/extensions/satanalphabet.matugen-vscode-2.0.0/themes/default.json'
 
 [templates.zen-userChrome]
 input_path = '~/.config/matugen/templates/userChrome.css'

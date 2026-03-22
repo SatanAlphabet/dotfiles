@@ -2,7 +2,7 @@
 	"semanticHighlighting": true,
 	"semanticTokenColors": {
 		"variable": {
-			"foreground": "{{colors.surface.light.hex}}"
+			"foreground": "{{colors.on_surface.dark.hex}}"
 		},
 		"parameter": {
 			"foreground": "{{colors.surface_variant.light.hex}}"
@@ -13,6 +13,21 @@
 		"function": {
 			"foreground": "{{colors.green.dark.hex | auto_lightness: 8.0}}"
 		},
+		"method": {
+			"foreground": "{{colors.primary.default.hex | auto_lightness: 4.0}}"
+		},
+		"type": {
+			"foreground": "{{colors.secondary.default.hex}}"
+		},
+		"class": {
+			"foreground": "{{colors.secondary.default.hex}}"
+		},
+		"typeParameter": {
+			"foreground": "{{colors.tertiary.default.hex}}"
+		},
+		"enumMember": {
+			"foreground": "{{colors.error.default.hex}}"
+		},
 		"string": {
 			"foreground": "{{colors.yellow.dark.hex | auto_lightness: 8.0}}"
 		},
@@ -20,10 +35,16 @@
 			"foreground": "{{colors.primary.dark.hex}}"
 		},
 		"keyword": {
-			"foreground": "{{colors.tertiary.dark.hex | auto_lightness: 8.0}}"
+			"foreground": "{{colors.secondary.dark.hex | auto_lightness: 8.0}}"
 		},
 		"comment": {
 			"foreground": "{{colors.outline.light.hex}}"
+		},
+		"operator": {
+			"foreground": "{{colors.surface.light.hex}}"
+		},
+		"namespace": {
+			"foreground": "{{colors.surface.light.hex}}"
 		}
 	},
 	"tokenColors": [
@@ -36,7 +57,7 @@
 		{
 			"scope": ["keyword"],
 			"settings": {
-				"foreground": "{{colors.tertiary.dark.hex | auto_lightness: 8.0}}"
+				"foreground": "{{colors.secondary.dark.hex | auto_lightness: 8.0}}"
 			}
 		},
 		{
@@ -327,17 +348,17 @@
 		"terminal.ansiRed": "{{colors.red.dark.hex | auto_lightness: 8.0}}",
 		"terminal.ansiGreen": "{{colors.green.dark.hex | auto_lightness: 8.0}}",
 		"terminal.ansiYellow": "{{colors.yellow.dark.hex | auto_lightness: 8.0}}",
-		"terminal.ansiBlue": "{{colors.blue.dark.hex | auto_lightness: 8.0}}",
-		"terminal.ansiMagenta": "{{colors.magenta.dark.hex | auto_lightness: 8.0}}",
-		"terminal.ansiCyan": "{{colors.cyan.dark.hex | auto_lightness: 8.0}}",
+		"terminal.ansiBlue": "{{colors.primary.dark.hex | auto_lightness: 4.0}}",
+		"terminal.ansiMagenta": "{{colors.inverse_primary.dark.hex | auto_lightness: 6.0}}",
+		"terminal.ansiCyan": "{{colors.secondary.dark.hex | auto_lightness: 8.0}}",
 		"terminal.ansiWhite": "{{colors.surface_variant.light.hex}}",
 		"terminal.ansiBrightBlack": "{{colors.outline.light.hex}}",
 		"terminal.ansiBrightRed": "{{colors.red.dark.hex}}",
 		"terminal.ansiBrightGreen": "{{colors.green.dark.hex}}",
 		"terminal.ansiBrightYellow": "{{colors.yellow.dark.hex}}",
-		"terminal.ansiBrightBlue": "{{colors.blue.dark.hex}}",
-		"terminal.ansiBrightMagenta": "{{colors.magenta.dark.hex}}",
-		"terminal.ansiBrightCyan": "{{colors.cyan.dark.hex}}",
+		"terminal.ansiBrightBlue": "{{colors.primary.dark.hex}}",
+		"terminal.ansiBrightMagenta": "{{colors.inverse_primary.dark.hex | auto_lightness: 15.0}}",
+		"terminal.ansiBrightCyan": "{{colors.secondary.dark.hex}}",
 		"terminal.ansiBrightWhite": "{{colors.surface.light.hex}}",
 		"terminalCursor.background": "{{colors.background.dark.hex}}",
 		"terminalCursor.foreground": "{{colors.primary.dark.hex}}",
