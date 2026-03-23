@@ -14,7 +14,7 @@
 			"foreground": "{{colors.green.dark.hex | auto_lightness: 8.0}}"
 		},
 		"method": {
-			"foreground": "{{colors.primary.default.hex | auto_lightness: 4.0}}"
+			"foreground": "{{colors.primary.default.hex | auto_lightness: 8.0}}"
 		},
 		"type": {
 			"foreground": "{{colors.secondary.default.hex}}"
@@ -348,7 +348,7 @@
 		"terminal.ansiRed": "{{colors.red.dark.hex | auto_lightness: 8.0}}",
 		"terminal.ansiGreen": "{{colors.green.dark.hex | auto_lightness: 8.0}}",
 		"terminal.ansiYellow": "{{colors.yellow.dark.hex | auto_lightness: 8.0}}",
-		"terminal.ansiBlue": "{{colors.primary.dark.hex | auto_lightness: 4.0}}",
+		"terminal.ansiBlue": "{{colors.primary.dark.hex | auto_lightness: 8.0}}",
 		"terminal.ansiMagenta": "{{colors.inverse_primary.dark.hex | auto_lightness: 6.0}}",
 		"terminal.ansiCyan": "{{colors.secondary.dark.hex | auto_lightness: 8.0}}",
 		"terminal.ansiWhite": "{{colors.surface_variant.light.hex}}",
