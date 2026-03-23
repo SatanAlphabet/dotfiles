@@ -2,7 +2,7 @@
 
 {{ template "install-script-utils" -}}
 
-{{- if (or (eq "arch" .chezmoi.osRelease.id) (eq "arch" .chezmoi.osRelease.idLike)) -}}
+{{- if (eq "arch" .chezmoi.osRelease.id (get .chezmoi.osRelease "idLike")) -}}
 
 {{ range .packages.arch.pacman }}
 packages+=({{- . | quote -}})

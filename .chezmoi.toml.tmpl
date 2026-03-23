@@ -6,7 +6,7 @@ watch = true
 
 [data]
 shell = "zsh" # More options may be added in the future
-{{ if (or (eq "arch" .chezmoi.osRelease.id) (eq "arch" .chezmoi.osRelease.idLike)) -}}
+{{ if (eq "arch" (get .chezmoi.osRelease "idLike") .chezmoi.osRelease.id) -}}
 
 {{- $aurHelperList := list "yay" "paru" -}}
 {{- $aurHelper := promptChoiceOnce . "aurHelperList" "Which AUR helper would you like to use" $aurHelperList "paru" -}}
