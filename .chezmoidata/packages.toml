@@ -84,6 +84,7 @@ pacman = [
   "wget",
   "wireplumber",
   "wl-clip-persist",
+  "wlsunset",
   "xdg-desktop-portal-gnome",
   "xdg-desktop-portal-gtk",
   "xdg-desktop-portal-kde",
