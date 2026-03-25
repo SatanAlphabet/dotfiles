@@ -1,1 +1,2 @@
 spawn-at-startup "reload-portal.sh"
+spawn-at-startup "overview-backdrop-restore.sh"
