@@ -111,7 +111,7 @@ window-rule {
 
 layer-rule {
   match namespace="^wallpaper$"
-  match namespace="^swww-daemonoverview$"
+  match namespace="^[sa]www-daemonoverview$"
   match namespace="^dms:blurwallpaper$"
   match namespace="^noctalia-overview*"
 

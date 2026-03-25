@@ -1,8 +1,9 @@
 [Unit]
 PartOf=graphical-session.target
 After=graphical-session.target waypaper.service
+Wants=waypaper.service
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swww-daemon -n overview
+ExecStart=/usr/bin/awww-daemon -n overview
 Restart=on-failure

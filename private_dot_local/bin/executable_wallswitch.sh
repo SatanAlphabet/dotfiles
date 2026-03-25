@@ -7,20 +7,23 @@ current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
 waypaper_config=${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini
 
 _parse_waypaper_config() {
-  awk -F "=" "/$1/"'{printf $2}' "$waypaper_config" | tr -d ' '
+  local output
+  output="$(awk -F "=" "/$1/"'{printf $2}' "$waypaper_config" | tr -d ' ')"
+  [ -n "$output" ] && echo "$output" || return 1
 }
 
-_get_swww_args() {
-  type="$(_parse_waypaper_config "swww_transition_type")"
-  duration="$(_parse_waypaper_config "swww_transition_duration")"
-  step="$(_parse_waypaper_config "swww_transition_step")"
-  angle="$(_parse_waypaper_config "swww_transition_angle")"
-  fps="$(_parse_waypaper_config "swww_transition_fps")"
-  [ -n "$type" ] && swww_args+=("--transition-type" "$type")
-  [ -n "$duration" ] && swww_args+=("--transition-duration" "$duration")
-  [ -n "$step" ] && swww_args+=("--transition-step" "$step")
-  [ -n "$angle" ] && swww_args+=("--transition-angle" "$angle")
-  [ -n "$fps" ] && swww_args+=("--transition-fps" "$fps")
+# waypaper config still use swww_*, but awww_* support is added just in case
+_get_awww_args() {
+  type="$(_parse_waypaper_config "swww_transition_type" || _parse_waypaper_config "awww_transition_type")"
+  duration="$(_parse_waypaper_config "swww_transition_duration" || _parse_waypaper_config "awww_transition_duration")"
+  step="$(_parse_waypaper_config "swww_transition_step" || _parse_waypaper_config "awww_transition_step")"
+  angle="$(_parse_waypaper_config "swww_transition_angle" || _parse_waypaper_config "awww_transition_angle")"
+  fps="$(_parse_waypaper_config "swww_transition_fps" || _parse_waypaper_config "awww_transition_fps")"
+  [ -n "$type" ] && awww_args+=("--transition-type" "$type")
+  [ -n "$duration" ] && awww_args+=("--transition-duration" "$duration")
+  [ -n "$step" ] && awww_args+=("--transition-step" "$step")
+  [ -n "$angle" ] && awww_args+=("--transition-angle" "$angle")
+  [ -n "$fps" ] && awww_args+=("--transition-fps" "$fps")
 }
 
 switch_wallpaper() {
@@ -61,13 +64,13 @@ switch_wallpaper() {
   fi
 
   if [[ ! "$SKIP_OVERVIEW" || "$FORCE_RESTART_OVERVIEW" ]]; then
-    _get_swww_args
     if [ ! "$FORCE_RESTART_OVERVIEW" ]; then
       systemctl --user is-active overview-backdrop >/dev/null || systemctl --user restart overview-backdrop.service
     else
       systemctl --user restart overview-backdrop.service
     fi
-    swww img -n overview "${swww_args[@]}" "$blur_img"
+    _get_awww_args
+    awww img -n overview "${awww_args[@]}" "$blur_img"
   else
     echo "Skipping overview reloading..."
   fi
