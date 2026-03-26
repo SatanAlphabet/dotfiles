@@ -1,2 +1,4 @@
 spawn-at-startup "reload-portal.sh"
-spawn-at-startup "overview-backdrop-restore.sh"
+
+// If backdrop is a black screen, try uncommenting the line below
+// spawn-at-startup "overview-backdrop-restore.sh"
