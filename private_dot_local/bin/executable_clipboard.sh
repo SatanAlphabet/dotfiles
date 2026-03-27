@@ -16,7 +16,7 @@ process_deletion() {
       break
     elif [ -n "$line" ]; then
       cliphist delete <<<"$line"
-      notify-send -e "Deleted" "$line"
+      notify-send -e "Clipboard" "Deleted entry: $line"
     fi
   done
   exit 0
@@ -69,7 +69,7 @@ check_content() {
     img_idx=$(awk -F '\t' '{print $1}' <<<"$line")
     local temp_preview="$XDG_RUNTIME_DIR/pastebin-preview_${img_idx}"
     wl-paste >"${temp_preview}"
-    notify-send -e -a "Pastebin:" "Preview: ${img_idx}" -i "${temp_preview}" -t 2000
+    notify-send -e -a "Clipboard" "Clipboard" "Preview: ${img_idx}" -i "${temp_preview}" -t 2000
     return 1
   fi
 }
@@ -170,7 +170,7 @@ delete_items() {
 # favorite clipboard items
 view_favorites() {
   prepare_favorites_for_display || {
-    notify-send -u low -e "No favorites."
+    notify-send -u low -e "Clipboard" "No favorites."
     return
   }
 
@@ -187,9 +187,9 @@ view_favorites() {
     if [ -n "$index" ]; then
       local selected_encoded_favorite="${favorites[$((index - 1))]}"
       echo "$selected_encoded_favorite" | base64 --decode | wl-copy
-      notify-send -e "Copied to clipboard."
+      notify-send -e "Clipboard" "Copied to clipboard."
     else
-      notify-send -e "Error: Selected favorite not found."
+      notify-send -e "Clipboard" "Error: Selected favorite not found." -u low
     fi
   fi
 }
@@ -211,10 +211,10 @@ add_to_favorites() {
 
     # Check if the item is already in the favorites file
     if [ -f "$favorites_file" ] && grep -Fxq "$encoded_item" "$favorites_file"; then
-      notify-send -e "Item is already in favorites."
+      notify-send -e "Clipboard" "Item is already in favorites." -u low
     else
       echo "$encoded_item" >>"$favorites_file"
-      notify-send -e "Added to favorites."
+      notify-send -e "Clipboard" "Added to favorites."
     fi
   fi
 }
@@ -222,7 +222,7 @@ add_to_favorites() {
 # delete from favorites
 delete_from_favorites() {
   prepare_favorites_for_display || {
-    notify-send -e "No favorites to remove."
+    notify-send -e "Clipboard" "No favorites to remove." -u low
     return
   }
 
@@ -244,9 +244,9 @@ delete_from_favorites() {
         grep -vF -x "$selected_encoded_favorite" "$favorites_file" >"${favorites_file}.tmp" &&
           mv "${favorites_file}.tmp" "$favorites_file"
       fi
-      notify-send -e "Item removed from favorites."
+      notify-send -e "Clipboard" "Item removed from favorites."
     else
-      notify-send -e "Error: Selected favorite not found."
+      notify-send -e "Clipboard" "Error: Selected favorite not found." -u low
     fi
   fi
 }
@@ -260,10 +260,10 @@ clear_favorites() {
 
     if [ "$confirm" = "Yes" ]; then
       : >"$favorites_file"
-      notify-send -e "All favorites have been deleted."
+      notify-send -e "Clipboard" "All favorites have been deleted."
     fi
   else
-    notify-send -e "No favorites to delete."
+    notify-send -e "Clipboard" "No favorites to delete." -u low
   fi
 }
 
@@ -299,7 +299,7 @@ clear_history() {
 
   if [ "$confirm" = "Yes" ]; then
     cliphist wipe
-    notify-send -e "Clipboard history cleared."
+    notify-send -e "Clipboard" "Clipboard history cleared."
   fi
 }
 

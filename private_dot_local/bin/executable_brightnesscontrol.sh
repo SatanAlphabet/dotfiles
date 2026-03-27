@@ -7,6 +7,6 @@ max_brightness=$(brightnessctl m)
 
 percent_brightness=$((cur_brightness * 100 / max_brightness))
 
-notif="Brightness level: $percent_brightness%"
+notif="Brightness level: <b>$percent_brightness%</b>"
 
-notify-send -r 1 -t 2000 -e "$notif" -h int:value:"$percent_brightness" -i display-brightness-symbolic
+notify-send -r 1 -t 2000 -e "Backlight" "$notif" -h int:value:"$percent_brightness" -i display-brightness-symbolic

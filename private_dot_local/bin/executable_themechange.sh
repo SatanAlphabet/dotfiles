@@ -3,31 +3,33 @@
 current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
 
 switch_to_light_mode() {
-  if [ $(matugen -V | awk '{printf $2}' | cut -d. -f1) -ge 4 ]; then
+  if [ "$(matugen -V | awk '{printf $2}' | cut -d. -f1)" -ge 4 ]; then
     matugen image "$1" -m light --source-color-index 0
   else
     matugen image "$1" -m light
   fi
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-  notify-send -e -t 3000 "Switched to light mode..." -i weather-clear-symbolic
+  notify-send -e -t 3000 "System Theme" "Switched to <b>light</b> mode" -i weather-clear-symbolic
 }
 
 switch_to_dark_mode() {
-  if [ $(matugen -V | awk '{printf $2}' | cut -d. -f1) -ge 4 ]; then
+  if [ "$(matugen -V | awk '{printf $2}' | cut -d. -f1)" -ge 4 ]; then
     matugen image "$1" -m dark --source-color-index 0
   else
     matugen image "$1" -m dark
   fi
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-  notify-send -e -t 3000 "Switched to dark mode..." -i weather-clear-night-symbolic
+  notify-send -e -t 3000 "System Theme" "Switched to <b>dark</b> mode" -i weather-clear-night-symbolic
 }
 
 change_theme() {
 
-  [ -n "$1" ] && img="$1" || {
+  if [ -n "$1" ]; then
+    img="$1"
+  else
     echo "WARNING: No image provided. Using current wallpaper from waypaper..." >&2
     img="$(waypaper --list | jq -r '.[].wallpaper')"
-  }
+  fi
 
   if [ ! -f "$img" ]; then
     echo "Error: image '$img' was not found."

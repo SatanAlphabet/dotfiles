@@ -6,7 +6,7 @@ media_progress() {
   current_pos=$(printf "%0.f" "$(playerctl position)")
   media_length=$(playerctl metadata mpris:length)
 
-  if [ $media_length -le 0 ]; then
+  if [ "$media_length" -le 0 ]; then
     echo 0
   else
     echo $((current_pos * 100 * 1000000 / media_length))
@@ -24,12 +24,12 @@ Options:
 USAGE
 }
 
-send_playing_notif() {
-  notify-send -e -r 1 -t 2000 "Paused media..." "<i>$(playerctl metadata title)</i>" -h int:value:"$(media_progress)" -i media-playback-pause
+send_paused_notif() {
+  notify-send -e -r 1 -t 2000 "Media (Paused)" "$(playerctl metadata title)" -h int:value:"$(media_progress)" -i media-playback-pause -u low
 }
 
-send_paused_notif() {
-  notify-send -e -r 1 -t 2000 "Playing media..." "$(playerctl metadata title)" -h int:value:"$(media_progress)" -i media-playback-start
+send_playing_notif() {
+  notify-send -e -r 1 -t 2000 "Media (Playing)" "$(playerctl metadata title)" -h int:value:"$(media_progress)" -i media-playback-start
 }
 
 [ $# -ne 1 ] && {
@@ -38,7 +38,7 @@ send_paused_notif() {
 }
 
 if [ -z "$(playerctl status 2>/dev/null)" ]; then
-  notify-send "No media found..." -e -r 1 -t 2000 -u low
+  notify-send "Media Player" "No media found..." -e -r 1 -t 2000 -u low
   exit 0
 fi
 
@@ -47,11 +47,11 @@ status="$(playerctl status 2>/dev/null)"
 case "$1" in
 'next')
   playerctl next 2>/dev/null
-  notify-send -e -r 1 -t 2000 'Playing next track...' -i media-skip-forward
+  notify-send -e -r 1 -t 2000 "Media" 'Playing next track' -i media-skip-forward
   ;;
 'prev')
   playerctl previous 2>/dev/null
-  notify-send -e -r 1 -t 2000 'Playing previous track...' -i media-skip-backward
+  notify-send -e -r 1 -t 2000 "Media" 'Playing previous track' -i media-skip-backward
   ;;
 'play')
   playerctl play 2>/dev/null
@@ -64,9 +64,9 @@ case "$1" in
 'toggle')
   playerctl play-pause 2>/dev/null
   if [ "$status" = 'Playing' ]; then
-    send_playing_notif
-  elif [ "$status" = 'Paused' ]; then
     send_paused_notif
+  elif [ "$status" = 'Paused' ]; then
+    send_playing_notif
   fi
   ;;
 *)

@@ -14,10 +14,12 @@ else
   audio_icon="audio-volume-high"
 fi
 
+volume_text="<b>$volume</b>"
+
 if [[ "$mute_status" == "[MUTED]" ]]; then
-  volume="$volume"" (Muted)"
+  volume_text="Muted"
   priority="low"
   audio_icon="audio-volume-muted"
 fi
 
-notify-send -t 2000 -a "volume" -u "$priority" -r 2 -e "Volume level: ${volume}" -h int:value:"$volume" -i "$audio_icon"
+notify-send -t 2000 -a "volume" -u "$priority" -r 2 -e "Audio" "Volume level: <b>${volume_text}</b>" -h int:value:"$volume" -i "$audio_icon"
