@@ -125,8 +125,8 @@
 		},
 		"custom/launcher": {
 			"justify": "center",
-			"format": "",
-			"tooltip-format": "Application Launcher\nRight click for more actions",
+			"format": "{icon}",
+			"tooltip-format": "<big><b>Application Launcher</b></big>\nRight click for more actions",
 		},
 		"battery": {
 			"justify": "center",
