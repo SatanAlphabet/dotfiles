@@ -98,6 +98,16 @@
 		"on-scroll-down": "true",
 	},
 	"custom/launcher": {
+		"return-type": "json",
+		"interval": "once",
+		"exec": "~/.config/waybar/scripts/distro.sh",
+		"format-icons": {
+			// TODO: Add CachyOS icon when there is one
+			"arch": "",
+			"endeavouros": "",
+			"manjaro": "",
+			"default": "󰍜",
+		},
 		"on-click": "niri msg action spawn -- rofilaunch.sh -theme menu",
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
