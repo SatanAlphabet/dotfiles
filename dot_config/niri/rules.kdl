@@ -119,6 +119,13 @@ layer-rule {
 }
 
 layer-rule {
+  match namespace="^wallpaper$"
+  match namespace="^[sa]www-daemonoverview"
+
+  opacity 0.6
+}
+
+layer-rule {
   match namespace="^rofi$"
   shadow {
     on

@@ -21,7 +21,7 @@ layout {
 }
 
 overview {
-  backdrop-color "{{colors.surface.default.hex}}"
+  backdrop-color "{{colors.background.dark.hex}}"
 }
 
 recent-windows {
