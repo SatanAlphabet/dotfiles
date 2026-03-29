@@ -23,7 +23,7 @@ _select_from_rofi() {
   local current_preset
   current_preset="$(basename "$(readlink "$config_dir/current-theme.rasi")" .rasi)"
 
-  if [ -n "$(pgrep rofi)" ]; then
+  if [ -n "$(pgrep -x rofi)" ]; then
     pkill -x rofi
     exit
   fi
