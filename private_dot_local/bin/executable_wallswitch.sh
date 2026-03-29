@@ -54,7 +54,7 @@ switch_wallpaper() {
     cache_img="${blur_cache}"/"${img_checksum}"
     [ ! -d "$blur_cache" ] && mkdir -p "$blur_cache"
     if [[ ! -e "$cache_img" || "$(basename "$cache_img")" != "$img_checksum" ]]; then
-      magick "$1" -blur 30x10 -brightness-contrast -10 "$cache_img"
+      magick "$1" -blur 30x10 "$cache_img"
     fi
     ln -sf "$cache_img" "$blur_img"
 
