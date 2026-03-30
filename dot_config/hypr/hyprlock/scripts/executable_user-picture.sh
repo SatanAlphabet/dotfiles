@@ -12,5 +12,5 @@ else
 fi
 
 [ ! -d "$cache_dir" ] && mkdir -p "$cache_dir"
-[ ! -e "$cache_img" ] && ln -s "$user_img" "$cache_img"
+ln -sf "$user_img" "$cache_img"
 echo "$cache_img"
