@@ -100,8 +100,10 @@ window-rule {
   shadow {
     on
     softness 12
-    spread 0
+    spread 1
     offset x=0 y=5
+    color "#000"
+    inactive-color "#000a"
   }
   geometry-corner-radius 8
   tiled-state false
@@ -129,5 +131,9 @@ layer-rule {
   match namespace="^rofi$"
   shadow {
     on
+    softness 12
+    spread 1
+    offset x=0 y=5
+    color "#000"
   }
 }

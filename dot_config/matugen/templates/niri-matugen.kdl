@@ -14,7 +14,8 @@ layout {
   }
 
   shadow {
-    color "{{colors.shadow.default.rgba | set_alpha: 0.7 }}"
+    color "{{colors.surface.default.rgba}}"
+    inactive-color "{{colors.surface.default.rgba}}"
   }
 
   background-color "{{colors.inverse_primary.default.hex}}"
