@@ -131,7 +131,7 @@ element {
 
 element selected {
   border-color:                @outline-variant;
-  background-color:            @surface-container-high;
+  background-color:            @surface-container-highest;
   text-color:                  @primary;
 }
 

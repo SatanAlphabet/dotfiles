@@ -117,14 +117,14 @@ element {
   enabled:                     true;
   spacing:                     8px;
   padding:                     8px;
-  border:                      0px 0px 0px 2px;
+  border:                      0px 0px 0px 3px;
   border-radius:               0px 4px 4px 0px;
   cursor:                      pointer;
 }
 
 element selected {
   border-color:                @primary;
-  background-color:            @surface-container-high;
+  background-color:            @surface-container-highest;
   text-color:                  @primary;
 }
 
