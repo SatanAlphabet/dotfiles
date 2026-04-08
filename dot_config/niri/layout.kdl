@@ -49,7 +49,7 @@ layout {
   shadow {
     on
     softness 0
-    spread 3
+    spread 2
     offset x=0 y=0
 
     color "#0007"

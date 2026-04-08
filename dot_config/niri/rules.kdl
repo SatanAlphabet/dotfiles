@@ -101,7 +101,7 @@ window-rule {
     on
     softness 12
     spread 1
-    offset x=0 y=5
+    offset x=0 y=2
     color "#000"
     inactive-color "#000a"
   }
@@ -132,8 +132,8 @@ layer-rule {
   shadow {
     on
     softness 12
-    spread 1
-    offset x=0 y=5
+    spread 0
+    offset x=0 y=2
     color "#000"
   }
 }
