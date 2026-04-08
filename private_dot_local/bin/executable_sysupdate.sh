@@ -33,6 +33,18 @@ ON_PURPLE='\033[45m'
 ON_CYAN='\033[46m'
 ON_WHITE='\033[47m'
 
+if ! source /etc/os-release 2>/dev/null; then
+  echo -e "${RED_BOLD}ERROR${NC}${BOLD}: Cannot source OS info.${NC}"
+fi
+
+priv_esc_command_list=(sudo doas run0)
+for cmd in "${priv_esc_command_list[@]}"; do
+  if which "$cmd" >/dev/null 2>&1; then
+    priv_esc_command="$cmd"
+    break
+  fi
+done
+
 success_text=()
 failed_text=()
 
@@ -51,20 +63,26 @@ _confirm_prompt() {
 }
 
 _update_package() {
-  upd_command="pacman" # Fallback when no alternative package managers are detected
-  pm_list=(paru yay)
+  if [[ "$ID_LIKE" = "arch" || "$ID" = "arch" ]]; then
+    local upd_command="pacman" # Fallback when no alternative package managers are detected
+    local pm_list=(paru yay)
 
-  for pm in "${pm_list[@]}"; do
-    if which "$pm" >/dev/null 2>&1; then
-      upd_command="$pm"
-      break
-    fi
-  done
+    for pm in "${pm_list[@]}"; do
+      if which "$pm" >/dev/null 2>&1; then
+        upd_command="$pm"
+        break
+      fi
+    done
+    local upd_args=(-Syu)
+    $SKIP_PROMPT && upd_args+=(--noconfirm)
+  else
+    echo -e "${RED_BOLD}===>${NC}  ${BOLD}Unsupported distro detected.${NC}"
+    echo -e "${RED_BOLD}===>${NC}  ${BOLD}Skipping system upgrades...${NC}"
+    return 0
+  fi
 
-  upd_args=(-Syu)
-  $SKIP_PROMPT && upd_args+=(--noconfirm)
-
-  if $upd_command "${upd_args[@]}"; then
+  echo -e "${BLUE_BOLD}===>${NC}  ${BOLD}Beginning system update...${NC}\n"
+  if "$upd_command" "${upd_args[@]}"; then
     success_text+=("System packages updated.")
   else
     failed_update=true
@@ -73,9 +91,15 @@ _update_package() {
 }
 
 _update_flatpak() {
-  flatpak_args=(-u --system)
+  if ! which flatpak >/dev/null 2>&1; then
+    echo -e "${YELLOW_BOLD}===>${NC}  ${BOLD}Flatpak is not installed.${NC}"
+    echo -e "${YELLOW_BOLD}===>${NC}  ${BOLD}Skipping flatpak upgrades...${NC}"
+    return 0
+  fi
+  local flatpak_args=(-u --system)
   $SKIP_PROMPT && flatpak_args+=(-y)
 
+  echo -e "\n${BLUE_BOLD}===>${NC}  ${BOLD}Checking for flatpak updates...${NC}\n"
   if flatpak update "${flatpak_args[@]}"; then
     success_text+=("Flatpak packages updated.")
   else
@@ -85,10 +109,18 @@ _update_flatpak() {
 }
 
 _post_update_check() {
-  post_upd_args=(-i "sddm.service" -i "gdm.service") # Ignore display manager services to avoid nuking the current session
-  $SKIP_PROMPT && post_upd_args+=(-a)
+  if [[ "$ID_LIKE" = "arch" || "$ID" = "arch" ]]; then
+    local post_upd_command=("$priv_esc_command" checkservices)
+    local post_upd_args=(-i "sddm.service" -i "gdm.service") # Ignore display manager services to avoid nuking the current session
+    $SKIP_PROMPT && post_upd_args+=(-a)
+  else
+    echo -e "${RED_BOLD}===>${NC}  ${BOLD}Unsupported distro detected.${NC}"
+    echo -e "${RED_BOLD}===>${NC}  ${BOLD}Skipping post-update checks...${NC}"
+    return 0
+  fi
 
-  if sudo checkservices "${post_upd_args[@]}"; then
+  echo -e "\n${BLUE_BOLD}===>${NC}  ${BOLD}Running post-update checks...${NC}\n"
+  if "${post_upd_command[@]}" "${post_upd_args[@]}"; then
     success_text+=("Post-update checks completed.")
   else
     failed_update=true
@@ -113,19 +145,9 @@ _update_system() {
     echo -e "${YELLOW_BOLD}===>${NC}  ${BOLD}Skipping confirmation prompts...${NC}"
   fi
 
-  echo -e "${BLUE_BOLD}===>${NC}  ${BOLD}Beginning system update...${NC}\n"
   _update_package
-
-  if which flatpak >/dev/null 2>&1; then
-    echo -e "\n${BLUE_BOLD}===>${NC}  ${BOLD}Checking for flatpak updates...${NC}\n"
-    _update_flatpak
-  fi
-
-  if which checkservices >/dev/null 2>&1; then
-    echo -e "\n${BLUE_BOLD}===>${NC}  ${BOLD}Running post-installation checks...${NC}\n"
-    _post_update_check
-  fi
-
+  _update_flatpak
+  _post_update_check
   _post_update_notify
   read -r -n 1 -p 'Press any key to exit...'
 }
