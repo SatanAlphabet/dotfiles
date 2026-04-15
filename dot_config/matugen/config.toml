@@ -105,12 +105,12 @@ output_path = '~/.vscode-oss/extensions/satanalphabet.matugen-vscode-2.0.0/theme
 [templates.zen-userChrome]
 input_path = '~/.config/matugen/templates/userChrome.css'
 output_path = '~/.cache/matugen/zen-browser/userChrome.css'
-post_hook = 'sync-zen-settings.sh'
+post_hook = 'sync-zen-settings.sh userChrome.css'
 
 [templates.zen-userContent]
 input_path = '~/.config/matugen/templates/userContent.css'
 output_path = '~/.cache/matugen/zen-browser/userContent.css'
-post_hook = 'sync-zen-settings.sh'
+post_hook = 'sync-zen-settings.sh userContent.css'
 
 [templates.pywalfox]
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
