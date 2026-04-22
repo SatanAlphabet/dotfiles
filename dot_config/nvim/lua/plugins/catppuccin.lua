@@ -3,7 +3,6 @@ return {
   lazy = true,
   name = "catppuccin",
   priority = 1000,
-  enabled = true,
   opts = {
     flavour = "auto", -- latte, frappe, macchiato, mocha
     background = {
@@ -43,20 +42,20 @@ return {
         NormalFloat = { bg = "none" },
         FloatBorder = { bg = "none" },
         FloatTitle = { bg = "none" },
-        Pmenu = { bg = "none" },      -- Completion menu
+        Pmenu = { bg = "none" }, -- Completion menu
         PmenuSbar = { bg = "none" },
         PmenuThumb = { bg = "none" },
-        
+
         -- 2. Sidebar & Explorer Transparency (Neo-tree)
-        NormalSB = { bg = "none" },      -- Sidebar background
-        SignColumnSB = { bg = "none" },  -- Sidebar sign column
+        NormalSB = { bg = "none" }, -- Sidebar background
+        SignColumnSB = { bg = "none" }, -- Sidebar sign column
         NeoTreeNormal = { bg = "none" },
         NeoTreeNormalNC = { bg = "none" },
         NeoTreeWinSeparator = { fg = colors.surface1, bg = "none" },
-        
+
         -- 3. Window Dividers
         WinSeparator = { fg = colors.surface1, bg = "none" },
-        
+
         -- 4. Line Numbers
         LineNr = { bg = "none" },
         CursorLineNr = { bg = "none" },
