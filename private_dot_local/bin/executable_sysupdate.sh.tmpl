@@ -33,10 +33,6 @@ ON_PURPLE='\033[45m'
 ON_CYAN='\033[46m'
 ON_WHITE='\033[47m'
 
-if ! source /etc/os-release 2>/dev/null; then
-  echo -e "${RED_BOLD}ERROR${NC}${BOLD}: Cannot source OS info.${NC}"
-fi
-
 priv_esc_command_list=(sudo doas run0)
 for cmd in "${priv_esc_command_list[@]}"; do
   if which "$cmd" >/dev/null 2>&1; then
@@ -63,69 +59,57 @@ _confirm_prompt() {
 }
 
 _update_package() {
-  if [[ "$ID_LIKE" = "arch" || "$ID" = "arch" ]]; then
-    local upd_command="pacman" # Fallback when no alternative package managers are detected
-    local pm_list=(paru yay)
-
-    for pm in "${pm_list[@]}"; do
-      if which "$pm" >/dev/null 2>&1; then
-        upd_command="$pm"
-        break
-      fi
-    done
-    local upd_args=(-Syu)
-    $SKIP_PROMPT && upd_args+=(--noconfirm)
-  else
-    echo -e "${RED_BOLD}===>${NC}  ${BOLD}Unsupported distro detected.${NC}"
-    echo -e "${RED_BOLD}===>${NC}  ${BOLD}Skipping system upgrades...${NC}"
-    return 0
-  fi
-
   echo -e "${BLUE_BOLD}===>${NC}  ${BOLD}Beginning system update...${NC}\n"
-  if "$upd_command" "${upd_args[@]}"; then
-    success_text+=("System packages updated.")
+  {{- if (eq "arch" .chezmoi.osRelease.id (get .chezmoi.osRelease "idLike")) }}
+
+  local upd_args=(-Syu)
+  $SKIP_PROMPT && upd_args+=(--noconfirm)
+
+  if which "{{- .chezmoi.config.data.aurHelper -}}" >/dev/null 2>&1; then
+    {{ .chezmoi.config.data.aurHelper }} "${upd_args[@]}"
   else
-    failed_update=true
-    failed_text+=("<b>[!] Failed to update system packages.</b>")
+    $priv_esc_command pacman "${upd_args[@]}"
   fi
+
+  {{- else -}}
+
+  echo -e "${RED_BOLD}===>${NC}  ${BOLD}Unsupported distro detected.${NC}"
+  echo -e "${RED_BOLD}===>${NC}  ${BOLD}Skipping system upgrades...${NC}"
+  return 0
+
+  {{- end }}
 }
 
 _update_flatpak() {
+  echo -e "\n${BLUE_BOLD}===>${NC}  ${BOLD}Checking for flatpak updates...${NC}\n"
+
   if ! which flatpak >/dev/null 2>&1; then
     echo -e "${YELLOW_BOLD}===>${NC}  ${BOLD}Flatpak is not installed.${NC}"
     echo -e "${YELLOW_BOLD}===>${NC}  ${BOLD}Skipping flatpak upgrades...${NC}"
     return 0
   fi
+
   local flatpak_args=(-u --system)
   $SKIP_PROMPT && flatpak_args+=(-y)
 
-  echo -e "\n${BLUE_BOLD}===>${NC}  ${BOLD}Checking for flatpak updates...${NC}\n"
-  if flatpak update "${flatpak_args[@]}"; then
-    success_text+=("Flatpak packages updated.")
-  else
-    failed_update=true
-    failed_text+=("<b>[!] Failed to update flatpak packages.</b>")
-  fi
+  flatpak update "${flatpak_args[@]}"
 }
 
 _post_update_check() {
-  if [[ "$ID_LIKE" = "arch" || "$ID" = "arch" ]]; then
-    local post_upd_command=("$priv_esc_command" checkservices)
-    local post_upd_args=(-i "sddm.service" -i "gdm.service") # Ignore display manager services to avoid nuking the current session
-    $SKIP_PROMPT && post_upd_args+=(-a)
-  else
-    echo -e "${RED_BOLD}===>${NC}  ${BOLD}Unsupported distro detected.${NC}"
-    echo -e "${RED_BOLD}===>${NC}  ${BOLD}Skipping post-update checks...${NC}"
-    return 0
-  fi
-
   echo -e "\n${BLUE_BOLD}===>${NC}  ${BOLD}Running post-update checks...${NC}\n"
-  if "${post_upd_command[@]}" "${post_upd_args[@]}"; then
-    success_text+=("Post-update checks completed.")
-  else
-    failed_update=true
-    failed_text+=("<b>[!] Failed to run post-service checks.</b>")
-  fi
+  {{- if (eq "arch" .chezmoi.osRelease.id (get .chezmoi.osRelease "idLike")) }}
+
+  local post_upd_args=(-i "sddm.service" -i "gdm.service") # Ignore display manager services to avoid nuking the current session
+  $SKIP_PROMPT && post_upd_args+=(-a)
+
+  $priv_esc_command checkservices "${post_upd_args[@]}"
+
+  {{- else -}}
+  echo -e "${RED_BOLD}===>${NC}  ${BOLD}No post-update checks found.${NC}"
+  echo -e "${RED_BOLD}===>${NC}  ${BOLD}Skipping post-update checks...${NC}"
+  return 0
+
+  {{- end }}
 }
 
 _post_update_notify() {
@@ -145,11 +129,29 @@ _update_system() {
     echo -e "${YELLOW_BOLD}===>${NC}  ${BOLD}Skipping confirmation prompts...${NC}"
   fi
 
-  _update_package
-  _update_flatpak
-  _post_update_check
+  if _update_package; then
+    success_text+=("System packages updated.")
+  else
+    failed_update=true
+    failed_text+=("<b>[!] Failed to update system packages.</b>")
+  fi
+
+  if _update_flatpak; then
+    success_text+=("Flatpak packages updated.")
+  else
+    failed_update=true
+    failed_text+=("<b>[!] Failed to update flatpak packages.</b>")
+  fi
+
+  if _post_update_check; then
+    success_text+=("Post-update checks completed.")
+  else
+    failed_update=true
+    failed_text+=("<b>[!] Failed to run post-service checks.</b>")
+  fi
+
   _post_update_notify
-  read -r -n 1 -p 'Press any key to exit...'
+  $SKIP_WAIT || read -r -n 1 -p 'Press any key to exit...'
 }
 
 while true; do
@@ -160,6 +162,10 @@ while true; do
     ;;
   --no-confirm | -y)
     SKIP_PROMPT=true
+    shift
+    ;;
+  --no-wait)
+    SKIP_WAIT=true
     shift
     ;;
   *)
