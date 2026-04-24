@@ -33,7 +33,7 @@
 		{
 			"segments": [
 				{
-					"foreground": "yellow",
+					"foreground": "magenta",
 					"properties": {
 						"style": "austin"
 					},
@@ -44,7 +44,7 @@
 				{
 					"type": "time",
 					"style": "plain",
-					"foreground": "default",
+					"foreground": "darkGray",
 					"properties": {
 						"time_format": "15:04:05"
 					}
