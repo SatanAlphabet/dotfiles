@@ -7,6 +7,7 @@
     --zen-colors-border: {{colors.outline.dark.hex}} !important;
 
     --zen-main-browser-background: {{colors.surface.dark.hex}} !important;
+    --zen-main-browser-background-toolbar: {{colors.surface.dark.hex}} !important;
     --toolbox-bgcolor-inactive: {{colors.surface.dark.hex}} !important;
     --newtab-background-color: {{colors.surface.dark.hex}} !important;
     --zen-themed-toolbar-bg: {{colors.surface.dark.hex}} !important;
@@ -61,6 +62,10 @@
 
   #zen-browser-background {
     --zen-main-browser-background: {{colors.surface.dark.hex}} !important;
+  }
+
+  #zen-toolbar-background {
+    --zen-main-browser-background-toolbar: {{colors.surface.dark.hex}} !important;
   }
 
   #zen-workspaces-button {
@@ -120,6 +125,7 @@
     --zen-colors-border: {{colors.outline.light.hex}} !important;
 
     --zen-main-browser-background: {{colors.surface.light.hex}} !important;
+    --zen-main-browser-background-toolbar: {{colors.surface.light.hex}} !important;
     --toolbox-bgcolor-inactive: {{colors.surface.light.hex}} !important;
     --newtab-background-color: {{colors.surface.light.hex}} !important;
     --zen-themed-toolbar-bg: {{colors.surface.light.hex}} !important;
@@ -174,6 +180,10 @@
 
   #zen-browser-background {
     --zen-main-browser-background: {{colors.surface.light.hex}} !important;
+  }
+
+  #zen-toolbar-background {
+    --zen-main-browser-background-toolbar: {{colors.surface.light.hex}} !important;
   }
 
   #zen-workspaces-button {
