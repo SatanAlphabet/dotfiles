@@ -1,1 +1,13 @@
-@import 'colors.css';
+@import "colors.css";
+
+window.nautilus-window {
+	background-color: alpha(@sidebar_bg_color, 0.9);
+}
+
+window.nautilus-window .sidebar-pane {
+	background-color: transparent;
+}
+
+window.nautilus-window .content-pane {
+	background-color: alpha(@view_bg_color, 1);
+}
