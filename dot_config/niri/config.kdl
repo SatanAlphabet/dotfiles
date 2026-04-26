@@ -9,4 +9,4 @@ include "named-workspaces.kdl"
 include "recent-windows.kdl"
 
 // Auto-generated colors from matugen: DO NOT EDIT
-include "matugen-colors.kdl"
+include optional=true "matugen-colors.kdl"
