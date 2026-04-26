@@ -26,6 +26,27 @@ _get_awww_args() {
   [ -n "$fps" ] && awww_args+=("--transition-fps" "$fps")
 }
 
+# refresh color-scheme to reload GTK apps like nautilus
+refresh_color_scheme() {
+  if [ "$current_theme" = "'prefer-light'" ]; then
+    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+    gsettings set org.gnome.desktop.interface color-scheme prefer-light
+  else
+    gsettings set org.gnome.desktop.interface color-scheme prefer-light
+    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+  fi
+}
+
+generate_color() {
+  if [ "$(matugen -V | awk '{printf $2}' | cut -d. -f1)" -ge 4 ]; then
+    matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" --source-color-index 0 -t "$scheme" >/dev/null 2>&1
+    refresh_color_scheme
+  else
+    matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" -t "$scheme" >/dev/null 2>&1 &
+    refresh_color_scheme
+  fi
+}
+
 switch_wallpaper() {
 
   if [[ ! -f "$1" ]]; then
@@ -42,11 +63,8 @@ switch_wallpaper() {
       gsettings set org.gnome.desktop.interface color-scheme prefer-light
       current_theme="'prefer-light'"
     fi
-    if [ "$(matugen -V | awk '{printf $2}' | cut -d. -f1)" -ge 4 ]; then
-      matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" --source-color-index 0 -t "$scheme" >/dev/null 2>&1 &
-    else
-      matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" -t "$scheme" >/dev/null 2>&1 &
-    fi
+    generate_color "$1" &
+
     [ ! -d "$landing_cache" ] && mkdir -p "$landing_cache"
     ln -sf "$1" "$landing_cache/background"
 

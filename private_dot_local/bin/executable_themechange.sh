@@ -8,6 +8,7 @@ switch_to_light_mode() {
   else
     matugen image "$1" -m light
   fi
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
   notify-send -e -t 3000 "System Theme" "Switched to <b>light</b> mode" -i weather-clear-symbolic
 }
@@ -18,6 +19,7 @@ switch_to_dark_mode() {
   else
     matugen image "$1" -m dark
   fi
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   notify-send -e -t 3000 "System Theme" "Switched to <b>dark</b> mode" -i weather-clear-night-symbolic
 }
