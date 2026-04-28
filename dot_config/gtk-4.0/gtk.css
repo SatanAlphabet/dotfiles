@@ -1,13 +1,78 @@
 @import "colors.css";
 
+.text-button {
+	border-radius: 4px;
+}
+
 window.nautilus-window {
 	background-color: alpha(@sidebar_bg_color, 0.9);
 }
 
 window.nautilus-window .sidebar-pane {
 	background-color: transparent;
+	border: 8px solid @view_bg_color;
+	border-right: none;
+	box-shadow: 0px 0px 1px 1px alpha(@accent_color, 0.2) inset;
 }
 
 window.nautilus-window .content-pane {
-	background-color: alpha(@view_bg_color, 1);
+	background-color: @view_bg_color;
+}
+
+.content-pane .bottom.floating-bar {
+	background-color: @surface_container;
+	box-shadow: 0px 0px 0px 1px @outline_variant inset;
+	border-radius: 4px;
+}
+
+headerbar button {
+	border-radius: 4px;
+}
+
+window.nautilus-window headerbar box.end.horizontal widget > splitbutton > button {
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+window.nautilus-window headerbar box.end.horizontal widget > splitbutton > menubutton > button {
+	border-bottom-left-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+.navigation-sidebar row {
+	border-radius: 4px;
+}
+
+.nautilus-path-button:hover:not(.current-dir),
+.navigation-sidebar row:hover {
+	background: alpha(@primary, 0.25);
+}
+
+.nautilus-path-button:active:not(.current-dir),
+.navigation-sidebar row:active {
+	background: alpha(@primary, 0.15);
+}
+
+.navigation-sidebar row:selected {
+	background: alpha(@primary, 0.35);
+	box-shadow: 0px 0px 1px 1px alpha(@primary, 0.5) inset;
+}
+
+.navigation-sidebar row:selected * {
+	color: @on_primary_container;
+}
+
+.nautilus-pathbar {
+	background-color: @surface_container;
+	box-shadow: 0px 0px 0px 1px @outline_variant inset;
+	border-radius: 4px;
+}
+
+.nautilus-path-button.current-dir {
+	color: @primary;
+}
+
+.nautilus-pathbar menubutton > button {
+	border-left: 1px solid @outline_variant;
+	border-radius: 0px 4px 4px 0px;
 }
