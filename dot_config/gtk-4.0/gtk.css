@@ -1,7 +1,264 @@
 @import "colors.css";
 
-.text-button {
+* {
+	caret-color: alpha(@primary, 0.5);
+}
+
+entry,
+button {
 	border-radius: 4px;
+}
+
+.text-button.toggle {
+	background-color: @surface_container;
+}
+
+.text-button.toggle:hover {
+	background-color: @surface_container_highest;
+}
+
+.text-button.toggle:active {
+	background-color: @surface_variant;
+}
+
+.text-button.toggle * {
+	color: @on_surface_variant;
+}
+
+.text-button.toggle:checked {
+	background-color: @secondary_container;
+	box-shadow: 0px 0px 0px 1px alpha(@primary, 0.3) inset;
+}
+
+.text-button.toggle:checked * {
+	color: @on_secondary_container;
+}
+
+button.close > image {
+	background-color: alpha(@error_container, 0.35);
+	color: @error;
+}
+
+button.close:hover > image {
+	background-color: alpha(@error_container, 0.5);
+}
+
+button.close:active > image {
+	background-color: alpha(@error_container, 0.75);
+}
+
+progressbar,
+trough {
+	background-color: @outline-variant;
+	border-radius: 4px;
+	min-height: 5px;
+}
+
+progress,
+highlight {
+	background-color: @primary;
+	border-radius: 4px;
+	min-height: 5px;
+}
+
+splitbutton {
+	background-color: transparent;
+}
+
+splitbutton button {
+	border-radius: 4px 0px 0px 4px;
+}
+
+splitbutton menubutton {
+	border-radius: 0px 4px 4px 0px;
+}
+
+banner widget {
+	margin: 0px 8px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 0px 1px alpha(@outline_variant, 0.5) inset;
+	background-color: @surface_container_low;
+}
+
+.boxed-list {
+	box-shadow: none;
+	background-color: @window_bg_color;
+}
+
+.boxed-list row {
+	background-color: @surface_container;
+	border-radius: 0px;
+	margin-bottom: 2px;
+}
+
+.boxed-list > row {
+	box-shadow: 0px 0px 0px 1px alpha(@outline_variant, 0.5) inset;
+}
+
+.boxed-list row.activatable:hover {
+	background-color: @surface_container_high;
+}
+
+.boxed-list row.activatable:active {
+	background-color: @surface_variant;
+}
+
+.boxed-list row:insensitive {
+	background-color: @surface_container;
+}
+
+.boxed-list row:first-child {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.boxed-list row:last-child {
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	margin-bottom: 0px;
+}
+
+popover listview.view row,
+popover listview.view row:first-child,
+popover listview.view row:last-child {
+	background: @surface_container;
+}
+
+popover contents,
+popover arrow {
+	background: @surface_container_low;
+	border-radius: 4px;
+	border: 1px solid alpha(@outline, 0.5);
+}
+
+popover listview.view row:hover {
+	background: @surface_variant;
+}
+
+popover listview.view row:active {
+	background: @surface_container;
+}
+
+modelbutton {
+	padding: 0px 8px;
+	border-radius: 4px;
+}
+
+modelbutton * {
+	color: @on_surface;
+}
+
+modelbutton:hover {
+	background-color: alpha(@outline_variant, 0.5);
+}
+
+modelbutton:active {
+	background-color: alpha(@outline, 0.4);
+}
+
+switch {
+	background: @surface_container;
+	border: 2px solid @outline;
+	padding: 0;
+	border-radius: 4px;
+}
+
+switch:checked {
+	background: @primary;
+	border-color: @primary;
+}
+
+switch slider {
+	background: @outline;
+	margin: 2px;
+	min-width: 0;
+	min-height: 0;
+	border-radius: 4px;
+}
+
+switch:checked slider {
+	background: @on_primary;
+	outline: 2px solid transparent;
+	margin: 0px;
+}
+
+tabbox {
+	padding: 0px;
+	padding-top: 4px;
+}
+
+tabbox tabboxchild,
+tabbox tabboxchild tab {
+	border-radius: 4px;
+}
+
+tab:hover {
+	background: @surface_container;
+}
+
+tab:active,
+tab:selected {
+	background: @secondary_container;
+}
+
+tab .tab-title label {
+	color: @on_surface_variant;
+	font-weight: 500;
+}
+
+tab:selected .tab-title label {
+	font-weight: 800;
+	color: @primary;
+}
+
+toast {
+	border-radius: 4px;
+	background-color: @surface_container_high;
+	color: @on_surface;
+	box-shadow:
+		0px 0px 1px 1px alpha(@primary, 0.5) inset,
+		0px 0px 6px 0px alpha(@shadow, 0.75);
+}
+
+toast button {
+	background-color: transparent;
+	color: @primary;
+}
+
+toast button:hover {
+	background-color: @primary_container;
+}
+
+toast button:active {
+	background-color: @primary;
+	color: @on_primary;
+}
+
+toast button:last-child {
+	color: @on_surface;
+}
+
+toast button:last-child:hover {
+	background-color: alpha(@outline_variant, 0.8);
+}
+
+toast button:last-child:active {
+	background-color: alpha(@outline, 0.4);
+}
+
+tooltip {
+	background-color: @surface_container;
+	color: @on_surface_variant;
+	border-radius: 4px;
+	box-shadow: 0px 0px 1px 1px @outline_variant inset;
+}
+
+viewswitcher > button.toggle:checked {
+	background-color: @secondary_container;
+}
+
+viewswitcher > button.toggle:checked * {
+	color: @primary;
 }
 
 window.nautilus-window {
@@ -10,9 +267,6 @@ window.nautilus-window {
 
 window.nautilus-window .sidebar-pane {
 	background-color: transparent;
-	border: 8px solid @view_bg_color;
-	border-right: none;
-	box-shadow: 0px 0px 1px 1px alpha(@accent_color, 0.2) inset;
 }
 
 window.nautilus-window .content-pane {
@@ -45,21 +299,22 @@ window.nautilus-window headerbar box.end.horizontal widget > splitbutton > menub
 
 .nautilus-path-button:hover:not(.current-dir),
 .navigation-sidebar row:hover {
-	background: alpha(@primary, 0.25);
+	background: alpha(@primary, 0.2);
 }
 
 .nautilus-path-button:active:not(.current-dir),
 .navigation-sidebar row:active {
-	background: alpha(@primary, 0.15);
+	background: alpha(@primary, 0.12);
 }
 
 .navigation-sidebar row:selected {
-	background: alpha(@primary, 0.35);
+	background: alpha(@primary, 0.25);
 	box-shadow: 0px 0px 1px 1px alpha(@primary, 0.5) inset;
 }
 
 .navigation-sidebar row:selected * {
 	color: @on_primary_container;
+	font-weight: 600;
 }
 
 .nautilus-pathbar {
@@ -75,4 +330,10 @@ window.nautilus-window headerbar box.end.horizontal widget > splitbutton > menub
 .nautilus-pathbar menubutton > button {
 	border-left: 1px solid @outline_variant;
 	border-radius: 0px 4px 4px 0px;
+}
+
+.nautilus-list-view listview .activatable:selected,
+.nautilus-grid-view .activatable:selected {
+	background: @secondary_container;
+	outline-color: alpha(@primary, 0.5);
 }
