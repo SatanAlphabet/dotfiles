@@ -11,6 +11,7 @@ button {
 
 floating-sheet sheet {
 	border-radius: 8px;
+	outline-color: @outline_variant;
 }
 
 .text-button.toggle {
