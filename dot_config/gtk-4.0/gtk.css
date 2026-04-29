@@ -9,6 +9,10 @@ button {
 	border-radius: 4px;
 }
 
+floating-sheet sheet {
+	border-radius: 8px;
+}
+
 .text-button.toggle {
 	background-color: @surface_container;
 }
@@ -332,8 +336,12 @@ window.nautilus-window headerbar box.end.horizontal widget > splitbutton > menub
 	border-radius: 0px 4px 4px 0px;
 }
 
+.nautilus-list-view listview .activatable,
+.nautilus-grid-view .activatable {
+	outline-color: alpha(@primary, 0.5);
+}
+
 .nautilus-list-view listview .activatable:selected,
 .nautilus-grid-view .activatable:selected {
 	background: @secondary_container;
-	outline-color: alpha(@primary, 0.5);
 }
