@@ -1,0 +1,7 @@
+@theme "~/.config/rofi/styles/menu/styles/style-3-alt.rasi"
+
+window {
+  location: south west;
+  x-offset: 8px;
+  y-offset: -8px;
+}

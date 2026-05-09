@@ -1,0 +1,318 @@
+* {
+	font-family: "CaskaydiaCove Nerd Font Propo";
+	font-size: 18px;
+}
+
+window#waybar {
+	box-shadow: none;
+	text-shadow: none;
+	background: @surface;
+	color: @on-surface;
+}
+
+window#waybar.main-bar #privacy,
+window#waybar.main-bar .module {
+	margin: 4px 0px;
+	padding: 0px 6px;
+	border-radius: 4px;
+	background: @surface-container;
+	transition: 100ms;
+}
+
+window#waybar.main-bar #pill {
+	margin: 4px 0px;
+	padding: 0px 6px;
+	background: @surface-container;
+	border-radius: 4px;
+	transition: 100ms;
+}
+
+window#waybar.main-bar #privacy:hover,
+window#waybar.main-bar #pill:hover,
+window#waybar.main-bar .module:hover {
+	box-shadow: 0px 0px 0px 1px alpha(@primary, 0.5) inset;
+	background: @surface-variant;
+}
+
+window#waybar.main-bar #language:hover,
+window#waybar.main-bar #clock:hover,
+window#waybar.main-bar #custom-launcher:hover,
+window#waybar.main-bar #pill .module:hover,
+window#waybar.main-bar #window:hover,
+window#waybar.main-bar #workspaces:hover {
+	box-shadow: inherit;
+}
+
+window#waybar.main-bar #workspaces:hover {
+	background: @surface-container;
+}
+
+tooltip {
+	background: @surface;
+	border: 1px solid @on-primary-fixed-variant;
+	border-radius: 4px;
+}
+
+tooltip label {
+	font-size: 12px;
+	color: @on-surface;
+	font-family: "Inter Variable";
+}
+
+menu {
+	background: @surface;
+	color: @on-surface;
+	border: 1px solid @on-primary-fixed-variant;
+	border-radius: 4px;
+}
+
+menuitem {
+	color: @on-surface;
+	border-radius: 4px;
+}
+
+menuitem arrow {
+	color: @outline;
+}
+
+menuitem label {
+	font-size: 12px;
+	font-family: "Inter Variable";
+}
+
+menuitem:hover {
+	background: @surface-container-high;
+}
+
+menuitem:hover arrow {
+	color: @primary;
+}
+
+window#waybar.main-bar .modules-left {
+	margin-left: 10px;
+}
+
+window#waybar.main-bar .modules-right {
+	margin-right: 10px;
+}
+
+window#waybar.main-bar #pill .alt {
+	font-size: 13px;
+	font-family: "Inter Variable";
+	font-feature-settings: "tnum";
+}
+
+window#waybar.main-bar .modules-right #pill .alt {
+	padding-left: 6px;
+}
+
+window#waybar.main-bar #custom-launcher {
+	font-size: 22px;
+	background: transparent;
+	margin: 0px;
+	color: @primary;
+}
+
+window#waybar.main-bar #custom-launcher:hover {
+	color: @secondary;
+}
+
+.warning {
+	color: @yellow;
+}
+
+.critical {
+	color: @error;
+}
+
+window#waybar.main-bar .recording,
+window#waybar.main-bar .recording:hover {
+	background: @error-container;
+	color: @on-error-container;
+	box-shadow: 0px 0px 0px 1px alpha(@error, 0.6) inset;
+}
+
+window#waybar.main-bar .recording:hover {
+	box-shadow: 0px 0px 0px 1px @error inset;
+}
+
+.muted,
+.paused,
+.disabled,
+.disconnected,
+.off {
+	color: @outline;
+}
+
+window#waybar.main-bar #custom-seperator-vertical {
+	font-size: 13px;
+	opacity: 0.5;
+	background: transparent;
+}
+
+#workspaces button {
+	text-shadow: none;
+	box-shadow: none;
+	min-width: 0px;
+	min-height: 0px;
+	color: transparent;
+	background: @secondary;
+	border-radius: 4px;
+	padding: 0px 4px;
+	margin: 10px 6px;
+	transition: none;
+	opacity: 1;
+}
+
+#workspaces button label {
+	font-weight: 500;
+	font-family: "Roboto";
+	font-size: 0px;
+}
+
+#workspaces button.empty {
+	background: transparent;
+	border: 1.8px solid @secondary;
+}
+
+#workspaces button.active {
+	padding: 0px 15px;
+	margin: 8px 6px;
+	border: none;
+	background: @primary;
+	color: @on-primary;
+	opacity: 1;
+}
+
+#workspaces button.active label {
+	font-size: 11px;
+}
+
+#workspaces button:hover {
+	background: @primary;
+	border-color: @primary;
+}
+
+#workspaces button.active:hover {
+	background: @secondary;
+}
+
+window#waybar.main-bar #window {
+	background: transparent;
+}
+
+window#waybar.main-bar #window label {
+	font-size: 12px;
+	font-family: "Inter Variable";
+}
+
+window#waybar.main-bar #clock {
+	background: transparent;
+	font-size: 16px;
+	font-family: "Inter Variable";
+	font-feature-settings: "tnum";
+	padding: 0px;
+	font-weight: 300;
+}
+
+window#waybar.main-bar #clock.alt {
+	color: @primary;
+}
+
+window#waybar.main-bar #privacy,
+window#waybar.main-bar #tray {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+window#waybar.main-bar #custom-swaync.cc-open {
+	background: @primary-container;
+	color: @on-primary-container;
+	box-shadow: 0px 0px 0px 1px alpha(@primary, 0.6) inset;
+}
+
+window#waybar.main-bar #custom-swaync.cc-open:hover {
+	box-shadow: 0px 0px 0px 1px @primary inset;
+}
+
+window#waybar.main-bar #language {
+	color: @secondary;
+	font-size: 15px;
+	font-weight: 400;
+	background: transparent;
+}
+
+window#waybar.main-bar #language:hover {
+	font-weight: 800;
+}
+
+window#waybar.main-bar .modules-right .module:not(.alt) {
+}
+
+/* Adjust margin & padding for modules in pills */
+window#waybar.main-bar #pill .module {
+	background: transparent;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+window#waybar.outline-left,
+window#waybar.outline-right,
+window#waybar.outline-top,
+window#waybar.outline-bottom {
+	background-color: @on-primary-fixed-variant;
+}
+
+window#waybar.time-widget,
+window#waybar.date-widget {
+	background: transparent;
+}
+
+window#waybar.time-widget .module,
+window#waybar.date-widget .module {
+	background: transparent;
+	font-family: "Inter Variable";
+	color: @primary-fixed-dim;
+}
+
+window#waybar #clock.widget-time {
+	font-size: 72px;
+	font-weight: 600;
+	padding: 25px 0px;
+	margin: 0px 20px;
+	text-shadow:
+		-1px 0px @on-primary-fixed-variant,
+		2px 0px @on-primary-fixed-variant,
+		0px -1px @on-primary-fixed-variant,
+		0px 2px @on-primary-fixed-variant,
+		3px 3px @on-primary-fixed-variant,
+		0px 0px 2px @shadow;
+}
+
+window#waybar #clock.widget-date {
+	font-size: 28px;
+	font-weight: 400;
+	padding: 8px 0px;
+	margin: 0px 20px;
+	text-shadow:
+		-1px 0px @on-primary-fixed-variant,
+		1px 0px @on-primary-fixed-variant,
+		0px -1px @on-primary-fixed-variant,
+		0px 2px @on-primary-fixed-variant,
+		2px 2px @on-primary-fixed-variant,
+		0px 0px 2px @shadow;
+}
+
+window#waybar #mpris.widget {
+	font-size: 20px;
+	font-weight: 300;
+	margin: 0px 20px;
+	text-shadow:
+		-1px 0px @on-primary-fixed-variant,
+		1px 0px @on-primary-fixed-variant,
+		0px -1px @on-primary-fixed-variant,
+		0px 2px @on-primary-fixed-variant,
+		1.5px 1.5px @on-primary-fixed-variant;
+}
