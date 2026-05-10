@@ -52,8 +52,10 @@ tooltip {
 }
 
 tooltip label {
-	font-size: 11px;
+	font-size: 12px;
+	padding: 0px;
 	color: @on-surface;
+	font-family: "Inter Variable";
 }
 
 menu {

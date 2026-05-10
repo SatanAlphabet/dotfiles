@@ -37,9 +37,9 @@ tooltip {
 }
 
 tooltip label {
-	font-size: 11px;
-	font-family: "CaskaydiaCove Nerd Font Propo";
+	font-size: 12px;
 	color: @on-surface;
+	padding: 0px;
 }
 
 menu {
