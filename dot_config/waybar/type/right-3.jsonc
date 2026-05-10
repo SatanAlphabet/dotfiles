@@ -197,7 +197,7 @@
 			"justify": "center",
 			"format": "{:%H\n%M}",
 			"format-alt": "{:%H\n%M\n--\n%m\n%d}",
-			"tooltip-format": "<span>{calendar}</span>",
+			"tooltip-format": "<tt>{calendar}</tt>",
 		},
 		"custom/swaync": {
 			"justify": "center",
@@ -217,8 +217,8 @@
 			"justify": "center",
 			"format": "{player_icon}",
 			"format-paused": "{status_icon}",
-			"tooltip-format": "PLAYING [{position}/{length}]\n{title} - {artist}",
-			"tooltip-format-paused": "PAUSED [{position}/{length}]\n{title} - {artist}",
+			"tooltip-format": "PLAYING [ {position} / {length} ]\n{title} - {artist}",
+			"tooltip-format-paused": "PAUSED [ {position} / {length} ]\n{title} - {artist}",
 			"player-icons": {
 				"default": "󰝚",
 			},

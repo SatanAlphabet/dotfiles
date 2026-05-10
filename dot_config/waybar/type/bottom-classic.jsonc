@@ -27,7 +27,7 @@
 			"format": "{:%b %d %Y - %T}",
 			"format-alt": "{:%r}",
 			"interval": 1,
-			"tooltip-format": "<span>{calendar}</span>",
+			"tooltip-format": "<tt>{calendar}</tt>",
 		},
 		"custom/screen-recorder": {
 			"hide-empty-text": true,
@@ -49,8 +49,8 @@
 		"mpris": {
 			"format": "{player_icon}",
 			"format-paused": "{status_icon}",
-			"tooltip-format": "PLAYING [{position}/{length}]\n{title} - {artist}",
-			"tooltip-format-paused": "PAUSED [{position}/{length}]\n{title} - {artist}",
+			"tooltip-format": "PLAYING [ {position} / {length} ]\n{title} - {artist}",
+			"tooltip-format-paused": "PAUSED [ {position} / {length} ]\n{title} - {artist}",
 			"player-icons": {
 				"default": "󰝚",
 			},
