@@ -220,6 +220,16 @@ window#waybar.main-bar #clock.alt {
 	color: @primary;
 }
 
+window#waybar.main-bar #pill.music,
+window#waybar.main-bar #mpris {
+	background: transparent;
+	box-shadow: none;
+}
+
+window#waybar.main-bar #mpris.alt {
+	font-size: 12px;
+}
+
 window#waybar.main-bar #privacy,
 window#waybar.main-bar #tray {
 	padding-top: 0px;
