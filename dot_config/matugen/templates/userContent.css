@@ -1,171 +1,281 @@
 @media (prefers-color-scheme: dark) {
-/* Common variables affecting all pages */
-  @-moz-document url-prefix("about:") {
-    :root {
-      --in-content-page-color: {{colors.secondary.dark.hex}} !important;
-      --color-accent-primary: {{colors.primary.dark.hex}} !important;
-      /* --color-accent-primary-hover: rgb(249, 217, 240) !important;
-      --color-accent-primary-active: rgb(245, 195, 219) !important; */
-      background-color: {{colors.surface_container.dark.hex}} !important;
-      --in-content-page-background: {{colors.surface_container.dark.hex}} !important;
-    }
 
-  }
-
-  /* Variables and styles specific to about:newtab and about:home */
-  @-moz-document url("about:newtab"), url("about:home") {
-
-    :root {
-      --newtab-background-color: {{colors.surface_container.dark.hex}} !important;
-      --newtab-background-color-secondary: {{colors.surface_container_high.dark.hex}} !important;
-      --newtab-element-hover-color: {{colors.surface_container_high.dark.hex}} !important;
-      --newtab-text-primary-color: {{colors.secondary.dark.hex}} !important;
-      --newtab-wordmark-color: {{colors.secondary.dark.hex}} !important;
-      --newtab-primary-action-background: {{colors.primary.dark.hex}} !important;
-    }
-
-    .icon {
-      color: {{colors.primary.dark.hex}} !important;
-    }
-
-    .card-outer:is(:hover, :focus, .active):not(.placeholder) .card-title {
-      color: {{colors.primary.dark.hex}} !important;
-    }
-  }
-
-  /* Variables and styles specific to about:preferences */
-  @-moz-document url-prefix("about:preferences") {
-    :root {
-      --zen-colors-tertiary: {{colors.surface_container_low.dark.hex}} !important;
-      --in-content-text-color: {{colors.secondary.dark.hex}} !important;
-      --link-color: {{colors.primary.dark.hex}} !important;
-      /* --link-color-hover: rgb(249, 217, 240) !important; */
-      --zen-colors-primary: {{colors.surface_container_high.dark.hex}} !important;
-      --in-content-box-background: {{colors.surface_container_high.dark.hex}} !important;
-      --zen-primary-color: {{colors.primary.dark.hex}} !important;
-    }
-
-    groupbox , moz-card{
-      background: {{colors.surface_container.dark.hex}} !important;
-    }
-
-    button,
-    groupbox menulist {
-      background: {{colors.surface_container_high.dark.hex}} !important;
-      color: {{colors.secondary.dark.hex}} !important;
-    }
-
-    .main-content {
-      background-color: {{colors.surface_container_lowest.dark.hex}} !important;
-    }
-  }
-
-  /* Variables and styles specific to about:addons */
-  @-moz-document url-prefix("about:addons") {
-    :root {
-      --zen-dark-color-mix-base: {{colors.surface_container_low.dark.hex}} !important;
-      --background-color-box: {{colors.surface_container.dark.hex}} !important;
-    }
-  }
-
-  /* Variables and styles specific to about:protections */
-  @-moz-document url-prefix("about:protections") {
-    :root {
-      --zen-primary-color: {{colors.surface_container.dark.hex}} !important;
-      --in-content-primary-button-text-color-hover: {{colors.secondary.dark.hex}} !important;
-      --in-content-primary-button-background: {{colors.surface_container.dark.hex}} !important;
-      --in-content-primary-button-text-color: {{colors.secondary.dark.hex}} !important;
-    }
-
-    .card {
-      background-color: {{colors.surface_container_high.dark.hex}} !important;
-    }
+  * {
+<* for name, value in colors *>
+ --{{ name | replace: "_", "-" }}: {{ value.dark.hex }};
+<* endfor *>
   }
 }
-
 
 @media (prefers-color-scheme: light) {
-/* Common variables affecting all pages */
-  @-moz-document url-prefix("about:") {
-    :root {
-      --in-content-page-color: {{colors.secondary.light.hex}} !important;
-      --color-accent-primary: {{colors.primary.light.hex}} !important;
-      /* --color-accent-primary-hover: rgb(249, 217, 240) !important;
-      --color-accent-primary-active: rgb(245, 195, 219) !important; */
-      background-color: {{colors.surface_container.light.hex}} !important;
-      --in-content-page-background: {{colors.surface_container.light.hex}} !important;
-    }
 
-  }
-
-  /* Variables and styles specific to about:newtab and about:home */
-  @-moz-document url("about:newtab"), url("about:home") {
-
-    :root {
-      --newtab-background-color: {{colors.surface_container.light.hex}} !important;
-      --newtab-background-color-secondary: {{colors.surface_container_high.light.hex}} !important;
-      --newtab-element-hover-color: {{colors.surface_container_high.light.hex}} !important;
-      --newtab-text-primary-color: {{colors.secondary.light.hex}} !important;
-      --newtab-wordmark-color: {{colors.secondary.light.hex}} !important;
-      --newtab-primary-action-background: {{colors.primary.light.hex}} !important;
-    }
-
-    .icon {
-      color: {{colors.primary.light.hex}} !important;
-    }
-
-    .card-outer:is(:hover, :focus, .active):not(.placeholder) .card-title {
-      color: {{colors.primary.light.hex}} !important;
-    }
-  }
-
-  /* Variables and styles specific to about:preferences */
-  @-moz-document url-prefix("about:preferences") {
-    :root {
-      --zen-colors-tertiary: {{colors.surface_container_low.light.hex}} !important;
-      --in-content-text-color: {{colors.secondary.light.hex}} !important;
-      --link-color: {{colors.primary.light.hex}} !important;
-      /* --link-color-hover: rgb(249, 217, 240) !important; */
-      --zen-colors-primary: {{colors.surface_container_high.light.hex}} !important;
-      --in-content-box-background: {{colors.surface_container_high.light.hex}} !important;
-      --zen-primary-color: {{colors.primary.light.hex}} !important;
-    }
-
-    groupbox , moz-card{
-      background: {{colors.surface_container.light.hex}} !important;
-    }
-
-    button,
-    groupbox menulist {
-      background: {{colors.surface_container_high.light.hex}} !important;
-      color: {{colors.secondary.light.hex}} !important;
-    }
-
-    .main-content {
-      background-color: {{colors.surface_container_lowest.light.hex}} !important;
-    }
-  }
-
-  /* Variables and styles specific to about:addons */
-  @-moz-document url-prefix("about:addons") {
-    :root {
-      --zen-dark: {{colors.surface_container_low.light.hex}} !important;
-      --background-color-box: {{colors.surface_container.light.hex}} !important;
-    }
-  }
-
-  /* Variables and styles specific to about:protections */
-  @-moz-document url-prefix("about:protections") {
-    :root {
-      --zen-primary-color: {{colors.surface_container.light.hex}} !important;
-      --in-content-primary-button-text-color-hover: {{colors.secondary.light.hex}} !important;
-      --in-content-primary-button-background: {{colors.surface_container.light.hex}} !important;
-      --in-content-primary-button-text-color: {{colors.secondary.light.hex}} !important;
-    }
-
-    .card {
-      background-color: {{colors.surface_container_high.light.hex}} !important;
-    }
+  * {
+<* for name, value in colors *>
+ --{{ name | replace: "_", "-" }}: {{ value.light.hex }};
+<* endfor *>
   }
 }
 
+/* Global scrollbar style for all pages */
+* {
+  scrollbar-color: var(--primary) transparent !important;
+}
+
+/* Common variables affecting all pages */
+@-moz-document url-prefix("about:") {
+  :root {
+    --in-content-page-color: var(--secondary) !important;
+    --color-accent-primary: var(--primary) !important;
+    background-color: var(--surface-container) !important;
+    --in-content-page-background: var(--surface-container) !important;
+  }
+
+  /* Sync with theme */
+  .main-heading,
+  .main-search,
+  #content,
+  .sticky-container,
+  #search-container {
+    background-color: var(--surface-container-lowest) !important;
+    background: var(--surface-container-lowest) !important;
+  }
+
+  /* Input fields styling */
+  moz-input-search,
+  moz-input-text,
+  input[type="text"],
+  input[type="search"],
+  input:not([type="checkbox"]):not([type="radio"]) {
+    background-color: var(--surface) !important;
+    color: var(--on-surface) !important;
+    border-color: var(--outline-variant) !important;
+    border-radius: 8px !important;
+    --input-text-background-color: var(--surface) !important;
+    --input-text-color: var(--on-surface) !important;
+    --input-text-border-color: var(--outline-variant) !important;
+    --input-text-border-radius: 8px !important;
+  }
+
+  /* Message Bar styling */
+  moz-message-bar {
+    --message-bar-background-color: var(--surface-container) !important;
+    --message-bar-border-color: var(--outline-variant) !important;
+    --message-bar-icon-color: var(--primary) !important;
+    background-color: var(--surface-container) !important;
+  }
+}
+
+/* Variables and styles specific to about:newtab and about:home */
+@-moz-document url("about:newtab"), url("about:home") {
+  :root {
+    --newtab-background-color: var(--surface-container) !important;
+    --newtab-background-color-secondary: var(--surface-container-high) !important;
+    --newtab-element-hover-color: var(--surface-container-high) !important;
+    --newtab-text-primary-color: var(--on-surface) !important;
+    --newtab-wordmark-color: var(--on-surface) !important;
+    --newtab-primary-action-background: var(--primary) !important;
+  }
+
+  .icon {
+    color: var(--primary) !important;
+  }
+
+  .card-outer:is(:hover, :focus, .active):not(.placeholder) .card-title {
+    color: var(--primary) !important;
+  }
+}
+
+/* Variables and styles specific to about:preferences */
+@-moz-document url-prefix("about:preferences") {
+  :root {
+    --zen-colors-tertiary: var(--surface-container-low) !important;
+    --in-content-text-color: var(--on-surface) !important;
+    --link-color: var(--primary) !important;
+    /* --link-color-hover: rgb(249, 217, 240) !important; */
+    --zen-colors-primary: var(--surface-container-high) !important;
+    --in-content-box-background: var(--surface-container-high) !important;
+    --zen-primary-color: var(--primary) !important;
+  }
+
+  button,
+  groupbox menulist {
+    background: var(--surface-container-high) !important;
+    color: var(--on-surface) !important;
+  }
+
+  .main-content {
+    background-color: var(--surface-container-lowest) !important;
+  }
+
+  moz-card {
+    background-color: var(--surface-container-lowest) !important;
+  }
+
+  li.status-ok::before {
+    -moz-context-properties: fill !important;
+    fill: var(--primary) !important;
+    color: var(--primary) !important;
+  }
+
+  .text-content.has-icon > img.icon {
+    fill: var(--primary) !important;
+    stroke: var(--primary) !important;
+  }
+
+	vbox.navigation {
+		background: var(--surface-container) !important;
+		color: var(--on-surface) !important;
+	}
+}
+
+/* Variables and styles specific to about:addons */
+@-moz-document url-prefix("about:addons") {
+  :root {
+    --zen-dark-color-mix-base: var(--surface-container-low) !important;
+    --background-color-box: var(--surface-container) !important;
+  }
+
+	div#sidebar {
+		background: var(--surface-container) !important;
+		color: var(--on-surface) !important;
+	}
+}
+
+/* Toggle button styling for addons, preferences and newtab */
+@-moz-document url-prefix("about:addons"), url-prefix("about:preferences"), url-prefix("about:newtab"), url-prefix("about:home") {
+  moz-toggle {
+    --toggle-background-color: var(--surface-container-high) !important;
+    --toggle-background-color-pressed: var(--primary) !important;
+    --toggle-background-color-hover: var(--surface-container-high) !important;
+    --toggle-background-color-active: var(--surface-container-high) !important;
+    --toggle-background-color-pressed-hover: var(--primary) !important;
+    --toggle-background-color-pressed-active: var(--primary) !important;
+    --toggle-border-color: transparent !important;
+    --toggle-dot-background-color: var(--on-surface) !important;
+    --toggle-dot-background-color-hover: var(--on-surface) !important;
+    --toggle-dot-background-color-active: var(--on-surface) !important;
+    --toggle-dot-background-color-on-pressed: var(--on-primary) !important;
+    --toggle-dot-margin: 3px !important;
+  }
+
+  .toggle-button {
+    background-color: var(--surface) !important;
+    border-color: var(--outline) !important;
+  }
+
+  .toggle-button::before {
+    background-color: var(--on-surface) !important;
+    margin: 3px !important;
+  }
+
+  .toggle-button[aria-pressed="true"],
+  .toggle-button[checked],
+  .toggle-button:checked {
+    background-color: var(--primary) !important;
+    border-color: transparent !important;
+  }
+
+  .toggle-button[aria-pressed="true"]::before,
+  .toggle-button[checked]::before,
+  .toggle-button:checked::before {
+    background-color: var(--on-primary) !important;
+  }
+}
+
+/* Variables and styles specific to about:protections */
+@-moz-document url-prefix("about:protections") {
+  :root {
+    --zen-primary-color: var(--surface-container-lowest) !important;
+    --in-content-primary-button-text-color-hover: var(--on-surface) !important;
+    --in-content-primary-button-background: var(--surface-container) !important;
+    --in-content-primary-button-text-color: var(--on-surface) !important;
+  }
+
+	.body {
+		background: var(--surface-container) !important;
+	}
+
+  .card {
+    background-color: var(--surface-container-lowest) !important;
+  }
+
+	div#social.tab-content {
+		background-color: var(--surface-container) !important;
+		color: var(--on-surface) !important;
+	}
+}
+
+/* Variables and styles specific to about:config */
+@-moz-document url-prefix("about:config") {
+  div#toolbar {
+    background: var(--on-primary) !important;
+  }
+
+  button#warningButton {
+    background-color: var(--secondary) !important;
+    color: var(--on-secondary) !important;
+    border-color: var(--surface-container) !important;
+  }
+
+  button#warningButton:hover {
+    background-color: color-mix(in srgb, var(--secondary) 80%, transparent) !important;
+  }
+}
+
+@-moz-document url-prefix("about:cache") {
+	td {
+		background-color: var(--surface-container-low) !important;
+		color: var(--on-surface) !important;
+	}
+}
+
+@-moz-document url-prefix("about:home") {
+	div.tile {
+		background-color: var(--surface-container-lowest) !important;
+	}
+}
+
+/* Pane UI button visibility issue fix */
+#PanelUI-menu-button[open] .toolbarbutton-icon {
+  fill: var(--primary) !important;
+}
+
+/* Custom text selection styling */
+::selection {
+  background-color: var(--primary) !important;
+  color: var(--surface-container-lowest) !important;
+}
+
+/* Style checkboxes and radio buttons globally in content */
+*|input[type="checkbox"],
+[type="checkbox"],
+*|input[type="radio"],
+[type="radio"] {
+  accent-color: var(--primary) !important;
+}
+
+/* Style external links globally in content (like New Tab settings) */
+.external-link {
+  color: var(--secondary) !important;
+}
+.external-link:hover {
+  color: color-mix(in srgb, var(--secondary) 70%, transparent) !important;
+}
+
+/* Style new tab customize panel and its wrapper with a darker base background */
+.customize-menu-animate-wrapper {
+  background-color: var(--surface) !important;
+}
+ .customize-menu,
+.close-button-wrapper {
+  background-color: transparent !important;
+}
+
+/* Style personalize (Customize) button on New Tab page */
+.personalize-button {
+  background-color: color-mix(in srgb, var(--secondary-container) 40%, transparent) !important;
+  color: var(--on-surface) !important;
+  border: 1px solid color-mix(in srgb, var(--secondary-container) 20%, transparent) !important;
+  backdrop-filter: blur(10px);
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
