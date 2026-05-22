@@ -29,7 +29,7 @@
   --newtab-background-color: var(--surface) !important;
   --zen-themed-toolbar-bg: var(--surface) !important;
   --toolbar-bgcolor: var(--surface-container) !important;
-  --zen-themed-toolbar-bg-transparent: transparent !important;
+  --zen-themed-toolbar-bg-transparent: var(--surface) !important;
 
   --arrowpanel-color: var(--on-surface) !important;
   --arrowpanel-background: var(--surface) !important;
