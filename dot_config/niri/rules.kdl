@@ -104,14 +104,12 @@ window-rule {
   
   shadow {
     on
-    softness 12
-    spread 1
+    softness 20
+    spread 3
     offset x=0 y=2
-    color "#000"
-    inactive-color "#000a"
+    color "#0009"
+    inactive-color "#0006"
   }
-  geometry-corner-radius 8
-  tiled-state false
 }
 
 /// --- Layer rules --- ///
@@ -120,7 +118,7 @@ layer-rule {
   match namespace="^wallpaper$"
   match namespace="^[sa]www-daemonoverview$"
   match namespace="^dms:blurwallpaper$"
-  match namespace="^noctalia-overview*"
+  match namespace="^noctalia-(overview|backdrop)"
 
   place-within-backdrop true
 }

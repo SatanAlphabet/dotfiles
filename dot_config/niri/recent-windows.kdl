@@ -2,7 +2,7 @@ recent-windows {
   open-delay-ms 200
   highlight {
     padding 30
-    corner-radius 0
+    corner-radius 4
   }
 
   previews {
