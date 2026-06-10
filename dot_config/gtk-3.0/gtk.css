@@ -1,1 +1,33 @@
-@import 'colors.css';
+@import "colors.css";
+
+entry,
+switch,
+switch > slider,
+spinbutton,
+modelbutton,
+menu,
+menuitem,
+list:not(.content) > row,
+popover,
+window.popup > decoration,
+button {
+	border-radius: 4px;
+	-gtk-outline-bottom-left-radius: 4px;
+	-gtk-outline-bottom-right-radius: 4px;
+	-gtk-outline-top-left-radius: 4px;
+	-gtk-outline-top-right-radius: 4px;
+}
+
+list > row:first-child {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	-gtk-outline-top-left-radius: 8px;
+	-gtk-outline-top-right-radius: 8px;
+}
+
+list > row:last-child {
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	-gtk-outline-bottom-left-radius: 8px;
+	-gtk-outline-bottom-right-radius: 8px;
+}
