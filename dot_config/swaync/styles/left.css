@@ -423,6 +423,7 @@ tooltip label {
 
 .widget-mpris-album-art {
 	border: 1px solid @outline;
+	background-color: @surface-container-highest;
 	padding: calc(var(--padding) / 4);
 	border-radius: var(--border-radius);
 	-gtk-icon-size: var(--mpris-album-art-icon-size);
