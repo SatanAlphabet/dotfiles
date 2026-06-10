@@ -29,24 +29,6 @@ window-rule {
 }
 
 window-rule {
-  match app-id=r#"zen$"# title="^[Pp]icture-in-Picture$"
-  match app-id=r#"firefox$"# title="^[Pp]icture-in-Picture$"
-  match app-id=r#"Chromium-browser$"# title="^| Spotify$"
-
-  open-floating true
-  default-floating-position x=24 y=24 relative-to="bottom-right"
-}
-
-window-rule {
-  match title="^Discord Popout$"
-
-  open-floating true
-  default-floating-position x=24 y=24 relative-to="bottom-right"
-  default-window-height { fixed 500; }
-  default-column-width { fixed 300; }
-}
-
-window-rule {
   match app-id=r#"discord$"#
   match app-id=r#"zen$"#
   match app-id=r#"firefox$"#
@@ -70,6 +52,25 @@ window-rule {
   open-on-workspace "browser"
 }
 
+window-rule {
+  match app-id=r#"zen$"# title="^[Pp]icture-in-Picture$"
+  match app-id=r#"firefox$"# title="^[Pp]icture-in-Picture$"
+  match app-id=r#"Chromium-browser$"# title="^| Spotify$"
+
+  open-floating true
+  open-focused false
+  default-floating-position x=24 y=24 relative-to="bottom-right"
+}
+
+window-rule {
+  match title="^Discord Popout$"
+
+  open-floating true
+  open-focused false
+  default-floating-position x=24 y=24 relative-to="bottom-right"
+  default-window-height { fixed 500; }
+  default-column-width { fixed 300; }
+}
 
 window-rule {
   match app-id=r#"^sysupdate$"#
