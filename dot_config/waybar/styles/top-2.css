@@ -313,47 +313,17 @@ window#waybar.date-widget {
 
 window#waybar.time-widget .module,
 window#waybar.date-widget .module {
-	background: transparent;
 	font-family: "Inter Variable";
-	color: @primary-fixed-dim;
+	color: @primary;
 }
 
 window#waybar #clock.widget-time {
-	font-size: 72px;
-	font-weight: 600;
-	padding: 25px 0px;
-	margin: 0px 20px;
-	text-shadow:
-		-1px 0px @on-primary-fixed-variant,
-		2px 0px @on-primary-fixed-variant,
-		0px -1px @on-primary-fixed-variant,
-		0px 2px @on-primary-fixed-variant,
-		3px 3px @on-primary-fixed-variant,
-		0px 0px 2px @shadow;
-}
-
-window#waybar #clock.widget-date {
-	font-size: 28px;
-	font-weight: 400;
-	padding: 8px 0px;
-	margin: 0px 20px;
-	text-shadow:
-		-1px 0px @on-primary-fixed-variant,
-		1px 0px @on-primary-fixed-variant,
-		0px -1px @on-primary-fixed-variant,
-		0px 2px @on-primary-fixed-variant,
-		2px 2px @on-primary-fixed-variant,
-		0px 0px 2px @shadow;
-}
-
-window#waybar #mpris.widget {
-	font-size: 20px;
-	font-weight: 300;
-	margin: 0px 20px;
-	text-shadow:
-		-1px 0px @on-primary-fixed-variant,
-		1px 0px @on-primary-fixed-variant,
-		0px -1px @on-primary-fixed-variant,
-		0px 2px @on-primary-fixed-variant,
-		1.5px 1.5px @on-primary-fixed-variant;
+	font-size: 56px;
+	font-weight: 900;
+	padding: 12px 24px;
+	margin: 20px;
+	border-radius: 4px;
+	background: @surface;
+	border: 2px solid @on-primary-fixed-variant;
+	box-shadow: 0px 0px 0px 2px @surface;
 }

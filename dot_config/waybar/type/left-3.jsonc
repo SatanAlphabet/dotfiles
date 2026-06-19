@@ -282,32 +282,13 @@
 	/* Desktop widgets */
 
 	{
-		"name": "date-widget",
-		"layer": "bottom",
-		"position": "bottom",
-		"exclusive": false,
-		// "modules-left": ["mpris#widget"],
-		"modules-right": ["clock#widget-date"],
-		"clock#widget-date": {
-			"format": "{:%A, %d %B %Y}",
-			"tooltip": false,
-		},
-		"mpris#widget": {
-			"format": "<b>Playing:</b> {title}",
-			"format-paused": "Media Paused",
-			"tooltip": false,
-			"max-length": 50,
-			"interval": 1,
-		},
-	},
-	{
 		"name": "time-widget",
 		"layer": "bottom",
 		"position": "bottom",
 		"exclusive": false,
 		"modules-right": ["clock#widget-time"],
 		"clock#widget-time": {
-			"format": "{:%I:%M %p}",
+			"format": "<span font_features='tnum' letter_spacing='3072' size='60%' weight='900' rise='24pt'>{0:%H:%M}</span>/<span weight='500' size='35%' rise='-4pt'>{0:%b %d}</span>",
 			"tooltip": false,
 		},
 	},

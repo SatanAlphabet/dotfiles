@@ -236,33 +236,15 @@
 	/* Desktop widgets */
 
 	{
-		"name": "date-widget",
-		"layer": "bottom",
-		"position": "bottom",
-		"exclusive": false,
-		// "modules-right": ["mpris#widget"],
-		"modules-left": ["clock#widget-date"],
-		"clock#widget-date": {
-			"format": "{:%A, %d %B %Y}",
-			"tooltip": false,
-		},
-		"mpris#widget": {
-			"format": "<b>Playing:</b> {title}",
-			"format-paused": "Media Paused",
-			"tooltip": false,
-			"max-length": 50,
-			"interval": 1,
-		},
-	},
-	{
 		"name": "time-widget",
 		"layer": "bottom",
 		"position": "bottom",
 		"exclusive": false,
 		"modules-left": ["clock#widget-time"],
 		"clock#widget-time": {
-			"format": "{:%I:%M %p}",
+			"format": "<span font_features='tnum'>{0:%I:%M %p}</span>\n<span weight='400' size='35%'>{0:%A, %d %b %Y}</span>",
 			"tooltip": false,
+			"justify": "center",
 		},
 	},
 ]

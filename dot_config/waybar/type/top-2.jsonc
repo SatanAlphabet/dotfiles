@@ -4,7 +4,7 @@
 		"layer": "top",
 		"position": "top",
 		"spacing": 8,
-		"height": 38,
+		"height": 39,
 		"exclusive": true,
 		"passthrough": false,
 		"reload_style_on_change": true,
@@ -244,33 +244,15 @@
 	/* Desktop widgets */
 
 	{
-		"name": "date-widget",
-		"layer": "bottom",
-		"position": "bottom",
-		"exclusive": false,
-		// "modules-left": ["mpris#widget"],
-		"modules-right": ["clock#widget-date"],
-		"clock#widget-date": {
-			"format": "{:%A, %d %B %Y}",
-			"tooltip": false,
-		},
-		"mpris#widget": {
-			"format": "<b>Playing:</b> {title}",
-			"format-paused": "Media Paused",
-			"tooltip": false,
-			"max-length": 50,
-			"interval": 1,
-		},
-	},
-	{
 		"name": "time-widget",
 		"layer": "bottom",
 		"position": "bottom",
 		"exclusive": false,
 		"modules-right": ["clock#widget-time"],
 		"clock#widget-time": {
-			"format": "{:%I:%M %p}",
+			"format": "<span font_features='tnum'>{0:%I:%M %p}</span>\n<span weight='400' size='35%'>{0:%A, %d %b %Y}</span>",
 			"tooltip": false,
+			"justify": "center",
 		},
 	},
 ]

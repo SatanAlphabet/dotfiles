@@ -237,25 +237,6 @@
 	/* Desktop widgets */
 
 	{
-		"name": "date-widget",
-		"layer": "bottom",
-		"position": "bottom",
-		"exclusive": false,
-		// "modules-right": ["mpris#widget"],
-		"modules-left": ["clock#widget-date"],
-		"clock#widget-date": {
-			"format": "{:%A, %d %B %Y}",
-			"tooltip": false,
-		},
-		"mpris#widget": {
-			"format": "<b>Playing:</b> {title}",
-			"format-paused": "Media Paused",
-			"tooltip": false,
-			"max-length": 50,
-			"interval": 1,
-		},
-	},
-	{
 		"name": "time-widget",
 		"layer": "bottom",
 		"position": "bottom",
@@ -263,6 +244,17 @@
 		"modules-left": ["clock#widget-time"],
 		"clock#widget-time": {
 			"format": "{:%I:%M %p}",
+			"tooltip": false,
+		},
+	},
+	{
+		"name": "date-widget",
+		"layer": "bottom",
+		"position": "bottom",
+		"exclusive": false,
+		"modules-left": ["clock#widget-date"],
+		"clock#widget-date": {
+			"format": "{:%b %d, %Y}",
 			"tooltip": false,
 		},
 	},
