@@ -10,7 +10,7 @@ layout {
   }
 
   tab-indicator {
-    inactive-color "{{colors.primary_container.default.hex}}"
+    inactive-color "{{colors.outline.default.rgba | set_alpha: 0.75}}"
   }
 
   shadow {

@@ -39,11 +39,10 @@ layout {
 
   tab-indicator {
     width 6
-    gap 4
-    gaps-between-tabs 4
+    gap -16
+    gaps-between-tabs 8
     corner-radius 2
-    place-within-column
-    length total-proportion=0.9
+    length total-proportion=0.33
   }
 
   shadow {
