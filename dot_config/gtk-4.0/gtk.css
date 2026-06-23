@@ -90,7 +90,7 @@ banner widget {
 	background-color: @window_bg_color;
 }
 
-.boxed-list row {
+.boxed-list > row {
 	background-color: @surface_container;
 	border-radius: 0px;
 	margin-bottom: 2px;
@@ -110,11 +110,11 @@ banner widget {
 	border-bottom-color: alpha(@outline_variant, 0.65);
 }
 
-.boxed-list row.activatable:hover {
+.boxed-list > row.activatable:hover {
 	background-color: @surface_container_high;
 }
 
-.boxed-list row.activatable:active {
+.boxed-list > row.activatable:active {
 	background-color: @surface_variant;
 }
 
