@@ -1,0 +1,21 @@
+gestures {
+  dnd-edge-view-scroll {
+    trigger-width 30
+    delay-ms 100
+    max-speed 2000
+  }
+
+  dnd-edge-workspace-switch {
+    trigger-height 50
+    delay-ms 100
+    max-speed 2000
+  }
+
+  hot-corners {
+    // off
+    top-left
+    // top-right
+    // bottom-left
+    // bottom-right
+  }
+}

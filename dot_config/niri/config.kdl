@@ -1,4 +1,5 @@
 include "input.kdl"
+include "output.kdl"
 include "layout.kdl"
 include "animations.kdl"
 include "misc.kdl"
@@ -7,6 +8,7 @@ include "keybinds.kdl"
 include "startup.kdl"
 include "named-workspaces.kdl"
 include "recent-windows.kdl"
+include "gesture.kdl"
 
 // Auto-generated colors from matugen: DO NOT EDIT
 include optional=true "matugen-colors.kdl"

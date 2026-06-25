@@ -63,15 +63,3 @@ layout {
 
   background-color "transparent"
 }
-
-overview {
-  zoom 0.6
-  backdrop-color "#f6fafd"
-  workspace-shadow {
-    on
-    softness 0
-    spread 12
-    offset x=0 y=0
-
-  }
-}
