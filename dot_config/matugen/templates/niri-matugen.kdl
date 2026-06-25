@@ -23,6 +23,13 @@ layout {
 
 overview {
   backdrop-color "{{colors.background.dark.hex}}"
+  workspace-shadow {
+    <* if {{ is_dark_mode }} *>
+    color "{{colors.primary_container.default.hex}}"
+    <* else *>
+    color "{{colors.surface.default.hex}}"
+    <* endif *>
+  }
 }
 
 recent-windows {
