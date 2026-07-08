@@ -270,7 +270,7 @@ window#waybar.date-widget .module {
 }
 
 window#waybar #clock.widget-time {
-	font-size: 80px;
+	font-size: 100px;
 	font-weight: 900;
 	margin: 0px 24px;
 	text-shadow:
@@ -284,8 +284,8 @@ window#waybar #clock.widget-time {
 
 window#waybar #clock.widget-date {
 	font-size: 28px;
-	font-weight: 700;
-	margin: 84px 24px;
+	font-weight: 600;
+	margin: 102px 28px;
 	text-shadow:
 		-1px 0px @on-primary-fixed-variant,
 		1px 0px @on-primary-fixed-variant,

@@ -243,7 +243,7 @@
 		"exclusive": false,
 		"modules-right": ["clock#widget-time"],
 		"clock#widget-time": {
-			"format": "{:%I:%M %p}",
+			"format": "{:%H:%M}",
 			"tooltip": false,
 		},
 	},
@@ -254,7 +254,7 @@
 		"exclusive": false,
 		"modules-right": ["clock#widget-date"],
 		"clock#widget-date": {
-			"format": "{:%b %d, %Y}",
+			"format": "{:%a %d/%m}",
 			"tooltip": false,
 		},
 	},
