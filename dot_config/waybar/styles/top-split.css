@@ -1,0 +1,266 @@
+* {
+	font-family: "CaskaydiaCove Nerd Font Propo";
+	font-size: 14px;
+}
+
+window#waybar {
+	box-shadow: none;
+	text-shadow: none;
+	background: transparent;
+	color: @on-surface;
+}
+
+window#waybar.main-bar #privacy,
+window#waybar.main-bar .module {
+	margin: 4px 0px;
+	padding: 0px 6px;
+	border-radius: 4px;
+	background: @surface;
+	transition: 100ms;
+	border: 2px solid @outline-variant;
+}
+
+window#waybar.main-bar #pill {
+	background: @surface;
+	margin: 4px 0px;
+	border-radius: 4px;
+	border: 2px solid @outline-variant;
+}
+
+window#waybar.main-bar #pill .module {
+	background: @surface;
+	margin: 0px;
+	border-radius: 0px;
+	border: none;
+}
+
+window#waybar.main-bar #pill widget:first-child .module {
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+window#waybar.main-bar #pill widget:last-child .module {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+window#waybar.main-bar .alt {
+	font-family: "Inter Variable";
+	font-size: 13px;
+	padding-left: 0px;
+}
+
+tooltip {
+	background: @surface;
+	border: 1px solid @on-primary-fixed-variant;
+	border-radius: 4px;
+}
+
+tooltip label {
+	font-size: 12px;
+	color: @on-surface;
+	padding: 0px;
+	font-family: "Inter Variable";
+}
+
+menu {
+	background: @surface;
+	color: @on-surface;
+	border: 1px solid @on-primary-fixed-variant;
+	border-radius: 4px;
+}
+
+menuitem {
+	color: @on-surface;
+	border-radius: 4px;
+}
+
+menuitem arrow {
+	color: @outline;
+}
+
+menuitem label {
+	font-size: 12px;
+	font-family: "Inter Variable";
+}
+
+menuitem:hover {
+	background: @surface-container-high;
+}
+
+menuitem:hover arrow {
+	color: @primary;
+}
+
+window#waybar.main-bar .modules-left {
+	margin-left: 4px;
+}
+
+window#waybar.main-bar .modules-right {
+	margin-right: 4px;
+}
+
+.warning {
+	color: @yellow;
+}
+
+.critical {
+	color: @error;
+}
+
+window#waybar.main-bar #custom-screen-recorder {
+	font-size: 18px;
+}
+
+window#waybar.main-bar .recording {
+	background: @error-container;
+	color: @on-error-container;
+	border-color: @error;
+}
+
+.muted,
+.disabled,
+.disconnected,
+.off {
+	color: @outline;
+}
+
+window#waybar.main-bar #custom-launcher {
+	font-size: 20px;
+	color: @primary;
+	padding-right: 0px;
+}
+
+window#waybar.main-bar #custom-launcher:hover {
+	color: @secondary;
+}
+
+#workspaces button {
+	text-shadow: none;
+	box-shadow: none;
+	min-width: 0px;
+	min-height: 0px;
+	color: transparent;
+	background: @secondary;
+	border-radius: 8px;
+	padding: 0px 3px;
+	margin: 9px 3px;
+	transition: none;
+	opacity: 1;
+}
+
+#workspaces button label {
+	font-size: 0px;
+}
+
+#workspaces button.empty {
+	background: transparent;
+	border: 1.4px solid @secondary;
+}
+
+#workspaces button.active {
+	padding: 0px 15px;
+	margin: 8px 3px;
+	border: none;
+	background: @primary;
+	color: @on-primary;
+	opacity: 1;
+}
+
+#workspaces button:hover {
+	background: @primary;
+	border-color: @primary;
+}
+
+#workspaces button.active:hover {
+	background: @secondary;
+}
+
+window#waybar.main-bar.empty #window {
+	background: transparent;
+	border: none;
+}
+
+window#waybar.main-bar #window label {
+	font-size: 12px;
+	font-family: "Inter Variable";
+}
+
+window#waybar.main-bar #clock {
+	font-size: 14px;
+	font-family: "Inter Variable";
+	font-feature-settings: "tnum";
+}
+
+window#waybar.main-bar #clock.alt {
+	color: @primary;
+}
+
+/* borders applied to modules in music group instead of the group itself
+as a workaround for the module not completely disappearing when stopped/inactive */
+window#waybar.main-bar #pill.music {
+	border: none;
+	background: transparent;
+}
+
+window#waybar.main-bar #pill.music .module {
+	border-top: 2px solid @outline-variant;
+	border-bottom: 2px solid @outline-variant;
+}
+
+window#waybar.main-bar #pill.music widget:first-child .module {
+	border-left: 2px solid @outline-variant;
+}
+
+window#waybar.main-bar #pill.music widget:last-child .module {
+	border-right: 2px solid @outline-variant;
+}
+
+window#waybar.main-bar #mpris {
+	font-size: 22px;
+}
+
+window#waybar.main-bar #mpris.next,
+window#waybar.main-bar #mpris.previous {
+	font-size: 18px;
+}
+
+window#waybar.main-bar #mpris.alt {
+	font-size: 12px;
+	font-family: "Inter Variable";
+	padding-left: 8px;
+}
+
+window#waybar.main-bar #mpris.play-pause {
+	padding-right: 0px;
+	padding-left: 0px;
+	color: @primary;
+}
+
+window#waybar.main-bar #mpris.play-pause:hover {
+	color: @secondary;
+}
+
+window#waybar.main-bar #mpris.alt.paused {
+	color: @on-surface-variant;
+}
+
+window#waybar.main-bar #mpris:not(.playing):not(.paused) {
+	background: transparent;
+	padding: 0px;
+	border: none;
+}
+
+window#waybar.main-bar #custom-swaync.cc-open {
+	background: @primary-container;
+	color: @on-primary-container;
+	border-color: @primary;
+}
+
+/* Adjust margin & padding for modules in pills */
+window#waybar.main-bar #pill .module {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
