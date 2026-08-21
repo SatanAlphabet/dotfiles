@@ -50,10 +50,10 @@ while true; do
   -t | --theme)
     case "$2" in
     "dark")
-      current_theme="light'"
+      current_theme="light"
       ;;
     "light")
-      current_theme="dark'"
+      current_theme="dark"
       ;;
     *)
       echo "Invalid options: (Valid options are 'dark' and 'light')"
@@ -63,6 +63,10 @@ while true; do
     shift 2
     ;;
   -s | --scheme)
+    if [ -z "$2" ]; then
+      echo "Error: no scheme type given" >&2
+      exit 1
+    fi
     scheme="scheme-$2"
     shift 2
     ;;
