@@ -3,7 +3,7 @@ cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}"
 landing_cache="${cache_dir}/niri/landing"
 blur_cache="${cache_dir}/niri/overview"
 blur_img="${landing_cache}/blur"
-current_theme=$(dconf read /org/gnome/desktop/interface/color-scheme)
+current_theme=$(gsettings get org.gnome.desktop.interface color-scheme)
 waypaper_config=${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini
 
 _parse_waypaper_config() {
@@ -28,7 +28,7 @@ _get_awww_args() {
 
 # refresh color-scheme to reload GTK apps like nautilus
 refresh_color_scheme() {
-  if [ "$current_theme" = "'prefer-light'" ]; then
+  if [ "$(gsettings get org.gnome.desktop.interface color-scheme)" = "'prefer-light'" ]; then
     gsettings set org.gnome.desktop.interface color-scheme prefer-dark
     gsettings set org.gnome.desktop.interface color-scheme prefer-light
   else
@@ -39,7 +39,7 @@ refresh_color_scheme() {
 
 generate_color() {
   if [ "$(matugen -V | awk '{printf $2}' | cut -d. -f1)" -ge 4 ]; then
-    matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" --source-color-index 0 -t "$scheme" >/dev/null 2>&1
+    matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' -oe 'smart' <<<"$current_theme")" --source-color-index 0 -t "$scheme" >/dev/null 2>&1
     refresh_color_scheme
   else
     matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" -t "$scheme" >/dev/null 2>&1 &
@@ -97,17 +97,21 @@ switch_wallpaper() {
 
 while true; do
   case "$1" in
-  --skip-overview | -S)
+  --skip-overview | -Os)
     SKIP_OVERVIEW=1
     shift
     ;;
-  --force | -F)
+  --force | -Of)
     FORCE_RESTART_OVERVIEW=1
     shift
     ;;
   --scheme | -s)
     scheme="scheme-$2"
     shift 2
+    ;;
+  --smart | -S)
+    current_theme="smart"
+    shift
     ;;
   *)
     echo "Switching wallpaper: $1"
