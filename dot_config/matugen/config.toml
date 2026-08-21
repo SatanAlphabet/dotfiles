@@ -2,7 +2,7 @@
 caching = false
 
 [config.wallpaper]
-command = "gsettings set org.gnome.desktop.interface color-scheme prefer-{{ mode }}"
+command = "update-color-scheme.sh '{{ mode }}'"
 
 [config.custom_colors]
 red = { color = "#FF0000", blend = true }
