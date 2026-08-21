@@ -1,6 +1,9 @@
 [config]
 caching = false
 
+[config.wallpaper]
+command = "gsettings set org.gnome.desktop.interface color-scheme prefer-{{ mode }}"
+
 [config.custom_colors]
 red = { color = "#FF0000", blend = true }
 green = { color = "#00FF00", blend = true }
