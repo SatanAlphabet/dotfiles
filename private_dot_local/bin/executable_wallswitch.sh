@@ -93,6 +93,10 @@ while true; do
     shift
     ;;
   --scheme | -s)
+    if [ -z "$2" ]; then
+      echo "Error: no scheme type given" >&2
+      exit 1
+    fi
     scheme="scheme-$2"
     shift 2
     ;;
