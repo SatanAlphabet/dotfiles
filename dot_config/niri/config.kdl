@@ -12,3 +12,7 @@ include "gesture.kdl"
 
 // Auto-generated colors from matugen: DO NOT EDIT
 include optional=true "matugen-colors.kdl"
+
+// DMS/Noctalia-specific overrides
+// include "dms.kdl"
+// include "noctalia.kdl"

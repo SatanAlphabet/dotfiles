@@ -1,0 +1,11 @@
+binds {
+  Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+  Mod+Alt+C repeat=false hotkey-overlay-title="Clipboard History" { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+  Mod+N repeat=false hotkey-overlay-title="Notification Panel" { spawn "noctalia" "msg" "panel-toggle" "control-center" "notifications"; }
+  Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn "noctalia" "msg" "theme-mode-toggle"; }
+  Mod+Alt+N repeat=false hotkey-overlay-title="Toggle night light" { spawn "noctalia" "msg" "nightlight-force-toggle"; }
+  Mod+Alt+I repeat=false hotkey-overlay-title="Toggle idle innhibitor" { spawn "noctalia" "msg" "caffeine-toggle"; }
+  Ctrl+Alt+Delete repeat=false hotkey-overlay-title="Power Menu" { spawn "noctalia" "msg" "panel-toggle" "session"; }
+  Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "noctalia" "msg" "panel-toggle" "wallpaper"; }
+}
+

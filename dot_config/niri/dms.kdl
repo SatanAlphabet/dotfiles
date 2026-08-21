@@ -1,0 +1,19 @@
+binds {
+  Mod+Space repeat=false hotkey-overlay-title="Open application launcher" { spawn "dms" "ipc" "spotlight" "toggle"; }
+  Mod+Alt+C repeat=false hotkey-overlay-title="Clipboard History" { spawn "dms" "ipc" "clipboard" "toggle"; }
+  Mod+N repeat=false hotkey-overlay-title="Notification Panel" { spawn "dms" "ipc" "notifications" "toggle"; }
+  Mod+Alt+M repeat=false hotkey-overlay-title="Toggle device theme" { spawn "dms" "ipc" "theme" "toggle"; }
+  Mod+Alt+N repeat=false hotkey-overlay-title="Toggle night light" { spawn "dms" "ipc" "night" "toggle"; }
+  Mod+Alt+I repeat=false hotkey-overlay-title="Toggle idle innhibitor" { spawn "dms" "ipc" "inhibit" "toggle"; }
+  Ctrl+Alt+Delete repeat=false hotkey-overlay-title="Power Menu" { spawn "dms" "ipc" "powermenu" "toggle"; }
+}
+
+// Loads the rest of DMS-generated configs 
+include optional=true "dms/alttab.kdl"
+include optional=true "dms/binds.kdl"
+include optional=true "dms/colors.kdl"
+include optional=true "dms/cursor.kdl"
+include optional=true "dms/input.kdl"
+include optional=true "dms/layout.kdl"
+include optional=true "dms/windowrules.kdl"
+include optional=true "dms/wpblur.kdl"
