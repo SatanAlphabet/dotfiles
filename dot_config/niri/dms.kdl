@@ -6,6 +6,7 @@ binds {
   Mod+Alt+N repeat=false hotkey-overlay-title="Toggle night light" { spawn "dms" "ipc" "night" "toggle"; }
   Mod+Alt+I repeat=false hotkey-overlay-title="Toggle idle innhibitor" { spawn "dms" "ipc" "inhibit" "toggle"; }
   Ctrl+Alt+Delete repeat=false hotkey-overlay-title="Power Menu" { spawn "dms" "ipc" "powermenu" "toggle"; }
+  Mod+Alt+W repeat=false hotkey-overlay-title="Select Wallpaper" { spawn "dms" "ipc" "call" "dash" "toggle" "wallpaper"; }
 }
 
 // Loads the rest of DMS-generated configs 
