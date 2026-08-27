@@ -97,7 +97,6 @@
 		},
 		"battery#alt": {
 			"format": "{capacity}%",
-			"design-capacity": true,
 			"tooltip-format": "Battery level: <b>{capacity}%</b>\nPower draw: <b>{power}W</b>\n({timeTo})",
 			"on-scroll-up": "true",
 			"on-scroll-down": "true",
