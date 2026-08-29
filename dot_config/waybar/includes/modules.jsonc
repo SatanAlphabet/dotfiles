@@ -17,7 +17,7 @@
 			"on-discharging-critical": "niri msg action spawn -- ~/.config/waybar/scripts/critical-battery-event.sh",
 			"on-charging-100": "notify-send -e -a 'Battery' 'Battery full...' 'Battery capacity at maximum level.' -i battery-level-100-charged-symbolic",
 		},
-		"design-capacity": true,
+		"design-capacity": false,
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 	},
@@ -26,7 +26,7 @@
 			"warning": 30,
 			"critical": 15,
 		},
-		"design-capacity": true,
+		"design-capacity": false,
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 	},
@@ -102,8 +102,8 @@
 		"interval": "once",
 		"exec": "~/.config/waybar/scripts/distro.sh",
 		"format-icons": {
-			// TODO: Add CachyOS icon when there is one
 			"arch": "",
+			"cachyos": "",
 			"endeavouros": "",
 			"manjaro": "",
 			"default": "󰍜",
