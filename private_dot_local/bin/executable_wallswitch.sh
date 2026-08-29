@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
+
 cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}"
 landing_cache="${cache_dir}/niri/landing"
 blur_cache="${cache_dir}/niri/overview"
 blur_img="${landing_cache}/blur"
-current_theme=$(gsettings get org.gnome.desktop.interface color-scheme)
 waypaper_config=${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini
 
 _parse_waypaper_config() {
@@ -26,44 +26,42 @@ _get_awww_args() {
   [ -n "$fps" ] && awww_args+=("--transition-fps" "$fps")
 }
 
-generate_color() {
-  if [ "$(matugen -V | awk '{printf $2}' | cut -d. -f1)" -ge 4 ]; then
-    matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' -oe 'smart' <<<"$current_theme")" --source-color-index 0 -t "$scheme" >/dev/null 2>&1
-  else
-    matugen image "$1" -m "$(grep -oe 'light' -oe 'dark' <<<"$current_theme")" -t "$scheme" >/dev/null 2>&1 &
-  fi
-}
-
 switch_wallpaper() {
 
-  if [[ ! -f "$1" ]]; then
-    echo "ERROR: $1 is not a valid file" >&2
+  local wallpaper="$1" theme="$2" scheme="$3"
+
+  if [[ ! -f "$wallpaper" ]]; then
+    echo "ERROR: $wallpaper is not a valid file" >&2
     exit 1
   fi
 
   [ ! -d "$cache_dir/niri/landing" ] && mkdir -p "$cache_dir/niri/landing"
-  if [[ "$1" != "$(readlink -f "$cache_dir/niri/landing/background")" || "$scheme" ]]; then
-    scheme=${scheme:-"scheme-tonal-spot"}
+  if [[ "$wallpaper" != "$(readlink -f "$cache_dir/niri/landing/background")" ]]; then
 
     # fallback to prefer-light if color-scheme is default
-    if [ "$current_theme" = "'default'" ]; then
+    if [ "$theme" = "'default'" ]; then
       gsettings set org.gnome.desktop.interface color-scheme prefer-light
-      current_theme="'prefer-light'"
+      theme="'prefer-light'"
     fi
-    generate_color "$1" &
+
+    if [ "$(matugen -V | awk '{printf $2}' | cut -d. -f1)" -ge 4 ]; then
+      matugen image "$wallpaper" -m "$(grep -oe 'light' -oe 'dark' -oe 'smart' <<<"$theme")" --source-color-index 0 -t "$scheme" >/dev/null 2>&1 &
+    else
+      matugen image "$wallpaper" -m "$(grep -oe 'light' -oe 'dark' <<<"$theme")" -t "$scheme" >/dev/null 2>&1 &
+    fi
 
     [ ! -d "$landing_cache" ] && mkdir -p "$landing_cache"
-    ln -sf "$1" "$landing_cache/background"
+    ln -sf "$wallpaper" "$landing_cache/background"
 
-    img_checksum="$(sha256sum "$1" | awk '{print $1}')"
+    img_checksum="$(sha256sum "$wallpaper" | awk '{print $1}')"
     cache_img="${blur_cache}"/"${img_checksum}"
     [ ! -d "$blur_cache" ] && mkdir -p "$blur_cache"
     if [[ ! -e "$cache_img" || "$(basename "$cache_img")" != "$img_checksum" ]]; then
-      magick "$1" -blur 30x10 "$cache_img"
+      magick "$wallpaper" -blur 30x10 "$cache_img"
     fi
     ln -sf "$cache_img" "$blur_img"
 
-    notify-send -i "$1" -e -r 2 -t 2000 "Wallpaper" "Current Wallpaper: <b>$(basename "$1")</b>"
+    notify-send -i "$wallpaper" -e -r 2 -t 2000 "Wallpaper" "Current Wallpaper: <b>$(basename "$wallpaper")</b>"
   else
     echo "Same wallpaper detected. Skipping matugen & caching..."
   fi
@@ -81,6 +79,9 @@ switch_wallpaper() {
   fi
 
 }
+
+theme=$(gsettings get org.gnome.desktop.interface color-scheme)
+scheme=${scheme:-"scheme-tonal-spot"}
 
 while true; do
   case "$1" in
@@ -101,12 +102,16 @@ while true; do
     shift 2
     ;;
   --smart | -S)
-    current_theme="smart"
+    theme="smart"
     shift
     ;;
   *)
+    if [ -z "$1" ]; then
+      echo "Error: no wallpaper path provided" >&2
+      exit 1
+    fi
     echo "Switching wallpaper: $1"
-    switch_wallpaper "$1"
+    switch_wallpaper "$1" "$theme" "$scheme"
     break
     ;;
   esac
