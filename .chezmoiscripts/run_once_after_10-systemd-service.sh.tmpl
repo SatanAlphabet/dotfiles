@@ -6,7 +6,7 @@ if _install_confirm "${BOLD}Add necessary systemd services? [Y/n]${NC} "; then
   echo -e "${BLUE_BOLD}===>  ${NC}${BOLD}Adding necessary user services...${NC}"
   systemctl --user daemon-reload
   {{ range .services -}}
-  systemctl --user add-wants niri.service {{ . | quote }} && echo "Added {{ . -}}.service"
+  systemctl --user add-wants niri.service {{ . | quote }} && echo -e "${BLUE_BOLD}===>  ${NC}${BOLD}Added ${GREEN_BOLD}{{ . -}}${NC}${BOLD}.service"
   {{ end -}}
   systemctl --user daemon-reload
 fi

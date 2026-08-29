@@ -5,6 +5,6 @@
 if _install_confirm "${BOLD}Change GTK settings? [Y/n]${NC} "; then
   echo -e "${BLUE_BOLD}===>  ${NC}${BOLD}Changing GTK settings...${NC}"
   {{ range $key, $val := .gtk -}}
-  gsettings set org.gnome.desktop.interface {{ $key | kebabcase }} {{ $val | quote }} && echo -e "${BLUE_BOLD}===> ${GREEN_BOLD}{{ $key }}${NC}${BOLD} set to ${PURPLE_BOLD}{{ $val }}${NC}"
+  gsettings set org.gnome.desktop.interface {{ $key | kebabcase }} {{ $val | quote }} && echo -e "${BLUE_BOLD}===>  ${GREEN_BOLD}{{ $key }}${NC}${BOLD} set to ${PURPLE_BOLD}{{ $val }}${NC}"
   {{ end -}}
 fi
