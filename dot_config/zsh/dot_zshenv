@@ -3,8 +3,9 @@
 # De-duplicate PATH array
 typeset -U path
 
-# Basic PATH prepending (user local bin)
+# Basic PATH & fpath prepending
 path=($HOME/.local/bin $path)
+fpath=($ZDOTDIR/completions $fpath)
 
 # History configuration
 HISTFILE=${HISTFILE:-$ZDOTDIR/.zsh_history}
