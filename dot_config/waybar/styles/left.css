@@ -275,20 +275,20 @@ window#waybar #clock.widget-time {
 	margin: 0px 24px;
 	letter-spacing: 2px;
 	text-shadow:
-		-1.5px 1.5px @on-primary-fixed-variant,
-		-1.5px -1.5px @on-primary-fixed-variant,
-		1.5px -1.5px @on-primary-fixed-variant,
-		1.5px 1.5px @on-primary-fixed-variant;
-}
-
-window#waybar #clock.widget-date {
-	font-size: 28px;
-	font-weight: 700;
-	margin: 102px 28px;
-	letter-spacing: 1px;
-	text-shadow:
 		-1.2px 1.2px @on-primary-fixed-variant,
 		-1.2px -1.2px @on-primary-fixed-variant,
 		1.2px -1.2px @on-primary-fixed-variant,
 		1.2px 1.2px @on-primary-fixed-variant;
+}
+
+window#waybar #clock.widget-date {
+	font-size: 28px;
+	font-weight: 500;
+	margin: 102px 28px;
+	letter-spacing: 1px;
+	text-shadow:
+		-1px 1px @on-primary-fixed-variant,
+		-1px -1px @on-primary-fixed-variant,
+		1px -1px @on-primary-fixed-variant,
+		1px 1px @on-primary-fixed-variant;
 }

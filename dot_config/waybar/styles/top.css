@@ -292,12 +292,10 @@ window#waybar #clock.widget-time {
 	font-weight: 900;
 	margin: 0px 24px;
 	text-shadow:
-		-1px 0px @on-primary-fixed-variant,
-		2px 0px @on-primary-fixed-variant,
-		0px -1px @on-primary-fixed-variant,
-		0px 2px @on-primary-fixed-variant,
-		3px 3px @on-primary-fixed-variant,
-		0px 0px 2px @shadow;
+		-1.5px 1.5px @on-primary-fixed-variant,
+		-1.5px -1.5px @on-primary-fixed-variant,
+		1.5px -1.5px @on-primary-fixed-variant,
+		1.5px 1.5px @on-primary-fixed-variant;
 }
 
 window#waybar #clock.widget-date {
@@ -305,10 +303,8 @@ window#waybar #clock.widget-date {
 	font-weight: 700;
 	margin: 84px 24px;
 	text-shadow:
-		-1px 0px @on-primary-fixed-variant,
-		1px 0px @on-primary-fixed-variant,
-		0px -1px @on-primary-fixed-variant,
-		0px 2px @on-primary-fixed-variant,
-		2px 2px @on-primary-fixed-variant,
-		0px 0px 2px @shadow;
+		-1.2px 1.2px @on-primary-fixed-variant,
+		-1.2px -1.2px @on-primary-fixed-variant,
+		1.2px -1.2px @on-primary-fixed-variant,
+		1.2px 1.2px @on-primary-fixed-variant;
 }
