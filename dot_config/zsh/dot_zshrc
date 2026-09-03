@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# prevents zoxide's eval from exiting non-zero with zinit
+autoload -U compinit && compinit
+
 if [[ -f "$ZDOTDIR/settings.zsh" ]]; then
   source $ZDOTDIR/settings.zsh
 fi
