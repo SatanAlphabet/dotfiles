@@ -37,7 +37,17 @@
   .sticky-container,
   #search-container {
     background-color: var(--surface-container-lowest) !important;
-    background: var(--surface-container-lowest) !important;
+  }
+
+  moz-toggle {
+    --toggle-background-color-pressed-hover: var(--primary) !important;
+    --toggle-background-color-pressed-active: var(--primary) !important;
+    --toggle-border-color: transparent !important;
+    --toggle-dot-background-color: var(--on-surface) !important;
+    --toggle-dot-background-color-hover: var(--on-surface) !important;
+    --toggle-dot-background-color-active: var(--on-surface) !important;
+    --toggle-dot-background-color-on-pressed: var(--primary) !important;
+    --toggle-dot-margin: 3px !important;
   }
 
   /* Input fields styling */
@@ -62,6 +72,34 @@
     --message-bar-border-color: var(--outline-variant) !important;
     --message-bar-icon-color: var(--primary) !important;
     background-color: var(--surface-container) !important;
+  }
+
+  select#input {
+    background: var(--surface-container) !important;
+    color: var(--text) !important;
+  }
+  
+  .toggle-button {
+    background-color: var(--surface-container-high) !important;
+    border-color: transparent !important;
+  }
+
+  .toggle-button::before {
+    background-color: var(--on-surface) !important;
+    margin: 3px !important;
+  }
+
+  .toggle-button[aria-pressed="true"],
+  .toggle-button[checked],
+  .toggle-button:checked {
+    background-color: var(--primary) !important;
+    border-color: transparent !important;
+  }
+
+  .toggle-button[aria-pressed="true"]::before,
+  .toggle-button[checked]::before,
+  .toggle-button:checked::before {
+    background-color: var(--on-primary) !important;
   }
 }
 
@@ -91,16 +129,43 @@
     --zen-colors-tertiary: var(--surface-container-low) !important;
     --in-content-text-color: var(--on-surface) !important;
     --link-color: var(--primary) !important;
-    /* --link-color-hover: rgb(249, 217, 240) !important; */
-    --zen-colors-primary: var(--surface-container-high) !important;
-    --in-content-box-background: var(--surface-container-high) !important;
     --zen-primary-color: var(--primary) !important;
+
+    /* Cover dialogs that use default in-content variables */
+    --in-content-box-background: var(--surface-container-high) !important;
+    --in-content-page-background: var(--surface) !important;
+    --in-content-dialog-background: var(--surface) !important;
+  }
+
+  div.container {
+    background: var(--surface-container-high) !important;
+    color: var(--on-surface) !important;
+  }
+
+  div.picker-item.image-item {
+    background: var(--surface-container-high) !important;
+    color: var(--on-surface) !important;
   }
 
   button,
   groupbox menulist {
     background: var(--surface-container-high) !important;
     color: var(--on-surface) !important;
+  }
+
+  .dialogBox[dialogtype="accept"],
+  button[dialogtype="accept"],
+  .dialog-button-box button[dlgtype="accept"],
+  #searchSection dialog button,
+  #privacySection dialog button,
+  #syncSection dialog button,
+  moz-button[accent] {
+    background-color: var(--secondary) !important;
+    color: var(--on-secondary) !important;
+  }
+
+  moz-button[accent]:hover {
+    background-color: color-mix(in srgb, var(--secondary) 70%, var(--on-secondary)) !important;
   }
 
   .main-content {
@@ -122,10 +187,332 @@
     stroke: var(--primary) !important;
   }
 
-	vbox.navigation {
+	vbox.navigation, vbox#updateSettingsContainer.info-box-container {
 		background: var(--surface-container) !important;
 		color: var(--on-surface) !important;
 	}
+
+  /* Container tabs selected row */
+  richlistitem[selected="true"] {
+    background-color: var(--primary) !important;
+    color: var(--on-primary) !important;
+  }
+
+  /* Only set child text color for non-button elements */
+  richlistitem[selected="true"] *:not(button):not(button *) {
+    color: var(--surface) !important;
+  }
+
+  /* Hover states for Settings and Remove buttons */
+  richlistitem button:hover {
+    background-color: var(--surface-variant) !important;
+  }
+  
+  /* Sub-dialog popup frame (this wrapper is in the about:preferences document) */
+  dialog,
+  dialog#containers-dialog,
+  .dialogBox,
+  .dialog-content-box {
+    background-color: var(--surface) !important;
+    border: 1px solid var(--outline-variant) !important;
+    border-radius: 4px !important;
+  }
+
+  /* Sub-dialog Close (X) button hover effect */
+  button.dialogClose {
+    border-radius: 4px !important;
+    transition: background-color 0.2s ease !important;
+  }
+
+  .back-button,
+  .subcategory-back-button,
+  .page-back-button,
+  .navigation-back-button,
+  moz-button[ghost="true"] button,
+  moz-button[type="ghost"] button,
+  button:has(img[src*="arrow-left.svg"]) {
+    appearance: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    list-style-image: url("chrome://global/skin/icons/arrow-left.svg") !important;
+    color: var(--on-surface) !important;
+    -moz-context-properties: fill, fill-opacity !important;
+    fill: var(--on-surface) !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  moz-button.back-button::part(button),
+  moz-button.subcategory-back-button::part(button),
+  moz-button.page-back-button::part(button),
+  moz-button.navigation-back-button::part(button),
+  moz-button[ghost="true"]::part(button),
+  moz-button[type="ghost"]::part(button) {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .back-button .button-icon,
+  .back-button .toolbarbutton-icon,
+  .subcategory-back-button .button-icon,
+  .subcategory-back-button .toolbarbutton-icon,
+  .page-back-button .button-icon,
+  .page-back-button .toolbarbutton-icon,
+  .navigation-back-button .button-icon,
+  .navigation-back-button .toolbarbutton-icon {
+    -moz-context-properties: fill, fill-opacity !important;
+    fill: var(--on-surface) !important;
+    color: var(--on-surface) !important;
+    margin: 0 !important;
+  }
+
+  .back-button:hover,
+  .subcategory-back-button:hover,
+  .page-back-button:hover,
+  .navigation-back-button:hover,
+  moz-button.back-button:hover button,
+  moz-button.subcategory-back-button:hover button,
+  moz-button.page-back-button:hover button,
+  moz-button.navigation-back-button:hover button,
+  moz-button[ghost="true"]:hover button,
+  moz-button[type="ghost"]:hover button,
+  moz-button.back-button:hover::part(button),
+  moz-button.subcategory-back-button:hover::part(button),
+  moz-button.page-back-button:hover::part(button),
+  moz-button.navigation-back-button:hover::part(button),
+  moz-button[ghost="true"]:hover::part(button),
+  moz-button[type="ghost"]:hover::part(button),
+  button:has(img[src*="arrow-left.svg"]):hover {
+    background-color: var(--surface-variant) !important;
+    border-radius: 4px !important;
+  }
+}
+
+/* --- All Preferences Sub-Dialogs (Containers, Fonts, Connection, Language, etc.) --- */
+@-moz-document url-prefix("chrome://browser/content/preferences/dialogs/"),
+               url("chrome://browser/content/preferences/connection.xhtml"),
+               url("chrome://browser/content/preferences/connections.xhtml"),
+               url("chrome://browser/content/preferences/fonts.xhtml"),
+               url("chrome://browser/content/preferences/containers.xhtml") {
+  window,
+  dialog,
+  #FontsDialog {
+    background-color: var(--surface) !important;
+    color: var(--on-surface) !important;
+  }
+
+  /* Inner content area with Name/Color/Icon fields */
+  #containers-content,
+  .contentPane,
+  vbox {
+    background-color: var(--surface-container-high) !important;
+    color: var(--on-surface) !important;
+    padding: 12px !important;
+  }
+
+  /* Labels and text elements */
+  label,
+  description,
+  groupbox,
+  checkbox {
+    color: var(--on-surface) !important;
+  }
+
+  separator {
+    border-color: var(--outline-variant) !important;
+  }
+
+  /* Text input for container name / sizes / urls */
+  *|input:not([type="checkbox"]):not([type="radio"]), *|textarea {
+    background-color: var(--surface-container) !important;
+    color: var(--on-surface) !important;
+    border-color: var(--outline-variant) !important;
+    border-radius: 4px !important;
+    transition: border-color 0.15s ease !important;
+  }
+
+  *|input:not([type="checkbox"]):not([type="radio"]):focus,
+  *|textarea:focus {
+    border-color: var(--primary) !important;
+    outline: 1px solid var(--primary) !important;
+    outline-offset: -1px !important;
+  }
+
+  /* Dropdowns */
+  menulist, *|select {
+    background-color: var(--surface-container) !important;
+    color: var(--on-surface) !important;
+    border: 1px solid var(--outline-variant) !important;
+    border-radius: 4px !important;
+  }
+
+  /* Tree Columns (List headers) */
+  treecol {
+    appearance: none !important;
+    background-color: var(--surface-container) !important;
+    color: var(--on-surface) !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Language Selection Box / Lists */
+  richlistbox {
+    background-color: var(--surface-container) !important;
+    color: var(--on-surface) !important;
+    border-color: var(--outline-variant) !important;
+  }
+
+  richlistitem {
+    background-color: transparent !important;
+    color: var(--on-surface) !important;
+  }
+
+  /* Override AccentColor for the whole document */
+  :root {
+    --color-accent-primary: var(--primary);
+    --color-accent-primary-hover: var(--primary);
+    --color-accent-primary-active: var(--primary);
+    --checkbox-checked-bgcolor: var(--primary);
+    --checkbox-checked-border-color: var(--primary);
+    --radio-checked-bgcolor: var(--primary);
+    --radio-checked-border-color: var(--primary);
+  }
+
+  /* accent-color on HTML host elements */
+  checkbox,
+  radio,
+  input[type="checkbox"],
+  input[type="radio"] {
+    accent-color: var(--primary) !important;
+  }
+
+  /* XUL Radio & Checkbox Native Appearance Stripping & Manual Styling */
+  radio > .radio-check,
+  checkbox > .checkbox-check {
+    -moz-appearance: none !important;
+    appearance: none !important;
+    display: inline-block !important;
+    box-sizing: border-box !important;
+    width: 16px !important;
+    height: 16px !important;
+    border: 1px solid var(--outline-variant) !important;
+    background-color: transparent !important;
+    flex-shrink: 0 !important;
+  }
+
+  radio > .radio-check {
+    border-radius: 50% !important;
+  }
+
+  checkbox > .checkbox-check {
+    border-radius: 3px !important;
+  }
+
+  /* Radio: selected state — primary dot on base background */
+  radio[selected="true"] > .radio-check,
+  radio[selected] > .radio-check,
+  radio:checked > .radio-check {
+    border-color: var(--primary) !important;
+    background-color: var(--on-primary) !important;
+    background-image: radial-gradient(circle, var(--primary) 0%, var(--primary) 40%, transparent 45%) !important;
+    box-shadow: none !important;
+  }
+
+  /* Checkbox: checked state — primary fill with native SVG checkmark */
+  checkbox[checked="true"] > .checkbox-check,
+  checkbox[checked] > .checkbox-check,
+  checkbox:checked > .checkbox-check {
+    border-color: var(--primary) !important;
+    background-color: var(--primary) !important;
+    background-image: url("chrome://global/skin/icons/check.svg") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 12px !important;
+    -moz-context-properties: fill !important;
+    fill: var(--base) !important;
+  }
+
+  /* Done / Cancel buttons */
+  button, dialog::part(button) {
+    background-color: var(--surface-container-high) !important;
+    color: var(--on-surface) !important;
+    border-radius: 4px !important;
+    margin-top: 16px !important;
+  }
+
+  button:hover {
+    background-color: var(--surface-variant) !important;
+  }
+}
+
+/* --- Primary Password Dialog (chrome://mozapps) --- */
+@-moz-document url("chrome://mozapps/content/preferences/changemp.xhtml"),
+               url-prefix("chrome://mozapps/content/preferences/") {
+  /* Outer frame */
+  window,
+  dialog,
+  #changemp {
+    background-color: var(--surface) !important;
+    color: var(--on-surface) !important;
+  }
+
+  /* Content boxes — uniform overlay fill with padding */
+  vbox, groupbox {
+    background-color: var(--surface-container-high) !important;
+    color: var(--on-surface) !important;
+    padding: 10px !important;
+  }
+
+  /* Button row — same overlay fill, no extra padding */
+  hbox {
+    background-color: var(--surface-container-high) !important;
+    padding: 0 !important;
+  }
+
+  label, description {
+    color: var(--on-surface) !important;
+    background-color: transparent !important;
+  }
+
+  /* Password inputs */
+  *|input:not([type="checkbox"]):not([type="radio"]) {
+    background-color: var(--surface-container) !important;
+    color: var(--on-surface) !important;
+    border: 1px solid var(--outline-variant) !important;
+    border-radius: 4px !important;
+    transition: border-color 0.15s ease !important;
+  }
+
+  *|input:not([type="checkbox"]):not([type="radio"]):focus {
+    border-color: var(--primary) !important;
+    outline: 1px solid var(--primary) !important;
+    outline-offset: -1px !important;
+  }
+
+  /* Password quality meter */
+  meter {
+    accent-color: var(--primary) !important;
+  }
+
+  /* Buttons — transparent so they match their surrounding background */
+  button, dialog::part(button) {
+    background-color: transparent !important;
+    color: var(--text) !important;
+    border: none !important;
+    border-radius: 4px !important;
+  }
+
+  button:hover {
+    box-shadow: 0 0 0 1px var(--surface-variant) !important;
+    background-color: transparent !important;
+  }
 }
 
 /* Variables and styles specific to about:addons */
@@ -139,47 +526,6 @@
 		background: var(--surface-container) !important;
 		color: var(--on-surface) !important;
 	}
-}
-
-/* Toggle button styling for addons, preferences and newtab */
-@-moz-document url-prefix("about:addons"), url-prefix("about:preferences"), url-prefix("about:newtab"), url-prefix("about:home") {
-  moz-toggle {
-    --toggle-background-color: var(--surface-container-high) !important;
-    --toggle-background-color-pressed: var(--primary) !important;
-    --toggle-background-color-hover: var(--surface-container-high) !important;
-    --toggle-background-color-active: var(--surface-container-high) !important;
-    --toggle-background-color-pressed-hover: var(--primary) !important;
-    --toggle-background-color-pressed-active: var(--primary) !important;
-    --toggle-border-color: transparent !important;
-    --toggle-dot-background-color: var(--on-surface) !important;
-    --toggle-dot-background-color-hover: var(--on-surface) !important;
-    --toggle-dot-background-color-active: var(--on-surface) !important;
-    --toggle-dot-background-color-on-pressed: var(--on-primary) !important;
-    --toggle-dot-margin: 3px !important;
-  }
-
-  .toggle-button {
-    background-color: var(--surface) !important;
-    border-color: var(--outline) !important;
-  }
-
-  .toggle-button::before {
-    background-color: var(--on-surface) !important;
-    margin: 3px !important;
-  }
-
-  .toggle-button[aria-pressed="true"],
-  .toggle-button[checked],
-  .toggle-button:checked {
-    background-color: var(--primary) !important;
-    border-color: transparent !important;
-  }
-
-  .toggle-button[aria-pressed="true"]::before,
-  .toggle-button[checked]::before,
-  .toggle-button:checked::before {
-    background-color: var(--on-primary) !important;
-  }
 }
 
 /* Variables and styles specific to about:protections */
@@ -208,7 +554,7 @@
 /* Variables and styles specific to about:config */
 @-moz-document url-prefix("about:config") {
   div#toolbar {
-    background: var(--on-primary) !important;
+    background: var(--surface-container) !important;
   }
 
   button#warningButton {
@@ -219,14 +565,22 @@
 
   button#warningButton:hover {
     background-color: color-mix(in srgb, var(--secondary) 80%, transparent) !important;
+    color: var(--on-secondary) !important;
   }
 }
 
-@-moz-document url-prefix("about:cache") {
+@-moz-document url-prefix("about:cache"), url-prefix("about:profiles") {
 	td {
 		background-color: var(--surface-container-low) !important;
 		color: var(--on-surface) !important;
 	}
+}
+
+@-moz-document url-prefix("about:profiles") {
+  div.action-box {
+    background-color: var(--surface-container-high) !important;
+    color: var(--on-surface) !important;
+  }
 }
 
 @-moz-document url-prefix("about:home") {
@@ -243,7 +597,7 @@
 /* Custom text selection styling */
 ::selection {
   background-color: var(--primary) !important;
-  color: var(--surface-container-lowest) !important;
+  color: var(--on-primary) !important;
 }
 
 /* Style checkboxes and radio buttons globally in content */
