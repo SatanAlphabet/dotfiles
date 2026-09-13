@@ -42,6 +42,10 @@ window#waybar.main-bar #workspaces:hover {
 	box-shadow: inherit;
 }
 
+window#waybar.main-bar #workspaces:hover {
+	background: @surface-container-high;
+}
+
 tooltip {
 	background: @surface;
 	border: 1px solid @on-primary-fixed-variant;
@@ -288,12 +292,26 @@ window#waybar.date-widget .module {
 }
 
 window#waybar #clock.widget-time {
-	font-size: 120px;
-	font-weight: 200;
-	margin: 0px 30px;
+	font-size: 100px;
+	font-weight: 900;
+	margin: 0px 24px;
+	letter-spacing: 2px;
 	text-shadow:
-		-1.2px 1.2px @on-primary-fixed-variant,
-		-1.2px -1.2px @on-primary-fixed-variant,
-		1.2px -1.2px @on-primary-fixed-variant,
-		1.2px 1.2px @on-primary-fixed-variant;
+		-1px 1px @on-primary-fixed-variant,
+		-1px -1px @on-primary-fixed-variant,
+		1px -1px @on-primary-fixed-variant,
+		1px 1px @on-primary-fixed-variant,
+		0px 0px 4px alpha(@shadow, 0.5);
+}
+
+window#waybar #clock.widget-date {
+	font-size: 28px;
+	font-weight: 500;
+	margin: 102px 28px;
+	letter-spacing: 1px;
+	text-shadow:
+		-1px 1px @on-primary-fixed-variant,
+		-1px -1px @on-primary-fixed-variant,
+		1px -1px @on-primary-fixed-variant,
+		1px 1px @on-primary-fixed-variant;
 }

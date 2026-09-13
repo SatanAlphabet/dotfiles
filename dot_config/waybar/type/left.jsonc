@@ -244,6 +244,7 @@
 		"clock#widget-time": {
 			"format": "{:%H:%M}",
 			"tooltip": false,
+			"justify": "center",
 		},
 	},
 	{
@@ -253,8 +254,9 @@
 		"exclusive": false,
 		"modules-right": ["clock#widget-date"],
 		"clock#widget-date": {
-			"format": "{:%a %d/%m}",
+			"format": "{:%a %d}",
 			"tooltip": false,
+			"justify": "center",
 		},
 	},
 ]

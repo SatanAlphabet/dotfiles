@@ -287,7 +287,18 @@
 		"exclusive": false,
 		"modules-right": ["clock#widget-time"],
 		"clock#widget-time": {
-			"format": "<span font_features='tnum' letter_spacing='3072' size='60%' weight='900' rise='24pt'>{0:%H:%M}</span>/<span weight='500' size='35%' rise='-4pt'>{0:%b %d}</span>",
+			"format": "{:%H:%M}",
+			"tooltip": false,
+		},
+	},
+	{
+		"name": "date-widget",
+		"layer": "bottom",
+		"position": "bottom",
+		"exclusive": false,
+		"modules-right": ["clock#widget-date"],
+		"clock#widget-date": {
+			"format": "{:%a %d/%m}",
 			"tooltip": false,
 		},
 	},
