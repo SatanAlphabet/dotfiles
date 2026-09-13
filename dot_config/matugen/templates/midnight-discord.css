@@ -87,6 +87,7 @@ body {
 /* customize things here */
 :root {
 
+  color-scheme: {{mode}};
   --colors: on; /* off: discord default colors, on: midnight custom colors */
 
 	/* top left corner text */
