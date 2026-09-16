@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-if pgrep -f gpu-screen-recorder >/dev/null; then
+recording_lockfile="/tmp/screen-recording"
+
+if [ -e "$recording_lockfile" ]; then
   echo '{ "text": "Recording", "alt": "recording", "class": "recording" }'
 else
   echo '{ "text": "Stopped" }'
