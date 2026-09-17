@@ -268,15 +268,15 @@
 		},
 	},
 
-	/* Borders surrounding the screen + outlines */
+	/* Frame surrounding the screen + borders */
 
-	{ "name": "border-right", "layer": "top", "position": "right", "width": 8 },
-	{ "name": "border-top", "layer": "top", "position": "top", "height": 8 },
-	{ "name": "border-bottom", "layer": "top", "position": "bottom", "height": 8 },
-	{ "name": "outline-left", "layer": "top", "position": "left", "width": 2 },
-	{ "name": "outline-right", "layer": "top", "position": "right", "width": 2 },
-	{ "name": "outline-top", "layer": "top", "position": "top", "height": 2 },
-	{ "name": "outline-bottom", "layer": "top", "position": "bottom", "height": 2 },
+	{ "name": "frame-right", "layer": "top", "position": "right", "width": 8 },
+	{ "name": "frame-top", "layer": "top", "position": "top", "height": 8 },
+	{ "name": "frame-bottom", "layer": "top", "position": "bottom", "height": 8 },
+	{ "name": "border-left", "layer": "top", "position": "left", "width": 2 },
+	{ "name": "border-right", "layer": "top", "position": "right", "width": 2 },
+	{ "name": "border-top", "layer": "top", "position": "top", "height": 2 },
+	{ "name": "border-bottom", "layer": "top", "position": "bottom", "height": 2 },
 
 	/* Desktop widgets */
 

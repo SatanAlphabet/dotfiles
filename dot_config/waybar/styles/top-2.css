@@ -299,10 +299,10 @@ window#waybar.main-bar #pill .module {
 	margin-right: 0px;
 }
 
-window#waybar.outline-left,
-window#waybar.outline-right,
-window#waybar.outline-top,
-window#waybar.outline-bottom {
+window#waybar.border-left,
+window#waybar.border-right,
+window#waybar.border-top,
+window#waybar.border-bottom {
 	background-color: @on-primary-fixed-variant;
 }
 
