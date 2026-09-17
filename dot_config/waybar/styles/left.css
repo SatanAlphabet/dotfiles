@@ -281,8 +281,8 @@ window#waybar #clock.widget-time {
 }
 
 window#waybar #clock.widget-date {
-	background: @tertiary-container;
-	color: @tertiary;
+	background: @primary;
+	color: @on-primary;
 	font-size: 24px;
 	font-weight: 400;
 	min-width: 90px;
