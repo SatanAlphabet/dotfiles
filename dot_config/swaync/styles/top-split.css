@@ -3,7 +3,7 @@
 * {
 	all: unset;
 	font-size: 16px;
-	font-family: "Inter Display, CaskaydiaCove Nerd Font Propo";
+	font-family: "Inter Variable, CaskaydiaCove Nerd Font Propo";
 }
 
 :root {
@@ -16,7 +16,7 @@
 	--control-center-slider-thickness: 5px;
 	--slider-icon-size: 14px;
 
-	--notification-icon-size: 56px;
+	--notification-icon-size: 48px;
 	--notification-app-icon-size: calc(var(--notification-icon-size) / 4);
 	--notification-group-icon-size: 16px;
 	--mpris-album-art-icon-size: 80px;
@@ -106,13 +106,15 @@ tooltip label {
 }
 
 .text-box .summary {
-	font-size: 1.2em;
 	font-weight: 600;
+}
+.text-box .body {
+	font-size: 0.9em;
 }
 
 .text-box .time {
 	font-weight: 300;
-	font-size: 0.8em;
+	font-size: 0.75em;
 	color: @on-surface-variant;
 }
 
