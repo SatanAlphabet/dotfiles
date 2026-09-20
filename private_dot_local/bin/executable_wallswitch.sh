@@ -6,6 +6,12 @@ blur_cache="${cache_dir}/niri/overview"
 blur_img="${landing_cache}/blur"
 waypaper_config=${XDG_CONFIG_HOME:-$HOME/.config}/waypaper/config.ini
 
+quiet_run() {
+  if [ ! "$OUTPUT_QUIET" ]; then
+    "$@"
+  fi
+}
+
 _parse_waypaper_config() {
   local output
   output="$(awk -F "=" "/$1/"'{printf $2}' "$waypaper_config" | tr -d ' ')"
@@ -61,7 +67,7 @@ switch_wallpaper() {
     fi
     ln -sf "$cache_img" "$blur_img"
 
-    notify-send -i "$wallpaper" -e -r 2 -t 2000 "Wallpaper" "Current Wallpaper: <b>$(basename "$wallpaper")</b>"
+    quiet_run notify-send -i "$wallpaper" -e -r 2 -t 2000 "Wallpaper" "Current Wallpaper: <b>$(basename "$wallpaper")</b>"
   else
     echo "Same wallpaper detected. Skipping matugen & caching..."
   fi
@@ -103,6 +109,10 @@ while true; do
     ;;
   --smart | -S)
     theme="smart"
+    shift
+    ;;
+  --quiet | -q)
+    OUTPUT_QUIET=1
     shift
     ;;
   *)
