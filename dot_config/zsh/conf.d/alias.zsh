@@ -9,6 +9,7 @@ alias c='clear' \
     mkdir='mkdir -p'
 alias ff='fastfetch'
 alias lg='lazygit'
+alias ls='eza'
 export EDITOR='nvim'
 export BAT_THEME='ansi'
 
