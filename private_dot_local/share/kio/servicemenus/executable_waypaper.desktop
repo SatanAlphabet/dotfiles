@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+MimeType=image/*;
+Actions=waypaper;
+
+[Desktop Action waypaper]
+Name=Set Wallpaper with Waypaper
+Icon=preferences-desktop-wallpaper
+Exec=waypaper --wallpaper "%u"
