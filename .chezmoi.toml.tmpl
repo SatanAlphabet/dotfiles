@@ -5,13 +5,14 @@ templateSymlinks = true
 watch = true
 
 [data]
-shell = "zsh" # More options may be added in the future
-{{ if (eq "arch" (get .chezmoi.osRelease "idLike") .chezmoi.osRelease.id) -}}
+{{- $shellList := list "zsh" "fish" -}}
+{{- $shell := promptChoiceOnce . "shellList" "Which shell would you like to use" $shellList "zsh" }}
+shell = {{ $shell | quote }}
+
+{{- if (eq "arch" (get .chezmoi.osRelease "idLike") .chezmoi.osRelease.id) -}}
 
 {{- $aurHelperList := list "yay" "paru" -}}
-{{- $aurHelper := promptChoiceOnce . "aurHelperList" "Which AUR helper would you like to use" $aurHelperList "paru" -}}
-
+{{- $aurHelper := promptChoiceOnce . "aurHelperList" "Which AUR helper would you like to use" $aurHelperList "paru" }}
 aurHelper = {{ $aurHelper | quote }}
 
-{{- end }}
-
+{{- end -}}
