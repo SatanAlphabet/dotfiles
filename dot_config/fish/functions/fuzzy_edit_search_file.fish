@@ -2,9 +2,9 @@ function fuzzy_edit_search_file
     set -l max_depth 5
 
     if command -v bat >/dev/null
-        set -l preview_cmd bat --color always --style=plain --paging=never {}
+        set -f preview_cmd bat --color always --style=plain --paging=never {}
     else
-        set -l preview_cmd cat {}
+        set -f preview_cmd cat {}
     end
 
     set -l fzf_options --layout=reverse --cycle --preview-window right:60% --preview "$preview_cmd"
