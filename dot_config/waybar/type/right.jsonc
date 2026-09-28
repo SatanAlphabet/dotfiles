@@ -254,7 +254,7 @@
 		"exclusive": false,
 		"modules-left": ["clock#widget-date"],
 		"clock#widget-date": {
-			"format": "{:%a %d}",
+			"format": "{:%b %d}",
 			"tooltip": false,
 			"justify": "center",
 		},
