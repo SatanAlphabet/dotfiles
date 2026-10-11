@@ -56,16 +56,26 @@
   --urlbarView-highlight-background: var(--primary-container) !important;
   --urlbarView-highlight-color: var(--on-primary) !important;
 
-  --zen-native-content-radius: 0 !important;
-  --zen-border-radius: 0 !important;
-  --border-radius-small: 0 !important;
-  --border-radius-medium: 0 !important;
-  --border-radius-large: 0 !important;
-  --zen-button-border-radius: 0 !important;
-  --toolbarbutton-border-radius: 0 !important;
-  --tab-border-radius: 0 !important;
-  --arrowpanel-border-radius: 0 !important;
-  --arrowpanel-menuitem-border-radius: 0 !important;
+}
+
+/* Force apply border radius variables on all elements since :root doesn't work
+ * TODO: apply variables on their respective elements & check for breakages */
+
+* {
+  --zen-native-content-radius: 4px !important;
+  --zen-border-radius: 4px !important;
+  --border-radius-small: 4px !important;
+  --border-radius-medium: 4px !important;
+  --border-radius-large: 4px !important;
+  --zen-button-border-radius: 4px !important;
+  --toolbarbutton-border-radius: 4px !important;
+  --tab-border-radius: 4px !important;
+  --arrowpanel-border-radius: 4px !important;
+  --arrowpanel-menuitem-border-radius: 4px !important;
+  --urlbar-inner-border-radius: 4px !important;
+  --button-border-radius: 4px !important;
+  --urlbar-icon-border-radius: 4px !important;
+  --urlbar-inner-border-radius: 4px !important;
 }
 
 #zen-browser-background {
@@ -83,10 +93,6 @@
 }
 
 .sidebar-placesTree {
-  background-color: var(--surface-container) !important;
-}
-
-#zen-workspaces-button {
   background-color: var(--surface-container) !important;
 }
 
@@ -141,6 +147,7 @@ toolbarbutton#tabs-newtab-button {
 }
 
 .urlbar-background {
+  border-radius: 8px !important;
   background-color: var(--surface) !important;
 }
 
