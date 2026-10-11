@@ -78,12 +78,6 @@
 
 /* --- Sidebar & Layout --- */
 
-#navigator-toolbox,
-#zen-tabbox-wrapper,
-.sidebar-panel {
-  background-color: var(--surface) !important;
-}
-
 #zen-sidebar-splitter {
   background-color: var(--primary-container) !important;
 }
