@@ -1,2 +1,5 @@
+[Common]
+CornerRadius=4
+
 [Style]
 WidgetDrawShadow=false
