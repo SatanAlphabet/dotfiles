@@ -10,7 +10,7 @@ generate_thumbnail() {
   if [[ "$thumbnail" != "$(cat "$thumb_path/thumbnail.lnk")" ]]; then
     echo "$thumbnail" >"$thumb_path/thumbnail.lnk"
     curl -Lso "$thumb_path/thumbnail" "$thumbnail"
-    mogrify -resize 200x200^ -gravity center -extent 200x200 "$thumb_path/thumbnail"
+    magick "$thumb_path/thumbnail" -resize 200x200^ -gravity center -extent 200x200 "$thumb_path/thumbnail"
   fi
 }
 
