@@ -168,6 +168,7 @@
 		"escape": true,
 	},
 	"custom/sysupdate": {
+		"restart-interval": 3,
 		"on-scroll-up": "true",
 		"on-scroll-down": "true",
 		"exec-if": "which waybar-module-pacman-updates",
