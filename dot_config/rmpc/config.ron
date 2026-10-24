@@ -2,10 +2,9 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-  address: "127.0.0.1:6600",
   password: None,
   theme: Some("matugen"),
-  cache_dir: None,
+  cache_dir: Some("/tmp/rmpc/cache"),
   on_song_change: None,
   volume_step: 5,
   max_fps: 30,
