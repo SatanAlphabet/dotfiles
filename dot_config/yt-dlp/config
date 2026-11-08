@@ -1,3 +1,4 @@
+--audio-quality 0
 --embed-thumbnail
 --embed-metadata
 --paths ~/Music/
