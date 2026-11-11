@@ -123,7 +123,6 @@ post_hook = 'matugen-pywalfox.sh {{mode}} &'
 [templates.color-scheme]
 input_path = '~/.config/matugen/templates/Matugen.colors'
 output_path = '~/.local/share/color-schemes/Matugen.colors'
-post_hook = 'reload-qt.sh &'
 
 [templates.zed]
 input_path = '~/.config/matugen/templates/zed-colors.json'

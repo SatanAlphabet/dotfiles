@@ -101,7 +101,7 @@ aur = [
   "gpu-screen-recorder",
   "nirius",
   "python-pywalfox",
-  "qt6ct-kde",
+  "qtengine",
   "spicetify-cli",
   "spicetify-marketplace-bin",
   "spotify",

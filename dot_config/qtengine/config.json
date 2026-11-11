@@ -1,0 +1,26 @@
+{
+	"theme": {
+		"colorScheme": "~/.local/share/color-schemes/Matugen.colors",
+		"iconTheme": "breeze",
+		"style": "Darkly",
+		"quickStyle": "",
+		"font": { "family": "Inter Variable", "size": 10, "weight": -1 },
+		"fontFixed": {
+			"family": "CaskaydiaCove Nerd Font",
+			"size": 9,
+			"weight": -1
+		}
+	},
+	"misc": {
+		"singleClickActivate": false,
+		"menusHaveIcons": true,
+		"shortcutsForContextMenus": true,
+		"cursorFlashTime": 1000,
+		"mouseDoubleClickInterval": 400,
+		"wheelScrollLines": 3,
+		"toolButtonStyle": 4,
+		"dialogButtonBoxLayout": 0,
+		"keyboardScheme": 2,
+		"uiEffects": 0
+	}
+}
