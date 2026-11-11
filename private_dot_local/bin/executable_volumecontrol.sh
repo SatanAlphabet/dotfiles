@@ -2,7 +2,7 @@
 
 pactl "$@"
 
-volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%d\n", $2*100}')"%"
+volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%d\n", $2*100}')
 mute_status=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%s\n", $3}')
 priority="normal"
 
@@ -14,7 +14,7 @@ else
   audio_icon="audio-volume-high"
 fi
 
-volume_text="<b>$volume</b>"
+volume_text="<b>$volume%</b>"
 
 if [[ "$mute_status" == "[MUTED]" ]]; then
   volume_text="Muted"
