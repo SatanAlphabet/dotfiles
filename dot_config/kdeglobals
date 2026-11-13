@@ -5,7 +5,7 @@ TerminalApplication=/usr/bin/kitty
 Theme=breeze
 
 [KDE]
-widgetStyle=qt6ct-style
+widgetStyle=qtengine
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -29,9 +29,6 @@ Dialog Size=600,480
 
 [Sounds]
 Enable=false
-
-[UiSettings]
-ColorScheme=colors
 
 [Wallet]
 Enabled=false
