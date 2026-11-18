@@ -112,9 +112,13 @@ window#waybar.main-bar .modules-right #pill .alt {
 }
 
 window#waybar.main-bar #custom-launcher {
-	font-size: 20px;
 	background: transparent;
 	color: @primary;
+	font-size: 20px;
+}
+
+window#waybar.main-bar #custom-launcher label {
+	font-size: 20px;
 }
 
 window#waybar.main-bar #custom-launcher:hover {
@@ -149,10 +153,14 @@ window#waybar.main-bar .recording:hover {
 }
 
 window#waybar.main-bar #custom-seperator-vertical {
-	font-size: 13px;
 	margin: -12px 0px;
-	opacity: 0.5;
 	background: transparent;
+	font-size: 13px;
+	opacity: 0.5;
+}
+
+window#waybar.main-bar #custom-seperator-vertical label {
+	font-size: 13px;
 }
 
 #workspaces button {
@@ -191,6 +199,10 @@ window#waybar.main-bar #custom-seperator-vertical {
 
 #workspaces button.active label {
 	font-size: 11px;
+}
+
+#workspaces button.urgent {
+	background: @error;
 }
 
 #workspaces button:hover {
